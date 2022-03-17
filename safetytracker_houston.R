@@ -292,8 +292,8 @@ totals_by_beat_type$rate22 <- round(totals_by_beat_type$projected22/totals_by_be
 
 # Isolate three categories of crimes by beat by year
 murders_by_beat <- totals_by_beat_detailed %>% filter(nibrs_class=="09A")
-sexualassault_by_beat <- totals_by_beat_category %>% filter(category_name=="Sexual Assault")
-autotheft_by_beat <- totals_by_beat_detailed %>% filter(nibrs_class=="240")
+sexualassaults_by_beat <- totals_by_beat_category %>% filter(category_name=="Sexual Assault")
+autothefts_by_beat <- totals_by_beat_detailed %>% filter(nibrs_class=="240")
 
 # MURDER MAP
 # Set bins for numbers of crimes for murders map
@@ -402,86 +402,113 @@ houston_murder_map <- leaflet(murders_by_beat) %>%
   addLegend(pal = murderpal, 
             values = murders_by_beat$rate21, 
             position = "bottomleft", 
-            title = "Homicides Per 100K people <a href='https://abcnews.com'>Test Link</a>")
+            title = "Homicides Per 100K people")
 houston_murder_map
 
+# SEXUAL ASSAULTS MAP
+# Set bins for numbers of crimes for murders map
+sexualassaultbins <- c(0,median(sexualassaults_by_beat$rate21,na.rm = TRUE)/2,median(sexualassaults_by_beat$rate21,na.rm = TRUE),median(sexualassaults_by_beat$rate21,na.rm = TRUE)*2,median(sexualassaults_by_beat$rate21,na.rm = TRUE)*3,200)
+sexualassaultpal <- colorBin(c("#99a0a5","#667f99","#00318b","#0058f6","#ffba00"), sexualassaults_by_beat$rate21, bins = sexualassaultbins)
+# Create quick labels for sexualassaults map
+sexualassaultlabel <- paste(sep="","<style>
+table {
+  font-family: roboto;
+  border-collapse: collapse;
+  width: 100%;
+}
 
+tr {
+  border-bottom: thin solid #f2f2f2;
+}
 
+h5 {
+  font-size: 28px;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #0058f6;
+}
+  
+td, th {
+  text-align: right;
+  padding: 6px;
+}
 
-# SEX ASSAULT MAP
-# Set bins for numbers of violent crimes map
-sexualassaultbins <- c(0, 10, 50, 100, 200, Inf)
-sexualassaultpal <- colorBin("YlOrRd", sexualassault_by_beat$rate21, bins = sexualassaultbins)
-# Create quick labels for murders map
-sexualassaultlabel <- paste(sep = "<br>", "<b>",sexualassault_by_beat$beat,"</b>2022 so far:",sexualassault_by_beat$total22,"2021:",sexualassault_by_beat$total21,"21Rate:",sexualassault_by_beat$rate21,"2020:",sexualassault_by_beat$total20,"2019:",sexualassault_by_beat$total19)
-# Create rapid prototype of murders map
-houston_sexualassault_map <- leaflet(sexualassault_by_beat) %>%
+h6 {
+  text-align: left;
+  font-size: 15px;
+    margin-top: 0;
+  margin-bottom: 0;
+}
+
+h4 {
+  text-align: left;
+  font-size: 10px;
+  margin-top: 0;
+  margin-bottom: 2;
+}
+
+</style>
+<table>
+<caption><h6>Houston P.D. Beat #",sexualassaults_by_beat$beat,"</h6><h4>Est. Pop. ",sexualassaults_by_beat$population,"</h4>
+      <tr>
+				<th>Year</th>
+				<th>Total</th>
+				<th>Rate</th>
+				<th></th>
+			</tr>
+			<tr>
+				<td>2019</td>
+				<td>",
+sexualassaults_by_beat$total19,
+"</td>
+				<td>",
+sexualassaults_by_beat$rate19,
+"</td>
+				<!-- Insert cell to cross/span 
+				multi rows -->
+				<td rowspan='4'>Up<h5>",
+sexualassaults_by_beat$total21,
+"%</h5>over last<br>12 mos.</td>
+			</tr>
+			<tr>
+				<td>2020</td>
+				<td>",
+sexualassaults_by_beat$total20,
+"</td>
+				<td>",
+sexualassaults_by_beat$rate20,
+"</td>
+			</tr>
+						<tr>
+				<td>2021</td>
+				<td>",
+sexualassaults_by_beat$total21,
+"</td>
+				<td>",
+sexualassaults_by_beat$rate21,
+"</td>
+			</tr>
+			</tr>
+						<tr>
+				<td>2022</td>
+				<td>",
+sexualassaults_by_beat$total22,
+"</td>
+				<td>",
+sexualassaults_by_beat$rate22,
+"</td>
+			</tr>
+</table>")
+
+# Now create the SEXUAL ASSAULTS MAP
+houston_sexualassault_map <- leaflet(sexualassaults_by_beat) %>%
   setView(-95.45, 29.75, zoom = 10) %>% 
   addProviderTiles(provider = "CartoDB.Positron") %>%
-  addPolygons(color = "#444444", popup = sexualassaultlabel, weight = 0.5, smoothFactor = 0.5,
-              opacity = 0.5, fillOpacity = 0.3,
+  addPolygons(color = "white", popup = sexualassaultlabel, weight = 0.5, smoothFactor = 0.5,
+              opacity = 0.6, fillOpacity = 0.5,
               fillColor = ~sexualassaultpal(rate21)) %>% 
   addLegend(pal = sexualassaultpal, 
-            values = sexualassault_by_beat$rate21, 
+            values = sexualassaults_by_beat$rate21, 
             position = "bottomleft", 
-            title = "Sexual Assaults<br>per 100K in 2021")
+            title = "Sexual Assaults Per 100K people")
 houston_sexualassault_map
-
-
-
-
-# CAR THEFTS COMBINED
-# Set bins for numbers of violent crimes map
-autotheftbins <- c(0, 100, 250, 500, 750, 1000, 1500, 2000, Inf)
-autotheftpal <- colorBin("YlOrRd", autotheft_by_beat$rate21, bins = autotheftbins)
-# Create quick labels for murders map
-autotheftlabel <- paste(sep = "<br>", autotheft_by_beat$beat,"2022 so far:",autotheft_by_beat$total22,"2021:",autotheft_by_beat$total21,"21Rate:",autotheft_by_beat$rate21,"2020:",autotheft_by_beat$total20,"2019:",autotheft_by_beat$total19)
-# Create rapid prototype of murders map
-houston_autotheft_map <- leaflet(autotheft_by_beat) %>%
-  setView(-95.45, 29.75, zoom = 10) %>% 
-  addProviderTiles(provider = "Esri.WorldImagery") %>%
-  addPolygons(color = "white", popup = autotheftlabel, weight = 0.5, smoothFactor = 0.5,
-              opacity = 0.5, fillOpacity = 0.3,
-              fillColor = ~autotheftpal(rate21)) %>% 
-  addLegend(pal = autotheftpal, 
-            values = autotheft_by_beat$rate21, 
-            position = "bottomleft", 
-            title = "Car Thefts <br>per 100K in 2021")
-houston_autotheft_map
-
-
-## Some ongoing dev work unrelated to maps
-
-# Side calculation in sexual assaults
-sexassaults <- sexualassault_by_beat %>% select(1,7,14) %>% st_drop_geometry()
-sexassaults[is.na(sexassaults)] <- 0
-sexassaults$citywide <- round(sum(sexassaults$total21)/2300000*100000,1)
-sexassaults <- sexassaults %>% select(1,3,4)
-sexassaults <- head(sexassaults)
-
-
-# places where murders happen
-murder_places <- houston_crime %>%
-  filter(nibrs_class=="09A") %>%
-  group_by(premise,year) %>%
-  summarise(count = sum(offense_count)) %>%
-  pivot_wider(names_from=year, values_from=count)
-
-# how many unique addresses do we have that are not geocoded
-addresses_nogeo <- houston_crime %>%
-  filter(is.na(latitude)) %>%
-  group_by(street_no,street_name,city,zip) %>%
-  summarise(count=n())
-addresses_yesgeo <- houston_crime %>%
-  filter(!is.na(latitude)) %>%
-  group_by(street_no,street_name,city,zip) %>%
-  summarise(count=n())
-addresses <- anti_join(addresses_nogeo,addresses_yesgeo,by=c("street_no","street_name","city","zip"))
-
-library(tidygeocoder)
-addresses$street <- paste(addresses$street_no,addresses$street_name,"")
-address_osm <- addresses %>% head(100) %>%
-  geocode(street = street, city=city,postalcode = zip, method = "osm")
-address_census <- addresses %>% head(100) %>%
-  geocode(street = street, city=city,postalcode = zip, method = "census")
-
