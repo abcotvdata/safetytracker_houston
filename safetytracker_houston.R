@@ -402,12 +402,14 @@ houston_murder_map <- leaflet(murders_by_beat) %>%
   addLegend(pal = murderpal, 
             values = murders_by_beat$rate21, 
             position = "bottomleft", 
-            title = "Homicides Per 100K people")
+            title = "Homicides Per 100K people<br>
+See: <a href='https://abcnews.com'>Sexual Assault</a><br>
+<a href='https://abcnews.com'>Auto Thefts</a>")
 houston_murder_map
 
 # SEXUAL ASSAULTS MAP
 # Set bins for numbers of crimes for murders map
-sexualassaultbins <- c(0,median(sexualassaults_by_beat$rate21,na.rm = TRUE)/2,median(sexualassaults_by_beat$rate21,na.rm = TRUE),median(sexualassaults_by_beat$rate21,na.rm = TRUE)*2,median(sexualassaults_by_beat$rate21,na.rm = TRUE)*3,200)
+sexualassaultbins <- c(0,median(sexualassaults_by_beat$rate21,na.rm = TRUE)/2,median(sexualassaults_by_beat$rate21,na.rm = TRUE),median(sexualassaults_by_beat$rate21,na.rm = TRUE)*2,median(sexualassaults_by_beat$rate21,na.rm = TRUE)*3,300)
 sexualassaultpal <- colorBin(c("#99a0a5","#667f99","#00318b","#0058f6","#ffba00"), sexualassaults_by_beat$rate21, bins = sexualassaultbins)
 # Create quick labels for sexualassaults map
 sexualassaultlabel <- paste(sep="","<style>
@@ -510,5 +512,121 @@ houston_sexualassault_map <- leaflet(sexualassaults_by_beat) %>%
   addLegend(pal = sexualassaultpal, 
             values = sexualassaults_by_beat$rate21, 
             position = "bottomleft", 
-            title = "Sexual Assaults Per 100K people")
+            title = "Sexual Assaults Per 100K people<br>
+See: <a href='https://abcnews.com'>Homicides</a><br>
+<a href='https://abcnews.com'>Auto Thefts</a>")
 houston_sexualassault_map
+
+
+# AUTO THEFTS MAP
+# Set bins for numbers of crimes for murders map
+autotheftbins <- c(0,median(autothefts_by_beat$rate21,na.rm = TRUE)/2,median(autothefts_by_beat$rate21,na.rm = TRUE),median(autothefts_by_beat$rate21,na.rm = TRUE)*2,median(autothefts_by_beat$rate21,na.rm = TRUE)*3,3000)
+autotheftpal <- colorBin(c("#99a0a5","#667f99","#00318b","#0058f6","#ffba00"), autothefts_by_beat$rate21, bins = autotheftbins)
+# Create quick labels for autothefts map
+autotheftlabel <- paste(sep="","<style>
+table {
+  font-family: roboto;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+tr {
+  border-bottom: thin solid #f2f2f2;
+}
+
+h5 {
+  font-size: 28px;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #0058f6;
+}
+  
+td, th {
+  text-align: right;
+  padding: 6px;
+}
+
+h6 {
+  text-align: left;
+  font-size: 15px;
+    margin-top: 0;
+  margin-bottom: 0;
+}
+
+h4 {
+  text-align: left;
+  font-size: 10px;
+  margin-top: 0;
+  margin-bottom: 2;
+}
+
+</style>
+<table>
+<caption><h6>Houston P.D. Beat #",autothefts_by_beat$beat,"</h6><h4>Est. Pop. ",autothefts_by_beat$population,"</h4>
+      <tr>
+				<th>Year</th>
+				<th>Total</th>
+				<th>Rate</th>
+				<th></th>
+			</tr>
+			<tr>
+				<td>2019</td>
+				<td>",
+autothefts_by_beat$total19,
+"</td>
+				<td>",
+autothefts_by_beat$rate19,
+"</td>
+				<!-- Insert cell to cross/span 
+				multi rows -->
+				<td rowspan='4'>Up<h5>",
+autothefts_by_beat$total21,
+"%</h5>over last<br>12 mos.</td>
+			</tr>
+			<tr>
+				<td>2020</td>
+				<td>",
+autothefts_by_beat$total20,
+"</td>
+				<td>",
+autothefts_by_beat$rate20,
+"</td>
+			</tr>
+						<tr>
+				<td>2021</td>
+				<td>",
+autothefts_by_beat$total21,
+"</td>
+				<td>",
+autothefts_by_beat$rate21,
+"</td>
+			</tr>
+			</tr>
+						<tr>
+				<td>2022</td>
+				<td>",
+autothefts_by_beat$total22,
+"</td>
+				<td>",
+autothefts_by_beat$rate22,
+"</td>
+			</tr>
+</table>")
+
+# Now create the SEXUAL ASSAULTS MAP
+houston_autotheft_map <- leaflet(autothefts_by_beat) %>%
+  setView(-95.45, 29.75, zoom = 10) %>% 
+  addProviderTiles(provider = "CartoDB.Positron") %>%
+  addPolygons(color = "white", popup = autotheftlabel, weight = 0.5, smoothFactor = 0.5,
+              opacity = 0.6, fillOpacity = 0.5,
+              fillColor = ~autotheftpal(rate21)) %>% 
+  addLegend(pal = autotheftpal, 
+            values = autothefts_by_beat$rate21, 
+            position = "bottomleft", 
+            title = "Auto Thefts Per 100K people<br>
+See: <a href='https://abcnews.com'>Homicides</a><br>
+<a href='https://abcnews.com'>Sexual Assaults</a>")
+houston_autotheft_map
+
+
+
