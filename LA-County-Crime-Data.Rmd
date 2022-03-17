@@ -1,0 +1,446 @@
+---
+title: "Crime data realities"
+author: "Grace Manthey"
+date: "12/14/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
+library(tidyverse)
+library(RJSONIO)
+library(leaflet)
+library(leaflet.providers)
+library(rgdal)
+library(lubridate)
+library(htmlwidgets)
+library(spatialEco)
+
+options(timeout=500)
+```
+
+```{r, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
+
+Crm_YTD_2022 <- read.csv("http://shq.lasdnews.net/CrimeStats/CAASS/PART_I_AND_II_CRIMES-YTD.csv")
+Crm_2021 <- read.csv("http://shq.lasdnews.net/CrimeStats/CAASS/2021-PART_I_AND_II_CRIMES.csv")
+Crm_2020 <- read.csv("http://shq.lasdnews.net/CrimeStats/CAASS/2020-PART_I_AND_II_CRIMES.csv")
+Crm_2019 <- read.csv("http://shq.lasdnews.net/CrimeStats/CAASS/2019-PART_I_AND_II_CRIMES.csv")
+Crm_2018 <- read.csv("http://shq.lasdnews.net/CrimeStats/CAASS/2018-PART_I_AND_II_CRIMES.csv")
+Crm_2017 <- read.csv("http://shq.lasdnews.net/CrimeStats/CAASS/2017-PART_I_AND_II_CRIMES.csv")
+Crm_2016 <- read.csv("http://shq.lasdnews.net/CrimeStats/CAASS/2016-PART_I_AND_II_CRIMES.csv")
+Crm_2015 <- read.csv("http://shq.lasdnews.net/CrimeStats/CAASS/2015-PART_I_AND_II_CRIMES.csv")
+Crm_2014 <- read.csv("http://shq.lasdnews.net/CrimeStats/CAASS/2014-PART_I_AND_II_CRIMES.csv")
+Crm_2013 <- read.csv("http://shq.lasdnews.net/CrimeStats/CAASS/2013-PART_I_AND_II_CRIMES.csv")
+Crm_2012 <- read.csv("http://shq.lasdnews.net/CrimeStats/CAASS/2012-PART_I_AND_II_CRIMES.csv")
+
+Crm_12_21 <- do.call("rbind", list(Crm_2012, Crm_2013, Crm_2014, Crm_2015, Crm_2016, Crm_2017, Crm_2018, Crm_2019, Crm_2020, Crm_2021, Crm_YTD_2022))
+
+remove(Crm_2012, Crm_2013, Crm_2014, Crm_2015, Crm_2016, Crm_2017, Crm_2018, Crm_2019, Crm_2020, Crm_2021, Crm_YTD_2022)
+
+```
+
+```{r, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
+
+Crm_12_21 <- Crm_12_21 %>% 
+  mutate(INCIDENT_DATE = as.Date(INCIDENT_DATE, format='%m/%d/%Y')) %>% 
+  mutate(YEAR = lubridate::year(INCIDENT_DATE)) %>% 
+  mutate(MONTH = lubridate::month(INCIDENT_DATE)) %>% 
+  filter(YEAR >= 2012) %>% 
+  distinct(LURN_SAK, .keep_all = TRUE)
+
+max_date <- max(Crm_12_21$INCIDENT_DATE)
+max_year <- lubridate::year(max_date)
+max_month <- lubridate::month(max_date)
+
+Crm_12_21_pt1 <- Crm_12_21 %>% 
+  filter(PART_CATEGORY == 1)
+
+#date_diff <- as.numeric(difftime(max_date, startofyear, units = c("days")))
+
+
+  
+
+#unique(Crm_12_21$CATEGORY)
+
+```
+
+```{r, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
+
+Crm_by_year_category <- Crm_12_21 %>% 
+  group_by(YEAR, CATEGORY) %>% 
+  summarise(count = n()) %>% 
+  pivot_wider(names_from=YEAR,values_from = "count")
+
+Pt1_Crm_by_year_category <- Crm_12_21_pt1 %>% 
+  group_by(YEAR, CATEGORY) %>% 
+  summarise(count = n()) %>% 
+  pivot_wider(names_from=YEAR,values_from = "count") %>% 
+  mutate(Ave_2015_2019 = ((`2015`+`2016`+`2017`+`2018`+`2019`)/5)) %>% 
+  mutate(Pct_Chge_2020 = ((`2021`-`2020`)/`2020`)*100) %>% 
+  mutate(Pct_Chge_2019 = ((`2021`-`2019`)/`2019`)*100) %>%
+  mutate(Chge_2015_thru_2019 = (`2021`-`Ave_2015_2019`)) %>%
+  mutate(Pct_Chge_2015_thru_2019 = ((`2021`-`Ave_2015_2019`)/`Ave_2015_2019`)*100)
+
+
+Pt1_Crm_by_year_category_UNIT <- Crm_12_21_pt1 %>% 
+  group_by(YEAR, CATEGORY, UNIT_NAME) %>% 
+  summarise(count = n()) %>% 
+  mutate(count = as.character(count)) %>% 
+  pivot_wider(names_from=YEAR,values_from = "count") %>%
+  mutate(`2012` = as.numeric(if_else(is.na(`2012`), '0', `2012`))) %>%
+  mutate(`2013` = as.numeric(if_else(is.na(`2013`), '0', `2013`))) %>%
+  mutate(`2014` = as.numeric(if_else(is.na(`2014`), '0', `2014`))) %>%
+  mutate(`2015` = as.numeric(if_else(is.na(`2015`), '0', `2015`))) %>%
+  mutate(`2016` = as.numeric(if_else(is.na(`2016`), '0', `2016`))) %>%
+  mutate(`2017` = as.numeric(if_else(is.na(`2017`), '0', `2017`))) %>%
+  mutate(`2018` = as.numeric(if_else(is.na(`2018`), '0', `2018`))) %>%
+  mutate(`2019` = as.numeric(if_else(is.na(`2019`), '0', `2019`))) %>%
+  mutate(`2020` = as.numeric(if_else(is.na(`2020`), '0', `2020`))) %>%
+  mutate(`2021` = as.numeric(if_else(is.na(`2021`), '0', `2021`))) %>%
+  mutate(Ave_2015_2019 = ((`2015`+`2016`+`2017`+`2018`+`2019`)/5)) %>% 
+  mutate(Pct_Chge_2020 = ((`2021`-`2020`)/`2020`)*100) %>% 
+  mutate(Pct_Chge_2019 = ((`2021`-`2019`)/`2019`)*100) %>% 
+  mutate(Chge_2015_thru_2019 = (`2021`-`Ave_2015_2019`)) %>% 
+  mutate(Pct_Chge_2015_thru_2019 = ((`2021`-`Ave_2015_2019`)/`Ave_2015_2019`)*100)
+
+Pt1_Crm_by_year_category_SM_AREA <- Crm_12_21_pt1 %>% 
+  group_by(YEAR, CATEGORY, REPORTING_DISTRICT) %>% 
+  summarise(count = n()) %>% 
+  mutate(count = as.character(count)) %>% 
+  pivot_wider(names_from=YEAR,values_from = "count") %>%
+  mutate(`2012` = as.numeric(if_else(is.na(`2012`), '0', `2012`))) %>%
+  mutate(`2013` = as.numeric(if_else(is.na(`2013`), '0', `2013`))) %>%
+  mutate(`2014` = as.numeric(if_else(is.na(`2014`), '0', `2014`))) %>%
+  mutate(`2015` = as.numeric(if_else(is.na(`2015`), '0', `2015`))) %>%
+  mutate(`2016` = as.numeric(if_else(is.na(`2016`), '0', `2016`))) %>%
+  mutate(`2017` = as.numeric(if_else(is.na(`2017`), '0', `2017`))) %>%
+  mutate(`2018` = as.numeric(if_else(is.na(`2018`), '0', `2018`))) %>%
+  mutate(`2019` = as.numeric(if_else(is.na(`2019`), '0', `2019`))) %>%
+  mutate(`2020` = as.numeric(if_else(is.na(`2020`), '0', `2020`))) %>%
+  mutate(`2021` = as.numeric(if_else(is.na(`2021`), '0', `2021`))) %>%
+  mutate(Ave_2015_2019 = ((`2015`+`2016`+`2017`+`2018`+`2019`)/5)) %>% 
+  mutate(Pct_Chge_2020 = ((`2021`-`2020`)/`2020`)*100) %>% 
+  mutate(Pct_Chge_2019 = ((`2021`-`2019`)/`2019`)*100) %>% 
+  mutate(Chge_2015_thru_2019 = (`2021`-`Ave_2015_2019`)) %>% 
+  mutate(Pct_Chge_2015_thru_2019 = ((`2021`-`Ave_2015_2019`)/`Ave_2015_2019`)*100) %>% 
+  mutate(REPORTING_DISTRICT = as.character(REPORTING_DISTRICT)) %>% 
+  mutate(AGENCY_OG = "LASD")
+
+  
+
+#unique(Crm_12_21$CATEGORY)
+
+```
+
+```{r, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
+
+#LA COUNTY GRAPHS
+
+Pt1_Crm_by_year <- Crm_12_21_pt1 %>% 
+  group_by(YEAR) %>% 
+  summarise(count = n())
+
+Pt1_crime_LASD_plot <- ggplot(Pt1_Crm_by_year, aes(x=YEAR, y=count)) + 
+  geom_bar(stat="identity", color="black", fill="firebrick")+
+  labs(title = "Pt. 1 Crimes reported by LASD", 
+       subtitle = "2012-2022 (ytd)",
+       caption = "Source: LASD")
+
+Pt1_crime_LASD_plot
+
+
+```
+```{r, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
+
+#LA COUNTY GRAPHS
+
+#By Category
+Pt1_Crm_by_year_category_LONG <- Crm_12_21_pt1 %>% 
+  group_by(YEAR, CATEGORY) %>% 
+  summarise(count = n())
+
+Pt1_crime_LASD_category_plot <- ggplot(Pt1_Crm_by_year_category_LONG, aes(x=YEAR, y=count)) + 
+  geom_bar(stat="identity", color="black", fill="firebrick")+
+  facet_wrap(~ CATEGORY, scales = 'free') +
+  labs(title = "Pt. 1 Crimes reported by LASD", 
+       subtitle = "2012-2021 Jan-Nov -- By category",
+       caption = "Source: LASD")
+
+Pt1_crime_LASD_category_plot
+
+```
+
+
+```{r, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
+
+#LA CITY
+
+#download and clean crime data
+
+download.file("https://data.lacity.org/api/views/2nrs-mtv8/rows.csv?accessType=DOWNLOAD","incidents20.csv")
+download.file("https://data.lacity.org/api/views/63jg-8b9z/rows.csv?accessType=DOWNLOAD","incidents10.csv")
+
+la_incidents20 <- read_csv("incidents20.csv",
+                         col_types = cols(`Date Rptd` = col_character(),
+                                          `Part 1-2` = col_character(), `Crm Cd` = col_character(),
+                                          `Premis Cd` = col_character(), `Weapon Used Cd` = col_character(),
+                                          `Crm Cd 1` = col_character(), `Crm Cd 2` = col_character(),
+                                          `Crm Cd 3` = col_character(), `Crm Cd 4` = col_character())) %>%
+  janitor::clean_names()
+
+la_incidents10 <- read_csv("incidents10.csv",
+                           col_types = cols(`Date Rptd` = col_character(),
+                                            `Part 1-2` = col_character(), `Crm Cd` = col_character(),
+                                            `Premis Cd` = col_character(), `Weapon Used Cd` = col_character(),
+                                            `Crm Cd 1` = col_character(), `Crm Cd 2` = col_character(),
+                                            `Crm Cd 3` = col_character(), `Crm Cd 4` = col_character())) %>%
+  janitor::clean_names()
+
+la_incidents <- bind_rows(la_incidents10, la_incidents20)
+la_incidents$dr_no_crime_code <- paste(sep="", la_incidents$dr_no, "_", la_incidents$crm_cd)
+
+
+#get column for property or violent crime
+violent_UCR <- c(110,113,121,122,815,820,821,210,220,230,231,235,236,250,251,761,926,435,436,437,622,623,624,625,626,627,647,763,928,930)
+
+violent_COMPSTAT <- c(110,113,121,122,815,820,821,210,220,230,231,235,236,250,251,761,926)
+
+property <- c(310,320,510,520,433,330,331,410,420,421,350,351,352,353,450,451,452,453,341,343,345,440,441,442,443,444,445,470,471,472,473,474,475,480,485,487,491)
+
+#get columns for larger categories
+homicide <- c(110, 113)
+robbery <- c(210, 220)
+rape <- c(121, 122, 815, 820, 821)
+agg_assaults <- c(230, 231, 235, 236, 250, 251, 761, 926)
+simple_assault <- c(435, 436, 437, 622, 623, 624, 625, 626, 627, 647, 763, 928, 930)
+burglary <- c(310, 320)
+MVT_GTA <- c(510, 520, 433)
+larc_theft <- c(330, 331, 410, 420, 421, 350, 351, 352, 353, 450, 451, 452, 453, 341, 343, 345, 440, 441, 442, 443, 444, 445, 470, 471, 472, 473, 474, 475, 480, 485, 487, 491)
+
+la_incidents <- la_incidents %>% 
+  mutate(violent_or_property_UCR = case_when( (crm_cd %in% violent_UCR == TRUE)  ~  'violent_UCR',
+                                    (crm_cd %in% property == TRUE)  ~  'property', 
+                                    TRUE  ~  'N/A')) %>%
+  mutate(violent_or_property_COMPSTAT = case_when( (crm_cd %in% violent_COMPSTAT == TRUE)  ~  'violent_COMPSTAT',
+                                    (crm_cd %in% property == TRUE)  ~  'property', 
+                                    TRUE  ~  'N/A')) %>%
+  mutate(Crime_General = case_when( (crm_cd %in% homicide == TRUE)  ~  'CRIMINAL HOMICIDE',
+                                    (crm_cd %in% robbery == TRUE)  ~  'ROBBERY',
+                                    (crm_cd %in% rape == TRUE)  ~  'FORCIBLE RAPE',
+                                    (crm_cd %in% agg_assaults == TRUE)  ~  'AGGRAVATED ASSAULT', 
+                                    (crm_cd %in% simple_assault == TRUE)  ~  'SIMPLE ASSAULT', 
+                                    (crm_cd %in% burglary == TRUE)  ~  'BURGLARY', 
+                                    (crm_cd %in% MVT_GTA == TRUE)  ~  'GRAND THEFT AUTO',
+                                    (crm_cd %in% larc_theft == TRUE)  ~  'LARCENY THEFT',
+                                    TRUE  ~  'N/A'))
+
+la_incidents <- la_incidents %>%
+  mutate(date_occ = as.Date(date_occ, format='%m/%d/%Y')) %>% 
+  mutate(year = lubridate::year(date_occ)) %>% 
+  mutate(month = lubridate::month(date_occ)) %>% 
+  filter(year >= 2012) %>%
+  distinct(dr_no_crime_code, .keep_all = TRUE)
+
+la_incidents_pt1 <- la_incidents %>% 
+  filter(part_1_2 == 1)
+
+```
+
+```{r, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
+
+Pt1_lacity_by_year <- la_incidents_pt1 %>% 
+  group_by(year) %>% 
+  summarise(count = n())
+
+Pt1_lacity_by_year_category <- la_incidents_pt1 %>% 
+  group_by(year, Crime_General) %>% 
+  summarise(count = n()) %>% 
+  pivot_wider(names_from=year,values_from = "count") %>% 
+  mutate(Ave_2015_2019 = ((`2015`+`2016`+`2017`+`2018`+`2019`)/5)) %>% 
+  mutate(Pct_Chge_2020 = ((`2021`-`2020`)/`2020`)*100) %>% 
+  mutate(Pct_Chge_2019 = ((`2021`-`2019`)/`2019`)*100) %>%
+  mutate(Chge_2015_thru_2019 = (`2021`-`Ave_2015_2019`)) %>%
+  mutate(Pct_Chge_2015_thru_2019 = ((`2021`-`Ave_2015_2019`)/`Ave_2015_2019`)*100)
+
+
+Pt1_lacity_by_year_category_SM_AREA <- la_incidents_pt1 %>% 
+  group_by(year, Crime_General, rpt_dist_no) %>% 
+  summarise(count = n()) %>% 
+  mutate(count = as.character(count)) %>% 
+  pivot_wider(names_from=year,values_from = "count") %>%
+  mutate(`2012` = as.numeric(if_else(is.na(`2012`), '0', `2012`))) %>%
+  mutate(`2013` = as.numeric(if_else(is.na(`2013`), '0', `2013`))) %>%
+  mutate(`2014` = as.numeric(if_else(is.na(`2014`), '0', `2014`))) %>%
+  mutate(`2015` = as.numeric(if_else(is.na(`2015`), '0', `2015`))) %>%
+  mutate(`2016` = as.numeric(if_else(is.na(`2016`), '0', `2016`))) %>%
+  mutate(`2017` = as.numeric(if_else(is.na(`2017`), '0', `2017`))) %>%
+  mutate(`2018` = as.numeric(if_else(is.na(`2018`), '0', `2018`))) %>%
+  mutate(`2019` = as.numeric(if_else(is.na(`2019`), '0', `2019`))) %>%
+  mutate(`2020` = as.numeric(if_else(is.na(`2020`), '0', `2020`))) %>%
+  mutate(`2021` = as.numeric(if_else(is.na(`2021`), '0', `2021`))) %>%
+  mutate(Ave_2015_2019 = ((`2015`+`2016`+`2017`+`2018`+`2019`)/5)) %>% 
+  mutate(Pct_Chge_2020 = ((`2021`-`2020`)/`2020`)*100) %>% 
+  mutate(Pct_Chge_2019 = ((`2021`-`2019`)/`2019`)*100) %>% 
+  mutate(Chge_2015_thru_2019 = (`2021`-`Ave_2015_2019`)) %>% 
+  mutate(Pct_Chge_2015_thru_2019 = ((`2021`-`Ave_2015_2019`)/`Ave_2015_2019`)*100) %>% 
+  rename(CATEGORY = Crime_General) %>% 
+  mutate(rpt_dist_no = as.character(rpt_dist_no)) %>% 
+  rename(REPORTING_DISTRICT = rpt_dist_no) %>% 
+  mutate(AGENCY_OG = "LAPD")
+
+```
+
+```{r, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
+
+#LA CITY GRAPHS
+
+Pt1_crime_LAPD_plot <- ggplot(Pt1_lacity_by_year, aes(x=year, y=count)) + 
+  geom_bar(stat="identity", color="black", fill="firebrick")+
+  labs(title = "Pt. 1 Crimes reported by LAPD", 
+       subtitle = "2012-2022 (ytd)",
+       caption = "Source: LASD")
+
+Pt1_crime_LAPD_plot
+
+
+```
+
+```{r, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
+
+#LA CITY GRAPHS
+
+Pt1_lacity_by_year_category_LONG <- la_incidents_pt1 %>% 
+  group_by(year, Crime_General) %>% 
+  summarise(count = n())
+
+Pt1_crime_LAPD_by_category_plot <- ggplot(Pt1_lacity_by_year_category_LONG, aes(x=year, y=count)) + 
+  geom_bar(stat="identity", color="black", fill="firebrick") +
+  facet_wrap(~ Crime_General, scales = 'free') +
+  labs(title = "Pt. 1 Crimes reported by LAPD", 
+       subtitle = "2012-2022 (ytd) -- By category",
+       caption = "Source: LASD")
+
+Pt1_crime_LAPD_by_category_plot
+
+
+```
+
+```{r, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
+
+#combining la city and la county sheriff
+
+invisible(districts <- rgdal::readOGR("Law_Enforcement_Reporting_Districts.geojson"))
+
+districts_justlabels <- data.frame(districts) %>% 
+  select(RD, AGENCY) %>% 
+  mutate(RD=as.character(RD)) %>% 
+  mutate(RD=str_pad(RD , 4, pad = "0")) %>% 
+  mutate(LABEL = paste(AGENCY, RD))
+
+pt1_LA_PD_SD_by_year_category_SM_AREA <- bind_rows(Pt1_lacity_by_year_category_SM_AREA, Pt1_Crm_by_year_category_SM_AREA) %>% 
+  mutate(REPORTING_DISTRICT = str_pad(REPORTING_DISTRICT, 4, pad="0")) %>% 
+  mutate(LABEL = paste(AGENCY_OG, REPORTING_DISTRICT))
+
+pt1_LA_PD_SD_by_year_category_SM_AREA_districts <- merge(pt1_LA_PD_SD_by_year_category_SM_AREA, districts_justlabels, by.x="LABEL", by.y="LABEL", keep.all.x=TRUE)
+
+LA_PD_SD_homicide <- pt1_LA_PD_SD_by_year_category_SM_AREA %>% 
+  filter(CATEGORY == "CRIMINAL HOMICIDE")
+
+districts$RD <- str_pad(districts$RD , 4, pad = "0")
+districts$LABEL_NEW <- paste(districts$AGENCY, districts$RD)
+
+districts_homicides <- merge(districts, LA_PD_SD_homicide, by.x="LABEL_NEW", by.y="LABEL")
+districts_homicides <- subset(districts_homicides, AGENCY=="LASD" | AGENCY=="LAPD")
+
+districts_homicides$`2012`[is.na(districts_homicides$`2012`)] <- 0
+districts_homicides$`2013`[is.na(districts_homicides$`2013`)] <- 0
+districts_homicides$`2014`[is.na(districts_homicides$`2014`)] <- 0
+districts_homicides$`2015`[is.na(districts_homicides$`2015`)] <- 0
+districts_homicides$`2016`[is.na(districts_homicides$`2016`)] <- 0
+districts_homicides$`2017`[is.na(districts_homicides$`2017`)] <- 0
+districts_homicides$`2018`[is.na(districts_homicides$`2018`)] <- 0
+districts_homicides$`2019`[is.na(districts_homicides$`2019`)] <- 0
+districts_homicides$`2020`[is.na(districts_homicides$`2020`)] <- 0
+districts_homicides$`2021`[is.na(districts_homicides$`2021`)] <- 0
+
+
+
+view(districts_homicides@data)
+
+
+```
+
+```{r, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
+
+
+factpal <-   colorFactor(
+  palette = c(
+    "#B1DBAD",
+    "#A18F7F",
+    "#FFCC80"),
+  districts$S_TYPE,
+  na.color = "#FF8280"
+)
+
+bins <- c(0, 1, 3, 5, Inf)
+pal <- colorBin("YlOrRd", districts_homicides$`2021`, bins = bins)
+
+#pal <- colorNumeric(
+#  palette = "Blues",
+#  domain = districts_homicides$`2021`)
+
+# colorFactor("blues", districts$S_TYPE)
+
+label <- paste(sep = "<br>", districts_homicides$LABEL_NEW, "Number of Homicides in 2021:", districts_homicides$`2021`)
+
+la_homicide_map_LA_PD_SD <- leaflet(districts_homicides) %>%
+  setView(-118.161229, 33.957379, zoom = 10) %>%
+  addProviderTiles(provider = "CartoDB.Positron") %>%
+  addPolygons(color = "#444444", popup = label, weight = 0.4, smoothFactor = 0.5,
+              opacity = 0.5, fillOpacity = 0.4,
+              fillColor = ~pal(`2021`)) %>% 
+  addLegend(pal = pal, 
+            values = districts_homicides$`2021`, 
+            position = "bottomleft", 
+            title = "Number of Homicides in 2021 (LASD & LAPD ONLY)")
+
+la_homicide_map_LA_PD_SD
+
+saveWidget(la_homicide_map_LA_PD_SD, 'la_homicide_map_LA_PD_SD.html', title = "Number of Homicides in 2021 (LASD & LAPD ONLY)", selfcontained = TRUE)
+
+```
+
+```{r, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
+
+
+bins <- c(-3, -1, 0, 1, 3, Inf)
+pal <- colorBin("RdYlGn", districts_homicides$Chge_2015_thru_2019, bins = bins, reverse = TRUE)
+
+#pal <- colorNumeric(
+#  palette = "Blues",
+#  domain = districts_homicides$`2021`)
+
+# colorFactor("blues", districts$S_TYPE)
+
+label <- paste(sep = "<br>", districts_homicides$LABEL_NEW, "Change in number of Homicides in 2021 compared to Ave. 2016-2019:", districts_homicides$Chge_2015_thru_2019)
+
+la_homicide_map_LA_PD_SD_CHANGE <- leaflet(districts_homicides) %>%
+  setView(-118.161229, 33.957379, zoom = 10) %>%
+  addProviderTiles(provider = "CartoDB.Positron") %>%
+  addPolygons(color = "#444444", popup = label, weight = 0.4, smoothFactor = 0.5,
+              opacity = 0.5, fillOpacity = 0.4,
+              fillColor = ~pal(`Chge_2015_thru_2019`)) %>% 
+  addLegend(pal = pal, 
+            values = districts_homicides$`Chge_2015_thru_2019`, 
+            position = "bottomleft", 
+            title = "Change in number of Homicides in 2021 <br> compared to Ave. 2016-2019 (LASD & LAPD ONLY)")
+
+la_homicide_map_LA_PD_SD_CHANGE
+
+#saveWidget(la_homicide_map_LA_PD_SD, 'la_homicide_map_LA_PD_SD.html', title = "Number of Homicides in 2021 (LASD & LAPD ONLY)", selfcontained = TRUE)
+
+```

@@ -1,0 +1,103 @@
+---
+title: __`r subgroup$agency_short` police accountability watch__
+author: "This report brings together in one place all of the publicly-available data about the __`r subgroup$agency_short`__ police department, located in `r subgroup$county`, Calif., including data about the agency's size, spending, performance solving crimes, use of force and citizen complaints, as gathered from public records by ABC Owned Television Stations."
+output: html_document
+---
+UPDATED JUNE 25, 2020
+
+```{css, echo=FALSE}
+h1 {
+  color: black;
+  font-family: Roboto;
+}
+h2 {
+  color: #001f4c;
+  font-family: arial;
+}
+h3 {
+  color: #C8490F;
+  font-family: arial;
+}
+body {
+  color: black;
+  font-family: times, serif;
+}
+h5 {
+  color: white;
+  background-color: #5397ff;
+  font-family: arial;
+  border-radius: 10px;
+  padding: 1em;
+  text-align: center;
+}
+```
+<br>
+
+##### This agency solved __`r subgroup$violent_pct`%__ of its violent crimes.
+
+##### This agency solved __`r subgroup$property_pct`%__ of its property crimes.
+
+##### This agency spent __$`r subgroup$spendper1K`__ per 1,000 residents.
+
+##### This agency has __`r subgroup$policeper1K`__ officers per 1,000 residents.
+
+##### This agency arrests black people at __`r subgroup$times_more_likely`__ times the rate of white people.
+
+##### This agency reported __1,000,000__ use of force incidents.
+
+##### This agency received __1,000,000__ citizen complaints.
+
+## __Size and spending__
+
+
+
+## __Violent crimes__
+
+The agency reported 
+
+### __`r prettyNum(subgroup$violent_sum, big.mark=",")`__
+
+violent crimes in 2018, clearing `r prettyNum(subgroup$violent_clr_sum, big.mark=",")` of those by arrest.
+
+That's a clearance rate of about 
+
+### __`r subgroup$violent_pct`%__
+
+compared to `r meanviol`% for all departments in California.
+
+Here's a look at the clearance rate historically for violent crimes by `r subgroup$agency_short` police.
+
+```{r, echo=FALSE, out.width='100%'}
+library(plotly)
+agencyclearance <- filter(clearance, ncic_code == agency)
+fig <- plot_ly(agencyclearance, x = ~year, y = ~violent_sum, type = 'bar', name = 'Violent crimes', marker=list(color = "#154FC2"))
+fig <- fig %>% add_trace(y = ~violent_clr_sum, name = 'Cleared', marker=list(color = "#C8490F"))
+fig <- fig %>% layout(yaxis = list(title = 'Count'), barmode = 'group')
+
+fig
+```
+
+## __Property crimes__
+
+The agency reported 
+
+### __`r prettyNum(subgroup$property_sum, big.mark=",")`__
+
+property crimes in 2018, clearing `r prettyNum(subgroup$property_clr_sum,  big.mark=",")` of those by arrest.
+
+That's a clearance rate of about 
+
+### __`r subgroup$property_pct`%__
+
+compared to the average of `r meanprop`% for property crimes across all departments in California.
+
+```{r, echo=FALSE, out.width='100%'}
+agencyclearance <- filter(clearance, ncic_code == agency)
+library(plotly)
+fig2 <- plot_ly(agencyclearance, x = ~year, y = ~property_sum, type = 'bar', name = 'Property crimes', marker=list(color = "#154FC2"))
+fig2 <- fig2 %>% add_trace(y = ~property_clr_sum, name = 'Cleared', marker=list(color = "#C8490F"))
+fig2 <- fig2 %>% layout(yaxis = list(title = 'Count'), barmode = 'group')
+
+fig2
+```
+

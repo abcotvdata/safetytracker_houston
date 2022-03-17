@@ -1,54 +1,487 @@
 library(tidyverse)
 library(tidycensus)
 library(readxl)
+library(leaflet)
+library(leaflet.extras)
+library(leaflet.providers)
+library(mapview)
+library(sp)
+library(sf)
 
-download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicViewDec21.xlsx","houston_NIBRS2021.xlxs")
-download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicView.Jan1-Dec31-2020.xlsx","houston_NIBRS2020.xlxs")
-download.file("https://www.houstontx.gov/police/cs/xls/2019_NIBRSPublicView.Jan1-Dec31.xlsx","houston_NIBRS2019.xlxs")
+# Save for backup the latest posted files for 2021, 2020 and 2019
+download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicViewDec21.xlsx","data/latest/houston_NIBRS2021.xlsx")
+download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicView.Jan1-Dec31-2020.xlsx","data/latest/houston_NIBRS2020.xlsx")
+download.file("https://www.houstontx.gov/police/cs/xls/2019_NIBRSPublicView.Jan1-Dec31.xlsx","data/latest/houston_NIBRS2019.xlsx")
+download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicViewJan22.xlsx","data/latest/houston_NIBRS2022.xlsx")
 
-houston21 <- read_excel("houston_NIBRS2021.xlxs", 
+# BRING IN THE HPD RAW FILES FOR 2019, 2020, 2021 and 2022 (to date)
+# Read in the 2022 file, renaming to cols to standardize across all years
+houston22 <- read_excel("data/latest/houston_NIBRS2022.xlsx", 
+                        col_types = c("text", "date", "numeric", 
+                                      "text", "text", "numeric", "text", 
+                                      "text", "text", "text", "text", "text", 
+                                      "text", "text","numeric","numeric"))
+names(houston22) <- c("incident", "date", "hour", 
+                      "nibrs_class", "offense_type", "offense_count", "beat", 
+                      "premise", "street_no", "street_name", "street_type", "street_suffix", 
+                      "city", "zip","longitude","latitude")
+
+# Read in the 2021 file, renaming to cols to standardize across 3 years
+houston21 <- read_excel("data/latest/houston_NIBRS2021.xlsx", 
                                 col_types = c("text", "date", "numeric", 
                                               "text", "text", "numeric", "text", 
                                               "text", "text", "text", "text", "text", 
-                                              "text", "text")) %>% 
-  janitor::clean_names()
+                                              "text", "text"))
+names(houston21) <- c("incident", "date", "hour", 
+                      "nibrs_class", "offense_type", "offense_count", "beat", 
+                      "premise", "street_no", "street_name", "street_type", "street_suffix", 
+                      "city", "zip")
 
-houston20 <- read_excel("houston_NIBRS2020.xlxs", 
+# Read in the 2020 file, renaming to cols to standardize
+houston20 <- read_excel("data/latest/houston_NIBRS2020.xlsx", 
                         col_types = c("text", "date", "numeric", 
                                       "text", "text", "numeric", "text", 
                                       "text", "text", "text", "text", "text", 
-                                      "text", "text")) %>% 
-  janitor::clean_names()
+                                      "text", "text"))
+names(houston20) <- c("incident", "date", "hour", 
+                      "nibrs_class", "offense_type", "offense_count", "beat", 
+                      "premise", "street_no", "street_name", "street_type", "street_suffix", 
+                      "city", "zip")
 
-houston19 <- read_excel("houston_NIBRS2019.xlxs", 
+# Read in the 2019 file, renaming to cols to standardize
+houston19 <- read_excel("data/latest/houston_NIBRS2019.xlsx", 
                         col_types = c("text", "date", "numeric", 
                                       "text", "text", "numeric", "text", 
                                       "text", "text", "text", "text", "text", 
-                                      "text", "text")) %>% 
-  janitor::clean_names()
+                                      "text", "text"))
+names(houston19) <- c("incident", "date", "hour", 
+"nibrs_class", "offense_type", "offense_count", "beat", 
+"premise", "street_no", "street_name", "street_type", "street_suffix", 
+"city", "zip")
 
-totals_by_beat21 <- houston21 %>%
-  group_by(beat,nibrs_description,nibrs_class) %>%
-  summarise(count = sum(offense_count))
+# Combine the three years' of into single table
+houston_crime <- bind_rows(houston19,houston20,houston21,houston22)
+rm(houston19,houston20,houston21)
+houston_crime$year <- substr(houston_crime$date,1,4)
+houston_crime$date <- as.Date(houston_crime$date, "%Y-%m-%d")
 
-totals_by_crime21 <- houston21 %>%
-  group_by(nibrs_description,nibrs_class) %>%
-  summarise(count = sum(offense_count))
+# Build a class-code table
+classcodes <- houston_crime %>%
+  group_by(offense_type,nibrs_class) %>%
+  summarise(number_offense_type=n())
+classcodes$category_code <- substr(classcodes$nibrs_class,1,2)
+classcodes$category_name <- case_when(classcodes$category_code == "09" ~ "Murder",
+                                      classcodes$category_code == "10" ~ "Kidnapping",
+                                      classcodes$category_code == "11" ~ "Sexual Assault",
+                                      classcodes$category_code == "12" ~ "Robbery",
+                                      classcodes$category_code == "13" ~ "Assault",
+                                      classcodes$category_code == "20" ~ "Arson",
+                                      classcodes$category_code == "22" ~ "Burglary",
+                                      classcodes$category_code == "23" ~ "Theft",
+                                      classcodes$category_code == "24" ~ "Auto Theft",
+                                      classcodes$category_code == "28" ~ "Theft",
+                                      classcodes$category_code == "35" ~ "Drug Offenses",
+                                      TRUE ~ "Other")
+# add violent and property flags
+classcodes$type <- case_when(classcodes$category_code == "09" ~ "Violent",
+                                      classcodes$category_code == "11" ~ "Violent",
+                                      classcodes$category_code == "12" ~ "Violent",
+                                      classcodes$category_code == "20" ~ "Property",
+                                      classcodes$category_code == "22" ~ "Property",
+                                      classcodes$category_code == "23" ~ "Property",
+                                      classcodes$category_code == "24" ~ "Property",
+                                      classcodes$category_code == "28" ~ "Property",
+                                      classcodes$nibrs_class == "13A" ~ "Violent",
+                                      classcodes$nibrs_class == "13B" ~ "Violent",
+                                      TRUE ~ "Other")
+# add flag for 'major' crimes, generally considered 'Part I' crimes in FBI data
+classcodes$major <- case_when(classcodes$category_code == "09" ~ "Major",
+                             classcodes$category_code == "11" ~ "Major",
+                             classcodes$category_code == "12" ~ "Major",
+                             classcodes$category_code == "20" ~ "Major",
+                             classcodes$category_code == "22" ~ "Major",
+                             classcodes$category_code == "23" ~ "Major",
+                             classcodes$category_code == "24" ~ "Major",
+                             classcodes$category_code == "28" ~ "Major",
+                             classcodes$nibrs_class == "13A" ~ "Major",
+                             TRUE ~ "Other")
 
-totals_by_beat20 <- houston20 %>%
-  group_by(beat,nibrs_description,nibrs_class) %>%
-  summarise(count = sum(offense_count))
 
-totals_by_crime20 <- houston20 %>%
-  group_by(nibrs_description,nibrs_class) %>%
-  summarise(count = sum(offense_count))
 
-totals_by_beat19 <- houston19 %>%
-  group_by(beat,nibrs_description,nibrs_class) %>%
-  summarise(count = sum(offense_count))
+# Add categories,types from classcodes to the individual crime records
+houston_crime <- left_join(houston_crime,classcodes %>% select(2,4:7),by=c("nibrs_class","offense_type"))
+# If beat is blank, add word Unknown
+houston_crime$beat[is.na(houston_crime$beat)] <- "UNKNOWN"
+# Fix non-existent beat 15E11, which should be 15E10
+houston_crime$beat <- ifelse(houston_crime$beat == "15E11","15E10",houston_crime$beat)
 
-totals_by_crime19 <- houston19 %>%
-  group_by(nibrs_description,nibrs_class) %>%
-  summarise(count = sum(offense_count))
+# Calculate the total of each DETAILED crime/incident CITYWIDE
+totals_by_crime_detailed <- houston_crime %>%
+  group_by(offense_type,nibrs_class,year) %>%
+  summarise(count = sum(offense_count)) %>%
+  pivot_wider(names_from=year, values_from=count)
+# rename the year columns
+totals_by_crime_detailed <- totals_by_crime_detailed %>% 
+  rename("total19" = "2019",
+         "total20" = "2020",
+         "total21" = "2021",
+         "total22" = "2022")
+# add projected22 column to project/forecast annual number
+totals_by_crime_detailed$projected22 <- totals_by_crime_detailed$total22*12
+# add zeros where there were no crimes tallied that year
+totals_by_crime_detailed[is.na(totals_by_crime_detailed)] <- 0
+# calculate increases
+totals_by_crime_detailed$inc_19to21 <- round(totals_by_crime_detailed$total21/totals_by_crime_detailed$total19*100-100,1)
+totals_by_crime_detailed$inc_19to22sofar <- round(totals_by_crime_detailed$projected22/totals_by_crime_detailed$total19*100-100,1)
+totals_by_crime_detailed$inc_21to22sofar <- round(totals_by_crime_detailed$projected22/totals_by_crime_detailed$total21*100-100,1)
+# calculate the citywide rates
+totals_by_crime_detailed$rate19 <- round(totals_by_crime_detailed$total19/2304580*100000,1)
+totals_by_crime_detailed$rate20 <- round(totals_by_crime_detailed$total20/2304580*100000,1)
+totals_by_crime_detailed$rate21 <- round(totals_by_crime_detailed$total21/2304580*100000,1)
+totals_by_crime_detailed$rate22 <- round(totals_by_crime_detailed$projected22/2304580*100000,1)
 
+# Calculate the total of each CATEGORY of crime/incident CITYWIDE
+totals_by_crime_category <- houston_crime %>%
+  group_by(category_name,year) %>%
+  summarise(count = sum(offense_count)) %>%
+  pivot_wider(names_from=year, values_from=count)
+# rename the year columns
+totals_by_crime_category <- totals_by_crime_category %>% 
+  rename("total19" = "2019",
+         "total20" = "2020",
+         "total21" = "2021",
+         "total22" = "2022")
+# add projected22 column to project/forecast annual number
+totals_by_crime_category$projected22 <- totals_by_crime_category$total22*12
+# add zeros where there were no crimes tallied that year
+totals_by_crime_category[is.na(totals_by_crime_category)] <- 0
+# calculate increases
+totals_by_crime_category$inc_19to21 <- round(totals_by_crime_category$total21/totals_by_crime_category$total19*100-100,1)
+totals_by_crime_category$inc_19to22sofar <- round(totals_by_crime_category$projected22/totals_by_crime_category$total19*100-100,1)
+totals_by_crime_category$inc_21to22sofar <- round(totals_by_crime_category$projected22/totals_by_crime_category$total21*100-100,1)
+# calculate the citywide rates
+totals_by_crime_category$rate19 <- round(totals_by_crime_category$total19/2304580*100000,1)
+totals_by_crime_category$rate20 <- round(totals_by_crime_category$total20/2304580*100000,1)
+totals_by_crime_category$rate21 <- round(totals_by_crime_category$total21/2304580*100000,1)
+totals_by_crime_category$rate22 <- round(totals_by_crime_category$projected22/2304580*100000,1)
+
+# Calculate the total of each TYPE of crime/incident CITYWIDE
+totals_by_crime_type <- houston_crime %>%
+  group_by(type,year) %>%
+  summarise(count = sum(offense_count)) %>%
+  pivot_wider(names_from=year, values_from=count)
+# rename the year columns
+totals_by_crime_type <- totals_by_crime_type %>% 
+  rename("total19" = "2019",
+         "total20" = "2020",
+         "total21" = "2021",
+         "total22" = "2022")
+# add projected22 column to project/forecast annual number
+totals_by_crime_type$projected22 <- totals_by_crime_type$total22*12
+# add zeros where there were no crimes tallied that year
+totals_by_crime_type[is.na(totals_by_crime_type)] <- 0
+# calculate increases
+totals_by_crime_type$inc_19to21 <- round(totals_by_crime_type$total21/totals_by_crime_type$total19*100-100,1)
+totals_by_crime_type$inc_19to22sofar <- round(totals_by_crime_type$projected22/totals_by_crime_type$total19*100-100,1)
+totals_by_crime_type$inc_21to22sofar <- round(totals_by_crime_type$projected22/totals_by_crime_type$total21*100-100,1)
+# calculate the citywide rates
+totals_by_crime_type$rate19 <- round(totals_by_crime_type$total19/2304580*100000,1)
+totals_by_crime_type$rate20 <- round(totals_by_crime_type$total20/2304580*100000,1)
+totals_by_crime_type$rate21 <- round(totals_by_crime_type$total21/2304580*100000,1)
+totals_by_crime_type$rate22 <- round(totals_by_crime_type$projected22/2304580*100000,1)
+
+# ADD BEATS/GEOGRAPHY
+# Geography and populations processed separately in 
+# process_houston_police_beats.R
+# WORK TO BE DONE includes tagging beats with 
+# audience-friendly known geographical reference points
+beatsindata <- houston_crime %>%
+  group_by(beat,year) %>%
+  summarise(count=n()) %>%
+  pivot_wider(names_from=year, values_from=count)
+beatsnotinmap <- anti_join(beatsindata,beats,by="beat")
+
+# Calculate the total of each DETAILED crime/incident CITYWIDE
+totals_by_beat_detailed <- houston_crime %>%
+  group_by(beat,offense_type,nibrs_class,year) %>%
+  summarise(count = sum(offense_count)) %>%
+  pivot_wider(names_from=year, values_from=count)
+# rename the year columns
+totals_by_beat_detailed <- totals_by_beat_detailed %>% 
+  rename("total19" = "2019",
+         "total20" = "2020",
+         "total21" = "2021",
+         "total22" = "2022")
+# add projected22 column to project/forecast annual number
+totals_by_beat_detailed$projected22 <- totals_by_beat_detailed$total22*12
+# add zeros where there were no crimes tallied that year
+totals_by_beat_detailed[is.na(totals_by_beat_detailed)] <- 0
+# calculate increases
+totals_by_beat_detailed$inc_19to21 <- round(totals_by_beat_detailed$total21/totals_by_beat_detailed$total19*100-100,1)
+totals_by_beat_detailed$inc_19to22sofar <- round(totals_by_beat_detailed$projected22/totals_by_beat_detailed$total19*100-100,1)
+totals_by_beat_detailed$inc_21to22sofar <- round(totals_by_beat_detailed$projected22/totals_by_beat_detailed$total21*100-100,1)
+# add population for beats
+totals_by_beat_detailed <- full_join(beats,totals_by_beat_detailed,by="beat") 
+# calculate the beat by beat rates PER 1K people
+totals_by_beat_detailed$rate19 <- round(totals_by_beat_detailed$total19/totals_by_beat_detailed$population*100000,1)
+totals_by_beat_detailed$rate20 <- round(totals_by_beat_detailed$total20/totals_by_beat_detailed$population*100000,1)
+totals_by_beat_detailed$rate21 <- round(totals_by_beat_detailed$total21/totals_by_beat_detailed$population*100000,1)
+totals_by_beat_detailed$rate22 <- round(totals_by_beat_detailed$projected22/totals_by_beat_detailed$population*100000,1)
+# calculate a multiyear rate
+totals_by_beat_detailed$rate_multiyear <- round(((totals_by_beat_detailed$total19+totals_by_beat_detailed$total20+totals_by_beat_detailed$total21+totals_by_beat_detailed$total22)/37*12)/totals_by_beat_detailed$population*100000,1)
+# for map/table making purposes, changing Inf and NaN in calc fields to NA
+totals_by_beat_detailed <- totals_by_beat_detailed %>%
+  mutate(across(where(is.numeric), ~na_if(., Inf)))
+totals_by_beat_detailed <- totals_by_beat_detailed %>%
+  mutate(across(where(is.numeric), ~na_if(., "NaN")))
+
+# Calculate the total of each CATEGORY of crime/incident CITYWIDE
+totals_by_beat_category <- houston_crime %>%
+  group_by(beat,category_name,year) %>%
+  summarise(count = sum(offense_count)) %>%
+  pivot_wider(names_from=year, values_from=count)
+# rename the year columns
+totals_by_beat_category <- totals_by_beat_category %>% 
+  rename("total19" = "2019",
+         "total20" = "2020",
+         "total21" = "2021",
+         "total22" = "2022")
+# add projected22 column to project/forecast annual number
+totals_by_beat_category$projected22 <- totals_by_beat_category$total22*12
+# add zeros where there were no crimes tallied that year
+totals_by_beat_category[is.na(totals_by_beat_category)] <- 0
+# calculate increases
+totals_by_beat_category$inc_19to21 <- round(totals_by_beat_category$total21/totals_by_beat_category$total19*100-100,1)
+totals_by_beat_category$inc_19to22sofar <- round(totals_by_beat_category$projected22/totals_by_beat_category$total19*100-100,1)
+totals_by_beat_category$inc_21to22sofar <- round(totals_by_beat_category$projected22/totals_by_beat_category$total21*100-100,1)
+# add population for beats
+totals_by_beat_category <- full_join(beats,totals_by_beat_category,by="beat") 
+# calculate the beat by beat rates PER 1K people
+totals_by_beat_category$rate19 <- round(totals_by_beat_category$total19/totals_by_beat_category$population*100000,1)
+totals_by_beat_category$rate20 <- round(totals_by_beat_category$total20/totals_by_beat_category$population*100000,1)
+totals_by_beat_category$rate21 <- round(totals_by_beat_category$total21/totals_by_beat_category$population*100000,1)
+totals_by_beat_category$rate22 <- round(totals_by_beat_category$projected22/totals_by_beat_category$population*100000,1)
+
+# Calculate the total of each TYPE of crime/incident CITYWIDE
+totals_by_beat_type <- houston_crime %>%
+  group_by(beat,type,year) %>%
+  summarise(count = sum(offense_count)) %>%
+  pivot_wider(names_from=year, values_from=count)
+# rename the year columns
+totals_by_beat_type <- totals_by_beat_type %>% 
+  rename("total19" = "2019",
+         "total20" = "2020",
+         "total21" = "2021",
+         "total22" = "2022")
+# add projected22 column to project/forecast annual number
+totals_by_beat_type$projected22 <- totals_by_beat_type$total22*12
+# add zeros where there were no crimes tallied that year
+totals_by_beat_type[is.na(totals_by_beat_type)] <- 0
+# calculate increases
+totals_by_beat_type$inc_19to21 <- round(totals_by_beat_type$total21/totals_by_beat_type$total19*100-100,1)
+totals_by_beat_type$inc_19to22sofar <- round(totals_by_beat_type$projected22/totals_by_beat_type$total19*100-100,1)
+totals_by_beat_type$inc_21to22sofar <- round(totals_by_beat_type$projected22/totals_by_beat_type$total21*100-100,1)
+# add population for beats
+totals_by_beat_type <- full_join(beats,totals_by_beat_type,by="beat") 
+# calculate the beat by beat rates PER 1K people
+totals_by_beat_type$rate19 <- round(totals_by_beat_type$total19/totals_by_beat_type$population*100000,1)
+totals_by_beat_type$rate20 <- round(totals_by_beat_type$total20/totals_by_beat_type$population*100000,1)
+totals_by_beat_type$rate21 <- round(totals_by_beat_type$total21/totals_by_beat_type$population*100000,1)
+totals_by_beat_type$rate22 <- round(totals_by_beat_type$projected22/totals_by_beat_type$population*100000,1)
+
+
+# Isolate three categories of crimes by beat by year
+murders_by_beat <- totals_by_beat_detailed %>% filter(nibrs_class=="09A")
+sexualassault_by_beat <- totals_by_beat_category %>% filter(category_name=="Sexual Assault")
+autotheft_by_beat <- totals_by_beat_detailed %>% filter(nibrs_class=="240")
+
+# MURDER MAP
+# Set bins for numbers of crimes for murders map
+murderbins <- c(0,median(murders_by_beat$rate21,na.rm = TRUE)/2,median(murders_by_beat$rate21,na.rm = TRUE),median(murders_by_beat$rate21,na.rm = TRUE)*2,median(murders_by_beat$rate21,na.rm = TRUE)*3,200)
+murderpal <- colorBin(c("#99a0a5","#667f99","#00318b","#0058f6","#ffba00"), murders_by_beat$rate21, bins = murderbins)
+# Create quick labels for murders map
+murderlabel <- paste(sep="","<style>
+table {
+  font-family: roboto;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+tr {
+  border-bottom: thin solid #f2f2f2;
+}
+
+h5 {
+  font-size: 28px;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #0058f6;
+}
+  
+td, th {
+  text-align: right;
+  padding: 6px;
+}
+
+h6 {
+  text-align: left;
+  font-size: 15px;
+    margin-top: 0;
+  margin-bottom: 0;
+}
+
+h4 {
+  text-align: left;
+  font-size: 10px;
+  margin-top: 0;
+  margin-bottom: 2;
+}
+
+</style>
+<table>
+<caption><h6>Houston P.D. Beat #",murders_by_beat$beat,"</h6><h4>Est. Pop. ",murders_by_beat$population,"</h4>
+      <tr>
+				<th>Year</th>
+				<th>Total</th>
+				<th>Rate</th>
+				<th></th>
+			</tr>
+			<tr>
+				<td>2019</td>
+				<td>",
+murders_by_beat$total19,
+"</td>
+				<td>",
+murders_by_beat$rate19,
+"</td>
+				<!-- Insert cell to cross/span 
+				multi rows -->
+				<td rowspan='4'>Up<h5>",
+murders_by_beat$total21,
+				"%</h5>over last<br>12 mos.</td>
+			</tr>
+			<tr>
+				<td>2020</td>
+				<td>",
+murders_by_beat$total20,
+"</td>
+				<td>",
+murders_by_beat$rate20,
+"</td>
+			</tr>
+						<tr>
+				<td>2021</td>
+				<td>",
+murders_by_beat$total21,
+"</td>
+				<td>",
+murders_by_beat$rate21,
+"</td>
+			</tr>
+			</tr>
+						<tr>
+				<td>2022</td>
+				<td>",
+murders_by_beat$total22,
+"</td>
+				<td>",
+murders_by_beat$rate22,
+"</td>
+			</tr>
+</table>")
+
+# Create rapid prototype of murders map
+# Issue to fix here is that we merged the data points to the df first, instead of the spatial file
+# Go back and rework that part
+houston_murder_map <- leaflet(murders_by_beat) %>%
+  setView(-95.45, 29.75, zoom = 10) %>% 
+  addProviderTiles(provider = "CartoDB.Positron") %>%
+  addPolygons(color = "white", popup = murderlabel, weight = 0.5, smoothFactor = 0.5,
+              opacity = 0.6, fillOpacity = 0.5,
+              fillColor = ~murderpal(rate21)) %>% 
+  addLegend(pal = murderpal, 
+            values = murders_by_beat$rate21, 
+            position = "bottomleft", 
+            title = "Homicides Per 100K people <a href='https://abcnews.com'>Test Link</a>")
+houston_murder_map
+
+
+
+
+# SEX ASSAULT MAP
+# Set bins for numbers of violent crimes map
+sexualassaultbins <- c(0, 10, 50, 100, 200, Inf)
+sexualassaultpal <- colorBin("YlOrRd", sexualassault_by_beat$rate21, bins = sexualassaultbins)
+# Create quick labels for murders map
+sexualassaultlabel <- paste(sep = "<br>", "<b>",sexualassault_by_beat$beat,"</b>2022 so far:",sexualassault_by_beat$total22,"2021:",sexualassault_by_beat$total21,"21Rate:",sexualassault_by_beat$rate21,"2020:",sexualassault_by_beat$total20,"2019:",sexualassault_by_beat$total19)
+# Create rapid prototype of murders map
+houston_sexualassault_map <- leaflet(sexualassault_by_beat) %>%
+  setView(-95.45, 29.75, zoom = 10) %>% 
+  addProviderTiles(provider = "CartoDB.Positron") %>%
+  addPolygons(color = "#444444", popup = sexualassaultlabel, weight = 0.5, smoothFactor = 0.5,
+              opacity = 0.5, fillOpacity = 0.3,
+              fillColor = ~sexualassaultpal(rate21)) %>% 
+  addLegend(pal = sexualassaultpal, 
+            values = sexualassault_by_beat$rate21, 
+            position = "bottomleft", 
+            title = "Sexual Assaults<br>per 100K in 2021")
+houston_sexualassault_map
+
+
+
+
+# CAR THEFTS COMBINED
+# Set bins for numbers of violent crimes map
+autotheftbins <- c(0, 100, 250, 500, 750, 1000, 1500, 2000, Inf)
+autotheftpal <- colorBin("YlOrRd", autotheft_by_beat$rate21, bins = autotheftbins)
+# Create quick labels for murders map
+autotheftlabel <- paste(sep = "<br>", autotheft_by_beat$beat,"2022 so far:",autotheft_by_beat$total22,"2021:",autotheft_by_beat$total21,"21Rate:",autotheft_by_beat$rate21,"2020:",autotheft_by_beat$total20,"2019:",autotheft_by_beat$total19)
+# Create rapid prototype of murders map
+houston_autotheft_map <- leaflet(autotheft_by_beat) %>%
+  setView(-95.45, 29.75, zoom = 10) %>% 
+  addProviderTiles(provider = "Esri.WorldImagery") %>%
+  addPolygons(color = "white", popup = autotheftlabel, weight = 0.5, smoothFactor = 0.5,
+              opacity = 0.5, fillOpacity = 0.3,
+              fillColor = ~autotheftpal(rate21)) %>% 
+  addLegend(pal = autotheftpal, 
+            values = autotheft_by_beat$rate21, 
+            position = "bottomleft", 
+            title = "Car Thefts <br>per 100K in 2021")
+houston_autotheft_map
+
+
+## Some ongoing dev work unrelated to maps
+
+# Side calculation in sexual assaults
+sexassaults <- sexualassault_by_beat %>% select(1,7,14) %>% st_drop_geometry()
+sexassaults[is.na(sexassaults)] <- 0
+sexassaults$citywide <- round(sum(sexassaults$total21)/2300000*100000,1)
+sexassaults <- sexassaults %>% select(1,3,4)
+sexassaults <- head(sexassaults)
+
+
+# places where murders happen
+murder_places <- houston_crime %>%
+  filter(nibrs_class=="09A") %>%
+  group_by(premise,year) %>%
+  summarise(count = sum(offense_count)) %>%
+  pivot_wider(names_from=year, values_from=count)
+
+# how many unique addresses do we have that are not geocoded
+addresses_nogeo <- houston_crime %>%
+  filter(is.na(latitude)) %>%
+  group_by(street_no,street_name,city,zip) %>%
+  summarise(count=n())
+addresses_yesgeo <- houston_crime %>%
+  filter(!is.na(latitude)) %>%
+  group_by(street_no,street_name,city,zip) %>%
+  summarise(count=n())
+addresses <- anti_join(addresses_nogeo,addresses_yesgeo,by=c("street_no","street_name","city","zip"))
+
+library(tidygeocoder)
+addresses$street <- paste(addresses$street_no,addresses$street_name,"")
+address_osm <- addresses %>% head(100) %>%
+  geocode(street = street, city=city,postalcode = zip, method = "osm")
+address_census <- addresses %>% head(100) %>%
+  geocode(street = street, city=city,postalcode = zip, method = "census")
 
