@@ -7,6 +7,8 @@ library(leaflet.providers)
 library(mapview)
 library(sp)
 library(sf)
+library(htmlwidgets)
+library(htmltools)
 
 # Save for backup the latest posted files for 2021, 2020 and 2019
 download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicViewDec21.xlsx","data/latest/houston_NIBRS2021.xlsx")
@@ -403,8 +405,8 @@ houston_murder_map <- leaflet(murders_by_beat) %>%
             values = murders_by_beat$rate21, 
             position = "bottomleft", 
             title = "Homicides Per 100K people<br>
-See: <a href='https://abcnews.com'>Sexual Assault</a><br>
-<a href='https://abcnews.com'>Auto Thefts</a>")
+See: <a href='https://abcotvdata.github.io/safetytracker_houston/sexualassault_rate.html'>Sexual Assault</a><br>
+<a href='https://abcotvdata.github.io/safetytracker_houston/autothefts_rate.html'>Auto Thefts</a>")
 houston_murder_map
 
 # SEXUAL ASSAULTS MAP
@@ -513,8 +515,8 @@ houston_sexualassault_map <- leaflet(sexualassaults_by_beat) %>%
             values = sexualassaults_by_beat$rate21, 
             position = "bottomleft", 
             title = "Sexual Assaults Per 100K people<br>
-See: <a href='https://abcnews.com'>Homicides</a><br>
-<a href='https://abcnews.com'>Auto Thefts</a>")
+See: <a href='https://abcotvdata.github.io/safetytracker_houston/murder_rate.html'>Homicides</a><br>
+<a href='https://abcotvdata.github.io/safetytracker_houston/autothefts_rate.html'>Auto Thefts</a>")
 houston_sexualassault_map
 
 
@@ -624,9 +626,12 @@ houston_autotheft_map <- leaflet(autothefts_by_beat) %>%
             values = autothefts_by_beat$rate21, 
             position = "bottomleft", 
             title = "Auto Thefts Per 100K people<br>
-See: <a href='https://abcnews.com'>Homicides</a><br>
-<a href='https://abcnews.com'>Sexual Assaults</a>")
+See: <a href='https://abcotvdata.github.io/safetytracker_houston/murder_rate.html'>Homicides</a><br>
+<a href='https://abcotvdata.github.io/safetytracker_houston/sexualassault_rate.html'>Sexual Assaults</a>")
 houston_autotheft_map
 
+saveWidget(houston_autotheft_map, 'docs/autothefts_rate.html', title = "ABC13 Neighborhood Safety Tracker", selfcontained = TRUE)
+saveWidget(houston_murder_map, 'docs/murder_rate.html', title = "ABC13 Neighborhood Safety Tracker", selfcontained = TRUE)
+saveWidget(houston_sexualassault_map, 'docs/sexualassaults_rate.html', title = "ABC13 Neighborhood Safety Tracker", selfcontained = TRUE)
 
 
