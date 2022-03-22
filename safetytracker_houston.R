@@ -9,6 +9,11 @@ library(sp)
 library(sf)
 library(htmlwidgets)
 library(htmltools)
+library(RCurl)
+library(Hmisc)
+library(rmarkdown)
+
+
 
 # Save for backup the latest posted files for 2021, 2020 and 2019
 download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicViewDec21.xlsx","data/latest/houston_NIBRS2021.xlsx")
@@ -116,6 +121,13 @@ houston_crime <- left_join(houston_crime,classcodes %>% select(2,4:7),by=c("nibr
 houston_crime$beat[is.na(houston_crime$beat)] <- "UNKNOWN"
 # Fix non-existent beat 15E11, which should be 15E10
 houston_crime$beat <- ifelse(houston_crime$beat == "15E11","15E10",houston_crime$beat)
+# Fix beats in District 5, 6 and 7 that became District 22
+houston_crime$beat <- ifelse(houston_crime$beat == "5F40","22B10",houston_crime$beat)
+houston_crime$beat <- ifelse(houston_crime$beat == "6B50","22B30",houston_crime$beat)
+houston_crime$beat <- ifelse(houston_crime$beat == "6B60","22B20",houston_crime$beat)
+houston_crime$beat <- ifelse(houston_crime$beat == "7C50","22B40",houston_crime$beat)
+
+
 
 # Calculate the total of each DETAILED crime/incident CITYWIDE
 totals_by_crime_detailed <- houston_crime %>%
@@ -201,7 +213,8 @@ beatsindata <- houston_crime %>%
   group_by(beat,year) %>%
   summarise(count=n()) %>%
   pivot_wider(names_from=year, values_from=count)
-beatsnotinmap <- anti_join(beatsindata,beats,by="beat")
+anti_join(beatsindata,beats,by="beat")
+
 
 # Calculate the total of each DETAILED crime/incident CITYWIDE
 totals_by_beat_detailed <- houston_crime %>%
@@ -263,6 +276,13 @@ totals_by_beat_category$rate19 <- round(totals_by_beat_category$total19/totals_b
 totals_by_beat_category$rate20 <- round(totals_by_beat_category$total20/totals_by_beat_category$population*100000,1)
 totals_by_beat_category$rate21 <- round(totals_by_beat_category$total21/totals_by_beat_category$population*100000,1)
 totals_by_beat_category$rate22 <- round(totals_by_beat_category$projected22/totals_by_beat_category$population*100000,1)
+# calculate a multiyear rate
+totals_by_beat_category$rate_multiyear <- round(((totals_by_beat_category$total19+totals_by_beat_category$total20+totals_by_beat_category$total21+totals_by_beat_category$total22)/37*12)/totals_by_beat_category$population*100000,1)
+# for map/table making purposes, changing Inf and NaN in calc fields to NA
+totals_by_beat_category <- totals_by_beat_category %>%
+  mutate(across(where(is.numeric), ~na_if(., Inf)))
+totals_by_beat_category <- totals_by_beat_category %>%
+  mutate(across(where(is.numeric), ~na_if(., "NaN")))
 
 # Calculate the total of each TYPE of crime/incident CITYWIDE
 totals_by_beat_type <- houston_crime %>%
@@ -290,7 +310,13 @@ totals_by_beat_type$rate19 <- round(totals_by_beat_type$total19/totals_by_beat_t
 totals_by_beat_type$rate20 <- round(totals_by_beat_type$total20/totals_by_beat_type$population*100000,1)
 totals_by_beat_type$rate21 <- round(totals_by_beat_type$total21/totals_by_beat_type$population*100000,1)
 totals_by_beat_type$rate22 <- round(totals_by_beat_type$projected22/totals_by_beat_type$population*100000,1)
-
+# calculate a multiyear rate
+totals_by_beat_type$rate_multiyear <- round(((totals_by_beat_type$total19+totals_by_beat_type$total20+totals_by_beat_type$total21+totals_by_beat_type$total22)/37*12)/totals_by_beat_type$population*100000,1)
+# for map/table making purposes, changing Inf and NaN in calc fields to NA
+totals_by_beat_type <- totals_by_beat_type %>%
+  mutate(across(where(is.numeric), ~na_if(., Inf)))
+totals_by_beat_type <- totals_by_beat_type %>%
+  mutate(across(where(is.numeric), ~na_if(., "NaN")))
 
 # Isolate three categories of crimes by beat by year
 murders_by_beat <- totals_by_beat_detailed %>% filter(nibrs_class=="09A")
@@ -628,10 +654,14 @@ houston_autotheft_map <- leaflet(autothefts_by_beat) %>%
             title = "Auto Thefts Per 100K people<br>
 See: <a href='https://abcotvdata.github.io/safetytracker_houston/murder_rate.html'>Homicides</a><br>
 <a href='https://abcotvdata.github.io/safetytracker_houston/sexualassault_rate.html'>Sexual Assaults</a>")
+
 houston_autotheft_map
 
-saveWidget(houston_autotheft_map, 'docs/autothefts_rate.html', title = "ABC13 Neighborhood Safety Tracker", selfcontained = TRUE)
-saveWidget(houston_murder_map, 'docs/murder_rate.html', title = "ABC13 Neighborhood Safety Tracker", selfcontained = TRUE)
-saveWidget(houston_sexualassault_map, 'docs/sexualassaults_rate.html', title = "ABC13 Neighborhood Safety Tracker", selfcontained = TRUE)
+#setwd("/Volumes/Jarvis/R/safetytracker_houston")
+#setwd("/Volumes/Jarvis/R/safetytracker_houston/docs")
+
+# saveWidget(houston_autotheft_map, 'autothefts_rate.html', title = "ABC13 Neighborhood Safety Tracker", selfcontained = TRUE, libdir=NULL)
+#saveWidget(houston_murder_map, 'docs/murder_rate.html', title = "ABC13 Neighborhood Safety Tracker", selfcontained = TRUE)
+#saveWidget(houston_sexualassault_map, 'docs/sexualassaults_rate.html', title = "ABC13 Neighborhood Safety Tracker", selfcontained = TRUE)
 
 
