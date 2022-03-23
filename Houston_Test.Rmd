@@ -20,6 +20,20 @@ library(htmlwidgets)
 library(htmltools)
 ```
 
+```{r crimedata, include=FALSE}
+# Import data underlying this project
+houston_crime <- read_csv("data/latest/houston_crime.csv", 
+                          col_types = cols(incident = col_character(), 
+                                           date = col_date(format = "%Y-%m-%d"), 
+                                           street_no = col_character(), longitude = col_character(), 
+                                           latitude = col_character(), category_code = col_character()))
+houston_crime
+```
+```{r beatsdata, include=FALSE}
+# Import data underlying this project
+
+write_s (beats,"beats.json")
+```
 
 
 ```{r cars, echo=FALSE,out.width='100%'}

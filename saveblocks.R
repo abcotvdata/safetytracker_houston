@@ -39,3 +39,33 @@ beats$population <- round(beats$population,0)
 # rm(beats_withpopblocks)
 sum(beats$population)
 
+
+
+houston_murder_map <- leaflet(murders_by_beat, options = leafletOptions(zoomControl = FALSE)) %>%
+  htmlwidgets::onRender("function(el, x) {
+L.control.zoom({ position: 'topright' }).addTo(this)
+}") %>%
+  setView(-95.45, 29.75, zoom = 10) %>% 
+  addProviderTiles(provider = "CartoDB.Positron") %>%
+  addPolygons(color = "white", popup = murderlabel, weight = 0.5, smoothFactor = 0.5,
+              opacity = 0.6, fillOpacity = 0.5,
+              fillColor = ~murderpal(rate_multiyear)) %>% 
+  addLegend(pal = murderpal, 
+            opacity = 0.6,
+            values = murders_by_beat$rate_multiyear, 
+            position = "bottomleft", 
+            title = "Homicides Per 100K people<br1>
+            Over Last 3 Years (2019-2021)<br>
+See also:<br><a href='https://abcotvdata.github.io/safetytracker_houston/sexualassault_rate.html'>Sexual Assault</a><br>
+<a href='https://abcotvdata.github.io/safetytracker_houston/autothefts_rate.html'>Auto Thefts</a>") %>%
+  addControl( html = "<style>
+h5 {
+  font-size: 28px;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #0058f6;
+}</style><h5>Headline for this map</h5>", position = "topleft", className = "fieldset {
+    border: 0;
+}")
+houston_murder_map
+

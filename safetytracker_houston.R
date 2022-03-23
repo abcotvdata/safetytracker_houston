@@ -129,6 +129,9 @@ houston_crime$beat <- ifelse(houston_crime$beat == "6B60","22B20",houston_crime$
 houston_crime$beat <- ifelse(houston_crime$beat == "7C50","22B40",houston_crime$beat)
 # Calculate the multiplier for the 2022 data based on days of data in file
 days_so_far_2022 <- 1/(n_distinct(houston22$date)/365)
+# write csv of houston crime
+write_csv(houston_crime,"data/latest/houston_crime.csv")
+
 
 # Calculate the total of each DETAILED crime/incident CITYWIDE
 totals_by_crime_detailed <- houston_crime %>%
@@ -425,20 +428,30 @@ murders_by_beat$rate22,
 # Create rapid prototype of murders map
 # Issue to fix here is that we merged the data points to the df first, instead of the spatial file
 # Go back and rework that part
-houston_murder_map <- leaflet(murders_by_beat) %>%
+houston_murder_map <- leaflet(murders_by_beat, options = leafletOptions(zoomControl = FALSE)) %>%
+  htmlwidgets::onRender("function(el, x) {
+L.control.zoom({ position: 'topright' }).addTo(this)
+}") %>%
   setView(-95.45, 29.75, zoom = 10) %>% 
   addProviderTiles(provider = "CartoDB.Positron") %>%
   addPolygons(color = "white", popup = murderlabel, weight = 0.5, smoothFactor = 0.5,
               opacity = 0.6, fillOpacity = 0.5,
               fillColor = ~murderpal(rate_multiyear)) %>% 
   addLegend(pal = murderpal, 
+            opacity = 0.6,
             values = murders_by_beat$rate_multiyear, 
             position = "bottomleft", 
-            title = "Homicides Per 100K people<br>
-            Over Last Three Years (2019-2021)<br>
+            title = "Homicides Per 100K people<br1>
+            Over Last 3 Years (2019-2021)<br>
 See also:<br><a href='https://abcotvdata.github.io/safetytracker_houston/sexualassault_rate.html'>Sexual Assault</a><br>
-<a href='https://abcotvdata.github.io/safetytracker_houston/autothefts_rate.html'>Auto Thefts</a>")
+<a href='https://abcotvdata.github.io/safetytracker_houston/autothefts_rate.html'>Auto Thefts</a>") %>%
+  addLegend(position = "topleft", 
+            labels = NULL,
+            values = NULL,
+            colors = NULL,
+            title = "<big>World's Best Map of Houston Homicides</big>")
 houston_murder_map
+
 
 # SEXUAL ASSAULTS MAP
 # Set bins for numbers of crimes for murders map
@@ -670,5 +683,3 @@ houston_autotheft_map
 # saveWidget(houston_autotheft_map, 'autothefts_rate.html', title = "ABC13 Neighborhood Safety Tracker", selfcontained = TRUE, libdir=NULL)
 #saveWidget(houston_murder_map, 'docs/murder_rate.html', title = "ABC13 Neighborhood Safety Tracker", selfcontained = TRUE)
 #saveWidget(houston_sexualassault_map, 'docs/sexualassaults_rate.html', title = "ABC13 Neighborhood Safety Tracker", selfcontained = TRUE)
-
-
