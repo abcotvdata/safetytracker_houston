@@ -16,10 +16,11 @@ library(rmarkdown)
 
 
 # Save for backup the latest posted files for 2021, 2020 and 2019
-download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicViewDec21.xlsx","data/latest/houston_NIBRS2021.xlsx")
-download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicView.Jan1-Dec31-2020.xlsx","data/latest/houston_NIBRS2020.xlsx")
-download.file("https://www.houstontx.gov/police/cs/xls/2019_NIBRSPublicView.Jan1-Dec31.xlsx","data/latest/houston_NIBRS2019.xlsx")
-download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicViewJan22.xlsx","data/latest/houston_NIBRS2022.xlsx")
+# download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicViewDec21.xlsx","data/latest/houston_NIBRS2021.xlsx")
+# download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicView.Jan1-Dec31-2020.xlsx","data/latest/houston_NIBRS2020.xlsx")
+# download.file("https://www.houstontx.gov/police/cs/xls/2019_NIBRSPublicView.Jan1-Dec31.xlsx","data/latest/houston_NIBRS2019.xlsx")
+# download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicViewJan-Feb22.xlsx","data/latest/houston_NIBRS2022.xlsx")
+
 
 # BRING IN THE HPD RAW FILES FOR 2019, 2020, 2021 and 2022 (to date)
 # Read in the 2022 file, renaming to cols to standardize across all years
@@ -126,8 +127,8 @@ houston_crime$beat <- ifelse(houston_crime$beat == "5F40","22B10",houston_crime$
 houston_crime$beat <- ifelse(houston_crime$beat == "6B50","22B30",houston_crime$beat)
 houston_crime$beat <- ifelse(houston_crime$beat == "6B60","22B20",houston_crime$beat)
 houston_crime$beat <- ifelse(houston_crime$beat == "7C50","22B40",houston_crime$beat)
-
-
+# Calculate the multiplier for the 2022 data based on days of data in file
+days_so_far_2022 <- 1/(n_distinct(houston22$date)/365)
 
 # Calculate the total of each DETAILED crime/incident CITYWIDE
 totals_by_crime_detailed <- houston_crime %>%
@@ -141,7 +142,7 @@ totals_by_crime_detailed <- totals_by_crime_detailed %>%
          "total21" = "2021",
          "total22" = "2022")
 # add projected22 column to project/forecast annual number
-totals_by_crime_detailed$projected22 <- totals_by_crime_detailed$total22*12
+totals_by_crime_detailed$projected22 <- round(totals_by_crime_detailed$total22*days_so_far_2022,0)
 # add zeros where there were no crimes tallied that year
 totals_by_crime_detailed[is.na(totals_by_crime_detailed)] <- 0
 # calculate increases
@@ -166,7 +167,7 @@ totals_by_crime_category <- totals_by_crime_category %>%
          "total21" = "2021",
          "total22" = "2022")
 # add projected22 column to project/forecast annual number
-totals_by_crime_category$projected22 <- totals_by_crime_category$total22*12
+totals_by_crime_category$projected22 <- round(totals_by_crime_category$total22*days_so_far_2022,0)
 # add zeros where there were no crimes tallied that year
 totals_by_crime_category[is.na(totals_by_crime_category)] <- 0
 # calculate increases
@@ -191,7 +192,7 @@ totals_by_crime_type <- totals_by_crime_type %>%
          "total21" = "2021",
          "total22" = "2022")
 # add projected22 column to project/forecast annual number
-totals_by_crime_type$projected22 <- totals_by_crime_type$total22*12
+totals_by_crime_type$projected22 <- round(totals_by_crime_type$total22*days_so_far_2022,0)
 # add zeros where there were no crimes tallied that year
 totals_by_crime_type[is.na(totals_by_crime_type)] <- 0
 # calculate increases
@@ -228,13 +229,14 @@ totals_by_beat_detailed <- totals_by_beat_detailed %>%
          "total21" = "2021",
          "total22" = "2022")
 # add projected22 column to project/forecast annual number
-totals_by_beat_detailed$projected22 <- totals_by_beat_detailed$total22*12
+totals_by_beat_detailed$projected22 <- round(totals_by_beat_detailed$total22*days_so_far_2022,0)
 # add zeros where there were no crimes tallied that year
 totals_by_beat_detailed[is.na(totals_by_beat_detailed)] <- 0
 # calculate increases
 totals_by_beat_detailed$inc_19to21 <- round(totals_by_beat_detailed$total21/totals_by_beat_detailed$total19*100-100,1)
 totals_by_beat_detailed$inc_19to22sofar <- round(totals_by_beat_detailed$projected22/totals_by_beat_detailed$total19*100-100,1)
 totals_by_beat_detailed$inc_21to22sofar <- round(totals_by_beat_detailed$projected22/totals_by_beat_detailed$total21*100-100,1)
+totals_by_beat_detailed$inc_3yearto22sofar <- round(totals_by_beat_detailed$projected22/((totals_by_beat_detailed$total19+totals_by_beat_detailed$total20+totals_by_beat_detailed$total21)/3)*100-100,0)
 # add population for beats
 totals_by_beat_detailed <- full_join(beats,totals_by_beat_detailed,by="beat") 
 # calculate the beat by beat rates PER 1K people
@@ -243,7 +245,7 @@ totals_by_beat_detailed$rate20 <- round(totals_by_beat_detailed$total20/totals_b
 totals_by_beat_detailed$rate21 <- round(totals_by_beat_detailed$total21/totals_by_beat_detailed$population*100000,1)
 totals_by_beat_detailed$rate22 <- round(totals_by_beat_detailed$projected22/totals_by_beat_detailed$population*100000,1)
 # calculate a multiyear rate
-totals_by_beat_detailed$rate_multiyear <- round(((totals_by_beat_detailed$total19+totals_by_beat_detailed$total20+totals_by_beat_detailed$total21+totals_by_beat_detailed$total22)/37*12)/totals_by_beat_detailed$population*100000,1)
+totals_by_beat_detailed$rate_multiyear <- round(((totals_by_beat_detailed$total19+totals_by_beat_detailed$total20+totals_by_beat_detailed$total21)/3)/totals_by_beat_detailed$population*100000,1)
 # for map/table making purposes, changing Inf and NaN in calc fields to NA
 totals_by_beat_detailed <- totals_by_beat_detailed %>%
   mutate(across(where(is.numeric), ~na_if(., Inf)))
@@ -262,13 +264,14 @@ totals_by_beat_category <- totals_by_beat_category %>%
          "total21" = "2021",
          "total22" = "2022")
 # add projected22 column to project/forecast annual number
-totals_by_beat_category$projected22 <- totals_by_beat_category$total22*12
+totals_by_beat_category$projected22 <- round(totals_by_beat_category$total22*days_so_far_2022,0)
 # add zeros where there were no crimes tallied that year
 totals_by_beat_category[is.na(totals_by_beat_category)] <- 0
 # calculate increases
 totals_by_beat_category$inc_19to21 <- round(totals_by_beat_category$total21/totals_by_beat_category$total19*100-100,1)
 totals_by_beat_category$inc_19to22sofar <- round(totals_by_beat_category$projected22/totals_by_beat_category$total19*100-100,1)
 totals_by_beat_category$inc_21to22sofar <- round(totals_by_beat_category$projected22/totals_by_beat_category$total21*100-100,1)
+totals_by_beat_category$inc_3yearto22sofar <- round(totals_by_beat_category$projected22/((totals_by_beat_category$total19+totals_by_beat_category$total20+totals_by_beat_category$total21)/3)*100-100,0)
 # add population for beats
 totals_by_beat_category <- full_join(beats,totals_by_beat_category,by="beat") 
 # calculate the beat by beat rates PER 1K people
@@ -277,7 +280,7 @@ totals_by_beat_category$rate20 <- round(totals_by_beat_category$total20/totals_b
 totals_by_beat_category$rate21 <- round(totals_by_beat_category$total21/totals_by_beat_category$population*100000,1)
 totals_by_beat_category$rate22 <- round(totals_by_beat_category$projected22/totals_by_beat_category$population*100000,1)
 # calculate a multiyear rate
-totals_by_beat_category$rate_multiyear <- round(((totals_by_beat_category$total19+totals_by_beat_category$total20+totals_by_beat_category$total21+totals_by_beat_category$total22)/37*12)/totals_by_beat_category$population*100000,1)
+totals_by_beat_category$rate_multiyear <- round(((totals_by_beat_category$total19+totals_by_beat_category$total20+totals_by_beat_category$total21)/3)/totals_by_beat_category$population*100000,1)
 # for map/table making purposes, changing Inf and NaN in calc fields to NA
 totals_by_beat_category <- totals_by_beat_category %>%
   mutate(across(where(is.numeric), ~na_if(., Inf)))
@@ -296,13 +299,14 @@ totals_by_beat_type <- totals_by_beat_type %>%
          "total21" = "2021",
          "total22" = "2022")
 # add projected22 column to project/forecast annual number
-totals_by_beat_type$projected22 <- totals_by_beat_type$total22*12
+totals_by_beat_type$projected22 <- round(totals_by_beat_type$total22*days_so_far_2022,0)
 # add zeros where there were no crimes tallied that year
 totals_by_beat_type[is.na(totals_by_beat_type)] <- 0
 # calculate increases
 totals_by_beat_type$inc_19to21 <- round(totals_by_beat_type$total21/totals_by_beat_type$total19*100-100,1)
 totals_by_beat_type$inc_19to22sofar <- round(totals_by_beat_type$projected22/totals_by_beat_type$total19*100-100,1)
 totals_by_beat_type$inc_21to22sofar <- round(totals_by_beat_type$projected22/totals_by_beat_type$total21*100-100,1)
+totals_by_beat_type$inc_3yearto22sofar <- round(totals_by_beat_type$projected22/((totals_by_beat_type$total19+totals_by_beat_type$total20+totals_by_beat_type$total21)/3)*100-100,0)
 # add population for beats
 totals_by_beat_type <- full_join(beats,totals_by_beat_type,by="beat") 
 # calculate the beat by beat rates PER 1K people
@@ -311,7 +315,7 @@ totals_by_beat_type$rate20 <- round(totals_by_beat_type$total20/totals_by_beat_t
 totals_by_beat_type$rate21 <- round(totals_by_beat_type$total21/totals_by_beat_type$population*100000,1)
 totals_by_beat_type$rate22 <- round(totals_by_beat_type$projected22/totals_by_beat_type$population*100000,1)
 # calculate a multiyear rate
-totals_by_beat_type$rate_multiyear <- round(((totals_by_beat_type$total19+totals_by_beat_type$total20+totals_by_beat_type$total21+totals_by_beat_type$total22)/37*12)/totals_by_beat_type$population*100000,1)
+totals_by_beat_type$rate_multiyear <- round(((totals_by_beat_type$total19+totals_by_beat_type$total20+totals_by_beat_type$total21)/3)/totals_by_beat_type$population*100000,1)
 # for map/table making purposes, changing Inf and NaN in calc fields to NA
 totals_by_beat_type <- totals_by_beat_type %>%
   mutate(across(where(is.numeric), ~na_if(., Inf)))
@@ -325,8 +329,8 @@ autothefts_by_beat <- totals_by_beat_detailed %>% filter(nibrs_class=="240")
 
 # MURDER MAP
 # Set bins for numbers of crimes for murders map
-murderbins <- c(0,median(murders_by_beat$rate21,na.rm = TRUE)/2,median(murders_by_beat$rate21,na.rm = TRUE),median(murders_by_beat$rate21,na.rm = TRUE)*2,median(murders_by_beat$rate21,na.rm = TRUE)*3,200)
-murderpal <- colorBin(c("#99a0a5","#667f99","#00318b","#0058f6","#ffba00"), murders_by_beat$rate21, bins = murderbins)
+murderbins <- c(0,median(murders_by_beat$rate_multiyear,na.rm = TRUE)/2,median(murders_by_beat$rate_multiyear,na.rm = TRUE),median(murders_by_beat$rate_multiyear,na.rm = TRUE)*2,median(murders_by_beat$rate_multiyear,na.rm = TRUE)*3,200)
+murderpal <- colorBin(c("#99a0a5","#667f99","#00318b","#0058f6","#ffba00"), murders_by_beat$rate_multiyear, bins = murderbins)
 # Create quick labels for murders map
 murderlabel <- paste(sep="","<style>
 table {
@@ -340,7 +344,7 @@ tr {
 }
 
 h5 {
-  font-size: 28px;
+  font-size: 24px;
   margin-top: 0;
   margin-bottom: 0;
   color: #0058f6;
@@ -384,9 +388,9 @@ murders_by_beat$rate19,
 "</td>
 				<!-- Insert cell to cross/span 
 				multi rows -->
-				<td rowspan='4'>Up<h5>",
-murders_by_beat$total21,
-				"%</h5>over last<br>12 mos.</td>
+				<td rowspan='4'>2022<br>projection is<br><h5>",
+murders_by_beat$inc_3yearto22sofar,
+				"%</h5>compared<br>to 3-year<br>average</td>
 			</tr>
 			<tr>
 				<td>2020</td>
@@ -426,19 +430,20 @@ houston_murder_map <- leaflet(murders_by_beat) %>%
   addProviderTiles(provider = "CartoDB.Positron") %>%
   addPolygons(color = "white", popup = murderlabel, weight = 0.5, smoothFactor = 0.5,
               opacity = 0.6, fillOpacity = 0.5,
-              fillColor = ~murderpal(rate21)) %>% 
+              fillColor = ~murderpal(rate_multiyear)) %>% 
   addLegend(pal = murderpal, 
-            values = murders_by_beat$rate21, 
+            values = murders_by_beat$rate_multiyear, 
             position = "bottomleft", 
             title = "Homicides Per 100K people<br>
-See: <a href='https://abcotvdata.github.io/safetytracker_houston/sexualassault_rate.html'>Sexual Assault</a><br>
+            Over Last Three Years (2019-2021)<br>
+See also:<br><a href='https://abcotvdata.github.io/safetytracker_houston/sexualassault_rate.html'>Sexual Assault</a><br>
 <a href='https://abcotvdata.github.io/safetytracker_houston/autothefts_rate.html'>Auto Thefts</a>")
 houston_murder_map
 
 # SEXUAL ASSAULTS MAP
 # Set bins for numbers of crimes for murders map
-sexualassaultbins <- c(0,median(sexualassaults_by_beat$rate21,na.rm = TRUE)/2,median(sexualassaults_by_beat$rate21,na.rm = TRUE),median(sexualassaults_by_beat$rate21,na.rm = TRUE)*2,median(sexualassaults_by_beat$rate21,na.rm = TRUE)*3,300)
-sexualassaultpal <- colorBin(c("#99a0a5","#667f99","#00318b","#0058f6","#ffba00"), sexualassaults_by_beat$rate21, bins = sexualassaultbins)
+sexualassaultbins <- c(0,median(sexualassaults_by_beat$rate_multiyear,na.rm = TRUE)/2,median(sexualassaults_by_beat$rate_multiyear,na.rm = TRUE),median(sexualassaults_by_beat$rate_multiyear,na.rm = TRUE)*2,median(sexualassaults_by_beat$rate_multiyear,na.rm = TRUE)*3,300)
+sexualassaultpal <- colorBin(c("#99a0a5","#667f99","#00318b","#0058f6","#ffba00"), sexualassaults_by_beat$rate_multiyear, bins = sexualassaultbins)
 # Create quick labels for sexualassaults map
 sexualassaultlabel <- paste(sep="","<style>
 table {
@@ -452,7 +457,7 @@ tr {
 }
 
 h5 {
-  font-size: 28px;
+  font-size: 24px;
   margin-top: 0;
   margin-bottom: 0;
   color: #0058f6;
@@ -496,9 +501,9 @@ sexualassaults_by_beat$rate19,
 "</td>
 				<!-- Insert cell to cross/span 
 				multi rows -->
-				<td rowspan='4'>Up<h5>",
-sexualassaults_by_beat$total21,
-"%</h5>over last<br>12 mos.</td>
+				<td rowspan='4'>2022<br>projection is<br><h5>",
+sexualassaults_by_beat$inc_3yearto22sofar,
+				"%</h5>compared<br>to 3-year<br>average</td>
 			</tr>
 			<tr>
 				<td>2020</td>
@@ -536,20 +541,21 @@ houston_sexualassault_map <- leaflet(sexualassaults_by_beat) %>%
   addProviderTiles(provider = "CartoDB.Positron") %>%
   addPolygons(color = "white", popup = sexualassaultlabel, weight = 0.5, smoothFactor = 0.5,
               opacity = 0.6, fillOpacity = 0.5,
-              fillColor = ~sexualassaultpal(rate21)) %>% 
+              fillColor = ~sexualassaultpal(rate_multiyear)) %>% 
   addLegend(pal = sexualassaultpal, 
-            values = sexualassaults_by_beat$rate21, 
+            values = sexualassaults_by_beat$rate_multiyear, 
             position = "bottomleft", 
             title = "Sexual Assaults Per 100K people<br>
-See: <a href='https://abcotvdata.github.io/safetytracker_houston/murder_rate.html'>Homicides</a><br>
+            Over Last Three Years (2019-2021)<br>
+See also:<br><a href='https://abcotvdata.github.io/safetytracker_houston/murder_rate.html'>Homicides</a><br>
 <a href='https://abcotvdata.github.io/safetytracker_houston/autothefts_rate.html'>Auto Thefts</a>")
 houston_sexualassault_map
 
 
 # AUTO THEFTS MAP
 # Set bins for numbers of crimes for murders map
-autotheftbins <- c(0,median(autothefts_by_beat$rate21,na.rm = TRUE)/2,median(autothefts_by_beat$rate21,na.rm = TRUE),median(autothefts_by_beat$rate21,na.rm = TRUE)*2,median(autothefts_by_beat$rate21,na.rm = TRUE)*3,3000)
-autotheftpal <- colorBin(c("#99a0a5","#667f99","#00318b","#0058f6","#ffba00"), autothefts_by_beat$rate21, bins = autotheftbins)
+autotheftbins <- c(0,median(autothefts_by_beat$rate_multiyear,na.rm = TRUE)/2,median(autothefts_by_beat$rate_multiyear,na.rm = TRUE),median(autothefts_by_beat$rate_multiyear,na.rm = TRUE)*2,median(autothefts_by_beat$rate_multiyear,na.rm = TRUE)*3,3000)
+autotheftpal <- colorBin(c("#99a0a5","#667f99","#00318b","#0058f6","#ffba00"), autothefts_by_beat$rate_multiyear, bins = autotheftbins)
 # Create quick labels for autothefts map
 autotheftlabel <- paste(sep="","<style>
 table {
@@ -563,7 +569,7 @@ tr {
 }
 
 h5 {
-  font-size: 28px;
+  font-size: 24px;
   margin-top: 0;
   margin-bottom: 0;
   color: #0058f6;
@@ -607,9 +613,9 @@ autothefts_by_beat$rate19,
 "</td>
 				<!-- Insert cell to cross/span 
 				multi rows -->
-				<td rowspan='4'>Up<h5>",
-autothefts_by_beat$total21,
-"%</h5>over last<br>12 mos.</td>
+				<td rowspan='4'>2022<br>projection is<br><h5>",
+autothefts_by_beat$inc_3yearto22sofar,
+"%</h5>compared<br>to 3-year<br>average</td>
 			</tr>
 			<tr>
 				<td>2020</td>
@@ -647,12 +653,13 @@ houston_autotheft_map <- leaflet(autothefts_by_beat) %>%
   addProviderTiles(provider = "CartoDB.Positron") %>%
   addPolygons(color = "white", popup = autotheftlabel, weight = 0.5, smoothFactor = 0.5,
               opacity = 0.6, fillOpacity = 0.5,
-              fillColor = ~autotheftpal(rate21)) %>% 
+              fillColor = ~autotheftpal(rate_multiyear)) %>% 
   addLegend(pal = autotheftpal, 
-            values = autothefts_by_beat$rate21, 
+            values = autothefts_by_beat$rate_multiyear, 
             position = "bottomleft", 
             title = "Auto Thefts Per 100K people<br>
-See: <a href='https://abcotvdata.github.io/safetytracker_houston/murder_rate.html'>Homicides</a><br>
+            Over Last Three Years (2019-2021)<br>
+See also:<br><a href='https://abcotvdata.github.io/safetytracker_houston/murder_rate.html'>Homicides</a><br>
 <a href='https://abcotvdata.github.io/safetytracker_houston/sexualassault_rate.html'>Sexual Assaults</a>")
 
 houston_autotheft_map
