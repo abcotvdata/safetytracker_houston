@@ -440,16 +440,17 @@ L.control.zoom({ position: 'topright' }).addTo(this)
   addLegend(pal = murderpal, 
             opacity = 0.6,
             values = murders_by_beat$rate_multiyear, 
-            position = "bottomleft", 
-            title = "Homicides Per 100K people<br1>
-            Over Last 3 Years (2019-2021)<br>
-See also:<br><a href='https://abcotvdata.github.io/safetytracker_houston/sexualassault_rate.html'>Sexual Assault</a><br>
-<a href='https://abcotvdata.github.io/safetytracker_houston/autothefts_rate.html'>Auto Thefts</a>") %>%
+            position = "bottomright", 
+            title = "Homicides Per 100K people<br>") %>%
   addLegend(position = "topleft", 
             labels = NULL,
             values = NULL,
             colors = NULL,
-            title = "<big>World's Best Map of Houston Homicides</big>")
+            title = "<big>World's Best Map of Houston Homicides</big><br>
+            <small>Please insert some chatter and other html/tools/stuff here</small><br>
+See also: <a href='https://abcotvdata.github.io/safetytracker_houston/sexualassault_rate.html'>Sexual Assault</a> |
+ <a href='https://abcotvdata.github.io/safetytracker_houston/autothefts_rate.html'>Auto Thefts</a> |
+              <a href='https://abcotvdata.github.io/safetytracker_houston/autothefts_rate.html'>Auto Thefts</a>")
 houston_murder_map
 
 
