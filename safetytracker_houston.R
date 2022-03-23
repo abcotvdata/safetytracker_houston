@@ -152,11 +152,14 @@ totals_by_crime_detailed[is.na(totals_by_crime_detailed)] <- 0
 totals_by_crime_detailed$inc_19to21 <- round(totals_by_crime_detailed$total21/totals_by_crime_detailed$total19*100-100,1)
 totals_by_crime_detailed$inc_19to22sofar <- round(totals_by_crime_detailed$projected22/totals_by_crime_detailed$total19*100-100,1)
 totals_by_crime_detailed$inc_21to22sofar <- round(totals_by_crime_detailed$projected22/totals_by_crime_detailed$total21*100-100,1)
+totals_by_crime_detailed$inc_3yearto22sofar <- round(totals_by_crime_detailed$projected22/((totals_by_crime_detailed$total19+totals_by_crime_detailed$total20+totals_by_crime_detailed$total21)/3)*100-100,0)
 # calculate the citywide rates
 totals_by_crime_detailed$rate19 <- round(totals_by_crime_detailed$total19/2304580*100000,1)
 totals_by_crime_detailed$rate20 <- round(totals_by_crime_detailed$total20/2304580*100000,1)
 totals_by_crime_detailed$rate21 <- round(totals_by_crime_detailed$total21/2304580*100000,1)
 totals_by_crime_detailed$rate22 <- round(totals_by_crime_detailed$projected22/2304580*100000,1)
+# calculate a multiyear rate
+totals_by_crime_detailed$rate_multiyear <- round(((totals_by_crime_detailed$total19+totals_by_crime_detailed$total20+totals_by_crime_detailed$total21)/3)/2304580*100000,1)
 
 # Calculate the total of each CATEGORY of crime/incident CITYWIDE
 totals_by_crime_category <- houston_crime %>%
@@ -432,7 +435,7 @@ houston_murder_map <- leaflet(murders_by_beat, options = leafletOptions(zoomCont
   htmlwidgets::onRender("function(el, x) {
 L.control.zoom({ position: 'topright' }).addTo(this)
 }") %>%
-  setView(-95.45, 29.75, zoom = 10) %>% 
+  setView(-95.45, 29.75, zoom = 11) %>% 
   addProviderTiles(provider = "CartoDB.Positron") %>%
   addPolygons(color = "white", popup = murderlabel, weight = 0.5, smoothFactor = 0.5,
               opacity = 0.6, fillOpacity = 0.5,
@@ -447,11 +450,11 @@ L.control.zoom({ position: 'topright' }).addTo(this)
             values = NULL,
             colors = NULL,
             title = "<big>World's Best Map of Houston Homicides</big><br>
-            <small>Please insert some chatter and other html/tools/stuff here</small><br>
+            <small>Please insert some chatter & other html/tools/stuff here<br>
 See also: <a href='https://abcotvdata.github.io/safetytracker_houston/sexualassault_rate.html'>Sexual Assault</a> |
  <a href='https://abcotvdata.github.io/safetytracker_houston/autothefts_rate.html'>Auto Thefts</a> |
               <a href='https://abcotvdata.github.io/safetytracker_houston/autothefts_rate.html'>Burglaries</a>  |
-              <a href='https://abcotvdata.github.io/safetytracker_houston/autothefts_rate.html'>Theft</a>")
+              <a href='https://abcotvdata.github.io/safetytracker_houston/autothefts_rate.html'>Theft</a></small>")
 houston_murder_map
 
 names(providers)
