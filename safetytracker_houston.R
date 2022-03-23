@@ -450,9 +450,11 @@ L.control.zoom({ position: 'topright' }).addTo(this)
             <small>Please insert some chatter and other html/tools/stuff here</small><br>
 See also: <a href='https://abcotvdata.github.io/safetytracker_houston/sexualassault_rate.html'>Sexual Assault</a> |
  <a href='https://abcotvdata.github.io/safetytracker_houston/autothefts_rate.html'>Auto Thefts</a> |
-              <a href='https://abcotvdata.github.io/safetytracker_houston/autothefts_rate.html'>Auto Thefts</a>")
+              <a href='https://abcotvdata.github.io/safetytracker_houston/autothefts_rate.html'>Burglaries</a>  |
+              <a href='https://abcotvdata.github.io/safetytracker_houston/autothefts_rate.html'>Theft</a>")
 houston_murder_map
 
+names(providers)
 
 # SEXUAL ASSAULTS MAP
 # Set bins for numbers of crimes for murders map
