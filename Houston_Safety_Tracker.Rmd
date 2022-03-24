@@ -20,8 +20,9 @@ library(sf)
 library(htmlwidgets)
 library(htmltools)
 ```
-<link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 ```{css, echo=FALSE}
 
           
@@ -36,19 +37,21 @@ h1 {
 }
 
 h2 {
-  font-family: roboto;
+  font-family: times;
+  font-weight: bolder;
     color: black;
-  text-align: left;
-  font-size: 10px;
+  text-align: center;
+  font-size: 16px;
   margin-top: 0;
   margin-bottom: 2;
 }
 
 h3 {
-  font-family: roboto;
-    color: black;
+  font-family: roboto-black;
+  color: #00318b;
+  font-weight: bolder;
   text-align: left;
-  font-size: 15px;
+  font-size: 60px;
     margin-top: 0;
   margin-bottom: 0;
 }
@@ -83,8 +86,8 @@ h6 {
 
 body {
   color: black;
-  font-family: times, serif;
-  font-size: 12pt;
+  font-family: roboto-light;
+  font-size: 8pt;
 }
 
 h7 {
@@ -334,15 +337,29 @@ autothefts_citywide <- totals_by_crime_detailed %>% filter(nibrs_class=="240")
 
 ```
 
+<h2>ABC 13 is tracking murders, and all other crimes, across the city and in your neighborhood. Here's a look at what's happening with rising killings in the city.</h2>
 
-In the first two months of the year, <h7>`r prettyNum(sum(murders_by_beat$total22), big.mark=",")`</h7> people have been murdered across Houston.
-
-The city is on track to experience <h7>`r prettyNum(sum(murders_by_beat$projected22), big.mark=",")`</h7> killings in 2022.
-
-That's more than the total of <h7>`r prettyNum(sum(murders_by_beat$total21), big.mark=",")`</h7> murders in 2021.
-
-If the pace of killings continues throughout 2022, that would be a murder rate of about <h7>`r round(sum(murders_by_beat$projected22)/2304580*100000,1)`</h7> murders per 100,000 residents in the city. The rate just three years ago was <h7>`r murders_citywide$rate19`</h7>.
-
+So far this year<br>
+<h3>`r prettyNum(sum(murders_by_beat$total22), big.mark=",")`<br></h3>
+people have been murdered.<br>
+<br>
+We are on track to reach<br>
+<h3>`r prettyNum(sum(murders_by_beat$projected22), big.mark=",")`<br></h3>
+killings in 2022.<br>
+<br>
+That's more than the<br>
+<h3>`r prettyNum(sum(murders_by_beat$total21), big.mark=",")`<br></h3>
+murders in 2021.<br>
+<br>
+If so, the murder rate would be <br>
+<h3>`r round(sum(murders_by_beat$projected22)/2304580*100000,1)`<br></h3>
+per 100,000 residents.<br>
+<br>
+The rate 3 years ago was <br>
+<h3>`r murders_citywide$rate19`<br></h3>
+per 100,000 residents.<br>
+<br>
+<br>
 However, in the vast majority of neighborhoods in the city, the rate is much lower. In 17 of 118 of the Houston Police Department's, the murder rate was zero last year. In about half of the neighborhoods citywide, the murder rate is less than 10 per 100,000 residents - or less than half of the citywide rate.
 
 ABC13 looked at the data, beat by beat across the city and is providing this look at the murder trends by neighborhood for each of the last four years in the map below.
@@ -439,3 +456,17 @@ L.control.zoom({ position: 'topright' }).addTo(this)
 
 houston_murder_map
 ```
+
+In the first two months of the year, <h7>`r prettyNum(sum(murders_by_beat$total22), big.mark=",")`</h7> people have been murdered across Houston.
+
+The city is on track to experience <h7>`r prettyNum(sum(murders_by_beat$projected22), big.mark=",")`</h7> killings in 2022.
+
+That's more than the total of <h7>`r prettyNum(sum(murders_by_beat$total21), big.mark=",")`</h7> murders in 2021.
+
+If the pace of killings continues throughout 2022, that would be a murder rate of about <h7>`r round(sum(murders_by_beat$projected22)/2304580*100000,1)`</h7> murders per 100,000 residents in the city. The rate just three years ago was <h7>`r murders_citywide$rate19`</h7>.
+
+However, in the vast majority of neighborhoods in the city, the rate is much lower. In 17 of 118 of the Houston Police Department's, the murder rate was zero last year. In about half of the neighborhoods citywide, the murder rate is less than 10 per 100,000 residents - or less than half of the citywide rate.
+
+ABC13 looked at the data, beat by beat across the city and is providing this look at the murder trends by neighborhood for each of the last four years in the map below.
+
+The color-coding of the map is based on the murder rate over 2019, 2020, 2021 and 2022 so far, according to ABC13's analysis of data the Houston Police Department publishes every month online. This map will be updated monthly with the latest data as HPD publishes it.
