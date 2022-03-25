@@ -329,12 +329,12 @@ totals_by_beat_type <- totals_by_beat_type %>%
   mutate(across(where(is.numeric), ~na_if(., "NaN")))
 
 # output various basic tables with crime totals
-write_csv(totals_by_beat_detailed,"totals_by_beat_detailed.csv")
-write_csv(totals_by_beat_category,"totals_by_beat_category.csv")
-write_csv(totals_by_beat_type,"totals_by_beat_type.csv")
-write_csv(totals_by_crime_detailed,"totals_by_crime_detailed.csv")
-write_csv(totals_by_crime_category,"totals_by_crime_category.csv")
-write_csv(totals_by_crime_type,"totals_by_crime_type.csv")
+totals_by_beat_detailed %>% st_drop_geometry() %>% write_csv("totals_by_beat_detailed.csv")
+totals_by_beat_category %>% st_drop_geometry() %>% write_csv("totals_by_beat_category.csv")
+totals_by_beat_type %>% st_drop_geometry() %>% write_csv("totals_by_beat_type.csv")
+totals_by_crime_detailed %>% write_csv("totals_by_crime_detailed.csv")
+totals_by_crime_category %>% write_csv("totals_by_crime_category.csv")
+totals_by_crime_type %>% write_csv("totals_by_crime_type.csv")
 
 
 # Isolate three categories of crimes by beat by year
