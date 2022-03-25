@@ -180,11 +180,14 @@ totals_by_crime_category[is.na(totals_by_crime_category)] <- 0
 totals_by_crime_category$inc_19to21 <- round(totals_by_crime_category$total21/totals_by_crime_category$total19*100-100,1)
 totals_by_crime_category$inc_19to22sofar <- round(totals_by_crime_category$projected22/totals_by_crime_category$total19*100-100,1)
 totals_by_crime_category$inc_21to22sofar <- round(totals_by_crime_category$projected22/totals_by_crime_category$total21*100-100,1)
+totals_by_crime_category$inc_3yearto22sofar <- round(totals_by_crime_category$projected22/((totals_by_crime_category$total19+totals_by_crime_category$total20+totals_by_crime_category$total21)/3)*100-100,0)
 # calculate the citywide rates
 totals_by_crime_category$rate19 <- round(totals_by_crime_category$total19/2304580*100000,1)
 totals_by_crime_category$rate20 <- round(totals_by_crime_category$total20/2304580*100000,1)
 totals_by_crime_category$rate21 <- round(totals_by_crime_category$total21/2304580*100000,1)
 totals_by_crime_category$rate22 <- round(totals_by_crime_category$projected22/2304580*100000,1)
+# calculate a multiyear rate
+totals_by_crime_category$rate_multiyear <- round(((totals_by_crime_category$total19+totals_by_crime_category$total20+totals_by_crime_category$total21)/3)/2304580*100000,1)
 
 # Calculate the total of each TYPE of crime/incident CITYWIDE
 totals_by_crime_type <- houston_crime %>%
@@ -205,11 +208,14 @@ totals_by_crime_type[is.na(totals_by_crime_type)] <- 0
 totals_by_crime_type$inc_19to21 <- round(totals_by_crime_type$total21/totals_by_crime_type$total19*100-100,1)
 totals_by_crime_type$inc_19to22sofar <- round(totals_by_crime_type$projected22/totals_by_crime_type$total19*100-100,1)
 totals_by_crime_type$inc_21to22sofar <- round(totals_by_crime_type$projected22/totals_by_crime_type$total21*100-100,1)
+totals_by_crime_type$inc_3yearto22sofar <- round(totals_by_crime_type$projected22/((totals_by_crime_type$total19+totals_by_crime_type$total20+totals_by_crime_type$total21)/3)*100-100,0)
 # calculate the citywide rates
 totals_by_crime_type$rate19 <- round(totals_by_crime_type$total19/2304580*100000,1)
 totals_by_crime_type$rate20 <- round(totals_by_crime_type$total20/2304580*100000,1)
 totals_by_crime_type$rate21 <- round(totals_by_crime_type$total21/2304580*100000,1)
 totals_by_crime_type$rate22 <- round(totals_by_crime_type$projected22/2304580*100000,1)
+# calculate a multiyear rate
+totals_by_crime_type$rate_multiyear <- round(((totals_by_crime_type$total19+totals_by_crime_type$total20+totals_by_crime_type$total21)/3)/2304580*100000,1)
 
 # ADD BEATS/GEOGRAPHY
 # Geography and populations processed separately in 
