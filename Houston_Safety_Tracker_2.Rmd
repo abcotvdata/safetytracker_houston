@@ -172,7 +172,7 @@ th {
    .card p {
    font-family: roboto;
    text-align: center;
-   font-size: 15px;
+   font-size: 14px;
    }
    .cardContainer:after {
       content: "";
@@ -410,9 +410,9 @@ autothefts_citywide <- totals_by_crime_detailed %>% filter(nibrs_class=="240")
 people have been murdered.</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
-<p>We are on track to reach<br>
-<h3>`r prettyNum(sum(murders_by_beat$projected22), big.mark=",")`<br></h3><p>
-killings in 2022.</p>
+<p>We are on track to reach<br></p>
+<h3>`r prettyNum(sum(murders_by_beat$projected22), big.mark=",")`<br></h3>
+<p>killings in 2022.</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>That's more than the<br>
@@ -432,7 +432,7 @@ ABC13 looked at the data, beat by beat across the city and is providing this loo
 
 The color-coding of the map is based on the murder rate over 2019, 2020, 2021 and 2022 so far, according to ABC13's analysis of data the Houston Police Department publishes every month online. This map will be updated monthly with the latest data as HPD publishes it.
 
-```{r cars, echo=FALSE,out.width='100%'}
+```{r cars, echo=FALSE,out.width='100%',out.height='600'}
 # MURDER MAP
 # Set bins for numbers of crimes for murders map
 murderbins <- c(0,median(murders_by_beat$rate_multiyear,na.rm = TRUE)/2,median(murders_by_beat$rate_multiyear,na.rm = TRUE),median(murders_by_beat$rate_multiyear,na.rm = TRUE)*2,median(murders_by_beat$rate_multiyear,na.rm = TRUE)*3,200)
@@ -499,8 +499,8 @@ houston_murder_map <- leaflet(murders_by_beat, options = leafletOptions(zoomCont
   htmlwidgets::onRender("function(el, x) {
 L.control.zoom({ position: 'topright' }).addTo(this)
 }") %>%
-  setView(-95.45, 29.75, zoom = 10) %>% 
-  addProviderTiles(provider = "CartoDB.Positron") %>%
+  setView(-95.4, 29.75, zoom = 12) %>% 
+  addProviderTiles(provider = "Stamen.TonerLite") %>%
   addPolygons(color = "white", popup = murderlabel, weight = 0.5, smoothFactor = 0.5,
               opacity = 0.6, fillOpacity = 0.5,
               fillColor = ~murderpal(rate_multiyear)) %>% 
