@@ -65,6 +65,62 @@ rm(beats_withpop)
 # Test aggregated population total for beats vs city population reported by Census
 sum(beats$population) # tally is 2.29M # city's reported pop is 2.32M in 2020; this works for our purposes
 
+# Adding place descriptions of the beats
+beats$placename <- case_when(beats$beat == "1A10" ~ "Downtown Central Business District",
+                        beats$beat == "1A20" ~ "Fourth Ward, Avondale, Westmoreland",
+                        beats$beat == "1A30" ~ "Cherryhurst, Mandell Place, Montrose",
+                        beats$beat == "1A40" ~ "Tall Timbers, Royden Oaks, River Oaks, Avalon Place, Oak Estates",
+                        beats$beat == "1A50" ~ "Post Oak Park, Afton Oaks, Highland Village, Weslayan, Greenway Plaza, The Compaq Center",
+                        beats$beat == "2A10" ~ "Irvington, Ryon",
+                        beats$beat == "2A20" ~ "Sunset Heights, Brooksmith, Stude",
+                        beats$beat == "2A30" ~ "Houston Heights, Norhill, Studemont",
+                        beats$beat == "2A40" ~ "Old Sixth Ward, First Ward",
+                        beats$beat == "2A50" ~ "Memorial Park, West End, Ashbury, Cottage Grove",
+                        beats$beat == "2A60" ~ "Westport, Holly Park, Lazy Brook, Citadel, Shady Acres, Timbergrove",
+                        beats$beat == "3B10" ~ "Northwest Mall, Brookhollow, White Oak Acres, Oak Forest, Langwood",
+                        beats$beat == "3B30" ~ "White Oak Acres, Brook Hollow, Oak Forest, Garden Oaks, Shepherd Park Plaza",
+                        beats$beat == "3B40" ~ "Independence Heights, Melrose, Graceland",
+                        beats$beat == "3B50" ~ "Northline Mall, Stratton Place, Oakwood, Colonial Gardens, Lindale, Junction City",
+                        beats$beat == "6B10" ~ "York Plaza, Pembrook Place, Hawthorne Place",
+                        beats$beat == "6B20" ~ "Highland Heights, Oakdale, Melrose Gardens",
+                        beats$beat == "6B30" ~ "Woodland Trails, Oaks of Inwood, Bayou Bend, Cole Creek Manor, Inwood Forest",
+                        beats$beat == "6B40" ~ "Highland Gardens, Highland Heights, North Plaza",
+                        beats$beat == "6B50" ~ "Aldine, Imperial Valley",
+                        beats$beat == "6B60" ~ "Greenspoint",
+                        beats$beat == "7C10" ~ "Fifth Ward, North Park, Pinecrest",
+                        beats$beat == "7C20" ~ "Huntington Place, Willshire Place, Kashmere Gardens, Liberty Gardens",
+                        beats$beat == "7C30" ~ "Camden Woods, Archers Acres, Croyden Gardens",
+                        beats$beat == "7C40" ~ "Keith-Weiss Park, Farrington Place",
+                        beats$beat == "7C50" ~ "Intercontinental Airport, Northwood, Lakeview Park, Glen Lee",
+                        beats$beat == "8C10" ~ "Tidwell Park, Shady Oak, Buckingham Place",
+                        beats$beat == "8C20" ~ "Houston Gardens, Rosewood, Homestead",
+                        beats$beat == "8C30" ~ "Parkhurst, East Houston, Clairmont Place",
+                        beats$beat == "8C40" ~ "Lake Houston, Greenriver, Knoll, Lake Forest",
+                        beats$beat == "8C50" ~ "Park North, Forest Green, Kentshire Place, Glenwood Forest, Dorchester",
+                        beats$beat == "8C60" ~ "Edgeworth, Northwood Manor, Scenic Woods",
+                        beats$beat == "9C10" ~ "Port of Houston, Clinton Park, Pleasantville, Fidelity Manor",
+                        beats$beat == "9C20" ~ "Denver Harbor, Houston Harbor",
+                        beats$beat == "9C30" ~ "City Park East, Wynnewood Acres, Wallisville Gardens",
+                        beats$beat == "9C40" ~ "Greens Bayou Estates, Shady Brook, Northshore",
+                        beats$beat == "24C10" ~ "Kingwood",
+                        beats$beat == "24C20" ~ "Kingwood",
+                        beats$beat == "24C30" ~ "Kingwood",
+                        beats$beat == "24C40" ~ "Kingwood",
+                        beats$beat == "24C50" ~ "Kingwood",
+                        beats$beat == "11H10" ~ "Mason Park, Forest Hill, Sunnyland, Central Park",
+                        beats$beat == "11H20" ~ "Harrisburg, Manchester, Pecan Park",
+                        beats$beat == "11H30" ~ "Meadow Brook, Park Place",
+                        beats$beat == "11H40" ~ "Allendale, Oak Meadows",
+                        beats$beat == "11H50" ~ "Meadow Creek, Ferndale Addition, Glenbrook Industrial",
+                        beats$beat == "XXH10" ~ "Murder",
+                        beats$beat == "XXH20" ~ "Murder",
+                        beats$beat == "XXH30" ~ "Murder",
+                        beats$beat == "XXH40" ~ "Murder",
+                        beats$beat == "XXH50" ~ "Murder",
+                        TRUE ~ "Unknown")
+
+
+
 
 # Calculate District population totals to review vs. Houston PD web site
 district_pops <- beats %>%

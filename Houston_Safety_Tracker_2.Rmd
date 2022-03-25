@@ -31,7 +31,7 @@ library(htmltools)
   color: #00318b;
   font-weight: 900;
   text-align: center;
-  font-size: 40px;
+  font-size: 45px;
     padding: 5px;
 }
 
@@ -55,11 +55,11 @@ h1 {
 }
 
 h2 {
-  font-family: times;
-  font-weight: bolder;
+  font-family: roboto;
+  font-weight: 500;
   color: black;
   text-align: center;
-  font-size: 16px;
+  font-size: 18px;
   margin-top: 0;
   margin-bottom: 2;
 }
@@ -77,8 +77,9 @@ h3 {
 h4 {
   font-family: roboto;
   color: black;
+  font-weight: 300;
   text-align: left;
-  font-size: 9px;
+  font-size: 10px;
   margin-top: 0;
   margin-bottom: 2;
 }
@@ -111,7 +112,7 @@ body {
 
 h7 {
   font-family: roboto;
-  color: #0058f6;
+  color: #00318b;
   font-weight: bolder;
   text-align: left;
   font-size: 16px;
@@ -121,7 +122,7 @@ h7 {
 
 h8 {
   color: white;
-  background-color: #0058f6;
+  background-color: #00318b;
   font-family: roboto;
   border-radius: 20px;
   padding: 2em;
@@ -186,7 +187,7 @@ th {
    }
 ```
 
-```{r beatsdata, include=FALSE, cache=TRUE}
+```{r beatsdata, include=FALSE}
 # Import data underlying this project
 
 # Read in geojson and then transform to sf format
@@ -231,8 +232,62 @@ beats$population <- ifelse(beats$population<1000,0,beats$population)
 # Cleans up unneeded calculation file
 rm(beats_withpop)
 
+beats$placename <- case_when(beats$beat == "1A10" ~ "Downtown Central Business District",
+                        beats$beat == "1A20" ~ "Fourth Ward, Avondale, Westmoreland",
+                        beats$beat == "1A30" ~ "Cherryhurst, Mandell Place, Montrose",
+                        beats$beat == "1A40" ~ "Tall Timbers, Royden Oaks, River Oaks, Avalon Place, Oak Estates",
+                        beats$beat == "1A50" ~ "Post Oak Park, Afton Oaks, Highland Village, Weslayan, Greenway Plaza, The Compaq Center",
+                        beats$beat == "2A10" ~ "Irvington, Ryon",
+                        beats$beat == "2A20" ~ "Sunset Heights, Brooksmith, Stude",
+                        beats$beat == "2A30" ~ "Houston Heights, Norhill, Studemont",
+                        beats$beat == "2A40" ~ "Old Sixth Ward, First Ward",
+                        beats$beat == "2A50" ~ "Memorial Park, West End, Ashbury, Cottage Grove",
+                        beats$beat == "2A60" ~ "Westport, Holly Park, Lazy Brook, Citadel, Shady Acres, Timbergrove",
+                        beats$beat == "3B10" ~ "Northwest Mall, Brookhollow, White Oak Acres, Oak Forest, Langwood",
+                        beats$beat == "3B30" ~ "White Oak Acres, Brook Hollow, Oak Forest, Garden Oaks, Shepherd Park Plaza",
+                        beats$beat == "3B40" ~ "Independence Heights, Melrose, Graceland",
+                        beats$beat == "3B50" ~ "Northline Mall, Stratton Place, Oakwood, Colonial Gardens, Lindale, Junction City",
+                        beats$beat == "6B10" ~ "York Plaza, Pembrook Place, Hawthorne Place",
+                        beats$beat == "6B20" ~ "Highland Heights, Oakdale, Melrose Gardens",
+                        beats$beat == "6B30" ~ "Woodland Trails, Oaks of Inwood, Bayou Bend, Cole Creek Manor, Inwood Forest",
+                        beats$beat == "6B40" ~ "Highland Gardens, Highland Heights, North Plaza",
+                        beats$beat == "6B50" ~ "Aldine, Imperial Valley",
+                        beats$beat == "6B60" ~ "Greenspoint",
+                        beats$beat == "7C10" ~ "Fifth Ward, North Park, Pinecrest",
+                        beats$beat == "7C20" ~ "Huntington Place, Willshire Place, Kashmere Gardens, Liberty Gardens",
+                        beats$beat == "7C30" ~ "Camden Woods, Archers Acres, Croyden Gardens",
+                        beats$beat == "7C40" ~ "Keith-Weiss Park, Farrington Place",
+                        beats$beat == "7C50" ~ "Intercontinental Airport, Northwood, Lakeview Park, Glen Lee",
+                        beats$beat == "8C10" ~ "Tidwell Park, Shady Oak, Buckingham Place",
+                        beats$beat == "8C20" ~ "Houston Gardens, Rosewood, Homestead",
+                        beats$beat == "8C30" ~ "Parkhurst, East Houston, Clairmont Place",
+                        beats$beat == "8C40" ~ "Lake Houston, Greenriver, Knoll, Lake Forest",
+                        beats$beat == "8C50" ~ "Park North, Forest Green, Kentshire Place, Glenwood Forest, Dorchester",
+                        beats$beat == "8C60" ~ "Edgeworth, Northwood Manor, Scenic Woods",
+                        beats$beat == "9C10" ~ "Port of Houston, Clinton Park, Pleasantville, Fidelity Manor",
+                        beats$beat == "9C20" ~ "Denver Harbor, Houston Harbor",
+                        beats$beat == "9C30" ~ "City Park East, Wynnewood Acres, Wallisville Gardens",
+                        beats$beat == "9C40" ~ "Greens Bayou Estates, Shady Brook, Northshore",
+                        beats$beat == "24C10" ~ "Kingwood",
+                        beats$beat == "24C20" ~ "Kingwood",
+                        beats$beat == "24C30" ~ "Kingwood",
+                        beats$beat == "24C40" ~ "Kingwood",
+                        beats$beat == "24C50" ~ "Kingwood",
+                        beats$beat == "11H10" ~ "Mason Park, Forest Hill, Sunnyland, Central Park",
+                        beats$beat == "11H20" ~ "Harrisburg, Manchester, Pecan Park",
+                        beats$beat == "11H30" ~ "Meadow Brook, Park Place",
+                        beats$beat == "11H40" ~ "Allendale, Oak Meadows",
+                        beats$beat == "11H50" ~ "Meadow Creek, Ferndale Addition, Glenbrook Industrial",
+                        beats$beat == "XXH10" ~ "Murder",
+                        beats$beat == "XXH20" ~ "Murder",
+                        beats$beat == "XXH30" ~ "Murder",
+                        beats$beat == "XXH40" ~ "Murder",
+                        beats$beat == "XXH50" ~ "Murder",
+                        TRUE ~ "Unknown")
+
+
 ```
-```{r crimedata, include=FALSE, cache=TRUE}
+```{r crimedata, include=FALSE}
 
 # Import data underlying this project
 houston_crime <- read_csv("data/latest/houston_crime.csv", 
@@ -409,17 +464,17 @@ autothefts_citywide <- totals_by_crime_detailed %>% filter(nibrs_class=="240")
 <h3>`r prettyNum(sum(murders_by_beat$total22), big.mark=",")`<br></h3><p>
 people have been murdered.</p>
 </div>
-<div class="card" style="background-color:#99a0a5;">
+<div class="card" style="background-color:#667f99;">
 <p>We are on track to reach<br></p>
 <h3>`r prettyNum(sum(murders_by_beat$projected22), big.mark=",")`<br></h3>
 <p>killings in 2022.</p>
 </div>
-<div class="card" style="background-color:#99a0a5;">
+<div class="card" style="background-color:#0d1721;">
 <p>That's more than the<br>
 <h3>`r prettyNum(sum(murders_by_beat$total21), big.mark=",")`<br></h3><p>
 murders in 2021.</p>
 </div>
-<div class="card" style="background-color:#99a0a5;">
+<div class="card" style="background-color:#f2f2f2; color:black;">
 <p>The murder rate would be <br>
 <h3>`r round(sum(murders_by_beat$projected22)/2304580*100000,1)`<br></h3><p>
 per 100,000 people in 2022.</p>
@@ -439,7 +494,11 @@ murderbins <- c(0,median(murders_by_beat$rate_multiyear,na.rm = TRUE)/2,median(m
 murderpal <- colorBin(c("#99a0a5","#667f99","#00318b","#0058f6","#ffba00"), murders_by_beat$rate_multiyear, bins = murderbins)
 # Create quick labels for murders map
 murderlabel <- paste(sep="","<table>
-<h7>Houston P.D. Beat #",murders_by_beat$beat,"</h7><br>Estimated Population: ",prettyNum(murders_by_beat$population, big.mark=','),"<br>
+<h7>Houston P.D. Beat #",
+murders_by_beat$beat,
+"</h7><br><h4>",
+murders_by_beat$placename,
+"<br>Estimated Population: ",prettyNum(murders_by_beat$population, big.mark=','),"</h4><br>
       <tr>
 				<th>Year</th>
 				<th>Total</th>
