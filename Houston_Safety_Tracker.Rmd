@@ -495,7 +495,8 @@ killings in 2022.<br>
 <center>That's more than the<br>
 <h3><center>`r prettyNum(sum(murders_by_beat$total21), big.mark=",")`<br></h3>
 murders in 2021.<br>
-<br></td></tr>
+</td>
+</tr>
 <tr>
 <td><center>If so, the murder rate would be <br>
 <h3><center>`r round(sum(murders_by_beat$projected22)/2304580*100000,1)`<br></h3>
@@ -513,6 +514,5 @@ per 100,000 residents.<br>
 </td>
 </tr>
 </table>
-<br>
 <br>
 However, in the vast majority of neighborhoods in the city, the rate is much lower. In 17 of 118 of the Houston Police Department's, the murder rate was zero last year. In about half of the neighborhoods citywide, the murder rate is less than 10 per 100,000 residents - or less than half of the citywide rate.
