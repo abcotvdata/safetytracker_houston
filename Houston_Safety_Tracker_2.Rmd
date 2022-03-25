@@ -19,7 +19,7 @@ library(sf)
 library(htmlwidgets)
 library(htmltools)
 
-# rmarkdown::render('Houston_Safety_Tracker.Rmd', output_file = 'docs/Houston_Safety_Tracker.html')
+# rmarkdown::render('Houston_Safety_Tracker2.Rmd', output_file = 'docs/Houston_Safety_Tracker2.html')
 ```
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
@@ -68,8 +68,8 @@ h3 {
   font-family: roboto;
   color: #00318b;
   font-weight: 900;
-  text-align: left;
-  font-size: 80px;
+  text-align: center;
+  font-size: 70px;
     margin-top: 0;
   margin-bottom: 0;
 }
@@ -158,11 +158,12 @@ th {
       padding: 10px;
       border-radius: 10px;
       margin: 10px;
-      height: 200px;
+      height: 160px;
    }
    .card p {
    font-family: roboto;
-   font-size: 18px;
+   text-align: center;
+   font-size: 15px;
    }
    .cardContainer:after {
       content: "";
@@ -393,26 +394,28 @@ autothefts_citywide <- totals_by_crime_detailed %>% filter(nibrs_class=="240")
 
 <h2>ABC 13 is tracking murders, and other crimes, across the city and in your neighborhood. Here's a look at what's happening with rising killings in the city.</h2>
 
-So far this year<br>
-<h3>`r prettyNum(sum(murders_by_beat$total22), big.mark=",")`<br></h3>
-people have been murdered.<br>
-<br>
-We are on track to reach<br>
-<h3>`r prettyNum(sum(murders_by_beat$projected22), big.mark=",")`<br></h3>
-killings in 2022.<br>
-<br>
-That's more than the<br>
-<h3>`r prettyNum(sum(murders_by_beat$total21), big.mark=",")`<br></h3>
-murders in 2021.<br>
-<br>
-If so, the murder rate would be <br>
-<h3>`r round(sum(murders_by_beat$projected22)/2304580*100000,1)`<br></h3>
-per 100,000 residents.<br>
-<br>
-The rate 3 years ago was <br>
-<h3>`r murders_citywide$rate19`<br></h3>
-per 100,000 residents.<br>
-<br>
+<div class="cardContainer">
+<div class="card" style="background-color:#99a0a5;">
+<p>So far this year<br>
+<h3>`r prettyNum(sum(murders_by_beat$total22), big.mark=",")`<br></h3><p>
+people have been murdered.</p>
+</div>
+<div class="card" style="background-color:#99a0a5;">
+<p>We are on track to reach<br>
+<h3>`r prettyNum(sum(murders_by_beat$projected22), big.mark=",")`<br></h3><p>
+killings in 2022.</p>
+</div>
+<div class="card" style="background-color:#99a0a5;">
+<p>That's more than the<br>
+<h3>`r prettyNum(sum(murders_by_beat$total21), big.mark=",")`<br></h3><p>
+murders in 2021.</p>
+</div>
+<div class="card" style="background-color:#99a0a5;">
+<p>The murder rate would be <br>
+<h3>`r round(sum(murders_by_beat$projected22)/2304580*100000,1)`<br></h3><p>
+per 100,000 people in 2022.</p>
+</div>
+</div>
 <br>
 However, in the vast majority of neighborhoods in the city, the rate is much lower. In 17 of 118 of the Houston Police Department's, the murder rate was zero last year. In about half of the neighborhoods citywide, the murder rate is less than 10 per 100,000 residents - or less than half of the citywide rate.
 
@@ -558,3 +561,9 @@ Here's a quick look at a datawrapper embed
 <iframe title="Houston Neighborhood Crime Test Table" aria-label="Table" id="datawrapper-chart-T23TE" src="https://datawrapper.dwcdn.net/T23TE/4/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="732" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
 </script>
   
+One with the presearch filled in.
+
+<iframe title="Houston Neighborhood Crime Test Table" aria-label="Table" id="datawrapper-chart-T23TE" src="https://datawrapper.dwcdn.net/T23TE/4/?search=Burglary" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="732" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+</script>
+
+
