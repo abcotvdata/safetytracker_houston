@@ -397,7 +397,7 @@ murderlabel <- paste(sep="","<table>
 				<th>Year</th>
 				<th>Total</th>
 				<th>Rate</th>
-				<th></th>
+				<th>Trend</th>
 			</tr>
 			<tr>
 				<td>2019</td>
@@ -409,11 +409,11 @@ murders_by_beat$rate19,
 "</td>
 				<!-- Insert cell to cross/span 
 				multi rows -->
-				<td rowspan='4'>2022<br>projection is",
-ifelse(murders_by_beat$inc_3yearto22sofar>0," up"," down"),
+				<td rowspan='4'>",
+ifelse(murders_by_beat$inc_3yearto22sofar>0,"Up","Down"),
 "<br><h5>",
-murders_by_beat$inc_3yearto22sofar,
-				"%</h5>compared<br>to 3-year<br>average</td>
+ifelse(murders_by_beat$inc_3yearto22sofar>0,murders_by_beat$inc_3yearto22sofar,substring(murders_by_beat$inc_3yearto22sofar,2)),
+				"%</h5>vs. 3-year<br>average</td>
 			</tr>
 			<tr>
 				<td>2020</td>
@@ -498,9 +498,9 @@ murders in 2021.<br>
 </td>
 </tr>
 <tr>
-<td><center>If so, the murder rate would be <br>
+<td><center>At current pace, the murder rate will be <br>
 <h3><center>`r round(sum(murders_by_beat$projected22)/2304580*100000,1)`<br></h3>
-per 100,000 residents.<br>
+per 100,000 residents in 2022.<br>
 </td>
 <td>
 <center>The rate last year was <br>
