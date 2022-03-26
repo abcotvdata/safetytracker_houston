@@ -464,17 +464,17 @@ autothefts_citywide <- totals_by_crime_detailed %>% filter(nibrs_class=="240")
 <h3>`r prettyNum(sum(murders_by_beat$total22), big.mark=",")`<br></h3><p>
 people have been murdered.</p>
 </div>
-<div class="card" style="background-color:#667f99;">
+<div class="card" style="background-color:#99a0a5;">
 <p>We are on track to reach<br></p>
 <h3>`r prettyNum(sum(murders_by_beat$projected22), big.mark=",")`<br></h3>
 <p>killings in 2022.</p>
 </div>
-<div class="card" style="background-color:#0d1721;">
+<div class="card" style="background-color:#99a0a5;">
 <p>That's more than the<br>
 <h3>`r prettyNum(sum(murders_by_beat$total21), big.mark=",")`<br></h3><p>
 murders in 2021.</p>
 </div>
-<div class="card" style="background-color:#f2f2f2; color:black;">
+<div class="card" style="background-color:#99a0a5;">
 <p>The murder rate would be <br>
 <h3>`r round(sum(murders_by_beat$projected22)/2304580*100000,1)`<br></h3><p>
 per 100,000 people in 2022.</p>
@@ -598,3 +598,28 @@ However, in the vast majority of neighborhoods in the city, the rate is much low
 
 <iframe title="Houston Neighborhood Crime Test Table" aria-label="Table" id="datawrapper-chart-T23TE" src="https://datawrapper.dwcdn.net/T23TE/6/?search=Kidnapping" scrollings="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="732" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
 </script>
+
+
+<div class="cardContainer">
+<div class="card" style="background-color:#99a0a5;">
+<p>So far this year<br>
+<h3>`r prettyNum(sum(murders_by_beat$total22), big.mark=",")`<br></h3><p>
+people have been murdered.</p>
+</div>
+<div class="card" style="background-color:#667f99;">
+<p>We are on track to reach<br></p>
+<h3>`r prettyNum(sum(murders_by_beat$projected22), big.mark=",")`<br></h3>
+<p>killings in 2022.</p>
+</div>
+<div class="card" style="background-color:#0d1721;">
+<p>That's more than the<br>
+<h3>`r prettyNum(sum(murders_by_beat$total21), big.mark=",")`<br></h3><p>
+murders in 2021.</p>
+</div>
+<div class="card" style="background-color:#f2f2f2; color:black;">
+<p>The murder rate would be <br>
+<h3>`r round(sum(murders_by_beat$projected22)/2304580*100000,1)`<br></h3><p>
+per 100,000 people in 2022.</p>
+</div>
+</div>
+<br>
