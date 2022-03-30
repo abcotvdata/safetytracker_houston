@@ -704,3 +704,18 @@ houston_autotheft_map
 # saveWidget(houston_autotheft_map, 'autothefts_rate.html', title = "ABC13 Neighborhood Safety Tracker", selfcontained = TRUE, libdir=NULL)
 #saveWidget(houston_murder_map, 'docs/murder_rate.html', title = "ABC13 Neighborhood Safety Tracker", selfcontained = TRUE)
 #saveWidget(houston_sexualassault_map, 'docs/sexualassaults_rate.html', title = "ABC13 Neighborhood Safety Tracker", selfcontained = TRUE)
+
+where_murders_happen <- houston_crime %>%
+  filter(nibrs_class=="09A") %>%
+  group_by(premise,year) %>%
+  summarise(count=n()) %>%
+  pivot_wider(names_from=year, values_from=count)
+
+when_murders_happen <- houston_crime %>%
+  filter(nibrs_class=="09A") %>%
+  group_by(hour) %>%
+  summarise(count=n())
+
+
+
+

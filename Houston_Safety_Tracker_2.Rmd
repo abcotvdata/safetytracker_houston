@@ -187,7 +187,7 @@ th {
    }
 ```
 
-```{r beatsdata, include=FALSE}
+```{r beatsdata, include=FALSE, cache=TRUE}
 # Import data underlying this project
 
 # Read in geojson and then transform to sf format
@@ -232,6 +232,7 @@ beats$population <- ifelse(beats$population<1000,0,beats$population)
 # Cleans up unneeded calculation file
 rm(beats_withpop)
 
+# Adding place descriptions of the beats
 beats$placename <- case_when(beats$beat == "1A10" ~ "Downtown Central Business District",
                         beats$beat == "1A20" ~ "Fourth Ward, Avondale, Westmoreland",
                         beats$beat == "1A30" ~ "Cherryhurst, Mandell Place, Montrose",
@@ -251,13 +252,13 @@ beats$placename <- case_when(beats$beat == "1A10" ~ "Downtown Central Business D
                         beats$beat == "6B20" ~ "Highland Heights, Oakdale, Melrose Gardens",
                         beats$beat == "6B30" ~ "Woodland Trails, Oaks of Inwood, Bayou Bend, Cole Creek Manor, Inwood Forest",
                         beats$beat == "6B40" ~ "Highland Gardens, Highland Heights, North Plaza",
-                        beats$beat == "6B50" ~ "Aldine, Imperial Valley",
-                        beats$beat == "6B60" ~ "Greenspoint",
+                        beats$beat == "22B30" ~ "Aldine, Imperial Valley",
+                        beats$beat == "22B20" ~ "Greenspoint",
                         beats$beat == "7C10" ~ "Fifth Ward, North Park, Pinecrest",
                         beats$beat == "7C20" ~ "Huntington Place, Willshire Place, Kashmere Gardens, Liberty Gardens",
                         beats$beat == "7C30" ~ "Camden Woods, Archers Acres, Croyden Gardens",
                         beats$beat == "7C40" ~ "Keith-Weiss Park, Farrington Place",
-                        beats$beat == "7C50" ~ "Intercontinental Airport, Northwood, Lakeview Park, Glen Lee",
+                        beats$beat == "22B40" ~ "Intercontinental Airport, Northwood, Lakeview Park, Glen Lee",
                         beats$beat == "8C10" ~ "Tidwell Park, Shady Oak, Buckingham Place",
                         beats$beat == "8C20" ~ "Houston Gardens, Rosewood, Homestead",
                         beats$beat == "8C30" ~ "Parkhurst, East Houston, Clairmont Place",
@@ -273,21 +274,88 @@ beats$placename <- case_when(beats$beat == "1A10" ~ "Downtown Central Business D
                         beats$beat == "24C30" ~ "Kingwood",
                         beats$beat == "24C40" ~ "Kingwood",
                         beats$beat == "24C50" ~ "Kingwood",
+                        beats$beat == "24C60" ~ "Kingwood",
                         beats$beat == "11H10" ~ "Mason Park, Forest Hill, Sunnyland, Central Park",
                         beats$beat == "11H20" ~ "Harrisburg, Manchester, Pecan Park",
                         beats$beat == "11H30" ~ "Meadow Brook, Park Place",
                         beats$beat == "11H40" ~ "Allendale, Oak Meadows",
                         beats$beat == "11H50" ~ "Meadow Creek, Ferndale Addition, Glenbrook Industrial",
-                        beats$beat == "XXH10" ~ "Murder",
-                        beats$beat == "XXH20" ~ "Murder",
-                        beats$beat == "XXH30" ~ "Murder",
-                        beats$beat == "XXH40" ~ "Murder",
-                        beats$beat == "XXH50" ~ "Murder",
+                        beats$beat == "10H10" ~ "Oak Lawn, Ranger",
+                        beats$beat == "10H20" ~ "Eastwood, Broadmoor",
+                        beats$beat == "10H30" ~ "Near East End",
+                        beats$beat == "10H40" ~ "Midtown",
+                        beats$beat == "10H50" ~ "University of Houston area",
+                        beats$beat == "10H60" ~ "University Oaks, Riverside Terrace, Texas Southern University area",
+                        beats$beat == "10H70" ~ "Texas Medical Center, Hermann Park, Houston Zoo, Miller Outdoor Theatre",
+                        beats$beat == "10H80" ~ "Southampton, Rice University area, Shadow Lawn, Broad Acres",
+                        beats$beat == "12D10" ~ "Almeda Mall, Southridge, Edgebrook, South Houston Gardens",
+                        beats$beat == "12D20" ~ "Sage",
+                        beats$beat == "12D30" ~ "Gulf Palms, Beamer",
+                        beats$beat == "12D40" ~ "Scarsdale, Ellington Field",
+                        beats$beat == "12D50" ~ "Bay Glen, Bay Oaks, Brook Forest, Bay Forest",
+                        beats$beat == "12D60" ~ "NASA's Johnson Space Center, Meadow Green, Oakbrook West, Camino South",
+                        beats$beat == "12D70" ~ "Baybrook Mall, Sterling Knoll",
+                        beats$beat == "13D10" ~ "Gulfgate Mall, Bay Forest, Riverview, Hampshire, Golfcrest, Barnett Stadium",
+                        beats$beat == "13D20" ~ "Fairlawn, Garden Villas, Glenbrook Valley, Santa Rosa",
+                        beats$beat == "13D30" ~ "Allen Farms, Airport Gardens, Hobby Airport area",
+                        beats$beat == "13D40" ~ "Val Verde East, Gulf Meadows, Houston Skyscraper Shadows",
+                        beats$beat == "14D10" ~ "McGregor Terrace, Riverside Terrace",
+                        beats$beat == "14D20" ~ "Blueridge, Sunnyside, Brook Haven, Bayou Estates",
+                        beats$beat == "14D30" ~ "Crestmont, Edgewood, Bellfort Park, Inwood Terrace, Southpark",
+                        beats$beat == "14D40" ~ "South Acres, Shamrock Manor, Hillwood, Cloverland",
+                        beats$beat == "14D50" ~ "Golden Glade Estates, Langston, Almeda Genoa",
+                        beats$beat == "17E10" ~ "Southwest Memorial Hospital, Burnett Bayland Park, Westmoreland",
+                        beats$beat == "17E20" ~ "Houston Baptist University area, Maplewood West",
+                        beats$beat == "17E30" ~ "Braeburn Valley West, Glenshire",
+                        beats$beat == "17E40" ~ "Creekbend, Southwood, Fondren Southwest",
+                        beats$beat == "15E10" ~ "Meyerland Plaza, Robindell, Meyerland, Braeburn Terrace, Maplewood South",
+                        beats$beat == "15E20" ~ "Westbury, Park West, Willow Creek",
+                        beats$beat == "15E30" ~ "Meyer Park, Post Oak Manor, Westwood, Willow Bend, Linkwood",
+                        beats$beat == "15E40" ~ "The Astrodome, Six Flags Astroworld, Lakes at 610, Plaza del Oro",
+                        beats$beat == "16E10" ~ "Canterbury Village, Monarch Estates",
+                        beats$beat == "16E20" ~ "Almeda Plaza, South Glen, Dumbarton Oaks, Briarwick",
+                        beats$beat == "16E30" ~ "Greenpark, Southwest Crossing, Windsor Village",
+                        beats$beat == "16E40" ~ "Chasewood, Willowpark, Briarwick, Ridgemont, Quail Run",
+                        beats$beat == "19G10" ~ "Concourse South, Westwood Mall",
+                        beats$beat == "19G20" ~ "Catalina Square, Bellaire West, Imperial Point",
+                        beats$beat == "19G30" ~ "Rodeo Square, Wildflower Green, Braewood Glen",
+                        beats$beat == "19G40" ~ "Huntington Village, Wellington Park, Leawood, Keegans Glen",
+                        beats$beat == "19G50" ~ "Forum Park, Stancliff, Southwest Park",
+                        beats$beat == "20G10" ~ "Westchase, Woodchase Village, Point West",
+                        beats$beat == "20G20" ~ "Lakeside Estates, City West Place, Rivercrest, Briargrove Park",
+                        beats$beat == "20G30" ~ "West Houston Medical Center, Andrau Airport, Westchase, Westchase Mall",
+                        beats$beat == "20G40" ~ "Lakeview Forest, Lakeside Place, Ashford Village, Southlake",
+                        beats$beat == "20G50" ~ "Nottingham, Yorkshire, Wilchester, Town and Country Village, Memorial City Shopping Center",
+                        beats$beat == "20G60" ~ "Barkers Landing, Fleetwood, Thornwood, Darrel Tully Stadium",
+                        beats$beat == "20G70" ~ "Westpark Village, Ashford Point",
+                        beats$beat == "20G80" ~ "City Limits",
+                        beats$beat == "5F10" ~ "Afton Village, Pine Terrace",
+                        beats$beat == "5F20" ~ "Spring Branch, Schwartz Park",
+                        beats$beat == "5F30" ~ "Fairbanks, Carverdale, Fawndale, Northwest Crossing",
+                        beats$beat == "22B10" ~ "Willowbrook, Willow Chase Park, Centerfield",
+                        beats$beat == "4F10" ~ "Timber Oaks, Shadow Oaks, Long Point Acres",
+                        beats$beat == "4F20" ~ "Claymore Park, Westbranch, Spring Shadows, Kempwood Forest",
+                        beats$beat == "4F30" ~ "Addicks Reservoir Area, Claymore Park, Brittmore Village, Park Ten Place, Mayde Creek Farms",
+                        beats$beat == "18F10" ~ "Saddlebrook, Bayou Woods, Sherwood Forest",
+                        beats$beat == "18F20" ~ "The Galleria, Tanglewood, Riverway, Post Oak",
+                        beats$beat == "18F30" ~ "The Richmond Strip, Briargrove, Post Oak Estates, Westhaven",
+                        beats$beat == "18F40" ~ "Rosewood General Hospital, Woodlake, Briarmeadow",
+                        beats$beat == "18F50" ~ "Tanglewild, Sharpstown Mall, Regency Square",
+                        beats$beat == "18F60" ~ "Sharpstown Country Club, Southway Center",
+                        beats$beat == "21I10" ~ "Hobby Airport",
+                        beats$beat == "21I20" ~ "Hobby Airport",
+                        beats$beat == "21I30" ~ "Hobby Airport",
+                        beats$beat == "21I40" ~ "Hobby Airport",                        beats$beat == "36E10" ~ "xxxx",
+                        beats$beat == "21I50" ~ "Hobby Airport",
+                        beats$beat == "21I60" ~ "Hobby Airport",
+                        beats$beat == "21I70" ~ "Hobby Airport",
+                        beats$beat == "23J40" ~ "Intercontinental Airport",    
+                        beats$beat == "23J50" ~ "Intercontinental Airport",    
                         TRUE ~ "Unknown")
 
 
 ```
-```{r crimedata, include=FALSE}
+```{r crimedata, include=FALSE, cache=TRUE}
 
 # Import data underlying this project
 houston_crime <- read_csv("data/latest/houston_crime.csv", 
@@ -567,7 +635,7 @@ L.control.zoom({ position: 'topright' }).addTo(this)
             opacity = 0.6,
             values = murders_by_beat$rate_multiyear, 
             position = "bottomleft", 
-            title = "Homicides Per 100K people<br>") 
+            title = "Homicides<br>Per 100K people<br>") 
 #  addLegend(position = "topleft", 
 #            labels = NULL,
 #            values = NULL,

@@ -19,7 +19,7 @@ library(sf)
 library(htmlwidgets)
 library(htmltools)
 
-# rmarkdown::render('Houston_Safety_Tracker.Rmd', output_file = 'docs/Houston_Safety_Tracker.html')
+# rmarkdown::render('Houston_Safety_Tracker2.Rmd', output_file = 'docs/Houston_Safety_Tracker2.html')
 ```
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
@@ -31,7 +31,7 @@ library(htmltools)
   color: #00318b;
   font-weight: 900;
   text-align: center;
-  font-size: 40px;
+  font-size: 45px;
     padding: 5px;
 }
 
@@ -55,11 +55,11 @@ h1 {
 }
 
 h2 {
-  font-family: times;
-  font-weight: bolder;
+  font-family: roboto;
+  font-weight: 500;
   color: black;
   text-align: center;
-  font-size: 16px;
+  font-size: 18px;
   margin-top: 0;
   margin-bottom: 2;
 }
@@ -68,8 +68,8 @@ h3 {
   font-family: roboto;
   color: #00318b;
   font-weight: 900;
-  text-align: left;
-  font-size: 80px;
+  text-align: center;
+  font-size: 70px;
     margin-top: 0;
   margin-bottom: 0;
 }
@@ -77,8 +77,9 @@ h3 {
 h4 {
   font-family: roboto;
   color: black;
+  font-weight: 300;
   text-align: left;
-  font-size: 9px;
+  font-size: 10px;
   margin-top: 0;
   margin-bottom: 2;
 }
@@ -111,7 +112,7 @@ body {
 
 h7 {
   font-family: roboto;
-  color: #0058f6;
+  color: #00318b;
   font-weight: bolder;
   text-align: left;
   font-size: 16px;
@@ -121,11 +122,20 @@ h7 {
 
 h8 {
   color: white;
-  background-color: #0058f6;
+  background-color: #00318b;
   font-family: roboto;
   border-radius: 20px;
   padding: 2em;
   text-align: center;
+}
+
+h9 {
+  font-family: roboto;
+  color: #00318b;
+  font-weight: 900;
+  text-align: left;
+  font-size: 24px;
+    padding: 5px;
 }
 
 table {
@@ -158,11 +168,12 @@ th {
       padding: 10px;
       border-radius: 10px;
       margin: 10px;
-      height: 200px;
+      height: 160px;
    }
    .card p {
    font-family: roboto;
-   font-size: 18px;
+   text-align: center;
+   font-size: 14px;
    }
    .cardContainer:after {
       content: "";
@@ -176,243 +187,31 @@ th {
    }
 ```
 
-```{r beatsdata, include=FALSE, cache=TRUE}
-# Import data underlying this project
-
-# Read in geojson and then transform to sf format
-beats <- st_read("data/geo/houston_police_beats.geojson")
-# Fix an invalid polygon(s) in the beats file
-beats <- st_make_valid(beats)
-# Transform tidycensus data to match beats projection
-# beats <- st_transform(beats, 4269)
-
-# Get demographic data for Census block groups to aggregate/apportion to beats geography
-# Note that we are asking for the more detailed tiger line files, so we can trim water later
-# Also transforming to match the projection of the Houston PD's beats spatial file
-blockgroups <- get_acs(geography = "block group", 
-                       year = 2020,
-                       output = 'wide',
-                       variables = "B03002_001", 
-                       state = "TX",
-                       county = c("Harris County","Fort Bend","Montgomery"),
-                       geometry = TRUE) %>%
-st_transform(4326)
-
-# Grab just the population and geometry from blockgroups from tidycensus
-pop <- blockgroups["B03002_001E"] # keep only the values to be transferred
-
-# Calculate the estimated population of beat geographies/interpolate with tidycensus block groups
-# Reminder: ext=true SUMS the population during interpolation; assumes pop is evenly distributed
-beats_withpop <- st_interpolate_aw(pop, beats, ext = TRUE)
-# Drops geometry so it's not duplicated in the merge
-beats_withpop <- st_drop_geometry(beats_withpop)
-# Binds that new population column to the table
-beats <- cbind(beats,beats_withpop)
-
-# Trim and clean beats file to just what we need
-beats <- beats %>%
-  rename("population"="B03002_001E","beat"="Beats") %>%
-  select(beat,District,Area_sq_mi,population,geometry) %>% 
-  janitor::clean_names()
-# Round the population figure
-beats$population <- round(beats$population,0)
-# Eliminate population from two beats on airport property
-beats$population <- ifelse(beats$population<1000,0,beats$population)
-# Cleans up unneeded calculation file
-rm(beats_withpop)
-
-```
-```{r crimedata, include=FALSE, cache=TRUE}
-
-# Import data underlying this project
-houston_crime <- read_csv("data/latest/houston_crime.csv", 
-                          col_types = cols(incident = col_character(), 
-                                           date = col_date(format = "%Y-%m-%d"), 
-                                           street_no = col_character(), longitude = col_character(), 
-                                           latitude = col_character(), category_code = col_character()))
-
-houston22 <- read_excel("data/latest/houston_NIBRS2022.xlsx", 
-                        col_types = c("text", "date", "numeric", 
-                                      "text", "text", "numeric", "text", 
-                                      "text", "text", "text", "text", "text", 
-                                      "text", "text","numeric","numeric"))
-names(houston22) <- c("incident", "date", "hour", 
-                      "nibrs_class", "offense_type", "offense_count", "beat", 
-                      "premise", "street_no", "street_name", "street_type", "street_suffix", 
-                      "city", "zip","longitude","latitude")
-
-
-# Calculate the multiplier for the 2022 data based on days of data in file
-days_so_far_2022 <- 1/(n_distinct(houston22$date)/365)
-months_so_far_2022 <- n_distinct(lubridate::month(houston22$date))
-
-# Calculate the total of each DETAILED crime/incident CITYWIDE
-totals_by_crime_detailed <- houston_crime %>%
-  group_by(offense_type,nibrs_class,year) %>%
-  summarise(count = sum(offense_count)) %>%
-  pivot_wider(names_from=year, values_from=count)
-# rename the year columns
-totals_by_crime_detailed <- totals_by_crime_detailed %>% 
-  rename("total19" = "2019",
-         "total20" = "2020",
-         "total21" = "2021",
-         "total22" = "2022")
-# add projected22 column to project/forecast annual number
-totals_by_crime_detailed$projected22 <- round(totals_by_crime_detailed$total22*days_so_far_2022,0)
-# add zeros where there were no crimes tallied that year
-totals_by_crime_detailed[is.na(totals_by_crime_detailed)] <- 0
-# calculate increases
-totals_by_crime_detailed$inc_19to21 <- round(totals_by_crime_detailed$total21/totals_by_crime_detailed$total19*100-100,1)
-totals_by_crime_detailed$inc_19to22sofar <- round(totals_by_crime_detailed$projected22/totals_by_crime_detailed$total19*100-100,1)
-totals_by_crime_detailed$inc_21to22sofar <- round(totals_by_crime_detailed$projected22/totals_by_crime_detailed$total21*100-100,1)
-totals_by_crime_detailed$inc_3yearto22sofar <- round(totals_by_crime_detailed$projected22/((totals_by_crime_detailed$total19+totals_by_crime_detailed$total20+totals_by_crime_detailed$total21)/3)*100-100,0)
-# calculate the citywide rates
-totals_by_crime_detailed$rate19 <- round(totals_by_crime_detailed$total19/2304580*100000,1)
-totals_by_crime_detailed$rate20 <- round(totals_by_crime_detailed$total20/2304580*100000,1)
-totals_by_crime_detailed$rate21 <- round(totals_by_crime_detailed$total21/2304580*100000,1)
-totals_by_crime_detailed$rate22 <- round(totals_by_crime_detailed$projected22/2304580*100000,1)
-# calculate a multiyear rate
-totals_by_crime_detailed$rate_multiyear <- round(((totals_by_crime_detailed$total19+totals_by_crime_detailed$total20+totals_by_crime_detailed$total21)/3)/2304580*100000,1)
-
-
-# Calculate the total of each DETAILED crime/incident by BEATS
-totals_by_beat_detailed <- houston_crime %>%
-  group_by(beat,offense_type,nibrs_class,year) %>%
-  summarise(count = sum(offense_count)) %>%
-  pivot_wider(names_from=year, values_from=count)
-# rename the year columns
-totals_by_beat_detailed <- totals_by_beat_detailed %>% 
-  rename("total19" = "2019",
-         "total20" = "2020",
-         "total21" = "2021",
-         "total22" = "2022")
-# add projected22 column to project/forecast annual number
-totals_by_beat_detailed$projected22 <- round(totals_by_beat_detailed$total22*days_so_far_2022,0)
-# add zeros where there were no crimes tallied that year
-totals_by_beat_detailed[is.na(totals_by_beat_detailed)] <- 0
-# calculate increases
-totals_by_beat_detailed$inc_19to21 <- round(totals_by_beat_detailed$total21/totals_by_beat_detailed$total19*100-100,1)
-totals_by_beat_detailed$inc_19to22sofar <- round(totals_by_beat_detailed$projected22/totals_by_beat_detailed$total19*100-100,1)
-totals_by_beat_detailed$inc_21to22sofar <- round(totals_by_beat_detailed$projected22/totals_by_beat_detailed$total21*100-100,1)
-totals_by_beat_detailed$inc_3yearto22sofar <- round(totals_by_beat_detailed$projected22/((totals_by_beat_detailed$total19+totals_by_beat_detailed$total20+totals_by_beat_detailed$total21)/3)*100-100,0)
-# add population for beats
-totals_by_beat_detailed <- full_join(beats,totals_by_beat_detailed,by="beat") 
-# calculate the beat by beat rates PER 1K people
-totals_by_beat_detailed$rate19 <- round(totals_by_beat_detailed$total19/totals_by_beat_detailed$population*100000,1)
-totals_by_beat_detailed$rate20 <- round(totals_by_beat_detailed$total20/totals_by_beat_detailed$population*100000,1)
-totals_by_beat_detailed$rate21 <- round(totals_by_beat_detailed$total21/totals_by_beat_detailed$population*100000,1)
-totals_by_beat_detailed$rate22 <- round(totals_by_beat_detailed$projected22/totals_by_beat_detailed$population*100000,1)
-# calculate a multiyear rate
-totals_by_beat_detailed$rate_multiyear <- round(((totals_by_beat_detailed$total19+totals_by_beat_detailed$total20+totals_by_beat_detailed$total21)/3)/totals_by_beat_detailed$population*100000,1)
-# for map/table making purposes, changing Inf and NaN in calc fields to NA
-totals_by_beat_detailed <- totals_by_beat_detailed %>%
-  mutate(across(where(is.numeric), ~na_if(., Inf)))
-totals_by_beat_detailed <- totals_by_beat_detailed %>%
-  mutate(across(where(is.numeric), ~na_if(., "NaN")))
-
-# Calculate the total of each CATEGORY of crime/incident CITYWIDE
-totals_by_beat_category <- houston_crime %>%
-  group_by(beat,category_name,year) %>%
-  summarise(count = sum(offense_count)) %>%
-  pivot_wider(names_from=year, values_from=count)
-# rename the year columns
-totals_by_beat_category <- totals_by_beat_category %>% 
-  rename("total19" = "2019",
-         "total20" = "2020",
-         "total21" = "2021",
-         "total22" = "2022")
-# add projected22 column to project/forecast annual number
-totals_by_beat_category$projected22 <- round(totals_by_beat_category$total22*days_so_far_2022,0)
-# add zeros where there were no crimes tallied that year
-totals_by_beat_category[is.na(totals_by_beat_category)] <- 0
-# calculate increases
-totals_by_beat_category$inc_19to21 <- round(totals_by_beat_category$total21/totals_by_beat_category$total19*100-100,1)
-totals_by_beat_category$inc_19to22sofar <- round(totals_by_beat_category$projected22/totals_by_beat_category$total19*100-100,1)
-totals_by_beat_category$inc_21to22sofar <- round(totals_by_beat_category$projected22/totals_by_beat_category$total21*100-100,1)
-totals_by_beat_category$inc_3yearto22sofar <- round(totals_by_beat_category$projected22/((totals_by_beat_category$total19+totals_by_beat_category$total20+totals_by_beat_category$total21)/3)*100-100,0)
-# add population for beats
-totals_by_beat_category <- full_join(beats,totals_by_beat_category,by="beat") 
-# calculate the beat by beat rates PER 1K people
-totals_by_beat_category$rate19 <- round(totals_by_beat_category$total19/totals_by_beat_category$population*100000,1)
-totals_by_beat_category$rate20 <- round(totals_by_beat_category$total20/totals_by_beat_category$population*100000,1)
-totals_by_beat_category$rate21 <- round(totals_by_beat_category$total21/totals_by_beat_category$population*100000,1)
-totals_by_beat_category$rate22 <- round(totals_by_beat_category$projected22/totals_by_beat_category$population*100000,1)
-# calculate a multiyear rate
-totals_by_beat_category$rate_multiyear <- round(((totals_by_beat_category$total19+totals_by_beat_category$total20+totals_by_beat_category$total21)/3)/totals_by_beat_category$population*100000,1)
-# for map/table making purposes, changing Inf and NaN in calc fields to NA
-totals_by_beat_category <- totals_by_beat_category %>%
-  mutate(across(where(is.numeric), ~na_if(., Inf)))
-totals_by_beat_category <- totals_by_beat_category %>%
-  mutate(across(where(is.numeric), ~na_if(., "NaN")))
-
-# Calculate the total of each TYPE of crime/incident CITYWIDE
-totals_by_beat_type <- houston_crime %>%
-  group_by(beat,type,year) %>%
-  summarise(count = sum(offense_count)) %>%
-  pivot_wider(names_from=year, values_from=count)
-# rename the year columns
-totals_by_beat_type <- totals_by_beat_type %>% 
-  rename("total19" = "2019",
-         "total20" = "2020",
-         "total21" = "2021",
-         "total22" = "2022")
-# add projected22 column to project/forecast annual number
-totals_by_beat_type$projected22 <- round(totals_by_beat_type$total22*days_so_far_2022,0)
-# add zeros where there were no crimes tallied that year
-totals_by_beat_type[is.na(totals_by_beat_type)] <- 0
-# calculate increases
-totals_by_beat_type$inc_19to21 <- round(totals_by_beat_type$total21/totals_by_beat_type$total19*100-100,1)
-totals_by_beat_type$inc_19to22sofar <- round(totals_by_beat_type$projected22/totals_by_beat_type$total19*100-100,1)
-totals_by_beat_type$inc_21to22sofar <- round(totals_by_beat_type$projected22/totals_by_beat_type$total21*100-100,1)
-totals_by_beat_type$inc_3yearto22sofar <- round(totals_by_beat_type$projected22/((totals_by_beat_type$total19+totals_by_beat_type$total20+totals_by_beat_type$total21)/3)*100-100,0)
-# add population for beats
-totals_by_beat_type <- full_join(beats,totals_by_beat_type,by="beat") 
-# calculate the beat by beat rates PER 1K people
-totals_by_beat_type$rate19 <- round(totals_by_beat_type$total19/totals_by_beat_type$population*100000,1)
-totals_by_beat_type$rate20 <- round(totals_by_beat_type$total20/totals_by_beat_type$population*100000,1)
-totals_by_beat_type$rate21 <- round(totals_by_beat_type$total21/totals_by_beat_type$population*100000,1)
-totals_by_beat_type$rate22 <- round(totals_by_beat_type$projected22/totals_by_beat_type$population*100000,1)
-# calculate a multiyear rate
-totals_by_beat_type$rate_multiyear <- round(((totals_by_beat_type$total19+totals_by_beat_type$total20+totals_by_beat_type$total21)/3)/totals_by_beat_type$population*100000,1)
-# for map/table making purposes, changing Inf and NaN in calc fields to NA
-totals_by_beat_type <- totals_by_beat_type %>%
-  mutate(across(where(is.numeric), ~na_if(., Inf)))
-totals_by_beat_type <- totals_by_beat_type %>%
-  mutate(across(where(is.numeric), ~na_if(., "NaN")))
-
-# Isolate three categories of crimes by beat by year
-murders_by_beat <- totals_by_beat_detailed %>% filter(nibrs_class=="09A")
-sexualassaults_by_beat <- totals_by_beat_category %>% filter(category_name=="Sexual Assault")
-autothefts_by_beat <- totals_by_beat_detailed %>% filter(nibrs_class=="240")
-
-murders_citywide <- totals_by_crime_detailed %>% filter(nibrs_class=="09A")
-# sexualassaults_citywide <- totals_by_crime_category %>% filter(category_name=="Sexual Assault")
-autothefts_citywide <- totals_by_crime_detailed %>% filter(nibrs_class=="240")
-
-```
 
 <h2>ABC 13 is tracking murders, and other crimes, across the city and in your neighborhood. Here's a look at what's happening with rising killings in the city.</h2>
 
-So far this year<br>
-<h3>`r prettyNum(sum(murders_by_beat$total22), big.mark=",")`<br></h3>
-people have been murdered.<br>
-<br>
-We are on track to reach<br>
+<div class="cardContainer">
+<div class="card" style="background-color:#99a0a5;">
+<p>So far this year<br>
+<h3>`r prettyNum(sum(murders_by_beat$total22), big.mark=",")`<br></h3><p>
+people have been murdered.</p>
+</div>
+<div class="card" style="background-color:#99a0a5;">
+<p>We are on track to reach<br></p>
 <h3>`r prettyNum(sum(murders_by_beat$projected22), big.mark=",")`<br></h3>
-killings in 2022.<br>
-<br>
-That's more than the<br>
-<h3>`r prettyNum(sum(murders_by_beat$total21), big.mark=",")`<br></h3>
-murders in 2021.<br>
-<br>
-If so, the murder rate would be <br>
-<h3>`r round(sum(murders_by_beat$projected22)/2304580*100000,1)`<br></h3>
-per 100,000 residents.<br>
-<br>
-The rate 3 years ago was <br>
-<h3>`r murders_citywide$rate19`<br></h3>
-per 100,000 residents.<br>
-<br>
+<p>killings in 2022.</p>
+</div>
+<div class="card" style="background-color:#99a0a5;">
+<p>That's more than the<br>
+<h3>`r prettyNum(sum(murders_by_beat$total21), big.mark=",")`<br></h3><p>
+murders in 2021.</p>
+</div>
+<div class="card" style="background-color:#99a0a5;">
+<p>The murder rate would be <br>
+<h3>`r round(sum(murders_by_beat$projected22)/2304580*100000,1)`<br></h3><p>
+per 100,000 people in 2022.</p>
+</div>
+</div>
 <br>
 However, in the vast majority of neighborhoods in the city, the rate is much lower. In 17 of 118 of the Houston Police Department's, the murder rate was zero last year. In about half of the neighborhoods citywide, the murder rate is less than 10 per 100,000 residents - or less than half of the citywide rate.
 
@@ -420,14 +219,18 @@ ABC13 looked at the data, beat by beat across the city and is providing this loo
 
 The color-coding of the map is based on the murder rate over 2019, 2020, 2021 and 2022 so far, according to ABC13's analysis of data the Houston Police Department publishes every month online. This map will be updated monthly with the latest data as HPD publishes it.
 
-```{r cars, echo=FALSE,out.width='100%'}
+```{r cars, echo=FALSE,out.width='100%',out.height='600'}
 # MURDER MAP
 # Set bins for numbers of crimes for murders map
 murderbins <- c(0,median(murders_by_beat$rate_multiyear,na.rm = TRUE)/2,median(murders_by_beat$rate_multiyear,na.rm = TRUE),median(murders_by_beat$rate_multiyear,na.rm = TRUE)*2,median(murders_by_beat$rate_multiyear,na.rm = TRUE)*3,200)
 murderpal <- colorBin(c("#99a0a5","#667f99","#00318b","#0058f6","#ffba00"), murders_by_beat$rate_multiyear, bins = murderbins)
 # Create quick labels for murders map
 murderlabel <- paste(sep="","<table>
-<h7>Houston P.D. Beat #",murders_by_beat$beat,"</h7><br>Estimated Population: ",prettyNum(murders_by_beat$population, big.mark=','),"<br>
+<h7>Houston P.D. Beat #",
+murders_by_beat$beat,
+"</h7><br><h4>",
+murders_by_beat$placename,
+"<br>Estimated Population: ",prettyNum(murders_by_beat$population, big.mark=','),"</h4><br>
       <tr>
 				<th>Year</th>
 				<th>Total</th>
@@ -487,8 +290,8 @@ houston_murder_map <- leaflet(murders_by_beat, options = leafletOptions(zoomCont
   htmlwidgets::onRender("function(el, x) {
 L.control.zoom({ position: 'topright' }).addTo(this)
 }") %>%
-  setView(-95.45, 29.75, zoom = 10) %>% 
-  addProviderTiles(provider = "CartoDB.Positron") %>%
+  setView(-95.4, 29.75, zoom = 12) %>% 
+  addProviderTiles(provider = "Stamen.TonerLite") %>%
   addPolygons(color = "white", popup = murderlabel, weight = 0.5, smoothFactor = 0.5,
               opacity = 0.6, fillOpacity = 0.5,
               fillColor = ~murderpal(rate_multiyear)) %>% 
@@ -496,7 +299,7 @@ L.control.zoom({ position: 'topright' }).addTo(this)
             opacity = 0.6,
             values = murders_by_beat$rate_multiyear, 
             position = "bottomleft", 
-            title = "Homicides Per 100K people<br>") 
+            title = "Homicides<br>Per 100K people<br>") 
 #  addLegend(position = "topleft", 
 #            labels = NULL,
 #            values = NULL,
@@ -511,50 +314,44 @@ L.control.zoom({ position: 'topright' }).addTo(this)
 houston_murder_map
 ```
 
+However, in the vast majority of neighborhoods in the city, the rate is much lower. In 17 of 118 of the Houston Police Department's, the murder rate was zero last year. Filler, filler, filler.
 
-<h2>ABC 13 is tracking murders, and other crimes, across the city and in your neighborhood. Here's a look at what's happening with rising killings in the city.</h2>
+<h9>Homicides by neighborhood (placeholder table)</h9>
 
-<table>
-<tr>
-<td>
-<center>So far this year<br>
-<h3><center>`r prettyNum(sum(murders_by_beat$total22), big.mark=",")`<br></h3>
-people have been murdered.<br>
-</td>
-<td>
-<center>We are on track to reach<br>
-<h3><center>`r prettyNum(sum(murders_by_beat$projected22), big.mark=",")`<br></h3>
-killings in 2022.<br>
-</td>
-<td>
-<center>That's more than the<br>
-<h3><center>`r prettyNum(sum(murders_by_beat$total21), big.mark=",")`<br></h3>
-murders in 2021.<br>
-</td>
-</tr>
-<tr>
-<td><center>At current pace, the murder rate will be <br>
-<h3><center>`r round(sum(murders_by_beat$projected22)/2304580*100000,1)`<br></h3>
-per 100,000 residents in 2022.<br>
-</td>
-<td>
-<center>The rate last year was <br>
-<h3><center>`r murders_citywide$rate21`<br></h3>
-per 100,000 residents.<br>
-</td>
-<td>
-<center>The rate just 3 years ago was <br>
-<h3><center>`r murders_citywide$rate19`<br></h3>
-per 100,000 residents.<br>
-</td>
-</tr>
-</table>
-<br>
-However, in the vast majority of neighborhoods in the city, the rate is much lower. In 17 of 118 of the Houston Police Department's, the murder rate was zero last year. In about half of the neighborhoods citywide, the murder rate is less than 10 per 100,000 residents - or less than half of the citywide rate.
-
-Here's a quick look at a datawrapper embed
-
-
-<iframe title="Houston Neighborhood Crime Test Table" aria-label="Table" id="datawrapper-chart-T23TE" src="https://datawrapper.dwcdn.net/T23TE/4/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="732" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+<iframe title="Houston Neighborhood Crime Test Table" aria-label="Table" id="datawrapper-chart-T23TE" src="https://datawrapper.dwcdn.net/T23TE/6/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="732" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
 </script>
   
+<h9>What kinds of places do murders happen in Houston (placeholder table)</h9>
+
+<iframe title="Houston Neighborhood Crime Test Table" aria-label="Table" id="datawrapper-chart-T23TE" src="https://datawrapper.dwcdn.net/T23TE/6/?search=Murder" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="732" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+</script>
+
+<h9>When do murders happen (placeholder table)</h9>
+
+<iframe title="Houston Neighborhood Crime Test Table" aria-label="Table" id="datawrapper-chart-T23TE" src="https://datawrapper.dwcdn.net/T23TE/6/?search=Kidnapping" scrollings="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="732" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+</script>
+
+
+<div class="cardContainer">
+<div class="card" style="background-color:#99a0a5;">
+<p>So far this year<br>
+<h3>`r prettyNum(sum(murders_by_beat$total22), big.mark=",")`<br></h3><p>
+people have been murdered.</p>
+</div>
+<div class="card" style="background-color:#667f99;">
+<p>We are on track to reach<br></p>
+<h3>`r prettyNum(sum(murders_by_beat$projected22), big.mark=",")`<br></h3>
+<p>killings in 2022.</p>
+</div>
+<div class="card" style="background-color:#0d1721;">
+<p>That's more than the<br>
+<h3>`r prettyNum(sum(murders_by_beat$total21), big.mark=",")`<br></h3><p>
+murders in 2021.</p>
+</div>
+<div class="card" style="background-color:#f2f2f2; color:black;">
+<p>The murder rate would be <br>
+<h3>`r round(sum(murders_by_beat$projected22)/2304580*100000,1)`<br></h3><p>
+per 100,000 people in 2022.</p>
+</div>
+</div>
+<br>

@@ -69,3 +69,52 @@ h5 {
 }")
 houston_murder_map
 
+
+
+
+## TESTING ONLY BELOW THIS POINT, IGNORE FOR NOW
+
+Here's a quick look at a Flourish chart embedded within...
+
+<div class="flourish-embed flourish-map" data-src="visualisation/4154506?174120"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+
+Here's a quick look at an ABC OTV video embedded within...
+
+<iframe width="500" height="300" src="https://abc7.com/video/embed/?pid=7762859" frameborder="0" allowfullscreen></iframe>
+  
+  Here's a quick look at a You Tube video from FiveThirtyEight embedded within...
+
+<iframe width="500" height="300" src="https://www.youtube.com/embed/3gBe0rVhpHE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+Here's a quick look at an image embedded from a URL within...
+
+```{r, echo=FALSE}
+# Define variable containing url
+url <- "https://cdn.abcotvs.com/dip/images/7750200_110720-cc-ap-biden-kamala-sat-pm-img.jpg"
+```
+## Some presidential types
+<center><img src="`r url`"></center>
+  
+  Here's a quick look at a GIF animated image embedded within...
+
+<center><img src="https://media4.giphy.com/media/j2pWZpr5RlpCodOB0d/giphy.gif"></center>
+
+
+
+
+
+https://datawrapper.dwcdn.net/T23TE/3/
+
+However, in the vast majority of neighborhoods in the city, the rate is much lower. In 17 of 118 of the Houston Police Department's, the murder rate was zero last year. In about half of the neighborhoods citywide, the murder rate is less than 10 per 100,000 residents - or less than half of the citywide rate.
+
+Embed responsive
+<iframe title="Houston Neighborhood Crime Test Table" aria-label="Table" id="datawrapper-chart-T23TE" src="https://datawrapper.dwcdn.net/T23TE/3/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="732" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+</script>
+  
+  However, in the vast majority of neighborhoods in the city, the rate is much lower. In 17 of 118 of the Houston Police Department's, the murder rate was zero last year. In about half of the neighborhoods citywide, the murder rate is less than 10 per 100,000 residents - or less than half of the citywide rate.
+
+Embed iframe
+<iframe title="Houston Neighborhood Crime Test Table" aria-label="Table" id="datawrapper-chart-T23TE" src="https://datawrapper.dwcdn.net/T23TE/3/" scrolling="no" frameborder="0" style="border: none;" width="600" height="732"></iframe>
+
+
