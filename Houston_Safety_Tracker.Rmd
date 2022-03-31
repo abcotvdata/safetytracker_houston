@@ -13,13 +13,12 @@ library(readxl)
 library(leaflet)
 library(leaflet.extras)
 library(leaflet.providers)
-library(mapview)
 library(sp)
 library(sf)
 library(htmlwidgets)
 library(htmltools)
 
-# rmarkdown::render('Houston_Safety_Tracker2.Rmd', output_file = 'docs/Houston_Safety_Tracker2.html')
+# rmarkdown::render('Houston_Safety_Tracker_2.Rmd', output_file = 'docs/Houston_Safety_Tracker_2.html')
 ```
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
@@ -64,7 +63,7 @@ h2 {
   margin-bottom: 2;
 }
 
-h3 {
+bignumber {
   font-family: roboto;
   color: #00318b;
   font-weight: 900;
@@ -74,17 +73,17 @@ h3 {
   margin-bottom: 0;
 }
 
-h4 {
+popupchatter {
   font-family: roboto;
   color: black;
   font-weight: 300;
   text-align: left;
-  font-size: 10px;
+  font-size: 11px;
   margin-top: 0;
   margin-bottom: 2;
 }
 
-h5 {
+chartbignumber {
   font-family: roboto;
   color: #00318b;
   font-weight: bolder;
@@ -94,23 +93,23 @@ h5 {
   margin-bottom: 0;
 }
 
-h6 {
+subhead {
   font-family: roboto;
-  color: blue;
+  color: #00318b;
+  font-weight: 900;
   text-align: left;
-  font-size: 32px;
-    margin-top: 0;
-  margin-bottom: 0;
+  font-size: 24px;
+    padding: 5px;
 }
 
 body {
   color: black;
   font-family: roboto;
   font-weight: 300;
-  font-size: 8pt;
+  font-size: 10px;
 }
 
-h7 {
+popuptitle {
   font-family: roboto;
   color: #00318b;
   font-weight: bolder;
@@ -127,15 +126,6 @@ h8 {
   border-radius: 20px;
   padding: 2em;
   text-align: center;
-}
-
-h9 {
-  font-family: roboto;
-  color: #00318b;
-  font-weight: 900;
-  text-align: left;
-  font-size: 24px;
-    padding: 5px;
 }
 
 table {
@@ -168,47 +158,55 @@ th {
       padding: 10px;
       border-radius: 10px;
       margin: 10px;
-      height: 160px;
+      height: 100%;
    }
    .card p {
    font-family: roboto;
    text-align: center;
-   font-size: 14px;
+   font-size: 12px;
+  margin-bottom: 0;
    }
    .cardContainer:after {
       content: "";
       display: table;
       clear: both;
    }
-   @media screen and (max-width: 600px) {
+   @media screen and (max-width: 650px) {
       .card {
          width: 100%;
       }
    }
 ```
+```{r beats, include=FALSE}
+# source("process_houston_police_beats.R")
+```
 
+
+```{r crimedata, include=FALSE}
+# source("process_houston_crime_data.R")
+```
 
 <h2>ABC 13 is tracking murders, and other crimes, across the city and in your neighborhood. Here's a look at what's happening with rising killings in the city.</h2>
 
 <div class="cardContainer">
 <div class="card" style="background-color:#99a0a5;">
 <p>So far this year<br>
-<h3>`r prettyNum(sum(murders_by_beat$total22), big.mark=",")`<br></h3><p>
+<bignumber>`r prettyNum(murders_city$total22, big.mark=",")`<br></bignumber><p>
 people have been murdered.</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
-<p>We are on track to reach<br></p>
-<h3>`r prettyNum(sum(murders_by_beat$projected22), big.mark=",")`<br></h3>
+<p>We are on track to reach<br>
+<bignumber>`r prettyNum(murders_city$projected22, big.mark=",")`<br></bignumber>
 <p>killings in 2022.</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>That's more than the<br>
-<h3>`r prettyNum(sum(murders_by_beat$total21), big.mark=",")`<br></h3><p>
+<bignumber>`r prettyNum(murders_city$total21, big.mark=",")`<br></bignumber><p>
 murders in 2021.</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>The murder rate would be <br>
-<h3>`r round(sum(murders_by_beat$projected22)/2304580*100000,1)`<br></h3><p>
+<bignumber>`r round((murders_city$projected22/2304580)*100000,1)`<br></bignumber><p>
 per 100,000 people in 2022.</p>
 </div>
 </div>
@@ -221,16 +219,31 @@ The color-coding of the map is based on the murder rate over 2019, 2020, 2021 an
 
 ```{r cars, echo=FALSE,out.width='100%',out.height='600'}
 # MURDER MAP
+
 # Set bins for numbers of crimes for murders map
-murderbins <- c(0,median(murders_by_beat$rate_multiyear,na.rm = TRUE)/2,median(murders_by_beat$rate_multiyear,na.rm = TRUE),median(murders_by_beat$rate_multiyear,na.rm = TRUE)*2,median(murders_by_beat$rate_multiyear,na.rm = TRUE)*3,200)
-murderpal <- colorBin(c("#99a0a5","#667f99","#00318b","#0058f6","#ffba00"), murders_by_beat$rate_multiyear, bins = murderbins)
+murderbins <- c(0,median(murders_beat$rate_multiyear,na.rm = TRUE)/2,
+                median(murders_beat$rate_multiyear,na.rm = TRUE),
+                median(murders_beat$rate_multiyear,na.rm = TRUE)*2,
+                median(murders_beat$rate_multiyear,na.rm = TRUE)*3,200)
+
+murderpal <- colorBin(c("#99a0a5",
+                        "#667f99",
+                        "#00318b",
+                        "#0058f6",
+                        "#ffba00"), 
+                      murders_beat$rate_multiyear,
+                      bins = murderbins)
+
 # Create quick labels for murders map
-murderlabel <- paste(sep="","<table>
-<h7>Houston P.D. Beat #",
-murders_by_beat$beat,
-"</h7><br><h4>",
-murders_by_beat$placename,
-"<br>Estimated Population: ",prettyNum(murders_by_beat$population, big.mark=','),"</h4><br>
+murderlabel <- paste(sep="",
+"<table>
+<popuptitle>Houston P.D. Beat #",
+murders_beat$beat,
+"</popuptitle><br><popupchatter>Area neighborhoods and landmarks include ",
+murders_beat$placename,
+". Estimated Population: ",
+prettyNum(murders_beat$population, big.mark=','),
+"</popupchatter><br>
       <tr>
 				<th>Year</th>
 				<th>Total</th>
@@ -240,45 +253,45 @@ murders_by_beat$placename,
 			<tr>
 				<td>2019</td>
 				<td>",
-murders_by_beat$total19,
+murders_beat$total19,
 "</td>
 				<td>",
-murders_by_beat$rate19,
+murders_beat$rate19,
 "</td>
 				<!-- Insert cell to cross/span 
 				multi rows -->
 				<td rowspan='4'>",
-ifelse(murders_by_beat$inc_3yearto22sofar>0,"Up","Down"),
-"<br><h5>",
-ifelse(murders_by_beat$inc_3yearto22sofar>0,murders_by_beat$inc_3yearto22sofar,substring(murders_by_beat$inc_3yearto22sofar,2)),
-				"%</h5>vs. 3-year<br>average</td>
+ifelse(murders_beat$inc_3yearto22sofar>0,"Up","Down"),
+"<br><chartbignumber>",
+ifelse(murders_beat$inc_3yearto22sofar>0,murders_beat$inc_3yearto22sofar,substring(murders_beat$inc_3yearto22sofar,2)),
+				"%</chartbignumber><br>vs. 3-year<br>average</td>
 			</tr>
 			<tr>
 				<td>2020</td>
 				<td>",
-murders_by_beat$total20,
+murders_beat$total20,
 "</td>
 				<td>",
-murders_by_beat$rate20,
+murders_beat$rate20,
 "</td>
 			</tr>
 						<tr>
 				<td>2021</td>
 				<td>",
-murders_by_beat$total21,
+murders_beat$total21,
 "</td>
 				<td>",
-murders_by_beat$rate21,
+murders_beat$rate21,
 "</td>
 			</tr>
 			</tr>
 						<tr>
 				<td>2022</td>
 				<td>",
-murders_by_beat$total22,
+murders_beat$total22,
 "</td>
 				<td>",
-murders_by_beat$rate22,
+murders_beat$rate22,
 "</td>
 			</tr>
 </table>")
@@ -286,7 +299,7 @@ murders_by_beat$rate22,
 # Create rapid prototype of murders map
 # Issue to fix here is that we merged the data points to the df first, instead of the spatial file
 # Go back and rework that part
-houston_murder_map <- leaflet(murders_by_beat, options = leafletOptions(zoomControl = FALSE)) %>%
+houston_murder_map <- leaflet(murders_beat, options = leafletOptions(zoomControl = FALSE)) %>%
   htmlwidgets::onRender("function(el, x) {
 L.control.zoom({ position: 'topright' }).addTo(this)
 }") %>%
@@ -297,61 +310,26 @@ L.control.zoom({ position: 'topright' }).addTo(this)
               fillColor = ~murderpal(rate_multiyear)) %>% 
   addLegend(pal = murderpal, 
             opacity = 0.6,
-            values = murders_by_beat$rate_multiyear, 
+            values = murders_beat$rate_multiyear, 
             position = "bottomleft", 
             title = "Homicides<br>Per 100K people<br>") 
-#  addLegend(position = "topleft", 
-#            labels = NULL,
-#            values = NULL,
-#            colors = NULL,
-#            title = "<big>World's Best Map of Houston Homicides</big><br>
-#            <small>Please insert some chatter & other html/tools/stuff here<br>
-#See also: <a href='https://abcotvdata.github.io/safetytracker_houston/sexualassault_rate.html'>Sexual Assault</a> |
-# <a href='https://abcotvdata.github.io/safetytracker_houston/autothefts_rate.html'>Auto #Thefts</a> |
-#              <a href='https://abcotvdata.github.io/safetytracker_houston/autothefts_rate.html'>Burglaries</a>  |
-#              <a href='https://abcotvdata.github.io/safetytracker_houston/autothefts_rate.html'>Theft</a></small>")
 
 houston_murder_map
 ```
 
 However, in the vast majority of neighborhoods in the city, the rate is much lower. In 17 of 118 of the Houston Police Department's, the murder rate was zero last year. Filler, filler, filler.
 
-<h9>Homicides by neighborhood (placeholder table)</h9>
+<subhead>Homicides by neighborhood (placeholder table)</subhead>
 
 <iframe title="Houston Neighborhood Crime Test Table" aria-label="Table" id="datawrapper-chart-T23TE" src="https://datawrapper.dwcdn.net/T23TE/6/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="732" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
 </script>
   
-<h9>What kinds of places do murders happen in Houston (placeholder table)</h9>
+<subhead>What kinds of places do murders happen in Houston (placeholder table)</subhead>
 
 <iframe title="Houston Neighborhood Crime Test Table" aria-label="Table" id="datawrapper-chart-T23TE" src="https://datawrapper.dwcdn.net/T23TE/6/?search=Murder" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="732" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
 </script>
 
-<h9>When do murders happen (placeholder table)</h9>
+<subhead>When do murders happen (placeholder table)</subhead>
 
-<iframe title="Houston Neighborhood Crime Test Table" aria-label="Table" id="datawrapper-chart-T23TE" src="https://datawrapper.dwcdn.net/T23TE/6/?search=Kidnapping" scrollings="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="732" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+<iframe title="Houston Neighborhood Crime Test Table" aria-label="Table" id="datawrapper-chart-T23TE" src="https://datawrapper.dwcdn.net/T23TE/6/" scrollings="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="732" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
 </script>
-
-
-<div class="cardContainer">
-<div class="card" style="background-color:#99a0a5;">
-<p>So far this year<br>
-<h3>`r prettyNum(sum(murders_by_beat$total22), big.mark=",")`<br></h3><p>
-people have been murdered.</p>
-</div>
-<div class="card" style="background-color:#667f99;">
-<p>We are on track to reach<br></p>
-<h3>`r prettyNum(sum(murders_by_beat$projected22), big.mark=",")`<br></h3>
-<p>killings in 2022.</p>
-</div>
-<div class="card" style="background-color:#0d1721;">
-<p>That's more than the<br>
-<h3>`r prettyNum(sum(murders_by_beat$total21), big.mark=",")`<br></h3><p>
-murders in 2021.</p>
-</div>
-<div class="card" style="background-color:#f2f2f2; color:black;">
-<p>The murder rate would be <br>
-<h3>`r round(sum(murders_by_beat$projected22)/2304580*100000,1)`<br></h3><p>
-per 100,000 people in 2022.</p>
-</div>
-</div>
-<br>

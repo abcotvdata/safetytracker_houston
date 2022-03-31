@@ -1,0 +1,421 @@
+library(tidyverse)
+library(tidycensus)
+library(readxl)
+
+# Download and save for backup the latest posted files for 2021, 2020 and 2019
+# download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicViewDec21.xlsx","data/latest/houston_NIBRS2021.xlsx")
+# download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicView.Jan1-Dec31-2020.xlsx","data/latest/houston_NIBRS2020.xlsx")
+# download.file("https://www.houstontx.gov/police/cs/xls/2019_NIBRSPublicView.Jan1-Dec31.xlsx","data/latest/houston_NIBRS2019.xlsx")
+# download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicViewJan-Feb22.xlsx","data/latest/houston_NIBRS2022.xlsx")
+
+# Import and combine 4 years' of crime data; note 2022 changes monthly
+
+# Read in the 2022 file, renaming to cols to standardize across all years
+houston22 <- read_excel("data/latest/houston_NIBRS2022.xlsx", 
+                        col_types = c("text", "date", "numeric", 
+                                      "text", "text", "numeric", "text", 
+                                      "text", "text", "text", "text", "text", 
+                                      "text", "text","numeric","numeric"))
+names(houston22) <- c("incident", "date", "hour", 
+                      "nibrs_class", "offense_type", "offense_count", "beat", 
+                      "premise", "street_no", "street_name", "street_type", "street_suffix", 
+                      "city", "zip","longitude","latitude")
+
+# Read in the 2021 file, renaming to cols to standardize across 3 years
+houston21 <- read_excel("data/latest/houston_NIBRS2021.xlsx", 
+                        col_types = c("text", "date", "numeric", 
+                                      "text", "text", "numeric", "text", 
+                                      "text", "text", "text", "text", "text", 
+                                      "text", "text"))
+names(houston21) <- c("incident", "date", "hour", 
+                      "nibrs_class", "offense_type", "offense_count", "beat", 
+                      "premise", "street_no", "street_name", "street_type", "street_suffix", 
+                      "city", "zip")
+
+# Read in the 2020 file, renaming to cols to standardize
+houston20 <- read_excel("data/latest/houston_NIBRS2020.xlsx", 
+                        col_types = c("text", "date", "numeric", 
+                                      "text", "text", "numeric", "text", 
+                                      "text", "text", "text", "text", "text", 
+                                      "text", "text"))
+names(houston20) <- c("incident", "date", "hour", 
+                      "nibrs_class", "offense_type", "offense_count", "beat", 
+                      "premise", "street_no", "street_name", "street_type", "street_suffix", 
+                      "city", "zip")
+
+# Read in the 2019 file, renaming to cols to standardize
+houston19 <- read_excel("data/latest/houston_NIBRS2019.xlsx", 
+                        col_types = c("text", "date", "numeric", 
+                                      "text", "text", "numeric", "text", 
+                                      "text", "text", "text", "text", "text", 
+                                      "text", "text"))
+names(houston19) <- c("incident", "date", "hour", 
+                      "nibrs_class", "offense_type", "offense_count", "beat", 
+                      "premise", "street_no", "street_name", "street_type", "street_suffix", 
+                      "city", "zip")
+
+# Calculate the multiplier for the 2022 data
+# Based on number days of data in newest 2022 file
+days_so_far_2022 <- n_distinct(houston22$date)
+projected_multiplier <- 1/(days_so_far_2022/365)
+
+# Combine all four years' of into single table, then delete yearlies
+houston_crime <- bind_rows(houston19,houston20,houston21,houston22)
+rm(houston19,houston20,houston21,houston22)
+houston_crime$year <- substr(houston_crime$date,1,4)
+houston_crime$date <- as.Date(houston_crime$date, "%Y-%m-%d")
+
+
+# Build a class-code table to classify offense types and categories
+classcodes <- houston_crime %>%
+  group_by(offense_type,nibrs_class) %>%
+  summarise(number_offense_type=n())
+classcodes$category_code <- substr(classcodes$nibrs_class,1,2)
+classcodes$category_name <- case_when(classcodes$category_code == "09" ~ "Murder",
+                                      classcodes$category_code == "10" ~ "Kidnapping",
+                                      classcodes$category_code == "11" ~ "Sexual Assault",
+                                      classcodes$category_code == "12" ~ "Robbery",
+                                      classcodes$category_code == "13" ~ "Assault",
+                                      classcodes$category_code == "20" ~ "Arson",
+                                      classcodes$category_code == "22" ~ "Burglary",
+                                      classcodes$category_code == "23" ~ "Theft",
+                                      classcodes$category_code == "24" ~ "Auto Theft",
+                                      classcodes$category_code == "28" ~ "Theft",
+                                      classcodes$category_code == "35" ~ "Drug Offenses",
+                                      TRUE ~ "Other")
+# add violent and property flags
+classcodes$type <- case_when(classcodes$category_code == "09" ~ "Violent",
+                             classcodes$category_code == "11" ~ "Violent",
+                             classcodes$category_code == "12" ~ "Violent",
+                             classcodes$category_code == "20" ~ "Property",
+                             classcodes$category_code == "22" ~ "Property",
+                             classcodes$category_code == "23" ~ "Property",
+                             classcodes$category_code == "24" ~ "Property",
+                             classcodes$category_code == "28" ~ "Property",
+                             classcodes$nibrs_class == "13A" ~ "Violent",
+                             classcodes$nibrs_class == "13B" ~ "Violent",
+                             TRUE ~ "Other")
+# add flag for 'major' crimes, generally considered 'Part I' crimes in FBI data
+classcodes$major <- case_when(classcodes$category_code == "09" ~ "Major",
+                              classcodes$category_code == "11" ~ "Major",
+                              classcodes$category_code == "12" ~ "Major",
+                              classcodes$category_code == "20" ~ "Major",
+                              classcodes$category_code == "22" ~ "Major",
+                              classcodes$category_code == "23" ~ "Major",
+                              classcodes$category_code == "24" ~ "Major",
+                              classcodes$category_code == "28" ~ "Major",
+                              classcodes$nibrs_class == "13A" ~ "Major",
+                              TRUE ~ "Other")
+
+# Add categories,types from classcodes to the individual crime records
+houston_crime <- left_join(houston_crime,classcodes %>% select(2,4:7),by=c("nibrs_class","offense_type"))
+# If beat is blank, add word Unknown
+houston_crime$beat[is.na(houston_crime$beat)] <- "Unknown"
+# Fix non-existent beat 15E11, which should be 15E10
+houston_crime$beat <- ifelse(houston_crime$beat == "15E11","15E10",houston_crime$beat)
+# Fix beats in District 5, 6 and 7 that became District 22
+houston_crime$beat <- ifelse(houston_crime$beat == "5F40","22B10",houston_crime$beat)
+houston_crime$beat <- ifelse(houston_crime$beat == "6B50","22B30",houston_crime$beat)
+houston_crime$beat <- ifelse(houston_crime$beat == "6B60","22B20",houston_crime$beat)
+houston_crime$beat <- ifelse(houston_crime$beat == "7C50","22B40",houston_crime$beat)
+
+# write csv of houston crime as a backup
+write_csv(houston_crime,"data/latest/houston_crime.csv")
+
+# CITYWIDE CRIME TOTALS
+# Calculate of each detailed offense type CITYWIDE
+citywide_detailed <- houston_crime %>%
+  group_by(offense_type,nibrs_class,year) %>%
+  summarise(count = sum(offense_count)) %>%
+  pivot_wider(names_from=year, values_from=count)
+# rename the year columns
+citywide_detailed <- citywide_detailed %>% 
+  rename("total19" = "2019",
+         "total20" = "2020",
+         "total21" = "2021",
+         "total22" = "2022")
+# add projected22 column to project/forecast annual number
+citywide_detailed$projected22 <- round(citywide_detailed$total22*projected_multiplier,0)
+# add zeros where there were no crimes tallied that year
+citywide_detailed[is.na(citywide_detailed)] <- 0
+# calculate increases
+citywide_detailed$inc_19to21 <- round(citywide_detailed$total21/citywide_detailed$total19*100-100,1)
+citywide_detailed$inc_19to22sofar <- round(citywide_detailed$projected22/citywide_detailed$total19*100-100,1)
+citywide_detailed$inc_21to22sofar <- round(citywide_detailed$projected22/citywide_detailed$total21*100-100,1)
+citywide_detailed$inc_3yearto22sofar <- round(citywide_detailed$projected22/((citywide_detailed$total19+citywide_detailed$total20+citywide_detailed$total21)/3)*100-100,0)
+# calculate the citywide rates
+citywide_detailed$rate19 <- round(citywide_detailed$total19/2304580*100000,1)
+citywide_detailed$rate20 <- round(citywide_detailed$total20/2304580*100000,1)
+citywide_detailed$rate21 <- round(citywide_detailed$total21/2304580*100000,1)
+citywide_detailed$rate22 <- round(citywide_detailed$projected22/2304580*100000,1)
+# calculate a multiyear rate
+citywide_detailed$rate_multiyear <- round(((citywide_detailed$total19+citywide_detailed$total20+citywide_detailed$total21)/3)/2304580*100000,1)
+# for map/table making purposes, changing Inf and NaN in calc fields to NA
+citywide_detailed <- citywide_detailed %>%
+  mutate(across(where(is.numeric), ~na_if(., Inf)))
+citywide_detailed <- citywide_detailed %>%
+  mutate(across(where(is.numeric), ~na_if(., "NaN")))
+
+# Calculate of each category of offense CITYWIDE
+citywide_category <- houston_crime %>%
+  group_by(category_name,year) %>%
+  summarise(count = sum(offense_count)) %>%
+  pivot_wider(names_from=year, values_from=count)
+# rename the year columns
+citywide_category <- citywide_category %>% 
+  rename("total19" = "2019",
+         "total20" = "2020",
+         "total21" = "2021",
+         "total22" = "2022")
+# add projected22 column to project/forecast annual number
+citywide_category$projected22 <- round(citywide_category$total22*projected_multiplier,0)
+# add zeros where there were no crimes tallied that year
+citywide_category[is.na(citywide_category)] <- 0
+# calculate increases
+citywide_category$inc_19to21 <- round(citywide_category$total21/citywide_category$total19*100-100,1)
+citywide_category$inc_19to22sofar <- round(citywide_category$projected22/citywide_category$total19*100-100,1)
+citywide_category$inc_21to22sofar <- round(citywide_category$projected22/citywide_category$total21*100-100,1)
+citywide_category$inc_3yearto22sofar <- round(citywide_category$projected22/((citywide_category$total19+citywide_category$total20+citywide_category$total21)/3)*100-100,0)
+# calculate the citywide rates
+citywide_category$rate19 <- round(citywide_category$total19/2304580*100000,1)
+citywide_category$rate20 <- round(citywide_category$total20/2304580*100000,1)
+citywide_category$rate21 <- round(citywide_category$total21/2304580*100000,1)
+citywide_category$rate22 <- round(citywide_category$projected22/2304580*100000,1)
+# calculate a multiyear rate
+citywide_category$rate_multiyear <- round(((citywide_category$total19+citywide_category$total20+citywide_category$total21)/3)/2304580*100000,1)
+
+# Calculate of each type of crime CITYWIDE
+citywide_type <- houston_crime %>%
+  group_by(type,year) %>%
+  summarise(count = sum(offense_count)) %>%
+  pivot_wider(names_from=year, values_from=count)
+# rename the year columns
+citywide_type <- citywide_type %>% 
+  rename("total19" = "2019",
+         "total20" = "2020",
+         "total21" = "2021",
+         "total22" = "2022")
+# add projected22 column to project/forecast annual number
+citywide_type$projected22 <- round(citywide_type$total22*projected_multiplier,0)
+# add zeros where there were no crimes tallied that year
+citywide_type[is.na(citywide_type)] <- 0
+# calculate increases
+citywide_type$inc_19to21 <- round(citywide_type$total21/citywide_type$total19*100-100,1)
+citywide_type$inc_19to22sofar <- round(citywide_type$projected22/citywide_type$total19*100-100,1)
+citywide_type$inc_21to22sofar <- round(citywide_type$projected22/citywide_type$total21*100-100,1)
+citywide_type$inc_3yearto22sofar <- round(citywide_type$projected22/((citywide_type$total19+citywide_type$total20+citywide_type$total21)/3)*100-100,0)
+# calculate the citywide rates
+citywide_type$rate19 <- round(citywide_type$total19/2304580*100000,1)
+citywide_type$rate20 <- round(citywide_type$total20/2304580*100000,1)
+citywide_type$rate21 <- round(citywide_type$total21/2304580*100000,1)
+citywide_type$rate22 <- round(citywide_type$projected22/2304580*100000,1)
+# calculate a multiyear rate
+citywide_type$rate_multiyear <- round(((citywide_type$total19+citywide_type$total20+citywide_type$total21)/3)/2304580*100000,1)
+
+# MERGE WITH BEATS GEOGRAPHY AND POPULATION
+# Geography and populations processed separately in 
+# source(process_houston_police_beats.R)
+# Test that all beats show in data and identify beat #s that do not
+# beatsindata <- houston_crime %>% group_by(beat,year) %>% summarise(count=n()) %>% pivot_wider(names_from=year, values_from=count)
+# anti_join(beatsindata,beats,by="beat")
+
+# BY POLICE BEAT
+# Calculate total of each detailed offense type BY POLICE BEAT
+beat_detailed <- houston_crime %>%
+  group_by(beat,offense_type,nibrs_class,year) %>%
+  summarise(count = sum(offense_count)) %>%
+  pivot_wider(names_from=year, values_from=count)
+# rename the year columns
+beat_detailed <- beat_detailed %>% 
+  rename("total19" = "2019",
+         "total20" = "2020",
+         "total21" = "2021",
+         "total22" = "2022")
+# add projected22 column to project/forecast annual number
+beat_detailed$projected22 <- round(beat_detailed$total22*projected_multiplier,0)
+# add zeros where there were no crimes tallied that year
+beat_detailed[is.na(beat_detailed)] <- 0
+# calculate increases
+beat_detailed$inc_19to21 <- round(beat_detailed$total21/beat_detailed$total19*100-100,1)
+beat_detailed$inc_19to22sofar <- round(beat_detailed$projected22/beat_detailed$total19*100-100,1)
+beat_detailed$inc_21to22sofar <- round(beat_detailed$projected22/beat_detailed$total21*100-100,1)
+beat_detailed$inc_3yearto22sofar <- round(beat_detailed$projected22/((beat_detailed$total19+beat_detailed$total20+beat_detailed$total21)/3)*100-100,0)
+# add population for beats
+beat_detailed <- full_join(beats,beat_detailed,by="beat") 
+# calculate the beat by beat rates PER 1K people
+beat_detailed$rate19 <- round(beat_detailed$total19/beat_detailed$population*100000,1)
+beat_detailed$rate20 <- round(beat_detailed$total20/beat_detailed$population*100000,1)
+beat_detailed$rate21 <- round(beat_detailed$total21/beat_detailed$population*100000,1)
+beat_detailed$rate22 <- round(beat_detailed$projected22/beat_detailed$population*100000,1)
+# calculate a multiyear rate
+beat_detailed$rate_multiyear <- round(((beat_detailed$total19+beat_detailed$total20+beat_detailed$total21)/3)/beat_detailed$population*100000,1)
+# for map/table making purposes, changing Inf and NaN in calc fields to NA
+beat_detailed <- beat_detailed %>%
+  mutate(across(where(is.numeric), ~na_if(., Inf)))
+beat_detailed <- beat_detailed %>%
+  mutate(across(where(is.numeric), ~na_if(., "NaN")))
+
+# Calculate total of each category of offense BY POLICE BEAT
+beat_category <- houston_crime %>%
+  group_by(beat,category_name,year) %>%
+  summarise(count = sum(offense_count)) %>%
+  pivot_wider(names_from=year, values_from=count)
+# rename the year columns
+beat_category <- beat_category %>% 
+  rename("total19" = "2019",
+         "total20" = "2020",
+         "total21" = "2021",
+         "total22" = "2022")
+# add projected22 column to project/forecast annual number
+beat_category$projected22 <- round(beat_category$total22*projected_multiplier,0)
+# add zeros where there were no crimes tallied that year
+beat_category[is.na(beat_category)] <- 0
+# calculate increases
+beat_category$inc_19to21 <- round(beat_category$total21/beat_category$total19*100-100,1)
+beat_category$inc_19to22sofar <- round(beat_category$projected22/beat_category$total19*100-100,1)
+beat_category$inc_21to22sofar <- round(beat_category$projected22/beat_category$total21*100-100,1)
+beat_category$inc_3yearto22sofar <- round(beat_category$projected22/((beat_category$total19+beat_category$total20+beat_category$total21)/3)*100-100,0)
+# add population for beats
+beat_category <- full_join(beats,beat_category,by="beat") 
+# calculate the beat by beat rates PER 1K people
+beat_category$rate19 <- round(beat_category$total19/beat_category$population*100000,1)
+beat_category$rate20 <- round(beat_category$total20/beat_category$population*100000,1)
+beat_category$rate21 <- round(beat_category$total21/beat_category$population*100000,1)
+beat_category$rate22 <- round(beat_category$projected22/beat_category$population*100000,1)
+# calculate a multiyear rate
+beat_category$rate_multiyear <- round(((beat_category$total19+beat_category$total20+beat_category$total21)/3)/beat_category$population*100000,1)
+# for map/table making purposes, changing Inf and NaN in calc fields to NA
+beat_category <- beat_category %>%
+  mutate(across(where(is.numeric), ~na_if(., Inf)))
+beat_category <- beat_category %>%
+  mutate(across(where(is.numeric), ~na_if(., "NaN")))
+
+# Calculate total of each type of crime BY POLICE BEAT
+beat_type <- houston_crime %>%
+  group_by(beat,type,year) %>%
+  summarise(count = sum(offense_count)) %>%
+  pivot_wider(names_from=year, values_from=count)
+# rename the year columns
+beat_type <- beat_type %>% 
+  rename("total19" = "2019",
+         "total20" = "2020",
+         "total21" = "2021",
+         "total22" = "2022")
+# add projected22 column to project/forecast annual number
+beat_type$projected22 <- round(beat_type$total22*projected_multiplier,0)
+# add zeros where there were no crimes tallied that year
+beat_type[is.na(beat_type)] <- 0
+# calculate increases
+beat_type$inc_19to21 <- round(beat_type$total21/beat_type$total19*100-100,1)
+beat_type$inc_19to22sofar <- round(beat_type$projected22/beat_type$total19*100-100,1)
+beat_type$inc_21to22sofar <- round(beat_type$projected22/beat_type$total21*100-100,1)
+beat_type$inc_3yearto22sofar <- round(beat_type$projected22/((beat_type$total19+beat_type$total20+beat_type$total21)/3)*100-100,0)
+# add population for beats
+beat_type <- full_join(beats,beat_type,by="beat") 
+# calculate the beat by beat rates PER 1K people
+beat_type$rate19 <- round(beat_type$total19/beat_type$population*100000,1)
+beat_type$rate20 <- round(beat_type$total20/beat_type$population*100000,1)
+beat_type$rate21 <- round(beat_type$total21/beat_type$population*100000,1)
+beat_type$rate22 <- round(beat_type$projected22/beat_type$population*100000,1)
+# calculate a multiyear rate
+beat_type$rate_multiyear <- round(((beat_type$total19+beat_type$total20+beat_type$total21)/3)/beat_type$population*100000,1)
+# for map/table making purposes, changing Inf and NaN in calc fields to NA
+beat_type <- beat_type %>%
+  mutate(across(where(is.numeric), ~na_if(., Inf)))
+beat_type <- beat_type %>%
+  mutate(across(where(is.numeric), ~na_if(., "NaN")))
+
+# output various csvs for basic tables to be made with crime totals
+# we are dropping geometry for beats here because this is just for tables
+beat_detailed %>% st_drop_geometry() %>% write_csv("beat_detailed.csv")
+beat_category %>% st_drop_geometry() %>% write_csv("beat_category.csv")
+beat_type %>% st_drop_geometry() %>% write_csv("beat_type.csv")
+citywide_detailed %>% write_csv("citywide_detailed.csv")
+citywide_category %>% write_csv("citywide_category.csv")
+citywide_type %>% write_csv("citywide_type.csv")
+
+
+
+
+# Create individual spatial tables of crimes by major categories and types
+murders_beat <- beat_detailed %>% filter(nibrs_class=="09A")
+sexassaults_beat <- beat_category %>% filter(category_name=="Sexual Assault")
+autothefts_beat <- beat_category %>% filter(category_name=="Auto Theft")
+thefts_beat <- beat_category %>% filter(category_name=="Theft")
+burglaries_beat <- beat_category %>% filter(category_name=="Burglary")
+robberies_beat <- beat_category %>% filter(category_name=="Robbery")
+assaults_beat <- beat_category %>% filter(category_name=="Assault")
+drugs_beat <- beat_category %>% filter(category_name=="Drug Offenses")
+violence_beat <- beat_type %>% filter(type=="Violent")
+property_beat <- beat_type %>% filter(type=="Property")
+# Create same set of tables for citywide figures
+murders_city <- citywide_detailed %>% filter(nibrs_class=="09A")
+sexassaults_city <- citywide_category %>% filter(category_name=="Sexual Assault")
+autothefts_city <- citywide_category %>% filter(category_name=="Auto Theft")
+thefts_city <- citywide_category %>% filter(category_name=="Theft")
+burglaries_city <- citywide_category %>% filter(category_name=="Burglary")
+robberies_city <- citywide_category %>% filter(category_name=="Robbery")
+assaults_city <- citywide_category %>% filter(category_name=="Assault")
+drugs_city <- citywide_category %>% filter(category_name=="Drug Offenses")
+violence_city <- citywide_type %>% filter(type=="Violent")
+property_city <- citywide_type %>% filter(type=="Property")
+
+# Using premise to identify the kinds of places where murders happen
+where_murders_happen <- houston_crime %>%
+  filter(nibrs_class=="09A") %>%
+  group_by(premise,year) %>%
+  summarise(count=n()) %>%
+  pivot_wider(names_from=year, values_from=count) %>% 
+  rename("total19" = "2019",
+         "total20" = "2020",
+         "total21" = "2021",
+         "total22" = "2022") %>%
+  select(1,4,5,2,3)
+where_murders_happen$projected22 <- round(where_murders_happen$total22*projected_multiplier,0)
+
+# Using premise to identify the kinds of places where all violent crimes happen
+where_violentcrimes_happen <- houston_crime %>%
+  filter(type=="Violent") %>%
+  group_by(premise,year) %>%
+  summarise(count=n()) %>%
+  pivot_wider(names_from=year, values_from=count) %>% 
+  rename("total19" = "2019",
+         "total20" = "2020",
+         "total21" = "2021",
+         "total22" = "2022") 
+where_violentcrimes_happen$projected22 <- round(where_violentcrimes_happen$total22*projected_multiplier,0)
+
+# Using premise to identify the kinds of places where all violent crimes happen
+where_propertycrimes_happen <- houston_crime %>%
+  filter(type=="Property") %>%
+  group_by(premise,year) %>%
+  summarise(count=n()) %>%
+  pivot_wider(names_from=year, values_from=count) %>% 
+  rename("total19" = "2019",
+         "total20" = "2020",
+         "total21" = "2021",
+         "total22" = "2022") 
+where_propertycrimes_happen$projected22 <- round(where_propertycrimes_happen$total22*projected_multiplier,0)
+
+
+# Using hour to identify the hours of day when murders happen
+when_murders_happen <- houston_crime %>%
+  filter(nibrs_class=="09A") %>%
+  group_by(hour) %>%
+  summarise(count=n()) %>% 
+  arrange(hour)
+when_murders_happen$time <- case_when(when_murders_happen$hour %in% c("0","1","2","3","4","21","22","23") ~ "Overnight",
+                                      when_murders_happen$hour %in% c("5","6","7","8","9","10","11","12") ~ "Morning",
+                                      when_murders_happen$hour %in% c("13","14","15","16","17","18","19","20")  ~ "Afternoon/Evening",
+                                      TRUE ~ "Other")
+when_murders_happen <- when_murders_happen %>%
+  group_by(time) %>%
+  summarise(count=sum(count))
+
+
+
+#### STOPPING POINT #######
+
+
+
+

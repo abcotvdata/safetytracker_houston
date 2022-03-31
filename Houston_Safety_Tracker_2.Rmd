@@ -13,13 +13,12 @@ library(readxl)
 library(leaflet)
 library(leaflet.extras)
 library(leaflet.providers)
-library(mapview)
 library(sp)
 library(sf)
 library(htmlwidgets)
 library(htmltools)
 
-# rmarkdown::render('Houston_Safety_Tracker2.Rmd', output_file = 'docs/Houston_Safety_Tracker2.html')
+# rmarkdown::render('Houston_Safety_Tracker_2.Rmd', output_file = 'docs/Houston_Safety_Tracker_2.html')
 ```
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
@@ -64,7 +63,7 @@ h2 {
   margin-bottom: 2;
 }
 
-h3 {
+bignumber {
   font-family: roboto;
   color: #00318b;
   font-weight: 900;
@@ -74,17 +73,17 @@ h3 {
   margin-bottom: 0;
 }
 
-h4 {
+popupchatter {
   font-family: roboto;
   color: black;
   font-weight: 300;
   text-align: left;
-  font-size: 10px;
+  font-size: 11px;
   margin-top: 0;
   margin-bottom: 2;
 }
 
-h5 {
+chartbignumber {
   font-family: roboto;
   color: #00318b;
   font-weight: bolder;
@@ -94,23 +93,23 @@ h5 {
   margin-bottom: 0;
 }
 
-h6 {
+subhead {
   font-family: roboto;
-  color: blue;
+  color: #00318b;
+  font-weight: 900;
   text-align: left;
-  font-size: 32px;
-    margin-top: 0;
-  margin-bottom: 0;
+  font-size: 24px;
+    padding: 5px;
 }
 
 body {
   color: black;
   font-family: roboto;
   font-weight: 300;
-  font-size: 8pt;
+  font-size: 10px;
 }
 
-h7 {
+popuptitle {
   font-family: roboto;
   color: #00318b;
   font-weight: bolder;
@@ -127,15 +126,6 @@ h8 {
   border-radius: 20px;
   padding: 2em;
   text-align: center;
-}
-
-h9 {
-  font-family: roboto;
-  color: #00318b;
-  font-weight: 900;
-  text-align: left;
-  font-size: 24px;
-    padding: 5px;
 }
 
 table {
@@ -168,360 +158,32 @@ th {
       padding: 10px;
       border-radius: 10px;
       margin: 10px;
-      height: 160px;
+      height: 100%;
    }
    .card p {
    font-family: roboto;
    text-align: center;
-   font-size: 14px;
+   font-size: 12px;
+  margin-bottom: 0;
    }
    .cardContainer:after {
       content: "";
       display: table;
       clear: both;
    }
-   @media screen and (max-width: 600px) {
+   @media screen and (max-width: 650px) {
       .card {
          width: 100%;
       }
    }
 ```
-
-```{r beatsdata, include=FALSE, cache=TRUE}
-# Import data underlying this project
-
-# Read in geojson and then transform to sf format
-beats <- st_read("data/geo/houston_police_beats.geojson")
-# Fix an invalid polygon(s) in the beats file
-beats <- st_make_valid(beats)
-# Transform tidycensus data to match beats projection
-# beats <- st_transform(beats, 4269)
-
-# Get demographic data for Census block groups to aggregate/apportion to beats geography
-# Note that we are asking for the more detailed tiger line files, so we can trim water later
-# Also transforming to match the projection of the Houston PD's beats spatial file
-blockgroups <- get_acs(geography = "block group", 
-                       year = 2020,
-                       output = 'wide',
-                       variables = "B03002_001", 
-                       state = "TX",
-                       county = c("Harris County","Fort Bend","Montgomery"),
-                       geometry = TRUE) %>%
-st_transform(4326)
-
-# Grab just the population and geometry from blockgroups from tidycensus
-pop <- blockgroups["B03002_001E"] # keep only the values to be transferred
-
-# Calculate the estimated population of beat geographies/interpolate with tidycensus block groups
-# Reminder: ext=true SUMS the population during interpolation; assumes pop is evenly distributed
-beats_withpop <- st_interpolate_aw(pop, beats, ext = TRUE)
-# Drops geometry so it's not duplicated in the merge
-beats_withpop <- st_drop_geometry(beats_withpop)
-# Binds that new population column to the table
-beats <- cbind(beats,beats_withpop)
-
-# Trim and clean beats file to just what we need
-beats <- beats %>%
-  rename("population"="B03002_001E","beat"="Beats") %>%
-  select(beat,District,Area_sq_mi,population,geometry) %>% 
-  janitor::clean_names()
-# Round the population figure
-beats$population <- round(beats$population,0)
-# Eliminate population from two beats on airport property
-beats$population <- ifelse(beats$population<1000,0,beats$population)
-# Cleans up unneeded calculation file
-rm(beats_withpop)
-
-# Adding place descriptions of the beats
-beats$placename <- case_when(beats$beat == "1A10" ~ "Downtown Central Business District",
-                        beats$beat == "1A20" ~ "Fourth Ward, Avondale, Westmoreland",
-                        beats$beat == "1A30" ~ "Cherryhurst, Mandell Place, Montrose",
-                        beats$beat == "1A40" ~ "Tall Timbers, Royden Oaks, River Oaks, Avalon Place, Oak Estates",
-                        beats$beat == "1A50" ~ "Post Oak Park, Afton Oaks, Highland Village, Weslayan, Greenway Plaza, The Compaq Center",
-                        beats$beat == "2A10" ~ "Irvington, Ryon",
-                        beats$beat == "2A20" ~ "Sunset Heights, Brooksmith, Stude",
-                        beats$beat == "2A30" ~ "Houston Heights, Norhill, Studemont",
-                        beats$beat == "2A40" ~ "Old Sixth Ward, First Ward",
-                        beats$beat == "2A50" ~ "Memorial Park, West End, Ashbury, Cottage Grove",
-                        beats$beat == "2A60" ~ "Westport, Holly Park, Lazy Brook, Citadel, Shady Acres, Timbergrove",
-                        beats$beat == "3B10" ~ "Northwest Mall, Brookhollow, White Oak Acres, Oak Forest, Langwood",
-                        beats$beat == "3B30" ~ "White Oak Acres, Brook Hollow, Oak Forest, Garden Oaks, Shepherd Park Plaza",
-                        beats$beat == "3B40" ~ "Independence Heights, Melrose, Graceland",
-                        beats$beat == "3B50" ~ "Northline Mall, Stratton Place, Oakwood, Colonial Gardens, Lindale, Junction City",
-                        beats$beat == "6B10" ~ "York Plaza, Pembrook Place, Hawthorne Place",
-                        beats$beat == "6B20" ~ "Highland Heights, Oakdale, Melrose Gardens",
-                        beats$beat == "6B30" ~ "Woodland Trails, Oaks of Inwood, Bayou Bend, Cole Creek Manor, Inwood Forest",
-                        beats$beat == "6B40" ~ "Highland Gardens, Highland Heights, North Plaza",
-                        beats$beat == "22B30" ~ "Aldine, Imperial Valley",
-                        beats$beat == "22B20" ~ "Greenspoint",
-                        beats$beat == "7C10" ~ "Fifth Ward, North Park, Pinecrest",
-                        beats$beat == "7C20" ~ "Huntington Place, Willshire Place, Kashmere Gardens, Liberty Gardens",
-                        beats$beat == "7C30" ~ "Camden Woods, Archers Acres, Croyden Gardens",
-                        beats$beat == "7C40" ~ "Keith-Weiss Park, Farrington Place",
-                        beats$beat == "22B40" ~ "Intercontinental Airport, Northwood, Lakeview Park, Glen Lee",
-                        beats$beat == "8C10" ~ "Tidwell Park, Shady Oak, Buckingham Place",
-                        beats$beat == "8C20" ~ "Houston Gardens, Rosewood, Homestead",
-                        beats$beat == "8C30" ~ "Parkhurst, East Houston, Clairmont Place",
-                        beats$beat == "8C40" ~ "Lake Houston, Greenriver, Knoll, Lake Forest",
-                        beats$beat == "8C50" ~ "Park North, Forest Green, Kentshire Place, Glenwood Forest, Dorchester",
-                        beats$beat == "8C60" ~ "Edgeworth, Northwood Manor, Scenic Woods",
-                        beats$beat == "9C10" ~ "Port of Houston, Clinton Park, Pleasantville, Fidelity Manor",
-                        beats$beat == "9C20" ~ "Denver Harbor, Houston Harbor",
-                        beats$beat == "9C30" ~ "City Park East, Wynnewood Acres, Wallisville Gardens",
-                        beats$beat == "9C40" ~ "Greens Bayou Estates, Shady Brook, Northshore",
-                        beats$beat == "24C10" ~ "Kingwood",
-                        beats$beat == "24C20" ~ "Kingwood",
-                        beats$beat == "24C30" ~ "Kingwood",
-                        beats$beat == "24C40" ~ "Kingwood",
-                        beats$beat == "24C50" ~ "Kingwood",
-                        beats$beat == "24C60" ~ "Kingwood",
-                        beats$beat == "11H10" ~ "Mason Park, Forest Hill, Sunnyland, Central Park",
-                        beats$beat == "11H20" ~ "Harrisburg, Manchester, Pecan Park",
-                        beats$beat == "11H30" ~ "Meadow Brook, Park Place",
-                        beats$beat == "11H40" ~ "Allendale, Oak Meadows",
-                        beats$beat == "11H50" ~ "Meadow Creek, Ferndale Addition, Glenbrook Industrial",
-                        beats$beat == "10H10" ~ "Oak Lawn, Ranger",
-                        beats$beat == "10H20" ~ "Eastwood, Broadmoor",
-                        beats$beat == "10H30" ~ "Near East End",
-                        beats$beat == "10H40" ~ "Midtown",
-                        beats$beat == "10H50" ~ "University of Houston area",
-                        beats$beat == "10H60" ~ "University Oaks, Riverside Terrace, Texas Southern University area",
-                        beats$beat == "10H70" ~ "Texas Medical Center, Hermann Park, Houston Zoo, Miller Outdoor Theatre",
-                        beats$beat == "10H80" ~ "Southampton, Rice University area, Shadow Lawn, Broad Acres",
-                        beats$beat == "12D10" ~ "Almeda Mall, Southridge, Edgebrook, South Houston Gardens",
-                        beats$beat == "12D20" ~ "Sage",
-                        beats$beat == "12D30" ~ "Gulf Palms, Beamer",
-                        beats$beat == "12D40" ~ "Scarsdale, Ellington Field",
-                        beats$beat == "12D50" ~ "Bay Glen, Bay Oaks, Brook Forest, Bay Forest",
-                        beats$beat == "12D60" ~ "NASA's Johnson Space Center, Meadow Green, Oakbrook West, Camino South",
-                        beats$beat == "12D70" ~ "Baybrook Mall, Sterling Knoll",
-                        beats$beat == "13D10" ~ "Gulfgate Mall, Bay Forest, Riverview, Hampshire, Golfcrest, Barnett Stadium",
-                        beats$beat == "13D20" ~ "Fairlawn, Garden Villas, Glenbrook Valley, Santa Rosa",
-                        beats$beat == "13D30" ~ "Allen Farms, Airport Gardens, Hobby Airport area",
-                        beats$beat == "13D40" ~ "Val Verde East, Gulf Meadows, Houston Skyscraper Shadows",
-                        beats$beat == "14D10" ~ "McGregor Terrace, Riverside Terrace",
-                        beats$beat == "14D20" ~ "Blueridge, Sunnyside, Brook Haven, Bayou Estates",
-                        beats$beat == "14D30" ~ "Crestmont, Edgewood, Bellfort Park, Inwood Terrace, Southpark",
-                        beats$beat == "14D40" ~ "South Acres, Shamrock Manor, Hillwood, Cloverland",
-                        beats$beat == "14D50" ~ "Golden Glade Estates, Langston, Almeda Genoa",
-                        beats$beat == "17E10" ~ "Southwest Memorial Hospital, Burnett Bayland Park, Westmoreland",
-                        beats$beat == "17E20" ~ "Houston Baptist University area, Maplewood West",
-                        beats$beat == "17E30" ~ "Braeburn Valley West, Glenshire",
-                        beats$beat == "17E40" ~ "Creekbend, Southwood, Fondren Southwest",
-                        beats$beat == "15E10" ~ "Meyerland Plaza, Robindell, Meyerland, Braeburn Terrace, Maplewood South",
-                        beats$beat == "15E20" ~ "Westbury, Park West, Willow Creek",
-                        beats$beat == "15E30" ~ "Meyer Park, Post Oak Manor, Westwood, Willow Bend, Linkwood",
-                        beats$beat == "15E40" ~ "The Astrodome, Six Flags Astroworld, Lakes at 610, Plaza del Oro",
-                        beats$beat == "16E10" ~ "Canterbury Village, Monarch Estates",
-                        beats$beat == "16E20" ~ "Almeda Plaza, South Glen, Dumbarton Oaks, Briarwick",
-                        beats$beat == "16E30" ~ "Greenpark, Southwest Crossing, Windsor Village",
-                        beats$beat == "16E40" ~ "Chasewood, Willowpark, Briarwick, Ridgemont, Quail Run",
-                        beats$beat == "19G10" ~ "Concourse South, Westwood Mall",
-                        beats$beat == "19G20" ~ "Catalina Square, Bellaire West, Imperial Point",
-                        beats$beat == "19G30" ~ "Rodeo Square, Wildflower Green, Braewood Glen",
-                        beats$beat == "19G40" ~ "Huntington Village, Wellington Park, Leawood, Keegans Glen",
-                        beats$beat == "19G50" ~ "Forum Park, Stancliff, Southwest Park",
-                        beats$beat == "20G10" ~ "Westchase, Woodchase Village, Point West",
-                        beats$beat == "20G20" ~ "Lakeside Estates, City West Place, Rivercrest, Briargrove Park",
-                        beats$beat == "20G30" ~ "West Houston Medical Center, Andrau Airport, Westchase, Westchase Mall",
-                        beats$beat == "20G40" ~ "Lakeview Forest, Lakeside Place, Ashford Village, Southlake",
-                        beats$beat == "20G50" ~ "Nottingham, Yorkshire, Wilchester, Town and Country Village, Memorial City Shopping Center",
-                        beats$beat == "20G60" ~ "Barkers Landing, Fleetwood, Thornwood, Darrel Tully Stadium",
-                        beats$beat == "20G70" ~ "Westpark Village, Ashford Point",
-                        beats$beat == "20G80" ~ "City Limits",
-                        beats$beat == "5F10" ~ "Afton Village, Pine Terrace",
-                        beats$beat == "5F20" ~ "Spring Branch, Schwartz Park",
-                        beats$beat == "5F30" ~ "Fairbanks, Carverdale, Fawndale, Northwest Crossing",
-                        beats$beat == "22B10" ~ "Willowbrook, Willow Chase Park, Centerfield",
-                        beats$beat == "4F10" ~ "Timber Oaks, Shadow Oaks, Long Point Acres",
-                        beats$beat == "4F20" ~ "Claymore Park, Westbranch, Spring Shadows, Kempwood Forest",
-                        beats$beat == "4F30" ~ "Addicks Reservoir Area, Claymore Park, Brittmore Village, Park Ten Place, Mayde Creek Farms",
-                        beats$beat == "18F10" ~ "Saddlebrook, Bayou Woods, Sherwood Forest",
-                        beats$beat == "18F20" ~ "The Galleria, Tanglewood, Riverway, Post Oak",
-                        beats$beat == "18F30" ~ "The Richmond Strip, Briargrove, Post Oak Estates, Westhaven",
-                        beats$beat == "18F40" ~ "Rosewood General Hospital, Woodlake, Briarmeadow",
-                        beats$beat == "18F50" ~ "Tanglewild, Sharpstown Mall, Regency Square",
-                        beats$beat == "18F60" ~ "Sharpstown Country Club, Southway Center",
-                        beats$beat == "21I10" ~ "Hobby Airport",
-                        beats$beat == "21I20" ~ "Hobby Airport",
-                        beats$beat == "21I30" ~ "Hobby Airport",
-                        beats$beat == "21I40" ~ "Hobby Airport",                        beats$beat == "36E10" ~ "xxxx",
-                        beats$beat == "21I50" ~ "Hobby Airport",
-                        beats$beat == "21I60" ~ "Hobby Airport",
-                        beats$beat == "21I70" ~ "Hobby Airport",
-                        beats$beat == "23J40" ~ "Intercontinental Airport",    
-                        beats$beat == "23J50" ~ "Intercontinental Airport",    
-                        TRUE ~ "Unknown")
-
-
+```{r beats, include=FALSE}
+# source("process_houston_police_beats.R")
 ```
-```{r crimedata, include=FALSE, cache=TRUE}
-
-# Import data underlying this project
-houston_crime <- read_csv("data/latest/houston_crime.csv", 
-                          col_types = cols(incident = col_character(), 
-                                           date = col_date(format = "%Y-%m-%d"), 
-                                           street_no = col_character(), longitude = col_character(), 
-                                           latitude = col_character(), category_code = col_character()))
-
-houston22 <- read_excel("data/latest/houston_NIBRS2022.xlsx", 
-                        col_types = c("text", "date", "numeric", 
-                                      "text", "text", "numeric", "text", 
-                                      "text", "text", "text", "text", "text", 
-                                      "text", "text","numeric","numeric"))
-names(houston22) <- c("incident", "date", "hour", 
-                      "nibrs_class", "offense_type", "offense_count", "beat", 
-                      "premise", "street_no", "street_name", "street_type", "street_suffix", 
-                      "city", "zip","longitude","latitude")
 
 
-# Calculate the multiplier for the 2022 data based on days of data in file
-days_so_far_2022 <- 1/(n_distinct(houston22$date)/365)
-months_so_far_2022 <- n_distinct(lubridate::month(houston22$date))
-
-# Calculate the total of each DETAILED crime/incident CITYWIDE
-totals_by_crime_detailed <- houston_crime %>%
-  group_by(offense_type,nibrs_class,year) %>%
-  summarise(count = sum(offense_count)) %>%
-  pivot_wider(names_from=year, values_from=count)
-# rename the year columns
-totals_by_crime_detailed <- totals_by_crime_detailed %>% 
-  rename("total19" = "2019",
-         "total20" = "2020",
-         "total21" = "2021",
-         "total22" = "2022")
-# add projected22 column to project/forecast annual number
-totals_by_crime_detailed$projected22 <- round(totals_by_crime_detailed$total22*days_so_far_2022,0)
-# add zeros where there were no crimes tallied that year
-totals_by_crime_detailed[is.na(totals_by_crime_detailed)] <- 0
-# calculate increases
-totals_by_crime_detailed$inc_19to21 <- round(totals_by_crime_detailed$total21/totals_by_crime_detailed$total19*100-100,1)
-totals_by_crime_detailed$inc_19to22sofar <- round(totals_by_crime_detailed$projected22/totals_by_crime_detailed$total19*100-100,1)
-totals_by_crime_detailed$inc_21to22sofar <- round(totals_by_crime_detailed$projected22/totals_by_crime_detailed$total21*100-100,1)
-totals_by_crime_detailed$inc_3yearto22sofar <- round(totals_by_crime_detailed$projected22/((totals_by_crime_detailed$total19+totals_by_crime_detailed$total20+totals_by_crime_detailed$total21)/3)*100-100,0)
-# calculate the citywide rates
-totals_by_crime_detailed$rate19 <- round(totals_by_crime_detailed$total19/2304580*100000,1)
-totals_by_crime_detailed$rate20 <- round(totals_by_crime_detailed$total20/2304580*100000,1)
-totals_by_crime_detailed$rate21 <- round(totals_by_crime_detailed$total21/2304580*100000,1)
-totals_by_crime_detailed$rate22 <- round(totals_by_crime_detailed$projected22/2304580*100000,1)
-# calculate a multiyear rate
-totals_by_crime_detailed$rate_multiyear <- round(((totals_by_crime_detailed$total19+totals_by_crime_detailed$total20+totals_by_crime_detailed$total21)/3)/2304580*100000,1)
-
-
-# Calculate the total of each DETAILED crime/incident by BEATS
-totals_by_beat_detailed <- houston_crime %>%
-  group_by(beat,offense_type,nibrs_class,year) %>%
-  summarise(count = sum(offense_count)) %>%
-  pivot_wider(names_from=year, values_from=count)
-# rename the year columns
-totals_by_beat_detailed <- totals_by_beat_detailed %>% 
-  rename("total19" = "2019",
-         "total20" = "2020",
-         "total21" = "2021",
-         "total22" = "2022")
-# add projected22 column to project/forecast annual number
-totals_by_beat_detailed$projected22 <- round(totals_by_beat_detailed$total22*days_so_far_2022,0)
-# add zeros where there were no crimes tallied that year
-totals_by_beat_detailed[is.na(totals_by_beat_detailed)] <- 0
-# calculate increases
-totals_by_beat_detailed$inc_19to21 <- round(totals_by_beat_detailed$total21/totals_by_beat_detailed$total19*100-100,1)
-totals_by_beat_detailed$inc_19to22sofar <- round(totals_by_beat_detailed$projected22/totals_by_beat_detailed$total19*100-100,1)
-totals_by_beat_detailed$inc_21to22sofar <- round(totals_by_beat_detailed$projected22/totals_by_beat_detailed$total21*100-100,1)
-totals_by_beat_detailed$inc_3yearto22sofar <- round(totals_by_beat_detailed$projected22/((totals_by_beat_detailed$total19+totals_by_beat_detailed$total20+totals_by_beat_detailed$total21)/3)*100-100,0)
-# add population for beats
-totals_by_beat_detailed <- full_join(beats,totals_by_beat_detailed,by="beat") 
-# calculate the beat by beat rates PER 1K people
-totals_by_beat_detailed$rate19 <- round(totals_by_beat_detailed$total19/totals_by_beat_detailed$population*100000,1)
-totals_by_beat_detailed$rate20 <- round(totals_by_beat_detailed$total20/totals_by_beat_detailed$population*100000,1)
-totals_by_beat_detailed$rate21 <- round(totals_by_beat_detailed$total21/totals_by_beat_detailed$population*100000,1)
-totals_by_beat_detailed$rate22 <- round(totals_by_beat_detailed$projected22/totals_by_beat_detailed$population*100000,1)
-# calculate a multiyear rate
-totals_by_beat_detailed$rate_multiyear <- round(((totals_by_beat_detailed$total19+totals_by_beat_detailed$total20+totals_by_beat_detailed$total21)/3)/totals_by_beat_detailed$population*100000,1)
-# for map/table making purposes, changing Inf and NaN in calc fields to NA
-totals_by_beat_detailed <- totals_by_beat_detailed %>%
-  mutate(across(where(is.numeric), ~na_if(., Inf)))
-totals_by_beat_detailed <- totals_by_beat_detailed %>%
-  mutate(across(where(is.numeric), ~na_if(., "NaN")))
-
-# Calculate the total of each CATEGORY of crime/incident CITYWIDE
-totals_by_beat_category <- houston_crime %>%
-  group_by(beat,category_name,year) %>%
-  summarise(count = sum(offense_count)) %>%
-  pivot_wider(names_from=year, values_from=count)
-# rename the year columns
-totals_by_beat_category <- totals_by_beat_category %>% 
-  rename("total19" = "2019",
-         "total20" = "2020",
-         "total21" = "2021",
-         "total22" = "2022")
-# add projected22 column to project/forecast annual number
-totals_by_beat_category$projected22 <- round(totals_by_beat_category$total22*days_so_far_2022,0)
-# add zeros where there were no crimes tallied that year
-totals_by_beat_category[is.na(totals_by_beat_category)] <- 0
-# calculate increases
-totals_by_beat_category$inc_19to21 <- round(totals_by_beat_category$total21/totals_by_beat_category$total19*100-100,1)
-totals_by_beat_category$inc_19to22sofar <- round(totals_by_beat_category$projected22/totals_by_beat_category$total19*100-100,1)
-totals_by_beat_category$inc_21to22sofar <- round(totals_by_beat_category$projected22/totals_by_beat_category$total21*100-100,1)
-totals_by_beat_category$inc_3yearto22sofar <- round(totals_by_beat_category$projected22/((totals_by_beat_category$total19+totals_by_beat_category$total20+totals_by_beat_category$total21)/3)*100-100,0)
-# add population for beats
-totals_by_beat_category <- full_join(beats,totals_by_beat_category,by="beat") 
-# calculate the beat by beat rates PER 1K people
-totals_by_beat_category$rate19 <- round(totals_by_beat_category$total19/totals_by_beat_category$population*100000,1)
-totals_by_beat_category$rate20 <- round(totals_by_beat_category$total20/totals_by_beat_category$population*100000,1)
-totals_by_beat_category$rate21 <- round(totals_by_beat_category$total21/totals_by_beat_category$population*100000,1)
-totals_by_beat_category$rate22 <- round(totals_by_beat_category$projected22/totals_by_beat_category$population*100000,1)
-# calculate a multiyear rate
-totals_by_beat_category$rate_multiyear <- round(((totals_by_beat_category$total19+totals_by_beat_category$total20+totals_by_beat_category$total21)/3)/totals_by_beat_category$population*100000,1)
-# for map/table making purposes, changing Inf and NaN in calc fields to NA
-totals_by_beat_category <- totals_by_beat_category %>%
-  mutate(across(where(is.numeric), ~na_if(., Inf)))
-totals_by_beat_category <- totals_by_beat_category %>%
-  mutate(across(where(is.numeric), ~na_if(., "NaN")))
-
-# Calculate the total of each TYPE of crime/incident CITYWIDE
-totals_by_beat_type <- houston_crime %>%
-  group_by(beat,type,year) %>%
-  summarise(count = sum(offense_count)) %>%
-  pivot_wider(names_from=year, values_from=count)
-# rename the year columns
-totals_by_beat_type <- totals_by_beat_type %>% 
-  rename("total19" = "2019",
-         "total20" = "2020",
-         "total21" = "2021",
-         "total22" = "2022")
-# add projected22 column to project/forecast annual number
-totals_by_beat_type$projected22 <- round(totals_by_beat_type$total22*days_so_far_2022,0)
-# add zeros where there were no crimes tallied that year
-totals_by_beat_type[is.na(totals_by_beat_type)] <- 0
-# calculate increases
-totals_by_beat_type$inc_19to21 <- round(totals_by_beat_type$total21/totals_by_beat_type$total19*100-100,1)
-totals_by_beat_type$inc_19to22sofar <- round(totals_by_beat_type$projected22/totals_by_beat_type$total19*100-100,1)
-totals_by_beat_type$inc_21to22sofar <- round(totals_by_beat_type$projected22/totals_by_beat_type$total21*100-100,1)
-totals_by_beat_type$inc_3yearto22sofar <- round(totals_by_beat_type$projected22/((totals_by_beat_type$total19+totals_by_beat_type$total20+totals_by_beat_type$total21)/3)*100-100,0)
-# add population for beats
-totals_by_beat_type <- full_join(beats,totals_by_beat_type,by="beat") 
-# calculate the beat by beat rates PER 1K people
-totals_by_beat_type$rate19 <- round(totals_by_beat_type$total19/totals_by_beat_type$population*100000,1)
-totals_by_beat_type$rate20 <- round(totals_by_beat_type$total20/totals_by_beat_type$population*100000,1)
-totals_by_beat_type$rate21 <- round(totals_by_beat_type$total21/totals_by_beat_type$population*100000,1)
-totals_by_beat_type$rate22 <- round(totals_by_beat_type$projected22/totals_by_beat_type$population*100000,1)
-# calculate a multiyear rate
-totals_by_beat_type$rate_multiyear <- round(((totals_by_beat_type$total19+totals_by_beat_type$total20+totals_by_beat_type$total21)/3)/totals_by_beat_type$population*100000,1)
-# for map/table making purposes, changing Inf and NaN in calc fields to NA
-totals_by_beat_type <- totals_by_beat_type %>%
-  mutate(across(where(is.numeric), ~na_if(., Inf)))
-totals_by_beat_type <- totals_by_beat_type %>%
-  mutate(across(where(is.numeric), ~na_if(., "NaN")))
-
-# Isolate three categories of crimes by beat by year
-murders_by_beat <- totals_by_beat_detailed %>% filter(nibrs_class=="09A")
-sexualassaults_by_beat <- totals_by_beat_category %>% filter(category_name=="Sexual Assault")
-autothefts_by_beat <- totals_by_beat_detailed %>% filter(nibrs_class=="240")
-
-murders_citywide <- totals_by_crime_detailed %>% filter(nibrs_class=="09A")
-# sexualassaults_citywide <- totals_by_crime_category %>% filter(category_name=="Sexual Assault")
-autothefts_citywide <- totals_by_crime_detailed %>% filter(nibrs_class=="240")
-
+```{r crimedata, include=FALSE}
+# source("process_houston_crime_data.R")
 ```
 
 <h2>ABC 13 is tracking murders, and other crimes, across the city and in your neighborhood. Here's a look at what's happening with rising killings in the city.</h2>
@@ -529,22 +191,22 @@ autothefts_citywide <- totals_by_crime_detailed %>% filter(nibrs_class=="240")
 <div class="cardContainer">
 <div class="card" style="background-color:#99a0a5;">
 <p>So far this year<br>
-<h3>`r prettyNum(sum(murders_by_beat$total22), big.mark=",")`<br></h3><p>
+<bignumber>`r prettyNum(sum(murders_beat$total22), big.mark=",")`<br></bignumber><p>
 people have been murdered.</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
-<p>We are on track to reach<br></p>
-<h3>`r prettyNum(sum(murders_by_beat$projected22), big.mark=",")`<br></h3>
+<p>We are on track to reach<br>
+<bignumber>`r prettyNum(sum(murders_beat$projected22), big.mark=",")`<br></bignumber>
 <p>killings in 2022.</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>That's more than the<br>
-<h3>`r prettyNum(sum(murders_by_beat$total21), big.mark=",")`<br></h3><p>
+<bignumber>`r prettyNum(sum(murders_beat$total21), big.mark=",")`<br></bignumber><p>
 murders in 2021.</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>The murder rate would be <br>
-<h3>`r round(sum(murders_by_beat$projected22)/2304580*100000,1)`<br></h3><p>
+<bignumber>`r round(sum(murders_beat$projected22)/2304580*100000,1)`<br></bignumber><p>
 per 100,000 people in 2022.</p>
 </div>
 </div>
@@ -557,16 +219,31 @@ The color-coding of the map is based on the murder rate over 2019, 2020, 2021 an
 
 ```{r cars, echo=FALSE,out.width='100%',out.height='600'}
 # MURDER MAP
+
 # Set bins for numbers of crimes for murders map
-murderbins <- c(0,median(murders_by_beat$rate_multiyear,na.rm = TRUE)/2,median(murders_by_beat$rate_multiyear,na.rm = TRUE),median(murders_by_beat$rate_multiyear,na.rm = TRUE)*2,median(murders_by_beat$rate_multiyear,na.rm = TRUE)*3,200)
-murderpal <- colorBin(c("#99a0a5","#667f99","#00318b","#0058f6","#ffba00"), murders_by_beat$rate_multiyear, bins = murderbins)
+murderbins <- c(0,median(murders_beat$rate_multiyear,na.rm = TRUE)/2,
+                median(murders_beat$rate_multiyear,na.rm = TRUE),
+                median(murders_beat$rate_multiyear,na.rm = TRUE)*2,
+                median(murders_beat$rate_multiyear,na.rm = TRUE)*3,200)
+
+murderpal <- colorBin(c("#99a0a5",
+                        "#667f99",
+                        "#00318b",
+                        "#0058f6",
+                        "#ffba00"), 
+                      murders_beat$rate_multiyear,
+                      bins = murderbins)
+
 # Create quick labels for murders map
-murderlabel <- paste(sep="","<table>
-<h7>Houston P.D. Beat #",
-murders_by_beat$beat,
-"</h7><br><h4>",
-murders_by_beat$placename,
-"<br>Estimated Population: ",prettyNum(murders_by_beat$population, big.mark=','),"</h4><br>
+murderlabel <- paste(sep="",
+"<table>
+<popuptitle>Houston P.D. Beat #",
+murders_beat$beat,
+"</popuptitle><br><popupchatter>Area neighborhoods and landmarks include ",
+murders_beat$placename,
+". Estimated Population: ",
+prettyNum(murders_beat$population, big.mark=','),
+"</popupchatter><br>
       <tr>
 				<th>Year</th>
 				<th>Total</th>
@@ -576,45 +253,45 @@ murders_by_beat$placename,
 			<tr>
 				<td>2019</td>
 				<td>",
-murders_by_beat$total19,
+murders_beat$total19,
 "</td>
 				<td>",
-murders_by_beat$rate19,
+murders_beat$rate19,
 "</td>
 				<!-- Insert cell to cross/span 
 				multi rows -->
 				<td rowspan='4'>",
-ifelse(murders_by_beat$inc_3yearto22sofar>0,"Up","Down"),
-"<br><h5>",
-ifelse(murders_by_beat$inc_3yearto22sofar>0,murders_by_beat$inc_3yearto22sofar,substring(murders_by_beat$inc_3yearto22sofar,2)),
-				"%</h5>vs. 3-year<br>average</td>
+ifelse(murders_beat$inc_3yearto22sofar>0,"Up","Down"),
+"<br><chartbignumber>",
+ifelse(murders_beat$inc_3yearto22sofar>0,murders_beat$inc_3yearto22sofar,substring(murders_beat$inc_3yearto22sofar,2)),
+				"%</chartbignumber><br>vs. 3-year<br>average</td>
 			</tr>
 			<tr>
 				<td>2020</td>
 				<td>",
-murders_by_beat$total20,
+murders_beat$total20,
 "</td>
 				<td>",
-murders_by_beat$rate20,
+murders_beat$rate20,
 "</td>
 			</tr>
 						<tr>
 				<td>2021</td>
 				<td>",
-murders_by_beat$total21,
+murders_beat$total21,
 "</td>
 				<td>",
-murders_by_beat$rate21,
+murders_beat$rate21,
 "</td>
 			</tr>
 			</tr>
 						<tr>
 				<td>2022</td>
 				<td>",
-murders_by_beat$total22,
+murders_beat$total22,
 "</td>
 				<td>",
-murders_by_beat$rate22,
+murders_beat$rate22,
 "</td>
 			</tr>
 </table>")
@@ -622,7 +299,7 @@ murders_by_beat$rate22,
 # Create rapid prototype of murders map
 # Issue to fix here is that we merged the data points to the df first, instead of the spatial file
 # Go back and rework that part
-houston_murder_map <- leaflet(murders_by_beat, options = leafletOptions(zoomControl = FALSE)) %>%
+houston_murder_map <- leaflet(murders_beat, options = leafletOptions(zoomControl = FALSE)) %>%
   htmlwidgets::onRender("function(el, x) {
 L.control.zoom({ position: 'topright' }).addTo(this)
 }") %>%
@@ -633,60 +310,54 @@ L.control.zoom({ position: 'topright' }).addTo(this)
               fillColor = ~murderpal(rate_multiyear)) %>% 
   addLegend(pal = murderpal, 
             opacity = 0.6,
-            values = murders_by_beat$rate_multiyear, 
+            values = murders_beat$rate_multiyear, 
             position = "bottomleft", 
             title = "Homicides<br>Per 100K people<br>") 
-#  addLegend(position = "topleft", 
-#            labels = NULL,
-#            values = NULL,
-#            colors = NULL,
-#            title = "<big>World's Best Map of Houston Homicides</big><br>
-#            <small>Please insert some chatter & other html/tools/stuff here<br>
-#See also: <a href='https://abcotvdata.github.io/safetytracker_houston/sexualassault_rate.html'>Sexual Assault</a> |
-# <a href='https://abcotvdata.github.io/safetytracker_houston/autothefts_rate.html'>Auto #Thefts</a> |
-#              <a href='https://abcotvdata.github.io/safetytracker_houston/autothefts_rate.html'>Burglaries</a>  |
-#              <a href='https://abcotvdata.github.io/safetytracker_houston/autothefts_rate.html'>Theft</a></small>")
 
 houston_murder_map
 ```
 
 However, in the vast majority of neighborhoods in the city, the rate is much lower. In 17 of 118 of the Houston Police Department's, the murder rate was zero last year. Filler, filler, filler.
 
-<h9>Homicides by neighborhood (placeholder table)</h9>
+<subhead>Homicides by neighborhood (placeholder table)</subhead>
 
 <iframe title="Houston Neighborhood Crime Test Table" aria-label="Table" id="datawrapper-chart-T23TE" src="https://datawrapper.dwcdn.net/T23TE/6/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="732" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
 </script>
   
-<h9>What kinds of places do murders happen in Houston (placeholder table)</h9>
+<subhead>What kinds of places do murders happen in Houston (placeholder table)</subhead>
 
 <iframe title="Houston Neighborhood Crime Test Table" aria-label="Table" id="datawrapper-chart-T23TE" src="https://datawrapper.dwcdn.net/T23TE/6/?search=Murder" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="732" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
 </script>
 
-<h9>When do murders happen (placeholder table)</h9>
+<subhead>When do murders happen (placeholder table)</subhead>
 
-<iframe title="Houston Neighborhood Crime Test Table" aria-label="Table" id="datawrapper-chart-T23TE" src="https://datawrapper.dwcdn.net/T23TE/6/?search=Kidnapping" scrollings="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="732" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+<iframe title="Houston Neighborhood Crime Test Table" aria-label="Table" id="datawrapper-chart-T23TE" src="https://datawrapper.dwcdn.net/T23TE/6/" scrollings="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="732" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
 </script>
+
+<br>
+
+<br>
 
 
 <div class="cardContainer">
 <div class="card" style="background-color:#99a0a5;">
 <p>So far this year<br>
-<h3>`r prettyNum(sum(murders_by_beat$total22), big.mark=",")`<br></h3><p>
+<bignumber>`r prettyNum(murders_city$total22, big.mark=",")`<br></bignumber><p>
 people have been murdered.</p>
 </div>
 <div class="card" style="background-color:#667f99;">
 <p>We are on track to reach<br></p>
-<h3>`r prettyNum(sum(murders_by_beat$projected22), big.mark=",")`<br></h3>
+<bignumber>`r prettyNum(murders_city$projected22, big.mark=",")`<br></bignumber>
 <p>killings in 2022.</p>
 </div>
 <div class="card" style="background-color:#0d1721;">
 <p>That's more than the<br>
-<h3>`r prettyNum(sum(murders_by_beat$total21), big.mark=",")`<br></h3><p>
+<bignumber>`r prettyNum(murders_city$total21, big.mark=",")`<br></bignumber><p>
 murders in 2021.</p>
 </div>
 <div class="card" style="background-color:#f2f2f2; color:black;">
 <p>The murder rate would be <br>
-<h3>`r round(sum(murders_by_beat$projected22)/2304580*100000,1)`<br></h3><p>
+<bignumber>`r round((murders_city$projected22/2304580)*100000,1)`<br></bignumber><p>
 per 100,000 people in 2022.</p>
 </div>
 </div>
