@@ -404,18 +404,15 @@ when_murders_happen <- houston_crime %>%
   group_by(hour) %>%
   summarise(count=n()) %>% 
   arrange(hour)
-when_murders_happen$time <- case_when(when_murders_happen$hour %in% c("0","1","2","3","4","21","22","23") ~ "Overnight",
-                                      when_murders_happen$hour %in% c("5","6","7","8","9","10","11","12") ~ "Morning",
-                                      when_murders_happen$hour %in% c("13","14","15","16","17","18","19","20")  ~ "Afternoon/Evening",
+#when_murders_happen$time <- case_when(when_murders_happen$hour %in% c("0","1","2","3","4","21","22","23") ~ "Overnight",
+#                                      when_murders_happen$hour %in% c("5","6","7","8","9","10","11","12") ~ "Morning",
+#                                      when_murders_happen$hour %in% c("13","14","15","16","17","18","19","20")  ~ "Afternoon/Evening",
+#                                      TRUE ~ "Other")
+when_murders_happen$time <- case_when(when_murders_happen$hour == "0" ~ "12 a.m.",
+                                      when_murders_happen$hour %in% c("1","2","3","4","5","6","7","8","9","10","11") ~ paste0(when_murders_happen$hour," a.m."),
+                                      when_murders_happen$hour %in% c("12") ~ paste0(when_murders_happen$hour," p.m."),
+                                      when_murders_happen$hour %in% c("13","14","15","16","17","18","19","20","21","22","23") ~ paste0((as.numeric(when_murders_happen$hour)-12)," p.m."),
                                       TRUE ~ "Other")
-when_murders_happen <- when_murders_happen %>%
-  group_by(time) %>%
-  summarise(count=sum(count))
-
-
-
-#### STOPPING POINT #######
-
 
 # Create individual spatial tables of crimes by major categories and types
 murders_beat %>% st_drop_geometry() %>% write_csv("murders_beat.csv")
@@ -428,4 +425,11 @@ assaults_beat %>% st_drop_geometry() %>% write_csv("assaults_beat.csv")
 drugs_beat %>% st_drop_geometry() %>% write_csv("drugs_beat.csv")
 violence_beat %>% st_drop_geometry() %>% write_csv("violence_beat.csv")
 property_beat %>% st_drop_geometry() %>% write_csv("property_beat.csv")
+
+# additional table exports for specific charts
+where_murders_happen %>% write_csv("where_murders_happen.csv")
+when_murders_happen %>% write_csv("when_murders_happen.csv")
+
+#### STOPPING POINT #######
+
 
