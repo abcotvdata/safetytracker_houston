@@ -427,7 +427,7 @@ violence_beat %>% st_drop_geometry() %>% write_csv("violence_beat.csv")
 property_beat %>% st_drop_geometry() %>% write_csv("property_beat.csv")
 
 # additional table exports for specific charts
-where_murders_happen %>% write_csv("where_murders_happen.csv")
+where_murders_happen %>% head(10) %>% write_csv("where_murders_happen.csv")
 when_murders_happen %>% write_csv("when_murders_happen.csv")
 
 #### STOPPING POINT #######
