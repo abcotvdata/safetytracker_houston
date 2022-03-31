@@ -417,5 +417,15 @@ when_murders_happen <- when_murders_happen %>%
 #### STOPPING POINT #######
 
 
-
+# Create individual spatial tables of crimes by major categories and types
+murders_beat %>% st_drop_geometry() %>% write_csv("murders_beat.csv")
+sexassaults_beat %>% st_drop_geometry() %>% write_csv("sexassaults_beat.csv")
+autothefts_beat %>% st_drop_geometry() %>% write_csv("autothefts_beat.csv")
+thefts_beat %>% st_drop_geometry() %>% write_csv("thefts_beat.csv")
+burglaries_beat %>% st_drop_geometry() %>% write_csv("burglaries_beat.csv")
+robberies_beat %>% st_drop_geometry() %>% write_csv("robberies_beat.csv")
+assaults_beat %>% st_drop_geometry() %>% write_csv("assaults_beat.csv")
+drugs_beat %>% st_drop_geometry() %>% write_csv("drugs_beat.csv")
+violence_beat %>% st_drop_geometry() %>% write_csv("violence_beat.csv")
+property_beat %>% st_drop_geometry() %>% write_csv("property_beat.csv")
 
