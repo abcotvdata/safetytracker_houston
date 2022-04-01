@@ -65,7 +65,6 @@ rm(houston19,houston20,houston21,houston22)
 houston_crime$year <- substr(houston_crime$date,1,4)
 houston_crime$date <- as.Date(houston_crime$date, "%Y-%m-%d")
 
-
 # Build a class-code table to classify offense types and categories
 classcodes <- houston_crime %>%
   group_by(offense_type,nibrs_class) %>%
@@ -122,6 +121,9 @@ houston_crime$beat <- ifelse(houston_crime$beat == "7C50","22B40",houston_crime$
 # write csv of houston crime as a backup
 write_csv(houston_crime,"data/latest/houston_crime.csv")
 
+# pull last 12 months of raw crimes
+houston_crime_last12 <- houston_crime %>% filter(date>max(houston_crime$date)-365)
+
 # CITYWIDE CRIME TOTALS
 # Calculate of each detailed offense type CITYWIDE
 citywide_detailed <- houston_crime %>%
@@ -136,6 +138,11 @@ citywide_detailed <- citywide_detailed %>%
          "total22" = "2022")
 # add projected22 column to project/forecast annual number
 citywide_detailed$projected22 <- round(citywide_detailed$total22*projected_multiplier,0)
+# add last 12 months
+citywide_detailed_last12 <- houston_crime_last12 %>%
+  group_by(offense_type,nibrs_class) %>%
+  summarise(last12mos = sum(offense_count))
+citywide_detailed <- left_join(citywide_detailed,citywide_detailed_last12,by=c("offense_type","nibrs_class"))
 # add zeros where there were no crimes tallied that year
 citywide_detailed[is.na(citywide_detailed)] <- 0
 # calculate increases
@@ -169,6 +176,11 @@ citywide_category <- citywide_category %>%
          "total22" = "2022")
 # add projected22 column to project/forecast annual number
 citywide_category$projected22 <- round(citywide_category$total22*projected_multiplier,0)
+# add last 12 months
+citywide_category_last12 <- houston_crime_last12 %>%
+  group_by(category_name) %>%
+  summarise(last12mos = sum(offense_count))
+citywide_category <- left_join(citywide_category,citywide_category_last12,by=c("category_name"))
 # add zeros where there were no crimes tallied that year
 citywide_category[is.na(citywide_category)] <- 0
 # calculate increases
@@ -427,7 +439,7 @@ violence_beat %>% st_drop_geometry() %>% write_csv("violence_beat.csv")
 property_beat %>% st_drop_geometry() %>% write_csv("property_beat.csv")
 
 # additional table exports for specific charts
-where_murders_happen %>% head(10) %>% write_csv("where_murders_happen.csv")
+where_murders_happen %>% arrange(desc(total21)) %>% head(10) %>% write_csv("where_murders_happen.csv")
 when_murders_happen %>% write_csv("when_murders_happen.csv")
 
 #### STOPPING POINT #######

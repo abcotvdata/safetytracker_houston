@@ -261,7 +261,7 @@ murders_beat$rate19,
 				<!-- Insert cell to cross/span 
 				multi rows -->
 				<td rowspan='4'>",
-ifelse(murders_beat$inc_3yearto22sofar>0,"Up","Down"),
+ifelse(murders_beat$inc_3yearto22sofar>0,"2022 projection is up","2022 projection is down"),
 "<br><chartbignumber>",
 ifelse(murders_beat$inc_3yearto22sofar>0,murders_beat$inc_3yearto22sofar,substring(murders_beat$inc_3yearto22sofar,2)),
 				"%</chartbignumber><br>vs. 3-year<br>average</td>
