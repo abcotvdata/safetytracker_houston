@@ -167,6 +167,13 @@ citywide_detailed <- citywide_detailed %>%
 citywide_detailed <- citywide_detailed %>%
   mutate(across(where(is.numeric), ~na_if(., "NaN")))
 
+# Calculate of each detailed offense type CITYWIDE
+citywide_detailed_monthly <- houston_crime %>%
+  group_by(offense_type,nibrs_class,month) %>%
+  summarise(count = sum(offense_count))
+citywide_detailed_monthly %>% filter(nibrs_class=="09A") %>% write_csv("murders_monthly.csv")
+
+
 # Calculate of each category of offense CITYWIDE
 citywide_category <- houston_crime %>%
   group_by(category_name,year) %>%
@@ -200,6 +207,20 @@ citywide_category$rate22 <- round(citywide_category$projected22/2304580*100000,1
 citywide_category$rate_last12 <- round(citywide_category$last12mos/2304580*100000,1)
 # calculate a multiyear rate
 citywide_category$rate_multiyear <- round(((citywide_category$total19+citywide_category$total20+citywide_category$total21)/3)/2304580*100000,1)
+
+# Calculate monthly totals for categories of crimes CITYWIDE
+citywide_category_monthly <- houston_crime %>%
+  group_by(category_name,month) %>%
+  summarise(count = sum(offense_count))
+citywide_category_monthly %>% filter(category_name=="Sexual Assault") %>% write_csv("sexassaults_monthly.csv")
+citywide_category_monthly %>% filter(category_name=="Auto Theft") %>% write_csv("autothefts_monthly.csv")
+citywide_category_monthly %>% filter(category_name=="Theft") %>% write_csv("thefts_monthly.csv")
+citywide_category_monthly %>% filter(category_name=="Burglary") %>% write_csv("burglaries_monthly.csv")
+citywide_category_monthly %>% filter(category_name=="Robbery") %>% write_csv("robberies_monthly.csv")
+citywide_category_monthly %>% filter(category_name=="Assault") %>% write_csv("assaults_monthly.csv")
+citywide_category_monthly %>% filter(category_name=="Drug Offenses") %>% write_csv("drugs_monthly.csv")
+
+
 
 # Calculate of each type of crime CITYWIDE
 citywide_type <- houston_crime %>%
