@@ -443,14 +443,11 @@ property_city <- citywide_type %>% filter(type=="Property")
 # Using premise to identify the kinds of places where murders happen
 where_murders_happen <- houston_crime %>%
   filter(nibrs_class=="09A") %>%
-  group_by(premise,year) %>%
+  group_by(year,premise) %>%
   summarise(count=n()) %>%
-  pivot_wider(names_from=year, values_from=count) %>% 
-  rename("total19" = "2019",
-         "total20" = "2020",
-         "total21" = "2021",
-         "total22" = "2022") %>%
-  select(1,4,5,2,3)
+  pivot_wider(names_from=year, values_from=count)
+# add zeros where there were no crimes tallied that year
+where_murders_happen[is.na(where_murders_happen)] <- 0
 
 # Using premise to identify the kinds of places where all violent crimes happen
 where_violentcrimes_happen <- houston_crime %>%
@@ -508,9 +505,3 @@ where_murders_happen %>% write_csv("where_murders_happen.csv")
 when_murders_happen %>% write_csv("when_murders_happen.csv")
 
 #### STOPPING POINT #######
-
-# ztest_plot <- ggplot(citywide_detailed_monthly, aes(x = month, y = count)) +
-#  geom_bar(stat = "identity", fill = "blue", color = "blue") +
-#  geom_line(data=citywide_detailed_monthly, aes(x= month, y=rollavg_3month), color="yellow") +
-#  scale_y_continuous(labels = scales::comma)
-# ztest_plot
