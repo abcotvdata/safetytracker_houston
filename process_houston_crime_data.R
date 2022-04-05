@@ -58,7 +58,7 @@ names(houston19) <- c("incident", "date", "hour",
 # Calculate the multiplier for the 2022 data
 # Based on number days of data in newest 2022 file
 days_so_far_2022 <- n_distinct(houston22$date)
-projected_multiplier <- 1/(days_so_far_2022/365)
+# projected_multiplier <- 1/(days_so_far_2022/365)
 
 # Combine all four years' of into single table, then delete yearlies
 houston_crime <- bind_rows(houston19,houston20,houston21,houston22)
@@ -139,8 +139,6 @@ citywide_detailed <- citywide_detailed %>%
          "total20" = "2020",
          "total21" = "2021",
          "total22" = "2022")
-# add projected22 column to project/forecast annual number
-citywide_detailed$projected22 <- round(citywide_detailed$total22*projected_multiplier,0)
 # add last 12 months
 citywide_detailed_last12 <- houston_crime_last12 %>%
   group_by(offense_type,nibrs_class) %>%
@@ -148,19 +146,21 @@ citywide_detailed_last12 <- houston_crime_last12 %>%
 citywide_detailed <- left_join(citywide_detailed,citywide_detailed_last12,by=c("offense_type","nibrs_class"))
 # add zeros where there were no crimes tallied that year
 citywide_detailed[is.na(citywide_detailed)] <- 0
+# Calculate a total across the 3 prior years
+citywide_detailed$total_prior3years <- citywide_detailed$total19+citywide_detailed$total20+citywide_detailed$total21
+citywide_detailed$avg_prior3years <- round(citywide_detailed$total_prior3years/3,1)
 # calculate increases
 citywide_detailed$inc_19to21 <- round(citywide_detailed$total21/citywide_detailed$total19*100-100,1)
-citywide_detailed$inc_19to22sofar <- round(citywide_detailed$projected22/citywide_detailed$total19*100-100,1)
-citywide_detailed$inc_21to22sofar <- round(citywide_detailed$projected22/citywide_detailed$total21*100-100,1)
-citywide_detailed$inc_3yearto22sofar <- round(citywide_detailed$projected22/((citywide_detailed$total19+citywide_detailed$total20+citywide_detailed$total21)/3)*100-100,0)
+citywide_detailed$inc_19tolast12 <- round(citywide_detailed$last12mos/citywide_detailed$total19*100-100,1)
+citywide_detailed$inc_21tolast12 <- round(citywide_detailed$last12mos/citywide_detailed$total21*100-100,1)
+citywide_detailed$inc_prior3yearavgtolast12 <- round((citywide_detailed$last12mos/citywide_detailed$avg_prior3years)*100-100,0)
 # calculate the citywide rates
 citywide_detailed$rate19 <- round(citywide_detailed$total19/2304580*100000,1)
 citywide_detailed$rate20 <- round(citywide_detailed$total20/2304580*100000,1)
 citywide_detailed$rate21 <- round(citywide_detailed$total21/2304580*100000,1)
-citywide_detailed$rate22 <- round(citywide_detailed$projected22/2304580*100000,1)
 citywide_detailed$rate_last12 <- round(citywide_detailed$last12mos/2304580*100000,1)
 # calculate a multiyear rate
-citywide_detailed$rate_multiyear <- round(((citywide_detailed$total19+citywide_detailed$total20+citywide_detailed$total21)/3)/2304580*100000,1)
+citywide_detailed$rate_prior3years <- round(citywide_detailed$avg_prior3years/2304580*100000,1)
 # for map/table making purposes, changing Inf and NaN in calc fields to NA
 citywide_detailed <- citywide_detailed %>%
   mutate(across(where(is.numeric), ~na_if(., Inf)))
@@ -185,8 +185,6 @@ citywide_category <- citywide_category %>%
          "total20" = "2020",
          "total21" = "2021",
          "total22" = "2022")
-# add projected22 column to project/forecast annual number
-citywide_category$projected22 <- round(citywide_category$total22*projected_multiplier,0)
 # add last 12 months
 citywide_category_last12 <- houston_crime_last12 %>%
   group_by(category_name) %>%
@@ -194,19 +192,21 @@ citywide_category_last12 <- houston_crime_last12 %>%
 citywide_category <- left_join(citywide_category,citywide_category_last12,by=c("category_name"))
 # add zeros where there were no crimes tallied that year
 citywide_category[is.na(citywide_category)] <- 0
+# Calculate a total across the 3 prior years
+citywide_category$total_prior3years <- citywide_category$total19+citywide_category$total20+citywide_category$total21
+citywide_category$avg_prior3years <- round(citywide_category$total_prior3years/3,1)
 # calculate increases
 citywide_category$inc_19to21 <- round(citywide_category$total21/citywide_category$total19*100-100,1)
-citywide_category$inc_19to22sofar <- round(citywide_category$projected22/citywide_category$total19*100-100,1)
-citywide_category$inc_21to22sofar <- round(citywide_category$projected22/citywide_category$total21*100-100,1)
-citywide_category$inc_3yearto22sofar <- round(citywide_category$projected22/((citywide_category$total19+citywide_category$total20+citywide_category$total21)/3)*100-100,0)
+citywide_category$inc_19tolast12 <- round(citywide_category$last12mos/citywide_category$total19*100-100,1)
+citywide_category$inc_21tolast12 <- round(citywide_category$last12mos/citywide_category$total21*100-100,1)
+citywide_category$inc_prior3yearavgtolast12 <- round((citywide_category$last12mos/citywide_category$avg_prior3years)*100-100,0)
 # calculate the citywide rates
 citywide_category$rate19 <- round(citywide_category$total19/2304580*100000,1)
 citywide_category$rate20 <- round(citywide_category$total20/2304580*100000,1)
 citywide_category$rate21 <- round(citywide_category$total21/2304580*100000,1)
-citywide_category$rate22 <- round(citywide_category$projected22/2304580*100000,1)
 citywide_category$rate_last12 <- round(citywide_category$last12mos/2304580*100000,1)
 # calculate a multiyear rate
-citywide_category$rate_multiyear <- round(((citywide_category$total19+citywide_category$total20+citywide_category$total21)/3)/2304580*100000,1)
+citywide_category$rate_prior3years <- round(citywide_category$avg_prior3years/2304580*100000,1)
 
 # Calculate monthly totals for categories of crimes CITYWIDE
 citywide_category_monthly <- houston_crime %>%
@@ -233,28 +233,28 @@ citywide_type <- citywide_type %>%
          "total20" = "2020",
          "total21" = "2021",
          "total22" = "2022")
-# add projected22 column to project/forecast annual number
-citywide_type$projected22 <- round(citywide_type$total22*projected_multiplier,0)
 # add last 12 months
 citywide_type_last12 <- houston_crime_last12 %>%
   group_by(type) %>%
   summarise(last12mos = sum(offense_count))
 citywide_type <- left_join(citywide_type,citywide_type_last12,by=c("type"))
+# Calculate a total across the 3 prior years
+citywide_type$total_prior3years <- citywide_type$total19+citywide_type$total20+citywide_type$total21
+citywide_type$avg_prior3years <- round(citywide_type$total_prior3years/3,1)
 # add zeros where there were no crimes tallied that year
 citywide_type[is.na(citywide_type)] <- 0
 # calculate increases
 citywide_type$inc_19to21 <- round(citywide_type$total21/citywide_type$total19*100-100,1)
-citywide_type$inc_19to22sofar <- round(citywide_type$projected22/citywide_type$total19*100-100,1)
-citywide_type$inc_21to22sofar <- round(citywide_type$projected22/citywide_type$total21*100-100,1)
-citywide_type$inc_3yearto22sofar <- round(citywide_type$projected22/((citywide_type$total19+citywide_type$total20+citywide_type$total21)/3)*100-100,0)
+citywide_type$inc_19tolast12 <- round(citywide_type$last12mos/citywide_type$total19*100-100,1)
+citywide_type$inc_21tolast12 <- round(citywide_type$last12mos/citywide_type$total21*100-100,1)
+citywide_type$inc_prior3yearavgtolast12 <- round((citywide_type$last12mos/citywide_type$avg_prior3years)*100-100,0)
 # calculate the citywide rates
 citywide_type$rate19 <- round(citywide_type$total19/2304580*100000,1)
 citywide_type$rate20 <- round(citywide_type$total20/2304580*100000,1)
 citywide_type$rate21 <- round(citywide_type$total21/2304580*100000,1)
-citywide_type$rate22 <- round(citywide_type$projected22/2304580*100000,1)
 citywide_type$rate_last12 <- round(citywide_type$last12mos/2304580*100000,1)
 # calculate a multiyear rate
-citywide_type$rate_multiyear <- round(((citywide_type$total19+citywide_type$total20+citywide_type$total21)/3)/2304580*100000,1)
+citywide_type$rate_prior3years <- round(citywide_type$avg_prior3years/2304580*100000,1)
 
 # MERGE WITH BEATS GEOGRAPHY AND POPULATION
 # Geography and populations processed separately in 
@@ -275,30 +275,31 @@ beat_detailed <- beat_detailed %>%
          "total20" = "2020",
          "total21" = "2021",
          "total22" = "2022")
-# add projected22 column to project/forecast annual number
-beat_detailed$projected22 <- round(beat_detailed$total22*projected_multiplier,0)
 # add last 12 months
 beat_detailed_last12 <- houston_crime_last12 %>%
-  group_by(offense_type,nibrs_class) %>%
+  group_by(beat,offense_type,nibrs_class) %>%
   summarise(last12mos = sum(offense_count))
-beat_detailed <- left_join(beat_detailed,beat_detailed_last12,by=c("offense_type","nibrs_class"))
+beat_detailed <- left_join(beat_detailed,beat_detailed_last12,by=c("beat","offense_type","nibrs_class"))
+rm(beat_detailed_last12)
 # add zeros where there were no crimes tallied that year
 beat_detailed[is.na(beat_detailed)] <- 0
+# Calculate a total across the 3 prior years
+beat_detailed$total_prior3years <- beat_detailed$total19+beat_detailed$total20+beat_detailed$total21
+beat_detailed$avg_prior3years <- round(beat_detailed$total_prior3years/3)
 # calculate increases
 beat_detailed$inc_19to21 <- round(beat_detailed$total21/beat_detailed$total19*100-100,1)
-beat_detailed$inc_19to22sofar <- round(beat_detailed$projected22/beat_detailed$total19*100-100,1)
-beat_detailed$inc_21to22sofar <- round(beat_detailed$projected22/beat_detailed$total21*100-100,1)
-beat_detailed$inc_3yearto22sofar <- round(beat_detailed$projected22/((beat_detailed$total19+beat_detailed$total20+beat_detailed$total21)/3)*100-100,0)
+beat_detailed$inc_19tolast12 <- round(beat_detailed$last12mos/beat_detailed$total19*100-100,1)
+beat_detailed$inc_21tolast12 <- round(beat_detailed$last12mos/beat_detailed$total21*100-100,1)
+beat_detailed$inc_prior3yearavgtolast12 <- round((beat_detailed$last12mos/beat_detailed$avg_prior3years)*100-100,0)
 # add population for beats
 beat_detailed <- full_join(beats,beat_detailed,by="beat") 
 # calculate the beat by beat rates PER 1K people
 beat_detailed$rate19 <- round(beat_detailed$total19/beat_detailed$population*100000,1)
 beat_detailed$rate20 <- round(beat_detailed$total20/beat_detailed$population*100000,1)
 beat_detailed$rate21 <- round(beat_detailed$total21/beat_detailed$population*100000,1)
-beat_detailed$rate22 <- round(beat_detailed$projected22/beat_detailed$population*100000,1)
 beat_detailed$rate_last12 <- round(beat_detailed$last12mos/beat_detailed$population*100000,1)
 # calculate a multiyear rate
-beat_detailed$rate_multiyear <- round(((beat_detailed$total19+beat_detailed$total20+beat_detailed$total21)/3)/beat_detailed$population*100000,1)
+beat_detailed$rate_prior3years <- round(beat_detailed$avg_prior3years/beat_detailed$population*100000,1)
 # for map/table making purposes, changing Inf and NaN in calc fields to NA
 beat_detailed <- beat_detailed %>%
   mutate(across(where(is.numeric), ~na_if(., Inf)))
@@ -316,30 +317,31 @@ beat_category <- beat_category %>%
          "total20" = "2020",
          "total21" = "2021",
          "total22" = "2022")
-# add projected22 column to project/forecast annual number
-beat_category$projected22 <- round(beat_category$total22*projected_multiplier,0)
 # add last 12 months
 beat_category_last12 <- houston_crime_last12 %>%
-  group_by(category_name) %>%
+  group_by(beat,category_name) %>%
   summarise(last12mos = sum(offense_count))
-beat_category <- left_join(beat_category,beat_category_last12,by=c("category_name"))
+beat_category <- left_join(beat_category,beat_category_last12,by=c("beat","category_name"))
+rm(beat_category_last12)
 # add zeros where there were no crimes tallied that year
 beat_category[is.na(beat_category)] <- 0
+# Calculate a total across the 3 prior years
+beat_category$total_prior3years <- beat_category$total19+beat_category$total20+beat_category$total21
+beat_category$avg_prior3years <- round(beat_category$total_prior3years/3)
 # calculate increases
 beat_category$inc_19to21 <- round(beat_category$total21/beat_category$total19*100-100,1)
-beat_category$inc_19to22sofar <- round(beat_category$projected22/beat_category$total19*100-100,1)
-beat_category$inc_21to22sofar <- round(beat_category$projected22/beat_category$total21*100-100,1)
-beat_category$inc_3yearto22sofar <- round(beat_category$projected22/((beat_category$total19+beat_category$total20+beat_category$total21)/3)*100-100,0)
+beat_category$inc_19tolast12 <- round(beat_category$last12mos/beat_category$total19*100-100,1)
+beat_category$inc_21tolast12 <- round(beat_category$last12mos/beat_category$total21*100-100,1)
+beat_category$inc_prior3yearavgtolast12 <- round((beat_category$last12mos/beat_category$avg_prior3years)*100-100,0)
 # add population for beats
 beat_category <- full_join(beats,beat_category,by="beat") 
 # calculate the beat by beat rates PER 1K people
 beat_category$rate19 <- round(beat_category$total19/beat_category$population*100000,1)
 beat_category$rate20 <- round(beat_category$total20/beat_category$population*100000,1)
 beat_category$rate21 <- round(beat_category$total21/beat_category$population*100000,1)
-beat_category$rate22 <- round(beat_category$projected22/beat_category$population*100000,1)
 beat_category$rate_last12 <- round(beat_category$last12mos/beat_category$population*100000,1)
 # calculate a multiyear rate
-beat_category$rate_multiyear <- round(((beat_category$total19+beat_category$total20+beat_category$total21)/3)/beat_category$population*100000,1)
+beat_category$rate_prior3years <- round(beat_category$avg_prior3years/beat_category$population*100000,1)
 # for map/table making purposes, changing Inf and NaN in calc fields to NA
 beat_category <- beat_category %>%
   mutate(across(where(is.numeric), ~na_if(., Inf)))
@@ -357,30 +359,31 @@ beat_type <- beat_type %>%
          "total20" = "2020",
          "total21" = "2021",
          "total22" = "2022")
-# add projected22 column to project/forecast annual number
-beat_type$projected22 <- round(beat_type$total22*projected_multiplier,0)
 # add last 12 months
 beat_type_last12 <- houston_crime_last12 %>%
-  group_by(type) %>%
+  group_by(beat,type) %>%
   summarise(last12mos = sum(offense_count))
-beat_type <- left_join(beat_type,beat_type_last12,by=c("type"))
+beat_type <- left_join(beat_type,beat_type_last12,by=c("beat","type"))
+rm(beat_type_last12)
 # add zeros where there were no crimes tallied that year
 beat_type[is.na(beat_type)] <- 0
+# Calculate a total across the 3 prior years
+beat_type$total_prior3years <- beat_type$total19+beat_type$total20+beat_type$total21
+beat_type$avg_prior3years <- round(beat_type$total_prior3years/3)
 # calculate increases
 beat_type$inc_19to21 <- round(beat_type$total21/beat_type$total19*100-100,1)
-beat_type$inc_19to22sofar <- round(beat_type$projected22/beat_type$total19*100-100,1)
-beat_type$inc_21to22sofar <- round(beat_type$projected22/beat_type$total21*100-100,1)
-beat_type$inc_3yearto22sofar <- round(beat_type$projected22/((beat_type$total19+beat_type$total20+beat_type$total21)/3)*100-100,0)
+beat_type$inc_19tolast12 <- round(beat_type$last12mos/beat_type$total19*100-100,1)
+beat_type$inc_21tolast12 <- round(beat_type$last12mos/beat_type$total21*100-100,1)
+beat_type$inc_prior3yearavgtolast12 <- round((beat_type$last12mos/beat_type$avg_prior3years)*100-100,0)
 # add population for beats
 beat_type <- full_join(beats,beat_type,by="beat") 
 # calculate the beat by beat rates PER 1K people
 beat_type$rate19 <- round(beat_type$total19/beat_type$population*100000,1)
 beat_type$rate20 <- round(beat_type$total20/beat_type$population*100000,1)
 beat_type$rate21 <- round(beat_type$total21/beat_type$population*100000,1)
-beat_type$rate22 <- round(beat_type$projected22/beat_type$population*100000,1)
 beat_type$rate_last12 <- round(beat_type$last12mos/beat_type$population*100000,1)
 # calculate a multiyear rate
-beat_type$rate_multiyear <- round(((beat_type$total19+beat_type$total20+beat_type$total21)/3)/beat_type$population*100000,1)
+beat_type$rate_prior3years <- round(beat_type$avg_prior3years/beat_type$population*100000,1)
 # for map/table making purposes, changing Inf and NaN in calc fields to NA
 beat_type <- beat_type %>%
   mutate(across(where(is.numeric), ~na_if(., Inf)))
@@ -422,6 +425,7 @@ drugs_city <- citywide_category %>% filter(category_name=="Drug Offenses")
 violence_city <- citywide_type %>% filter(type=="Violent")
 property_city <- citywide_type %>% filter(type=="Property")
 
+## MAY NEED FIXING FOR PROJECTED/22 ISSUES
 # Using premise to identify the kinds of places where murders happen
 where_murders_happen <- houston_crime %>%
   filter(nibrs_class=="09A") %>%
@@ -433,7 +437,6 @@ where_murders_happen <- houston_crime %>%
          "total21" = "2021",
          "total22" = "2022") %>%
   select(1,4,5,2,3)
-where_murders_happen$projected22 <- round(where_murders_happen$total22*projected_multiplier,0)
 
 # Using premise to identify the kinds of places where all violent crimes happen
 where_violentcrimes_happen <- houston_crime %>%
@@ -445,7 +448,6 @@ where_violentcrimes_happen <- houston_crime %>%
          "total20" = "2020",
          "total21" = "2021",
          "total22" = "2022") 
-where_violentcrimes_happen$projected22 <- round(where_violentcrimes_happen$total22*projected_multiplier,0)
 
 # Using premise to identify the kinds of places where all violent crimes happen
 where_propertycrimes_happen <- houston_crime %>%
@@ -457,7 +459,6 @@ where_propertycrimes_happen <- houston_crime %>%
          "total20" = "2020",
          "total21" = "2021",
          "total22" = "2022") 
-where_propertycrimes_happen$projected22 <- round(where_propertycrimes_happen$total22*projected_multiplier,0)
 
 
 # Using hour to identify the hours of day when murders happen

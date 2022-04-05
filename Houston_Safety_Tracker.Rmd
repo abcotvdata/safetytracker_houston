@@ -68,7 +68,7 @@ bignumber {
   color: #00318b;
   font-weight: 900;
   text-align: center;
-  font-size: 70px;
+  font-size: 80px;
     margin-top: 0;
   margin-bottom: 0;
 }
@@ -78,7 +78,7 @@ popupchatter {
   color: black;
   font-weight: 300;
   text-align: left;
-  font-size: 11px;
+  font-size: 12px;
   margin-top: 0;
   margin-bottom: 2;
 }
@@ -88,7 +88,7 @@ chartbignumber {
   color: #00318b;
   font-weight: bolder;
   text-align: right;
-  font-size: 24px;
+  font-size: 36px;
     margin-top: 0;
   margin-bottom: 0;
 }
@@ -114,7 +114,7 @@ popuptitle {
   color: #00318b;
   font-weight: bolder;
   text-align: left;
-  font-size: 16px;
+  font-size: 20px;
     margin-top: 0;
   margin-bottom: 0;
 }
@@ -195,19 +195,19 @@ th {
 people have been murdered.</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
-<p>We are on track to reach<br>
-<bignumber>`r prettyNum(murders_city$projected22, big.mark=",")`<br></bignumber>
-<p>killings in 2022.</p>
+<p>Over the last 12 momths,<br>
+<bignumber>`r prettyNum(murders_city$last12mos, big.mark=",")`<br></bignumber>
+<p>people have been killed.</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
-<p>That's more than the<br>
-<bignumber>`r prettyNum(murders_city$total21, big.mark=",")`<br></bignumber><p>
-murders in 2021.</p>
+<p>The yearly average is<br>
+<bignumber>`r prettyNum(round(murders_city$avg_prior3years,0), big.mark=",")`<br></bignumber><p>
+from 2019 to 2021.</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
-<p>The murder rate would be <br>
-<bignumber>`r round((murders_city$projected22/2304580)*100000,1)`<br></bignumber><p>
-per 100,000 people in 2022.</p>
+<p>The murder rate is <br>
+<bignumber>`r round((murders_city$last12mos/2304580)*100000,1)`<br></bignumber><p>
+per 100K people the last year.</p>
 </div>
 </div>
 <br>
@@ -221,18 +221,11 @@ The color-coding of the map is based on the murder rate over 2019, 2020, 2021 an
 # MURDER MAP
 
 # Set bins for numbers of crimes for murders map
-murderbins <- c(0,median(murders_beat$rate_multiyear,na.rm = TRUE)/2,
-                median(murders_beat$rate_multiyear,na.rm = TRUE),
-                median(murders_beat$rate_multiyear,na.rm = TRUE)*2,
-                median(murders_beat$rate_multiyear,na.rm = TRUE)*3,200)
-
-murderpal <- colorBin(c("#99a0a5",
-                        "#667f99",
-                        "#00318b",
-                        "#0058f6",
-                        "#ffba00"), 
-                      murders_beat$rate_multiyear,
-                      bins = murderbins)
+murderpal <- colorQuantile(c("#99a0a5",
+                             "#667f99",
+                             "#00318b",
+                             "#0058f6",
+                             "#ffba00"), murders_beat$rate_prior3years, n = 4)
 
 # Create quick labels for murders map
 murderlabel <- paste(sep="",
@@ -260,10 +253,10 @@ murders_beat$rate19,
 "</td>
 				<!-- Insert cell to cross/span 
 				multi rows -->
-				<td rowspan='4'>",
-ifelse(murders_beat$inc_3yearto22sofar>0,"2022 projection is up","2022 projection is down"),
+				<td rowspan='5'>",
+ifelse(murders_beat$inc_prior3yearavgtolast12>=0,"Last 12<br>months is up","Last 12<br>months is down"),
 "<br><chartbignumber>",
-ifelse(murders_beat$inc_3yearto22sofar>0,murders_beat$inc_3yearto22sofar,substring(murders_beat$inc_3yearto22sofar,2)),
+ifelse(murders_beat$inc_prior3yearavgtolast12>=0,murders_beat$inc_prior3yearavgtolast12,substring(murders_beat$inc_prior3yearavgtolast12,2)),
 				"%</chartbignumber><br>vs. 3-year<br>average</td>
 			</tr>
 			<tr>
@@ -284,14 +277,22 @@ murders_beat$total21,
 murders_beat$rate21,
 "</td>
 			</tr>
-			</tr>
 						<tr>
-				<td>2022</td>
+				<td>Last 12 months</td>
 				<td>",
-murders_beat$total22,
+murders_beat$last12mos,
 "</td>
 				<td>",
-murders_beat$rate22,
+murders_beat$rate_last12,
+"</td>
+			</tr>
+						<tr>
+				<td>3-year Average</td>
+				<td>",
+murders_beat$avg_prior3years,
+"</td>
+				<td>",
+murders_beat$rate_prior3years,
 "</td>
 			</tr>
 </table>")
@@ -307,10 +308,10 @@ L.control.zoom({ position: 'topright' }).addTo(this)
   addProviderTiles(provider = "Stamen.TonerLite") %>%
   addPolygons(color = "white", popup = murderlabel, weight = 0.5, smoothFactor = 0.5,
               opacity = 0.6, fillOpacity = 0.5,
-              fillColor = ~murderpal(rate_multiyear)) %>% 
+              fillColor = ~murderpal(rate_prior3years)) %>% 
   addLegend(pal = murderpal, 
             opacity = 0.6,
-            values = murders_beat$rate_multiyear, 
+            values = murders_beat$rate_prior3years, 
             position = "bottomleft", 
             title = "Homicides<br>Per 100K people<br>") 
 
