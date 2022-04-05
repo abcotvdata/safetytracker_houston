@@ -4,6 +4,7 @@ library(readxl)
 library(sf)
 library(zoo)
 
+
 # Download and save for backup the latest posted files for 2021, 2020 and 2019
 # download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicViewDec21.xlsx","data/latest/houston_NIBRS2021.xlsx")
 # download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicView.Jan1-Dec31-2020.xlsx","data/latest/houston_NIBRS2020.xlsx")
@@ -171,8 +172,8 @@ citywide_detailed <- citywide_detailed %>%
 # Calculate of each detailed offense type CITYWIDE
 citywide_detailed_monthly <- houston_crime %>%
   group_by(offense_type,nibrs_class,month) %>%
-  summarise(count = sum(offense_count))
-citywide_detailed_monthly %>% filter(nibrs_class=="09A") 
+  summarise(count = sum(offense_count)) %>% 
+  filter(nibrs_class=="09A") 
 # add rolling average of 3 months for chart trend line & round to clean
 citywide_detailed_monthly <- citywide_detailed_monthly %>%
   dplyr::mutate(rollavg_3month = rollsum(count, k = 3, fill = NA, align = "right")/3)
@@ -508,4 +509,8 @@ when_murders_happen %>% write_csv("when_murders_happen.csv")
 
 #### STOPPING POINT #######
 
-
+# ztest_plot <- ggplot(citywide_detailed_monthly, aes(x = month, y = count)) +
+#  geom_bar(stat = "identity", fill = "blue", color = "blue") +
+#  geom_line(data=citywide_detailed_monthly, aes(x= month, y=rollavg_3month), color="yellow") +
+#  scale_y_continuous(labels = scales::comma)
+# ztest_plot
