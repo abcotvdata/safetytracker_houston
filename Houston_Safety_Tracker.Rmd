@@ -188,11 +188,12 @@ th {
 # source("process_houston_crime_data.R")
 ```
 
-<h2>ABC 13 is tracking murders, and other crimes, across the city and in your neighborhood. Here's a look at what's happening with rising killings in the city. You can also examine other crimes by choosing here: <select>
-    <option><a href="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker.html">Homicides</a></option>
-    <option><a href="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_AutoThefts.html">Auto Thefts</a></option>
-    <a href="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_AutoThefts.html">Burglaries</a></option>
-    </select></h2>
+<h2>ABC 13 is tracking murders, and other crimes, across the city and in your neighborhood. Here's a look at what's happening with rising killings in the city. You can also examine other crimes by choosing here: <select onchange="window.location=this.value">
+<option></option>
+<option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker.html">Homicides</option>
+<option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_AutoThefts.html">Auto Thefts</option>
+<option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_AutoThefts.html">Burglaries</option>
+</select></h2>
 
 <div class="cardContainer">
 <div class="card" style="background-color:#99a0a5;">
