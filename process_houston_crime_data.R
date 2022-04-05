@@ -2,6 +2,7 @@ library(tidyverse)
 library(tidycensus)
 library(readxl)
 library(sf)
+library(zoo)
 
 # Download and save for backup the latest posted files for 2021, 2020 and 2019
 # download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicViewDec21.xlsx","data/latest/houston_NIBRS2021.xlsx")
@@ -171,8 +172,13 @@ citywide_detailed <- citywide_detailed %>%
 citywide_detailed_monthly <- houston_crime %>%
   group_by(offense_type,nibrs_class,month) %>%
   summarise(count = sum(offense_count))
-citywide_detailed_monthly %>% filter(nibrs_class=="09A") %>% write_csv("murders_monthly.csv")
-
+citywide_detailed_monthly %>% filter(nibrs_class=="09A") 
+# add rolling average of 3 months for chart trend line & round to clean
+citywide_detailed_monthly <- citywide_detailed_monthly %>%
+  dplyr::mutate(rollavg_3month = rollsum(count, k = 3, fill = NA, align = "right")/3)
+citywide_detailed_monthly$rollavg_3month <- round(citywide_detailed_monthly$rollavg_3month,0)
+# write to save for charts
+write_csv(citywide_detailed_monthly,"murders_monthly.csv")
 
 # Calculate of each category of offense CITYWIDE
 citywide_category <- houston_crime %>%
@@ -212,6 +218,12 @@ citywide_category$rate_prior3years <- round(citywide_category$avg_prior3years/23
 citywide_category_monthly <- houston_crime %>%
   group_by(category_name,month) %>%
   summarise(count = sum(offense_count))
+# add rolling average of 3 months for chart trend line & round to clean
+citywide_category_monthly <- citywide_category_monthly %>%
+  arrange(category_name,month) %>%
+  dplyr::mutate(rollavg_3month = rollsum(count, k = 3, fill = NA, align = "right")/3)
+citywide_category_monthly$rollavg_3month <- round(citywide_category_monthly$rollavg_3month,0)
+# write series of monthly files for charts
 citywide_category_monthly %>% filter(category_name=="Sexual Assault") %>% write_csv("sexassaults_monthly.csv")
 citywide_category_monthly %>% filter(category_name=="Auto Theft") %>% write_csv("autothefts_monthly.csv")
 citywide_category_monthly %>% filter(category_name=="Theft") %>% write_csv("thefts_monthly.csv")
@@ -219,6 +231,7 @@ citywide_category_monthly %>% filter(category_name=="Burglary") %>% write_csv("b
 citywide_category_monthly %>% filter(category_name=="Robbery") %>% write_csv("robberies_monthly.csv")
 citywide_category_monthly %>% filter(category_name=="Assault") %>% write_csv("assaults_monthly.csv")
 citywide_category_monthly %>% filter(category_name=="Drug Offenses") %>% write_csv("drugs_monthly.csv")
+
 
 
 
