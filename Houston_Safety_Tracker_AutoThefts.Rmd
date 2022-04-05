@@ -1,0 +1,347 @@
+---
+title: "ABC13 Neighborhood Safety Tracker: Auto Thefts"
+# author: "John Kelly"
+date: "Updated 3/24/2022 by the ABC13 Data Team"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning=FALSE)
+library(tidyverse)
+library(tidycensus)
+library(readxl)
+library(leaflet)
+library(leaflet.extras)
+library(leaflet.providers)
+library(sp)
+library(sf)
+library(htmlwidgets)
+library(htmltools)
+
+# rmarkdown::render('Houston_Safety_Tracker_2.Rmd', output_file = 'docs/Houston_Safety_Tracker_2.html')
+```
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+```{css, echo=FALSE}
+
+          
+.title {
+  font-family: roboto;
+  color: #00318b;
+  font-weight: 900;
+  text-align: center;
+  font-size: 45px;
+    padding: 5px;
+}
+
+.date {
+  font-family: roboto;
+  color: black;
+  font-weight: 300;
+  text-align: center;
+  font-size: 12px;
+    padding: 5px;
+}
+
+h1 {
+  font-family: roboto;
+  color: black;
+  font-weight: bolder;
+  text-align: left;
+  font-size: 36px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-family: roboto;
+  font-weight: 500;
+  color: black;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 2;
+}
+
+bignumber {
+  font-family: roboto;
+  color: #00318b;
+  font-weight: 900;
+  text-align: center;
+  font-size: 60px;
+    margin-top: 0;
+  margin-bottom: 0;
+}
+
+popupchatter {
+  font-family: roboto;
+  color: black;
+  font-weight: 300;
+  text-align: left;
+  font-size: 12px;
+  margin-top: 0;
+  margin-bottom: 2;
+}
+
+chartbignumber {
+  font-family: roboto;
+  color: #00318b;
+  font-weight: bolder;
+  text-align: right;
+  font-size: 36px;
+    margin-top: 0;
+  margin-bottom: 0;
+}
+
+subhead {
+  font-family: roboto;
+  color: #00318b;
+  font-weight: 900;
+  text-align: left;
+  font-size: 24px;
+    padding: 5px;
+}
+
+body {
+  color: black;
+  font-family: roboto;
+  font-weight: 300;
+  font-size: 12px;
+}
+
+popuptitle {
+  font-family: roboto;
+  color: #00318b;
+  font-weight: bolder;
+  text-align: left;
+  font-size: 20px;
+    margin-top: 0;
+  margin-bottom: 0;
+}
+
+h8 {
+  color: white;
+  background-color: #00318b;
+  font-family: roboto;
+  border-radius: 20px;
+  padding: 2em;
+  text-align: center;
+}
+
+table {
+  font-family: roboto;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+tr {
+  border-bottom: thin solid #f2f2f2;
+}
+  
+td {
+  text-align: right;
+  padding: 6px;
+}
+
+th {
+  text-align: right;
+  padding: 6px;
+}
+
+   * {
+      box-sizing: border-box;
+   }
+   .card {
+      color: white;
+      float: left;
+      width: calc(25% - 20px);
+      padding: 10px;
+      border-radius: 10px;
+      margin: 10px;
+      height: 100%;
+   }
+   .card p {
+   font-family: roboto;
+   text-align: center;
+   font-size: 12px;
+  margin-bottom: 0;
+   }
+   .cardContainer:after {
+      content: "";
+      display: table;
+      clear: both;
+   }
+   @media screen and (max-width: 650px) {
+      .card {
+         width: 100%;
+      }
+   }
+```
+```{r beats, include=FALSE}
+# source("process_houston_police_beats.R")
+```
+
+
+```{r crimedata, include=FALSE}
+# source("process_houston_crime_data.R")
+```
+
+<h2>ABC 13 is tracking auto thefts, and other crimes, across the city and in your neighborhood. Here's a look at what's happening with rising auto thefts in the city.</h2>
+
+<div class="cardContainer">
+<div class="card" style="background-color:#99a0a5;">
+<p>So far this year<br>
+<bignumber>`r prettyNum(autothefts_city$total22, big.mark=",")`<br></bignumber><p>
+vehicles have been stolen.</p>
+</div>
+<div class="card" style="background-color:#99a0a5;">
+<p>Over the last 12 momths,<br>
+<bignumber>`r prettyNum(autothefts_city$last12mos, big.mark=",")`<br></bignumber>
+<p>automobiles were stolen.</p>
+</div>
+<div class="card" style="background-color:#99a0a5;">
+<p>The yearly average is<br>
+<bignumber>`r prettyNum(round(autothefts_city$avg_prior3years,0), big.mark=",")`<br></bignumber><p>
+cars stolen from 2019 to 2021.</p>
+</div>
+<div class="card" style="background-color:#99a0a5;">
+<p>The auto theft rate is <br>
+<bignumber>`r round((autothefts_city$last12mos/2304580)*100000,1)`<br></bignumber><p>
+per 100K people the last year.</p>
+</div>
+</div>
+<br>
+However, in the vast majority of neighborhoods in the city, the rate is much lower. In 17 of 118 of the Houston Police Department's, the auto theft rate was zero last year. In about half of the neighborhoods citywide, the auto stealing rate is less than 10 per 100,000 residents - or less than half of the citywide rate.
+
+ABC13 looked at the data, beat by beat across the city and is providing this look at the car-theft trends by neighborhood for each of the last four years in the map below.
+
+The color-coding of the map is based on the auto theft rate over 2019, 2020, 2021 and 2022 so far, according to ABC13's analysis of data the Houston Police Department publishes every month online. This map will be updated monthly with the latest data as HPD publishes it.
+
+```{r cars, echo=FALSE,out.width='100%',out.height='600'}
+# MURDER MAP
+
+# Set bins for numbers of crimes for autothefts map
+autotheftspal <- colorQuantile(c("#667f99",
+                             "#00318b",
+                             "#0058f6",
+                             "#ffba00"), autothefts_beat$rate_prior3years, n = 4, na.color = NA)
+
+# Create quick labels for autothefts map
+autotheftslabel <- paste(sep="",
+"<table>
+<popuptitle>Houston P.D. Beat #",
+autothefts_beat$beat,
+"</popuptitle><br><popupchatter>Area neighborhoods and landmarks include ",
+autothefts_beat$placename,
+". Estimated Population: ",
+prettyNum(autothefts_beat$population, big.mark=','),
+"</popupchatter><br>
+      <tr>
+				<th></th>
+				<th>Total</th>
+				<th>Rate</th>
+				<th>Trend</th>
+			</tr>
+			<tr>
+				<td>2019</td>
+				<td>",
+autothefts_beat$total19,
+"</td>
+				<td>",
+autothefts_beat$rate19,
+"</td>
+				<!-- Insert cell to cross/span 
+				multi rows -->
+				<td rowspan='5'>",
+ifelse(autothefts_beat$inc_prior3yearavgtolast12>=0,"Last 12<br>months is up","Last 12<br>months is down"),
+"<br><chartbignumber>",
+ifelse(autothefts_beat$inc_prior3yearavgtolast12>=0,autothefts_beat$inc_prior3yearavgtolast12,substring(autothefts_beat$inc_prior3yearavgtolast12,2)),
+				"%</chartbignumber><br>vs. 3-year<br>average</td>
+			</tr>
+			<tr>
+				<td>2020</td>
+				<td>",
+autothefts_beat$total20,
+"</td>
+				<td>",
+autothefts_beat$rate20,
+"</td>
+			</tr>
+						<tr>
+				<td>2021</td>
+				<td>",
+autothefts_beat$total21,
+"</td>
+				<td>",
+autothefts_beat$rate21,
+"</td>
+			</tr>
+						<tr>
+				<td>Last 12 months</td>
+				<td>",
+autothefts_beat$last12mos,
+"</td>
+				<td>",
+autothefts_beat$rate_last12,
+"</td>
+			</tr>
+						<tr>
+				<td>3-year Average</td>
+				<td>",
+autothefts_beat$avg_prior3years,
+"</td>
+				<td>",
+autothefts_beat$rate_prior3years,
+"</td>
+			</tr>
+</table>")
+
+# Creating police beats map for types of crimes
+houston_murder_map <- leaflet(autothefts_beat, options = leafletOptions(zoomControl = FALSE)) %>%
+  htmlwidgets::onRender("function(el, x) {
+L.control.zoom({ position: 'topright' }).addTo(this)
+}") %>%
+  setView(-95.4, 29.75, zoom = 12) %>% 
+  addProviderTiles(provider = "Stamen.TonerLite") %>%
+  addPolygons(color = "white", 
+              popup = autotheftslabel, 
+              weight = 0.5, 
+              smoothFactor = 0.5,
+              opacity = 0.6, 
+              fillOpacity = 0.5,
+              fillColor = ~autotheftspal(rate_prior3years)) %>% 
+  addLegend(opacity = 0.6,
+            values = autothefts_beat$rate_prior3years, 
+            colors = c("#667f99",
+                       "#00318b",
+                       "#0058f6",
+                       "#ffba00"),
+            labels=c("Lowest Rate", 
+                     "Lower Rate", 
+                     "Higher Rate", 
+                     "Highest Rate"),
+            position = "bottomleft", 
+            title = "Homicides<br>Per 100K people<br>") 
+
+houston_murder_map
+```
+
+However, in the vast majority of neighborhoods in the city, the rate is much lower. In 17 of 118 of the Houston Police Department's, the auto theft rate was zero last year. Filler, filler, filler.
+<br>
+<br>
+<subhead>Homicides month by month, 2019 through last month</subhead>
+
+<iframe title="Houston murders month by month" aria-label="Column Chart" id="datawrapper-chart-3NHzG" src="https://datawrapper.dwcdn.net/3NHzG/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+</script>
+  <br>
+<br>
+<subhead>What kinds of places do autothefts happen in Houston</subhead>
+
+<iframe title="" aria-label="Table" id="datawrapper-chart-xI2y0" src="https://datawrapper.dwcdn.net/xI2y0/5/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="1239" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+</script>
+<br>
+<br>
+<subhead>What time of day do autothefts happen?</subhead>
+
+<iframe title="What hour of day do murders happen" aria-label="Column Chart" id="datawrapper-chart-coxAA" src="https://datawrapper.dwcdn.net/coxAA/4/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+</script>
