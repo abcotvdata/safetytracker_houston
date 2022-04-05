@@ -221,11 +221,10 @@ The color-coding of the map is based on the murder rate over 2019, 2020, 2021 an
 # MURDER MAP
 
 # Set bins for numbers of crimes for murders map
-murderpal <- colorQuantile(c("#99a0a5",
-                             "#667f99",
+murderpal <- colorQuantile(c("#667f99",
                              "#00318b",
                              "#0058f6",
-                             "#ffba00"), murders_beat$rate_prior3years, n = 4)
+                             "#ffba00"), murders_beat$rate_prior3years, n = 4, na.color = NA)
 
 # Create quick labels for murders map
 murderlabel <- paste(sep="",
@@ -238,7 +237,7 @@ murders_beat$placename,
 prettyNum(murders_beat$population, big.mark=','),
 "</popupchatter><br>
       <tr>
-				<th>Year</th>
+				<th></th>
 				<th>Total</th>
 				<th>Rate</th>
 				<th>Trend</th>
@@ -297,21 +296,30 @@ murders_beat$rate_prior3years,
 			</tr>
 </table>")
 
-# Create rapid prototype of murders map
-# Issue to fix here is that we merged the data points to the df first, instead of the spatial file
-# Go back and rework that part
+# Creating police beats map for types of crimes
 houston_murder_map <- leaflet(murders_beat, options = leafletOptions(zoomControl = FALSE)) %>%
   htmlwidgets::onRender("function(el, x) {
 L.control.zoom({ position: 'topright' }).addTo(this)
 }") %>%
   setView(-95.4, 29.75, zoom = 12) %>% 
   addProviderTiles(provider = "Stamen.TonerLite") %>%
-  addPolygons(color = "white", popup = murderlabel, weight = 0.5, smoothFactor = 0.5,
-              opacity = 0.6, fillOpacity = 0.5,
+  addPolygons(color = "white", 
+              popup = murderlabel, 
+              weight = 0.5, 
+              smoothFactor = 0.5,
+              opacity = 0.6, 
+              fillOpacity = 0.5,
               fillColor = ~murderpal(rate_prior3years)) %>% 
-  addLegend(pal = murderpal, 
-            opacity = 0.6,
+  addLegend(opacity = 0.6,
             values = murders_beat$rate_prior3years, 
+            colors = c("#667f99",
+                       "#00318b",
+                       "#0058f6",
+                       "#ffba00"),
+            labels=c("Lowest Rate", 
+                     "Lower Rate", 
+                     "Higher Rate", 
+                     "Highest Rate"),
             position = "bottomleft", 
             title = "Homicides<br>Per 100K people<br>") 
 
