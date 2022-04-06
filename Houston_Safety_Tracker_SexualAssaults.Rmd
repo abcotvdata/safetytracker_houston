@@ -244,15 +244,13 @@ The average sexual assault rate for the three-year period from 2019 to 2022 was 
 
 The situation, of course, is not the same neighborhood to neighborhood.
 
-About <h8>`r round(pop_sexassaultsdown/2304580*100,0)`%</h8> of city residents live in neighborhoods where the sexassault rate over the last 12 months is down or about the same as the three-year average.
-
-Only <h8>`r round(pop_sexassaultszero/2304580*100,0)`%</h8> of people live in neighborhoods where there were no sexual assaults at all over the last 12 months.
+About <h8>`r round(pop_sexassaultsdown/2304580*100,0)`%</h8> of city residents live in neighborhoods where the sexual assault rate over the last 12 months is down or about the same as the three-year average.
 
 But, about <h8>`r round(pop_sexassaultsup/2304580*100,0)`%</h8> of Houston residents live in neighborhoods where the sexual assault rate is up more than 20% in the last 12 months when compared to the three-year average from 2019 to 2021.
 
 And, <h8>`r round(pop_sexassaultsmonthly/2304580*100,0)`%</h8> of us now live in neighborhoods where there was at least one sexual assault every month over the last year.
 
-Across the city the last 12 months, there were about <h8>`r round(sexassaults_city$last12mos/52,1)`</h8> homicides every week. In 2019, that number was <h8>`r round(sexassaults_city$total19/52,1)`</h8> per week
+Across the city the last 12 months, there were about <h8>`r round(sexassaults_city$last12mos/52,0)`</h8> homicides every week. In 2019, that number was <h8>`r round(sexassaults_city$total19/52,0)`</h8> per week
 
 <subhead>Houston sexual assaults neighborhood by neighborhood</subhead>
 

@@ -233,14 +233,14 @@ from 2019 to 2021.</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>The drug crime rate is <br>
-<bignumber>`r drugs_city$rate_last12`<br></bignumber><p>
+<bignumber>`r round(drugs_city$rate_last12,0)`<br></bignumber><p>
 per 100K people the last year.</p>
 </div>
 </div>
 <br>
-About three years ago, the drug crime rate in Houston was <h8>`r drugs_city$rate19`</h8> per 100,000 residents.
+About three years ago, the drug crime rate in Houston was <h8>`r round(drugs_city$rate19,0)`</h8> per 100,000 residents.
 
-The average drug crime rate for the three-year period from 2019 to 2022 was <h8>`r drugs_city$rate_prior3years`</h8> and last year it was <h8>`r drugs_city$rate21`</h8>.
+The average drug crime rate for the three-year period from 2019 to 2022 was <h8>`r round(drugs_city$rate_prior3years,0)`</h8> and last year it was <h8>`r round(drugs_city$rate21,0)`</h8>.
 
 The situation, of course, is not the same neighborhood to neighborhood.
 
@@ -252,7 +252,7 @@ But, about <h8>`r round(pop_drugsup/2304580*100,0)`%</h8> of Houston residents l
 
 And, <h8>`r round(pop_drugsmonthly/2304580*100,0)`%</h8> of us now live in neighborhoods where there was at least one drug every month over the last year.
 
-Across the city the last 12 months, there were about <h8>`r round(drugs_city$last12mos/52,1)`</h8> drug crimes every week. In 2019, that number was <h8>`r round(drugs_city$total19/52,1)`</h8> per week
+Across the city the last 12 months, there were about <h8>`r round(drugs_city$last12mos/52,0)`</h8> drug crimes every week. In 2019, that number was <h8>`r round(drugs_city$total19/52,0)`</h8> per week
 
 <subhead>Houston drug crimes neighborhood by neighborhood</subhead>
 
