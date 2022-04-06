@@ -108,7 +108,7 @@ chartbignumber {
 
 subhead {
   font-family: roboto;
-  color: #00318b;
+  color: black;
   font-weight: 900;
   text-align: left;
   font-size: 24px;
@@ -348,19 +348,25 @@ houston_murder_map
 However, in the vast majority of neighborhoods in the city, the rate is much lower. In 17 of 118 of the Houston Police Department's, the murder rate was zero last year. Filler, filler, filler.
 <br>
 <br>
-<subhead>Homicides month by month, 2019 through last month</subhead>
+<!-- <subhead>Homicides month by month, 2019 through last month</subhead> -->
 
-<iframe title="Houston murders month by month" aria-label="Column Chart" id="datawrapper-chart-3NHzG" src="https://datawrapper.dwcdn.net/3NHzG/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+<iframe title="Homicides month by month, 2019 through last month" aria-label="Column Chart" id="datawrapper-chart-3NHzG" src="https://datawrapper.dwcdn.net/3NHzG/5/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
 </script>
   <br>
 <br>
-<subhead>What kinds of places do murders happen in Houston</subhead>
+<!-- <subhead>Risk of being murdered in Houston vs. other causes of death in Texas</subhead> -->
+
+<iframe title="" aria-label="Dot Plot" id="datawrapper-chart-9SHHa" src="https://datawrapper.dwcdn.net/9SHHa/4/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="146" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+</script>
+<br>
+<br>
+<!-- <subhead>What kinds of places do murders happen in Houston</subhead> -->
 
 <iframe title="" aria-label="Table" id="datawrapper-chart-xI2y0" src="https://datawrapper.dwcdn.net/xI2y0/5/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="1239" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
 </script>
 <br>
 <br>
-<subhead>What time of day do murders happen?</subhead>
+<!-- <subhead>What time of day do murders happen?</subhead> -->
 
 <iframe title="What hour of day do murders happen" aria-label="Column Chart" id="datawrapper-chart-coxAA" src="https://datawrapper.dwcdn.net/coxAA/4/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
 </script>
