@@ -218,64 +218,64 @@ th {
 <div class="cardContainer">
 <div class="card" style="background-color:#99a0a5;">
 <p>So far this year<br>
-<bignumber>`r prettyNum(murders_city$total22, big.mark=",")`<br></bignumber><p>
-people have been murdered.</p>
+<bignumber>`r prettyNum(robberies_city$total22, big.mark=",")`<br></bignumber><p>
+people have been robbed.</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>Over the last 12 momths,<br>
-<bignumber>`r prettyNum(murders_city$last12mos, big.mark=",")`<br></bignumber>
-<p>people have been killed.</p>
+<bignumber>`r prettyNum(robberies_city$last12mos, big.mark=",")`<br></bignumber>
+<p>people have been robbed.</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>The yearly average is<br>
-<bignumber>`r prettyNum(round(murders_city$avg_prior3years,0), big.mark=",")`<br></bignumber><p>
+<bignumber>`r prettyNum(round(robberies_city$avg_prior3years,0), big.mark=",")`<br></bignumber><p>
 from 2019 to 2021.</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
-<p>The murder rate is <br>
-<bignumber>`r murders_city$rate_last12`<br></bignumber><p>
+<p>The robbery rate is <br>
+<bignumber>`r robberies_city$rate_last12`<br></bignumber><p>
 per 100K people the last year.</p>
 </div>
 </div>
 <br>
-About three years ago, the murder rate in Houston was <h8>`r murders_city$rate19`</h8> per 100,000 residents - or just slightly less than the rate of deaths in motor vehicle crashes in Texas (12.5).
+About three years ago, the robbery rate in Houston was <h8>`r robberies_city$rate19`</h8> per 100,000 residents - or just slightly less than the rate of deaths in motor vehicle crashes in Texas (12.5).
 
-During the pandemic years, the risk of homicide in Houston rose above the risk of being killed in a traffic crash. The average murder rate for the three-year period from 2019 to 2022 was <h8>`r murders_city$rate_prior3years`</h8> and last year it was <h8>`r murders_city$rate21`</h8>.
+During the pandemic years, the risk of homicide in Houston rose above the risk of being killed in a traffic crash. The average robbery rate for the three-year period from 2019 to 2022 was <h8>`r robberies_city$rate_prior3years`</h8> and last year it was <h8>`r robberies_city$rate21`</h8>.
 
 The situation, of course, is not the same neighborhood to neighborhood.
 
-About <h8>`r round(pop_murdersdown/2304580*100,0)`%</h8> of city residents live in neighborhoods where the murder rate over the last 12 months is down or about the same as the three-year average. 
+About <h8>`r round(pop_robberiesdown/2304580*100,0)`%</h8> of city residents live in neighborhoods where the robbery rate over the last 12 months is down or about the same as the three-year average. 
 
-In fact, <h8>`r round(pop_murderszero/2304580*100,0)`%</h8> of people live in neighborhoods where there were no homicides at all over the last 12 months.
+In fact, <h8>`r round(pop_robberieszero/2304580*100,0)`%</h8> of people live in neighborhoods where there were no homicides at all over the last 12 months.
 
-But, about <h8>`r round(pop_murdersup/2304580*100,0)`%</h8> of Houston residents live in neighborhoods where the murder rate is up more than 20% in the last 12 months when compared to the three-year average from 2019 to 2021.
+But, about <h8>`r round(pop_robberiesup/2304580*100,0)`%</h8> of Houston residents live in neighborhoods where the robbery rate is up more than 20% in the last 12 months when compared to the three-year average from 2019 to 2021.
 
-And, <h8>`r round(pop_murdersmonthly/2304580*100,0)`%</h8> of us now live in neighborhoods where there was at least one murder every month over the last year.
+And, <h8>`r round(pop_robberiesmonthly/2304580*100,0)`%</h8> of us now live in neighborhoods where there was at least one robbery every month over the last year.
 
-Across the city the last 12 months, there were about <h8>`r round(murders_city$last12mos/52,1)`</h8> homicides every week. In 2019, that number was <h8>`r round(murders_city$total19/52,1)`</h8> per week
+Across the city the last 12 months, there were about <h8>`r round(robberies_city$last12mos/52,1)`</h8> homicides every week. In 2019, that number was <h8>`r round(robberies_city$total19/52,1)`</h8> per week
 
 <subhead>Houston homicides neighborhood by neighborhood</subhead>
 
-ABC13 looked at the Houston Police Department's data, beat by beat across the city and is providing this look at the murder trends by neighborhood for each of the last four years in the map below. The color-coding of the map is based on the murder rate over 2019, 2020 and 2021 combined, according to ABC13's analysis of data the city police department publishes monthly.
+ABC13 looked at the Houston Police Department's data, beat by beat across the city and is providing this look at the robbery trends by neighborhood for each of the last four years in the map below. The color-coding of the map is based on the robbery rate over 2019, 2020 and 2021 combined, according to ABC13's analysis of data the city police department publishes monthly.
 
 ```{r cars, echo=FALSE,out.width='100%',out.height='600'}
-# MURDER MAP
+# robbery MAP
 
-# Set bins for numbers of crimes for murders map
-murderpal <- colorQuantile(c("#667f99",
+# Set bins for numbers of crimes for robberies map
+robberypal <- colorQuantile(c("#667f99",
                              "#00318b",
                              "#0058f6",
-                             "#ffba00"), murders_beat$rate_prior3years, n = 4, na.color = NA)
+                             "#ffba00"), robberies_beat$rate_prior3years, n = 4, na.color = NA)
 
-# Create quick labels for murders map
-murderlabel <- paste(sep="",
+# Create quick labels for robberies map
+robberylabel <- paste(sep="",
 "<table>
 <popuptitle>Houston P.D. Beat #",
-murders_beat$beat,
+robberies_beat$beat,
 "</popuptitle><br><popupchatter>Area neighborhoods and landmarks include ",
-murders_beat$placename,
+robberies_beat$placename,
 ". Estimated Population: ",
-prettyNum(murders_beat$population, big.mark=','),
+prettyNum(robberies_beat$population, big.mark=','),
 "</popupchatter><br>
       <tr>
 				<th></th>
@@ -286,73 +286,73 @@ prettyNum(murders_beat$population, big.mark=','),
 			<tr>
 				<td>2019</td>
 				<td>",
-murders_beat$total19,
+robberies_beat$total19,
 "</td>
 				<td>",
-murders_beat$rate19,
+robberies_beat$rate19,
 "</td>
 				<!-- Insert cell to cross/span 
 				multi rows -->
 				<td rowspan='5'>",
-ifelse(murders_beat$inc_prior3yearavgtolast12>=0,"Last 12<br>months up","Last 12<br>months down"),
+ifelse(robberies_beat$inc_prior3yearavgtolast12>=0,"Last 12<br>months up","Last 12<br>months down"),
 "<br><chartbignumber>",
-ifelse(murders_beat$inc_prior3yearavgtolast12>=0,murders_beat$inc_prior3yearavgtolast12,substring(murders_beat$inc_prior3yearavgtolast12,2)),
+ifelse(robberies_beat$inc_prior3yearavgtolast12>=0,robberies_beat$inc_prior3yearavgtolast12,substring(robberies_beat$inc_prior3yearavgtolast12,2)),
 				"%</chartbignumber><br>vs. 3-year<br>average</td>
 			</tr>
 			<tr>
 				<td>2020</td>
 				<td>",
-murders_beat$total20,
+robberies_beat$total20,
 "</td>
 				<td>",
-murders_beat$rate20,
+robberies_beat$rate20,
 "</td>
 			</tr>
 						<tr>
 				<td>2021</td>
 				<td>",
-murders_beat$total21,
+robberies_beat$total21,
 "</td>
 				<td>",
-murders_beat$rate21,
+robberies_beat$rate21,
 "</td>
 			</tr>
 						<tr>
 				<td>Last 12 months</td>
 				<td>",
-murders_beat$last12mos,
+robberies_beat$last12mos,
 "</td>
 				<td>",
-murders_beat$rate_last12,
+robberies_beat$rate_last12,
 "</td>
 			</tr>
 						<tr>
 				<td>3-year Average</td>
 				<td>",
-murders_beat$avg_prior3years,
+robberies_beat$avg_prior3years,
 "</td>
 				<td>",
-murders_beat$rate_prior3years,
+robberies_beat$rate_prior3years,
 "</td>
 			</tr>
 </table>")
 
 # Creating police beats map for types of crimes
-houston_murder_map <- leaflet(murders_beat, options = leafletOptions(zoomControl = FALSE)) %>%
+houston_robbery_map <- leaflet(robberies_beat, options = leafletOptions(zoomControl = FALSE)) %>%
   htmlwidgets::onRender("function(el, x) {
 L.control.zoom({ position: 'topright' }).addTo(this)
 }") %>%
   setView(-95.4, 29.75, zoom = 12) %>% 
   addProviderTiles(provider = "Stamen.TonerLite") %>%
   addPolygons(color = "white", 
-              popup = murderlabel, 
+              popup = robberylabel, 
               weight = 0.5, 
               smoothFactor = 0.5,
               opacity = 0.6, 
               fillOpacity = 0.5,
-              fillColor = ~murderpal(rate_prior3years)) %>% 
+              fillColor = ~robberypal(rate_prior3years)) %>% 
   addLegend(opacity = 0.6,
-            values = murders_beat$rate_prior3years, 
+            values = robberies_beat$rate_prior3years, 
             colors = c("#667f99",
                        "#00318b",
                        "#0058f6",
@@ -362,12 +362,12 @@ L.control.zoom({ position: 'topright' }).addTo(this)
                      "Higher Rate", 
                      "Highest Rate"),
             position = "bottomleft", 
-            title = "Homicides<br>Per 100K people<br>") 
+            title = "Robberies<br>Per 100K people<br>") 
 
-houston_murder_map
+houston_robbery_map
 ```
 
-However, in the vast majority of neighborhoods in the city, the rate is much lower. In 17 of 118 of the Houston Police Department's, the murder rate was zero last year. Filler, filler, filler.
+However, in the vast majority of neighborhoods in the city, the rate is much lower. In 17 of 118 of the Houston Police Department's, the robbery rate was zero last year. Filler, filler, filler.
 <br>
 <br>
 <!-- <subhead>Homicides month by month, 2019 through last month</subhead> -->
