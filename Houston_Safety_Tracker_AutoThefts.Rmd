@@ -204,8 +204,8 @@ th {
 ```
 
 <h2>ABC 13 is tracking auto thefts, and other crimes, across the city and in your neighborhood. Here's a look at what's happening with rising auto thefts in the city. You can also examine other crimes: <select onchange="window.location=this.value">
-<option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker.html">Homicides</option>
 <option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_AutoThefts.html">Auto Thefts</option>
+<option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker.html">Homicides</option>
 <option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_AutoThefts.html">Burglaries</option>
 </select></h2>
 
