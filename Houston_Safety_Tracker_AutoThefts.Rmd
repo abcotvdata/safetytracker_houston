@@ -238,21 +238,19 @@ per 100K people the last year.</p>
 </div>
 </div>
 <br>
-About three years ago, the auto theft rate in Houston was <h8>`r autothefts_city$rate19`</h8> per 100,000 residents - or just slightly less than the rate of deaths in motor vehicle crashes in Texas (12.5).
+About three years ago, the auto theft rate in Houston was <h8>`r autothefts_city$rate19`</h8> per 100,000 residents. During the pandemic years, the risk of auto theft in Houston rose at a sharp pace. The average auto theft rate for the three-year period from 2019 to 2022 was <h8>`r autothefts_city$rate_prior3years`</h8> and last year it was <h8>`r autothefts_city$rate21`</h8>.
 
-During the pandemic years, the risk of homicide in Houston rose above the risk of being killed in a traffic crash. The average auto theft rate for the three-year period from 2019 to 2022 was <h8>`r autothefts_city$rate_prior3years`</h8> and last year it was <h8>`r autothefts_city$rate21`</h8>.
+Across the city the last 12 months, there were about <h8>`r round(autothefts_city$last12mos/52,1)`</h8> vehicles stolen every week. In 2019, that number was <h8>`r round(autothefts_city$total19/52,1)`</h8> per week.
 
 The situation, of course, is not the same neighborhood to neighborhood.
 
 About <h8>`r round(pop_autotheftsdown/2304580*100,0)`%</h8> of city residents live in neighborhoods where the auto theft rate over the last 12 months is down or about the same as the three-year average. 
 
-In fact, <h8>`r round(pop_autotheftszero/2304580*100,0)`%</h8> of people live in neighborhoods where there were no homicides at all over the last 12 months.
+In fact, <h8>`r round(pop_autotheftszero/2304580*100,0)`%</h8> of people live in neighborhoods where there were no auto thefts at all over the last 12 months.
 
 But, about <h8>`r round(pop_autotheftsup/2304580*100,0)`%</h8> of Houston residents live in neighborhoods where the auto theft rate is up more than 20% in the last 12 months when compared to the three-year average from 2019 to 2021.
 
 And, <h8>`r round(pop_autotheftsmonthly/2304580*100,0)`%</h8> of us now live in neighborhoods where there was at least one auto theft every month over the last year.
-
-Across the city the last 12 months, there were about <h8>`r round(autothefts_city$last12mos/52,1)`</h8> homicides every week. In 2019, that number was <h8>`r round(autothefts_city$total19/52,1)`</h8> per week
 
 <subhead>Houston homicides neighborhood by neighborhood</subhead>
 
