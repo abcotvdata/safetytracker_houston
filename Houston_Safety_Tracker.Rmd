@@ -206,8 +206,11 @@ th {
 
 <h2>ABC13's data team is tracking crime and safety across Houston and in your neighborhood.<br>You can choose which crime to examine: <select onchange="window.location=this.value">
 <option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker.html">Homicides</option>
-<option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_AutoThefts.html">Auto Thefts</option>
-<option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_AutoThefts.html">Burglaries</option>
+<option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_Sexual Assaults.html">Sexual Assaults</option>
+<option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_AutoThefts.html">AutoThefts</option>
+<option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_Assaults.html">Assaults</option>
+<option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_Thefts.html">Thefts</option>
+<option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_AutoThefts.html">AutoThefts</option>
 </select></h2>
 
 <div class="cardContainer">
