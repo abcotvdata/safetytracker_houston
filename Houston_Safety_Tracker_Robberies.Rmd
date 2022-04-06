@@ -233,7 +233,7 @@ from 2019 to 2021.</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>The robbery rate is <br>
-<bignumber>`r robberies_city$rate_last12`<br></bignumber><p>
+<bignumber>`r round(robberies_city$rate_last12,0)`<br></bignumber><p>
 per 100K people the last year.</p>
 </div>
 </div>
@@ -252,7 +252,7 @@ But, about <h8>`r round(pop_robberiesup/2304580*100,0)`%</h8> of Houston residen
 
 And, <h8>`r round(pop_robberiesmonthly/2304580*100,0)`%</h8> of us now live in neighborhoods where there was at least one robbery every month over the last year.
 
-Across the city the last 12 months, there were about <h8>`r round(robberies_city$last12mos/52,1)`</h8> robberies every week. In 2019, that number was <h8>`r round(robberies_city$total19/52,1)`</h8> per week
+Across the city the last 12 months, there were about <h8>`r round(robberies_city$last12mos/52,0)`</h8> robberies every week. In 2019, that number was <h8>`r round(robberies_city$total19/52,0)`</h8> per week
 
 <subhead>Houston robberies neighborhood by neighborhood</subhead>
 
