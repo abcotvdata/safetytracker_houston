@@ -1,7 +1,7 @@
 ---
 title: "ABC13 Neighborhood Safety Tracker"
 # author: "John Kelly"
-date: "Updated 3/24/2022 by the ABC13 Data Team"
+date: "Updated 4/6/2022 by the ABC13 Data Team"
 output: html_document
 ---
 
@@ -112,10 +112,10 @@ chartbignumber {
 subhead {
   font-family: roboto;
   color: black;
-  font-weight: 900;
+  font-weight: 700;
   text-align: left;
-  font-size: 24px;
-    padding: 5px;
+  font-size: 20px;
+    padding: 0px;
 }
 
 body {
@@ -233,11 +233,15 @@ per 100K people the last year.</p>
 </div>
 </div>
 <br>
-However, in the vast majority of neighborhoods in the city, the rate is much lower. In 17 of 118 of the Houston Police Department's, the murder rate was zero last year. In about half of the neighborhoods citywide, the murder rate is less than 10 per 100,000 residents - or less than half of the citywide rate.
+However, in the vast majority of neighborhoods in the city, the rate is much lower.
 
-ABC13 looked at the data, beat by beat across the city and is providing this look at the murder trends by neighborhood for each of the last four years in the map below.
+In 17 of 118 of the Houston Police Department's, the murder rate was zero last year.
 
-The color-coding of the map is based on the murder rate over 2019, 2020, 2021 and 2022 so far, according to ABC13's analysis of data the Houston Police Department publishes every month online. This map will be updated monthly with the latest data as HPD publishes it.
+In about half of the neighborhoods citywide, the murder rate is less than 10 per 100,000 residents - or less than half of the citywide rate.
+
+<subhead>Houston homicides neighborhood by neighborhood</subhead>
+
+ABC13 looked at the data, beat by beat across the city and is providing this look at the murder trends by neighborhood for each of the last four years in the map below. The color-coding of the map is based on the murder rate over 2019, 2020 and 2021 combined, according to ABC13's analysis of data the Houston Police Department publishes monthly.
 
 ```{r cars, echo=FALSE,out.width='100%',out.height='600'}
 # MURDER MAP
@@ -365,7 +369,7 @@ However, in the vast majority of neighborhoods in the city, the rate is much low
 <br>
 <!-- <subhead>What kinds of places do murders happen in Houston</subhead> -->
 
-<iframe title="What kinds of places do murders happen in Houston"  aria-label="Table" id="datawrapper-chart-xI2y0" src="https://datawrapper.dwcdn.net/xI2y0/9/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="1239" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+<iframe title="What kinds of places do murders happen in Houston"  aria-label="Table" id="datawrapper-chart-xI2y0" src="https://datawrapper.dwcdn.net/xI2y0/10/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="1239" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
 </script>
 <br>
 <br>
