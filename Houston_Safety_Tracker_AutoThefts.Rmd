@@ -1,7 +1,7 @@
 ---
-title: "ABC13 Neighborhood Safety Tracker: Auto Thefts"
+title: "ABC13 Neighborhood Safety Tracker"
 # author: "John Kelly"
-date: "Updated 3/24/2022 by the ABC13 Data Team"
+date: "Updated 4/6/2022 by the ABC13 Data Team"
 output: html_document
 ---
 
@@ -84,7 +84,9 @@ bignumber {
   color: #00318b;
   font-weight: 900;
   text-align: center;
-  font-size: 60px;
+  font-size: 80px;
+    line-height: 85px;
+  height: 85px;
     margin-top: 0;
   margin-bottom: 0;
 }
@@ -112,10 +114,10 @@ chartbignumber {
 subhead {
   font-family: roboto;
   color: black;
-  font-weight: 900;
+  font-weight: 700;
   text-align: left;
-  font-size: 24px;
-    padding: 5px;
+  font-size: 20px;
+    padding: 0px;
 }
 
 body {
@@ -136,12 +138,10 @@ popuptitle {
 }
 
 h8 {
-  color: white;
-  background-color: #00318b;
+  color: #00318b;
   font-family: roboto;
-  border-radius: 20px;
-  padding: 2em;
-  text-align: center;
+  font-weight: 900;
+  font-size: 16px;
 }
 
 table {
@@ -151,7 +151,7 @@ table {
 }
 
 tr {
-  border-bottom: thin solid #f2f2f2;
+  border-bottom: thin solid #99a0a5;
 }
   
 td {
@@ -205,11 +205,10 @@ th {
 ```
 
 <h2>ABC13's data team is tracking crime and safety across Houston and in your neighborhood.<br>You can choose which crime to examine: <select onchange="window.location=this.value">
-<option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_AutoThefts.html">Auto Thefts</option>
 <option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker.html">Homicides</option>
+<option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_AutoThefts.html">Auto Thefts</option>
 <option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_AutoThefts.html">Burglaries</option>
 </select></h2>
-
 
 <div class="cardContainer">
 <div class="card" style="background-color:#99a0a5;">
@@ -218,39 +217,53 @@ th {
 vehicles have been stolen.</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
-<p>Over the last 12 momths,<br>
+<p>Over the last 12 months,<br>
 <bignumber>`r prettyNum(autothefts_city$last12mos, big.mark=",")`<br></bignumber>
-<p>automobiles were stolen.</p>
+<p>vehicles have been stolen.</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>The yearly average is<br>
 <bignumber>`r prettyNum(round(autothefts_city$avg_prior3years,0), big.mark=",")`<br></bignumber><p>
-cars stolen from 2019 to 2021.</p>
+from 2019 to 2021.</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>The auto theft rate is <br>
-<bignumber>`r round((autothefts_city$last12mos/2304580)*100000,1)`<br></bignumber><p>
+<bignumber>`r autothefts_city$rate_last12`<br></bignumber><p>
 per 100K people the last year.</p>
 </div>
 </div>
 <br>
-However, in the vast majority of neighborhoods in the city, the rate is much lower. In 17 of 118 of the Houston Police Department's, the auto theft rate was zero last year. In about half of the neighborhoods citywide, the auto stealing rate is less than 10 per 100,000 residents - or less than half of the citywide rate.
+About three years ago, the auto theft rate in Houston was <h8>`r autothefts_city$rate19`</h8> per 100,000 residents - or just slightly less than the rate of deaths in motor vehicle crashes in Texas (12.5).
 
-ABC13 looked at the data, beat by beat across the city and is providing this look at the car-theft trends by neighborhood for each of the last four years in the map below.
+During the pandemic years, the risk of homicide in Houston rose above the risk of being killed in a traffic crash. The average auto theft rate for the three-year period from 2019 to 2022 was <h8>`r autothefts_city$rate_prior3years`</h8> and last year it was <h8>`r autothefts_city$rate21`</h8>.
 
-The color-coding of the map is based on the auto theft rate over 2019, 2020, 2021 and 2022 so far, according to ABC13's analysis of data the Houston Police Department publishes every month online. This map will be updated monthly with the latest data as HPD publishes it.
+The situation, of course, is not the same neighborhood to neighborhood.
+
+About <h8>`r round(pop_autotheftsdown/2304580*100,0)`%</h8> of city residents live in neighborhoods where the auto theft rate over the last 12 months is down or about the same as the three-year average. 
+
+In fact, <h8>`r round(pop_autotheftszero/2304580*100,0)`%</h8> of people live in neighborhoods where there were no homicides at all over the last 12 months.
+
+But, about <h8>`r round(pop_autotheftsup/2304580*100,0)`%</h8> of Houston residents live in neighborhoods where the auto theft rate is up more than 20% in the last 12 months when compared to the three-year average from 2019 to 2021.
+
+And, <h8>`r round(pop_autotheftsmonthly/2304580*100,0)`%</h8> of us now live in neighborhoods where there was at least one auto theft every month over the last year.
+
+Across the city the last 12 months, there were about <h8>`r round(autothefts_city$last12mos/52,1)`</h8> homicides every week. In 2019, that number was <h8>`r round(autothefts_city$total19/52,1)`</h8> per week
+
+<subhead>Houston homicides neighborhood by neighborhood</subhead>
+
+ABC13 looked at the Houston Police Department's data, beat by beat across the city and is providing this look at the auto theft trends by neighborhood for each of the last four years in the map below. The color-coding of the map is based on the auto theft rate over 2019, 2020 and 2021 combined, according to ABC13's analysis of data the city police department publishes monthly.
 
 ```{r cars, echo=FALSE,out.width='100%',out.height='600'}
-# MURDER MAP
+# autotheft MAP
 
 # Set bins for numbers of crimes for autothefts map
-autotheftspal <- colorQuantile(c("#667f99",
+autotheftpal <- colorQuantile(c("#667f99",
                              "#00318b",
                              "#0058f6",
                              "#ffba00"), autothefts_beat$rate_prior3years, n = 4, na.color = NA)
 
 # Create quick labels for autothefts map
-autotheftslabel <- paste(sep="",
+autotheftlabel <- paste(sep="",
 "<table>
 <popuptitle>Houston P.D. Beat #",
 autothefts_beat$beat,
@@ -276,7 +289,7 @@ autothefts_beat$rate19,
 				<!-- Insert cell to cross/span 
 				multi rows -->
 				<td rowspan='5'>",
-ifelse(autothefts_beat$inc_prior3yearavgtolast12>=0,"Last 12<br>months is up","Last 12<br>months is down"),
+ifelse(autothefts_beat$inc_prior3yearavgtolast12>=0,"Last 12<br>months up","Last 12<br>months down"),
 "<br><chartbignumber>",
 ifelse(autothefts_beat$inc_prior3yearavgtolast12>=0,autothefts_beat$inc_prior3yearavgtolast12,substring(autothefts_beat$inc_prior3yearavgtolast12,2)),
 				"%</chartbignumber><br>vs. 3-year<br>average</td>
@@ -320,19 +333,19 @@ autothefts_beat$rate_prior3years,
 </table>")
 
 # Creating police beats map for types of crimes
-houston_murder_map <- leaflet(autothefts_beat, options = leafletOptions(zoomControl = FALSE)) %>%
+houston_autotheft_map <- leaflet(autothefts_beat, options = leafletOptions(zoomControl = FALSE)) %>%
   htmlwidgets::onRender("function(el, x) {
 L.control.zoom({ position: 'topright' }).addTo(this)
 }") %>%
   setView(-95.4, 29.75, zoom = 12) %>% 
   addProviderTiles(provider = "Stamen.TonerLite") %>%
   addPolygons(color = "white", 
-              popup = autotheftslabel, 
+              popup = autotheftlabel, 
               weight = 0.5, 
               smoothFactor = 0.5,
               opacity = 0.6, 
               fillOpacity = 0.5,
-              fillColor = ~autotheftspal(rate_prior3years)) %>% 
+              fillColor = ~autotheftpal(rate_prior3years)) %>% 
   addLegend(opacity = 0.6,
             values = autothefts_beat$rate_prior3years, 
             colors = c("#667f99",
@@ -346,25 +359,31 @@ L.control.zoom({ position: 'topright' }).addTo(this)
             position = "bottomleft", 
             title = "Homicides<br>Per 100K people<br>") 
 
-houston_murder_map
+houston_autotheft_map
 ```
 
-However, in the vast majority of neighborhoods in the city, the rate is much lower. In 17 of 118 of the Houston Police Department's, the auto theft rate was zero last year. Filler, filler, filler.
+However, in the vast majority of neighborhoods in the city, the rate is much lower. In 17 of 118 of the Houston Police Department's, the autotheft rate was zero last year. Filler, filler, filler.
 <br>
 <br>
-<subhead>Stolen vehicles month by month, 2019 through last month</subhead>
+<!-- <subhead>Homicides month by month, 2019 through last month</subhead> -->
 
-<iframe title="Houston auto thefts month by month" aria-label="Column Chart" id="datawrapper-chart-ARgCh" src="https://datawrapper.dwcdn.net/ARgCh/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="600" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+<iframe title="Homicides month by month, 2019 through last month" aria-label="Column Chart" id="datawrapper-chart-3NHzG" src="https://datawrapper.dwcdn.net/3NHzG/5/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
 </script>
   <br>
 <br>
-<subhead>What kinds of places do autothefts happen in Houston</subhead>
+<!-- <subhead>Risk of being autothefted in Houston vs. other causes of death in Texas</subhead> -->
 
-<iframe title="" aria-label="Table" id="datawrapper-chart-xI2y0" src="https://datawrapper.dwcdn.net/xI2y0/10/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="1239" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+<iframe title="" aria-label="Dot Plot" id="datawrapper-chart-9SHHa" src="https://datawrapper.dwcdn.net/9SHHa/5/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="146" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
 </script>
 <br>
 <br>
-<subhead>What time of day do autothefts happen?</subhead>
+<!-- <subhead>What kinds of places do autothefts happen in Houston</subhead> -->
 
-<iframe title="What hour of day do murders happen" aria-label="Column Chart" id="datawrapper-chart-coxAA" src="https://datawrapper.dwcdn.net/coxAA/4/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+<iframe title="What kinds of places do murders happen in Houston"  aria-label="Table" id="datawrapper-chart-xI2y0" src="https://datawrapper.dwcdn.net/xI2y0/10/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="1239" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+</script>
+<br>
+<br>
+<!-- <subhead>What time of day do autothefts happen?</subhead> -->
+
+<iframe title="What hour of day do murders happen" aria-label="Column Chart" id="datawrapper-chart-coxAA" src="https://datawrapper.dwcdn.net/coxAA/7/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
 </script>

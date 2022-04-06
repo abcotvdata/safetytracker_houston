@@ -45,7 +45,7 @@ library(htmltools)
 
 select {
   margin: 0px;
-  width: 150px;
+  width: 175px;
   color: #00318b;
   padding: 5px 35px 5px 5px;
     font-family: roboto;
@@ -233,17 +233,25 @@ per 100K people the last year.</p>
 </div>
 </div>
 <br>
-The murder rate in Houston is up from <h8>`r murders_city$rate_prior3years`</h8> per 100,000 residents over the three-year average from 2019 to 2022 and up from the <h8>`r murders_city$rate19`</h8> in 2019 before the pandemic changed many people's lifestyles and movements throughout most of 2020 and 2021.
+About three years ago, the murder rate in Houston was <h8>`r murders_city$rate19`</h8> per 100,000 residents - or just slightly less than the rate of deaths in motor vehicle crashes in Texas (12.5).
 
-However, that's not the case in the majority of neighborhoods. About <h8>`r murders_city$rate19`%</h8> of Houston's residents live in neighborhoods where the murder rate over the last 12 months is down or flat compared to the three-year average. Only <h8>`r murders_city$rate19`%</h8> of Houston residents live in neighborhoods where the murder rate is up more than 20%.
+During the pandemic years, the risk of homicide in Houston rose above the risk of being killed in a traffic crash. The average murder rate for the three-year period from 2019 to 2022 was <h8>`r murders_city$rate_prior3years`</h8> and last year it was <h8>`r murders_city$rate21`</h8>.
 
-About <h8>`r murders_city$rate19`%</h8> of Houston's residents live in neighborhoods where there were zero murders over the last 12 months and </h8>`r murders_city$rate19`%</h8> of people live in neighborhoods where there were zero or one murder in the three-plus years from 2019 through last month.
+The situation, of course, is not the same neighborhood to neighborhood.
 
-To provide some context about the frequency of murders, there were <h8>`r murders_city$rate19`</h8> per week citywide in 2019 compared to <h8>`r murders_city$rate19`</h8> per week over the last 12 months, through `r max(houston_crime$date)`.
+About <h8>`r round(pop_murdersdown/2304580*100,0)`%</h8> of city residents live in neighborhoods where the murder rate over the last 12 months is down or about the same as the three-year average. 
+
+In fact, <h8>`r round(pop_murderszero/2304580*100,0)`%</h8> of people live in neighborhoods where there were no homicides at all over the last 12 months.
+
+But, about <h8>`r round(pop_murdersup/2304580*100,0)`%</h8> of Houston residents live in neighborhoods where the murder rate is up more than 20% in the last 12 months when compared to the three-year average from 2019 to 2021.
+
+And, <h8>`r round(pop_murdersmonthly/2304580*100,0)`%</h8> of us now live in neighborhoods where there was at least one murder every month over the last year.
+
+Across the city the last 12 months, there were about <h8>`r round(murders_city$last12mos/52,1)`</h8> homicides every week. In 2019, that number was <h8>`r round(murders_city$total19/52,1)`</h8> per week
 
 <subhead>Houston homicides neighborhood by neighborhood</subhead>
 
-ABC13 looked at the data, beat by beat across the city and is providing this look at the murder trends by neighborhood for each of the last four years in the map below. The color-coding of the map is based on the murder rate over 2019, 2020 and 2021 combined, according to ABC13's analysis of data the Houston Police Department publishes monthly.
+ABC13 looked at the Houston Police Department's data, beat by beat across the city and is providing this look at the murder trends by neighborhood for each of the last four years in the map below. The color-coding of the map is based on the murder rate over 2019, 2020 and 2021 combined, according to ABC13's analysis of data the city police department publishes monthly.
 
 ```{r cars, echo=FALSE,out.width='100%',out.height='600'}
 # MURDER MAP
