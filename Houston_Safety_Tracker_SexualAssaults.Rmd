@@ -360,7 +360,7 @@ L.control.zoom({ position: 'topright' }).addTo(this)
                      "Higher Rate", 
                      "Highest Rate"),
             position = "bottomleft", 
-            title = "Homicides<br>Per 100K people<br>") 
+            title = "Sexual Assaults<br>Per 100K people<br>") 
 
 houston_sexassault_map
 ```
