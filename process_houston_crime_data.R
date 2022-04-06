@@ -590,6 +590,33 @@ pop_autotheftsmonthly <- sum(beatpops_monthly$population)
 # cleanup
 rm(beatpops_down,beatpops_up,beatpops_monthly,beatpops_zero)
 
+# Calculating some OTHER THEFT frequency figures for the homicides page story element
+beatpops_down <- beats %>% st_drop_geometry() %>% select(1,5) %>% 
+  left_join(thefts_beat) %>% 
+  filter(rate_last12<=rate_prior3years) %>%
+  select(1,2,22,23)
+beatpops_down$diff <- beatpops_down$rate_last12-beatpops_down$rate_prior3years
+pop_theftsdown <- sum(beatpops_down$population)
+# population where thefts are up 20%
+beatpops_up <- beats %>% st_drop_geometry() %>% select(1,5) %>% 
+  left_join(thefts_beat) %>% 
+  filter(rate_last12>=(1.2*rate_prior3years)) %>%
+  select(1,2,22,23)
+pop_theftsup <- sum(beatpops_up$population)
+# population where there were zero thefts
+beatpops_zero <- beats %>% st_drop_geometry() %>% select(1,5) %>% 
+  left_join(thefts_beat) %>% 
+  filter(last12mos<=0) %>%
+  select(1,2)
+pop_theftszero <- sum(beatpops_zero$population)
+# population where there was at least one murder every month
+beatpops_monthly <- beats %>% st_drop_geometry() %>% select(1,5) %>% 
+  left_join(thefts_beat) %>% 
+  filter(last12mos>=240) %>%
+  select(1,2)
+pop_theftsmonthly <- sum(beatpops_monthly$population)
+# cleanup
+rm(beatpops_down,beatpops_up,beatpops_monthly,beatpops_zero)
 
 
 
