@@ -299,7 +299,7 @@ rm(beat_detailed_last12)
 beat_detailed[is.na(beat_detailed)] <- 0
 # Calculate a total across the 3 prior years
 beat_detailed$total_prior3years <- beat_detailed$total19+beat_detailed$total20+beat_detailed$total21
-beat_detailed$avg_prior3years <- round(beat_detailed$total_prior3years/3)
+beat_detailed$avg_prior3years <- round(beat_detailed$total_prior3years/3,1)
 # calculate increases
 beat_detailed$inc_19to21 <- round(beat_detailed$total21/beat_detailed$total19*100-100,1)
 beat_detailed$inc_19tolast12 <- round(beat_detailed$last12mos/beat_detailed$total19*100-100,1)
@@ -341,7 +341,7 @@ rm(beat_category_last12)
 beat_category[is.na(beat_category)] <- 0
 # Calculate a total across the 3 prior years
 beat_category$total_prior3years <- beat_category$total19+beat_category$total20+beat_category$total21
-beat_category$avg_prior3years <- round(beat_category$total_prior3years/3)
+beat_category$avg_prior3years <- round(beat_category$total_prior3years/3,1)
 # calculate increases
 beat_category$inc_19to21 <- round(beat_category$total21/beat_category$total19*100-100,1)
 beat_category$inc_19tolast12 <- round(beat_category$last12mos/beat_category$total19*100-100,1)
@@ -383,7 +383,7 @@ rm(beat_type_last12)
 beat_type[is.na(beat_type)] <- 0
 # Calculate a total across the 3 prior years
 beat_type$total_prior3years <- beat_type$total19+beat_type$total20+beat_type$total21
-beat_type$avg_prior3years <- round(beat_type$total_prior3years/3)
+beat_type$avg_prior3years <- round(beat_type$total_prior3years/3,1)
 # calculate increases
 beat_type$inc_19to21 <- round(beat_type$total21/beat_type$total19*100-100,1)
 beat_type$inc_19tolast12 <- round(beat_type$last12mos/beat_type$total19*100-100,1)
@@ -503,5 +503,8 @@ property_beat %>% st_drop_geometry() %>% write_csv("property_beat.csv")
 # additional table exports for specific charts
 where_murders_happen %>% write_csv("where_murders_happen.csv")
 when_murders_happen %>% write_csv("when_murders_happen.csv")
+
+
+filter(murders_beat$rate_last12<murders_city$rate_prior3years)
 
 #### STOPPING POINT #######
