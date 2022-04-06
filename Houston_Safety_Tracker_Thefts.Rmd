@@ -238,9 +238,9 @@ per 100K people the last year.</p>
 </div>
 </div>
 <br>
-About three years ago, the theft rate in Houston was <h8>`r round(thefts_city$rate19,0)`</h8> per 100,000 residents - or just slightly less than the rate of deaths in motor vehicle crashes in Texas (12.5).
+About three years ago, the theft rate in Houston was <h8>`r prettyNum(round(thefts_city$rate19,0), big.mark=",")`</h8> per 100,000 residents - or just slightly less than the rate of deaths in motor vehicle crashes in Texas (12.5).
 
-During the pandemic years, the risk of homicide in Houston rose above the risk of being killed in a traffic crash. The average theft rate for the three-year period from 2019 to 2022 was <h8>`r round(thefts_city$rate_prior3years,0)`</h8> and last year it was <h8>`r round(thefts_city$rate21,0)`</h8>.
+During the pandemic years, the risk of homicide in Houston rose above the risk of being killed in a traffic crash. The average theft rate for the three-year period from 2019 to 2022 was <h8>`r prettyNum(round(thefts_city$rate_prior3years,0), big.mark=",")`</h8> and last year it was <h8>`r prettyNum(round(thefts_city$rate21,0), big.mark=",")`</h8>.
 
 The situation, of course, is not the same neighborhood to neighborhood.
 
@@ -250,9 +250,9 @@ In fact, <h8>`r round(pop_theftszero/2304580*100,0)`%</h8> of people live in nei
 
 But, about <h8>`r round(pop_theftsup/2304580*100,0)`%</h8> of Houston residents live in neighborhoods where the theft rate is up more than 20% in the last 12 months when compared to the three-year average from 2019 to 2021.
 
-And, <h8>`r round(pop_theftsmonthly/2304580*100,0)`%</h8> of us now live in neighborhoods where there was at least one theft every month over the last year.
+And, <h8>`r prettyNum(round(pop_theftsmonthly/2304580*100,0), big.mark=",")`%</h8> of us now live in neighborhoods where there was at least one theft every month over the last year.
 
-Across the city the last 12 months, there were about <h8>`r round(thefts_city$last12mos/52,0)`</h8> homicides every week. In 2019, that number was <h8>`r round(thefts_city$total19/52,0)`</h8> per week
+Across the city the last 12 months, there were about <h8>`r prettyNum(round(thefts_city$last12mos/52,0), big.mark=",")`</h8> homicides every week. In 2019, that number was <h8>`r prettyNum(round(thefts_city$total19/52,0), big.mark=",")`</h8> per week
 
 <subhead>Houston homicides neighborhood by neighborhood</subhead>
 
