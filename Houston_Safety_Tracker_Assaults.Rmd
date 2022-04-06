@@ -233,7 +233,7 @@ from 2019 to 2021.</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>The assault rate is <br>
-<bignumber>`r assaults_city$rate_last12`<br></bignumber><p>
+<bignumber>`r round(assaults_city$rate_last12,0)`<br></bignumber><p>
 per 100K people the last year.</p>
 </div>
 </div>
