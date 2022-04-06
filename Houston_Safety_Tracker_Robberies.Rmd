@@ -84,9 +84,9 @@ bignumber {
   color: #00318b;
   font-weight: 900;
   text-align: center;
-  font-size: 80px;
-    line-height: 85px;
-  height: 85px;
+  font-size: 60px;
+    line-height: 65px;
+  height: 65px;
     margin-top: 0;
   margin-bottom: 0;
 }
@@ -238,23 +238,23 @@ per 100K people the last year.</p>
 </div>
 </div>
 <br>
-About three years ago, the robbery rate in Houston was <h8>`r robberies_city$rate19`</h8> per 100,000 residents - or just slightly less than the rate of deaths in motor vehicle crashes in Texas (12.5).
+About three years ago, the robbery rate in Houston was <h8>`r round(robberies_city$rate19,0)`</h8> per 100,000 residents - or just slightly less than the rate of deaths in motor vehicle crashes in Texas (12.5).
 
-During the pandemic years, the risk of homicide in Houston rose above the risk of being killed in a traffic crash. The average robbery rate for the three-year period from 2019 to 2022 was <h8>`r robberies_city$rate_prior3years`</h8> and last year it was <h8>`r robberies_city$rate21`</h8>.
+During the pandemic years, the risk of homicide in Houston rose above the risk of being killed in a traffic crash. The average robbery rate for the three-year period from 2019 to 2022 was <h8>`r round(robberies_city$rate_prior3years,0)`</h8> and last year it was <h8>`r round(robberies_city$rate21,0)`</h8>.
 
 The situation, of course, is not the same neighborhood to neighborhood.
 
 About <h8>`r round(pop_robberiesdown/2304580*100,0)`%</h8> of city residents live in neighborhoods where the robbery rate over the last 12 months is down or about the same as the three-year average. 
 
-In fact, <h8>`r round(pop_robberieszero/2304580*100,0)`%</h8> of people live in neighborhoods where there were no homicides at all over the last 12 months.
+In fact, <h8>`r round(pop_robberieszero/2304580*100,0)`%</h8> of people live in neighborhoods where there were no robberies at all over the last 12 months.
 
 But, about <h8>`r round(pop_robberiesup/2304580*100,0)`%</h8> of Houston residents live in neighborhoods where the robbery rate is up more than 20% in the last 12 months when compared to the three-year average from 2019 to 2021.
 
 And, <h8>`r round(pop_robberiesmonthly/2304580*100,0)`%</h8> of us now live in neighborhoods where there was at least one robbery every month over the last year.
 
-Across the city the last 12 months, there were about <h8>`r round(robberies_city$last12mos/52,1)`</h8> homicides every week. In 2019, that number was <h8>`r round(robberies_city$total19/52,1)`</h8> per week
+Across the city the last 12 months, there were about <h8>`r round(robberies_city$last12mos/52,1)`</h8> robberies every week. In 2019, that number was <h8>`r round(robberies_city$total19/52,1)`</h8> per week
 
-<subhead>Houston homicides neighborhood by neighborhood</subhead>
+<subhead>Houston robberies neighborhood by neighborhood</subhead>
 
 ABC13 looked at the Houston Police Department's data, beat by beat across the city and is providing this look at the robbery trends by neighborhood for each of the last four years in the map below. The color-coding of the map is based on the robbery rate over 2019, 2020 and 2021 combined, according to ABC13's analysis of data the city police department publishes monthly.
 
