@@ -584,7 +584,7 @@ pop_autotheftszero <- sum(beatpops_zero$population)
 # population where there was at least one murder every month
 beatpops_monthly <- beats %>% st_drop_geometry() %>% select(1,5) %>% 
   left_join(autothefts_beat) %>% 
-  filter(last12mos>=12) %>%
+  filter(last12mos>=240) %>%
   select(1,2)
 pop_autotheftsmonthly <- sum(beatpops_monthly$population)
 # cleanup

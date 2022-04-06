@@ -84,9 +84,9 @@ bignumber {
   color: #00318b;
   font-weight: 900;
   text-align: center;
-  font-size: 80px;
-    line-height: 85px;
-  height: 85px;
+  font-size: 60px;
+    line-height: 65px;
+  height: 65px;
     margin-top: 0;
   margin-bottom: 0;
 }
@@ -242,17 +242,15 @@ About three years ago, the auto theft rate in Houston was <h8>`r autothefts_city
 
 Across the city the last 12 months, there were about <h8>`r round(autothefts_city$last12mos/52,1)`</h8> vehicles stolen every week. In 2019, that number was <h8>`r round(autothefts_city$total19/52,1)`</h8> per week.
 
+And, <h8>`r round(pop_autotheftsmonthly/2304580*100,0)`%</h8> of us now live in neighborhoods where there were at least 20 vehicles stolen every month over the last year.
+
 The situation, of course, is not the same neighborhood to neighborhood.
 
 About <h8>`r round(pop_autotheftsdown/2304580*100,0)`%</h8> of city residents live in neighborhoods where the auto theft rate over the last 12 months is down or about the same as the three-year average. 
 
-In fact, <h8>`r round(pop_autotheftszero/2304580*100,0)`%</h8> of people live in neighborhoods where there were no auto thefts at all over the last 12 months.
-
 But, about <h8>`r round(pop_autotheftsup/2304580*100,0)`%</h8> of Houston residents live in neighborhoods where the auto theft rate is up more than 20% in the last 12 months when compared to the three-year average from 2019 to 2021.
 
-And, <h8>`r round(pop_autotheftsmonthly/2304580*100,0)`%</h8> of us now live in neighborhoods where there was at least one auto theft every month over the last year.
-
-<subhead>Houston homicides neighborhood by neighborhood</subhead>
+<subhead>Houston auto thefts neighborhood by neighborhood</subhead>
 
 ABC13 looked at the Houston Police Department's data, beat by beat across the city and is providing this look at the auto theft trends by neighborhood for each of the last four years in the map below. The color-coding of the map is based on the auto theft rate over 2019, 2020 and 2021 combined, according to ABC13's analysis of data the city police department publishes monthly.
 
@@ -360,7 +358,7 @@ L.control.zoom({ position: 'topright' }).addTo(this)
                      "Higher Rate", 
                      "Highest Rate"),
             position = "bottomleft", 
-            title = "Homicides<br>Per 100K people<br>") 
+            title = "Auto Thefts<br>Per 100K people<br>") 
 
 houston_autotheft_map
 ```
