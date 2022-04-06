@@ -246,8 +246,6 @@ The situation, of course, is not the same neighborhood to neighborhood.
 
 About <h8>`r round(pop_drugsdown/2304580*100,0)`%</h8> of city residents live in neighborhoods where the drug crime rate over the last 12 months is down or about the same as the three-year average. 
 
-In fact, <h8>`r round(pop_drugszero/2304580*100,0)`%</h8> of people live in neighborhoods where there were no drug crimes at all over the last 12 months.
-
 But, about <h8>`r round(pop_drugsup/2304580*100,0)`%</h8> of Houston residents live in neighborhoods where the drug crime rate is up more than 20% in the last 12 months when compared to the three-year average from 2019 to 2021.
 
 And, <h8>`r round(pop_drugsmonthly/2304580*100,0)`%</h8> of us now live in neighborhoods where there was at least one drug every month over the last year.

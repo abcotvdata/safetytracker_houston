@@ -238,15 +238,15 @@ per 100K people the last year.</p>
 </div>
 </div>
 <br>
-About three years ago, the assault rate in Houston was <h8>`r prettyNum(round(assaults_city$rate19,0), big.mark=",")`</h8> per 100,000 residents - or just slightly less than the rate of deaths in motor vehicle crashes in Texas (12.5).
+About three years ago, the assault rate in Houston was <h8>`r prettyNum(round(assaults_city$rate19,0), big.mark=",")`</h8> per 100,000 residents.
 
-During the pandemic years, the risk of homicide in Houston rose above the risk of being killed in a traffic crash. The average assault rate for the three-year period from 2019 to 2022 was <h8>`r prettyNum(round(assaults_city$rate_prior3years,0), big.mark=",")`</h8> and last year it was <h8>`r prettyNum(round(assaults_city$rate21,0), big.mark=",")`</h8>.
+The average assault rate for the three-year period from 2019 to 2022 was <h8>`r prettyNum(round(assaults_city$rate_prior3years,0), big.mark=",")`</h8> and last year it was <h8>`r prettyNum(round(assaults_city$rate21,0), big.mark=",")`</h8>.
 
 The situation, of course, is not the same neighborhood to neighborhood.
 
 About <h8>`r round(pop_assaultsdown/2304580*100,0)`%</h8> of city residents live in neighborhoods where the assault rate over the last 12 months is down or about the same as the three-year average. 
 
-In fact, <h8>`r round(pop_assaultszero/2304580*100,0)`%</h8> of people live in neighborhoods where there were no homicides at all over the last 12 months.
+In fact, <h8>`r round(pop_assaultszero/2304580*100,0)`%</h8> of people live in neighborhoods where there were no assaults at all over the last 12 months.
 
 But, about <h8>`r round(pop_assaultsup/2304580*100,0)`%</h8> of Houston residents live in neighborhoods where the assault rate is up more than 20% in the last 12 months when compared to the three-year average from 2019 to 2021.
 
