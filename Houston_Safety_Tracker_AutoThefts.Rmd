@@ -233,14 +233,14 @@ from 2019 to 2021.</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>The auto theft rate is <br>
-<bignumber>`r autothefts_city$rate_last12`<br></bignumber><p>
+<bignumber>`r round(autothefts_city$rate_last12,0)`<br></bignumber><p>
 per 100K people the last year.</p>
 </div>
 </div>
 <br>
-About three years ago, the auto theft rate in Houston was <h8>`r autothefts_city$rate19`</h8> per 100,000 residents. During the pandemic years, the risk of auto theft in Houston rose at a sharp pace. The average auto theft rate for the three-year period from 2019 to 2022 was <h8>`r autothefts_city$rate_prior3years`</h8> and last year it was <h8>`r autothefts_city$rate21`</h8>.
+About three years ago, the auto theft rate in Houston was <h8>`r round(autothefts_city$rate19,0)`</h8> per 100,000 residents. During the pandemic years, the risk of auto theft in Houston rose at a sharp pace. The average auto theft rate for the three-year period from 2019 to 2022 was <h8>`r round(autothefts_city$rate_prior3years,0)`</h8> and last year it was <h8>`r round(autothefts_city$rate21,0)`</h8>.
 
-Across the city the last 12 months, there were about <h8>`r round(autothefts_city$last12mos/52,1)`</h8> vehicles stolen every week. In 2019, that number was <h8>`r round(autothefts_city$total19/52,1)`</h8> per week.
+Across the city the last 12 months, there were about <h8>`r round(autothefts_city$last12mos/52,0)`</h8> vehicles stolen every week. In 2019, that number was <h8>`r round(autothefts_city$total19/52,0)`</h8> per week.
 
 And, <h8>`r round(pop_autotheftsmonthly/2304580*100,0)`%</h8> of us now live in neighborhoods where there were at least 20 vehicles stolen every month over the last year.
 
