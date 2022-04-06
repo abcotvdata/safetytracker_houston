@@ -46,14 +46,17 @@ library(htmltools)
 select {
   margin: 0px;
   width: 150px;
+  color: #00318b;
   padding: 5px 35px 5px 5px;
-  font-size: 16px;
+    font-family: roboto;
+  font-size: 18px;
+  font-weight: 900;
   border: 0px;
   height: 34px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Arrow-down.svg) 96% / 15% no-repeat #99a0a5;
+  background: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Arrow-down.svg) 96% / 15% no-repeat #f2f2f2;
 }
 
 h1 {
@@ -118,8 +121,8 @@ subhead {
 body {
   color: black;
   font-family: roboto;
-  font-weight: 300;
-  font-size: 12px;
+  font-weight: 400;
+  font-size: 16px;
 }
 
 popuptitle {
@@ -201,7 +204,7 @@ th {
 # source("process_houston_crime_data.R")
 ```
 
-<h2>ABC 13 is tracking auto thefts, and other crimes, across the city and in your neighborhood. Here's a look at what's happening with rising auto thefts in the city. You can also examine other crimes: <select onchange="window.location=this.value">
+<h2>ABC13's data team is tracking crime and safety across Houston and in your neighborhood.<br>You can choose which crime to examine: <select onchange="window.location=this.value">
 <option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker.html">Homicides</option>
 <option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_AutoThefts.html">Auto Thefts</option>
 <option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_AutoThefts.html">Burglaries</option>
@@ -356,17 +359,17 @@ However, in the vast majority of neighborhoods in the city, the rate is much low
 <br>
 <!-- <subhead>Risk of being murdered in Houston vs. other causes of death in Texas</subhead> -->
 
-<iframe title="" aria-label="Dot Plot" id="datawrapper-chart-9SHHa" src="https://datawrapper.dwcdn.net/9SHHa/4/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="146" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+<iframe title="" aria-label="Dot Plot" id="datawrapper-chart-9SHHa" src="https://datawrapper.dwcdn.net/9SHHa/5/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="146" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
 </script>
 <br>
 <br>
 <!-- <subhead>What kinds of places do murders happen in Houston</subhead> -->
 
-<iframe title="" aria-label="Table" id="datawrapper-chart-xI2y0" src="https://datawrapper.dwcdn.net/xI2y0/5/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="1239" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+<iframe title="" aria-label="Table" id="datawrapper-chart-xI2y0" src="https://datawrapper.dwcdn.net/xI2y0/6/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="1239" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
 </script>
 <br>
 <br>
 <!-- <subhead>What time of day do murders happen?</subhead> -->
 
-<iframe title="What hour of day do murders happen" aria-label="Column Chart" id="datawrapper-chart-coxAA" src="https://datawrapper.dwcdn.net/coxAA/4/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+<iframe title="What hour of day do murders happen" aria-label="Column Chart" id="datawrapper-chart-coxAA" src="https://datawrapper.dwcdn.net/coxAA/5/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
 </script>
