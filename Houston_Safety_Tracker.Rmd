@@ -85,6 +85,8 @@ bignumber {
   font-weight: 900;
   text-align: center;
   font-size: 80px;
+    line-height: 85px;
+  height: 85px;
     margin-top: 0;
   margin-bottom: 0;
 }
@@ -136,12 +138,10 @@ popuptitle {
 }
 
 h8 {
-  color: white;
-  background-color: #00318b;
+  color: #00318b;
   font-family: roboto;
-  border-radius: 20px;
-  padding: 2em;
-  text-align: center;
+  font-weight: 900;
+  font-size: 16px;
 }
 
 table {
@@ -151,7 +151,7 @@ table {
 }
 
 tr {
-  border-bottom: thin solid #f2f2f2;
+  border-bottom: thin solid #99a0a5;
 }
   
 td {
@@ -228,16 +228,18 @@ from 2019 to 2021.</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>The murder rate is <br>
-<bignumber>`r round((murders_city$last12mos/2304580)*100000,1)`<br></bignumber><p>
+<bignumber>`r murders_city$rate_last12`<br></bignumber><p>
 per 100K people the last year.</p>
 </div>
 </div>
 <br>
-However, in the vast majority of neighborhoods in the city, the rate is much lower.
+The murder rate in Houston is up from <h8>`r murders_city$rate_prior3years`</h8> per 100,000 residents over the three-year average from 2019 to 2022 and up from the <h8>`r murders_city$rate19`</h8> in 2019 before the pandemic changed many people's lifestyles and movements throughout most of 2020 and 2021.
 
-In 17 of 118 of the Houston Police Department's, the murder rate was zero last year.
+However, that's not the case in the majority of neighborhoods. About <h8>`r murders_city$rate19`%</h8> of Houston's residents live in neighborhoods where the murder rate over the last 12 months is down or flat compared to the three-year average. Only <h8>`r murders_city$rate19`%</h8> of Houston residents live in neighborhoods where the murder rate is up more than 20%.
 
-In about half of the neighborhoods citywide, the murder rate is less than 10 per 100,000 residents - or less than half of the citywide rate.
+About <h8>`r murders_city$rate19`%</h8> of Houston's residents live in neighborhoods where there were zero murders over the last 12 months and </h8>`r murders_city$rate19`%</h8> of people live in neighborhoods where there were zero or one murder in the three-plus years from 2019 through last month.
+
+To provide some context about the frequency of murders, there were <h8>`r murders_city$rate19`</h8> per week citywide in 2019 compared to <h8>`r murders_city$rate19`</h8> per week over the last 12 months, through `r max(houston_crime$date)`.
 
 <subhead>Houston homicides neighborhood by neighborhood</subhead>
 
@@ -279,7 +281,7 @@ murders_beat$rate19,
 				<!-- Insert cell to cross/span 
 				multi rows -->
 				<td rowspan='5'>",
-ifelse(murders_beat$inc_prior3yearavgtolast12>=0,"Last 12<br>months is up","Last 12<br>months is down"),
+ifelse(murders_beat$inc_prior3yearavgtolast12>=0,"Last 12<br>months up","Last 12<br>months down"),
 "<br><chartbignumber>",
 ifelse(murders_beat$inc_prior3yearavgtolast12>=0,murders_beat$inc_prior3yearavgtolast12,substring(murders_beat$inc_prior3yearavgtolast12,2)),
 				"%</chartbignumber><br>vs. 3-year<br>average</td>
