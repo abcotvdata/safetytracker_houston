@@ -19,12 +19,12 @@ library(rmarkdown)
 # download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicViewDec21.xlsx","data/latest/houston_NIBRS2021.xlsx")
 # download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicView.Jan1-Dec31-2020.xlsx","data/latest/houston_NIBRS2020.xlsx")
 # download.file("https://www.houstontx.gov/police/cs/xls/2019_NIBRSPublicView.Jan1-Dec31.xlsx","data/latest/houston_NIBRS2019.xlsx")
-# download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicViewJan-Feb22.xlsx","data/latest/houston_NIBRS2022.xlsx")
-
+# download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicViewJan-Mar22.xlsx","data/latest/houston_NIBRS2022.xlsx")
 
 # BRING IN THE HPD RAW FILES FOR 2019, 2020, 2021 and 2022 (to date)
 # Read in the 2022 file, renaming to cols to standardize across all years
 houston22 <- read_excel("data/latest/houston_NIBRS2022.xlsx", 
+                        sheet = "NIBRS_Jan-Mar_2022",
                         col_types = c("text", "date", "numeric", 
                                       "text", "text", "numeric", "text", 
                                       "text", "text", "text", "text", "text", 
@@ -33,6 +33,7 @@ names(houston22) <- c("incident", "date", "hour",
                       "nibrs_class", "offense_type", "offense_count", "beat", 
                       "premise", "street_no", "street_name", "street_type", "street_suffix", 
                       "city", "zip","longitude","latitude")
+
 
 # Read in the 2021 file, renaming to cols to standardize across 3 years
 houston21 <- read_excel("data/latest/houston_NIBRS2021.xlsx", 

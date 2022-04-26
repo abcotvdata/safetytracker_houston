@@ -139,14 +139,14 @@ beats$placename <- case_when(beats$beat == "1A10" ~ "Downtown Central Business D
 # Get demographic data for Census block groups to calculate population of beat areas
 # Also transforming to match the projection of the Houston PD's beats spatial file
 # This also reduces us down to just the numeric population est and geometry
-blockgroups <- get_acs(geography = "block group", 
+blocks <- get_decennial(geography = "block", 
                        year = 2020,
                        output = 'wide',
-                       variables = "B03002_001", 
+                       variables = "P1_001N", 
                        state = "TX",
                        county = c("Harris County","Fort Bend","Montgomery"),
                        geometry = TRUE) %>%
-  rename("population"="B03002_001E") %>% 
+  rename("population"="P1_001N") %>% 
   select(3) %>%
   janitor::clean_names() %>%
   st_transform(3857)
@@ -164,7 +164,7 @@ blockgroups <- get_acs(geography = "block group",
 
 # Calculate the estimated population of beat geographies/interpolate with tidycensus block groups
 # Reminder: ext=true SUMS the population during interpolation; assumes pop is evenly distributed
-beats_withpop <- st_interpolate_aw(blockgroups, beats, ext = TRUE)
+beats_withpop <- st_interpolate_aw(blocks, beats, ext = TRUE)
 # Drops geometry so it's not duplicated in the merge
 beats_withpop <- st_drop_geometry(beats_withpop)
 # Binds that new population column to the table
