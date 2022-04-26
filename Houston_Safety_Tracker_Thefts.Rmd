@@ -1,7 +1,7 @@
 ---
 title: "ABC13 Neighborhood Safety Tracker"
 # author: "John Kelly"
-date: "Updated 4/6/2022 by the ABC13 Data Team"
+date: "Updated 4/26/2022 by the ABC13 Data Team"
 output: html_document
 ---
 
@@ -179,7 +179,7 @@ th {
    .card p {
    font-family: roboto;
    text-align: center;
-   font-size: 12px;
+   font-size: 14px;
   margin-bottom: 0;
    }
    .cardContainer:after {
@@ -217,44 +217,45 @@ th {
 
 <div class="cardContainer">
 <div class="card" style="background-color:#99a0a5;">
-<p>So far this year<br>
-<bignumber>`r prettyNum(thefts_city$total22, big.mark=",")`<br></bignumber><p>
-people have been thefted.</p>
-</div>
-<div class="card" style="background-color:#99a0a5;">
-<p>Over the last 12 momths,<br>
+<p>Thefts<br>
 <bignumber>`r prettyNum(thefts_city$last12mos, big.mark=",")`<br></bignumber>
-<p>people have been killed.</p>
+<p>Last 12 months<br>Through March 2022</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
-<p>The yearly average is<br>
+<p>Average Thefts<br>
 <bignumber>`r prettyNum(round(thefts_city$avg_prior3years,0), big.mark=",")`<br></bignumber><p>
-from 2019 to 2021.</p>
+Yearly average<br>2019 to 2021</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
-<p>The theft rate is <br>
+<p>Theft Rate<br>
 <bignumber>`r prettyNum(round(thefts_city$rate_last12,0), big.mark=",")`<br></bignumber><p>
-per 100K people the last year.</p>
+Per 100,000 people<br>Last 12 months</p>
+</div>
+<div class="card" style="background-color:#99a0a5;">
+<p>Average Theft Rate<br>
+<bignumber>`r prettyNum(round(thefts_city$rate_prior3years,0),big.mark=",")`<br></bignumber><p>
+Per 100,000 people<br>2019 to 2021</p>
 </div>
 </div>
 <br>
-About three years ago, the theft rate in Houston was <h8>`r prettyNum(round(thefts_city$rate19,0), big.mark=",")`</h8> per 100,000 residents - or just slightly less than the rate of deaths in motor vehicle crashes in Texas (12.5).
+Across Houston over the last 12 months, there were about <h8>`r prettyNum(round(thefts_city$last12mos/52,0), big.mark=",")`</h8> thefts every week. In 2019, <h8>`r prettyNum(round(thefts_city$total19/52,0), big.mark=",")`</h8> thefts happened per week.
 
-During the pandemic years, the risk of homicide in Houston rose above the risk of being killed in a traffic crash. The average theft rate for the three-year period from 2019 to 2022 was <h8>`r prettyNum(round(thefts_city$rate_prior3years,0), big.mark=",")`</h8> and last year it was <h8>`r prettyNum(round(thefts_city$rate21,0), big.mark=",")`</h8>.
+About three years ago, the theft rate in Houston was <h8>`r prettyNum(round(thefts_city$rate19,0),big.mark=",")`</h8> per 100,000 residents. However, during the pandemic years, the risk of being a victim of theft has been falling slightly.
 
-The situation, of course, is not the same neighborhood to neighborhood.
+The risk, of course, is not the same neighborhood to neighborhood.
 
-About <h8>`r round(pop_theftsdown/2304580*100,0)`%</h8> of city residents live in neighborhoods where the theft rate over the last 12 months is down or about the same as the three-year average. 
+About <h8>`r round(pop_theftsdown/2304580*100,0)`%</h8> of Houton residents live in neighborhoods where the theft rate is down or the same. About <h8>`r round(pop_theftsup/2304580*100,0)`%</h8> live in neighborhoods where the theft rate is up more than 20% in the last 12 months compared to the three-year average.  
 
-About <h8>`r round(pop_theftsup/2304580*100,0)`%</h8> of Houston residents live in neighborhoods where the theft rate is up more than 20% in the last 12 months when compared to the three-year average from 2019 to 2021.
+<subhead>Houston thefts neighborhood by neighborhood</subhead>
 
-And, <h8>`r prettyNum(round(pop_theftsmonthly/2304580*100,0), big.mark=",")`%</h8> of us now live in neighborhoods where there was at least one theft every month over the last year.
+ABC13's data team looked at the Houston Police Department's data, beat by beat across the city to provide this look at trends by neighborhood from 2019 through last month.
 
-Across the city the last 12 months, there were about <h8>`r prettyNum(round(thefts_city$last12mos/52,0), big.mark=",")`</h8> homicides every week. In 2019, that number was <h8>`r prettyNum(round(thefts_city$total19/52,0), big.mark=",")`</h8> per week
+The map color-codes each neighborhood by the theft rate over the last 12 months, through the end of March, which is the most recent comprehensive data released by the Houston Police Department.
 
-<subhead>Houston homicides neighborhood by neighborhood</subhead>
+The yellow areas are neighborhoods where the theft rate is among the 25% highest rates in the city. You can click on any neighborhood to see detailed figures, rates and trends.
 
-ABC13 looked at the Houston Police Department's data, beat by beat across the city and is providing this look at the theft trends by neighborhood for each of the last four years in the map below. The color-coding of the map is based on the theft rate over 2019, 2020 and 2021 combined, according to ABC13's analysis of data the city police department publishes monthly.
+ABC13 will be updating this data every month.
+<br>
 
 ```{r cars, echo=FALSE,out.width='100%',out.height='600'}
 # theft MAP
@@ -374,19 +375,10 @@ However, in the vast majority of neighborhoods in the city, the rate is much low
 </script>
   <br>
 <br>
-<!-- <subhead>Risk of being thefted in Houston vs. other causes of death in Texas</subhead> -->
+<!-- <subhead>Risk of theft compared to other property crimes coming soon to this space> -->
 
 <iframe title="" aria-label="Dot Plot" id="datawrapper-chart-9SHHa" src="https://datawrapper.dwcdn.net/9SHHa/5/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="146" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
 </script>
 <br>
 <br>
-<!-- <subhead>What kinds of places do thefts happen in Houston</subhead> -->
-
-<iframe title="What kinds of places do murders happen in Houston"  aria-label="Table" id="datawrapper-chart-xI2y0" src="https://datawrapper.dwcdn.net/xI2y0/10/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="1239" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
-</script>
-<br>
-<br>
-<!-- <subhead>What time of day do murders happen?</subhead> -->
-
-<iframe title="What hour of day do murders happen" aria-label="Column Chart" id="datawrapper-chart-coxAA" src="https://datawrapper.dwcdn.net/coxAA/7/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
-</script>
+<!-- more potential context charts below -->
