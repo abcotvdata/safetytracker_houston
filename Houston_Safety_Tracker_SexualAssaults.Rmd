@@ -179,7 +179,7 @@ th {
    .card p {
    font-family: roboto;
    text-align: center;
-   font-size: 12px;
+   font-size: 14px;
   margin-bottom: 0;
    }
    .cardContainer:after {
@@ -217,44 +217,46 @@ th {
 
 <div class="cardContainer">
 <div class="card" style="background-color:#99a0a5;">
-<p>So far this year<br>
-<bignumber>`r prettyNum(sexassaults_city$total22, big.mark=",")`<br></bignumber><p>
-people were sexually assaulted.</p>
-</div>
-<div class="card" style="background-color:#99a0a5;">
-<p>Over the last 12 months,<br>
+<p>Sexual Assaults<br>
 <bignumber>`r prettyNum(sexassaults_city$last12mos, big.mark=",")`<br></bignumber>
-<p>people were sexually assaulted.</p>
+<p>Last 12 months<br>Through March 2022</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
-<p>The yearly average is<br>
+<p>Average Sexual Assaults<br>
 <bignumber>`r prettyNum(round(sexassaults_city$avg_prior3years,0), big.mark=",")`<br></bignumber><p>
-from 2019 to 2021.</p>
+Yearly average<br>2019 to 2021</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
-<p>The sexual assault rate is <br>
+<p>Sexual Assault Rate<br>
 <bignumber>`r sexassaults_city$rate_last12`<br></bignumber><p>
-per 100K people the last year.</p>
+Per 100,000 people<br>Last 12 months</p>
+</div>
+<div class="card" style="background-color:#99a0a5;">
+<p>Average Sexual Assault Rate<br>
+<bignumber>`r sexassaults_city$rate_prior3years`<br></bignumber><p>
+Per 100,000 people<br>2019 to 2021</p>
 </div>
 </div>
 <br>
-About three years ago, the sexual assault rate in Houston was <h8>`r sexassaults_city$rate19`</h8> per 100,000 residents.
+Across Houston over the last 12 months, there were about <h8>`r round(sexassaults_city$last12mos/52,0)`</h8> sexual assaults every week. In 2019, that number was <h8>`r round(sexassaults_city$total19/52,0)`</h8> per week.
 
-The average sexual assault rate for the three-year period from 2019 to 2022 was <h8>`r sexassaults_city$rate_prior3years`</h8> and last year it was <h8>`r sexassaults_city$rate21`</h8>.
+About three years ago, the sexual assault rate in Houston was <h8>`r sexassaults_city$rate19`</h8> per 100,000 residents. The average sexual assault rate from 2019 to 2022 was <h8>`r sexassaults_city$rate_prior3years`</h8>. Last year, it was <h8>`r sexassaults_city$rate21`</h8>.
 
-The situation, of course, is not the same neighborhood to neighborhood.
+The danger, of course, is not the same neighborhood to neighborhood.
 
-About <h8>`r round(pop_sexassaultsdown/2304580*100,0)`%</h8> of city residents live in neighborhoods where the sexual assault rate over the last 12 months is down or about the same as the three-year average.
+About <h8>`r round(pop_sexassaultsdown/2304580*100,0)`%</h8> of Houston residents live in neighborhoods where the sexual assault rate over the last 12 months is down or about the same as the three-year average from 2019 through 2021. About <h8>`r round(pop_sexassaultsup/2304580*100,0)`%</h8> of residents live in neighborhoods where the sexual assault rate is up more than 20% over the last 12 months.
 
-But, about <h8>`r round(pop_sexassaultsup/2304580*100,0)`%</h8> of Houston residents live in neighborhoods where the sexual assault rate is up more than 20% in the last 12 months when compared to the three-year average from 2019 to 2021.
+<subhead>A closer look at Houston sexual assaults neighborhood by neighborhood</subhead>
 
-And, <h8>`r round(pop_sexassaultsmonthly/2304580*100,0)`%</h8> of us now live in neighborhoods where there was at least one sexual assault every month over the last year.
+So, ABC13's data team looked at the Houston Police Department's data, beat by beat across the city to provide this look at trends by neighborhood from 2019 through last month.
 
-Across the city the last 12 months, there were about <h8>`r round(sexassaults_city$last12mos/52,0)`</h8> homicides every week. In 2019, that number was <h8>`r round(sexassaults_city$total19/52,0)`</h8> per week
+The map color-codes each neighborhood by the sexual assault rate over the last 12 months, through the end of March, which is the most recent comprehensive data released by the Houston Police Department.
 
-<subhead>Houston sexual assaults neighborhood by neighborhood</subhead>
+The yellow areas are neighborhoods where the rate is among the 25% highest rates in the city. You can click on any neighborhood to see detailed figures, rates and trends.
 
-ABC13 looked at the Houston Police Department's data, beat by beat across the city and is providing this look at the sexual assault trends by neighborhood for each of the last four years in the map below. The color-coding of the map is based on the sex assault rate over 2019, 2020 and 2021 combined, according to ABC13's analysis of data the city police department publishes monthly.
+ABC13 will be updating this data every month.
+
+<br>
 
 ```{r cars, echo=FALSE,out.width='100%',out.height='600'}
 # sexassault MAP
@@ -344,7 +346,7 @@ L.control.zoom({ position: 'topright' }).addTo(this)
   addProviderTiles(provider = "Stamen.TonerLite") %>%
   addPolygons(color = "white", 
               popup = sexassaultlabel, 
-              weight = 0.5, 
+              weight = 2, 
               smoothFactor = 0.5,
               opacity = 0.6, 
               fillOpacity = 0.5,
@@ -364,8 +366,8 @@ L.control.zoom({ position: 'topright' }).addTo(this)
 
 houston_sexassault_map
 ```
-
-However, in the vast majority of neighborhoods in the city, the rate is much lower. In 17 of 118 of the Houston Police Department's, the sexassault rate was zero last year. Filler, filler, filler.
+<br>
+About <h8>`r round(pop_sexassaultsmonthly/2304580*100,0)`%</h8> of Houston residents now live in neighborhoods where there was at least one sexual assault every month over the last year. Here's a look at citywide sexual assaults every month since 2019.
 <br>
 <br>
 <!-- <subhead>Sexual assaults month by month, 2019 through last month</subhead> -->
@@ -376,7 +378,7 @@ However, in the vast majority of neighborhoods in the city, the rate is much low
 <br>
 <!-- <subhead>Risk of being murdered in Houston vs. other causes of death in Texas</subhead> -->
 
-<iframe title="" aria-label="Dot Plot" id="datawrapper-chart-9SHHa" src="https://datawrapper.dwcdn.net/9SHHa/5/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="146" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+<iframe title="Risk of sexual assault in Houston vs. other severe dangers" aria-label="Dot Plot" id="datawrapper-chart-rh4Xu" src="https://datawrapper.dwcdn.net/rh4Xu/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="151" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
 </script>
 <br>
 <br>

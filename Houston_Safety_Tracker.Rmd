@@ -242,7 +242,7 @@ Across Houston, over the last 12 months, there were about <h8>`r round(murders_c
 
 To put the danger in context, the homicide rate in Houston was <h8>`r murders_city$rate19`</h8> per 100,000 residents three years ago in 2019. That was slightly less than the rate of people being killed in vehicle crashes in Texas, which is roughly 12.5 per 100,000 people.
 
-During the pandemic years, the risk of being killed by another person rose well above the likelihood of being killed in a vehicle crash.
+During the pandemic years, the risk of being killed by another person rose well above the likelihood of dying in a vehicle crash.
 
 The average annual murder rate for the three-year period from 2019 to 2022 was <h8>`r murders_city$rate_prior3years`</h8>. Last year, it jumped to <h8>`r murders_city$rate21`</h8>.
 
@@ -353,11 +353,11 @@ houston_murder_map <- leaflet(murders_beat, options = leafletOptions(zoomControl
   htmlwidgets::onRender("function(el, x) {
 L.control.zoom({ position: 'topright' }).addTo(this)
 }") %>%
-  setView(-95.4, 29.75, zoom = 11) %>% 
+  setView(-95.4, 29.75, zoom = 12) %>% 
   addProviderTiles(provider = "Stamen.TonerLite") %>%
   addPolygons(color = "white", 
               popup = murderlabel, 
-              weight = 1, 
+              weight = 2, 
               smoothFactor = 0.5,
               opacity = 0.6, 
               fillOpacity = 0.5,
