@@ -228,19 +228,19 @@ Yearly average<br>2019 to 2021</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>Assault Rate<br>
-<bignumber>`r assaults_city$rate_last12`<br></bignumber><p>
+<bignumber>`r prettyNum(round(assaults_city$rate_last12,0), big.mark=",")`<br></bignumber><p>
 Per 100,000 people<br>Last 12 months</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Assault Rate<br>
-<bignumber>`r assaults_city$rate_prior3years`<br></bignumber><p>
+<bignumber>`r prettyNum(round(assaults_city$rate_prior3years,0), big.mark=",")`<br></bignumber><p>
 Per 100,000 people<br>2019 to 2021</p>
 </div>
 </div>
 <br>
-Across Houston over the last 12 months, there were about <h8>`r round(assaults_city$last12mos/52,0)`</h8> assaults every week. In 2019, that number was <h8>`r round(assaults_city$total19/52,0)`</h8> per week.
+Across Houston over the last 12 months, there were about <h8>`r prettyNum(round(assaults_city$last12mos/52,0), big.mark=",")`</h8> assaults every week. In 2019, that number was <h8>`r prettyNum(round(assaults_city$total19/52,0), big.mark=",")`</h8> per week.
 
-About three years ago, the assault rate in Houston was <h8>`r assaults_city$rate19`</h8> per 100,000 residents. The average assault rate from 2019 to 2022 was <h8>`r assaults_city$rate_prior3years`</h8>. Last year, it was <h8>`r assaults_city$rate21`</h8>.
+About three years ago, the assault rate in Houston was <h8>`r prettyNum(round(assaults_city$rate19,0), big.mark=",")`</h8> per 100,000 residents. The average assault rate from 2019 to 2022 was <h8>`r prettyNum(round(assaults_city$rate_prior3years,0), big.mark=",")`</h8>. Last year, it was <h8>`r prettyNum(round(assaults_city$rate21,0), big.mark=",")`</h8>.
 
 The danger, of course, is not the same neighborhood to neighborhood.
 

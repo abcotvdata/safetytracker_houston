@@ -217,44 +217,46 @@ th {
 
 <div class="cardContainer">
 <div class="card" style="background-color:#99a0a5;">
-<p>So far this year<br>
-<bignumber>`r prettyNum(drugs_city$total22, big.mark=",")`<br></bignumber><p>
-people have been druged.</p>
-</div>
-<div class="card" style="background-color:#99a0a5;">
-<p>Over the last 12 momths,<br>
+<p>Drug Crimes<br>
 <bignumber>`r prettyNum(drugs_city$last12mos, big.mark=",")`<br></bignumber>
-<p>people have been killed.</p>
+<p>Last 12 months<br>Through March 2022</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
-<p>The yearly average is<br>
+<p>Average Drug Crimes<br>
 <bignumber>`r prettyNum(round(drugs_city$avg_prior3years,0), big.mark=",")`<br></bignumber><p>
-from 2019 to 2021.</p>
+Yearly average<br>2019 to 2021</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
-<p>The drug crime rate is <br>
+<p>Drug Crime Rate<br>
 <bignumber>`r round(drugs_city$rate_last12,0)`<br></bignumber><p>
-per 100K people the last year.</p>
+Per 100,000 people<br>Last 12 months</p>
+</div>
+<div class="card" style="background-color:#99a0a5;">
+<p>Average Drug Crime Rate<br>
+<bignumber>`r round(drugs_city$rate_prior3years,0)`<br></bignumber><p>
+Per 100,000 people<br>2019 to 2021</p>
 </div>
 </div>
 <br>
-About three years ago, the drug crime rate in Houston was <h8>`r round(drugs_city$rate19,0)`</h8> per 100,000 residents.
+Over the last 12 months, there were about <h8>`r round(drugs_city$last12mos/52,0)`</h8> drug crimes every week in Houston. In 2019, that number was <h8>`r round(drugs_city$total19/52,0)`</h8> per week.
 
-The average drug crime rate for the three-year period from 2019 to 2022 was <h8>`r round(drugs_city$rate_prior3years,0)`</h8> and last year it was <h8>`r round(drugs_city$rate21,0)`</h8>.
+The average rate of drug crimes for the three-year period from 2019 to 2022 was <h8>`r round(drugs_city$rate_prior3years,0)`</h8> per 100,000 residents. Last year, the rate was <h8>`r round(drugs_city$rate21,0)`</h8>.
 
-The situation, of course, is not the same neighborhood to neighborhood.
+The situation is not the same neighborhood to neighborhood.
 
-About <h8>`r round(pop_drugsdown/2304580*100,0)`%</h8> of city residents live in neighborhoods where the drug crime rate over the last 12 months is down or about the same as the three-year average. 
+About <h8>`r round(pop_drugsdown/2304580*100,0)`%</h8> of city residents live in neighborhoods where the rate of drug crimes over the last 12 months is down or about the same as the three-year average. About <h8>`r round(pop_drugsup/2304580*100,0)`%</h8> live in neighborhoods where it is up more than 20%.
 
-But, about <h8>`r round(pop_drugsup/2304580*100,0)`%</h8> of Houston residents live in neighborhoods where the drug crime rate is up more than 20% in the last 12 months when compared to the three-year average from 2019 to 2021.
+<subhead>A closer look at Houston drug crimes neighborhood by neighborhood</subhead>
 
-And, <h8>`r round(pop_drugsmonthly/2304580*100,0)`%</h8> of us now live in neighborhoods where there was at least one drug every month over the last year.
+So, ABC13's data team looked at the Houston Police Department's data, beat by beat across the city to provide this look at trends by neighborhood from 2019 through last month.
 
-Across the city the last 12 months, there were about <h8>`r round(drugs_city$last12mos/52,0)`</h8> drug crimes every week. In 2019, that number was <h8>`r round(drugs_city$total19/52,0)`</h8> per week
+The map color-codes each neighborhood by the drug-crime rate over the last 12 months, through the end of March, which is the most recent comprehensive data released by the Houston Police Department.
 
-<subhead>Houston drug crimes neighborhood by neighborhood</subhead>
+The yellow areas are neighborhoods where the drug-crime rate is among the 25% highest rates in the city. You can click on any neighborhood to see detailed figures, rates and trends.
 
-ABC13 looked at the Houston Police Department's data, beat by beat across the city and is providing this look at the drug trends by neighborhood for each of the last four years in the map below. The color-coding of the map is based on the drug crime rate over 2019, 2020 and 2021 combined, according to ABC13's analysis of data the city police department publishes monthly.
+ABC13 will be updating this data every month.
+<br>
+<br>
 
 ```{r cars, echo=FALSE,out.width='100%',out.height='600'}
 # drug MAP
@@ -364,8 +366,8 @@ L.control.zoom({ position: 'topright' }).addTo(this)
 
 houston_drug_map
 ```
-
-However, in the vast majority of neighborhoods in the city, the rate is much lower. In 17 of 118 of the Houston Police Department's, the drug crime rate was zero last year. Filler, filler, filler.
+<br>
+About <h8>`r round(pop_drugsmonthly/2304580*100,0)`%</h8> of Houston residents now live in neighborhoods where there was at least one drug crime every month over the last year. Here's a look at drug crimes documented by Houston police every month since 2019.
 <br>
 <br>
 <!-- <subhead>Drug crimes month by month, 2019 through last month</subhead> -->
@@ -374,19 +376,8 @@ However, in the vast majority of neighborhoods in the city, the rate is much low
 </script>
   <br>
 <br>
-<!-- <subhead>Risk of being murdered in Houston vs. other causes of death in Texas</subhead> -->
+<!-- <subhead>Rate of drug crimes vs. other crimes in Houston</subhead> -->
 
 <iframe title="" aria-label="Dot Plot" id="datawrapper-chart-9SHHa" src="https://datawrapper.dwcdn.net/9SHHa/5/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="146" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
 </script>
 <br>
-<br>
-<!-- <subhead>What kinds of places do murders happen in Houston</subhead> -->
-
-<iframe title="What kinds of places do murders happen in Houston"  aria-label="Table" id="datawrapper-chart-xI2y0" src="https://datawrapper.dwcdn.net/xI2y0/10/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="1239" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
-</script>
-<br>
-<br>
-<!-- <subhead>What time of day do murders happen?</subhead> -->
-
-<iframe title="What hour of day do murders happen" aria-label="Column Chart" id="datawrapper-chart-coxAA" src="https://datawrapper.dwcdn.net/coxAA/7/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
-</script>

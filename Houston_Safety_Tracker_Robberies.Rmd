@@ -1,7 +1,7 @@
 ---
 title: "ABC13 Neighborhood Safety Tracker"
 # author: "John Kelly"
-date: "Updated 4/6/2022 by the ABC13 Data Team"
+date: "Updated 4/26/2022 by the ABC13 Data Team"
 output: html_document
 ---
 
@@ -179,7 +179,7 @@ th {
    .card p {
    font-family: roboto;
    text-align: center;
-   font-size: 12px;
+   font-size: 14px;
   margin-bottom: 0;
    }
    .cardContainer:after {
@@ -217,45 +217,46 @@ th {
 
 <div class="cardContainer">
 <div class="card" style="background-color:#99a0a5;">
-<p>So far this year<br>
-<bignumber>`r prettyNum(robberies_city$total22, big.mark=",")`<br></bignumber><p>
-people have been robbed.</p>
-</div>
-<div class="card" style="background-color:#99a0a5;">
-<p>Over the last 12 momths,<br>
+<p>Robberies<br>
 <bignumber>`r prettyNum(robberies_city$last12mos, big.mark=",")`<br></bignumber>
-<p>people have been robbed.</p>
+<p>Last 12 months<br>Through March 2022</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
-<p>The yearly average is<br>
+<p>Average Robberies<br>
 <bignumber>`r prettyNum(round(robberies_city$avg_prior3years,0), big.mark=",")`<br></bignumber><p>
-from 2019 to 2021.</p>
+Yearly average<br>2019 to 2021</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
-<p>The robbery rate is <br>
+<p>Robbery Rate<br>
 <bignumber>`r round(robberies_city$rate_last12,0)`<br></bignumber><p>
-per 100K people the last year.</p>
+Per 100,000 people<br>Last 12 months</p>
+</div>
+<div class="card" style="background-color:#99a0a5;">
+<p>Average Robbery Rate<br>
+<bignumber>`r round(robberies_city$rate_prior3years,0)`<br></bignumber><p>
+Per 100,000 people<br>2019 to 2021</p>
 </div>
 </div>
 <br>
-About three years ago, the robbery rate in Houston was <h8>`r round(robberies_city$rate19,0)`</h8> per 100,000 residents - or just slightly less than the rate of deaths in motor vehicle crashes in Texas (12.5).
+Over the last 12 months, there were about <h8>`r round(robberies_city$last12mos/52,0)`</h8> robberies every week in Houston. In 2019, that number was <h8>`r round(robberies_city$total19/52,0)`</h8> per week.
 
-During the pandemic years, the risk of homicide in Houston rose above the risk of being killed in a traffic crash. The average robbery rate for the three-year period from 2019 to 2022 was <h8>`r round(robberies_city$rate_prior3years,0)`</h8> and last year it was <h8>`r round(robberies_city$rate21,0)`</h8>.
+The average robbery rate for the three-year period from 2019 to 2022 was <h8>`r round(robberies_city$rate_prior3years,0)`</h8> per 100,000 residents. Last year, the rate was <h8>`r round(robberies_city$rate21,0)`</h8>.
 
-The situation, of course, is not the same neighborhood to neighborhood.
+The risk, of course, is not the same neighborhood to neighborhood.
 
-About <h8>`r round(pop_robberiesdown/2304580*100,0)`%</h8> of city residents live in neighborhoods where the robbery rate over the last 12 months is down or about the same as the three-year average. 
+About <h8>`r round(pop_robberiesdown/2304580*100,0)`%</h8> of city residents live in neighborhoods where the robbery rate over the last 12 months is down or about the same as the three-year average. About <h8>`r round(pop_robberiesup/2304580*100,0)`%</h8> live in neighborhoods where the robbery rate is up more than 20%.
 
-About <h8>`r round(pop_robberiesup/2304580*100,0)`%</h8> of Houston residents live in neighborhoods where the robbery rate is up more than 20% in the last 12 months when compared to the three-year average from 2019 to 2021.
+<subhead>A closer look at Houston robberies neighborhood by neighborhood</subhead>
 
-And, <h8>`r round(pop_robberiesmonthly/2304580*100,0)`%</h8> of us now live in neighborhoods where there was at least one robbery every month over the last year.
+So, ABC13's data team looked at the Houston Police Department's data, beat by beat across the city to provide this look at trends by neighborhood from 2019 through last month.
 
-Across the city the last 12 months, there were about <h8>`r round(robberies_city$last12mos/52,0)`</h8> robberies every week. In 2019, that number was <h8>`r round(robberies_city$total19/52,0)`</h8> per week
+The map color-codes each neighborhood by the robbery rate over the last 12 months, through the end of March, which is the most recent comprehensive data released by the Houston Police Department.
 
-<subhead>Houston robberies neighborhood by neighborhood</subhead>
+The yellow areas are neighborhoods where the robbery rate is among the 25% highest rates in the city. You can click on any neighborhood to see detailed figures, rates and trends.
 
-ABC13 looked at the Houston Police Department's data, beat by beat across the city and is providing this look at the robbery trends by neighborhood for each of the last four years in the map below. The color-coding of the map is based on the robbery rate over 2019, 2020 and 2021 combined, according to ABC13's analysis of data the city police department publishes monthly.
-
+ABC13 will be updating this data every month.
+<br>
+<br>
 ```{r cars, echo=FALSE,out.width='100%',out.height='600'}
 # robbery MAP
 
@@ -365,7 +366,8 @@ L.control.zoom({ position: 'topright' }).addTo(this)
 houston_robbery_map
 ```
 
-However, in the vast majority of neighborhoods in the city, the rate is much lower. In 17 of 118 of the Houston Police Department's, the robbery rate was zero last year. Filler, filler, filler.
+<br>
+About <h8>`r round(pop_burglariesmonthly/2304580*100,0)`%</h8> of Houston residents now live in neighborhoods where there was at least one robbery every month over the last year. Here's a look at robberies citywide every month since 2019.
 <br>
 <br>
 <!-- <subhead>Robberies month by month, 2019 through last month</subhead> -->
@@ -379,14 +381,3 @@ However, in the vast majority of neighborhoods in the city, the rate is much low
 <iframe title="" aria-label="Dot Plot" id="datawrapper-chart-9SHHa" src="https://datawrapper.dwcdn.net/9SHHa/5/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="146" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
 </script>
 <br>
-<br>
-<!-- <subhead>What kinds of places do murders happen in Houston</subhead> -->
-
-<iframe title="What kinds of places do murders happen in Houston"  aria-label="Table" id="datawrapper-chart-xI2y0" src="https://datawrapper.dwcdn.net/xI2y0/10/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="1239" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
-</script>
-<br>
-<br>
-<!-- <subhead>What time of day do murders happen?</subhead> -->
-
-<iframe title="What hour of day do murders happen" aria-label="Column Chart" id="datawrapper-chart-coxAA" src="https://datawrapper.dwcdn.net/coxAA/7/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
-</script>
