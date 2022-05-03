@@ -300,8 +300,9 @@ murders_beat$rate19,
 				<!-- Insert cell to cross/span 
 				multi rows -->
 				<td rowspan='5'>",
-ifelse(murders_beat$inc_prior3yearavgtolast12>=0,"Last 12<br>months up","Last 12<br>months down"),
-"<br><chartbignumber><span style='color:#00318b'>&#8593;</span>",
+ifelse(murders_beat$inc_prior3yearavgtolast12>=0,
+       "Last 12<br>months up<br><chartbignumber><span style='color:#00318b'>&#8593;</span>",
+       "Last 12<br>months down <br><chartbignumber><span style='color:#00318b'>&#8595;</span>"),
 ifelse(murders_beat$inc_prior3yearavgtolast12>=0,murders_beat$inc_prior3yearavgtolast12,substring(murders_beat$inc_prior3yearavgtolast12,2)),
 				"%</chartbignumber><br>vs. 3-year<br>average</td>
 			</tr>
