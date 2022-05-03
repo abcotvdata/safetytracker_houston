@@ -96,7 +96,7 @@ popupchatter {
   color: black;
   font-weight: 300;
   text-align: left;
-  font-size: 12px;
+  font-size: 13px;
   margin-top: 0;
   margin-bottom: 2;
 }
@@ -349,7 +349,7 @@ houston_murder_map <- leaflet(murders_beat, options = leafletOptions(zoomControl
   htmlwidgets::onRender("function(el, x) {
 L.control.zoom({ position: 'topright' }).addTo(this)
 }") %>%
-  setView(-95.4, 29.75, zoom = 11) %>% 
+  setView(-95.5, 29.75, zoom = 11) %>% 
   addProviderTiles(provider = "Stamen.TonerLite") %>%
   addPolygons(color = "white", 
               popup = murderlabel, 
@@ -368,8 +368,8 @@ L.control.zoom({ position: 'topright' }).addTo(this)
                      "Lower Rate", 
                      "Higher Rate", 
                      "Highest Rate"),
-            position = "bottomleft", 
-            title = "Homicides<br>Per 100K people<br>") 
+            position = "topleft", 
+            title = "<popuptitle>Houston Neighborhood Homicide Map</popuptitle><br><popupchatter>Explore homicides Per 100,000 people in your neighborhood</popupchatter><br>") 
 
 houston_murder_map
 ```
