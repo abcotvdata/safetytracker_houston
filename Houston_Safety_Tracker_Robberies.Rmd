@@ -204,7 +204,7 @@ th {
 # source("process_houston_crime_data.R")
 ```
 
-<h2>ABC13's data team is tracking crime and safety across Houston and in your neighborhood.<br>You can choose which crime to examine: <select onchange="window.location=this.value">
+<h2>ABC13 is tracking crime and safety across Houston and in your neighborhood.<br>You can choose which crime to examine: <select onchange="window.location=this.value">
 <option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_Robberies.html">Robberies</option>
 <option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker.html">Homicides</option>
 <option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_SexualAssaults.html">Sexual Assaults</option>
@@ -345,7 +345,7 @@ L.control.zoom({ position: 'topright' }).addTo(this)
   addProviderTiles(provider = "Stamen.TonerLite") %>%
   addPolygons(color = "white", 
               popup = robberylabel, 
-              weight = 0.5, 
+              weight = 1, 
               smoothFactor = 0.5,
               opacity = 0.6, 
               fillOpacity = 0.5,
