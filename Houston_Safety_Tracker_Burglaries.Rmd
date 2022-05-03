@@ -238,9 +238,9 @@ Per 100,000 people<br>2019 to 2021</p>
 </div>
 </div>
 <br>
-Over the last 12 months, there were about <h8>`r round(burglaries_city$last12mos/52,0)`</h8> burglaries every week in Houston. In 2019, that number was <h8>`r round(burglaries_city$total19/52,0)`</h8> per week.
+Burglaries are <h8>`r ifelse(burglaries_city$inc_prior3yearavgtolast12>=0," up"," down")` `r ifelse(burglaries_city$inc_prior3yearavgtolast12>=0,burglaries_beat$inc_prior3yearavgtolast12,substring(burglaries_city$inc_prior3yearavgtolast12,2))`%</h8> over the last 12 months compared to the average from 2019-2021.
 
-The average burglary rate for the three-year period from 2019 to 2022 was <h8>`r round(burglaries_city$rate_prior3years,0)`</h8> per 100,000 residents. Last year, the rate was <h8>`r round(burglaries_city$rate21,0)`</h8>.
+The city averaged <h8>`r round(burglaries_city$last12mos/52,0)`</h8> burglaries a week since last April. In 2019, that number was <h8>`r round(burglaries_city$total19/52,0)`</h8> a week.
 
 The risk, of course, is not the same neighborhood to neighborhood.
 
