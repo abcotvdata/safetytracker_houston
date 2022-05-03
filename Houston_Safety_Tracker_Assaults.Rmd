@@ -238,9 +238,9 @@ Per 100,000 people<br>2019 to 2021</p>
 </div>
 </div>
 <br>
-Across Houston over the last 12 months, there were about <h8>`r prettyNum(round(assaults_city$last12mos/52,0), big.mark=",")`</h8> assaults every week. In 2019, that number was <h8>`r prettyNum(round(assaults_city$total19/52,0), big.mark=",")`</h8> per week.
+Assaults are <h8>`r ifelse(assaults_city$inc_prior3yearavgtolast12>=0," up"," down")` `r ifelse(assaults_city$inc_prior3yearavgtolast12>=0,sexassaults_beat$inc_prior3yearavgtolast12,substring(assaults_city$inc_prior3yearavgtolast12,2))`%</h8> over the last 12 months compared to the average from 2019-2021.
 
-About three years ago, the assault rate in Houston was <h8>`r prettyNum(round(assaults_city$rate19,0), big.mark=",")`</h8> per 100,000 residents. The average assault rate from 2019 to 2022 was <h8>`r prettyNum(round(assaults_city$rate_prior3years,0), big.mark=",")`</h8>. Last year, it was <h8>`r prettyNum(round(assaults_city$rate21,0), big.mark=",")`</h8>.
+The city averaged <h8>`r round(assaults_city$last12mos/52,0)`</h8> assaults a week since last April. In 2019, that number was <h8>`r round(assaults_city$total19/52,0)`</h8> a week.
 
 The danger, of course, is not the same neighborhood to neighborhood.
 
@@ -342,7 +342,7 @@ houston_assault_map <- leaflet(assaults_beat, options = leafletOptions(zoomContr
   htmlwidgets::onRender("function(el, x) {
 L.control.zoom({ position: 'topright' }).addTo(this)
 }") %>%
-  setView(-95.4, 29.75, zoom = 12) %>% 
+  setView(-95.5, 29.75, zoom = 11) %>% 
   addProviderTiles(provider = "Stamen.TonerLite") %>%
   addPolygons(color = "white", 
               popup = assaultlabel, 

@@ -343,7 +343,7 @@ houston_drug_map <- leaflet(drugs_beat, options = leafletOptions(zoomControl = F
   htmlwidgets::onRender("function(el, x) {
 L.control.zoom({ position: 'topright' }).addTo(this)
 }") %>%
-  setView(-95.4, 29.75, zoom = 12) %>% 
+  setView(-95.5, 29.75, zoom = 11) %>% 
   addProviderTiles(provider = "Stamen.TonerLite") %>%
   addPolygons(color = "white", 
               popup = druglabel, 

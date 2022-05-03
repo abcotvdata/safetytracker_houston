@@ -342,7 +342,7 @@ houston_robbery_map <- leaflet(robberies_beat, options = leafletOptions(zoomCont
   htmlwidgets::onRender("function(el, x) {
 L.control.zoom({ position: 'topright' }).addTo(this)
 }") %>%
-  setView(-95.4, 29.75, zoom = 12) %>% 
+  setView(-95.5, 29.75, zoom = 11) %>% 
   addProviderTiles(provider = "Stamen.TonerLite") %>%
   addPolygons(color = "white", 
               popup = robberylabel, 
@@ -379,6 +379,6 @@ About <h8>`r round(pop_burglariesmonthly/2304580*100,0)`%</h8> of Houston reside
 <br>
 <!-- <subhead>Risk of being murdered in Houston vs. other causes of death in Texas</subhead> -->
 
-<iframe title="" aria-label="Dot Plot" id="datawrapper-chart-9SHHa" src="https://datawrapper.dwcdn.net/9SHHa/5/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="146" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+<iframe title="Risk of property crimes across Houston" aria-label="Dot Plot" id="datawrapper-chart-HVqY5" src="https://datawrapper.dwcdn.net/HVqY5/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="178" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
 </script>
 <br>
