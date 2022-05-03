@@ -293,8 +293,9 @@ burglaries_beat$rate19,
 				<!-- Insert cell to cross/span 
 				multi rows -->
 				<td rowspan='5'>",
-ifelse(burglaries_beat$inc_prior3yearavgtolast12>=0,"Last 12<br>months up","Last 12<br>months down"),
-"<br><chartbignumber>",
+ifelse(burglaries_beat$inc_prior3yearavgtolast12>=0,
+       "Last 12<br>months up<br><chartbignumber><span style='color:#00318b'>&#8593;</span>",
+       "Last 12<br>months down <br><chartbignumber><span style='color:#00318b'>&#8595;</span>"),
 ifelse(burglaries_beat$inc_prior3yearavgtolast12>=0,burglaries_beat$inc_prior3yearavgtolast12,substring(burglaries_beat$inc_prior3yearavgtolast12,2)),
 				"%</chartbignumber><br>vs. 3-year<br>average</td>
 			</tr>
@@ -360,8 +361,8 @@ L.control.zoom({ position: 'topright' }).addTo(this)
                      "Lower Rate", 
                      "Higher Rate", 
                      "Highest Rate"),
-            position = "bottomleft", 
-            title = "Burglaries<br>Per 100K people<br>") 
+            position = "topleft", 
+            title = "<popuptitle>Houston Neighborhood Burglaries Map</popuptitle><br><popupchatter>Explore sexual burglaries per 100,000 people in your neighborhood</popupchatter><br>") 
 
 houston_burglary_map
 ```

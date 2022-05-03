@@ -96,7 +96,7 @@ popupchatter {
   color: black;
   font-weight: 300;
   text-align: left;
-  font-size: 12px;
+  font-size: 13px;
   margin-top: 0;
   margin-bottom: 2;
 }
@@ -238,9 +238,9 @@ Per 100,000 people<br>2019 to 2021</p>
 </div>
 </div>
 <br>
-Across Houston over the last 12 months, there were about <h8>`r round(sexassaults_city$last12mos/52,0)`</h8> sexual assaults every week. In 2019, that number was <h8>`r round(sexassaults_city$total19/52,0)`</h8> per week.
+Homicides are <h8>`r ifelse(sexassaults_city$inc_prior3yearavgtolast12>=0," up"," down")` `r ifelse(sexassaults_city$inc_prior3yearavgtolast12>=0,sexassaults_beat$inc_prior3yearavgtolast12,substring(sexassaults_city$inc_prior3yearavgtolast12,2))`%</h8> over the last 12 months compared to the average from 2019-2021.
 
-About three years ago, the sexual assault rate in Houston was <h8>`r sexassaults_city$rate19`</h8> per 100,000 residents. The average sexual assault rate from 2019 to 2022 was <h8>`r sexassaults_city$rate_prior3years`</h8>. Last year, it was <h8>`r sexassaults_city$rate21`</h8>.
+The city averaged <h8>`r round(sexassaults_city$last12mos/52,0)`</h8> homicides a week since last April. In 2019, that number was <h8>`r round(sexassaults_city$total19/52,0)`</h8> a week.
 
 The danger, of course, is not the same neighborhood to neighborhood.
 
@@ -294,8 +294,9 @@ sexassaults_beat$rate19,
 				<!-- Insert cell to cross/span 
 				multi rows -->
 				<td rowspan='5'>",
-ifelse(sexassaults_beat$inc_prior3yearavgtolast12>=0,"Last 12<br>months up","Last 12<br>months down"),
-"<br><chartbignumber>",
+ifelse(sexassaults_beat$inc_prior3yearavgtolast12>=0,
+       "Last 12<br>months up<br><chartbignumber><span style='color:#00318b'>&#8593;</span>",
+       "Last 12<br>months down <br><chartbignumber><span style='color:#00318b'>&#8595;</span>"),
 ifelse(sexassaults_beat$inc_prior3yearavgtolast12>=0,sexassaults_beat$inc_prior3yearavgtolast12,substring(sexassaults_beat$inc_prior3yearavgtolast12,2)),
 				"%</chartbignumber><br>vs. 3-year<br>average</td>
 			</tr>
@@ -361,8 +362,8 @@ L.control.zoom({ position: 'topright' }).addTo(this)
                      "Lower Rate", 
                      "Higher Rate", 
                      "Highest Rate"),
-            position = "bottomleft", 
-            title = "Sexual Assaults<br>Per 100K people<br>") 
+            position = "topleft", 
+            title = "<popuptitle>Houston Neighborhood Sexual Assault Map</popuptitle><br><popupchatter>Explore sexual assaults per 100,000 people in your neighborhood</popupchatter><br>") 
 
 houston_sexassault_map
 ```
