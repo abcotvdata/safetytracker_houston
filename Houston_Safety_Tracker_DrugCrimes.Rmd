@@ -238,9 +238,9 @@ Per 100,000 people<br>2019 to 2021</p>
 </div>
 </div>
 <br>
-Over the last 12 months, there were about <h8>`r round(drugs_city$last12mos/52,0)`</h8> drug crimes every week in Houston. In 2019, that number was <h8>`r round(drugs_city$total19/52,0)`</h8> per week.
+Drug crimes are <h8>`r ifelse(drugs_city$inc_prior3yearavgtolast12>=0," up"," down")` `r ifelse(drugs_city$inc_prior3yearavgtolast12>=0,drugs_city$inc_prior3yearavgtolast12,substring(drugs_city$inc_prior3yearavgtolast12,2))`%</h8> over the last 12 months compared to the average from 2019-2021.
 
-The average rate of drug crimes for the three-year period from 2019 to 2022 was <h8>`r round(drugs_city$rate_prior3years,0)`</h8> per 100,000 residents. Last year, the rate was <h8>`r round(drugs_city$rate21,0)`</h8>.
+The city averaged <h8>`r round(drugs_city$last12mos/52,0)`</h8> drug crimes a week since last May. In 2019, that number was <h8>`r round(burglaries_city$total19/52,0)`</h8> a week.
 
 The situation is not the same neighborhood to neighborhood.
 
@@ -248,7 +248,7 @@ About <h8>`r round(pop_drugsdown/2304580*100,0)`%</h8> of city residents live in
 
 <subhead>A closer look at Houston drug crimes neighborhood by neighborhood</subhead>
 
-So, ABC13's data team looked at the Houston Police Department's data, beat by beat across the city to provide this look at trends by neighborhood from 2019 through last month.
+ABC13's data team looked at the Houston Police Department's data, beat by beat across the city to provide this look at trends by neighborhood from 2019 through last month.
 
 The map color-codes each neighborhood by the drug-crime rate over the last 12 months, through the end of April, which is the most recent comprehensive data released by the Houston Police Department.
 

@@ -238,13 +238,13 @@ Per 100,000 people<br>2019 to 2021</p>
 </div>
 </div>
 <br>
-Across Houston over the last 12 months, there were about <h8>`r prettyNum(round(thefts_city$last12mos/52,0), big.mark=",")`</h8> thefts every week. In 2019, <h8>`r prettyNum(round(thefts_city$total19/52,0), big.mark=",")`</h8> thefts happened per week.
+Thefts are <h8>`r ifelse(thefts_city$inc_prior3yearavgtolast12>=0," up"," down")` `r ifelse(thefts_city$inc_prior3yearavgtolast12>=0,thefts_city$inc_prior3yearavgtolast12,substring(thefts_city$inc_prior3yearavgtolast12,2))`%</h8> over the last 12 months compared to the average from 2019-2021.
 
-About three years ago, the theft rate in Houston was <h8>`r prettyNum(round(thefts_city$rate19,0),big.mark=",")`</h8> per 100,000 residents. However, during the pandemic years, the risk of being a victim of theft has been falling slightly.
+The city averaged <h8>`r round(thefts_city$last12mos/52,0)`</h8> thefts a week since last May. In 2019, that number was <h8>`r round(thefts_city$total19/52,0)`</h8> a week.
 
-The risk, of course, is not the same neighborhood to neighborhood.
+The risk is not the same neighborhood to neighborhood.
 
-About <h8>`r round(pop_theftsdown/2304580*100,0)`%</h8> of Houton residents live in neighborhoods where the theft rate is down or the same. About <h8>`r round(pop_theftsup/2304580*100,0)`%</h8> live in neighborhoods where the theft rate is up more than 20% in the last 12 months compared to the three-year average.  
+About <h8>`r round(pop_theftsdown/2304580*100,0)`%</h8> of Houton residents live in neighborhoods where the theft rate over the last 12 months is down or about the same as the three-year average. About <h8>`r round(pop_theftsup/2304580*100,0)`%</h8> live in neighborhoods where the theft rate is up more than 20%.  
 
 <subhead>Houston thefts neighborhood by neighborhood</subhead>
 

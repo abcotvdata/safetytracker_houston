@@ -238,11 +238,11 @@ Per 100,000 people<br>2019 to 2021</p>
 </div>
 </div>
 <br>
-Over the last 12 months, there were about <h8>`r round(robberies_city$last12mos/52,0)`</h8> robberies every week in Houston. In 2019, that number was <h8>`r round(robberies_city$total19/52,0)`</h8> per week.
+Robberies are <h8>`r ifelse(robberies_city$inc_prior3yearavgtolast12>=0," up"," down")` `r ifelse(robberies_city$inc_prior3yearavgtolast12>=0,robberies_city$inc_prior3yearavgtolast12,substring(robberies_city$inc_prior3yearavgtolast12,2))`%</h8> over the last 12 months compared to the average from 2019-2021.
 
-The average robbery rate for the three-year period from 2019 to 2022 was <h8>`r round(robberies_city$rate_prior3years,0)`</h8> per 100,000 residents. Last year, the rate was <h8>`r round(robberies_city$rate21,0)`</h8>.
+The city averaged <h8>`r round(robberies_city$last12mos/52,0)`</h8> robberies a week since last May. In 2019, that number was <h8>`r round(robberies_city$total19/52,0)`</h8> a week.
 
-The risk, of course, is not the same neighborhood to neighborhood.
+The risk is not the same neighborhood to neighborhood.
 
 About <h8>`r round(pop_robberiesdown/2304580*100,0)`%</h8> of city residents live in neighborhoods where the robbery rate over the last 12 months is down or about the same as the three-year average. About <h8>`r round(pop_robberiesup/2304580*100,0)`%</h8> live in neighborhoods where the robbery rate is up more than 20%.
 
