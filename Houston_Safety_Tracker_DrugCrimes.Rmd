@@ -219,7 +219,7 @@ th {
 <div class="card" style="background-color:#99a0a5;">
 <p>Drug Crimes<br>
 <bignumber>`r prettyNum(drugs_city$last12mos, big.mark=",")`<br></bignumber>
-<p>Last 12 months<br>Through March 2022</p>
+<p>Last 12 months<br>Through April 2022</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Drug Crimes<br>
@@ -250,7 +250,7 @@ About <h8>`r round(pop_drugsdown/2304580*100,0)`%</h8> of city residents live in
 
 So, ABC13's data team looked at the Houston Police Department's data, beat by beat across the city to provide this look at trends by neighborhood from 2019 through last month.
 
-The map color-codes each neighborhood by the drug-crime rate over the last 12 months, through the end of March, which is the most recent comprehensive data released by the Houston Police Department.
+The map color-codes each neighborhood by the drug-crime rate over the last 12 months, through the end of April, which is the most recent comprehensive data released by the Houston Police Department.
 
 The yellow areas are neighborhoods where the drug-crime rate is among the 25% highest rates in the city. You can click on any neighborhood to see detailed figures, rates and trends.
 

@@ -219,7 +219,7 @@ th {
 <div class="card" style="background-color:#99a0a5;">
 <p>Homicides<br>
 <bignumber>`r prettyNum(murders_city$last12mos, big.mark=",")`<br></bignumber>
-<p>Last 12 months<br>Through March 2022</p>
+<p>Last 12 months<br>Through April 2022</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Homicides<br>
@@ -257,7 +257,7 @@ About <h8>`r round(pop_murdersup/2304580*100,0)`%</h8> of people live in neighbo
 
 <subhead>A closer look at Houston homicides neighborhood by neighborhood</subhead>
 
-ABC13's data team analyzed Houston Police Department records to look at trends neighborhood by neighborhood from 2019 through the end of March. ABC13 will update this data every month.
+ABC13's data team analyzed Houston Police Department records to look at trends neighborhood by neighborhood from 2019 through the end of April. ABC13 will update this data every month.
 
 The map color-codes each neighborhood by the homicide rate over the last 12 months. Yellow areas are neighborhoods where the homicide rate is among the 25% highest in the city.
 

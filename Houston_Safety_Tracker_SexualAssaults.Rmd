@@ -219,7 +219,7 @@ th {
 <div class="card" style="background-color:#99a0a5;">
 <p>Sexual Assaults<br>
 <bignumber>`r prettyNum(sexassaults_city$last12mos, big.mark=",")`<br></bignumber>
-<p>Last 12 months<br>Through March 2022</p>
+<p>Last 12 months<br>Through April 2022</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Sexual Assaults<br>
@@ -242,7 +242,7 @@ Sexual assaults are <h8>`r ifelse(sexassaults_city$inc_prior3yearavgtolast12>=0,
 
 The city averaged <h8>`r round(sexassaults_city$last12mos/52,0)`</h8> sexual assaults a week since last April. In 2019, that number was <h8>`r round(sexassaults_city$total19/52,0)`</h8> a week.
 
-The danger, of course, is not the same neighborhood to neighborhood.
+The danger is not the same neighborhood to neighborhood.
 
 About <h8>`r round(pop_sexassaultsdown/2304580*100,0)`%</h8> of Houston residents live in neighborhoods where the sexual assault rate over the last 12 months is down or about the same as the three-year average from 2019 through 2021. About <h8>`r round(pop_sexassaultsup/2304580*100,0)`%</h8> of residents live in neighborhoods where the sexual assault rate is up more than 20% over the last 12 months.
 
@@ -250,7 +250,7 @@ About <h8>`r round(pop_sexassaultsdown/2304580*100,0)`%</h8> of Houston resident
 
 So, ABC13's data team looked at the Houston Police Department's data, beat by beat across the city to provide this look at trends by neighborhood from 2019 through last month.
 
-The map color-codes each neighborhood by the sexual assault rate over the last 12 months, through the end of March, which is the most recent comprehensive data released by the Houston Police Department.
+The map color-codes each neighborhood by the sexual assault rate over the last 12 months, through the end of April, which is the most recent comprehensive data released by the Houston Police Department.
 
 The yellow areas are neighborhoods where the rate is among the 25% highest rates in the city. You can click on any neighborhood to see detailed figures, rates and trends.
 

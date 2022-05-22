@@ -9,7 +9,7 @@ library(zoo)
 # download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicViewDec21.xlsx","data/latest/houston_NIBRS2021.xlsx")
 # download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicView.Jan1-Dec31-2020.xlsx","data/latest/houston_NIBRS2020.xlsx")
 # download.file("https://www.houstontx.gov/police/cs/xls/2019_NIBRSPublicView.Jan1-Dec31.xlsx","data/latest/houston_NIBRS2019.xlsx")
-# download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicViewJan-Feb22.xlsx","data/latest/houston_NIBRS2022.xlsx")
+# download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicViewJan-Apr22.xlsx","data/latest/houston_NIBRS2022.xlsx")
 
 # Import and combine 4 years' of crime data; note 2022 changes monthly
 
