@@ -206,13 +206,14 @@ th {
 
 <h2>ABC13 is tracking crime and safety across Houston and in your neighborhood.<br>You can choose which crime to examine: <select onchange="window.location=this.value">
 <option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_Robberies.html">Robberies</option>
-<option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker.html">Homicides</option>
-<option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_SexualAssaults.html">Sexual Assaults</option>
-<option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_AutoThefts.html">Auto Thefts</option>
 <option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_Assaults.html">Assaults</option>
-<option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_Thefts.html">Thefts</option>
+<option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_AutoThefts.html">Auto Thefts</option>
 <option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_Burglaries.html">Burglaries</option>
 <option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_DrugCrimes.html">Drug Crimes</option>
+<option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker.html">Homicides</option>
+<option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_Robberies.html">Robberies</option>
+<option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_SexualAssaults.html">Sexual Assaults</option>
+<option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_Thefts.html">Thefts</option>
 </select></h2>
 
 <div class="cardContainer">
@@ -343,7 +344,7 @@ houston_robbery_map <- leaflet(robberies_beat, options = leafletOptions(zoomCont
 L.control.zoom({ position: 'topright' }).addTo(this)
 }") %>%
   setView(-95.5, 29.75, zoom = 11) %>% 
-  addProviderTiles(provider = "Stamen.TonerLite") %>%
+  addProviderTiles(provider = "CartoDB.Positron") %>%
   addPolygons(color = "white", 
               popup = robberylabel, 
               weight = 2, 
@@ -363,7 +364,7 @@ L.control.zoom({ position: 'topright' }).addTo(this)
                      "Higher Rate", 
                      "Highest Rate"),
             position = "topleft", 
-            title = "<popuptitle>Houston Neighborhood Robberies Map</popuptitle><br><popupchatter>Explore robberies per 100,000 people in your neighborhood. Use the bar above to find a place, address or landmark.</popupchatter><br>") 
+            title = "<popuptitle>Houston Neighborhood Robberies Map</popuptitle><br><popupchatter>Explore robberies per 100,000 people in your neighborhood.<br>Use the bar above to find a place, address or landmark.</popupchatter><br>") 
 
 houston_robbery_map
 ```
