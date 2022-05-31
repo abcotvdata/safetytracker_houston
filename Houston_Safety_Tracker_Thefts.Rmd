@@ -340,7 +340,7 @@ thefts_beat$rate_prior3years,
 # Creating police beats map for types of crimes
 houston_theft_map <- leaflet(thefts_beat, options = leafletOptions(zoomControl = FALSE)) %>%
   htmlwidgets::onRender("function(el, x) {
-L.control.zoom({ position: 'topleft' }).addTo(this)
+L.control.zoom({ position: 'topright' }).addTo(this)
 }") %>%
   setView(-95.4, 29.75, zoom = 11) %>% 
   addProviderTiles(provider = "CartoDB.Positron") %>%
@@ -352,7 +352,7 @@ L.control.zoom({ position: 'topleft' }).addTo(this)
               fillOpacity = 0.5,
               fillColor = ~theftpal(rate_prior3years)) %>% 
     addSearchOSM(options = searchOptions(autoCollapse=TRUE, minLength = 3,zoom=13, position="topleft")) %>%
-    addResetMapButton () %>%
+ #   addResetMapButton () %>%
   addLegend(opacity = 0.6,
             values = thefts_beat$rate_prior3years, 
             colors = c("#667f99",
