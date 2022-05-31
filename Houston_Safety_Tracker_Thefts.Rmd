@@ -363,7 +363,7 @@ L.control.zoom({ position: 'topright' }).addTo(this)
                      "Lower Rate", 
                      "Higher Rate", 
                      "Highest Rate"),
-            position = "bottomright", 
+            position = "bottomleft", 
             title = "<popupchatter>Thefts per 100,000 people")  
 
 houston_theft_map
