@@ -364,7 +364,7 @@ L.control.zoom({ position: 'topright' }).addTo(this)
                      "Higher Rate", 
                      "Highest Rate"),
             position = "topleft", 
-            title = "<popuptitle>Houston Neighborhood Sexual Assault Map</popuptitle><br><popupchatter>Explore sexual assaults per 100,000 people in your neighborhood</popupchatter><br>") 
+            title = "<popuptitle>Houston Neighborhood Sexual Assault Map</popuptitle><br><popupchatter>Explore sexual assaults per 100,000 people in your neighborhood. Use the bar above to find a place, address or landmark.</popupchatter><br>") 
 
 houston_sexassault_map
 ```

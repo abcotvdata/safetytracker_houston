@@ -362,7 +362,7 @@ L.control.zoom({ position: 'topright' }).addTo(this)
                      "Higher Rate", 
                      "Highest Rate"),
             position = "topleft", 
-            title = "<popuptitle>Houston Neighborhood Auto Thefts Map</popuptitle><br><popupchatter>Explore auto thefts per 100,000 people in your neighborhood</popupchatter><br>") 
+            title = "<popuptitle>Houston Neighborhood Auto Thefts Map</popuptitle><br><popupchatter>Explore auto thefts per 100,000 people in your neighborhood. Use the bar above to find a place, address or landmark.</popupchatter><br>") 
 houston_autotheft_map
 ```
 
