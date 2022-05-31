@@ -350,7 +350,7 @@ houston_murder_map <- leaflet(murders_beat, options = leafletOptions(zoomControl
 L.control.zoom({ position: 'topright' }).addTo(this)
 }") %>%
   setView(-95.5, 29.75, zoom = 11) %>% 
-  addProviderTiles(provider = "Stamen.TonerLite") %>%
+  addProviderTiles(provider = "CartoDB.Positron") %>%
   addPolygons(color = "white", 
               popup = murderlabel, 
               weight = 2, 
@@ -358,6 +358,7 @@ L.control.zoom({ position: 'topright' }).addTo(this)
               opacity = 0.6, 
               fillOpacity = 0.5,
               fillColor = ~murderpal(rate_prior3years)) %>% 
+  addSearchOSM(options = searchOptions(autoCollapse=FALSE, minLength = 3,zoom=13, position="topleft")) %>%
   addLegend(opacity = 0.6,
             values = murders_beat$rate_prior3years, 
             colors = c("#667f99",
