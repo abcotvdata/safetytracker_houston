@@ -346,7 +346,7 @@ L.control.zoom({ position: 'topright' }).addTo(this)
   addProviderTiles(provider = "Stamen.TonerLite") %>%
   addPolygons(color = "white", 
               popup = burglarylabel, 
-              weight = 1, 
+              weight = 2, 
               smoothFactor = 0.5,
               opacity = 0.6, 
               fillOpacity = 0.5,
