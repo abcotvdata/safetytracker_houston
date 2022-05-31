@@ -352,7 +352,7 @@ L.control.zoom({ position: 'topright' }).addTo(this)
               opacity = 0.6, 
               fillOpacity = 0.5,
               fillColor = ~drugpal(rate_prior3years)) %>% 
-      addSearchUSCensusBureau(options = searchOptions(autoCollapse=FALSE, minLength = 3,zoom=13, position="topleft")) %>%
+      addSearchOSM(options = searchOptions(autoCollapse=FALSE, minLength = 3,zoom=13, position="topleft")) %>%
   addLegend(opacity = 0.6,
             values = drugs_beat$rate_prior3years, 
             colors = c("#667f99",
