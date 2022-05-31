@@ -132,7 +132,7 @@ popuptitle {
   color: #00318b;
   font-weight: bolder;
   text-align: left;
-  font-size: 20px;
+  font-size: 13px;
     margin-top: 0;
   margin-bottom: 0;
 }
@@ -270,12 +270,11 @@ theftpal <- colorQuantile(c("#667f99",
 # Create quick labels for thefts map
 theftlabel <- paste(sep="",
 "<table>
-<popuptitle>Houston P.D. Beat #",
-thefts_beat$beat,
-"</popuptitle><br><popupchatter>Area neighborhoods and landmarks include ",
+<popuptitle>",
 thefts_beat$placename,
-". Estimated Population: ",
-prettyNum(thefts_beat$population, big.mark=','),
+" area",
+#</popuptitle><br><popupchatter>Estimated Population: ",
+# prettyNum(thefts_beat$population, big.mark=','),
 "</popupchatter><br>
       <tr>
 				<th></th>
@@ -341,9 +340,9 @@ thefts_beat$rate_prior3years,
 # Creating police beats map for types of crimes
 houston_theft_map <- leaflet(thefts_beat, options = leafletOptions(zoomControl = FALSE)) %>%
   htmlwidgets::onRender("function(el, x) {
-L.control.zoom({ position: 'topright' }).addTo(this)
+L.control.zoom({ position: 'topleft' }).addTo(this)
 }") %>%
-  setView(-95.5, 29.75, zoom = 11) %>% 
+  setView(-95.4, 29.75, zoom = 11) %>% 
   addProviderTiles(provider = "CartoDB.Positron") %>%
   addPolygons(color = "white", 
               popup = theftlabel, 
@@ -352,7 +351,8 @@ L.control.zoom({ position: 'topright' }).addTo(this)
               opacity = 0.6, 
               fillOpacity = 0.5,
               fillColor = ~theftpal(rate_prior3years)) %>% 
-    addSearchOSM(options = searchOptions(autoCollapse=FALSE, minLength = 3,zoom=13, position="topleft")) %>%
+    addSearchOSM(options = searchOptions(autoCollapse=TRUE, minLength = 3,zoom=13, position="topleft")) %>%
+    addResetMapButton () %>%
   addLegend(opacity = 0.6,
             values = thefts_beat$rate_prior3years, 
             colors = c("#667f99",
@@ -363,8 +363,8 @@ L.control.zoom({ position: 'topright' }).addTo(this)
                      "Lower Rate", 
                      "Higher Rate", 
                      "Highest Rate"),
-            position = "topleft", 
-            title = "<popuptitle>Houston Neighborhood Thefts Map</popuptitle><br><popupchatter>Explore thefts per 100,000 people in your neighborhood.<br>Use the bar above to find a place, address or landmark.</popupchatter><br>")  
+            position = "bottomright", 
+            title = "<popupchatter>Thefts per 100,000 people")  
 
 houston_theft_map
 ```
