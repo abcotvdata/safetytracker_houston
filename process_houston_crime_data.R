@@ -446,8 +446,16 @@ where_murders_happen <- houston_crime %>%
   group_by(year,premise) %>%
   summarise(count=n()) %>%
   pivot_wider(names_from=year, values_from=count)
+# Using premise to identify the kinds of places where murders happen
+where_murders_happen_last12 <- houston_crime_last12 %>%
+  filter(nibrs_class=="09A") %>%
+  group_by(premise) %>%
+  summarise(last12=n())
+# merge last 12 into the table
+where_murders_happen <- full_join(where_murders_happen,where_murders_happen_last12,by="premise")
 # add zeros where there were no crimes tallied that year
 where_murders_happen[is.na(where_murders_happen)] <- 0
+rm(where_murders_happen_last12)
 
 # Using premise to identify the kinds of places where all violent crimes happen
 where_violentcrimes_happen <- houston_crime %>%
