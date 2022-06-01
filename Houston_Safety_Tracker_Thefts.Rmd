@@ -276,7 +276,7 @@ thefts_beat$placename,
 thefts_beat$total19,
 "</td>
 				<td>",
-round(thefts_beat$rate19,0),
+prettyNum(round(thefts_beat$rate19,0), big.mark=","),
 "</td>
 			</tr>
 			<tr>
@@ -285,7 +285,7 @@ round(thefts_beat$rate19,0),
 thefts_beat$total20,
 "</td>
 				<td>",
-round(thefts_beat$rate20,0),
+prettyNum(round(thefts_beat$rate20,0), big.mark=","),
 "</td>
 			</tr>
 						<tr>
@@ -294,7 +294,7 @@ round(thefts_beat$rate20,0),
 thefts_beat$total21,
 "</td>
 				<td>",
-round(thefts_beat$rate21,0),
+prettyNum(round(thefts_beat$rate21,0), big.mark=","),
 "</td>
 			</tr>
 						<tr>
@@ -303,7 +303,7 @@ round(thefts_beat$rate21,0),
 thefts_beat$last12mos,
 "</td>
 				<td>",
-round(thefts_beat$rate_last12,0),
+prettyNum(round(thefts_beat$rate_last12,0), big.mark=","),
 "</td>
 			</tr>
 						<tr>
@@ -312,7 +312,7 @@ round(thefts_beat$rate_last12,0),
 round(thefts_beat$avg_prior3years,0),
 "</td>
 				<td>",
-round(thefts_beat$rate_prior3years,0),
+prettyNum(round(thefts_beat$rate_prior3years,0), big.mark=","),
 "</td>
 			</tr>
 </table>")
