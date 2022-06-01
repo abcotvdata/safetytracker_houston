@@ -232,7 +232,7 @@ Homicides are <h8>`r ifelse(murders_city$inc_prior3yearavgtolast12>=0," up"," do
 
 The city averaged <h8>`r round(murders_city$last12mos/52,0)`</h8> homicides a week since last May. In 2019, that number was <h8>`r round(murders_city$total19/52,0)`</h8> a week.
 
-One way to think about the danger: three years ago, the murder rate was <h8>`r murders_city$rate19`</h8> per 100,000 residents, slightly less than the rate of being killed in a vehicle crash in Texas. During the pandemic, a person's chance of being murdered here rose well above the likelihood of dying in a vehicle crash.
+One way to think about the danger: three years ago, the murder rate was <h8>`r murders_city$rate19`</h8> per 100,000 residents, about the same as the rate of being killed in a vehicle crash in Texas. During the pandemic, a person's chance of being murdered here rose well above the likelihood of dying in a vehicle crash.
 <br>
 <br>
 <!-- <subhead>Risk of being murdered in Houston vs. other causes of death in Texas</subhead> -->
