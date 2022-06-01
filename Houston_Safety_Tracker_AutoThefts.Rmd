@@ -233,15 +233,16 @@ The risk is not the same neighborhood to neighborhood.
 
 About <h8>`r round(pop_autotheftsup/2304580*100,0)`%</h8> of Houston residents live in neighborhoods where the auto theft rate is up more than 20% in the last 12 months when compared to the three-year average. About <h8>`r round(pop_autotheftsdown/2304580*100,0)`%</h8> live in neighborhoods where the auto theft rate is down or about the same. 
 
-<subhead>Houston auto thefts neighborhood by neighborhood</subhead>
-
 ABC13's data team looked at the Houston Police Department's data, beat by beat across the city to provide this look at trends by neighborhood from 2019 through last month.
+
+<subhead>Houston auto thefts neighborhood by neighborhood</subhead>
 
 The map color-codes each neighborhood by the motor vehicle theft rate over the last 12 months, through the end of April, which is the most recent comprehensive data released by the Houston Police Department.
 
-The yellow areas are neighborhoods where the rate of auto thefts is among the 25% highest rates in the city. You can click on any neighborhood to see detailed figures, rates and trends.
+The yellow areas are neighborhoods where the rate of auto thefts is among the 25% highest rates in the city.
 
-ABC13 will be updating this data every month.
+Click on any neighborhood on the map to see detailed figures, rates and trends. You can also search for a street name, place, landmark or zip code.
+
 <br>
 ```{r cars, echo=FALSE,out.width='100%',out.height='600'}
 # autotheft MAP
@@ -342,8 +343,8 @@ L.control.zoom({ position: 'topright' }).addTo(this)
                      "Lower Rate", 
                      "Higher Rate", 
                      "Highest Rate"),
-            position = "topleft", 
-            title = "<popuptitle>Houston Neighborhood Auto Thefts Map</popuptitle><br><popupchatter>Explore auto thefts per 100,000 people in your neighborhood.<br>Use the bar above to find a place, address or landmark.</popupchatter><br>") 
+            position = "bottomleft", 
+            title = "<popuptitle>Assaults per 100,000 people")  
 houston_autotheft_map
 ```
 

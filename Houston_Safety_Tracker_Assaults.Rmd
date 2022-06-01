@@ -234,16 +234,17 @@ The danger is not the same neighborhood to neighborhood.
 
 About <h8>`r round(pop_assaultsdown/2304580*100,0)`%</h8> of Houston residents live in neighborhoods where the assault rate over the last 12 months is down or about the same as the three-year average from 2019 through 2021. About <h8>`r round(pop_assaultsup/2304580*100,0)`%</h8> of residents live in neighborhoods where the assault rate is up more than 20% over the last 12 months.
 
-<subhead>A closer look at Houston assaults neighborhood by neighborhood</subhead>
-
 So, ABC13's data team looked at the Houston Police Department's data, beat by beat across the city to provide this look at trends by neighborhood from 2019 through last month.
+
+<subhead>A closer look at Houston assaults neighborhood by neighborhood</subhead>
 
 The map color-codes each neighborhood by the assault rate over the last 12 months, through the end of April, which is the most recent comprehensive data released by the Houston Police Department.
 
-The yellow areas are neighborhoods where the rate is among the 25% highest rates in the city. You can click on any neighborhood to see detailed figures, rates and trends.
+The yellow areas are neighborhoods where the rate is among the 25% highest rates in the city.
 
-ABC13 will be updating this data every month.
+Click on any neighborhood on the map to see detailed figures, rates and trends. You can also search for a street name, place, landmark or zip code.
 
+<br>
 
 ```{r cars, echo=FALSE,out.width='100%',out.height='600'}
 # assault MAP

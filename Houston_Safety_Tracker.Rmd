@@ -241,17 +241,17 @@ One way to think about the danger: three years ago, the murder rate was <h8>`r m
 </script>
 <br>
 
-The risk, of course, is not the same neighborhood to neighborhood.
+The risk is not the same neighborhood to neighborhood.
 
 About <h8>`r round(pop_murdersup/2304580*100,0)`%</h8> of people live in neighborhoods where the murder rate is up 20% or more over the last 12 months compared to the average from 2019-2021.
 
-<subhead>A closer look at Houston homicides neighborhood by neighborhood</subhead>
-
 ABC13's data team analyzed Houston Police Department records to look at trends neighborhood by neighborhood from 2019 through the end of April. ABC13 will update this data every month.
+
+<subhead>A closer look at Houston homicides neighborhood by neighborhood</subhead>
 
 The map color-codes each neighborhood by the homicide rate over the last 12 months. Yellow areas are neighborhoods where the homicide rate is among the 25% highest in the city.
 
-Click on any neighborhood on the map to see detailed figures, rates and trends.
+Click on any neighborhood on the map to see detailed figures, rates and trends. You can also search for a street name, place, landmark or zip code.
 
 <br>
 ```{r cars, echo=FALSE,out.width='100%',out.height='600'}
@@ -353,8 +353,8 @@ L.control.zoom({ position: 'topright' }).addTo(this)
                      "Lower Rate", 
                      "Higher Rate", 
                      "Highest Rate"),
-            position = "topleft", 
-            title = "<popuptitle>Houston Neighborhood Homicide Map</popuptitle><br><popupchatter>Explore homicides Per 100,000 people in your neighborhood.<br>Use the bar above to find a place, address or landmark.</popupchatter><br>") 
+            position = "bottomleft", 
+            title = "<popuptitle>Assaults per 100,000 people")  
 
 houston_murder_map
 ```

@@ -234,16 +234,16 @@ The risk is not the same neighborhood to neighborhood.
 
 About <h8>`r round(pop_robberiesdown/2304580*100,0)`%</h8> of city residents live in neighborhoods where the robbery rate over the last 12 months is down or about the same as the three-year average. About <h8>`r round(pop_robberiesup/2304580*100,0)`%</h8> live in neighborhoods where the robbery rate is up more than 20%.
 
-<subhead>A closer look at Houston robberies neighborhood by neighborhood</subhead>
-
 So, ABC13's data team looked at the Houston Police Department's data, beat by beat across the city to provide this look at trends by neighborhood from 2019 through last month.
+
+<subhead>A closer look at Houston robberies neighborhood by neighborhood</subhead>
 
 The map color-codes each neighborhood by the robbery rate over the last 12 months, through the end of April, which is the most recent comprehensive data released by the Houston Police Department.
 
-The yellow areas are neighborhoods where the robbery rate is among the 25% highest rates in the city. You can click on any neighborhood to see detailed figures, rates and trends.
+The yellow areas are neighborhoods where the robbery rate is among the 25% highest rates in the city.
 
-ABC13 will be updating this data every month.
-<br>
+Click on any neighborhood on the map to see detailed figures, rates and trends. You can also search for a street name, place, landmark or zip code.
+
 <br>
 ```{r cars, echo=FALSE,out.width='100%',out.height='600'}
 # robbery MAP
