@@ -45,7 +45,7 @@ library(htmltools)
 
 select {
   margin: 0px;
-  width: 150px;
+  width: 180px;
   color: #00318b;
   padding: 5px 35px 5px 5px;
     font-family: roboto;
@@ -111,7 +111,7 @@ popuptitle {
   color: #00318b;
   font-family: roboto;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 15px;
   text-align: left;
 }
 
@@ -334,7 +334,6 @@ L.control.zoom({ position: 'topright' }).addTo(this)
               fillOpacity = 0.5,
               fillColor = ~theftpal(rate_prior3years)) %>% 
     addSearchOSM(options = searchOptions(autoCollapse=TRUE, minLength = 3,zoom=13, position="topleft")) %>%
- #   addResetMapButton () %>%
   addLegend(opacity = 0.6,
             values = thefts_beat$rate_prior3years, 
             colors = c("#667f99",
@@ -346,7 +345,7 @@ L.control.zoom({ position: 'topright' }).addTo(this)
                      "Higher Rate", 
                      "Highest Rate"),
             position = "bottomleft", 
-            title = "<popupchatter>Thefts per 100,000 people")  
+            title = "<popuptitle>Thefts per 100,000 people")  
 
 houston_theft_map
 ```

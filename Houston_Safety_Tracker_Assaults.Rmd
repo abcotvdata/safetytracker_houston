@@ -1,7 +1,7 @@
 ---
 title: "ABC13 Neighborhood Safety Tracker"
 # author: "John Kelly"
-date: "Updated 4/26/2022 by the ABC13 Data Team"
+date: "Updated 6/1/2022 by the ABC13 Data Team"
 output: html_document
 ---
 
@@ -45,7 +45,7 @@ library(htmltools)
 
 select {
   margin: 0px;
-  width: 150px;
+  width: 180px;
   color: #00318b;
   padding: 5px 35px 5px 5px;
     font-family: roboto;
@@ -111,7 +111,7 @@ popuptitle {
   color: #00318b;
   font-family: roboto;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 15px;
   text-align: left;
 }
 
@@ -344,8 +344,8 @@ L.control.zoom({ position: 'topright' }).addTo(this)
                      "Lower Rate", 
                      "Higher Rate", 
                      "Highest Rate"),
-            position = "topleft", 
-            title = "<popuptitle>Houston Neighborhood Assaults Map</popuptitle><br><popupchatter>Explore assaults per 100,000 people in your neighborhood.<br>Use the bar above to find a place, address or landmark.</popupchatter><br>") 
+            position = "bottomleft", 
+            title = "<popuptitle>Assaults per 100,000 people")  
 houston_assault_map
 ```
 <br>
