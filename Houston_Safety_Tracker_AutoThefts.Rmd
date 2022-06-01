@@ -275,7 +275,7 @@ autothefts_beat$placename,
 autothefts_beat$total19,
 "</td>
 				<td>",
-autothefts_beat$rate19,
+round(autothefts_beat$rate19,0),
 "</td>
 			</tr>
 			<tr>
@@ -284,7 +284,7 @@ autothefts_beat$rate19,
 autothefts_beat$total20,
 "</td>
 				<td>",
-autothefts_beat$rate20,
+round(autothefts_beat$rate20,0),
 "</td>
 			</tr>
 						<tr>
@@ -293,7 +293,7 @@ autothefts_beat$rate20,
 autothefts_beat$total21,
 "</td>
 				<td>",
-autothefts_beat$rate21,
+round(autothefts_beat$rate21,0),
 "</td>
 			</tr>
 						<tr>
@@ -302,16 +302,16 @@ autothefts_beat$rate21,
 autothefts_beat$last12mos,
 "</td>
 				<td>",
-autothefts_beat$rate_last12,
+round(autothefts_beat$rate_last12,0),
 "</td>
 			</tr>
 						<tr>
 				<td>3-year Average</td>
 				<td>",
-autothefts_beat$avg_prior3years,
+round(autothefts_beat$avg_prior3years,0),
 "</td>
 				<td>",
-autothefts_beat$rate_prior3years,
+round(autothefts_beat$rate_prior3years,0),
 "</td>
 			</tr>
 </table>")
