@@ -216,12 +216,12 @@ Yearly average<br>2019 to 2021</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>Burglary Rate<br>
-<bignumber>`r burglaries_city$rate_last12`<br></bignumber><p>
+<bignumber>`r round(burglaries_city$rate_last12,0)`<br></bignumber><p>
 Per 100,000 people<br>Last 12 months</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Burglary Rate<br>
-<bignumber>`r burglaries_city$rate_prior3years`<br></bignumber><p>
+<bignumber>`r round(burglaries_city$rate_prior3years,0)`<br></bignumber><p>
 Per 100,000 people<br>2019 to 2021</p>
 </div>
 </div>
@@ -276,7 +276,7 @@ burglaries_beat$placename,
 burglaries_beat$total19,
 "</td>
 				<td>",
-burglaries_beat$rate19,
+round(burglaries_beat$rate19,0),
 "</td>
 			</tr>
 			<tr>
@@ -285,7 +285,7 @@ burglaries_beat$rate19,
 burglaries_beat$total20,
 "</td>
 				<td>",
-burglaries_beat$rate20,
+round(burglaries_beat$rate20,0),
 "</td>
 			</tr>
 						<tr>
@@ -294,7 +294,7 @@ burglaries_beat$rate20,
 burglaries_beat$total21,
 "</td>
 				<td>",
-burglaries_beat$rate21,
+round(burglaries_beat$rate21,0),
 "</td>
 			</tr>
 						<tr>
@@ -303,16 +303,16 @@ burglaries_beat$rate21,
 burglaries_beat$last12mos,
 "</td>
 				<td>",
-burglaries_beat$rate_last12,
+round(burglaries_beat$rate_last12,0),
 "</td>
 			</tr>
 						<tr>
 				<td>3-year Average</td>
 				<td>",
-burglaries_beat$avg_prior3years,
+round(burglaries_beat$avg_prior3years,0),
 "</td>
 				<td>",
-burglaries_beat$rate_prior3years,
+round(burglaries_beat$rate_prior3years,0),
 "</td>
 			</tr>
 </table>")
@@ -322,7 +322,7 @@ houston_burglary_map <- leaflet(burglaries_beat, options = leafletOptions(zoomCo
   htmlwidgets::onRender("function(el, x) {
 L.control.zoom({ position: 'topright' }).addTo(this)
 }") %>%
-  setView(-95.5, 29.75, zoom = 11) %>% 
+  setView(-95.45, 29.75, zoom = 11) %>% 
   addProviderTiles(provider = "CartoDB.Positron") %>%
   addPolygons(color = "white", 
               popup = burglarylabel, 

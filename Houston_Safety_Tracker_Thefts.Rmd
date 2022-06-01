@@ -276,7 +276,7 @@ thefts_beat$placename,
 thefts_beat$total19,
 "</td>
 				<td>",
-thefts_beat$rate19,
+round(thefts_beat$rate19,0),
 "</td>
 			</tr>
 			<tr>
@@ -285,7 +285,7 @@ thefts_beat$rate19,
 thefts_beat$total20,
 "</td>
 				<td>",
-thefts_beat$rate20,
+round(thefts_beat$rate20,0),
 "</td>
 			</tr>
 						<tr>
@@ -294,7 +294,7 @@ thefts_beat$rate20,
 thefts_beat$total21,
 "</td>
 				<td>",
-thefts_beat$rate21,
+round(thefts_beat$rate21,0),
 "</td>
 			</tr>
 						<tr>
@@ -303,16 +303,16 @@ thefts_beat$rate21,
 thefts_beat$last12mos,
 "</td>
 				<td>",
-thefts_beat$rate_last12,
+round(thefts_beat$rate_last12,0),
 "</td>
 			</tr>
 						<tr>
 				<td>3-year Average</td>
 				<td>",
-thefts_beat$avg_prior3years,
+round(thefts_beat$avg_prior3years,0),
 "</td>
 				<td>",
-thefts_beat$rate_prior3years,
+round(thefts_beat$rate_prior3years,0),
 "</td>
 			</tr>
 </table>")
@@ -322,7 +322,7 @@ houston_theft_map <- leaflet(thefts_beat, options = leafletOptions(zoomControl =
   htmlwidgets::onRender("function(el, x) {
 L.control.zoom({ position: 'topright' }).addTo(this)
 }") %>%
-  setView(-95.4, 29.75, zoom = 11) %>% 
+  setView(-95.45, 29.75, zoom = 11) %>% 
   addProviderTiles(provider = "CartoDB.Positron") %>%
   addPolygons(color = "white", 
               popup = theftlabel, 

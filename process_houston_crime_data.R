@@ -479,7 +479,6 @@ where_propertycrimes_happen <- houston_crime %>%
          "total21" = "2021",
          "total22" = "2022") 
 
-
 # Using hour to identify the hours of day when murders happen
 when_murders_happen <- houston_crime %>%
   filter(nibrs_class=="09A") %>%

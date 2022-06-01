@@ -277,7 +277,7 @@ assaults_beat$placename,
 assaults_beat$total19,
 "</td>
 				<td>",
-assaults_beat$rate19,
+round(assaults_beat$rate19,0),
 "</td>
 			</tr>
 			<tr>
@@ -286,7 +286,7 @@ assaults_beat$rate19,
 assaults_beat$total20,
 "</td>
 				<td>",
-assaults_beat$rate20,
+round(assaults_beat$rate20,0),
 "</td>
 			</tr>
 						<tr>
@@ -295,7 +295,7 @@ assaults_beat$rate20,
 assaults_beat$total21,
 "</td>
 				<td>",
-assaults_beat$rate21,
+round(assaults_beat$rate21,0),
 "</td>
 			</tr>
 						<tr>
@@ -304,16 +304,16 @@ assaults_beat$rate21,
 assaults_beat$last12mos,
 "</td>
 				<td>",
-assaults_beat$rate_last12,
+round(assaults_beat$rate_last12,0),
 "</td>
 			</tr>
 						<tr>
 				<td>3-year Average</td>
 				<td>",
-assaults_beat$avg_prior3years,
+round(assaults_beat$avg_prior3years,0),
 "</td>
 				<td>",
-assaults_beat$rate_prior3years,
+round(assaults_beat$rate_prior3years,0),
 "</td>
 			</tr>
 </table>")
@@ -323,7 +323,7 @@ houston_assault_map <- leaflet(assaults_beat, options = leafletOptions(zoomContr
   htmlwidgets::onRender("function(el, x) {
 L.control.zoom({ position: 'topright' }).addTo(this)
 }") %>%
-  setView(-95.5, 29.75, zoom = 11) %>% 
+  setView(-95.45, 29.75, zoom = 11) %>% 
   addProviderTiles(provider = "CartoDB.Positron") %>%
   addPolygons(color = "white", 
               popup = assaultlabel, 
