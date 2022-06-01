@@ -276,7 +276,7 @@ robberies_beat$placename,
 robberies_beat$total19,
 "</td>
 				<td>",
-robberies_beat$rate19,
+round(robberies_beat$rate19,0),
 "</td>
 			</tr>
 			<tr>
@@ -285,7 +285,7 @@ robberies_beat$rate19,
 robberies_beat$total20,
 "</td>
 				<td>",
-robberies_beat$rate20,
+round(robberies_beat$rate20,0),
 "</td>
 			</tr>
 						<tr>
@@ -294,7 +294,7 @@ robberies_beat$rate20,
 robberies_beat$total21,
 "</td>
 				<td>",
-robberies_beat$rate21,
+round(robberies_beat$rate21,0),
 "</td>
 			</tr>
 						<tr>
@@ -303,16 +303,16 @@ robberies_beat$rate21,
 robberies_beat$last12mos,
 "</td>
 				<td>",
-robberies_beat$rate_last12,
+round(robberies_beat$rate_last12,0),
 "</td>
 			</tr>
 						<tr>
 				<td>3-year Average</td>
 				<td>",
-robberies_beat$avg_prior3years,
+round(robberies_beat$avg_prior3years,0),
 "</td>
 				<td>",
-robberies_beat$rate_prior3years,
+round(robberies_beat$rate_prior3years,0),
 "</td>
 			</tr>
 </table>")
