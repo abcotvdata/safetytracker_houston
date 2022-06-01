@@ -25,6 +25,8 @@ library(htmltools)
 ```{css, echo=FALSE}
 
           
+
+          
 .title {
   font-family: roboto;
   color: #00318b;
@@ -45,7 +47,7 @@ library(htmltools)
 
 select {
   margin: 0px;
-  width: 175px;
+  width: 150px;
   color: #00318b;
   padding: 5px 35px 5px 5px;
     font-family: roboto;
@@ -74,7 +76,7 @@ h2 {
   font-weight: 500;
   color: black;
   text-align: center;
-  font-size: 24px;
+  font-size: 18px;
   margin-top: 0;
   margin-bottom: 2;
 }
@@ -84,29 +86,9 @@ bignumber {
   color: #00318b;
   font-weight: 900;
   text-align: center;
-  font-size: 80px;
-    line-height: 85px;
-  height: 85px;
-    margin-top: 0;
-  margin-bottom: 0;
-}
-
-popupchatter {
-  font-family: roboto;
-  color: black;
-  font-weight: 300;
-  text-align: left;
-  font-size: 13px;
-  margin-top: 0;
-  margin-bottom: 2;
-}
-
-chartbignumber {
-  font-family: roboto;
-  color: #00318b;
-  font-weight: bolder;
-  text-align: right;
-  font-size: 36px;
+  font-size: 60px;
+    line-height: 65px;
+  height: 65px;
     margin-top: 0;
   margin-bottom: 0;
 }
@@ -128,13 +110,21 @@ body {
 }
 
 popuptitle {
-  font-family: roboto;
   color: #00318b;
-  font-weight: bolder;
+  font-family: roboto;
+  font-weight: 900;
+  font-size: 18px;
   text-align: left;
-  font-size: 20px;
-    margin-top: 0;
-  margin-bottom: 0;
+}
+
+popupchatter {
+  font-family: roboto;
+  color: black;
+  font-weight: 300;
+  text-align: left;
+  font-size: 12px;
+  margin-top: 0;
+  margin-bottom: 2;
 }
 
 h8 {
@@ -146,7 +136,6 @@ h8 {
 
 table {
   font-family: roboto;
-  border-collapse: collapse;
   width: 100%;
 }
 
@@ -156,12 +145,12 @@ tr {
   
 td {
   text-align: right;
-  padding: 6px;
+  padding: 1px;
 }
 
 th {
   text-align: right;
-  padding: 6px;
+  padding: 1px;
 }
 
    * {
@@ -276,19 +265,19 @@ murderpal <- colorQuantile(c("#667f99",
 
 # Create quick labels for murders map
 murderlabel <- paste(sep="",
-"<table>
-<popuptitle>Houston P.D. Beat #",
-murders_beat$beat,
-"</popuptitle><br><popupchatter>Area neighborhoods and landmarks include ",
+ifelse(murders_beat$inc_prior3yearavgtolast12>=0,
+       "<popuptitle>Homicides are up ",
+       "<popuptitle>Homicides are down "),
+ifelse(murders_beat$inc_prior3yearavgtolast12>=0,murders_beat$inc_prior3yearavgtolast12,substring(murders_beat$inc_prior3yearavgtolast12,2)),
+				"%</popuptitle><br><popupchatter>the last 12 months vs. the 3-year average in the area including ",
 murders_beat$placename,
-". Estimated Population: ",
-prettyNum(murders_beat$population, big.mark=','),
-"</popupchatter><br>
+".
+<br>
+<table>      
       <tr>
 				<th></th>
 				<th>Total</th>
 				<th>Rate</th>
-				<th>Trend</th>
 			</tr>
 			<tr>
 				<td>2019</td>
@@ -298,14 +287,6 @@ murders_beat$total19,
 				<td>",
 murders_beat$rate19,
 "</td>
-				<!-- Insert cell to cross/span 
-				multi rows -->
-				<td rowspan='5'>",
-ifelse(murders_beat$inc_prior3yearavgtolast12>=0,
-       "Last 12<br>months up<br><chartbignumber><span style='color:#00318b'>&#8593;</span>",
-       "Last 12<br>months down <br><chartbignumber><span style='color:#00318b'>&#8595;</span>"),
-ifelse(murders_beat$inc_prior3yearavgtolast12>=0,murders_beat$inc_prior3yearavgtolast12,substring(murders_beat$inc_prior3yearavgtolast12,2)),
-				"%</chartbignumber><br>vs. 3-year<br>average</td>
 			</tr>
 			<tr>
 				<td>2020</td>
@@ -353,7 +334,9 @@ L.control.zoom({ position: 'topright' }).addTo(this)
   setView(-95.5, 29.75, zoom = 11) %>% 
   addProviderTiles(provider = "CartoDB.Positron") %>%
   addPolygons(color = "white", 
-              popup = murderlabel, 
+              popup = murderlabel,
+              popupOptions = popupOptions(maxWidth ="200", 
+                                          minWidth ="200"),
               weight = 2, 
               smoothFactor = 0.5,
               opacity = 0.6, 

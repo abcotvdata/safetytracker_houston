@@ -45,7 +45,7 @@ library(htmltools)
 
 select {
   margin: 0px;
-  width: 175px;
+  width: 150px;
   color: #00318b;
   padding: 5px 35px 5px 5px;
     font-family: roboto;
@@ -91,26 +91,6 @@ bignumber {
   margin-bottom: 0;
 }
 
-popupchatter {
-  font-family: roboto;
-  color: black;
-  font-weight: 300;
-  text-align: left;
-  font-size: 12px;
-  margin-top: 0;
-  margin-bottom: 2;
-}
-
-chartbignumber {
-  font-family: roboto;
-  color: #00318b;
-  font-weight: bolder;
-  text-align: right;
-  font-size: 36px;
-    margin-top: 0;
-  margin-bottom: 0;
-}
-
 subhead {
   font-family: roboto;
   color: black;
@@ -124,29 +104,36 @@ body {
   color: black;
   font-family: roboto;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 popuptitle {
-  font-family: roboto;
   color: #00318b;
-  font-weight: bolder;
+  font-family: roboto;
+  font-weight: 900;
+  font-size: 18px;
   text-align: left;
-  font-size: 20px;
-    margin-top: 0;
-  margin-bottom: 0;
+}
+
+popupchatter {
+  font-family: roboto;
+  color: black;
+  font-weight: 300;
+  text-align: left;
+  font-size: 12px;
+  margin-top: 0;
+  margin-bottom: 2;
 }
 
 h8 {
   color: #00318b;
   font-family: roboto;
   font-weight: 900;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 table {
   font-family: roboto;
-  border-collapse: collapse;
   width: 100%;
 }
 
@@ -156,12 +143,12 @@ tr {
   
 td {
   text-align: right;
-  padding: 6px;
+  padding: 1px;
 }
 
 th {
   text-align: right;
-  padding: 6px;
+  padding: 1px;
 }
 
    * {
@@ -269,19 +256,19 @@ robberypal <- colorQuantile(c("#667f99",
 
 # Create quick labels for robberies map
 robberylabel <- paste(sep="",
-"<table>
-<popuptitle>Houston P.D. Beat #",
-robberies_beat$beat,
-"</popuptitle><br><popupchatter>Area neighborhoods and landmarks include ",
+ifelse(robberies_beat$inc_prior3yearavgtolast12>=0,
+       "<popuptitle>Robberies are up ",
+       "<popuptitle>Robberies are down "),
+ifelse(robberies_beat$inc_prior3yearavgtolast12>=0,robberies_beat$inc_prior3yearavgtolast12,substring(robberies_beat$inc_prior3yearavgtolast12,2)),
+				"%</popuptitle><br><popupchatter>the last 12 months vs. the 3-year average in the area including ",
 robberies_beat$placename,
-". Estimated Population: ",
-prettyNum(robberies_beat$population, big.mark=','),
-"</popupchatter><br>
+".
+<br>
+<table>      
       <tr>
 				<th></th>
 				<th>Total</th>
 				<th>Rate</th>
-				<th>Trend</th>
 			</tr>
 			<tr>
 				<td>2019</td>
@@ -291,14 +278,6 @@ robberies_beat$total19,
 				<td>",
 robberies_beat$rate19,
 "</td>
-				<!-- Insert cell to cross/span 
-				multi rows -->
-				<td rowspan='5'>",
-ifelse(robberies_beat$inc_prior3yearavgtolast12>=0,
-       "Last 12<br>months up<br><chartbignumber><span style='color:#00318b'>&#8593;</span>",
-       "Last 12<br>months down <br><chartbignumber><span style='color:#00318b'>&#8595;</span>"),
-ifelse(robberies_beat$inc_prior3yearavgtolast12>=0,robberies_beat$inc_prior3yearavgtolast12,substring(robberies_beat$inc_prior3yearavgtolast12,2)),
-				"%</chartbignumber><br>vs. 3-year<br>average</td>
 			</tr>
 			<tr>
 				<td>2020</td>
@@ -347,6 +326,8 @@ L.control.zoom({ position: 'topright' }).addTo(this)
   addProviderTiles(provider = "CartoDB.Positron") %>%
   addPolygons(color = "white", 
               popup = robberylabel, 
+              popupOptions = popupOptions(maxWidth ="200", 
+                                          minWidth ="200"),
               weight = 2, 
               smoothFactor = 0.5,
               opacity = 0.6, 

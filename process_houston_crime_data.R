@@ -732,8 +732,3 @@ pop_drugsmonthly <- sum(beatpops_monthly$population)
 # cleanup
 rm(beatpops_down,beatpops_up,beatpops_monthly,beatpops_zero)
 
-
-
-
-
-#### STOPPING POINT #######
