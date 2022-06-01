@@ -1,7 +1,7 @@
 ---
 title: "ABC13 Neighborhood Safety Tracker"
 # author: "John Kelly"
-date: "Updated 6/1/2022 by the ABC13 Data Team"
+date: "Updated `r format(Sys.time(), '%B %d, %Y')` by the ABC13 Data Team"
 output: html_document
 ---
 
@@ -319,11 +319,11 @@ sexassaults_beat$rate_prior3years,
 </table>")
 
 # Creating police beats map for types of crimes
-houston_sexassault_map <- leaflet(sexassaults_beat, options = leafletOptions(zoomControl = FALSE)) %>%
+houston_sexassault_map <- leaflet(sexassaults_beat, options = leafletOptions(zoomControl = FALSE, zoomSnap = 0.5, zoomDelta=0.5)) %>%
   htmlwidgets::onRender("function(el, x) {
 L.control.zoom({ position: 'topright' }).addTo(this)
 }") %>%
-  setView(-95.45, 29.75, zoom = 10) %>% 
+  setView(-95.45, 29.75, zoom = 10.5) %>% 
   addProviderTiles(provider = "CartoDB.Positron") %>%
   addPolygons(color = "white", 
               popup = sexassaultlabel, 
