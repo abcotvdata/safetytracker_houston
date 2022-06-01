@@ -368,8 +368,8 @@ L.control.zoom({ position: 'topright' }).addTo(this)
 
 houston_theft_map
 ```
-
-However, in the vast majority of neighborhoods in the city, the rate is much lower. In 17 of 118 of the Houston Police Department's, the theft rate was zero last year. Filler, filler, filler.
+<br>
+About <h8>`r round(pop_theftsmonthly/2304580*100,0)`%</h8> of Houston residents now live in neighborhoods where there was at least one theft every month over the last year. Here's a look at citywide thefts every month since 2019.
 <br>
 <br>
 <!-- <subhead>Thefts month by month, 2019 through last month</subhead> -->

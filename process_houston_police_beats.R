@@ -14,7 +14,7 @@ beats <- st_read("data/geo/houston_police_beats.geojson") %>%
   rename("beat"="beats")
 # st_crs(beats)
 
-# Adding place descriptions of the beats
+# Adding placenames for headers in place of the beats
 # A little more work to do here; may want to replicate this with zips too
 beats$placename <- case_when(beats$beat == "1A10" ~ "Downtown Central Business District",
                              beats$beat == "1A20" ~ "Fourth Ward, Avondale and Westmoreland",
@@ -135,6 +135,7 @@ beats$placename <- case_when(beats$beat == "1A10" ~ "Downtown Central Business D
                              beats$beat == "23J40" ~ "Intercontinental Airport",    
                              beats$beat == "23J50" ~ "Intercontinental Airport",    
                              TRUE ~ "Unknown")
+
 
 # Get demographic data for Census block groups to calculate population of beat areas
 # Also transforming to match the projection of the Houston PD's beats spatial file
