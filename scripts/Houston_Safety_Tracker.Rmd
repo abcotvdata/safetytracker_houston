@@ -343,6 +343,9 @@ L.control.zoom({ position: 'topright' }).addTo(this)
               fillOpacity = 0.5,
               fillColor = ~murderpal(rate_prior3years)) %>% 
   addSearchOSM(options = searchOptions(autoCollapse=FALSE, minLength = 3,zoom=13, position="topleft")) %>%
+    onRender("function(el, x) {
+        $('input.search-input')[0].placeholder = 'Search street, place or zip code'
+        }") %>%
   addLegend(opacity = 0.6,
             values = murders_beat$rate_prior3years, 
             colors = c("#667f99",

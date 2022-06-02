@@ -12,13 +12,13 @@ library(tidycensus)
 library(readxl)
 library(leaflet)
 library(leaflet.extras)
+library(leaflet.extras2)
 library(leaflet.providers)
 library(sp)
 library(sf)
 library(htmlwidgets)
 library(htmltools)
 
-# rmarkdown::render('Houston_Safety_Tracker_2.Rmd', output_file = 'docs/Houston_Safety_Tracker_2.html')
 ```
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
@@ -245,7 +245,7 @@ The yellow areas are neighborhoods where the theft rate is among the 25% highest
 ABC13 will be updating this data every month.
 <br>
 
-```{r cars, echo=FALSE,out.width='100%',out.height='600'}
+```{r map, echo=FALSE,out.width='100%',out.height='600'}
 # theft MAP
 
 # Set bins for numbers of crimes for thefts map
@@ -324,6 +324,10 @@ L.control.zoom({ position: 'topright' }).addTo(this)
 }") %>%
   setView(-95.45, 29.75, zoom = 10.5) %>% 
   addProviderTiles(provider = "CartoDB.Positron") %>%
+  setMaxBounds( lng1 = -93
+                 , lat1 = 27
+                 , lng2 = -97
+                 , lat2 = 31) %>%
   addPolygons(color = "white", 
               popup = theftlabel, 
               popupOptions = popupOptions(maxWidth ="200", 
@@ -333,7 +337,11 @@ L.control.zoom({ position: 'topright' }).addTo(this)
               opacity = 0.6, 
               fillOpacity = 0.5,
               fillColor = ~theftpal(rate_prior3years)) %>% 
-    addSearchOSM(options = searchOptions(autoCollapse=TRUE, minLength = 3,zoom=13, position="topleft")) %>%
+  addSearchOSM(options = searchOptions(autoCollapse=TRUE, minLength = 3,
+              zoom=13, position="topleft")) %>%
+  onRender("function(el, x) {
+        $('input.search-input')[0].placeholder = 'Search street, place or zip code'
+        }") %>%
   addLegend(opacity = 0.6,
             values = thefts_beat$rate_prior3years, 
             colors = c("#667f99",
