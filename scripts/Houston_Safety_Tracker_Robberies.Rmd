@@ -252,7 +252,8 @@ Click on any neighborhood on the map to see detailed figures, rates and trends. 
 robberypal <- colorQuantile(c("#667f99",
                              "#00318b",
                              "#0058f6",
-                             "#ffba00"), robberies_beat$rate_prior3years, n = 4, na.color = NA)
+                             "#ffba00",
+                       "#be0000"), robberies_beat$rate_last12, n = 5, na.color = NA)
 
 # Create quick labels for robberies map
 robberylabel <- paste(sep="",
@@ -338,14 +339,16 @@ L.control.zoom({ position: 'topright' }).addTo(this)
         $('input.search-input')[0].placeholder = 'Search street, place or zip code'
         }") %>%
   addLegend(opacity = 0.6,
-            values = robberies_beat$rate_prior3years, 
+            values = robberies_beat$rate_last12, 
             colors = c("#667f99",
                        "#00318b",
                        "#0058f6",
-                       "#ffba00"),
+                       "#ffba00",
+                       "#be0000"),
             labels=c("Lowest Rate", 
                      "Lower Rate", 
-                     "Higher Rate", 
+                     "High Rate", 
+                     "Higher Rate",
                      "Highest Rate"),
             position = "bottomleft", 
             title = "<popuptitle>Robberies per 100,000 people")  

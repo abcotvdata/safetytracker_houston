@@ -254,7 +254,8 @@ Click on any neighborhood on the map to see detailed figures, rates and trends. 
 drugpal <- colorQuantile(c("#667f99",
                              "#00318b",
                              "#0058f6",
-                             "#ffba00"), drugs_beat$rate_prior3years, n = 4, na.color = NA)
+                             "#ffba00",
+                       "#be0000"), drugs_beat$rate_last12, n = 5, na.color = NA)
 
 # Create quick labels for drugs map
 druglabel <- paste(sep="",
@@ -334,20 +335,22 @@ L.control.zoom({ position: 'topright' }).addTo(this)
               smoothFactor = 0.5,
               opacity = 0.6, 
               fillOpacity = 0.5,
-              fillColor = ~drugpal(rate_prior3years)) %>% 
+              fillColor = ~drugpal(rate_last12)) %>% 
       addSearchOSM(options = searchOptions(autoCollapse=FALSE, minLength = 3,zoom=13, position="topleft")) %>%
     onRender("function(el, x) {
         $('input.search-input')[0].placeholder = 'Search street, place or zip code'
         }") %>%
   addLegend(opacity = 0.6,
-            values = drugs_beat$rate_prior3years, 
+            values = drugs_beat$rate_last12, 
             colors = c("#667f99",
                        "#00318b",
                        "#0058f6",
-                       "#ffba00"),
+                       "#ffba00",
+                       "#be0000"),
             labels=c("Lowest Rate", 
                      "Lower Rate", 
-                     "Higher Rate", 
+                     "High Rate", 
+                     "Higher Rate",
                      "Highest Rate"),
             position = "bottomleft", 
             title = "<popuptitle>Drug crimes<br>per 100,000 people")  
