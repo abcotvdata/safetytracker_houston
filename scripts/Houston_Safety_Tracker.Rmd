@@ -272,7 +272,9 @@ ifelse(murders_beat$inc_prior3yearavgtolast12>=0,
 ifelse(murders_beat$inc_prior3yearavgtolast12>=0,murders_beat$inc_prior3yearavgtolast12,substring(murders_beat$inc_prior3yearavgtolast12,2)),
 				"%</popuptitle><br><popupchatter>the last 12 months vs. the 3-year average in the area including ",
 murders_beat$placename,
-".
+", home to an estimated ",
+murders_beat$population,
+" people.
 <br>
 <table>      
       <tr>
