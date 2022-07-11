@@ -265,7 +265,9 @@ ifelse(drugs_beat$inc_prior3yearavgtolast12>=0,
 ifelse(drugs_beat$inc_prior3yearavgtolast12>=0,drugs_beat$inc_prior3yearavgtolast12,substring(drugs_beat$inc_prior3yearavgtolast12,2)),
 				"%</popuptitle><br><popupchatter>the last 12 months vs. the 3-year average in the area including ",
 drugs_beat$placename,
-".
+", home to an estimated ",
+prettyNum(drugs_beat$population, big.mark=","),
+" people.
 <br>
 <table>      
       <tr>

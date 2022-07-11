@@ -207,7 +207,7 @@ th {
 <div class="card" style="background-color:#99a0a5;">
 <p>Burglaries<br>
 <bignumber>`r prettyNum(burglaries_city$last12mos, big.mark=",")`<br></bignumber>
-<p>Last 12 months<br>Through April 2022</p>
+<p>Last 12 months<br>Through May 2022</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Burglaries<br>
@@ -263,7 +263,9 @@ ifelse(burglaries_beat$inc_prior3yearavgtolast12>=0,
 ifelse(burglaries_beat$inc_prior3yearavgtolast12>=0,burglaries_beat$inc_prior3yearavgtolast12,substring(burglaries_beat$inc_prior3yearavgtolast12,2)),
 				"%</popuptitle><br><popupchatter>the last 12 months vs. the 3-year average in the area including ",
 burglaries_beat$placename,
-".
+", home to an estimated ",
+prettyNum(burglaries_beat$population, big.mark=","),
+" people.
 <br>
 <table>      
       <tr>

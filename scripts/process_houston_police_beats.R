@@ -173,7 +173,7 @@ beats <- cbind(beats,beats_withpop)
 # Cleans up unneeded calculation file
 rm(beats_withpop, blockgroups)
 # Round the population figure
-beats$population <- round(beats$population,0)
+beats$population <- round(beats$population,-3)
 # Eliminate population from beats on airport property showing population
 beats$population <- ifelse(beats$population<1000,0,beats$population)
 

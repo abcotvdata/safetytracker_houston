@@ -263,7 +263,9 @@ ifelse(thefts_beat$inc_prior3yearavgtolast12>=0,
 ifelse(thefts_beat$inc_prior3yearavgtolast12>=0,thefts_beat$inc_prior3yearavgtolast12,substring(thefts_beat$inc_prior3yearavgtolast12,2)),
 				"%</popuptitle><br><popupchatter>the last 12 months vs. the 3-year average in the area including ",
 thefts_beat$placename,
-".
+", home to an estimated ",
+prettyNum(thefts_beat$population, big.mark=","),
+" people.
 <br>
 <table>      
       <tr>
