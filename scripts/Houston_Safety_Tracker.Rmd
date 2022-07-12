@@ -1,5 +1,5 @@
 ---
-title: "<br>Neighborhood<br>Safety Tracker"
+title: "<br><br>NEIGHBORHOOD<br>SAFETY TRACKER"
 # author: "John Kelly"
 date: "Updated `r format(Sys.time(), '%B %d, %Y')` by the ABC13 Data Team"
 output: html_document
@@ -40,7 +40,7 @@ div {
   color: white;
   font-weight: 900;
   text-align: left;
-  font-size: 50px;
+  font-size: 60px;
     padding: 5px;
 }
 
