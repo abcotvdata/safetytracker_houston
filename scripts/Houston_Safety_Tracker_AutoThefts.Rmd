@@ -227,7 +227,7 @@ Per 100,000 people<br>2019 to 2021</p>
 <br>
 Auto thefts are <h8>`r ifelse(autothefts_city$inc_prior3yearavgtolast12>=0," up"," down")` `r ifelse(autothefts_city$inc_prior3yearavgtolast12>=0,autothefts_city$inc_prior3yearavgtolast12,substring(autothefts_city$inc_prior3yearavgtolast12,2))`%</h8> over the last 12 months compared to the average from 2019-2021.
 
-The city averaged <h8>`r round(autothefts_city$last12mos/52,0)`</h8> stolen vehicles a week since last May. In 2019, that number was <h8>`r round(autothefts_city$total19/52,0)`</h8> a week.
+The city averaged <h8>`r round(autothefts_city$last12mos/52,0)`</h8> stolen vehicles a week since last June. In 2019, that number was <h8>`r round(autothefts_city$total19/52,0)`</h8> a week.
 
 The risk is not the same neighborhood to neighborhood.
 

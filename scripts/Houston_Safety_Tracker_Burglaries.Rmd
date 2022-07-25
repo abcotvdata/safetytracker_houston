@@ -207,7 +207,7 @@ th {
 <div class="card" style="background-color:#99a0a5;">
 <p>Burglaries<br>
 <bignumber>`r prettyNum(burglaries_city$last12mos, big.mark=",")`<br></bignumber>
-<p>Last 12 months<br>Through May 2022</p>
+<p>Last 12 months<br>Through June 2022</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Burglaries<br>
@@ -228,7 +228,7 @@ Per 100,000 people<br>2019 to 2021</p>
 <br>
 Burglaries are <h8>`r ifelse(burglaries_city$inc_prior3yearavgtolast12>=0," up"," down")` `r ifelse(burglaries_city$inc_prior3yearavgtolast12>=0,burglaries_city$inc_prior3yearavgtolast12,substring(burglaries_city$inc_prior3yearavgtolast12,2))`%</h8> over the last 12 months compared to the average from 2019-2021.
 
-The city averaged <h8>`r round(burglaries_city$last12mos/52,0)`</h8> burglaries a week since last May. In 2019, that number was <h8>`r round(burglaries_city$total19/52,0)`</h8> a week.
+The city averaged <h8>`r round(burglaries_city$last12mos/52,0)`</h8> burglaries a week since last June. In 2019, that number was <h8>`r round(burglaries_city$total19/52,0)`</h8> a week.
 
 The risk is not the same neighborhood to neighborhood.
 

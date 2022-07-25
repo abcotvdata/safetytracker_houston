@@ -228,7 +228,7 @@ Per 100,000 people<br>2019 to 2021</p>
 <br>
 Robberies are <h8>`r ifelse(robberies_city$inc_prior3yearavgtolast12>=0," up"," down")` `r ifelse(robberies_city$inc_prior3yearavgtolast12>=0,robberies_city$inc_prior3yearavgtolast12,substring(robberies_city$inc_prior3yearavgtolast12,2))`%</h8> over the last 12 months compared to the average from 2019-2021.
 
-The city averaged <h8>`r round(robberies_city$last12mos/52,0)`</h8> robberies a week since last May. In 2019, that number was <h8>`r round(robberies_city$total19/52,0)`</h8> a week.
+The city averaged <h8>`r round(robberies_city$last12mos/52,0)`</h8> robberies a week since last June. In 2019, that number was <h8>`r round(robberies_city$total19/52,0)`</h8> a week.
 
 The risk is not the same neighborhood to neighborhood.
 

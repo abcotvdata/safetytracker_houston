@@ -127,7 +127,7 @@ houston_crime$beat <- ifelse(houston_crime$beat == "7C50","22B40",houston_crime$
 write_csv(houston_crime,"data/output/houston_crime.csv")
 
 # pull last 12 months of raw crimes
-houston_crime_last12 <- houston_crime %>% filter(date>max(houston_crime$date)-365)
+houston_crime_last12 <- houston_crime %>% filter(date>(max(houston_crime$date)-365))
 
 # CITYWIDE CRIME TOTALS
 # Calculate of each detailed offense type CITYWIDE
