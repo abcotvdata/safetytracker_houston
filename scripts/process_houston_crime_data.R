@@ -9,7 +9,7 @@ library(zoo)
 # download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicViewDec21.xlsx","data/latest/houston_NIBRS2021.xlsx")
 # download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicView.Jan1-Dec31-2020.xlsx","data/latest/houston_NIBRS2020.xlsx")
 # download.file("https://www.houstontx.gov/police/cs/xls/2019_NIBRSPublicView.Jan1-Dec31.xlsx","data/latest/houston_NIBRS2019.xlsx")
-# download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicViewJan-May22.xlsx","data/latest/houston_NIBRS2022.xlsx")
+# download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicViewJan-Jun22.xlsx","data/latest/houston_NIBRS2022.xlsx")
 
 # Import and combine 4 years' of crime data; note 2022 changes monthly
 
@@ -124,7 +124,7 @@ houston_crime$beat <- ifelse(houston_crime$beat == "6B60","22B20",houston_crime$
 houston_crime$beat <- ifelse(houston_crime$beat == "7C50","22B40",houston_crime$beat)
 
 # write csv of houston crime as a backup
-write_csv(houston_crime,"data/latest/houston_crime.csv")
+write_csv(houston_crime,"data/output/houston_crime.csv")
 
 # pull last 12 months of raw crimes
 houston_crime_last12 <- houston_crime %>% filter(date>max(houston_crime$date)-365)
@@ -179,7 +179,7 @@ citywide_detailed_monthly <- citywide_detailed_monthly %>%
   dplyr::mutate(rollavg_3month = rollsum(count, k = 3, fill = NA, align = "right")/3)
 citywide_detailed_monthly$rollavg_3month <- round(citywide_detailed_monthly$rollavg_3month,0)
 # write to save for charts
-write_csv(citywide_detailed_monthly,"murders_monthly.csv")
+write_csv(citywide_detailed_monthly,"data/output/murders_monthly.csv")
 
 # Calculate of each category of offense CITYWIDE
 citywide_category <- houston_crime %>%
@@ -225,13 +225,13 @@ citywide_category_monthly <- citywide_category_monthly %>%
   dplyr::mutate(rollavg_3month = rollsum(count, k = 3, fill = NA, align = "right")/3)
 citywide_category_monthly$rollavg_3month <- round(citywide_category_monthly$rollavg_3month,0)
 # write series of monthly files for charts
-citywide_category_monthly %>% filter(category_name=="Sexual Assault") %>% write_csv("sexassaults_monthly.csv")
-citywide_category_monthly %>% filter(category_name=="Auto Theft") %>% write_csv("autothefts_monthly.csv")
-citywide_category_monthly %>% filter(category_name=="Theft") %>% write_csv("thefts_monthly.csv")
-citywide_category_monthly %>% filter(category_name=="Burglary") %>% write_csv("burglaries_monthly.csv")
-citywide_category_monthly %>% filter(category_name=="Robbery") %>% write_csv("robberies_monthly.csv")
-citywide_category_monthly %>% filter(category_name=="Assault") %>% write_csv("assaults_monthly.csv")
-citywide_category_monthly %>% filter(category_name=="Drug Offenses") %>% write_csv("drugs_monthly.csv")
+citywide_category_monthly %>% filter(category_name=="Sexual Assault") %>% write_csv("data/output/sexassaults_monthly.csv")
+citywide_category_monthly %>% filter(category_name=="Auto Theft") %>% write_csv("data/output/autothefts_monthly.csv")
+citywide_category_monthly %>% filter(category_name=="Theft") %>% write_csv("data/output/thefts_monthly.csv")
+citywide_category_monthly %>% filter(category_name=="Burglary") %>% write_csv("data/output/burglaries_monthly.csv")
+citywide_category_monthly %>% filter(category_name=="Robbery") %>% write_csv("data/output/robberies_monthly.csv")
+citywide_category_monthly %>% filter(category_name=="Assault") %>% write_csv("data/output/assaults_monthly.csv")
+citywide_category_monthly %>% filter(category_name=="Drug Offenses") %>% write_csv("data/output/drugs_monthly.csv")
 
 
 
@@ -406,12 +406,12 @@ beat_type <- beat_type %>%
 
 # output various csvs for basic tables to be made with crime totals
 # we are dropping geometry for beats here because this is just for tables
-beat_detailed %>% st_drop_geometry() %>% write_csv("beat_detailed.csv")
-beat_category %>% st_drop_geometry() %>% write_csv("beat_category.csv")
-beat_type %>% st_drop_geometry() %>% write_csv("beat_type.csv")
-citywide_detailed %>% write_csv("citywide_detailed.csv")
-citywide_category %>% write_csv("citywide_category.csv")
-citywide_type %>% write_csv("citywide_type.csv")
+beat_detailed %>% st_drop_geometry() %>% write_csv("data/output/beat_detailed.csv")
+beat_category %>% st_drop_geometry() %>% write_csv("data/output/beat_category.csv")
+beat_type %>% st_drop_geometry() %>% write_csv("data/output/beat_type.csv")
+citywide_detailed %>% write_csv("data/output/citywide_detailed.csv")
+citywide_category %>% write_csv("data/output/citywide_category.csv")
+citywide_type %>% write_csv("data/output/citywide_type.csv")
 
 
 
@@ -496,20 +496,20 @@ when_murders_happen$time <- case_when(when_murders_happen$hour == "0" ~ "12 a.m.
                                       TRUE ~ "Other")
 
 # Create individual spatial tables of crimes by major categories and types
-murders_beat %>% st_drop_geometry() %>% write_csv("murders_beat.csv")
-sexassaults_beat %>% st_drop_geometry() %>% write_csv("sexassaults_beat.csv")
-autothefts_beat %>% st_drop_geometry() %>% write_csv("autothefts_beat.csv")
-thefts_beat %>% st_drop_geometry() %>% write_csv("thefts_beat.csv")
-burglaries_beat %>% st_drop_geometry() %>% write_csv("burglaries_beat.csv")
-robberies_beat %>% st_drop_geometry() %>% write_csv("robberies_beat.csv")
-assaults_beat %>% st_drop_geometry() %>% write_csv("assaults_beat.csv")
-drugs_beat %>% st_drop_geometry() %>% write_csv("drugs_beat.csv")
-violence_beat %>% st_drop_geometry() %>% write_csv("violence_beat.csv")
-property_beat %>% st_drop_geometry() %>% write_csv("property_beat.csv")
+murders_beat %>% st_drop_geometry() %>% write_csv("data/output/murders_beat.csv")
+sexassaults_beat %>% st_drop_geometry() %>% write_csv("data/output/sexassaults_beat.csv")
+autothefts_beat %>% st_drop_geometry() %>% write_csv("data/output/autothefts_beat.csv")
+thefts_beat %>% st_drop_geometry() %>% write_csv("data/output/thefts_beat.csv")
+burglaries_beat %>% st_drop_geometry() %>% write_csv("data/output/burglaries_beat.csv")
+robberies_beat %>% st_drop_geometry() %>% write_csv("data/output/robberies_beat.csv")
+assaults_beat %>% st_drop_geometry() %>% write_csv("data/output/assaults_beat.csv")
+drugs_beat %>% st_drop_geometry() %>% write_csv("data/output/drugs_beat.csv")
+violence_beat %>% st_drop_geometry() %>% write_csv("data/output/violence_beat.csv")
+property_beat %>% st_drop_geometry() %>% write_csv("data/output/property_beat.csv")
 
 # additional table exports for specific charts
-where_murders_happen %>% write_csv("where_murders_happen.csv")
-when_murders_happen %>% write_csv("when_murders_happen.csv")
+where_murders_happen %>% write_csv("data/output/where_murders_happen.csv")
+when_murders_happen %>% write_csv("data/output/when_murders_happen.csv")
 
 # Calculating some murder frequency figures for the homicides page story element
 beatpops_down <- beats %>% st_drop_geometry() %>% select(1,5) %>% 
