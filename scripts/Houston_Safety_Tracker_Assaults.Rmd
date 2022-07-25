@@ -207,7 +207,7 @@ th {
 <div class="card" style="background-color:#99a0a5;">
 <p>Assaults<br>
 <bignumber>`r prettyNum(assaults_city$last12mos, big.mark=",")`<br></bignumber>
-<p>Last 12 months<br>Through April 2022</p>
+<p>Last 12 months<br>Through June 2022</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Assaults<br>
@@ -238,7 +238,7 @@ ABC13's data team looked at the Houston Police Department's data by neighborhood
 
 <subhead>A closer look at Houston assaults neighborhood by neighborhood</subhead>
 
-The map color-codes each neighborhood by the assault rate over the last 12 months, through the end of April, which is the most recent comprehensive data released by the Houston Police Department.
+The map color-codes each neighborhood by the assault rate over the last 12 months, through the end of June, which is the most recent comprehensive data released by the Houston Police Department.
 
 The yellow areas are neighborhoods where the rate is among the 25% highest rates in the city.
 
