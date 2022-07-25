@@ -6,15 +6,15 @@ library(zoo)
 
 
 # Download and save for backup the latest posted files for 2021, 2020 and 2019
-# download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicViewDec21.xlsx","data/latest/houston_NIBRS2021.xlsx")
-# download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicView.Jan1-Dec31-2020.xlsx","data/latest/houston_NIBRS2020.xlsx")
-# download.file("https://www.houstontx.gov/police/cs/xls/2019_NIBRSPublicView.Jan1-Dec31.xlsx","data/latest/houston_NIBRS2019.xlsx")
-# download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicViewJan-Jun22.xlsx","data/latest/houston_NIBRS2022.xlsx")
+# download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicViewDec21.xlsx","data/source/latest/houston_NIBRS2021.xlsx")
+# download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicView.Jan1-Dec31-2020.xlsx","data/source/latest/houston_NIBRS2020.xlsx")
+# download.file("https://www.houstontx.gov/police/cs/xls/2019_NIBRSPublicView.Jan1-Dec31.xlsx","data/source/latest/houston_NIBRS2019.xlsx")
+# download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicViewJan-Jun22.xlsx","data/source/latest/houston_NIBRS2022.xlsx")
 
 # Import and combine 4 years' of crime data; note 2022 changes monthly
 
 # Read in the 2022 file, renaming to cols to standardize across all years
-houston22 <- read_excel("data/latest/houston_NIBRS2022.xlsx", 
+houston22 <- read_excel("data/source/latest/houston_NIBRS2022.xlsx", 
                         col_types = c("text", "date", "numeric", 
                                       "text", "text", "numeric", "text", 
                                       "text", "text", "text", "text", "text", 
@@ -25,7 +25,7 @@ names(houston22) <- c("incident", "date", "hour",
                       "city", "zip","longitude","latitude")
 
 # Read in the 2021 file, renaming to cols to standardize across 3 years
-houston21 <- read_excel("data/latest/houston_NIBRS2021.xlsx", 
+houston21 <- read_excel("data/source/latest/houston_NIBRS2021.xlsx", 
                         col_types = c("text", "date", "numeric", 
                                       "text", "text", "numeric", "text", 
                                       "text", "text", "text", "text", "text", 
@@ -36,7 +36,7 @@ names(houston21) <- c("incident", "date", "hour",
                       "city", "zip")
 
 # Read in the 2020 file, renaming to cols to standardize
-houston20 <- read_excel("data/latest/houston_NIBRS2020.xlsx", 
+houston20 <- read_excel("data/source/latest/houston_NIBRS2020.xlsx", 
                         col_types = c("text", "date", "numeric", 
                                       "text", "text", "numeric", "text", 
                                       "text", "text", "text", "text", "text", 
@@ -47,7 +47,7 @@ names(houston20) <- c("incident", "date", "hour",
                       "city", "zip")
 
 # Read in the 2019 file, renaming to cols to standardize
-houston19 <- read_excel("data/latest/houston_NIBRS2019.xlsx", 
+houston19 <- read_excel("data/source/latest/houston_NIBRS2019.xlsx", 
                         col_types = c("text", "date", "numeric", 
                                       "text", "text", "numeric", "text", 
                                       "text", "text", "text", "text", "text", 
