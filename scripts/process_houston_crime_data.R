@@ -125,6 +125,7 @@ houston_crime$beat <- ifelse(houston_crime$beat == "7C50","22B40",houston_crime$
 
 # write csv of houston crime as a backup
 write_csv(houston_crime,"data/output/houston_crime.csv")
+write_csv(houston22,"data/output/houston_2022_todate.csv")
 
 # pull last 12 months of raw crimes
 houston_crime_last12 <- houston_crime %>% filter(date>(max(houston_crime$date)-365))
