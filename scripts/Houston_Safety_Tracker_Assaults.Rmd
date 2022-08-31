@@ -207,7 +207,7 @@ th {
 <div class="card" style="background-color:#99a0a5;">
 <p>Assaults<br>
 <bignumber>`r prettyNum(assaults_city$last12mos, big.mark=",")`<br></bignumber>
-<p>Last 12 months<br>Through June 2022</p>
+<p>Last 12 months<br>Through July 2022</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Assaults<br>
@@ -228,7 +228,7 @@ Per 100,000 people<br>2019 to 2021</p>
 <br>
 Assaults are <h8>`r ifelse(assaults_city$inc_prior3yearavgtolast12>=0," up"," down")` `r ifelse(assaults_city$inc_prior3yearavgtolast12>=0,assaults_city$inc_prior3yearavgtolast12,substring(assaults_city$inc_prior3yearavgtolast12,2))`%</h8> over the last 12 months compared to the average from 2019-2021.
 
-The city averaged <h8>`r prettyNum(round(assaults_city$last12mos/52,0), big.mark=",")`</h8> assaults a week since last June. In 2019, that number was <h8>`r prettyNum(round(assaults_city$total19/52,0), big.mark=",")`</h8> a week.
+The city averaged <h8>`r prettyNum(round(assaults_city$last12mos/52,0), big.mark=",")`</h8> assaults a week since last July. In 2019, that number was <h8>`r prettyNum(round(assaults_city$total19/52,0), big.mark=",")`</h8> a week.
 
 The danger is not the same neighborhood to neighborhood.
 
@@ -238,7 +238,7 @@ ABC13's data team looked at the Houston Police Department's data by neighborhood
 
 <subhead>A closer look at Houston assaults neighborhood by neighborhood</subhead>
 
-The map color-codes each neighborhood by the assault rate over the last 12 months, through the end of June, which is the most recent comprehensive data released by the Houston Police Department.
+The map color-codes each neighborhood by the assault rate over the last 12 months, through the end of July, which is the most recent comprehensive data released by the Houston Police Department.
 
 The yellow areas are neighborhoods where the rate is among the 25% highest rates in the city.
 
