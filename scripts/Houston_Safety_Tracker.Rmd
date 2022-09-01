@@ -397,17 +397,33 @@ L.control.zoom({ position: 'topright' }).addTo(this)
             pal = murderpal2,
             position = "bottomleft", 
             title = paste(sep="","<popuptitle>Murder Rate<br><popupchatter>Murders/100K people<br>Citywide: ",murders_city$rate_last12),
-            group = "Rate") %>%
+            group = "Rate",
+            className = "info legend Rate") %>%
   addLegend(opacity = 0.6,
             values = murders_beat$last12mos, 
             pal = murderpal3,
             position = "bottomleft", 
             title = paste(sep="","<popuptitle>Murders<br><popupchatter>Total murders people<br>Citywide: ",murders_city$last12mos),
-            group = "Number") %>%
+            group = "Number",
+            className = "info legend Number") %>%
   addLayersControl(
     baseGroups = c("Rate","Number"),
     options = layersControlOptions(collapsed = FALSE),
-    position = 'bottomright') %>% hideGroup(c("Number")) 
+    position = 'bottomright') %>% hideGroup(c("Number")) %>%
+   htmlwidgets::onRender("
+      function(el, x) {
+         var updateLegend = function () {
+            var selectedGroup = document.querySelectorAll('input:checked')[0].nextSibling.innerText.substr(1);
+
+            document.querySelectorAll('.legend').forEach(a => a.hidden=true);
+            document.querySelectorAll('.legend').forEach(l => {
+               if (l.classList.contains(selectedGroup)) l.hidden=false;
+            });
+         };
+         updateLegend();
+         this.on('baselayerchange', el => updateLegend());
+      }"
+   )
 
 houston_murder_map
 ```
