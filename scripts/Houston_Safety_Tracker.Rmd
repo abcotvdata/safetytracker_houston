@@ -31,7 +31,6 @@ library(htmltools)
 }
 
 div {
-  background-color: rgba(255, 255, 255, 0.99)   /* 99% opaque white */;
   padding: 0.25em;
 }
 
@@ -257,7 +256,7 @@ ABC13's data team looked at the Houston Police Department's data by neighborhood
 
 <subhead>A closer look at Houston homicides neighborhood by neighborhood</subhead>
 
-The map color-codes each neighborhood by the homicide rate over the last 12 months. The red areas are neighborhoods where the homicide rate is among the 20% highest in the city.
+The map color-codes each neighborhood by the homicide rate over the last 12 months. The darker blue areas are neighborhoods with murder rates higher than the citywide rate.
 
 Click on any neighborhood on the map to see detailed figures, rates and trends. You can also search for a street name, place, landmark or zip code.
 
@@ -272,6 +271,31 @@ murderpal <- colorQuantile(c("#667f99",
                              "#ffba00",
                              "#be0000"), murders_beat$rate_last12, n = 5, na.color = NA)
 
+murderbins <- c(0,
+                10,
+                20,
+                30,
+                40,
+                100)
+murderbins2 <- c(0,
+                1,
+                3,
+                5,
+                10,
+                100)
+murderpal2 <- colorBin(c("#99a0a5",
+                             "#2787d6",
+                             "#0058f6",
+                             "#003ca6",
+                             "#00215c"), murders_beat$rate_last12, bins = murderbins,na.color = "#51585f")
+
+murderpal3 <- colorBin(c("#99a0a5",
+                             "#2787d6",
+                             "#0058f6",
+                             "#003ca6",
+                             "#00215c"), murders_beat$last12mos, bins = murderbins2,na.color = "#51585f")
+
+                            
 # Create quick labels for murders map
 murderlabel <- paste(sep="",
 ifelse(murders_beat$inc_prior3yearavgtolast12>=0,
@@ -342,7 +366,7 @@ houston_murder_map <- leaflet(murders_beat, options = leafletOptions(zoomControl
   htmlwidgets::onRender("function(el, x) {
 L.control.zoom({ position: 'topright' }).addTo(this)
 }") %>%
-  setView(-95.45, 29.75, zoom = 10.5) %>% 
+  setView(-95.45, 29.75, zoom = 11) %>% 
   addProviderTiles(provider = "CartoDB.Positron") %>%
   addPolygons(color = "white", 
               popup = murderlabel,
@@ -351,26 +375,39 @@ L.control.zoom({ position: 'topright' }).addTo(this)
               weight = 2, 
               smoothFactor = 0.5,
               opacity = 0.6, 
-              fillOpacity = 0.5,
-              fillColor = ~murderpal(rate_last12)) %>% 
+              fillOpacity = 0.6,
+              fillColor = ~murderpal2(rate_last12),
+              group="Rate") %>% 
+    addPolygons(color = "white", 
+              popup = murderlabel,
+              popupOptions = popupOptions(maxWidth ="200", 
+                                          minWidth ="200"),
+              weight = 2, 
+              smoothFactor = 0.5,
+              opacity = 0.6, 
+              fillOpacity = 0.6,
+              fillColor = ~murderpal3(last12mos),
+              group="Number") %>% 
   addSearchOSM(options = searchOptions(autoCollapse=FALSE, minLength = 3,zoom=13, position="topleft")) %>%
     onRender("function(el, x) {
         $('input.search-input')[0].placeholder = 'Search street, place or zip code'
         }") %>%
   addLegend(opacity = 0.6,
             values = murders_beat$rate_last12, 
-            colors = c("#667f99",
-                       "#00318b",
-                       "#0058f6",
-                       "#ffba00",
-                       "#be0000"),
-            labels=c("Lowest Rate", 
-                     "Lower Rate", 
-                     "High Rate", 
-                     "Higher Rate",
-                     "Highest Rate"),
+            pal = murderpal2,
             position = "bottomleft", 
-            title = "<popuptitle>Homicides")  
+            title = paste(sep="","<popuptitle>Murder Rate<br><popupchatter>Murders/100K people<br>Citywide: ",murders_city$rate_last12),
+            group = "Rate") %>%
+  addLegend(opacity = 0.6,
+            values = murders_beat$last12mos, 
+            pal = murderpal3,
+            position = "bottomleft", 
+            title = paste(sep="","<popuptitle>Murders<br><popupchatter>Total murders people<br>Citywide: ",murders_city$last12mos),
+            group = "Number") %>%
+  addLayersControl(
+    overlayGroups = c("Rate","Number"),
+    options = layersControlOptions(collapsed = FALSE),
+    position = 'bottomright') %>% hideGroup(c("Number")) 
 
 houston_murder_map
 ```

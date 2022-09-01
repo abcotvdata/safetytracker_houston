@@ -442,6 +442,8 @@ violence_city <- citywide_type %>% filter(type=="Violent")
 property_city <- citywide_type %>% filter(type=="Property")
 
 ## MAY NEED FIXING FOR PROJECTED/22 ISSUES
+# Edit premise throughout the file to clearer language for publication
+# OPEN WORK edit those names
 # Using premise to identify the kinds of places where murders happen
 where_murders_happen <- houston_crime %>%
   filter(nibrs_class=="09A") %>%
