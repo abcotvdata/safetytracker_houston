@@ -230,30 +230,42 @@ Thefts are <h8>`r ifelse(thefts_city$inc_prior3yearavgtolast12>=0," up"," down")
 
 The city averaged <h8>`r prettyNum(round(thefts_city$last12mos/52,0), big.mark=",")`</h8> thefts a week since last July. In 2019, that number was <h8>`r prettyNum(round(thefts_city$total19/52,0), big.mark=",")`</h8> a week.
 
-The risk is not the same neighborhood to neighborhood.
-
-About <h8>`r round(pop_theftsdown/2304580*100,0)`%</h8> of Houton residents live in neighborhoods where the theft rate over the last 12 months is down or about the same as the three-year average. About <h8>`r round(pop_theftsup/2304580*100,0)`%</h8> live in neighborhoods where the theft rate is up more than 20%.  
-
-ABC13's data team looked at the Houston Police Department's data by neighborhood from 2019 through last month.
-
 <subhead>Houston thefts neighborhood by neighborhood</subhead>
 
-The map color-codes each neighborhood by the theft rate over the last 12 months, through the end of July, which is the most recent comprehensive data released by the Houston Police Department.
+The risk is not the same neighborhood to neighborhood. ABC13's data team looked at the Houston Police Department's data by neighborhood from 2019 through last month.
 
-The red areas are neighborhoods where the theft rate is among the 20% highest rates in the city. You can click on any neighborhood to see detailed figures, rates and trends.
+The map color-codes each neighborhood by the theft rate over the last 12 months. The three darker blues represent neighborhoods with theft rates that are higher than the citywide rate. You can also click the box in the bottom right corner to see neighborhoods by the number of thefts.
 
-ABC13 will be updating this data every month.
+Click on any neighborhood on the map to see detailed numbers, rates and trends. You can also search for a street name, place, landmark or zip code.
+
 <br>
-
 ```{r map, echo=FALSE,out.width='100%',out.height='600'}
 # theft MAP
 
 # Set bins for numbers of crimes for thefts map
-theftpal <- colorQuantile(c("#667f99",
-                             "#00318b",
+theftbins1 <- c(0,
+                2000,
+                3000,
+                5000,
+                7500,
+                20000)
+theftbins2 <- c(0,
+                200,
+                500,
+                1000,
+                1500,
+                2500)
+theftpal1 <- colorBin(c("#99a0a5",
+                             "#2787d6",
                              "#0058f6",
-                             "#ffba00",
-                       "#be0000"), thefts_beat$rate_last12, n = 5, na.color = NA)
+                             "#003ca6",
+                             "#00215c"), thefts_beat$rate_last12, bins = theftbins1,na.color = "#51585f")
+
+theftpal2 <- colorBin(c("#99a0a5",
+                             "#2787d6",
+                             "#0058f6",
+                             "#003ca6",
+                             "#00215c"), thefts_beat$last12mos, bins = theftbins2,na.color = "#51585f")
 
 # Create quick labels for thefts map
 theftlabel <- paste(sep="",
@@ -332,14 +344,25 @@ L.control.zoom({ position: 'topright' }).addTo(this)
                  , lng2 = -97
                  , lat2 = 31) %>%
   addPolygons(color = "white", 
-              popup = theftlabel, 
+              popup = theftlabel,
               popupOptions = popupOptions(maxWidth ="200", 
                                           minWidth ="200"),
               weight = 2, 
               smoothFactor = 0.5,
               opacity = 0.6, 
-              fillOpacity = 0.5,
-              fillColor = ~theftpal(rate_last12)) %>% 
+              fillOpacity = 0.6,
+              fillColor = ~theftpal1(rate_last12),
+              group="Rate") %>% 
+    addPolygons(color = "white", 
+              popup = theftlabel,
+              popupOptions = popupOptions(maxWidth ="200", 
+                                          minWidth ="200"),
+              weight = 2, 
+              smoothFactor = 0.5,
+              opacity = 0.6, 
+              fillOpacity = 0.6,
+              fillColor = ~theftpal2(last12mos),
+              group="Number") %>% 
   addSearchOSM(options = searchOptions(autoCollapse=TRUE, minLength = 3,
               zoom=13, position="topleft")) %>%
   onRender("function(el, x) {
@@ -347,22 +370,37 @@ L.control.zoom({ position: 'topright' }).addTo(this)
         }") %>%
   addLegend(opacity = 0.6,
             values = thefts_beat$rate_last12, 
-            colors = c("#667f99",
-                       "#00318b",
-                       "#0058f6",
-                       "#ffba00",
-                       "#be0000"),
-            labels=c("Lowest Rate", 
-                     "Lower Rate", 
-                     "High Rate", 
-                     "Higher Rate",
-                     "Highest Rate"),
-            title = "<popuptitle>Thefts per 100,000 people")  
+            pal = theftpal1,
+            position = "bottomleft", 
+            title = paste(sep="","<popuptitle>Theft Rate<br><popupchatter>Thefts/100K people<br>Citywide: ",prettyNum(round(thefts_city$rate_last12,0), big.mark=",")),
+            group = "Rate",
+            className = "info legend Rate") %>%
+  addLegend(opacity = 0.6,
+            values = thefts_beat$last12mos, 
+            pal = theftpal2,
+            position = "bottomleft", 
+            title = paste(sep="","<popuptitle>Thefts<br><popupchatter>Total thefts<br>Citywide: ",prettyNum(round(thefts_city$last12mos,0), big.mark=",")),
+            group = "Number",
+            className = "info legend Number") %>%
+  addLayersControl(
+    baseGroups = c("Rate","Number"),
+    options = layersControlOptions(collapsed = FALSE),
+    position = 'bottomright') %>% hideGroup(c("Number")) %>%
+   htmlwidgets::onRender("
+      function(el, x) {
+         var updateLegend = function () {
+            var selectedGroup = document.querySelectorAll('input:checked')[0].nextSibling.innerText.substr(1);
 
-houston_theft_map
+            document.querySelectorAll('.legend').forEach(a => a.hidden=true);
+            document.querySelectorAll('.legend').forEach(l => {
+               if (l.classList.contains(selectedGroup)) l.hidden=false;
+            });
+         };
+         updateLegend();
+         this.on('baselayerchange', el => updateLegend());
+      }"
+   )
 ```
-<br>
-About <h8>`r round(pop_theftsmonthly/2304580*100,0)`%</h8> of Houston residents now live in neighborhoods where there was at least one theft every month over the last year. Here's a look at citywide thefts every month since 2019.
 <br>
 <br>
 <!-- <subhead>Thefts month by month, 2019 through last month</subhead> -->

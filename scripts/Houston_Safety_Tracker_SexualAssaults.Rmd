@@ -230,19 +230,13 @@ Sexual assaults are <h8>`r ifelse(sexassaults_city$inc_prior3yearavgtolast12>=0,
 
 The city averaged <h8>`r round(sexassaults_city$last12mos/52,0)`</h8> sexual assaults a week since last July. In 2019, that number was <h8>`r round(sexassaults_city$total19/52,0)`</h8> a week.
 
-The danger is not the same neighborhood to neighborhood.
-
-About <h8>`r round(pop_sexassaultsdown/2304580*100,0)`%</h8> of Houston residents live in neighborhoods where the sexual assault rate over the last 12 months is down or about the same as the three-year average from 2019 through 2021. About <h8>`r round(pop_sexassaultsup/2304580*100,0)`%</h8> of residents live in neighborhoods where the sexual assault rate is up more than 20% over the last 12 months.
-
-ABC13's data team looked at the Houston Police Department's data by neighborhood from 2019 through last month.
-
 <subhead>A closer look at Houston sexual assaults neighborhood by neighborhood</subhead>
 
-The map color-codes each neighborhood by the sexual assault rate over the last 12 months, through the end of July, which is the most recent comprehensive data released by the Houston Police Department.
+The danger is not the same neighborhood to neighborhood. ABC13's data team looked at the Houston Police Department's public data about sexual assault reports by neighborhood from 2019 through last month.
 
-The red areas are neighborhoods where the rate is among the 20% highest rates in the city.
+The map color-codes each neighborhood by the sexual assault rate over the last 12 months. The three darker blue areas are neighborhoods with sexual assault rates higher than the citywide rate. You can also choose to see neighborhoods by the number of reported sexual assaults.
 
-Click on any neighborhood on the map to see detailed figures, rates and trends. You can also search for a street name, place, landmark or zip code.
+Click on any neighborhood on the map to see detailed numbers, rates and trends. You can also search for a street name, place, landmark or zip code.
 
 <br>
 
@@ -250,11 +244,29 @@ Click on any neighborhood on the map to see detailed figures, rates and trends. 
 # sexassault MAP
 
 # Set bins for numbers of crimes for sexassaults map
-sexassaultpal <- colorQuantile(c("#667f99",
-                             "#00318b",
+sexassaultbins1 <- c(0,
+                30,
+                60,
+                90,
+                120,
+                500)
+sexassaultbins2 <- c(0,
+                5,
+                10,
+                20,
+                30,
+                100)
+sexassaultpal1 <- colorBin(c("#99a0a5",
+                             "#2787d6",
                              "#0058f6",
-                             "#ffba00",
-                       "#be0000"), sexassaults_beat$rate_last12, n = 5, na.color = NA)
+                             "#003ca6",
+                             "#00215c"), sexassaults_beat$rate_last12, bins = sexassaultbins1,na.color = "#51585f")
+
+sexassaultpal2 <- colorBin(c("#99a0a5",
+                             "#2787d6",
+                             "#0058f6",
+                             "#003ca6",
+                             "#00215c"), sexassaults_beat$last12mos, bins = sexassaultbins2,na.color = "#51585f")
 
 # Create quick labels for sexassaults map
 sexassaultlabel <- paste(sep="",
@@ -329,34 +341,62 @@ L.control.zoom({ position: 'topright' }).addTo(this)
   setView(-95.45, 29.75, zoom = 10.5) %>% 
   addProviderTiles(provider = "CartoDB.Positron") %>%
   addPolygons(color = "white", 
-              popup = sexassaultlabel, 
-              popupOptions = popupOptions(maxWidth ="210", 
+              popup = sexassaultlabel,
+              popupOptions = popupOptions(maxWidth ="200", 
                                           minWidth ="200"),
               weight = 2, 
               smoothFactor = 0.5,
               opacity = 0.6, 
-              fillOpacity = 0.5,
-              fillColor = ~sexassaultpal(rate_last12)) %>% 
+              fillOpacity = 0.6,
+              fillColor = ~sexassaultpal1(rate_last12),
+              group="Rate") %>% 
+    addPolygons(color = "white", 
+              popup = sexassaultlabel,
+              popupOptions = popupOptions(maxWidth ="200", 
+                                          minWidth ="200"),
+              weight = 2, 
+              smoothFactor = 0.5,
+              opacity = 0.6, 
+              fillOpacity = 0.6,
+              fillColor = ~sexassaultpal2(last12mos),
+              group="Number") %>% 
     addSearchOSM(options = searchOptions(autoCollapse=FALSE, minLength = 3,zoom=13, position="topleft")) %>%
     onRender("function(el, x) {
         $('input.search-input')[0].placeholder = 'Search street, place or zip code'
         }") %>%
   addLegend(opacity = 0.6,
             values = sexassaults_beat$rate_last12, 
-            colors = c("#667f99",
-                       "#00318b",
-                       "#0058f6",
-                       "#ffba00",
-                       "#be0000"),
-            labels=c("Lowest Rate", 
-                     "Lower Rate", 
-                     "High Rate", 
-                     "Higher Rate",
-                     "Highest Rate"),
+            pal = sexassaultpal1,
             position = "bottomleft", 
-            title = "<popuptitle>Sexual assaults<br>per 100,000 people")  
+            title = paste(sep="","<popuptitle>Sexual Assault Rate<br><popupchatter>Sexual Assaults/100K people<br>Citywide: ",sexassaults_city$rate_last12),
+            group = "Rate",
+            className = "info legend Rate") %>%
+  addLegend(opacity = 0.6,
+            values = sexassaults_beat$last12mos, 
+            pal = sexassaultpal2,
+            position = "bottomleft", 
+            title = paste(sep="","<popuptitle>Sexual Assaults<br><popupchatter>Total sexual assaults<br>Citywide: ",sexassaults_city$last12mos),
+            group = "Number",
+            className = "info legend Number") %>%
+  addLayersControl(
+    baseGroups = c("Rate","Number"),
+    options = layersControlOptions(collapsed = FALSE),
+    position = 'bottomright') %>% hideGroup(c("Number")) %>%
+   htmlwidgets::onRender("
+      function(el, x) {
+         var updateLegend = function () {
+            var selectedGroup = document.querySelectorAll('input:checked')[0].nextSibling.innerText.substr(1);
 
-houston_sexassault_map
+            document.querySelectorAll('.legend').forEach(a => a.hidden=true);
+            document.querySelectorAll('.legend').forEach(l => {
+               if (l.classList.contains(selectedGroup)) l.hidden=false;
+            });
+         };
+         updateLegend();
+         this.on('baselayerchange', el => updateLegend());
+      }"
+   )
+
 ```
 <br>
 About <h8>`r round(pop_sexassaultsmonthly/2304580*100,0)`%</h8> of Houston residents now live in neighborhoods where there was at least one sexual assault every month over the last year. Here's a look at citywide sexual assaults every month since 2019.
