@@ -123,10 +123,37 @@ houston_crime$beat <- ifelse(houston_crime$beat == "6B50","22B30",houston_crime$
 houston_crime$beat <- ifelse(houston_crime$beat == "6B60","22B20",houston_crime$beat)
 houston_crime$beat <- ifelse(houston_crime$beat == "7C50","22B40",houston_crime$beat)
 
+# clean up premise names throughout file
+houston_crime$premise <- case_when(houston_crime$premise == 'Amusement Park' ~ 'Amusement park',
+                                   houston_crime$premise == 'Bank, Savings & Loan' ~ 'Bank',
+                                   houston_crime$premise == 'Bar, Nightclub' ~ 'Bar or nightclub',
+                                   houston_crime$premise == 'Church, Synagogue, Temple' ~ 'Place of worship',
+                                   houston_crime$premise == 'Commercial, Office Building' ~ 'Commercial or office building',
+                                   houston_crime$premise == 'Convenience Store' ~ 'Convenience store',
+                                   houston_crime$premise == 'Department, Discount Store' ~ 'Store',
+                                   houston_crime$premise == 'Drug Store, Doctors Office, Hospital' ~ 'Medical care facility',
+                                   houston_crime$premise == 'Field, Woods' ~ 'Field or woods',
+                                   houston_crime$premise == 'Gambling Facility/Casino/Race Track' ~ 'Gambling facility',
+                                   houston_crime$premise == 'Grocery, Supermarket' ~ 'Grocery',
+                                   houston_crime$premise == 'Highway, Road, Street, Alley' ~ 'Highway, street or alley',
+                                   houston_crime$premise == 'Hotel, Motel, ETC' ~ 'Hotel',
+                                   houston_crime$premise == 'Industrial Site' ~ 'Industrial site',
+                                   houston_crime$premise == 'Jail, Prison' ~ 'Jail or prison',
+                                   houston_crime$premise == 'Lake, Waterway' ~ 'Lake or waterway',
+                                   houston_crime$premise == 'Liquor Store' ~ 'Liquor store',
+                                   houston_crime$premise == 'Park/Playground' ~ 'Park',
+                                   houston_crime$premise == 'Parking Lot, Garage' ~ 'Parking lot',
+                                   houston_crime$premise == 'Residence, Home (Includes Apartment)' ~ 'Residence',
+                                   houston_crime$premise == 'Restaurant' ~ 'Restaurant',
+                                   houston_crime$premise == 'School-Elementary/Secondary' ~ 'School',
+                                   houston_crime$premise == 'Service, Gas Station' ~ 'Gas station',
+                                   houston_crime$premise == 'Shopping Mall' ~ 'Mall',
+                                   houston_crime$premise == 'Speciality Store' ~ 'Store',
+                              TRUE ~ "Unknown or other")
+
 # write csv of houston crime as a backup
 write_csv(houston_crime,"data/output/houston_crime.csv")
-write_csv(houston22,"data/output/houston_2022_todate.csv")
-write_csv(houston22,"houston_2022_todate.csv")
+# write_csv(houston22,"data/output/houston_2022_todate.csv")
 
 # pull last 12 months of raw crimes
 houston_crime_last12 <- houston_crime %>% filter(date>(max(houston_crime$date)-365))
@@ -520,7 +547,6 @@ beatpops_down <- beats %>% st_drop_geometry() %>% select(1,5) %>%
   left_join(murders_beat) %>% 
   filter(rate_last12<=14.4) %>%
   select(1,2,23,24)
-beatpops_down$diff <- beatpops_down$rate_last12-beatpops_down$rate_prior3years
 pop_murdersdown <- sum(beatpops_down$population)
 # population where murders are up 20%
 beatpops_up <- beats %>% st_drop_geometry() %>% select(1,5) %>% 
