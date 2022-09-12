@@ -230,32 +230,42 @@ Drug crimes are <h8>`r ifelse(drugs_city$inc_prior3yearavgtolast12>=0," up"," do
 
 The city averaged <h8>`r round(drugs_city$last12mos/52,0)`</h8> drug crimes a week since last July. In 2019, that number was <h8>`r round(burglaries_city$total19/52,0)`</h8> a week.
 
-The situation is not the same neighborhood to neighborhood.
-
-About <h8>`r round(pop_drugsdown/2304580*100,0)`%</h8> of city residents live in neighborhoods where the rate of drug crimes over the last 12 months is down or about the same as the three-year average. About <h8>`r round(pop_drugsup/2304580*100,0)`%</h8> live in neighborhoods where it is up more than 20%.
-
-ABC13's data team looked at the Houston Police Department's data by neighborhood from 2019 through last month.
-
 <subhead>A closer look at Houston drug crimes neighborhood by neighborhood</subhead>
 
-The map color-codes each neighborhood by the drug-crime rate over the last 12 months, through the end of July, which is the most recent comprehensive data released by the Houston Police Department.
+The situation is not the same neighborhood to neighborhood. ABC13's data team looked at the Houston Police Department's data by police beat from 2019 through last month.
 
-The red areas are neighborhoods where the drug-crime rate is among the 20% highest rates in the city.
+The map color-codes each area by the drug-crime rate over the last 12 months. The three darker blues represent neighborhoods with drug-crime rates higher than the citywide rate. You can also click the box in the bottom right corner to see neighborhoods by the number of drug crimes reported.
 
-Click on any neighborhood on the map to see detailed figures, rates and trends. You can also search for a street name, place, landmark or zip code.
-
+Click on any neighborhood on the map to see detailed numbers, rates and trends. You can also search for a street name, place, landmark or zip code.
 <br>
 <br>
-
 ```{r cars, echo=FALSE,out.width='100%',out.height='600'}
 # drug MAP
 
 # Set bins for numbers of crimes for drugs map
-drugpal <- colorQuantile(c("#667f99",
-                             "#00318b",
+drugbins1 <- c(0,
+                100,
+                200,
+                400,
+                800,
+                1000)
+drugbins2 <- c(0,
+                50,
+                100,
+                200,
+                300,
+                400)
+drugpal1 <- colorBin(c("#99a0a5",
+                             "#2787d6",
                              "#0058f6",
-                             "#ffba00",
-                       "#be0000"), drugs_beat$rate_last12, n = 5, na.color = NA)
+                             "#003ca6",
+                             "#00215c"), drugs_beat$rate_last12, bins = drugbins1,na.color = "#51585f")
+
+drugpal2 <- colorBin(c("#99a0a5",
+                             "#2787d6",
+                             "#0058f6",
+                             "#003ca6",
+                             "#00215c"), drugs_beat$last12mos, bins = drugbins2,na.color = "#51585f")
 
 # Create quick labels for drugs map
 druglabel <- paste(sep="",
@@ -330,36 +340,62 @@ L.control.zoom({ position: 'topright' }).addTo(this)
   setView(-95.45, 29.75, zoom = 10.5) %>% 
   addProviderTiles(provider = "CartoDB.Positron") %>%
   addPolygons(color = "white", 
-              popup = druglabel, 
+              popup = druglabel,
               popupOptions = popupOptions(maxWidth ="200", 
                                           minWidth ="200"),
               weight = 2, 
               smoothFactor = 0.5,
               opacity = 0.6, 
-              fillOpacity = 0.5,
-              fillColor = ~drugpal(rate_last12)) %>% 
+              fillOpacity = 0.6,
+              fillColor = ~drugpal1(rate_last12),
+              group="Rate") %>% 
+    addPolygons(color = "white", 
+              popup = druglabel,
+              popupOptions = popupOptions(maxWidth ="200", 
+                                          minWidth ="200"),
+              weight = 2, 
+              smoothFactor = 0.5,
+              opacity = 0.6, 
+              fillOpacity = 0.6,
+              fillColor = ~drugpal2(last12mos),
+              group="Number") %>% 
       addSearchOSM(options = searchOptions(autoCollapse=FALSE, minLength = 3,zoom=13, position="topleft")) %>%
     onRender("function(el, x) {
         $('input.search-input')[0].placeholder = 'Search street, place or zip code'
         }") %>%
   addLegend(opacity = 0.6,
             values = drugs_beat$rate_last12, 
-            colors = c("#667f99",
-                       "#00318b",
-                       "#0058f6",
-                       "#ffba00",
-                       "#be0000"),
-            labels=c("Lowest Rate", 
-                     "Lower Rate", 
-                     "High Rate", 
-                     "Higher Rate",
-                     "Highest Rate"),
+            pal = drugpal1,
             position = "bottomleft", 
-            title = "<popuptitle>Drug crimes<br>per 100,000 people")  
-houston_drug_map
+            title = paste(sep="","<popuptitle>Drug Crime Rate<br><popupchatter>Drug Crimes/100K people<br>Citywide: ",prettyNum(round(drugs_city$rate_last12,0), big.mark=",")),
+            group = "Rate",
+            className = "info legend Rate") %>%
+  addLegend(opacity = 0.6,
+            values = drugs_beat$last12mos, 
+            pal = drugpal2,
+            position = "bottomleft", 
+            title = paste(sep="","<popuptitle>Drug Crimes<br><popupchatter>Total drug crimes<br>Citywide: ",prettyNum(round(drugs_city$last12mos,0), big.mark=",")),
+            group = "Number",
+            className = "info legend Number") %>%
+  addLayersControl(
+    baseGroups = c("Rate","Number"),
+    options = layersControlOptions(collapsed = FALSE),
+    position = 'bottomright') %>% hideGroup(c("Number")) %>%
+   htmlwidgets::onRender("
+      function(el, x) {
+         var updateLegend = function () {
+            var selectedGroup = document.querySelectorAll('input:checked')[0].nextSibling.innerText.substr(1);
+
+            document.querySelectorAll('.legend').forEach(a => a.hidden=true);
+            document.querySelectorAll('.legend').forEach(l => {
+               if (l.classList.contains(selectedGroup)) l.hidden=false;
+            });
+         };
+         updateLegend();
+         this.on('baselayerchange', el => updateLegend());
+      }"
+   )
 ```
-<br>
-About <h8>`r round(pop_drugsmonthly/2304580*100,0)`%</h8> of Houston residents now live in neighborhoods where there was at least one drug crime every month over the last year. Here's a look at drug crimes documented by Houston police every month since 2019.
 <br>
 <br>
 <!-- <subhead>Drug crimes month by month, 2019 through last month</subhead> -->

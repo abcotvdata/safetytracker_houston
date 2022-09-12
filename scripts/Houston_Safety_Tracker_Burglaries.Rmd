@@ -230,30 +230,43 @@ Burglaries are <h8>`r ifelse(burglaries_city$inc_prior3yearavgtolast12>=0," up",
 
 The city averaged <h8>`r round(burglaries_city$last12mos/52,0)`</h8> burglaries a week since last July. In 2019, that number was <h8>`r round(burglaries_city$total19/52,0)`</h8> a week.
 
-The risk is not the same neighborhood to neighborhood.
-
-About <h8>`r round(pop_burglariesdown/2304580*100,0)`%</h8> of city residents live in neighborhoods where the burglary rate over the last 12 months is down or about the same as the three-year average. About <h8>`r round(pop_burglariesup/2304580*100,0)`%</h8> live in neighborhoods where the burglary rate is up more than 20%.
-
-ABC13's data team looked at the Houston Police Department's data by neighborhood from 2019 through last month.
-
 <subhead>A closer look at Houston burglaries neighborhood by neighborhood</subhead>
 
-The map color-codes each neighborhood by the burglary rate over the last 12 months, through the end of July, which is the most recent comprehensive data released by the Houston Police Department.
+The risk is not the same neighborhood to neighborhood. ABC13's data team looked at the Houston Police Department's data by neighborhood from 2019 through last month.
 
-The red areas are neighborhoods where the burglary rate is among the 20% highest rates in the city.
+The map color-codes each neighborhood by the burglary rate over the last 12 months. The three darker blues represent neighborhoods with burglary rates that are higher than the citywide rate. You can also click the box in the bottom right corner to see neighborhoods by the number of burglaries.
 
-Click on any neighborhood on the map to see detailed figures, rates and trends. You can also search for a street name, place, landmark or zip code.
+Click on any neighborhood on the map to see detailed numbers, rates and trends. You can also search for a street name, place, landmark or zip code.
 
 <br>
 ```{r cars, echo=FALSE,out.width='100%',out.height='600'}
 # burglary MAP
 
 # Set bins for numbers of crimes for burglaries map
-burglarypal <- colorQuantile(c("#667f99",
-                             "#00318b",
+burglarybins1 <- c(0,
+                300,
+                600,
+                800,
+                1000,
+                1500)
+burglarybins2 <- c(0,
+                   50,
+                100,
+                200,
+                300,
+                400)
+burglarypal1 <- colorBin(c("#99a0a5",
+                             "#2787d6",
                              "#0058f6",
-                             "#ffba00",
-                       "#be0000"), burglaries_beat$rate_last12, n = 5, na.color = NA)
+                             "#003ca6",
+                             "#00215c"), burglaries_beat$rate_last12, bins = burglarybins1,na.color = "#51585f")
+
+burglarypal2 <- colorBin(c("#99a0a5",
+                             "#2787d6",
+                             "#0058f6",
+                             "#003ca6",
+                             "#00215c"), burglaries_beat$last12mos, bins = burglarybins2,na.color = "#51585f")
+
 
 # Create quick labels for burglaries map
 burglarylabel <- paste(sep="",
@@ -328,37 +341,63 @@ L.control.zoom({ position: 'topright' }).addTo(this)
   setView(-95.45, 29.75, zoom = 10.5) %>% 
   addProviderTiles(provider = "CartoDB.Positron") %>%
   addPolygons(color = "white", 
-              popup = burglarylabel, 
+              popup = burglarylabel,
               popupOptions = popupOptions(maxWidth ="200", 
                                           minWidth ="200"),
               weight = 2, 
               smoothFactor = 0.5,
               opacity = 0.6, 
-              fillOpacity = 0.5,
-              fillColor = ~burglarypal(rate_last12)) %>% 
+              fillOpacity = 0.6,
+              fillColor = ~burglarypal1(rate_last12),
+              group="Rate") %>% 
+    addPolygons(color = "white", 
+              popup = burglarylabel,
+              popupOptions = popupOptions(maxWidth ="200", 
+                                          minWidth ="200"),
+              weight = 2, 
+              smoothFactor = 0.5,
+              opacity = 0.6, 
+              fillOpacity = 0.6,
+              fillColor = ~burglarypal2(last12mos),
+              group="Number") %>% 
     addSearchOSM(options = searchOptions(autoCollapse=FALSE, minLength = 3,zoom=13, position="topleft")) %>%
     onRender("function(el, x) {
         $('input.search-input')[0].placeholder = 'Search street, place or zip code'
         }") %>%
   addLegend(opacity = 0.6,
             values = burglaries_beat$rate_last12, 
-            colors = c("#667f99",
-                       "#00318b",
-                       "#0058f6",
-                       "#ffba00",
-                       "#be0000"),
-            labels=c("Lowest Rate", 
-                     "Lower Rate", 
-                     "High Rate", 
-                     "Higher Rate",
-                     "Highest Rate"),
+            pal = burglarypal1,
             position = "bottomleft", 
-            title = "<popuptitle>Burglaries per 100,000 people")  
+            title = paste(sep="","<popuptitle>Burglary Rate<br><popupchatter>Burglaries/100K people<br>Citywide: ",prettyNum(round(burglaries_city$rate_last12,0), big.mark=",")),
+            group = "Rate",
+            className = "info legend Rate") %>%
+  addLegend(opacity = 0.6,
+            values = burglaries_beat$last12mos, 
+            pal = burglarypal2,
+            position = "bottomleft", 
+            title = paste(sep="","<popuptitle>Burglaries<br><popupchatter>Total burglaries<br>Citywide: ",prettyNum(round(burglaries_city$last12mos,0), big.mark=",")),
+            group = "Number",
+            className = "info legend Number") %>%
+  addLayersControl(
+    baseGroups = c("Rate","Number"),
+    options = layersControlOptions(collapsed = FALSE),
+    position = 'bottomright') %>% hideGroup(c("Number")) %>%
+   htmlwidgets::onRender("
+      function(el, x) {
+         var updateLegend = function () {
+            var selectedGroup = document.querySelectorAll('input:checked')[0].nextSibling.innerText.substr(1);
 
-houston_burglary_map
+            document.querySelectorAll('.legend').forEach(a => a.hidden=true);
+            document.querySelectorAll('.legend').forEach(l => {
+               if (l.classList.contains(selectedGroup)) l.hidden=false;
+            });
+         };
+         updateLegend();
+         this.on('baselayerchange', el => updateLegend());
+      }"
+   )
 ```
 <br>
-About <h8>`r round(pop_burglariesmonthly/2304580*100,0)`%</h8> of Houston residents now live in neighborhoods where there was at least one burglary every month over the last year. Here's a look at burglaries citywide every month since 2019.
 <br>
 <!-- <subhead>Burglaries month by month, 2019 through last month</subhead> -->
 
