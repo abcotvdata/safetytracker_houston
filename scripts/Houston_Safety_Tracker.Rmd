@@ -242,36 +242,30 @@ The city averaged <h8>`r round(murders_city$last12mos/52,0)`</h8> homicides a we
 One way to think about the danger: three years ago, the murder rate was <h8>`r murders_city$rate19`</h8> per 100,000 residents, about the same as the rate of being killed in a vehicle crash in Texas. During the pandemic, a person's chance of being murdered here rose well above the likelihood of dying in a vehicle crash.
 <br>
 <br>
-<!-- <subhead>Risk of being murdered in Houston vs. other causes of death in Texas</subhead> -->
+<!-- <subhead>Risk of being murdered in Houston vs. other causes of death in Harris County</subhead> -->
 
-<iframe title="" aria-label="Dot Plot" id="datawrapper-chart-9SHHa" src="https://datawrapper.dwcdn.net/9SHHa/14/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="146" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+<iframe title="" aria-label="Dot Plot" id="datawrapper-chart-9SHHa" src="https://datawrapper.dwcdn.net/9SHHa/15/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="146" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
 </script>
 <br>
 
 The risk is not the same neighborhood to neighborhood.
 
-About <h8>`r round(pop_murdersup/2304580*100,0)`%</h8> of people live in neighborhoods where the murder rate is up 20% or more over the last 12 months compared to the average from 2019-2021.
+About <h8>`r round(pop_murdersup/2304580*100,0)`%</h8> of people live in neighborhoods where the murder rate is higher than the likelihood of being killed in a traffic crash in Harris County.
 
 ABC13's data team looked at the Houston Police Department's data by neighborhood from 2019 through last month.
 
 <subhead>A closer look at Houston homicides neighborhood by neighborhood</subhead>
 
-The map color-codes each neighborhood by the homicide rate over the last 12 months. The darker blue areas are neighborhoods with murder rates higher than the citywide rate.
+The map color-codes each neighborhood by the homicide rate over the last 12 months. You can also choose to see neighborhoods by the number of homicides. The darker blue areas are neighborhoods with murder rates higher than the citywide rate.
 
-Click on any neighborhood on the map to see detailed figures, rates and trends. You can also search for a street name, place, landmark or zip code.
+Click on any neighborhood on the map to see detailed numbers, rates and trends. You can also search for a street name, place, landmark or zip code.
 
 <br>
 ```{r cars, echo=FALSE,out.width='100%',out.height='600'}
 # MURDER MAP
 
 # Set bins for numbers of crimes for murders map
-murderpal <- colorQuantile(c("#667f99",
-                             "#00318b",
-                             "#0058f6",
-                             "#ffba00",
-                             "#be0000"), murders_beat$rate_last12, n = 5, na.color = NA)
-
-murderbins <- c(0,
+murderbins1 <- c(0,
                 10,
                 20,
                 30,
@@ -283,13 +277,13 @@ murderbins2 <- c(0,
                 5,
                 10,
                 100)
-murderpal2 <- colorBin(c("#99a0a5",
+murderpal1 <- colorBin(c("#99a0a5",
                              "#2787d6",
                              "#0058f6",
                              "#003ca6",
                              "#00215c"), murders_beat$rate_last12, bins = murderbins,na.color = "#51585f")
 
-murderpal3 <- colorBin(c("#99a0a5",
+murderpal2 <- colorBin(c("#99a0a5",
                              "#2787d6",
                              "#0058f6",
                              "#003ca6",
@@ -377,7 +371,7 @@ L.control.zoom({ position: 'topright' }).addTo(this)
               smoothFactor = 0.5,
               opacity = 0.6, 
               fillOpacity = 0.6,
-              fillColor = ~murderpal2(rate_last12),
+              fillColor = ~murderpal1(rate_last12),
               group="Rate") %>% 
     addPolygons(color = "white", 
               popup = murderlabel,
@@ -387,7 +381,7 @@ L.control.zoom({ position: 'topright' }).addTo(this)
               smoothFactor = 0.5,
               opacity = 0.6, 
               fillOpacity = 0.6,
-              fillColor = ~murderpal3(last12mos),
+              fillColor = ~murderpal2(last12mos),
               group="Number") %>% 
   addSearchOSM(options = searchOptions(autoCollapse=FALSE, minLength = 3,zoom=13, position="topleft")) %>%
     onRender("function(el, x) {
@@ -428,8 +422,6 @@ L.control.zoom({ position: 'topright' }).addTo(this)
 
 houston_murder_map
 ```
-<br>
-About <h8>`r round(pop_murdersmonthly/2304580*100,0)`%</h8> of people live where there was at least one murder a month over the last year.
 <br>
 <br>
 <!-- <subhead>Homicides month by month, 2019 through last month</subhead> -->
