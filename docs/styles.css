@@ -1,0 +1,166 @@
+
+.title {
+  background-image: url('https://abcotvdata.github.io/safetytracker_houston/skyline2.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+div {
+  padding: 0.25em;
+}
+
+.title {
+  font-family: roboto;
+  color: white;
+  font-weight: 900;
+  text-align: left;
+  font-size: 60px;
+    padding: 5px;
+}
+
+.date {
+  font-family: roboto;
+  color: black;
+  font-weight: 300;
+  text-align: left;
+  font-size: 10px;
+    padding: 5px;
+}
+
+select {
+  margin: 0px;
+  width: 180px;
+  color: #00318b;
+  padding: 5px 35px 5px 5px;
+    font-family: roboto;
+  font-size: 18px;
+  font-weight: 900;
+  border: 0px;
+  height: 34px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Arrow-down.svg) 96% / 15% no-repeat #f2f2f2;
+}
+
+h1 {
+  font-family: roboto;
+  color: black;
+  font-weight: bolder;
+  text-align: left;
+  font-size: 36px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-family: roboto;
+  font-weight: 500;
+  color: black;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 2;
+}
+
+bignumber {
+  font-family: roboto;
+  color: #00318b;
+  font-weight: 900;
+  text-align: center;
+  font-size: 60px;
+    line-height: 65px;
+  height: 65px;
+    margin-top: 0;
+  margin-bottom: 0;
+}
+
+subhead {
+  font-family: roboto;
+  color: black;
+  font-weight: 700;
+  text-align: left;
+  font-size: 20px;
+    padding: 0px;
+}
+
+body {
+  color: black;
+  font-family: roboto;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+popuptitle {
+  color: #00318b;
+  font-family: roboto;
+  font-weight: 700;
+  font-size: 15px;
+  text-align: left;
+}
+
+popupchatter {
+  font-family: roboto;
+  color: black;
+  font-weight: 300;
+  text-align: left;
+  font-size: 12px;
+  margin-top: 0;
+  margin-bottom: 2;
+}
+
+h8 {
+  color: #00318b;
+  font-family: roboto;
+  font-weight: 900;
+  font-size: 18px;
+}
+
+table {
+  font-family: roboto;
+  width: 100%;
+}
+
+tr {
+  border-bottom: thin solid #99a0a5;
+}
+  
+td {
+  text-align: right;
+  padding: 1px;
+}
+
+th {
+  text-align: right;
+  padding: 1px;
+}
+  
+   * {
+      box-sizing: border-box;
+   }
+   .card {
+      color: white;
+      float: left;
+      width: calc(25% - 20px);
+      padding: 10px;
+      border-radius: 10px;
+      margin: 10px;
+      height: 100%;
+   }
+   .card p {
+   font-family: roboto;
+   text-align: center;
+   font-size: 14px;
+  margin-bottom: 0;
+   }
+   .cardContainer:after {
+      content: "";
+      display: table;
+      clear: both;
+   }
+   @media screen and (max-width: 650px) {
+      .card {
+         width: 100%;
+      }
+
+   }
