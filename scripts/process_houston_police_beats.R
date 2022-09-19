@@ -183,9 +183,5 @@ beats$population <- ifelse(beats$population<1000,0,beats$population)
 beats <- beats %>% st_transform(4326)
 beats <- st_make_valid(beats)
 
-# Calculate District population totals to review vs. Houston PD web site
-district_pops <- beats %>%
-  group_by(district) %>%
-  summarise(pop=sum(population),
-            sqmi = sum(area_sq_mi)) %>% st_drop_geometry(district_pops)
-
+st_write(beats,"beats.geojson")
+# beats2 <- st_read("beats.geojson")

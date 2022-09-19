@@ -18,7 +18,6 @@ library(sf)
 library(htmlwidgets)
 library(htmltools)
 
-# rmarkdown::render('Houston_Safety_Tracker_2.Rmd', output_file = 'docs/Houston_Safety_Tracker_2.html')
 ```
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
@@ -216,7 +215,7 @@ th {
 <div class="card" style="background-color:#99a0a5;">
 <p>Homicides<br>
 <bignumber>`r prettyNum(murders_city$last12mos, big.mark=",")`<br></bignumber>
-<p>Last 12 months<br>Through July 2022</p>
+<p>Last 12 months<br>Through August 2022</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Homicides<br>
@@ -237,7 +236,7 @@ Per 100,000 people<br>2019 to 2021</p>
 <br>
 Homicides are <h8>`r ifelse(murders_city$inc_prior3yearavgtolast12>=0," up"," down")` `r ifelse(murders_city$inc_prior3yearavgtolast12>=0,murders_city$inc_prior3yearavgtolast12,substring(murders_city$inc_prior3yearavgtolast12,2))`%</h8> over the last 12 months compared to the average from 2019-2021, and they are trending <h8>`r ifelse(murders_city$inc_21tolast12>=0," up"," down")` `r ifelse(murders_city$inc_21tolast12>=0,murders_city$inc_21tolast12,substring(murders_city$inc_21tolast12,2))`%</h8> over the most recent 12 months compared to all of 2021.
 
-The city averaged <h8>`r round(murders_city$last12mos/52,0)`</h8> homicides a week since last July. In 2019, that number was <h8>`r round(murders_city$total19/52,0)`</h8> a week.
+The city averaged <h8>`r round(murders_city$last12mos/52,0)`</h8> homicides a week since last August. In 2019, that number was <h8>`r round(murders_city$total19/52,0)`</h8> a week.
 
 One way to think about the danger: three years ago, the murder rate was <h8>`r murders_city$rate19`</h8> per 100,000 residents, about the same as the rate of being killed in a vehicle crash in Texas. During the pandemic, a person's chance of being murdered here rose well above the likelihood of dying in a vehicle crash.
 <br>
