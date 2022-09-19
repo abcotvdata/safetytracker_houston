@@ -172,7 +172,7 @@ beats_withpop <- st_drop_geometry(beats_withpop)
 beats <- cbind(beats,beats_withpop)
 # Cleans up unneeded calculation file
 rm(beats_withpop, blockgroups)
-# Round the population figure
+# Round the population figure to nearest thousand as estimate
 beats$population <- round(beats$population,-3)
 # Eliminate population from beats on airport property showing population
 beats$population <- ifelse(beats$population<1000,0,beats$population)
@@ -183,5 +183,9 @@ beats$population <- ifelse(beats$population<1000,0,beats$population)
 beats <- beats %>% st_transform(4326)
 beats <- st_make_valid(beats)
 
-st_write(beats,"beats.geojson")
-# beats2 <- st_read("beats.geojson")
+# cleanup unneeded blocks file
+rm(blocks)
+
+st_write(beats,"data/source/geo/beats.geojson")
+# add line  below when uploading data for pages
+# beats <- st_read("data/source/geo/beats.geojson")
