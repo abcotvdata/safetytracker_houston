@@ -18,15 +18,11 @@ library(sf)
 # There's a max output for feeds of 2,000 records
 # We're manually streaming by section with offset to capture all
 
-# First, for safety/redundancy sake,
-# let's rename last three files & archive
-file.copy("data/source/archive/houston_recent_archive.rds", # archives 3 days ago
-          "data/source/archive/houston_recent_archive2.rds", overwrite = TRUE)
+# First, for safety/redundancy sake, setting double backup of our two-day archive
 file.copy("data/source/recent/houston_recent_prior.rds", # archives 2 days ago
-          "data/source/archive/houston_recent_archive.rds", overwrite = TRUE)
-file.copy("data/source/recent/houston_recent_new.rds", # backup yesterday
-          "data/source/recent/houston_recent_prior.rds", overwrite = TRUE)
-
+          "data/source/archive/houston_recent_prior.rds", overwrite = TRUE)
+file.copy("data/source/recent/houston_recent_new.rds", # archives yesterday
+          "data/source/archive/houston_recent_new.rds", overwrite = TRUE)
 
 # Download the Group A People file and open into a sf/df
 # Now download today's version in streams; five is overly redundant but safest
@@ -169,22 +165,26 @@ houston_recent_new$hour <- as.numeric(houston_recent_new$hour)
 
 # OPEN WORK HERE: Package to convert OLC to latitude and longitude
 
-# Copy yesterday's to recent_prior in the working directory
+# Copy yesterday's to recent_prior in two places: archive and rds store
 file.copy("scripts/rds/houston_recent_new.rds", # dupe yesterday file
           "scripts/rds/houston_recent_prior.rds", overwrite = TRUE)
+file.copy("scripts/rds/houston_recent_new.rds", # dupe yesterday file
+          "data/recent/houston_recent_prior.rds", overwrite = TRUE)
 # Load prior day df
-houston_recent_prior <- readRDS("data/source/recent/houston_recent_prior.rds")
+houston_recent_prior <- readRDS("scripts/rds/houston_recent_prior.rds")
 # Merge prior day and today and then de-dupe
 houston_recent_new <- bind_rows(houston_recent_prior,
                                 houston_recent_new)
 houston_recent_new <- unique(houston_recent_new)
 
-# Save today's version of houston_recent_new in two places
-# One is for use in the trackers and the other is redundant archive
+# Save copies of newly-processed houston_recent_new in 3 places for redundancy
+# 1. Archive with name by day of month; maintains month's worth of files
+saveRDS(houston_recent_new,paste0("data/source/archive/houston_recent_archive",format((Sys.Date()), "%d"),".rds"))
+# 2. Latest day archived in source data as backup; overwritten daily
 saveRDS(houston_recent_new,"data/source/recent/houston_recent_new.rds")
+# 3. Latest day stored in scripts file for pickup by trackers
+# If for some reason the script fails, file from day before is there
 saveRDS(houston_recent_new,"scripts/rds/houston_recent_new.rds")
-
-paste0("data/source/archive/houston_recent_archive",format((Sys.Date()), "%d"),".rds")
 
 # Clean up
 rm(houston_recent_new,houston_recent_prior)
