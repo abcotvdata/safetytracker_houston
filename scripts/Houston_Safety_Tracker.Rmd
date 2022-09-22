@@ -192,11 +192,23 @@ th {
 
 ```{r beats, include=FALSE}
 # source("process_houston_police_beats.R")
+# beats <- st_read("data/source/geo/beats.geojson")
+# beats <- readRDS("scripts/rds/beats.rds")
+# set value of houston_population
+houston_population <- 2304580
+# population where murders are up 20%
+beatpops_up <- beats %>% st_drop_geometry() %>% select(1,5) %>% 
+  left_join(murders_beat) %>% 
+  filter(rate_last12>=14.4) %>%
+  select(1,2,23,24)
+pop_murdersup <- sum(beatpops_up$population)
 ```
 
 
 ```{r crimedata, include=FALSE}
 # source("process_houston_crime_data.R")
+# murders_beat <- readRDS("scripts/rds/murders_beat.rds")
+# murders_city <- readRDS("scripts/rds/murders_city.rds")
 ```
 
 <h2>ABC13 is tracking crime and safety across Houston and in your neighborhood. Choose which crime to explore: <select onchange="window.location=this.value">
@@ -215,7 +227,7 @@ th {
 <div class="card" style="background-color:#99a0a5;">
 <p>Homicides<br>
 <bignumber>`r prettyNum(murders_city$last12mos, big.mark=",")`<br></bignumber>
-<p>Last 12 months<br>Through August 2022</p>
+<p>Last 12 months<br>Through `r format((Sys.Date() - 2), "%B %d")`</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Homicides<br>
@@ -234,11 +246,15 @@ Per 100,000 people<br>2019 to 2021</p>
 </div>
 </div>
 <br>
-Homicides are <h8>`r ifelse(murders_city$inc_prior3yearavgtolast12>=0," up"," down")` `r ifelse(murders_city$inc_prior3yearavgtolast12>=0,murders_city$inc_prior3yearavgtolast12,substring(murders_city$inc_prior3yearavgtolast12,2))`%</h8> over the last 12 months compared to the average from 2019-2021, and they are trending <h8>`r ifelse(murders_city$inc_21tolast12>=0," up"," down")` `r ifelse(murders_city$inc_21tolast12>=0,murders_city$inc_21tolast12,substring(murders_city$inc_21tolast12,2))`%</h8> over the most recent 12 months compared to all of 2021.
+Homicides over the last 12 months are <h8>`r ifelse(murders_city$inc_prior3yearavgtolast12>=0," up"," down")` `r ifelse(murders_city$inc_prior3yearavgtolast12>=0,murders_city$inc_prior3yearavgtolast12,substring(murders_city$inc_prior3yearavgtolast12,2))`%</h8>  compared to the annual average over the last three years.
 
-The city averaged <h8>`r round(murders_city$last12mos/52,0)`</h8> homicides a week since last August. In 2019, that number was <h8>`r round(murders_city$total19/52,0)`</h8> a week.
+Killings are trending <h8>`r ifelse(murders_city$inc_21tolast12>=0," up"," down")` `r ifelse(murders_city$inc_21tolast12>=0,murders_city$inc_21tolast12,substring(murders_city$inc_21tolast12,2))`%</h8> over the most recent 12 months compared to 2021.
 
-One way to think about the danger: three years ago, the murder rate was <h8>`r murders_city$rate19`</h8> per 100,000 residents, about the same as the rate of being killed in a vehicle crash in Texas. During the pandemic, a person's chance of being murdered here rose well above the likelihood of dying in a vehicle crash.
+The city averaged <h8>`r round(murders_city$last12mos/52,0)`</h8> homicides a week over the last 12 months. In 2019, that number was <h8>`r round(murders_city$total19/52,0)`</h8> a week.
+
+One way to think about the danger: three years ago, the murder rate was <h8>`r murders_city$rate19`</h8> per 100,000 residents. That's about the same as your chance of dying in a vehicle crash in Texas.
+
+During the pandemic, a person's chance of being murdered in Houston rose above the likelihood of dying in a vehicle crash. 
 <br>
 <br>
 <!-- <subhead>Risk of being murdered in Houston vs. other causes of death in Harris County</subhead> -->
@@ -249,9 +265,9 @@ One way to think about the danger: three years ago, the murder rate was <h8>`r m
 
 The risk is not the same neighborhood to neighborhood.
 
-About <h8>`r round(pop_murdersup/2304580*100,0)`%</h8> of people live in neighborhoods where the murder rate is higher than the likelihood of being killed in a traffic crash in Harris County.
+About <h8>`r round(pop_murdersup/houston_population*100,0)`%</h8> of people live in neighborhoods where the murder rate is higher than the likelihood of being killed in a traffic crash in Harris County.
 
-ABC13's data team looked at the Houston Police Department's data by neighborhood from 2019 through last month.
+ABC13's data team looked at the Houston Police Department's data by neighborhood from 2019 through `r format((Sys.Date() - 2), "%B %d")`.
 
 <subhead>A closer look at Houston homicides neighborhood by neighborhood</subhead>
 

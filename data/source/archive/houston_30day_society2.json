@@ -1,0 +1,135 @@
+{
+ "displayFieldName": "USER_NIBRSClass",
+ "fieldAliases": {
+  "OBJECTID": "ObjectID",
+  "USER_RMSOccurrenceDate": "USER_RMSOccurrenceDate",
+  "USER_RMSOccurrenceHour": "USER_RMSOccurrenceHour",
+  "USER_Incident": "USER_Incident",
+  "USER_NIBRSClass": "USER_NIBRSClass",
+  "USER_NIBRSDescription": "USER_NIBRSDescription",
+  "USER_District": "USER_District",
+  "USER_Beat": "USER_Beat",
+  "USER_Premise": "USER_Premise",
+  "USER_OffenseAddressMiddle": "USER_OffenseAddressMiddle",
+  "USER_BlockRange": "USER_BlockRange",
+  "USER_StreetName": "USER_StreetName",
+  "USER_StreetType": "USER_StreetType",
+  "USER_Suffix": "USER_Suffix",
+  "USER_ZIPCode": "USER_ZIPCode",
+  "USER_ORI": "USER_ORI",
+  "DISTRICT_1": "DISTRICT",
+  "SNBNAME": "SNBNAME"
+ },
+ "fields": [
+  {
+   "name": "OBJECTID",
+   "type": "esriFieldTypeOID",
+   "alias": "ObjectID"
+  },
+  {
+   "name": "USER_RMSOccurrenceDate",
+   "type": "esriFieldTypeDate",
+   "alias": "USER_RMSOccurrenceDate",
+   "length": 8
+  },
+  {
+   "name": "USER_RMSOccurrenceHour",
+   "type": "esriFieldTypeString",
+   "alias": "USER_RMSOccurrenceHour",
+   "length": 2
+  },
+  {
+   "name": "USER_Incident",
+   "type": "esriFieldTypeString",
+   "alias": "USER_Incident",
+   "length": 9
+  },
+  {
+   "name": "USER_NIBRSClass",
+   "type": "esriFieldTypeString",
+   "alias": "USER_NIBRSClass",
+   "length": 50
+  },
+  {
+   "name": "USER_NIBRSDescription",
+   "type": "esriFieldTypeString",
+   "alias": "USER_NIBRSDescription",
+   "length": 200
+  },
+  {
+   "name": "USER_District",
+   "type": "esriFieldTypeString",
+   "alias": "USER_District",
+   "length": 25
+  },
+  {
+   "name": "USER_Beat",
+   "type": "esriFieldTypeString",
+   "alias": "USER_Beat",
+   "length": 10
+  },
+  {
+   "name": "USER_Premise",
+   "type": "esriFieldTypeString",
+   "alias": "USER_Premise",
+   "length": 200
+  },
+  {
+   "name": "USER_OffenseAddressMiddle",
+   "type": "esriFieldTypeString",
+   "alias": "USER_OffenseAddressMiddle",
+   "length": 300
+  },
+  {
+   "name": "USER_BlockRange",
+   "type": "esriFieldTypeString",
+   "alias": "USER_BlockRange",
+   "length": 61
+  },
+  {
+   "name": "USER_StreetName",
+   "type": "esriFieldTypeString",
+   "alias": "USER_StreetName",
+   "length": 200
+  },
+  {
+   "name": "USER_StreetType",
+   "type": "esriFieldTypeString",
+   "alias": "USER_StreetType",
+   "length": 50
+  },
+  {
+   "name": "USER_Suffix",
+   "type": "esriFieldTypeString",
+   "alias": "USER_Suffix",
+   "length": 50
+  },
+  {
+   "name": "USER_ZIPCode",
+   "type": "esriFieldTypeString",
+   "alias": "USER_ZIPCode",
+   "length": 10
+  },
+  {
+   "name": "USER_ORI",
+   "type": "esriFieldTypeString",
+   "alias": "USER_ORI",
+   "length": 9
+  },
+  {
+   "name": "DISTRICT_1",
+   "type": "esriFieldTypeString",
+   "alias": "DISTRICT",
+   "length": 254
+  },
+  {
+   "name": "SNBNAME",
+   "type": "esriFieldTypeString",
+   "alias": "SNBNAME",
+   "length": 50
+  }
+ ],
+ "features": [
+  
+ ]
+}
