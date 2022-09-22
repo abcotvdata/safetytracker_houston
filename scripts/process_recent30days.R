@@ -14,7 +14,6 @@ library(sf)
 # 3 is lesser Group B offenses we will gather for completeness
 # 4 is 'non-crime' incidents we will gather for completeness (e.g., police list justifiable homicide here)
 
-
 # There's a max output for feeds of 2,000 records
 # We're manually streaming by section with offset to capture all
 
@@ -170,6 +169,7 @@ file.copy("scripts/rds/houston_recent_new.rds", # dupe yesterday file
           "scripts/rds/houston_recent_prior.rds", overwrite = TRUE)
 file.copy("scripts/rds/houston_recent_new.rds", # dupe yesterday file
           "data/recent/houston_recent_prior.rds", overwrite = TRUE)
+
 # Load prior day df
 houston_recent_prior <- readRDS("scripts/rds/houston_recent_prior.rds")
 # Merge prior day and today and then de-dupe
