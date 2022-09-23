@@ -6,7 +6,6 @@ library(rmarkdown)
 
 # MURDERS
 # Load RDS
-beats <- readRDS("scripts/rds/beats.rds")
 murders_beat <- readRDS("scripts/rds/murders_beat.rds")
 murders_city <- readRDS("scripts/rds/murders_city.rds")
 # Render page

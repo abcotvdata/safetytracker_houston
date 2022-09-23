@@ -8,13 +8,9 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning=FALSE)
 library(tidyverse)
-library(tidycensus)
-library(readxl)
 library(leaflet)
 library(leaflet.extras)
 library(leaflet.providers)
-library(sp)
-library(sf)
 library(htmlwidgets)
 library(htmltools)
 
@@ -191,24 +187,17 @@ th {
 ```
 
 ```{r beats, include=FALSE}
-# source("process_houston_police_beats.R")
-# beats <- st_read("data/source/geo/beats.geojson")
-# beats <- readRDS("scripts/rds/beats.rds")
 # set value of houston_population
 houston_population <- 2304580
 # population where murders are up 20%
-beatpops_up <- beats %>% st_drop_geometry() %>% select(1,5) %>% 
-  left_join(murders_beat) %>% 
-  filter(rate_last12>=14.4) %>%
-  select(1,2,23,24)
+beatpops_up <- murders_beat %>% 
+  filter(rate_last12>=14.4)
 pop_murdersup <- sum(beatpops_up$population)
 ```
 
 
 ```{r crimedata, include=FALSE}
-# source("process_houston_crime_data.R")
-# murders_beat <- readRDS("scripts/rds/murders_beat.rds")
-# murders_city <- readRDS("scripts/rds/murders_city.rds")
+# Source data pre-processed separately at process_houston_crime_combined.R
 ```
 
 <h2>ABC13 is tracking crime and safety across Houston and in your neighborhood. Choose which crime to explore: <select onchange="window.location=this.value">

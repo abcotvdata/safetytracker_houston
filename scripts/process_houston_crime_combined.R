@@ -72,7 +72,7 @@ houston_crime$premise <- case_when(houston_crime$premise == 'Amusement Park' ~ '
 # write csv of houston crime as a backup
 # worthwhile to think through if the full csv is even necessary to save; maybe for redundancy
 write_csv(houston_crime,"data/output/houston_crime.csv")
-saveRDS(houston_crime,"data/output/houston_crime.rds")
+saveRDS(houston_crime,"scripts/rds/houston_crime.rds")
 
 # Clean up
 rm(houston_annual,houston_monthly,houston_recent_new)

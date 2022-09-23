@@ -20,9 +20,11 @@ jobs:
         run: |
           brew install gdal
       - name: Install dependencies and packages
-        run: Rscript -e 'install.packages(c("sf","tidyverse"))'
+        run: Rscript -e 'install.packages(c("sf","tidyverse","readxl","zoo"))'
       - name: Get and compile recent crimes feed
         run: Rscript scripts/process_recent30days.R
+      - name: Combined annual, ytd, recent into one crime file
+        run: Rscript scripts/process_houston_crime_combined.R
       - name: Commit results
         run: |
           git add -A

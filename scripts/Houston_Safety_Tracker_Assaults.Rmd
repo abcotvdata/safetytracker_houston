@@ -8,13 +8,9 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning=FALSE)
 library(tidyverse)
-library(tidycensus)
-library(readxl)
 library(leaflet)
 library(leaflet.extras)
 library(leaflet.providers)
-library(sp)
-library(sf)
 library(htmlwidgets)
 library(htmltools)
 
@@ -183,12 +179,14 @@ th {
 ```
 
 ```{r beats, include=FALSE}
-# source("process_houston_police_beats.R")
+# source file pre-processed at process_houston_police_beats.R
+# set value of houston_population
+houston_population <- 2304580
 ```
 
 
 ```{r crimedata, include=FALSE}
-# source("process_houston_crime_data.R")
+# Source data pre-processed separately at process_houston_crime_combined.R
 ```
 
 <h2>ABC13's data team is tracking crime and safety across Houston and in your neighborhood.<br>You can choose which crime to examine: <select onchange="window.location=this.value">
@@ -207,7 +205,7 @@ th {
 <div class="card" style="background-color:#99a0a5;">
 <p>Assaults<br>
 <bignumber>`r prettyNum(assaults_city$last12mos, big.mark=",")`<br></bignumber>
-<p>Last 12 months<br>Through July 2022</p>
+<p>Last 12 months<br>Through  `r format((Sys.Date() - 2), "%B %d")`</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Assaults<br>
@@ -226,13 +224,13 @@ Per 100,000 people<br>2019 to 2021</p>
 </div>
 </div>
 <br>
-Assaults are <h8>`r ifelse(assaults_city$inc_prior3yearavgtolast12>=0," up"," down")` `r ifelse(assaults_city$inc_prior3yearavgtolast12>=0,assaults_city$inc_prior3yearavgtolast12,substring(assaults_city$inc_prior3yearavgtolast12,2))`%</h8> over the last 12 months compared to the average from 2019-2021.
+Assaults over the last 12 months are <h8>`r ifelse(assaults_city$inc_prior3yearavgtolast12>=0," up"," down")` `r ifelse(assaults_city$inc_prior3yearavgtolast12>=0,assaults_city$inc_prior3yearavgtolast12,substring(assaults_city$inc_prior3yearavgtolast12,2))`%</h8> compared to the annual average over the last three years.
 
-The city averaged <h8>`r prettyNum(round(assaults_city$last12mos/52,0), big.mark=",")`</h8> assaults a week since last July. In 2019, that number was <h8>`r prettyNum(round(assaults_city$total19/52,0), big.mark=",")`</h8> a week.
+The city averaged <h8>`r prettyNum(round(assaults_city$last12mos/52,0), big.mark=",")`</h8> assaults a week over the last 12 months. In 2019, that number was <h8>`r prettyNum(round(assaults_city$total19/52,0), big.mark=",")`</h8> a week.
 
 <subhead>A closer look at Houston assaults neighborhood by neighborhood</subhead>
 
-The danger is not the same neighborhood to neighborhood. ABC13's data team looked at the Houston Police Department's data by neighborhood from 2019 through last month.
+The danger is not the same neighborhood to neighborhood. ABC13's data team looked at the Houston Police Department's data by neighborhood from 2019 through `r format((Sys.Date() - 2), "%B %d")`.
 
 The map color-codes each neighborhood by the assault rate over the last 12 months. The three darker blues represent neighborhoods with assault rates that are higher than the citywide rate. You can also click the box in the bottom right corner to see neighborhoods by the number of assaults.
 
