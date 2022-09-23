@@ -13,6 +13,7 @@ library(leaflet.extras)
 library(leaflet.providers)
 library(htmlwidgets)
 library(htmltools)
+library(sf)
 
 # rmarkdown::render('Houston_Safety_Tracker_2.Rmd', output_file = 'docs/Houston_Safety_Tracker_2.html')
 ```
