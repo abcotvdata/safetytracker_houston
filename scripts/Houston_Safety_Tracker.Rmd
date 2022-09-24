@@ -20,7 +20,7 @@ library(sf)
 
 ```{css, echo=FALSE}
 
-.title {
+h1.title {
   background-image: url('https://abcotvdata.github.io/safetytracker_houston/skyline1.png');
   background-repeat: no-repeat;
   background-size: 100%;
@@ -30,12 +30,12 @@ div {
   padding: 0.25em;
 }
 
-.title {
+h1.title {
   font-family: roboto;
   color: white;
   font-weight: 700;
   text-align: left;
-  font-size: 35px;
+  font-size: 36px;
   padding: 10px;
 }
 
