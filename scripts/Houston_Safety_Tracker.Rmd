@@ -1,5 +1,5 @@
 ---
-title: "<br>NEIGHBORHOOD<br>SAFETY TRACKER<br><br>"
+title: "Neighborhood<br>Safety Tracker<br>"
 # author: "John Kelly"
 date: "Updated `r format(Sys.time(), '%B %d, %Y')` by the ABC13 Data Team"
 output: html_document
@@ -21,7 +21,7 @@ library(sf)
 ```{css, echo=FALSE}
 
 .title {
-  background-image: url('https://abcotvdata.github.io/safetytracker_houston/skyline2.png');
+  background-image: url('https://abcotvdata.github.io/safetytracker_houston/skyline1.png');
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -33,10 +33,10 @@ div {
 .title {
   font-family: roboto;
   color: white;
-  font-weight: 900;
+  font-weight: 700;
   text-align: left;
-  font-size: 60px;
-  padding: 5px;
+  font-size: 45px;
+  padding: 10px;
 }
 
 .date {
@@ -162,10 +162,10 @@ th {
    .card {
       color: white;
       float: left;
-      width: calc(25% - 20px);
-      padding: 10px;
+      width: calc(25% - 10px);
+      padding: 5px;
       border-radius: 10px;
-      margin: 10px;
+      margin: 5px;
       height: 100%;
    }
    .card p {
