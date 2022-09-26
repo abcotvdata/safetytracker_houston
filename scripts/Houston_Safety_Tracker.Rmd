@@ -1,5 +1,5 @@
 ---
-title: "Neighborhood<br>Safety Tracker<br>"
+title: "Neighborhood<br>Safety Tracker"
 # author: "John Kelly"
 date: "Updated `r format(Sys.time(), '%B %d, %Y')` by the ABC13 Data Team"
 output: html_document
@@ -165,7 +165,10 @@ th {
       width: calc(25% - 10px);
       padding: 5px;
       border-radius: 10px;
-      margin: 5px;
+      margin-left: 3px;
+      margin-right: 3px;
+      margin-top: 3px;
+      margin-bottom: 3px;
       height: 100%;
    }
    .card p {
@@ -184,10 +187,8 @@ th {
          width: 100%;
       }
       h1.title {
-        font-size: 25px;
+        font-size: 22px;
       }
-      
-
    }
 ```
 
@@ -301,15 +302,14 @@ murderpal2 <- colorBin(c("#99a0a5",
                             
 # Create labels for murders map
 murderlabel <- paste(sep="",
-ifelse(murders_beat$inc_prior3yearavgtolast12>=0,
-       "<popuptitle>Homicides are up ",
-       "<popuptitle>Homicides are down "),
-ifelse(murders_beat$inc_prior3yearavgtolast12>=0,murders_beat$inc_prior3yearavgtolast12,substring(murders_beat$inc_prior3yearavgtolast12,2)),
-				"%</popuptitle><br><popupchatter>the last 12 months vs. the 3-year average in the area including ",
-murders_beat$placename,
-", home to an estimated ",
-prettyNum(murders_beat$population, big.mark=","),
-" people.
+                     "<popuptitle>",
+                     murders_beat$last12mos,
+                     " homicides </popuptitle><br>",
+                     " in the last 12 months in the area including <b>",
+                     murders_beat$placename,
+                     "</b>, home to an estimated ",
+                     prettyNum(murders_beat$population, big.mark=","),
+                     " people.
 <br>
 <table>      
       <tr>

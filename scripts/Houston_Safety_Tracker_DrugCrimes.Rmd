@@ -22,21 +22,31 @@ library(sf)
 ```{css, echo=FALSE}
 
           
-.title {
+h1.title {
+  background-image: url('https://abcotvdata.github.io/safetytracker_houston/skyline1.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+div {
+  padding: 0.25em;
+}
+
+h1.title {
   font-family: roboto;
-  color: #00318b;
-  font-weight: 900;
-  text-align: center;
+  color: white;
+  font-weight: 700;
+  text-align: left;
   font-size: 45px;
-    padding: 5px;
+  padding: 10px;
 }
 
 .date {
   font-family: roboto;
   color: black;
   font-weight: 300;
-  text-align: center;
-  font-size: 12px;
+  text-align: left;
+  font-size: 10px;
     padding: 5px;
 }
 
@@ -147,17 +157,20 @@ th {
   text-align: right;
   padding: 1px;
 }
-
+  
    * {
       box-sizing: border-box;
    }
    .card {
       color: white;
       float: left;
-      width: calc(25% - 20px);
-      padding: 10px;
+      width: calc(25% - 10px);
+      padding: 5px;
       border-radius: 10px;
-      margin: 10px;
+      margin-left: 3px;
+      margin-right: 3px;
+      margin-top: 3px;
+      margin-bottom: 3px;
       height: 100%;
    }
    .card p {
@@ -175,7 +188,9 @@ th {
       .card {
          width: 100%;
       }
-
+      h1.title {
+        font-size: 22px;
+      }
    }
 ```
 
@@ -268,15 +283,14 @@ drugpal2 <- colorBin(c("#99a0a5",
 
 # Create quick labels for drugs map
 druglabel <- paste(sep="",
-ifelse(drugs_beat$inc_prior3yearavgtolast12>=0,
-       "<popuptitle>Drug crimes are up ",
-       "<popuptitle>Drug crimes are down "),
-ifelse(drugs_beat$inc_prior3yearavgtolast12>=0,drugs_beat$inc_prior3yearavgtolast12,substring(drugs_beat$inc_prior3yearavgtolast12,2)),
-				"%</popuptitle><br><popupchatter>the last 12 months vs. the 3-year average in the area including ",
-drugs_beat$placename,
-", home to an estimated ",
-prettyNum(drugs_beat$population, big.mark=","),
-" people.
+                     "<popuptitle>",
+                     drugs_beat$last12mos,
+                     " drug-related incidents </popuptitle><br>",
+                     " in the last 12 months in the area including <b>",
+                     drugs_beat$placename,
+                     "</b>, home to an estimated ",
+                     prettyNum(drugs_beat$population, big.mark=","),
+                     " people.
 <br>
 <table>      
       <tr>
