@@ -183,6 +183,10 @@ th {
       .card {
          width: 100%;
       }
+      h1.title {
+        font-size: 25px;
+      }
+      
 
    }
 ```
