@@ -266,9 +266,9 @@ ABC13's data team looked at the Houston Police Department's data by neighborhood
 
 <subhead>A closer look at Houston homicides by neighborhood</subhead>
 
-The map color-codes each neighborhood by the homicide rate over the last 12 months. The darker blue areas are neighborhoods with murder rates higher than the citywide rate. You can also choose to see neighborhoods by the number of homicides. 
+The map color-codes each neighborhood by the homicide rate over the last 12 months. Darker blue areas are neighborhoods where the murder rate is higher than the citywide rate.
 
-Click on any neighborhood on the map to see detailed numbers, rates and trends. You can also search for a street name, place, landmark or zip code.
+You can click any neighborhood to see detailed numbers or the buttons at the bottom of the map to switch between numbers and rates. You can search for a street, place, landmark or zip code to zoom to that location.
 
 <br>
 ```{r cars, echo=FALSE,out.width='100%',out.height='600'}
