@@ -3,9 +3,9 @@ beat,district,area_sq_mi,placename,population,category_name,total22,total19,tota
 23J50,23,2.12389492,Intercontinental Airport,0,Burglary,1,4,0,0,1,4,1.3,-100,-75,NA,-23,NA,NA,NA,NA,NA
 1A10,1,1.74646692,Downtown Central Business District,17000,Burglary,56,76,77,65,74,218,72.7,-14.5,-2.6,13.8,2,447.1,452.9,382.4,435.3,427.6
 1A20,1,2.44133075,"Fourth Ward, Avondale and Westmoreland",27000,Burglary,130,309,304,217,202,830,276.7,-29.8,-34.6,-6.9,-27,1144.4,1125.9,803.7,748.1,1024.8
-1A30,1,2.65916892,"Cherryhurst, Mandell Place and Montrose",27000,Burglary,92,236,205,182,154,623,207.7,-22.9,-34.7,-15.4,-26,874.1,759.3,674.1,570.4,769.3
+1A30,1,2.65916892,"Cherryhurst, Mandell Place and Montrose",27000,Burglary,92,236,205,182,153,623,207.7,-22.9,-35.2,-15.9,-26,874.1,759.3,674.1,566.7,769.3
 1A40,1,2.45016686,"Tall Timbers, Royden Oaks, River Oaks, Avalon Place and Oak Estates",7000,Burglary,9,31,29,20,16,80,26.7,-35.5,-48.4,-20,-40,442.9,414.3,285.7,228.6,381.4
-1A50,1,3.04553452,"Post Oak Park, Afton Oaks, Highland Village, Weslayan, Greenway Plaza and The Compaq Center",26000,Burglary,116,240,212,142,162,594,198,-40.8,-32.5,14.1,-18,923.1,815.4,546.2,623.1,761.5
+1A50,1,3.04553452,"Post Oak Park, Afton Oaks, Highland Village, Weslayan, Greenway Plaza and The Compaq Center",26000,Burglary,116,240,212,142,161,594,198,-40.8,-32.9,13.4,-19,923.1,815.4,546.2,619.2,761.5
 2A10,2,3.30928608,Irvington and Ryon,18000,Burglary,125,131,116,118,157,365,121.7,-9.9,19.8,33.1,29,727.8,644.4,655.6,872.2,676.1
 2A20,2,1.8876461,"Sunset Heights, Brooksmith and Stude",11000,Burglary,51,94,77,80,74,251,83.7,-14.9,-21.3,-7.5,-12,854.5,700,727.3,672.7,760.9
 2A30,2,4.65858171,"Houston Heights, Norhill and Studemont",31000,Burglary,102,276,175,142,152,593,197.7,-48.6,-44.9,7,-23,890.3,564.5,458.1,490.3,637.7
@@ -14,37 +14,37 @@ beat,district,area_sq_mi,placename,population,category_name,total22,total19,tota
 2A60,2,4.67447346,"Westport, Holly Park, Lazy Brook, Citadel, Shady Acres and Timbergrove",21000,Burglary,112,139,133,134,142,406,135.3,-3.6,2.2,6,5,661.9,633.3,638.1,676.2,644.3
 3B10,3,6.82068773,"Northwest Mall, Brookhollow, White Oak Acres, Oak Forest and Langwood",34000,Burglary,217,309,336,336,327,981,327,8.7,5.8,-2.7,0,908.8,988.2,988.2,961.8,961.8
 3B30,3,5.310372,"White Oak Acres, Brook Hollow, Oak Forest, Garden Oaks and Shepherd Park Plaza",23000,Burglary,79,131,133,140,124,404,134.7,6.9,-5.3,-11.4,-8,569.6,578.3,608.7,539.1,585.7
-3B40,3,3.40013561,"Independence Heights, Melrose and Graceland",13000,Burglary,70,183,191,183,111,557,185.7,0,-39.3,-39.3,-40,1407.7,1469.2,1407.7,853.8,1428.5
+3B40,3,3.40013561,"Independence Heights, Melrose and Graceland",13000,Burglary,70,183,191,183,110,557,185.7,0,-39.9,-39.9,-41,1407.7,1469.2,1407.7,846.2,1428.5
 3B50,3,3.85259517,"Northline Mall, Stratton Place, Oakwood, Colonial Gardens, Lindale and Junction City",20000,Burglary,89,154,143,137,115,434,144.7,-11,-25.3,-16.1,-21,770,715,685,575,723.5
-5F10,5,3.25978513,Afton Village and Pine Terrace,14000,Burglary,82,124,98,119,117,341,113.7,-4,-5.6,-1.7,3,885.7,700,850,835.7,812.1
-5F30,5,8.70689439,"Fairbanks, Carverdale, Fawndale and Northwest Crossing",17000,Burglary,116,235,227,218,183,680,226.7,-7.2,-22.1,-16.1,-19,1382.4,1335.3,1282.4,1076.5,1333.5
+5F10,5,3.25978513,Afton Village and Pine Terrace,14000,Burglary,82,124,98,119,116,341,113.7,-4,-6.5,-2.5,2,885.7,700,850,828.6,812.1
+5F30,5,8.70689439,"Fairbanks, Carverdale, Fawndale and Northwest Crossing",17000,Burglary,116,235,227,218,181,680,226.7,-7.2,-23,-17,-20,1382.4,1335.3,1282.4,1064.7,1333.5
 6B10,6,5.50084827,"York Plaza, Pembrook Place and Hawthorne Place",33000,Burglary,124,175,156,178,168,509,169.7,1.7,-4,-5.6,-1,530.3,472.7,539.4,509.1,514.2
 6B20,6,6.12869477,"Highland Heights, Oakdale and Melrose Gardens",18000,Burglary,116,169,192,132,146,493,164.3,-21.9,-13.6,10.6,-11,938.9,1066.7,733.3,811.1,912.8
 6B30,6,7.2300685,"Woodland Trails, Oaks of Inwood, Bayou Bend, Cole Creek Manor and Inwood Forest",38000,Burglary,131,219,212,123,168,554,184.7,-43.8,-23.3,36.6,-9,576.3,557.9,323.7,442.1,486.1
 6B40,6,5.544689,"Highland Gardens, Highland Heights and North Plaza",20000,Burglary,96,149,190,124,136,463,154.3,-16.8,-8.7,9.7,-12,745,950,620,680,771.5
 22B30,22,2.8264671,Aldine and Imperial Valley,19000,Burglary,86,137,171,122,114,430,143.3,-10.9,-16.8,-6.6,-20,721.1,900,642.1,600,754.2
 22B20,22,4.61158268,Greenspoint,24000,Burglary,189,278,276,269,271,823,274.3,-3.2,-2.5,0.7,-1,1158.3,1150,1120.8,1129.2,1142.9
-7C10,7,3.47828324,"Fifth Ward, North Park and Pinecrest",13000,Burglary,105,145,126,121,133,392,130.7,-16.6,-8.3,9.9,2,1115.4,969.2,930.8,1023.1,1005.4
-7C20,7,7.08575157,"Huntington Place, Willshire Place, Kashmere Gardens and Liberty Gardens",21000,Burglary,138,256,243,289,223,788,262.7,12.9,-12.9,-22.8,-15,1219,1157.1,1376.2,1061.9,1251
+7C10,7,3.47828324,"Fifth Ward, North Park and Pinecrest",13000,Burglary,105,145,126,121,132,392,130.7,-16.6,-9,9.1,1,1115.4,969.2,930.8,1015.4,1005.4
+7C20,7,7.08575157,"Huntington Place, Willshire Place, Kashmere Gardens and Liberty Gardens",21000,Burglary,138,256,243,289,222,788,262.7,12.9,-13.3,-23.2,-15,1219,1157.1,1376.2,1057.1,1251
 7C30,7,4.51719841,"Camden Woods, Archers Acres and Croyden Gardens",18000,Burglary,103,155,159,117,137,431,143.7,-24.5,-11.6,17.1,-5,861.1,883.3,650,761.1,798.3
-7C40,7,3.36786526,Keith-Weiss Park and Farrington Place,8000,Burglary,32,45,56,47,48,148,49.3,4.4,6.7,2.1,-3,562.5,700,587.5,600,616.2
+7C40,7,3.36786526,Keith-Weiss Park and Farrington Place,8000,Burglary,32,45,56,47,47,148,49.3,4.4,4.4,0,-5,562.5,700,587.5,587.5,616.2
 22B40,22,13.03325001,"Intercontinental Airport, Northwood, Lakeview Park and Glen Lee",11000,Burglary,93,119,112,126,121,357,119,5.9,1.7,-4,2,1081.8,1018.2,1145.5,1100,1081.8
-8C10,8,3.69037316,"Tidwell Park, Shady Oak and Buckingham Place",12000,Burglary,85,182,95,142,117,419,139.7,-22,-35.7,-17.6,-16,1516.7,791.7,1183.3,975,1164.2
+8C10,8,3.69037316,"Tidwell Park, Shady Oak and Buckingham Place",12000,Burglary,85,182,95,142,116,419,139.7,-22,-36.3,-18.3,-17,1516.7,791.7,1183.3,966.7,1164.2
 8C20,8,3.36154214,"Houston Gardens, Rosewood and Homestead",7000,Burglary,37,69,47,61,65,177,59,-11.6,-5.8,6.6,10,985.7,671.4,871.4,928.6,842.9
 8C30,8,4.6258259,"Parkhurst, East Houston and Clairmont Place",11000,Burglary,66,112,83,84,90,279,93,-25,-19.6,7.1,-3,1018.2,754.5,763.6,818.2,845.5
 8C40,8,4.97945551,"Lake Houston, Greenriver, Knoll and Lake Forest",8000,Burglary,17,54,32,27,21,113,37.7,-50,-61.1,-22.2,-44,675,400,337.5,262.5,471.3
 8C50,8,3.31739498,"Park North, Forest Green, Kentshire Place, Glenwood Forest and Dorchester",8000,Burglary,43,93,58,59,61,210,70,-36.6,-34.4,3.4,-13,1162.5,725,737.5,762.5,875
-8C60,8,5.79693312,"Edgeworth, Northwood Manor and Scenic Woods",19000,Burglary,77,140,102,109,101,351,117,-22.1,-27.9,-7.3,-14,736.8,536.8,573.7,531.6,615.8
+8C60,8,5.79693312,"Edgeworth, Northwood Manor and Scenic Woods",19000,Burglary,77,140,102,109,100,351,117,-22.1,-28.6,-8.3,-15,736.8,536.8,573.7,526.3,615.8
 9C10,9,5.21185619,"Port of Houston, Clinton Park, Pleasantville and Fidelity Manor",6000,Burglary,33,36,33,40,50,109,36.3,11.1,38.9,25,38,600,550,666.7,833.3,605
 9C20,9,7.5383173,Denver Harbor and Houston Harbor,16000,Burglary,55,109,91,70,71,270,90,-35.8,-34.9,1.4,-21,681.2,568.8,437.5,443.7,562.5
-9C30,9,8.13353768,"City Park East, Wynnewood Acres and Wallisville Gardens",9000,Burglary,29,54,72,50,44,176,58.7,-7.4,-18.5,-12,-25,600,800,555.6,488.9,652.2
+9C30,9,8.13353768,"City Park East, Wynnewood Acres and Wallisville Gardens",9000,Burglary,29,54,72,50,43,176,58.7,-7.4,-20.4,-14,-27,600,800,555.6,477.8,652.2
 9C40,9,10.42549456,"Greens Bayou Estates, Shady Brook, Northshore",23000,Burglary,129,188,181,163,185,532,177.3,-13.3,-1.6,13.5,4,817.4,787,708.7,804.3,770.9
-10H10,10,2.81830654,Oak Lawn and Ranger,11000,Burglary,42,53,87,64,59,204,68,20.8,11.3,-7.8,-13,481.8,790.9,581.8,536.4,618.2
-10H20,10,1.75743169,Eastwood and Broadmoor,10000,Burglary,49,62,86,59,70,207,69,-4.8,12.9,18.6,1,620,860,590,700,690
-10H30,10,1.02691154,Near East End,4000,Burglary,35,51,50,47,49,148,49.3,-7.8,-3.9,4.3,-1,1275,1250,1175,1225,1232.5
-10H40,10,0.99627062,Midtown,8000,Burglary,93,141,151,102,121,394,131.3,-27.7,-14.2,18.6,-8,1762.5,1887.5,1275,1512.5,1641.2
+10H10,10,2.81830654,Oak Lawn and Ranger,11000,Burglary,43,53,87,64,60,204,68,20.8,13.2,-6.2,-12,481.8,790.9,581.8,545.5,618.2
+10H20,10,1.75743169,Eastwood and Broadmoor,10000,Burglary,50,62,86,59,70,207,69,-4.8,12.9,18.6,1,620,860,590,700,690
+10H30,10,1.02691154,Near East End,4000,Burglary,36,51,50,47,50,148,49.3,-7.8,-2,6.4,1,1275,1250,1175,1250,1232.5
+10H40,10,0.99627062,Midtown,8000,Burglary,94,141,151,102,122,394,131.3,-27.7,-13.5,19.6,-7,1762.5,1887.5,1275,1525,1641.2
 10H50,10,2.30843079,the University of Houston area,13000,Burglary,119,187,188,158,163,533,177.7,-15.5,-12.8,3.2,-8,1438.5,1446.2,1215.4,1253.8,1366.9
-10H60,10,3.08931006,"University Oaks, Riverside Terrace and the Texas Southern University area",20000,Burglary,88,137,124,141,125,402,134,2.9,-8.8,-11.3,-7,685,620,705,625,670
+10H60,10,3.08931006,"University Oaks, Riverside Terrace and the Texas Southern University area",20000,Burglary,88,137,124,141,124,402,134,2.9,-9.5,-12.1,-7,685,620,705,620,670
 10H70,10,3.52217952,"Texas Medical Center, Hermann Park, Houston Zoo and Miller Outdoor Theatre",16000,Burglary,77,154,136,111,98,401,133.7,-27.9,-36.4,-11.7,-27,962.5,850,693.8,612.5,835.6
 10H80,10,2.73862779,"Southampton, Rice University area, Shadow Lawn and Broad Acres",19000,Burglary,58,119,101,87,83,307,102.3,-26.9,-30.3,-4.6,-19,626.3,531.6,457.9,436.8,538.4
 11H10,11,5.31502815,"Mason Park, Forest Hill, Sunnyland and Central Park",28000,Burglary,94,177,176,125,136,478,159.3,-29.4,-23.2,8.8,-15,632.1,628.6,446.4,485.7,568.9
@@ -52,60 +52,60 @@ beat,district,area_sq_mi,placename,population,category_name,total22,total19,tota
 11H30,11,2.84278059,Meadow Brook and Park Place,15000,Burglary,56,102,74,75,73,251,83.7,-26.5,-28.4,-2.7,-13,680,493.3,500,486.7,558
 11H40,11,6.14001938,Allendale and Oak Meadows,8000,Burglary,14,34,22,17,16,73,24.3,-50,-52.9,-5.9,-34,425,275,212.5,200,303.8
 11H50,11,2.09534157,"Meadow Creek, Ferndale Addition and Glenbrook Industrial",8000,Burglary,37,42,37,45,48,124,41.3,7.1,14.3,6.7,16,525,462.5,562.5,600,516.2
-12D10,12,8.55384717,"Almeda Mall, Southridge, Edgebrook and South Houston Gardens",44000,Burglary,243,289,285,289,335,863,287.7,0,15.9,15.9,16,656.8,647.7,656.8,761.4,653.9
-12D20,12,3.83700574,Sage,22000,Burglary,127,131,131,170,174,432,144,29.8,32.8,2.4,21,595.5,595.5,772.7,790.9,654.5
+12D10,12,8.55384717,"Almeda Mall, Southridge, Edgebrook and South Houston Gardens",44000,Burglary,244,289,285,289,336,863,287.7,0,16.3,16.3,17,656.8,647.7,656.8,763.6,653.9
+12D20,12,3.83700574,Sage,22000,Burglary,127,131,131,170,173,432,144,29.8,32.1,1.8,20,595.5,595.5,772.7,786.4,654.5
 12D30,12,3.99301158,Gulf Palms and Beamer,15000,Burglary,41,62,79,48,53,189,63,-22.6,-14.5,10.4,-16,413.3,526.7,320,353.3,420
 12D40,12,9.68663455,Scarsdale and Ellington Field,11000,Burglary,70,75,68,79,89,222,74,5.3,18.7,12.7,20,681.8,618.2,718.2,809.1,672.7
 12D50,12,8.93327581,"Bay Glen, Bay Oaks, Brook Forest and Bay Forest",26000,Burglary,36,41,32,32,49,105,35,-22,19.5,53.1,40,157.7,123.1,123.1,188.5,134.6
 12D60,12,6.35832041,"NASA's Johnson Space Center, Meadow Green, Oakbrook West and Camino South",22000,Burglary,25,76,62,85,47,223,74.3,11.8,-38.2,-44.7,-37,345.5,281.8,386.4,213.6,337.7
 12D70,12,5.39156317,Baybrook Mall and Sterling Knoll,12000,Burglary,79,82,90,96,104,268,89.3,17.1,26.8,8.3,16,683.3,750,800,866.7,744.2
 13D10,13,5.2433708,"Gulfgate Mall, Bay Forest, Riverview, Hampshire, Golfcrest and Barnett Stadium",23000,Burglary,67,166,171,116,102,453,151,-30.1,-38.6,-12.1,-32,721.7,743.5,504.3,443.5,656.5
-13D20,13,6.66870859,"Fairlawn, Garden Villas, Glenbrook Valley and Santa Rosa",36000,Burglary,199,328,256,243,272,827,275.7,-25.9,-17.1,11.9,-1,911.1,711.1,675,755.6,765.8
+13D20,13,6.66870859,"Fairlawn, Garden Villas, Glenbrook Valley and Santa Rosa",36000,Burglary,200,328,256,243,272,827,275.7,-25.9,-17.1,11.9,-1,911.1,711.1,675,755.6,765.8
 13D30,13,3.07402543,"Allen Farms, Airport Gardens and the Hobby Airport area",2000,Burglary,6,12,10,13,8,35,11.7,8.3,-33.3,-38.5,-32,600,500,650,400,585
 13D40,13,5.0688163,"Val Verde East, Gulf Meadows and Houston Skyscraper Shadows",13000,Burglary,46,66,77,35,55,178,59.3,-47,-16.7,57.1,-7,507.7,592.3,269.2,423.1,456.2
 14D10,14,3.66057918,McGregor Terrace and Riverside Terrace,17000,Burglary,130,242,205,126,175,573,191,-47.9,-27.7,38.9,-8,1423.5,1205.9,741.2,1029.4,1123.5
-14D20,14,7.25646368,"Blueridge, Sunnyside, Brook Haven and Bayou Estates",28000,Burglary,184,409,291,285,259,985,328.3,-30.3,-36.7,-9.1,-21,1460.7,1039.3,1017.9,925,1172.5
+14D20,14,7.25646368,"Blueridge, Sunnyside, Brook Haven and Bayou Estates",28000,Burglary,184,409,291,285,257,985,328.3,-30.3,-37.2,-9.8,-22,1460.7,1039.3,1017.9,917.9,1172.5
 14D30,14,4.20537595,"Crestmont, Edgewood, Bellfort Park, Inwood Terrace and Southpark",21000,Burglary,101,184,155,126,134,465,155,-31.5,-27.2,6.3,-14,876.2,738.1,600,638.1,738.1
-14D40,14,6.61224595,"South Acres, Shamrock Manor, Hillwood and Cloverland",21000,Burglary,81,115,116,87,100,318,106,-24.3,-13,14.9,-6,547.6,552.4,414.3,476.2,504.8
+14D40,14,6.61224595,"South Acres, Shamrock Manor, Hillwood and Cloverland",21000,Burglary,82,115,116,87,101,318,106,-24.3,-12.2,16.1,-5,547.6,552.4,414.3,481,504.8
 14D50,14,8.69627992,"Golden Glade Estates, Langston and Almeda Genoa",9000,Burglary,34,91,58,59,48,208,69.3,-35.2,-47.3,-18.6,-31,1011.1,644.4,655.6,533.3,770
-15E10,15,4.34996776,"Meyerland Plaza, Robindell, Meyerland, Braeburn Terrace and Maplewood South",24000,Burglary,92,201,102,122,127,425,141.7,-39.3,-36.8,4.1,-10,837.5,425,508.3,529.2,590.4
+15E10,15,4.34996776,"Meyerland Plaza, Robindell, Meyerland, Braeburn Terrace and Maplewood South",24000,Burglary,93,201,102,122,127,425,141.7,-39.3,-36.8,4.1,-10,837.5,425,508.3,529.2,590.4
 15E20,15,3.58384499,"Westbury, Park West and Willow Creek",18000,Burglary,34,102,69,91,52,262,87.3,-10.8,-49,-42.9,-40,566.7,383.3,505.6,288.9,485
 15E30,15,6.29133294,"Meyer Park, Post Oak Manor, Westwood, Willow Bend and Linkwood",34000,Burglary,110,269,210,165,149,644,214.7,-38.7,-44.6,-9.7,-31,791.2,617.6,485.3,438.2,631.5
-15E40,15,10.0079174,"The Astrodome, Six Flags Astroworld, Lakes at 610 and Plaza del Oro",30000,Burglary,272,350,288,248,351,886,295.3,-29.1,0.3,41.5,19,1166.7,960,826.7,1170,984.3
+15E40,15,10.0079174,"The Astrodome, Six Flags Astroworld, Lakes at 610 and Plaza del Oro",30000,Burglary,272,350,288,248,350,886,295.3,-29.1,0,41.1,19,1166.7,960,826.7,1166.7,984.3
 16E10,16,5.38940818,Canterbury Village and Monarch Estates,15000,Burglary,29,85,49,34,41,168,56,-60,-51.8,20.6,-27,566.7,326.7,226.7,273.3,373.3
-16E20,16,8.15202134,"Almeda Plaza, South Glen, Dumbarton Oaks and Briarwick",35000,Burglary,77,114,114,111,108,339,113,-2.6,-5.3,-2.7,-4,325.7,325.7,317.1,308.6,322.9
+16E20,16,8.15202134,"Almeda Plaza, South Glen, Dumbarton Oaks and Briarwick",35000,Burglary,78,114,114,111,108,339,113,-2.6,-5.3,-2.7,-4,325.7,325.7,317.1,308.6,322.9
 16E30,16,7.00932789,"Greenpark, Southwest Crossing and Windsor Village",22000,Burglary,45,93,95,90,62,278,92.7,-3.2,-33.3,-31.1,-33,422.7,431.8,409.1,281.8,421.4
 16E40,16,7.49721482,"Chasewood, Willowpark, Briarwick, Ridgemont and Quail Run",35000,Burglary,61,130,105,92,91,327,109,-29.2,-30,-1.1,-17,371.4,300,262.9,260,311.4
-17E10,17,3.3104034,"Southwest Memorial Hospital, Burnett Bayland Park and Westmoreland",51000,Burglary,253,317,244,290,335,851,283.7,-8.5,5.7,15.5,18,621.6,478.4,568.6,656.9,556.3
+17E10,17,3.3104034,"Southwest Memorial Hospital, Burnett Bayland Park and Westmoreland",51000,Burglary,254,317,244,290,335,851,283.7,-8.5,5.7,15.5,18,621.6,478.4,568.6,656.9,556.3
 17E20,17,3.92767309,the Houston Baptist University area and Maplewood West,27000,Burglary,75,159,119,106,106,384,128,-33.3,-33.3,0,-17,588.9,440.7,392.6,392.6,474.1
 17E30,17,3.8060455,Braeburn Valley West and Glenshire,21000,Burglary,81,121,162,142,110,425,141.7,17.4,-9.1,-22.5,-22,576.2,771.4,676.2,523.8,674.8
 17E40,17,4.70920035,"Creekbend, Southwood and Fondren Southwest",46000,Burglary,164,290,279,252,223,821,273.7,-13.1,-23.1,-11.5,-19,630.4,606.5,547.8,484.8,595
 18F10,18,1.95881352,"Saddlebrook, Bayou Woods and Sherwood Forest",7000,Burglary,29,51,51,46,36,148,49.3,-9.8,-29.4,-21.7,-27,728.6,728.6,657.1,514.3,704.3
-18F20,18,3.51641691,"The Galleria, Tanglewood, Riverway and Post Oak",24000,Burglary,84,212,177,186,141,575,191.7,-12.3,-33.5,-24.2,-26,883.3,737.5,775,587.5,798.8
+18F20,18,3.51641691,"The Galleria, Tanglewood, Riverway and Post Oak",24000,Burglary,85,212,177,186,141,575,191.7,-12.3,-33.5,-24.2,-26,883.3,737.5,775,587.5,798.8
 18F30,18,3.80008564,"The Richmond Strip, Briargrove, Post Oak Estates and Westhaven",36000,Burglary,160,303,296,264,229,863,287.7,-12.9,-24.4,-13.3,-20,841.7,822.2,733.3,636.1,799.2
-18F40,18,2.9060249,"Rosewood General Hospital, Woodlake and Briarmeadow",35000,Burglary,302,392,450,367,400,1209,403,-6.4,2,9,-1,1120,1285.7,1048.6,1142.9,1151.4
+18F40,18,2.9060249,"Rosewood General Hospital, Woodlake and Briarmeadow",35000,Burglary,304,392,450,367,402,1209,403,-6.4,2.6,9.5,-0,1120,1285.7,1048.6,1148.6,1151.4
 18F50,18,2.96939217,"Tanglewild, Sharpstown Mall and Regency Square",20000,Burglary,135,234,250,215,178,699,233,-8.1,-23.9,-17.2,-24,1170,1250,1075,890,1165
 18F60,18,3.62528697,Sharpstown Country Club and Southway Center,28000,Burglary,115,191,186,142,164,519,173,-25.7,-14.1,15.5,-5,682.1,664.3,507.1,585.7,617.9
 19G10,19,2.74020376,Concourse South and Westwood Mall,31000,Burglary,217,280,269,230,288,779,259.7,-17.9,2.9,25.2,11,903.2,867.7,741.9,929,837.7
 19G20,19,3.29219023,"Catalina Square, Bellaire West, Imperial Point",25000,Burglary,104,150,135,152,143,437,145.7,1.3,-4.7,-5.9,-2,600,540,608,572,582.8
-19G30,19,2.49064202,"Rodeo Square, Wildflower Green, Braewood Glen",18000,Burglary,49,107,102,84,61,293,97.7,-21.5,-43,-27.4,-38,594.4,566.7,466.7,338.9,542.8
-19G40,19,4.56425364,"Huntington Village, Wellington Park, Leawood, Keegans Glen",37000,Burglary,112,212,183,167,170,562,187.3,-21.2,-19.8,1.8,-9,573,494.6,451.4,459.5,506.2
+19G30,19,2.49064202,"Rodeo Square, Wildflower Green, Braewood Glen",18000,Burglary,49,107,102,84,60,293,97.7,-21.5,-43.9,-28.6,-39,594.4,566.7,466.7,333.3,542.8
+19G40,19,4.56425364,"Huntington Village, Wellington Park, Leawood, Keegans Glen",37000,Burglary,112,212,183,167,169,562,187.3,-21.2,-20.3,1.2,-10,573,494.6,451.4,456.8,506.2
 19G50,19,2.30578624,"Forum Park, Stancliff and Southwest Park",18000,Burglary,92,117,148,137,124,402,134,17.1,6,-9.5,-7,650,822.2,761.1,688.9,744.4
-20G10,20,3.06600809,"Westchase, Woodchase Village and Point West",29000,Burglary,157,291,288,214,214,793,264.3,-26.5,-26.5,0,-19,1003.4,993.1,737.9,737.9,911.4
+20G10,20,3.06600809,"Westchase, Woodchase Village and Point West",29000,Burglary,158,291,288,214,214,793,264.3,-26.5,-26.5,0,-19,1003.4,993.1,737.9,737.9,911.4
 20G20,20,3.27621655,"Lakeside Estates, City West Place, Rivercrest and Briargrove Park",18000,Burglary,59,140,99,85,87,324,108,-39.3,-37.9,2.4,-19,777.8,550,472.2,483.3,600
-20G30,20,3.97953501,"West Houston Medical Center, Andrau Airport, Westchase and Westchase Mall",26000,Burglary,183,312,253,278,243,843,281,-10.9,-22.1,-12.6,-14,1200,973.1,1069.2,934.6,1080.8
-20G40,20,4.16594899,"Lakeview Forest, Lakeside Place, Ashford Village and Southlake",28000,Burglary,132,278,230,180,174,688,229.3,-35.3,-37.4,-3.3,-24,992.9,821.4,642.9,621.4,818.9
+20G30,20,3.97953501,"West Houston Medical Center, Andrau Airport, Westchase and Westchase Mall",26000,Burglary,183,312,253,278,242,843,281,-10.9,-22.4,-12.9,-14,1200,973.1,1069.2,930.8,1080.8
+20G40,20,4.16594899,"Lakeview Forest, Lakeside Place, Ashford Village and Southlake",28000,Burglary,134,278,230,180,176,688,229.3,-35.3,-36.7,-2.2,-23,992.9,821.4,642.9,628.6,818.9
 20G70,20,2.38283582,Westpark Village and Ashford Point,21000,Burglary,77,143,157,175,116,475,158.3,22.4,-18.9,-33.7,-27,681,747.6,833.3,552.4,753.8
-20G80,20,25.33626534,City Limits,37000,Burglary,234,374,321,298,313,993,331,-20.3,-16.3,5,-5,1010.8,867.6,805.4,845.9,894.6
+20G80,20,25.33626534,City Limits,37000,Burglary,234,374,321,298,311,993,331,-20.3,-16.8,4.4,-6,1010.8,867.6,805.4,840.5,894.6
 21I10,21,0.00549966,Hobby Airport,0,Burglary,0,0,1,0,0,1,0.3,NA,NA,NA,-100,NA,NA,NA,NA,NA
 21I20,21,0.01205019,Hobby Airport,0,Burglary,1,0,0,0,1,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 21I50,21,14.61100076,Hobby Airport,0,Burglary,5,1,1,5,8,7,2.3,400,700,60,248,NA,NA,NA,NA,NA
 22B10,22,3.28874287,"Willowbrook, Willow Chase Park and Centerfield",8000,Burglary,54,88,111,120,94,319,106.3,36.4,6.8,-21.7,-12,1100,1387.5,1500,1175,1328.8
-5F20,5,5.94082911,Spring Branch and Schwartz Park,42000,Burglary,108,219,185,157,157,561,187,-28.3,-28.3,0,-16,521.4,440.5,373.8,373.8,445.2
+5F20,5,5.94082911,Spring Branch and Schwartz Park,42000,Burglary,108,219,185,157,153,561,187,-28.3,-30.1,-2.5,-18,521.4,440.5,373.8,364.3,445.2
 4F10,4,4.13606469,"Timber Oaks, Shadow Oaks and Long Point Acres",23000,Burglary,71,139,162,137,103,438,146,-1.4,-25.9,-24.8,-29,604.3,704.3,595.7,447.8,634.8
 20G50,20,5.88593521,"Nottingham, Yorkshire, Wilchester, Town and Country Village and Memorial City Shopping Center",30000,Burglary,54,143,107,100,82,350,116.7,-30.1,-42.7,-18,-30,476.7,356.7,333.3,273.3,389
 4F20,4,5.85840284,"Claymore Park, Westbranch, Spring Shadows and Kempwood Forest",28000,Burglary,64,147,118,112,102,377,125.7,-23.8,-30.6,-8.9,-19,525,421.4,400,364.3,448.9
-20G60,20,4.54207617,"Barkers Landing, Fleetwood, Thornwood and Darrel Tully Stadium",22000,Burglary,83,136,155,124,113,415,138.3,-8.8,-16.9,-8.9,-18,618.2,704.5,563.6,513.6,628.6
+20G60,20,4.54207617,"Barkers Landing, Fleetwood, Thornwood and Darrel Tully Stadium",22000,Burglary,83,136,155,124,112,415,138.3,-8.8,-17.6,-9.7,-19,618.2,704.5,563.6,509.1,628.6
 4F30,4,26.30690179,"Addicks Reservoir Area, Claymore Park, Brittmore Village, Park Ten Place and Mayde Creek Farms",18000,Burglary,59,160,129,128,81,417,139,-20,-49.4,-36.7,-42,888.9,716.7,711.1,450,772.2
 24C10,24,5.44044978,Kingwood,13000,Burglary,43,55,46,38,55,139,46.3,-30.9,0,44.7,19,423.1,353.8,292.3,423.1,356.2
 24C20,24,6.8291794,Kingwood,18000,Burglary,15,37,31,28,20,96,32,-24.3,-45.9,-28.6,-38,205.6,172.2,155.6,111.1,177.8
@@ -114,7 +114,7 @@ beat,district,area_sq_mi,placename,population,category_name,total22,total19,tota
 24C50,24,7.51791807,Kingwood,5000,Burglary,35,65,45,51,47,161,53.7,-21.5,-27.7,-7.8,-12,1300,900,1020,940,1074
 24C60,24,4.86823328,Kingwood,21000,Burglary,5,28,14,6,7,48,16,-78.6,-75,16.7,-56,133.3,66.7,28.6,33.3,76.2
 01A10,NA,NA,NA,NA,Burglary,5,0,0,0,5,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
-01A20,NA,NA,NA,NA,Burglary,16,0,0,0,16,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
+01A20,NA,NA,NA,NA,Burglary,17,0,0,0,17,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 01A30,NA,NA,NA,NA,Burglary,5,0,0,0,5,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 01A40,NA,NA,NA,NA,Burglary,3,0,0,0,3,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 01A50,NA,NA,NA,NA,Burglary,7,0,0,0,7,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -125,17 +125,17 @@ beat,district,area_sq_mi,placename,population,category_name,total22,total19,tota
 02A50,NA,NA,NA,NA,Burglary,7,0,0,0,7,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 02A60,NA,NA,NA,NA,Burglary,3,0,0,0,3,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 03B10,NA,NA,NA,NA,Burglary,13,0,0,0,13,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
-03B30,NA,NA,NA,NA,Burglary,6,0,0,0,6,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
+03B30,NA,NA,NA,NA,Burglary,8,0,0,0,8,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 03B40,NA,NA,NA,NA,Burglary,16,0,0,0,16,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 03B50,NA,NA,NA,NA,Burglary,12,0,0,0,12,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 04F10,NA,NA,NA,NA,Burglary,5,0,0,0,5,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 04F20,NA,NA,NA,NA,Burglary,8,0,0,0,8,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 04F30,NA,NA,NA,NA,Burglary,5,0,0,0,5,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
-05F10,NA,NA,NA,NA,Burglary,8,0,0,0,8,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
-05F20,NA,NA,NA,NA,Burglary,10,0,0,0,10,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
-05F30,NA,NA,NA,NA,Burglary,8,0,0,0,8,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
+05F10,NA,NA,NA,NA,Burglary,10,0,0,0,10,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
+05F20,NA,NA,NA,NA,Burglary,11,0,0,0,11,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
+05F30,NA,NA,NA,NA,Burglary,10,0,0,0,10,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 06B10,NA,NA,NA,NA,Burglary,9,0,0,0,9,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
-06B20,NA,NA,NA,NA,Burglary,8,0,0,0,8,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
+06B20,NA,NA,NA,NA,Burglary,9,0,0,0,9,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 06B30,NA,NA,NA,NA,Burglary,15,0,0,0,15,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 06B40,NA,NA,NA,NA,Burglary,8,0,0,0,8,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 06B60,NA,NA,NA,NA,Burglary,1,0,0,0,1,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -144,6 +144,7 @@ beat,district,area_sq_mi,placename,population,category_name,total22,total19,tota
 07C30,NA,NA,NA,NA,Burglary,13,0,0,0,13,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 07C40,NA,NA,NA,NA,Burglary,1,0,0,0,1,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 08C10,NA,NA,NA,NA,Burglary,4,0,0,0,4,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
+08C20,NA,NA,NA,NA,Burglary,1,0,0,0,1,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 08C30,NA,NA,NA,NA,Burglary,8,0,0,0,8,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 08C40,NA,NA,NA,NA,Burglary,2,0,0,0,2,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 08C50,NA,NA,NA,NA,Burglary,11,0,0,0,11,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
