@@ -23,9 +23,9 @@ library(sf)
 
           
 h1.title {
-  background-image: url('https://abcotvdata.github.io/safetytracker_houston/skyline1.png');
+  background-image: url('https://abcotvdata.github.io/safetytracker_houston/skyline7.jpg');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 110%;
 }
 
 div {
@@ -37,7 +37,7 @@ h1.title {
   color: white;
   font-weight: 700;
   text-align: left;
-  font-size: 45px;
+  font-size: 36px;
   padding: 10px;
 }
 
