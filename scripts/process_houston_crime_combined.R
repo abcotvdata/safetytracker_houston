@@ -486,3 +486,9 @@ saveRDS(drugs_beat,"scripts/rds/drugs_beat.rds")
 # additional table exports for specific charts
 where_murders_happen %>% write_csv("data/output/city/where_murders_happen.csv")
 when_murders_happen %>% write_csv("data/output/city/when_murders_happen.csv")
+
+# deaths cause data update for TX specific table
+deaths <- read_excel("data/source/health/deaths.xlsx") 
+deaths <- deaths %>% filter(state=="TX")
+deaths$Homicide <- murders_city$rate_last12
+write_csv(deaths,"data/source/health/death_rates.csv")
