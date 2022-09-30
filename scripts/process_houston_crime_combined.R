@@ -67,7 +67,7 @@ houston_crime$premise <- case_when(houston_crime$premise == 'Amusement Park' ~ '
                                    houston_crime$premise == 'Shopping Mall' ~ 'Mall',
                                    houston_crime$premise == 'Specialty Store' ~ 'Store',
                                    houston_crime$premise == 'Other, Unknown' ~ 'Unknown or other',
-                                   TRUE ~ '')
+                                   TRUE ~ 'Unknown or other')
 
 # write csv of houston crime as a backup
 # worthwhile to think through if the full csv is even necessary to save; maybe for redundancy
