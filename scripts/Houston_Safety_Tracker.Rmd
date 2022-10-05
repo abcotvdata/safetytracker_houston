@@ -1,7 +1,7 @@
 ---
-title: "Neighborhood<br>Safety Tracker"
+title: "ABC13 Houston Neighborhood Safety Tracker"
 # author: "John Kelly"
-date: "Updated `r format(Sys.time(), '%B %d, %Y')` by the ABC13 Data Team"
+# date: "Updated `r format(Sys.time(), '%B %d, %Y')` by the ABC13 Data Team"
 output: html_document
 ---
 
@@ -18,25 +18,18 @@ library(sf)
 ```
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
+![<popupchatter>Updated `r format(Sys.time(), '%B %d, %Y')` by the ABC13 Data Team</popupchatter>](https://github.com/abcotvdata/safetytracker_houston/raw/main/docs/header.png)
+
+
 ```{css, echo=FALSE}
-
-h1.title {
-  background-image: url('https://abcotvdata.github.io/safetytracker_houston/header.png');
-  background-repeat: no-repeat;
-  background-size: 110%;
-}
-
-div {
-  padding: 0.25em;
-}
 
 h1.title {
   font-family: roboto;
   color: transparent;
   font-weight: 700;
   text-align: left;
-  font-size: 36px;
-  padding: 10px;
+  font-size: 12px;
+  padding: 0px;
 }
 
 .date {
@@ -206,6 +199,7 @@ houston_population <- 2304580
 # Source data pre-processed separately at process_houston_crime_combined.R
 ```
 
+<br>
 <h2>ABC13 is tracking crime and safety across Houston and in your neighborhood. 
 
 You can choose which crime to explore: <select onchange="window.location=this.value">
