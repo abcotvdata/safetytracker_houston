@@ -301,7 +301,7 @@ autotheftlabel <- paste(sep="",
 autothefts_beat$total19,
 "</td>
 				<td>",
-round(autothefts_beat$rate19,0),
+prettyNum(round(autothefts_beat$rate19,0),big.mark =","),
 "</td>
 			</tr>
 			<tr>
@@ -310,7 +310,7 @@ round(autothefts_beat$rate19,0),
 autothefts_beat$total20,
 "</td>
 				<td>",
-round(autothefts_beat$rate20,0),
+prettyNum(round(autothefts_beat$rate20,0),big.mark =","),
 "</td>
 			</tr>
 						<tr>
@@ -319,7 +319,7 @@ round(autothefts_beat$rate20,0),
 autothefts_beat$total21,
 "</td>
 				<td>",
-round(autothefts_beat$rate21,0),
+prettyNum(round(autothefts_beat$rate21,0),big.mark =","),
 "</td>
 			</tr>
 						<tr>
@@ -328,7 +328,7 @@ round(autothefts_beat$rate21,0),
 autothefts_beat$last12mos,
 "</td>
 				<td>",
-round(autothefts_beat$rate_last12,0),
+prettyNum(round(autothefts_beat$rate_last12,0),big.mark =","),
 "</td>
 			</tr>
 						<tr>
@@ -337,7 +337,7 @@ round(autothefts_beat$rate_last12,0),
 round(autothefts_beat$avg_prior3years,0),
 "</td>
 				<td>",
-round(autothefts_beat$rate_prior3years,0),
+prettyNum(round(autothefts_beat$rate_prior3years,0),big.mark =","),
 "</td>
 			</tr>
 </table>")
