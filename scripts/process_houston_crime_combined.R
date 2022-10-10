@@ -79,6 +79,10 @@ saveRDS(asofdate,"scripts/rds/asofdate.rds")
 write_csv(houston_crime,"data/output/houston_crime.csv")
 saveRDS(houston_crime,"scripts/rds/houston_crime.rds")
 
+# days total incidents and output for validation
+days <- houston_crime %>% group_by(date) %>% summarise(count=n()) %>% arrange(desc(date))
+write_csv(days,"data/output/reference/days_incident_check.csv")
+
 # Clean up
 rm(houston_annual,houston_monthly,houston_recent_new)
 
