@@ -187,10 +187,6 @@ th {
 ```{r beats, include=FALSE}
 # set value of houston_population
 houston_population <- 2304580
-# population where murders are up 20%
-# beatpops_up <- murders_beat %>% 
-#  filter(rate_last12>=14.4)
-# pop_murdersup <- sum(beatpops_up$population)
 ```
 
 
@@ -217,7 +213,7 @@ You can choose which crime to explore: <select onchange="window.location=this.va
 <div class="card" style="background-color:#99a0a5;">
 <p>Homicides<br>
 <bignumber>`r prettyNum(murders_city$last12mos, big.mark=",")`<br></bignumber>
-<p>Last 12 months<br>Through `r format((Sys.Date() - 2), "%B %d")`</p>
+<p>Last 12 months<br>Through `r format(asofdate, "%B %d")`</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Homicides<br>
@@ -255,7 +251,7 @@ During the pandemic, a person's chance of being murdered in Houston rose above t
 
 The risk is not the same neighborhood to neighborhood.
 
-ABC13's data team looked at the Houston Police Department's data by neighborhood from 2019 through `r format((Sys.Date() - 2), "%B %d")`.
+ABC13's data team looked at the Houston Police Department's data by neighborhood from 2019 through `r format(asofdate, "%B %d")`.
 
 <subhead>A closer look at Houston homicides by neighborhood</subhead>
 

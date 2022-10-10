@@ -69,6 +69,11 @@ houston_crime$premise <- case_when(houston_crime$premise == 'Amusement Park' ~ '
                                    houston_crime$premise == 'Other, Unknown' ~ 'Unknown or other',
                                    TRUE ~ 'Unknown or other')
 
+# Get latest date in our file and save for
+# automating the updated date text in building tracker
+asofdate <- max(houston_crime$date)
+saveRDS(asofdate,"scripts/rds/asofdate.rds")
+
 # write csv of houston crime as a backup
 # worthwhile to think through if the full csv is even necessary to save; maybe for redundancy
 write_csv(houston_crime,"data/output/houston_crime.csv")

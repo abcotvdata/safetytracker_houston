@@ -211,7 +211,7 @@ houston_population <- 2304580
 <div class="card" style="background-color:#99a0a5;">
 <p>Thefts<br>
 <bignumber>`r prettyNum(thefts_city$last12mos, big.mark=",")`<br></bignumber>
-<p>Last 12 months<br>Through  `r format((Sys.Date() - 2), "%B %d")`</p>
+<p>Last 12 months<br>Through  `r format(asofdate, "%B %d")`</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Thefts<br>
@@ -236,7 +236,7 @@ The city averaged <h8>`r prettyNum(round(thefts_city$last12mos/52,0), big.mark="
 
 <subhead>Houston thefts neighborhood by neighborhood</subhead>
 
-The risk is not the same neighborhood to neighborhood. ABC13's data team looked at the Houston Police Department's data by neighborhood from 2019 through `r format((Sys.Date() - 2), "%B %d")`.
+The risk is not the same neighborhood to neighborhood. ABC13's data team looked at the Houston Police Department's data by neighborhood from 2019 through `r format(asofdate, "%B %d")`.
 
 The map color-codes each neighborhood by the theft rate over the last 12 months. The three darker blues represent neighborhoods with theft rates that are higher than the citywide rate. You can also click the box in the bottom right corner to see neighborhoods by the number of thefts.
 
