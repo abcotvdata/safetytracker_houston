@@ -455,9 +455,9 @@ when_murders_happen$time <- case_when(when_murders_happen$hour == "0" ~ "12 a.m.
                                       when_murders_happen$hour %in% c("12") ~ paste0(when_murders_happen$hour," p.m."),
                                       when_murders_happen$hour %in% c("13","14","15","16","17","18","19","20","21","22","23") ~ paste0((as.numeric(when_murders_happen$hour)-12)," p.m."),
                                       TRUE ~ "Other")
-when_murders_happen$timeframe <- case_when(when_murders_happen$hour %in% c("0","1","2","3","4","21","22","23") ~ "Overnight",
-                                           when_murders_happen$hour %in% c("5","6","7","8","9","10","11","12") ~ "Morning",
-                                           when_murders_happen$hour %in% c("13","14","15","16","17","18","19","20")  ~ "Afternoon/Evening",
+when_murders_happen$timeframe <- case_when(when_murders_happen$hour %in% c("0","1","2","3","4","21","22","23") ~ "Overnight from 9 p.m. to 5 a.m.",
+                                           when_murders_happen$hour %in% c("5","6","7","8","9","10","11") ~ "Morning from 5 a.m. to 12 p.m.",
+                                           when_murders_happen$hour %in% c("12","13","14","15","16","17","18","19","20")  ~ "Afternoon/Evening from 12 p.m. to 9 p.m.",
                                            TRUE ~ "Other")
 when_murders_happen <- when_murders_happen %>%
   group_by(timeframe) %>%
