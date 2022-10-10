@@ -17,7 +17,7 @@ beat,district,area_sq_mi,placename,population,category_name,total22,total19,tota
 3B50,3,3.85259517,"Northline Mall, Stratton Place, Oakwood, Colonial Gardens, Lindale and Junction City",20000,Sexual Assault,14,27,18,18,19,63,21,-33.3,-29.6,5.6,-10,135,90,90,95,105
 5F10,5,3.25978513,Afton Village and Pine Terrace,14000,Sexual Assault,5,10,5,11,7,26,8.7,10,-30,-36.4,-20,71.4,35.7,78.6,50,62.1
 5F30,5,8.70689439,"Fairbanks, Carverdale, Fawndale and Northwest Crossing",17000,Sexual Assault,13,20,16,20,16,56,18.7,0,-20,-20,-14,117.6,94.1,117.6,94.1,110
-6B10,6,5.50084827,"York Plaza, Pembrook Place and Hawthorne Place",33000,Sexual Assault,15,20,30,29,26,79,26.3,45,30,-10.3,-1,60.6,90.9,87.9,78.8,79.7
+6B10,6,5.50084827,"York Plaza, Pembrook Place and Hawthorne Place",33000,Sexual Assault,15,20,30,29,25,79,26.3,45,25,-13.8,-5,60.6,90.9,87.9,75.8,79.7
 6B20,6,6.12869477,"Highland Heights, Oakdale and Melrose Gardens",18000,Sexual Assault,9,27,19,19,12,65,21.7,-29.6,-55.6,-36.8,-45,150,105.6,105.6,66.7,120.6
 6B30,6,7.2300685,"Woodland Trails, Oaks of Inwood, Bayou Bend, Cole Creek Manor and Inwood Forest",38000,Sexual Assault,11,19,30,11,12,60,20,-42.1,-36.8,9.1,-40,50,78.9,28.9,31.6,52.6
 6B40,6,5.544689,"Highland Gardens, Highland Heights and North Plaza",20000,Sexual Assault,11,27,14,17,12,58,19.3,-37,-55.6,-29.4,-38,135,70,85,60,96.5
@@ -36,7 +36,7 @@ beat,district,area_sq_mi,placename,population,category_name,total22,total19,tota
 8C60,8,5.79693312,"Edgeworth, Northwood Manor and Scenic Woods",19000,Sexual Assault,7,18,14,17,8,49,16.3,-5.6,-55.6,-52.9,-51,94.7,73.7,89.5,42.1,85.8
 9C10,9,5.21185619,"Port of Houston, Clinton Park, Pleasantville and Fidelity Manor",6000,Sexual Assault,2,4,4,10,3,18,6,150,-25,-70,-50,66.7,66.7,166.7,50,100
 9C20,9,7.5383173,Denver Harbor and Houston Harbor,16000,Sexual Assault,9,11,11,9,11,31,10.3,-18.2,0,22.2,7,68.8,68.8,56.2,68.8,64.4
-9C30,9,8.13353768,"City Park East, Wynnewood Acres and Wallisville Gardens",9000,Sexual Assault,4,9,11,17,8,37,12.3,88.9,-11.1,-52.9,-35,100,122.2,188.9,88.9,136.7
+9C30,9,8.13353768,"City Park East, Wynnewood Acres and Wallisville Gardens",9000,Sexual Assault,4,9,11,17,7,37,12.3,88.9,-22.2,-58.8,-43,100,122.2,188.9,77.8,136.7
 9C40,9,10.42549456,"Greens Bayou Estates, Shady Brook, Northshore",23000,Sexual Assault,19,20,15,15,23,50,16.7,-25,15,53.3,38,87,65.2,65.2,100,72.6
 10H10,10,2.81830654,Oak Lawn and Ranger,11000,Sexual Assault,2,10,5,11,3,26,8.7,10,-70,-72.7,-66,90.9,45.5,100,27.3,79.1
 10H20,10,1.75743169,Eastwood and Broadmoor,10000,Sexual Assault,3,5,6,3,3,14,4.7,-40,-40,0,-36,50,60,30,30,47
@@ -118,6 +118,7 @@ beat,district,area_sq_mi,placename,population,category_name,total22,total19,tota
 02A50,NA,NA,NA,NA,Sexual Assault,4,0,0,0,4,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 03B10,NA,NA,NA,NA,Sexual Assault,1,0,0,0,1,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 03B30,NA,NA,NA,NA,Sexual Assault,1,0,0,0,1,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
+03B40,NA,NA,NA,NA,Sexual Assault,1,0,0,0,1,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 04F10,NA,NA,NA,NA,Sexual Assault,1,0,0,0,1,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 04F30,NA,NA,NA,NA,Sexual Assault,3,0,0,0,3,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 05F20,NA,NA,NA,NA,Sexual Assault,2,0,0,0,2,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
