@@ -139,7 +139,7 @@
  "features": [
   {
    "attributes": {
-    "OBJECTID": 4921857,
+    "OBJECTID": 4939765,
     "USER_RMSOccurrenceDate": 1664150400000,
     "USER_RMSOccurrenceHour": "23",
     "USER_Incident": "130198522",
@@ -162,7 +162,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 4924527,
+    "OBJECTID": 4942393,
     "USER_RMSOccurrenceDate": 1662854400000,
     "USER_RMSOccurrenceHour": "23",
     "USER_Incident": "123858322",
@@ -181,6 +181,29 @@
     "DISTRICT_1": "I",
     "SNBNAME": "GULFGATE RIVERVIEW / PINE VALLEY",
     "OLC": "76X6MPX3+R8"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 4945328,
+    "USER_RMSOccurrenceDate": 1665360000000,
+    "USER_RMSOccurrenceHour": "02",
+    "USER_Incident": "136824122",
+    "USER_NIBRSClass": "09C",
+    "USER_NIBRSDescription": "Justifiable homicide",
+    "USER_District": "18",
+    "USER_Beat": "18F40",
+    "USER_Premise": "Parking Lot, Garage",
+    "USER_OffenseAddressMiddle": "8749 WESTHEIMER",
+    "USER_BlockRange": "8700-8799",
+    "USER_StreetName": "WESTHEIMER",
+    "USER_StreetType": "RD",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77063",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "F",
+    "SNBNAME": "MID WEST",
+    "OLC": "76X6PFPJ+W9"
    }
   }
  ]
