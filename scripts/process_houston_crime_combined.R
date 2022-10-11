@@ -72,8 +72,6 @@ houston_crime$premise <- case_when(houston_crime$premise == 'Amusement Park' ~ '
                                    houston_crime$premise == 'Other, Unknown' ~ 'Unknown or other',
                                    TRUE ~ 'Unknown or other')
 
-
-
 # Get latest date in our file and save for
 # automating the updated date text in building tracker
 asofdate <- max(houston_crime$date)
@@ -168,7 +166,6 @@ citywide_category_last12 <- houston_crime_last12 %>%
   group_by(category_name) %>%
   summarise(last12mos = sum(offense_count))
 citywide_category <- left_join(citywide_category,citywide_category_last12,by=c("category_name"))
-citywide_category <- citywide_category %>% filter(!is.na(category_name))
 # add zeros where there were no crimes tallied that year
 citywide_category[is.na(citywide_category)] <- 0
 # Calculate a total across the 3 prior years
@@ -228,7 +225,6 @@ citywide_type <- left_join(citywide_type,citywide_type_last12,by=c("type"))
 # Calculate a total across the 3 prior years
 citywide_type$total_prior3years <- citywide_type$total19+citywide_type$total20+citywide_type$total21
 citywide_type$avg_prior3years <- round(citywide_type$total_prior3years/3,1)
-citywide_type <- citywide_type %>% filter(!is.na(type))
 # add zeros where there were no crimes tallied that year
 citywide_type[is.na(citywide_type)] <- 0
 # calculate increases
