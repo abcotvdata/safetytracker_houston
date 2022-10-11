@@ -1,4 +1,5 @@
 beat,district,area_sq_mi,placename,population,category_name,total19,total20,total21,total22,last12mos,total_prior3years,avg_prior3years,inc_19to21,inc_19tolast12,inc_21tolast12,inc_prior3yearavgtolast12,rate19,rate20,rate21,rate_last12,rate_prior3years
+23J40,23,3.03933481,Ellington Field,0,Robbery,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 23J50,23,2.12389492,Hobby Airport,0,Robbery,0,1,0,1,1,1,0.3,NA,NA,NA,233,NA,NA,NA,NA,NA
 1A10,1,1.74646692,Downtown Central Business District,17000,Robbery,92,90,69,55,66,251,83.7,-25,-28.3,-4.3,-21,541.2,529.4,405.9,388.2,492.4
 1A20,1,2.44133075,"Fourth Ward, Avondale and Westmoreland",27000,Robbery,88,96,109,73,93,293,97.7,23.9,5.7,-14.7,-5,325.9,355.6,403.7,344.4,361.9
@@ -97,7 +98,11 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 20G70,20,2.38283582,Westpark Village and Ashford Point,21000,Robbery,51,48,51,32,41,150,50,0,-19.6,-19.6,-18,242.9,228.6,242.9,195.2,238.1
 20G80,20,25.33626534,City Limits,37000,Robbery,77,92,72,33,47,241,80.3,-6.5,-39,-34.7,-41,208.1,248.6,194.6,127,217
 21I10,21,0.00549966,Intercontinental Airport,0,Robbery,0,0,1,0,1,1,0.3,NA,NA,0,233,NA,NA,NA,NA,NA
+21I20,21,0.01205019,Intercontinental Airport,0,Robbery,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
+21I30,21,0.01180375,Intercontinental Airport,0,Robbery,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
+21I40,21,0.00923163,Intercontinental Airport,0,Robbery,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 21I50,21,14.61100076,Intercontinental Airport,0,Robbery,3,3,2,1,3,8,2.7,-33.3,0,50,11,NA,NA,NA,NA,NA
+21I70,21,0.01945113,Intercontinental Airport,0,Robbery,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 22B10,22,3.28874287,"Willowbrook, Willow Chase Park and Centerfield",8000,Robbery,74,74,55,31,41,203,67.7,-25.7,-44.6,-25.5,-39,925,925,687.5,512.5,846.2
 5F20,5,5.94082911,Spring Branch and Schwartz Park,42000,Robbery,152,184,139,80,109,475,158.3,-8.6,-28.3,-21.6,-31,361.9,438.1,331,259.5,376.9
 4F10,4,4.13606469,"Timber Oaks, Shadow Oaks and Long Point Acres",23000,Robbery,63,62,58,41,57,183,61,-7.9,-9.5,-1.7,-7,273.9,269.6,252.2,247.8,265.2
@@ -111,10 +116,14 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 24C40,24,35.7992771,Kingwood,6000,Robbery,2,4,6,2,2,12,4,200,0,-66.7,-50,33.3,66.7,100,33.3,66.7
 24C50,24,7.51791807,Kingwood,5000,Robbery,9,8,4,7,9,21,7,-55.6,0,125,29,180,160,80,180,140
 24C60,24,4.86823328,Kingwood,21000,Robbery,3,5,0,3,3,8,2.7,-100,0,NA,11,14.3,23.8,0,14.3,12.9
+21I60,21,0.01236886,Intercontinental Airport,0,Robbery,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
+FTB4,NA,NA,NA,NA,Robbery,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 HCC1,NA,NA,NA,NA,Robbery,0,0,0,1,1,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
+HCC4,NA,NA,NA,NA,Robbery,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 HCC5,NA,NA,NA,NA,Robbery,1,0,0,0,0,1,0.3,-100,-100,NA,-100,NA,NA,NA,NA,NA
 HCC7,NA,NA,NA,NA,Robbery,1,2,0,0,0,3,1,-100,-100,NA,-100,NA,NA,NA,NA,NA
 HCSO,NA,NA,NA,NA,Robbery,31,27,5,4,5,63,21,-83.9,-83.9,0,-76,NA,NA,NA,NA,NA
 OOJ,NA,NA,NA,NA,Robbery,27,32,3,6,6,62,20.7,-88.9,-77.8,100,-71,NA,NA,NA,NA,NA
+UH-2PD,NA,NA,NA,NA,Robbery,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 UH-3PD,NA,NA,NA,NA,Robbery,0,1,0,0,0,1,0.3,NA,NA,NA,-100,NA,NA,NA,NA,NA
 Unknown,NA,NA,NA,NA,Robbery,1,1,1,0,0,3,1,0,-100,-100,-100,NA,NA,NA,NA,NA

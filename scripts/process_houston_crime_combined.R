@@ -16,6 +16,9 @@ houston_recent_new <- houston_recent_new %>% filter(as.Date(date)>max(as.Date(ho
 # COMBINE ANNUAL + MONTHLY WITH TODAY'S RECENT/30DAY FILE
 houston_crime <- bind_rows(houston_crime,houston_recent_new)
 
+# Manual fix one inconsistency in offense_type naming
+houston_crime$offense_type <- sub("Abduction","abduction",houston_crime$offense_type)
+
 # FORMATTING FULL DATA FILE FOR USE IN TRACKERS
 
 # Create a year column
@@ -68,6 +71,8 @@ houston_crime$premise <- case_when(houston_crime$premise == 'Amusement Park' ~ '
                                    houston_crime$premise == 'Specialty Store' ~ 'Store',
                                    houston_crime$premise == 'Other, Unknown' ~ 'Unknown or other',
                                    TRUE ~ 'Unknown or other')
+
+
 
 # Get latest date in our file and save for
 # automating the updated date text in building tracker
@@ -163,6 +168,7 @@ citywide_category_last12 <- houston_crime_last12 %>%
   group_by(category_name) %>%
   summarise(last12mos = sum(offense_count))
 citywide_category <- left_join(citywide_category,citywide_category_last12,by=c("category_name"))
+citywide_category <- citywide_category %>% filter(!is.na(category_name))
 # add zeros where there were no crimes tallied that year
 citywide_category[is.na(citywide_category)] <- 0
 # Calculate a total across the 3 prior years
@@ -222,6 +228,7 @@ citywide_type <- left_join(citywide_type,citywide_type_last12,by=c("type"))
 # Calculate a total across the 3 prior years
 citywide_type$total_prior3years <- citywide_type$total19+citywide_type$total20+citywide_type$total21
 citywide_type$avg_prior3years <- round(citywide_type$total_prior3years/3,1)
+citywide_type <- citywide_type %>% filter(!is.na(type))
 # add zeros where there were no crimes tallied that year
 citywide_type[is.na(citywide_type)] <- 0
 # calculate increases
@@ -247,11 +254,20 @@ beats <- readRDS("scripts/rds/beats.rds")
 # beatsindata <- houston_crime %>% group_by(beat,year) %>% summarise(count=n()) %>% pivot_wider(names_from=year, values_from=count)
 # anti_join(beatsindata,beats,by="beat")
 
+# we need these unique lists for making the beat tables below
+# this ensures that we get crime details for beats even with zero
+# incidents of certain types over the entirety of the time period
+list_beat_detailed <- crossing(beat = unique(houston_crime$beat), nibrs_class = unique(houston_crime$nibrs_class)) %>% left_join(classcodes %>% select(2,1), by="nibrs_class") %>% select(1,3,2)
+list_beat_category <- crossing(beat = unique(houston_crime$beat), category_name = unique(houston_crime$category_name))
+list_beat_type <- crossing(beat = unique(houston_crime$beat), type = unique(houston_crime$type))
+
 # Calculate total of each detailed offense type BY POLICE BEAT
 beat_detailed <- houston_crime %>%
-  group_by(beat,offense_type,nibrs_class,year) %>%
+  group_by(beat,nibrs_class,year) %>%
   summarise(count = sum(offense_count)) %>%
   pivot_wider(names_from=year, values_from=count)
+# merging with full list so we have data for every beat, every detailed offense type
+beat_detailed <- left_join(list_beat_detailed,beat_detailed,by=c("beat"="beat","nibrs_class"="nibrs_class"))
 # rename the year columns
 beat_detailed <- beat_detailed %>% 
   rename("total19" = "2019",
@@ -260,9 +276,9 @@ beat_detailed <- beat_detailed %>%
          "total22" = "2022")
 # add last 12 months
 beat_detailed_last12 <- houston_crime_last12 %>%
-  group_by(beat,offense_type,nibrs_class) %>%
+  group_by(beat,nibrs_class) %>%
   summarise(last12mos = sum(offense_count))
-beat_detailed <- left_join(beat_detailed,beat_detailed_last12,by=c("beat","offense_type","nibrs_class"))
+beat_detailed <- left_join(beat_detailed,beat_detailed_last12,by=c("beat","nibrs_class"))
 rm(beat_detailed_last12)
 # add zeros where there were no crimes tallied that year
 beat_detailed[is.na(beat_detailed)] <- 0
@@ -294,6 +310,8 @@ beat_category <- houston_crime %>%
   group_by(beat,category_name,year) %>%
   summarise(count = sum(offense_count)) %>%
   pivot_wider(names_from=year, values_from=count)
+# merging with full list so we have data for every beat, every category_name
+beat_category <- left_join(list_beat_category,beat_category,by=c("beat"="beat","category_name"="category_name"))
 # rename the year columns
 beat_category <- beat_category %>% 
   rename("total19" = "2019",
@@ -336,6 +354,8 @@ beat_type <- houston_crime %>%
   group_by(beat,type,year) %>%
   summarise(count = sum(offense_count)) %>%
   pivot_wider(names_from=year, values_from=count)
+# merging with full list so we have data for every beat, every type
+beat_type <- left_join(list_beat_type,beat_type,by=c("beat"="beat","type"="type"))
 # rename the year columns
 beat_type <- beat_type %>% 
   rename("total19" = "2019",

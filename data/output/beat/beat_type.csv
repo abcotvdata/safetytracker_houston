@@ -301,6 +301,7 @@ beat,district,area_sq_mi,placename,population,type,total19,total20,total21,total
 21I20,21,0.01205019,Intercontinental Airport,0,Violent,0,0,0,1,1,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 21I30,21,0.01180375,Intercontinental Airport,0,Other,0,0,0,1,1,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 21I30,21,0.01180375,Intercontinental Airport,0,Property,7,2,2,0,1,11,3.7,-71.4,-85.7,-50,-73,NA,NA,NA,NA,NA
+21I30,21,0.01180375,Intercontinental Airport,0,Violent,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 21I40,21,0.00923163,Intercontinental Airport,0,Other,4,4,27,33,48,35,11.7,575,1100,77.8,310,NA,NA,NA,NA,NA
 21I40,21,0.00923163,Intercontinental Airport,0,Property,15,6,2,4,4,23,7.7,-86.7,-73.3,100,-48,NA,NA,NA,NA,NA
 21I40,21,0.00923163,Intercontinental Airport,0,Violent,3,2,2,7,7,7,2.3,-33.3,133.3,250,204,NA,NA,NA,NA,NA
@@ -309,6 +310,7 @@ beat,district,area_sq_mi,placename,population,type,total19,total20,total21,total
 21I50,21,14.61100076,Intercontinental Airport,0,Violent,68,49,62,67,84,179,59.7,-8.8,23.5,35.5,41,NA,NA,NA,NA,NA
 21I70,21,0.01945113,Intercontinental Airport,0,Other,1,3,2,2,3,6,2,100,200,50,50,NA,NA,NA,NA,NA
 21I70,21,0.01945113,Intercontinental Airport,0,Property,5,1,2,1,2,8,2.7,-60,-60,0,-26,NA,NA,NA,NA,NA
+21I70,21,0.01945113,Intercontinental Airport,0,Violent,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 22B10,22,3.28874287,"Willowbrook, Willow Chase Park and Centerfield",8000,Other,512,578,745,545,719,1835,611.7,45.5,40.4,-3.5,18,6400,7225,9312.5,8987.5,7646.2
 22B10,22,3.28874287,"Willowbrook, Willow Chase Park and Centerfield",8000,Property,1637,1417,1665,1385,1825,4719,1573,1.7,11.5,9.6,16,20462.5,17712.5,20812.5,22812.5,19662.5
 22B10,22,3.28874287,"Willowbrook, Willow Chase Park and Centerfield",8000,Violent,375,401,375,272,349,1151,383.7,0,-6.9,-6.9,-9,4687.5,5012.5,4687.5,4362.5,4796.2
@@ -352,9 +354,14 @@ beat,district,area_sq_mi,placename,population,type,total19,total20,total21,total
 21I60,21,0.01236886,Intercontinental Airport,0,Property,40,22,16,9,12,78,26,-60,-70,-25,-54,NA,NA,NA,NA,NA
 21I60,21,0.01236886,Intercontinental Airport,0,Violent,6,1,4,8,8,11,3.7,-33.3,33.3,100,116,NA,NA,NA,NA,NA
 FTB4,NA,NA,NA,NA,Other,0,1,0,0,0,1,0.3,NA,NA,NA,-100,NA,NA,NA,NA,NA
+FTB4,NA,NA,NA,NA,Property,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
+FTB4,NA,NA,NA,NA,Violent,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 HCC1,NA,NA,NA,NA,Other,1,0,0,0,0,1,0.3,-100,-100,NA,-100,NA,NA,NA,NA,NA
+HCC1,NA,NA,NA,NA,Property,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 HCC1,NA,NA,NA,NA,Violent,0,1,0,3,3,1,0.3,NA,NA,NA,900,NA,NA,NA,NA,NA
 HCC4,NA,NA,NA,NA,Other,2,3,0,0,0,5,1.7,-100,-100,NA,-100,NA,NA,NA,NA,NA
+HCC4,NA,NA,NA,NA,Property,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
+HCC4,NA,NA,NA,NA,Violent,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 HCC5,NA,NA,NA,NA,Other,2,8,3,2,2,13,4.3,50,0,-33.3,-53,NA,NA,NA,NA,NA
 HCC5,NA,NA,NA,NA,Property,3,1,2,0,0,6,2,-33.3,-100,-100,-100,NA,NA,NA,NA,NA
 HCC5,NA,NA,NA,NA,Violent,1,0,0,0,0,1,0.3,-100,-100,NA,-100,NA,NA,NA,NA,NA
@@ -368,6 +375,10 @@ OOJ,NA,NA,NA,NA,Other,233,461,68,114,126,762,254,-70.8,-45.9,85.3,-50,NA,NA,NA,N
 OOJ,NA,NA,NA,NA,Property,240,214,38,49,57,492,164,-84.2,-76.2,50,-65,NA,NA,NA,NA,NA
 OOJ,NA,NA,NA,NA,Violent,216,169,24,49,50,409,136.3,-88.9,-76.9,108.3,-63,NA,NA,NA,NA,NA
 UH-2PD,NA,NA,NA,NA,Other,0,3,1,0,0,4,1.3,NA,NA,-100,-100,NA,NA,NA,NA,NA
+UH-2PD,NA,NA,NA,NA,Property,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
+UH-2PD,NA,NA,NA,NA,Violent,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
+UH-3PD,NA,NA,NA,NA,Other,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
+UH-3PD,NA,NA,NA,NA,Property,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 UH-3PD,NA,NA,NA,NA,Violent,0,1,1,0,0,2,0.7,NA,NA,-100,-100,NA,NA,NA,NA,NA
 Unknown,NA,NA,NA,NA,Other,65,168,139,89,116,372,124,113.8,78.5,-16.5,-6,NA,NA,NA,NA,NA
 Unknown,NA,NA,NA,NA,Property,43,29,10,20,22,82,27.3,-76.7,-48.8,120,-19,NA,NA,NA,NA,NA
