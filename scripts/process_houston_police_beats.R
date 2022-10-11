@@ -125,15 +125,15 @@ beats$placename <- case_when(beats$beat == "1A10" ~ "Downtown Central Business D
                              beats$beat == "18F40" ~ "Rosewood General Hospital, Woodlake and Briarmeadow",
                              beats$beat == "18F50" ~ "Tanglewild, Sharpstown Mall and Regency Square",
                              beats$beat == "18F60" ~ "Sharpstown Country Club and Southway Center",
-                             beats$beat == "21I10" ~ "Hobby Airport",
-                             beats$beat == "21I20" ~ "Hobby Airport",
-                             beats$beat == "21I30" ~ "Hobby Airport",
-                             beats$beat == "21I40" ~ "Hobby Airport",                        beats$beat == "36E10" ~ "xxxx",
-                             beats$beat == "21I50" ~ "Hobby Airport",
-                             beats$beat == "21I60" ~ "Hobby Airport",
-                             beats$beat == "21I70" ~ "Hobby Airport",
-                             beats$beat == "23J40" ~ "Intercontinental Airport",    
-                             beats$beat == "23J50" ~ "Intercontinental Airport",    
+                             beats$beat == "21I10" ~ "Intercontinental Airport",
+                             beats$beat == "21I20" ~ "Intercontinental Airport",
+                             beats$beat == "21I30" ~ "Intercontinental Airport",
+                             beats$beat == "21I40" ~ "Intercontinental Airport",
+                             beats$beat == "21I50" ~ "Intercontinental Airport",
+                             beats$beat == "21I60" ~ "Intercontinental Airport",
+                             beats$beat == "21I70" ~ "Intercontinental Airport",
+                             beats$beat == "23J40" ~ "Ellington Field",    
+                             beats$beat == "23J50" ~ "Hobby Airport",    
                              TRUE ~ "Unknown")
 
 
@@ -186,7 +186,7 @@ beats <- st_make_valid(beats)
 # cleanup unneeded blocks file
 rm(blocks)
 
-st_write(beats,"data/source/geo/beats.geojson")
+st_write(beats,"data/source/geo/beats.geojson",append = FALSE)
 saveRDS(beats,"scripts/rds/beats.rds")
 # add line  below when uploading data for pages
 # beats <- st_read("data/source/geo/beats.geojson")

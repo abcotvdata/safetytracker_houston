@@ -176,6 +176,7 @@ houston_recent_prior <- readRDS("scripts/rds/houston_recent_prior.rds")
 houston_recent_new <- bind_rows(houston_recent_prior,
                                 houston_recent_new)
 houston_recent_new <- unique(houston_recent_new)
+houston_recent_new$beat <- sub(pattern='^0+([1-9])', replacement='\\1', houston_recent_new$beat)
 
 # Save copies of newly-processed houston_recent_new in 3 places for redundancy
 # 1. Archive with name by day of month; maintains month's worth of files
