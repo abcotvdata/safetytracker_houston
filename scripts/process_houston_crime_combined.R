@@ -242,7 +242,7 @@ citywide_type$rate_prior3years <- round(citywide_type$avg_prior3years/houston_po
 # MERGE WITH BEATS GEOGRAPHY AND POPULATION
 # Geography and populations processed separately in 
 # source(process_houston_police_beats.R)
-beats <- st_read("data/source/geo/beats.geojson")
+beats <- readRDS("scripts/rds/beats.rds")
 # Test that all beats show in data and identify beat #s that do not
 # beatsindata <- houston_crime %>% group_by(beat,year) %>% summarise(count=n()) %>% pivot_wider(names_from=year, values_from=count)
 # anti_join(beatsindata,beats,by="beat")

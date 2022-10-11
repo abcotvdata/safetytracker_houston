@@ -186,7 +186,8 @@ beats <- st_make_valid(beats)
 # cleanup unneeded blocks file
 rm(blocks)
 
-st_write(beats,"data/source/geo/beats.geojson",append = FALSE)
+file.remove("data/source/geo/beats.geojson")
+st_write(beats,"data/source/geo/beats.geojson")
 saveRDS(beats,"scripts/rds/beats.rds")
 # add line  below when uploading data for pages
 # beats <- st_read("data/source/geo/beats.geojson")
