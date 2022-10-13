@@ -94,7 +94,7 @@ beats$placename <- case_when(beats$beat == "1A10" ~ "Downtown Central Business D
                              beats$beat == "15E10" ~ "Meyerland Plaza, Robindell, Meyerland, Braeburn Terrace and Maplewood South",
                              beats$beat == "15E20" ~ "Westbury, Park West and Willow Creek",
                              beats$beat == "15E30" ~ "Meyer Park, Post Oak Manor, Westwood, Willow Bend and Linkwood",
-                             beats$beat == "15E40" ~ "The Astrodome, Six Flags Astroworld, Lakes at 610 and Plaza del Oro",
+                             beats$beat == "15E40" ~ "NRG Park, Astroworld, Lakes at 610 and Plaza del Oro",
                              beats$beat == "16E10" ~ "Canterbury Village and Monarch Estates",
                              beats$beat == "16E20" ~ "Almeda Plaza, South Glen, Dumbarton Oaks and Briarwick",
                              beats$beat == "16E30" ~ "Greenpark, Southwest Crossing and Windsor Village",
