@@ -96,7 +96,7 @@ houston_crime_last12 <- houston_crime %>% filter(date>(max(houston_crime$date)-3
 
 # Set variable of Houston population
 # likely needs added to the tracker itself
-houston_population <- 2304580
+houston_population <- 2313238
 
 # Calculate of each detailed offense type CITYWIDE
 citywide_detailed <- houston_crime %>%
@@ -520,3 +520,7 @@ deaths <- read_excel("data/source/health/deaths.xlsx")
 deaths <- deaths %>% filter(state=="TX")
 deaths$Homicide <- murders_city$rate_last12
 write_csv(deaths,"data/source/health/death_rates.csv")
+
+# 2021 fbi citywide crime rates for murder, violent, property charts
+# manually updated excel in reference folder
+# local number for murder from local; rest for all cities from FBI CDE
