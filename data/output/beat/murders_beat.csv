@@ -8,7 +8,7 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 1A50,1,3.04553452,"Post Oak Park, Afton Oaks, Highland Village, Weslayan, Greenway Plaza and The Compaq Center",26000,"Murder, non-negligent",09A,0,0,5,3,3,5,1.7,NA,NA,-40,76,0,0,19.2,11.5,6.5
 2A10,2,3.30928608,Irvington and Ryon,18000,"Murder, non-negligent",09A,6,4,3,5,6,13,4.3,-50,0,100,40,33.3,22.2,16.7,33.3,23.9
 2A20,2,1.8876461,"Sunset Heights, Brooksmith and Stude",11000,"Murder, non-negligent",09A,0,2,1,2,2,3,1,NA,NA,100,100,0,18.2,9.1,18.2,9.1
-2A30,2,4.65858171,"Houston Heights, Norhill and Studemont",31000,"Murder, non-negligent",09A,0,0,2,4,4,2,0.7,NA,NA,100,471,0,0,6.5,12.9,2.3
+2A30,2,4.65858171,"Houston Heights, Norhill and Studemont",31000,"Murder, non-negligent",09A,0,0,2,3,3,2,0.7,NA,NA,50,329,0,0,6.5,9.7,2.3
 2A40,2,1.60546103,Old Sixth Ward and the First Ward,8000,"Murder, non-negligent",09A,1,1,0,1,1,2,0.7,-100,0,NA,43,12.5,12.5,0,12.5,8.8
 2A50,2,5.4659844,"Memorial Park, West End, Ashbury and Cottage Grove",29000,"Murder, non-negligent",09A,1,0,5,1,2,6,2,400,100,-60,0,3.4,0,17.2,6.9,6.9
 2A60,2,4.67447346,"Westport, Holly Park, Lazy Brook, Citadel, Shady Acres and Timbergrove",21000,"Murder, non-negligent",09A,2,1,0,0,0,3,1,-100,-100,NA,-100,9.5,4.8,0,0,4.8
@@ -48,7 +48,7 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 10H70,10,3.52217952,"Texas Medical Center, Hermann Park, Houston Zoo and Miller Outdoor Theatre",16000,"Murder, non-negligent",09A,0,3,0,2,2,3,1,NA,NA,NA,100,0,18.8,0,12.5,6.2
 10H80,10,2.73862779,"Southampton, Rice University area, Shadow Lawn and Broad Acres",19000,"Murder, non-negligent",09A,1,0,0,1,1,1,0.3,-100,0,NA,233,5.3,0,0,5.3,1.6
 11H10,11,5.31502815,"Mason Park, Forest Hill, Sunnyland and Central Park",28000,"Murder, non-negligent",09A,9,5,3,3,4,17,5.7,-66.7,-55.6,33.3,-30,32.1,17.9,10.7,14.3,20.4
-11H20,11,3.9311161,"Harrisburg, Manchester and Pecan Park",18000,"Murder, non-negligent",09A,1,2,4,2,4,7,2.3,300,300,0,74,5.6,11.1,22.2,22.2,12.8
+11H20,11,3.9311161,"Harrisburg, Manchester and Pecan Park",18000,"Murder, non-negligent",09A,1,2,4,3,5,7,2.3,300,400,25,117,5.6,11.1,22.2,27.8,12.8
 11H30,11,2.84278059,Meadow Brook and Park Place,15000,"Murder, non-negligent",09A,0,1,1,3,3,2,0.7,NA,NA,200,329,0,6.7,6.7,20,4.7
 11H40,11,6.14001938,Allendale and Oak Meadows,8000,"Murder, non-negligent",09A,0,1,0,0,0,1,0.3,NA,NA,NA,-100,0,12.5,0,0,3.7
 11H50,11,2.09534157,"Meadow Creek, Ferndale Addition and Glenbrook Industrial",8000,"Murder, non-negligent",09A,1,0,0,1,1,1,0.3,-100,0,NA,233,12.5,0,0,12.5,3.7
@@ -86,7 +86,7 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 18F40,18,2.9060249,"Rosewood General Hospital, Woodlake and Briarmeadow",35000,"Murder, non-negligent",09A,2,8,2,6,6,12,4,0,200,200,50,5.7,22.9,5.7,17.1,11.4
 18F50,18,2.96939217,"Tanglewild, Sharpstown Mall and Regency Square",20000,"Murder, non-negligent",09A,2,3,7,8,12,12,4,250,500,71.4,200,10,15,35,60,20
 18F60,18,3.62528697,Sharpstown Country Club and Southway Center,28000,"Murder, non-negligent",09A,5,7,6,3,5,18,6,20,0,-16.7,-17,17.9,25,21.4,17.9,21.4
-19G10,19,2.74020376,Concourse South and Westwood Mall,31000,"Murder, non-negligent",09A,3,8,12,16,21,23,7.7,300,600,75,173,9.7,25.8,38.7,67.7,24.8
+19G10,19,2.74020376,Concourse South and Westwood Mall,31000,"Murder, non-negligent",09A,3,8,12,16,20,23,7.7,300,566.7,66.7,160,9.7,25.8,38.7,64.5,24.8
 19G20,19,3.29219023,"Catalina Square, Bellaire West, Imperial Point",25000,"Murder, non-negligent",09A,1,3,3,1,1,7,2.3,200,0,-66.7,-57,4,12,12,4,9.2
 19G30,19,2.49064202,"Rodeo Square, Wildflower Green, Braewood Glen",18000,"Murder, non-negligent",09A,0,3,1,2,2,4,1.3,NA,NA,100,54,0,16.7,5.6,11.1,7.2
 19G40,19,4.56425364,"Huntington Village, Wellington Park, Leawood, Keegans Glen",37000,"Murder, non-negligent",09A,7,2,7,4,6,16,5.3,0,-14.3,-14.3,13,18.9,5.4,18.9,16.2,14.3
