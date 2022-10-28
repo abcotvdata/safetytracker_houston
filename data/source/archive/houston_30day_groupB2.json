@@ -139,7 +139,30 @@
  "features": [
   {
    "attributes": {
-    "OBJECTID": 5235428,
+    "OBJECTID": 5253197,
+    "USER_RMSOccurrenceDate": 1665446400000,
+    "USER_RMSOccurrenceHour": "00",
+    "USER_Incident": "137306022",
+    "USER_NIBRSClass": "90J",
+    "USER_NIBRSDescription": "Trespass of real property",
+    "USER_District": "03",
+    "USER_Beat": "03B10",
+    "USER_Premise": "Service, Gas Station",
+    "USER_OffenseAddressMiddle": "6749 TIDWELL",
+    "USER_BlockRange": "6700-6799",
+    "USER_StreetName": "TIDWELL",
+    "USER_StreetType": "RD",
+    "USER_Suffix": "W",
+    "USER_ZIPCode": "77092",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "A",
+    "SNBNAME": "FAIRBANKS / NORTHWEST CROSSING",
+    "OLC": "76X6VG26+64"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5253213,
     "USER_RMSOccurrenceDate": 1666483200000,
     "USER_RMSOccurrenceHour": "21",
     "USER_Incident": "143640822",
@@ -162,7 +185,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235430,
+    "OBJECTID": 5253216,
     "USER_RMSOccurrenceDate": 1664668800000,
     "USER_RMSOccurrenceHour": "17",
     "USER_Incident": "133067022",
@@ -185,7 +208,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235431,
+    "OBJECTID": 5253217,
     "USER_RMSOccurrenceDate": 1664668800000,
     "USER_RMSOccurrenceHour": "17",
     "USER_Incident": "133067022",
@@ -208,30 +231,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235435,
-    "USER_RMSOccurrenceDate": 1666569600000,
-    "USER_RMSOccurrenceHour": "01",
-    "USER_Incident": "143728422",
-    "USER_NIBRSClass": "90Z",
-    "USER_NIBRSDescription": "All other offenses",
-    "USER_District": "07",
-    "USER_Beat": "07C30",
-    "USER_Premise": "Highway, Road, Street, Alley",
-    "USER_OffenseAddressMiddle": "1949 TIDWELL",
-    "USER_BlockRange": "1900-1999",
-    "USER_StreetName": "TIDWELL",
-    "USER_StreetType": "RD",
-    "USER_Suffix": "",
-    "USER_ZIPCode": "77093",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "B",
-    "SNBNAME": "EASTEX - JENSEN AREA",
-    "OLC": "76X6RJXW+4J"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5235494,
+    "OBJECTID": 5253278,
     "USER_RMSOccurrenceDate": 1664582400000,
     "USER_RMSOccurrenceHour": "10",
     "USER_Incident": "132456522",
@@ -254,7 +254,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235497,
+    "OBJECTID": 5253282,
     "USER_RMSOccurrenceDate": 1665619200000,
     "USER_RMSOccurrenceHour": "01",
     "USER_Incident": "138314722",
@@ -277,7 +277,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235499,
+    "OBJECTID": 5253284,
     "USER_RMSOccurrenceDate": 1665705600000,
     "USER_RMSOccurrenceHour": "15",
     "USER_Incident": "139140222",
@@ -300,7 +300,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235502,
+    "OBJECTID": 5253287,
     "USER_RMSOccurrenceDate": 1664582400000,
     "USER_RMSOccurrenceHour": "17",
     "USER_Incident": "132605522",
@@ -323,30 +323,30 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235506,
-    "USER_RMSOccurrenceDate": 1666483200000,
-    "USER_RMSOccurrenceHour": "09",
-    "USER_Incident": "143396022",
+    "OBJECTID": 5253293,
+    "USER_RMSOccurrenceDate": 1666828800000,
+    "USER_RMSOccurrenceHour": "19",
+    "USER_Incident": "145689322",
     "USER_NIBRSClass": "90Z",
     "USER_NIBRSDescription": "All other offenses",
-    "USER_District": "07",
-    "USER_Beat": "07C30",
-    "USER_Premise": "Highway, Road, Street, Alley",
-    "USER_OffenseAddressMiddle": "3649 TIDFORD",
-    "USER_BlockRange": "3600-3699",
-    "USER_StreetName": "TIDFORD",
-    "USER_StreetType": "",
+    "USER_District": "08",
+    "USER_Beat": "08C30",
+    "USER_Premise": "Residence, Home (Includes Apartment)",
+    "USER_OffenseAddressMiddle": "8049 RECORD",
+    "USER_BlockRange": "8000-8099",
+    "USER_StreetName": "RECORD",
+    "USER_StreetType": "ST",
     "USER_Suffix": "",
-    "USER_ZIPCode": "77093",
+    "USER_ZIPCode": "77028",
     "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "H",
-    "SNBNAME": "EASTEX - JENSEN AREA",
-    "OLC": "76X6RMX9+72"
+    "DISTRICT_1": "B",
+    "SNBNAME": "EAST HOUSTON",
+    "OLC": "76X6RPW9+P9"
    }
   },
   {
    "attributes": {
-    "OBJECTID": 5235507,
+    "OBJECTID": 5253294,
     "USER_RMSOccurrenceDate": 1664496000000,
     "USER_RMSOccurrenceHour": "11",
     "USER_Incident": "131966222",
@@ -369,7 +369,30 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235529,
+    "OBJECTID": 5253295,
+    "USER_RMSOccurrenceDate": 1666483200000,
+    "USER_RMSOccurrenceHour": "09",
+    "USER_Incident": "143396022",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "07",
+    "USER_Beat": "07C30",
+    "USER_Premise": "Highway, Road, Street, Alley",
+    "USER_OffenseAddressMiddle": "3649 TIDFORD",
+    "USER_BlockRange": "3600-3699",
+    "USER_StreetName": "TIDFORD",
+    "USER_StreetType": "",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77093",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "H",
+    "SNBNAME": "EASTEX - JENSEN AREA",
+    "OLC": "76X6RMX9+72"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5253317,
     "USER_RMSOccurrenceDate": 1665187200000,
     "USER_RMSOccurrenceHour": "00",
     "USER_Incident": "135895022",
@@ -392,30 +415,53 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235535,
-    "USER_RMSOccurrenceDate": 1666569600000,
-    "USER_RMSOccurrenceHour": "18",
-    "USER_Incident": "144103622",
-    "USER_NIBRSClass": "90Z",
-    "USER_NIBRSDescription": "All other offenses",
-    "USER_District": "08",
-    "USER_Beat": "08C10",
-    "USER_Premise": "Service, Gas Station",
-    "USER_OffenseAddressMiddle": "5149 TIDWELL",
-    "USER_BlockRange": "5100-5199",
+    "OBJECTID": 5253322,
+    "USER_RMSOccurrenceDate": 1666828800000,
+    "USER_RMSOccurrenceHour": "10",
+    "USER_Incident": "145410222",
+    "USER_NIBRSClass": "90C",
+    "USER_NIBRSDescription": "Disorderly conduct",
+    "USER_District": "07",
+    "USER_Beat": "07C30",
+    "USER_Premise": "Parking Lot, Garage",
+    "USER_OffenseAddressMiddle": "3349 TIDWELL",
+    "USER_BlockRange": "3300-3399",
     "USER_StreetName": "TIDWELL",
     "USER_StreetType": "RD",
     "USER_Suffix": "",
-    "USER_ZIPCode": "77016",
+    "USER_ZIPCode": "77093",
     "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "B",
-    "SNBNAME": "EAST LITTLE YORK / HOMESTEAD",
-    "OLC": "76X6RMXM+87"
+    "DISTRICT_1": "H",
+    "SNBNAME": "EASTEX - JENSEN AREA",
+    "OLC": "76X6RMX7+FC"
    }
   },
   {
    "attributes": {
-    "OBJECTID": 5235536,
+    "OBJECTID": 5253323,
+    "USER_RMSOccurrenceDate": 1666828800000,
+    "USER_RMSOccurrenceHour": "10",
+    "USER_Incident": "145410222",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "07",
+    "USER_Beat": "07C30",
+    "USER_Premise": "Parking Lot, Garage",
+    "USER_OffenseAddressMiddle": "3349 TIDWELL",
+    "USER_BlockRange": "3300-3399",
+    "USER_StreetName": "TIDWELL",
+    "USER_StreetType": "RD",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77093",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "H",
+    "SNBNAME": "EASTEX - JENSEN AREA",
+    "OLC": "76X6RMX7+FC"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5253329,
     "USER_RMSOccurrenceDate": 1665187200000,
     "USER_RMSOccurrenceHour": "12",
     "USER_Incident": "136081822",
@@ -438,7 +484,30 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235537,
+    "OBJECTID": 5253331,
+    "USER_RMSOccurrenceDate": 1666569600000,
+    "USER_RMSOccurrenceHour": "18",
+    "USER_Incident": "144103622",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "08",
+    "USER_Beat": "08C10",
+    "USER_Premise": "Service, Gas Station",
+    "USER_OffenseAddressMiddle": "5149 TIDWELL",
+    "USER_BlockRange": "5100-5199",
+    "USER_StreetName": "TIDWELL",
+    "USER_StreetType": "RD",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77016",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "B",
+    "SNBNAME": "EAST LITTLE YORK / HOMESTEAD",
+    "OLC": "76X6RMXM+87"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5253334,
     "USER_RMSOccurrenceDate": 1665964800000,
     "USER_RMSOccurrenceHour": "09",
     "USER_Incident": "140375522",
@@ -461,7 +530,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235544,
+    "OBJECTID": 5253339,
     "USER_RMSOccurrenceDate": 1665878400000,
     "USER_RMSOccurrenceHour": "14",
     "USER_Incident": "140024522",
@@ -484,7 +553,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235545,
+    "OBJECTID": 5253341,
     "USER_RMSOccurrenceDate": 1665964800000,
     "USER_RMSOccurrenceHour": "08",
     "USER_Incident": "140327022",
@@ -507,7 +576,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235547,
+    "OBJECTID": 5253342,
     "USER_RMSOccurrenceDate": 1665964800000,
     "USER_RMSOccurrenceHour": "14",
     "USER_Incident": "140497722",
@@ -530,7 +599,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235549,
+    "OBJECTID": 5253344,
     "USER_RMSOccurrenceDate": 1665878400000,
     "USER_RMSOccurrenceHour": "03",
     "USER_Incident": "139868222",
@@ -553,30 +622,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235553,
-    "USER_RMSOccurrenceDate": 1666137600000,
-    "USER_RMSOccurrenceHour": "23",
-    "USER_Incident": "141748022",
-    "USER_NIBRSClass": "90Z",
-    "USER_NIBRSDescription": "All other offenses",
-    "USER_District": "07",
-    "USER_Beat": "07C30",
-    "USER_Premise": "Highway, Road, Street, Alley",
-    "USER_OffenseAddressMiddle": "4049 TIDWELL",
-    "USER_BlockRange": "4000-4099",
-    "USER_StreetName": "TIDWELL",
-    "USER_StreetType": "RD",
-    "USER_Suffix": "",
-    "USER_ZIPCode": "77093",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "H",
-    "SNBNAME": "EASTEX - JENSEN AREA",
-    "OLC": "76X6RMXC+GF"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5235556,
+    "OBJECTID": 5253350,
     "USER_RMSOccurrenceDate": 1664409600000,
     "USER_RMSOccurrenceHour": "07",
     "USER_Incident": "131315522",
@@ -599,7 +645,30 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235567,
+    "OBJECTID": 5253353,
+    "USER_RMSOccurrenceDate": 1666137600000,
+    "USER_RMSOccurrenceHour": "23",
+    "USER_Incident": "141748022",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "07",
+    "USER_Beat": "07C30",
+    "USER_Premise": "Highway, Road, Street, Alley",
+    "USER_OffenseAddressMiddle": "4049 TIDWELL",
+    "USER_BlockRange": "4000-4099",
+    "USER_StreetName": "TIDWELL",
+    "USER_StreetType": "RD",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77093",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "H",
+    "SNBNAME": "EASTEX - JENSEN AREA",
+    "OLC": "76X6RMXC+GF"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5253367,
     "USER_RMSOccurrenceDate": 1666656000000,
     "USER_RMSOccurrenceHour": "07",
     "USER_Incident": "144291822",
@@ -622,7 +691,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235583,
+    "OBJECTID": 5253379,
     "USER_RMSOccurrenceDate": 1666483200000,
     "USER_RMSOccurrenceHour": "10",
     "USER_Incident": "143414722",
@@ -645,7 +714,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235586,
+    "OBJECTID": 5253382,
     "USER_RMSOccurrenceDate": 1664496000000,
     "USER_RMSOccurrenceHour": "11",
     "USER_Incident": "131965422",
@@ -668,7 +737,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235591,
+    "OBJECTID": 5253387,
     "USER_RMSOccurrenceDate": 1664928000000,
     "USER_RMSOccurrenceHour": "15",
     "USER_Incident": "134580622",
@@ -691,7 +760,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235595,
+    "OBJECTID": 5253388,
     "USER_RMSOccurrenceDate": 1664841600000,
     "USER_RMSOccurrenceHour": "01",
     "USER_Incident": "133746922",
@@ -714,7 +783,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235598,
+    "OBJECTID": 5253394,
     "USER_RMSOccurrenceDate": 1665705600000,
     "USER_RMSOccurrenceHour": "22",
     "USER_Incident": "139303822",
@@ -737,30 +806,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235612,
-    "USER_RMSOccurrenceDate": 1666396800000,
-    "USER_RMSOccurrenceHour": "20",
-    "USER_Incident": "143384322",
-    "USER_NIBRSClass": "90C",
-    "USER_NIBRSDescription": "Disorderly conduct",
-    "USER_District": "06",
-    "USER_Beat": "06B30",
-    "USER_Premise": "Parking Lot, Garage",
-    "USER_OffenseAddressMiddle": "6049 ANTOINE",
-    "USER_BlockRange": "6000-6099",
-    "USER_StreetName": "ANTOINE",
-    "USER_StreetType": "DR",
-    "USER_Suffix": "",
-    "USER_ZIPCode": "77091",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "A",
-    "SNBNAME": "GREATER INWOOD",
-    "OLC": "76X6VG3G+GM"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5235615,
+    "OBJECTID": 5253411,
     "USER_RMSOccurrenceDate": 1665878400000,
     "USER_RMSOccurrenceHour": "16",
     "USER_Incident": "140058422",
@@ -783,7 +829,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235622,
+    "OBJECTID": 5253416,
     "USER_RMSOccurrenceDate": 1666310400000,
     "USER_RMSOccurrenceHour": "05",
     "USER_Incident": "142341122",
@@ -806,7 +852,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235642,
+    "OBJECTID": 5253438,
     "USER_RMSOccurrenceDate": 1664755200000,
     "USER_RMSOccurrenceHour": "17",
     "USER_Incident": "133601522",
@@ -829,7 +875,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235650,
+    "OBJECTID": 5253446,
     "USER_RMSOccurrenceDate": 1664236800000,
     "USER_RMSOccurrenceHour": "12",
     "USER_Incident": "130416822",
@@ -852,7 +898,30 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235695,
+    "OBJECTID": 5253477,
+    "USER_RMSOccurrenceDate": 1664668800000,
+    "USER_RMSOccurrenceHour": "00",
+    "USER_Incident": "132773422",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "07",
+    "USER_Beat": "07C30",
+    "USER_Premise": "Highway, Road, Street, Alley",
+    "USER_OffenseAddressMiddle": "2149 TURNER",
+    "USER_BlockRange": "2100-2199",
+    "USER_StreetName": "TURNER",
+    "USER_StreetType": "DR",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77093",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "B",
+    "SNBNAME": "EASTEX - JENSEN AREA",
+    "OLC": "76X6VJ2X+PF"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5253490,
     "USER_RMSOccurrenceDate": 1665100800000,
     "USER_RMSOccurrenceHour": "19",
     "USER_Incident": "135770622",
@@ -875,7 +944,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235699,
+    "OBJECTID": 5253494,
     "USER_RMSOccurrenceDate": 1665187200000,
     "USER_RMSOccurrenceHour": "14",
     "USER_Incident": "136148922",
@@ -898,7 +967,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235701,
+    "OBJECTID": 5253499,
     "USER_RMSOccurrenceDate": 1665878400000,
     "USER_RMSOccurrenceHour": "15",
     "USER_Incident": "140038522",
@@ -921,7 +990,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235714,
+    "OBJECTID": 5253509,
     "USER_RMSOccurrenceDate": 1665792000000,
     "USER_RMSOccurrenceHour": "23",
     "USER_Incident": "139774222",
@@ -944,7 +1013,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235715,
+    "OBJECTID": 5253510,
     "USER_RMSOccurrenceDate": 1665360000000,
     "USER_RMSOccurrenceHour": "14",
     "USER_Incident": "137066822",
@@ -967,30 +1036,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235720,
-    "USER_RMSOccurrenceDate": 1666483200000,
-    "USER_RMSOccurrenceHour": "15",
-    "USER_Incident": "143498322",
-    "USER_NIBRSClass": "90Z",
-    "USER_NIBRSDescription": "All other offenses",
-    "USER_District": "05",
-    "USER_Beat": "05F30",
-    "USER_Premise": "Residence, Home (Includes Apartment)",
-    "USER_OffenseAddressMiddle": "6049 HOLLISTER",
-    "USER_BlockRange": "6000-6099",
-    "USER_StreetName": "HOLLISTER",
-    "USER_StreetType": "ST",
-    "USER_Suffix": "",
-    "USER_ZIPCode": "77040",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "A",
-    "SNBNAME": "FAIRBANKS / NORTHWEST CROSSING",
-    "OLC": "76X6VF4V+GR"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5235725,
+    "OBJECTID": 5253514,
     "USER_RMSOccurrenceDate": 1664755200000,
     "USER_RMSOccurrenceHour": "21",
     "USER_Incident": "133697922",
@@ -1013,7 +1059,30 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235735,
+    "OBJECTID": 5253521,
+    "USER_RMSOccurrenceDate": 1666483200000,
+    "USER_RMSOccurrenceHour": "15",
+    "USER_Incident": "143498322",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "05",
+    "USER_Beat": "05F30",
+    "USER_Premise": "Residence, Home (Includes Apartment)",
+    "USER_OffenseAddressMiddle": "6049 HOLLISTER",
+    "USER_BlockRange": "6000-6099",
+    "USER_StreetName": "HOLLISTER",
+    "USER_StreetType": "ST",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77040",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "A",
+    "SNBNAME": "FAIRBANKS / NORTHWEST CROSSING",
+    "OLC": "76X6VF4V+GR"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5253528,
     "USER_RMSOccurrenceDate": 1665273600000,
     "USER_RMSOccurrenceHour": "12",
     "USER_Incident": "136539522",
@@ -1036,7 +1105,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235751,
+    "OBJECTID": 5253545,
     "USER_RMSOccurrenceDate": 1665878400000,
     "USER_RMSOccurrenceHour": "10",
     "USER_Incident": "139946422",
@@ -1059,7 +1128,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235756,
+    "OBJECTID": 5253550,
     "USER_RMSOccurrenceDate": 1666656000000,
     "USER_RMSOccurrenceHour": "16",
     "USER_Incident": "144556022",
@@ -1082,7 +1151,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235760,
+    "OBJECTID": 5253553,
     "USER_RMSOccurrenceDate": 1665705600000,
     "USER_RMSOccurrenceHour": "11",
     "USER_Incident": "139020022",
@@ -1105,7 +1174,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235767,
+    "OBJECTID": 5253561,
     "USER_RMSOccurrenceDate": 1666137600000,
     "USER_RMSOccurrenceHour": "16",
     "USER_Incident": "141576522",
@@ -1128,30 +1197,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235788,
-    "USER_RMSOccurrenceDate": 1664150400000,
-    "USER_RMSOccurrenceHour": "18",
-    "USER_Incident": "130114522",
-    "USER_NIBRSClass": "90Z",
-    "USER_NIBRSDescription": "All other offenses",
-    "USER_District": "08",
-    "USER_Beat": "08C40",
-    "USER_Premise": "Highway, Road, Street, Alley",
-    "USER_OffenseAddressMiddle": "9349 TIDWELL",
-    "USER_BlockRange": "9300-9399",
-    "USER_StreetName": "TIDWELL",
-    "USER_StreetType": "RD",
-    "USER_Suffix": "",
-    "USER_ZIPCode": "77078",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "B",
-    "SNBNAME": "EAST HOUSTON",
-    "OLC": "76X6VP2W+8H"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5235789,
+    "OBJECTID": 5253571,
     "USER_RMSOccurrenceDate": 1664236800000,
     "USER_RMSOccurrenceHour": "09",
     "USER_Incident": "130340622",
@@ -1174,7 +1220,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235792,
+    "OBJECTID": 5253574,
     "USER_RMSOccurrenceDate": 1664496000000,
     "USER_RMSOccurrenceHour": "06",
     "USER_Incident": "138892222",
@@ -1197,7 +1243,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235795,
+    "OBJECTID": 5253577,
     "USER_RMSOccurrenceDate": 1664841600000,
     "USER_RMSOccurrenceHour": "10",
     "USER_Incident": "133885122",
@@ -1220,7 +1266,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235806,
+    "OBJECTID": 5253600,
     "USER_RMSOccurrenceDate": 1666310400000,
     "USER_RMSOccurrenceHour": "00",
     "USER_Incident": "142290722",
@@ -1243,7 +1289,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235817,
+    "OBJECTID": 5253607,
     "USER_RMSOccurrenceDate": 1664841600000,
     "USER_RMSOccurrenceHour": "00",
     "USER_Incident": "139131922",
@@ -1266,7 +1312,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235821,
+    "OBJECTID": 5253609,
     "USER_RMSOccurrenceDate": 1665446400000,
     "USER_RMSOccurrenceHour": "15",
     "USER_Incident": "137555522",
@@ -1289,7 +1335,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235826,
+    "OBJECTID": 5253619,
     "USER_RMSOccurrenceDate": 1666051200000,
     "USER_RMSOccurrenceHour": "15",
     "USER_Incident": "141034422",
@@ -1312,7 +1358,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235836,
+    "OBJECTID": 5253627,
     "USER_RMSOccurrenceDate": 1664409600000,
     "USER_RMSOccurrenceHour": "14",
     "USER_Incident": "131532422",
@@ -1335,7 +1381,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235856,
+    "OBJECTID": 5253650,
     "USER_RMSOccurrenceDate": 1665619200000,
     "USER_RMSOccurrenceHour": "11",
     "USER_Incident": "138505422",
@@ -1358,7 +1404,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235868,
+    "OBJECTID": 5253660,
     "USER_RMSOccurrenceDate": 1665878400000,
     "USER_RMSOccurrenceHour": "07",
     "USER_Incident": "139899422",
@@ -1381,7 +1427,30 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235898,
+    "OBJECTID": 5253661,
+    "USER_RMSOccurrenceDate": 1665100800000,
+    "USER_RMSOccurrenceHour": "15",
+    "USER_Incident": "145502022",
+    "USER_NIBRSClass": "90C",
+    "USER_NIBRSDescription": "Disorderly conduct",
+    "USER_District": "06",
+    "USER_Beat": "06B10",
+    "USER_Premise": "Residence, Home (Includes Apartment)",
+    "USER_OffenseAddressMiddle": "649 ELLENA",
+    "USER_BlockRange": "600-699",
+    "USER_StreetName": "ELLENA",
+    "USER_StreetType": "RD",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77076",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "H",
+    "SNBNAME": "NORTHSIDE/NORTHLINE",
+    "OLC": "76X6VJ45+7V"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5253689,
     "USER_RMSOccurrenceDate": 1666396800000,
     "USER_RMSOccurrenceHour": "08",
     "USER_Incident": "142911222",
@@ -1404,7 +1473,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235901,
+    "OBJECTID": 5253690,
     "USER_RMSOccurrenceDate": 1664841600000,
     "USER_RMSOccurrenceHour": "13",
     "USER_Incident": "133982622",
@@ -1427,7 +1496,30 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235906,
+    "OBJECTID": 5253695,
+    "USER_RMSOccurrenceDate": 1666828800000,
+    "USER_RMSOccurrenceHour": "08",
+    "USER_Incident": "145346722",
+    "USER_NIBRSClass": "90J",
+    "USER_NIBRSDescription": "Trespass of real property",
+    "USER_District": "06",
+    "USER_Beat": "06B10",
+    "USER_Premise": "Residence, Home (Includes Apartment)",
+    "USER_OffenseAddressMiddle": "249 SUNNYSIDE",
+    "USER_BlockRange": "200-299",
+    "USER_StreetName": "SUNNYSIDE",
+    "USER_StreetType": "ST",
+    "USER_Suffix": "E",
+    "USER_ZIPCode": "77076",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "H",
+    "SNBNAME": "NORTHSIDE/NORTHLINE",
+    "OLC": "76X6VJ43+J9"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5253701,
     "USER_RMSOccurrenceDate": 1666656000000,
     "USER_RMSOccurrenceHour": "12",
     "USER_Incident": "144427022",
@@ -1450,7 +1542,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235907,
+    "OBJECTID": 5253704,
     "USER_RMSOccurrenceDate": 1665964800000,
     "USER_RMSOccurrenceHour": "18",
     "USER_Incident": "140722122",
@@ -1473,7 +1565,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235915,
+    "OBJECTID": 5253712,
     "USER_RMSOccurrenceDate": 1666137600000,
     "USER_RMSOccurrenceHour": "13",
     "USER_Incident": "142380122",
@@ -1496,7 +1588,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235922,
+    "OBJECTID": 5253719,
     "USER_RMSOccurrenceDate": 1665100800000,
     "USER_RMSOccurrenceHour": "00",
     "USER_Incident": "135342522",
@@ -1519,7 +1611,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235926,
+    "OBJECTID": 5253723,
     "USER_RMSOccurrenceDate": 1665792000000,
     "USER_RMSOccurrenceHour": "00",
     "USER_Incident": "139353622",
@@ -1542,7 +1634,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235927,
+    "OBJECTID": 5253724,
     "USER_RMSOccurrenceDate": 1665792000000,
     "USER_RMSOccurrenceHour": "00",
     "USER_Incident": "139353622",
@@ -1565,7 +1657,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235928,
+    "OBJECTID": 5253725,
     "USER_RMSOccurrenceDate": 1666396800000,
     "USER_RMSOccurrenceHour": "01",
     "USER_Incident": "142831622",
@@ -1588,7 +1680,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235931,
+    "OBJECTID": 5253729,
     "USER_RMSOccurrenceDate": 1665964800000,
     "USER_RMSOccurrenceHour": "04",
     "USER_Incident": "140561422",
@@ -1611,7 +1703,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235948,
+    "OBJECTID": 5253743,
     "USER_RMSOccurrenceDate": 1664496000000,
     "USER_RMSOccurrenceHour": "18",
     "USER_Incident": "132183222",
@@ -1634,7 +1726,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235952,
+    "OBJECTID": 5253747,
     "USER_RMSOccurrenceDate": 1665187200000,
     "USER_RMSOccurrenceHour": "05",
     "USER_Incident": "135960422",
@@ -1657,7 +1749,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235969,
+    "OBJECTID": 5253765,
     "USER_RMSOccurrenceDate": 1664928000000,
     "USER_RMSOccurrenceHour": "11",
     "USER_Incident": "134425122",
@@ -1680,7 +1772,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235978,
+    "OBJECTID": 5253776,
     "USER_RMSOccurrenceDate": 1666742400000,
     "USER_RMSOccurrenceHour": "21",
     "USER_Incident": "145190622",
@@ -1703,7 +1795,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5235987,
+    "OBJECTID": 5253781,
     "USER_RMSOccurrenceDate": 1665014400000,
     "USER_RMSOccurrenceHour": "12",
     "USER_Incident": "135016022",
@@ -1726,30 +1818,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236005,
-    "USER_RMSOccurrenceDate": 1664150400000,
-    "USER_RMSOccurrenceHour": "16",
-    "USER_Incident": "130046222",
-    "USER_NIBRSClass": "90J",
-    "USER_NIBRSDescription": "Trespass of real property",
-    "USER_District": "06",
-    "USER_Beat": "06B10",
-    "USER_Premise": "Residence, Home (Includes Apartment)",
-    "USER_OffenseAddressMiddle": "849 WELLINGTON",
-    "USER_BlockRange": "800-899",
-    "USER_StreetName": "WELLINGTON",
-    "USER_StreetType": "ST",
-    "USER_Suffix": "",
-    "USER_ZIPCode": "77076",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "H",
-    "SNBNAME": "NORTHSIDE/NORTHLINE",
-    "OLC": "76X6VJ5M+77"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5236012,
+    "OBJECTID": 5253808,
     "USER_RMSOccurrenceDate": 1665187200000,
     "USER_RMSOccurrenceHour": "03",
     "USER_Incident": "135944322",
@@ -1772,7 +1841,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236013,
+    "OBJECTID": 5253809,
     "USER_RMSOccurrenceDate": 1666483200000,
     "USER_RMSOccurrenceHour": "01",
     "USER_Incident": "143295222",
@@ -1795,7 +1864,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236017,
+    "OBJECTID": 5253814,
     "USER_RMSOccurrenceDate": 1664582400000,
     "USER_RMSOccurrenceHour": "21",
     "USER_Incident": "132705222",
@@ -1818,7 +1887,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236019,
+    "OBJECTID": 5253816,
     "USER_RMSOccurrenceDate": 1665014400000,
     "USER_RMSOccurrenceHour": "02",
     "USER_Incident": "134810222",
@@ -1841,7 +1910,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236064,
+    "OBJECTID": 5253856,
     "USER_RMSOccurrenceDate": 1665360000000,
     "USER_RMSOccurrenceHour": "06",
     "USER_Incident": "136860822",
@@ -1864,7 +1933,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236077,
+    "OBJECTID": 5253871,
     "USER_RMSOccurrenceDate": 1665014400000,
     "USER_RMSOccurrenceHour": "20",
     "USER_Incident": "135258722",
@@ -1887,329 +1956,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236087,
-    "USER_RMSOccurrenceDate": 1665619200000,
-    "USER_RMSOccurrenceHour": "17",
-    "USER_Incident": "138674822",
-    "USER_NIBRSClass": "90Z",
-    "USER_NIBRSDescription": "All other offenses",
-    "USER_District": "22",
-    "USER_Beat": "22B40",
-    "USER_Premise": "Government, Public Building",
-    "USER_OffenseAddressMiddle": "5449 SAM HOUSTON",
-    "USER_BlockRange": "5400-5499",
-    "USER_StreetName": "SAM HOUSTON",
-    "USER_StreetType": "PKWY",
-    "USER_Suffix": "N",
-    "USER_ZIPCode": "77032",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "H",
-    "SNBNAME": "NORTHSIDE/NORTHLINE",
-    "OLC": "76X6VH6Q+7J"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5236092,
-    "USER_RMSOccurrenceDate": 1665705600000,
-    "USER_RMSOccurrenceHour": "09",
-    "USER_Incident": "138961322",
-    "USER_NIBRSClass": "90Z",
-    "USER_NIBRSDescription": "All other offenses",
-    "USER_District": "22",
-    "USER_Beat": "22B40",
-    "USER_Premise": "Commercial, Office Building",
-    "USER_OffenseAddressMiddle": "5449 SAM HOUSTON",
-    "USER_BlockRange": "5400-5499",
-    "USER_StreetName": "SAM HOUSTON",
-    "USER_StreetType": "PKWY",
-    "USER_Suffix": "N",
-    "USER_ZIPCode": "77032",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "H",
-    "SNBNAME": "NORTHSIDE/NORTHLINE",
-    "OLC": "76X6VH6Q+7J"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5236093,
-    "USER_RMSOccurrenceDate": 1665705600000,
-    "USER_RMSOccurrenceHour": "10",
-    "USER_Incident": "138987322",
-    "USER_NIBRSClass": "90Z",
-    "USER_NIBRSDescription": "All other offenses",
-    "USER_District": "22",
-    "USER_Beat": "22B40",
-    "USER_Premise": "Government, Public Building",
-    "USER_OffenseAddressMiddle": "5449 SAM HOUSTON",
-    "USER_BlockRange": "5400-5499",
-    "USER_StreetName": "SAM HOUSTON",
-    "USER_StreetType": "PKWY",
-    "USER_Suffix": "N",
-    "USER_ZIPCode": "77032",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "H",
-    "SNBNAME": "NORTHSIDE/NORTHLINE",
-    "OLC": "76X6VH6Q+7J"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5236098,
-    "USER_RMSOccurrenceDate": 1665792000000,
-    "USER_RMSOccurrenceHour": "23",
-    "USER_Incident": "139785622",
-    "USER_NIBRSClass": "90Z",
-    "USER_NIBRSDescription": "All other offenses",
-    "USER_District": "19",
-    "USER_Beat": "19G10",
-    "USER_Premise": "Other, Unknown",
-    "USER_OffenseAddressMiddle": "8849 SAM HOUSTON",
-    "USER_BlockRange": "8800-8899",
-    "USER_StreetName": "SAM HOUSTON",
-    "USER_StreetType": "PKWY",
-    "USER_Suffix": "W",
-    "USER_ZIPCode": "77099",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "H",
-    "SNBNAME": "NORTHSIDE/NORTHLINE",
-    "OLC": "76X6VH6Q+7J"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5236111,
-    "USER_RMSOccurrenceDate": 1665964800000,
-    "USER_RMSOccurrenceHour": "13",
-    "USER_Incident": "140463722",
-    "USER_NIBRSClass": "90Z",
-    "USER_NIBRSDescription": "All other offenses",
-    "USER_District": "22",
-    "USER_Beat": "22B40",
-    "USER_Premise": "Government, Public Building",
-    "USER_OffenseAddressMiddle": "5449 SAM HOUSTON",
-    "USER_BlockRange": "5400-5499",
-    "USER_StreetName": "SAM HOUSTON",
-    "USER_StreetType": "PKWY",
-    "USER_Suffix": "N",
-    "USER_ZIPCode": "77032",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "H",
-    "SNBNAME": "NORTHSIDE/NORTHLINE",
-    "OLC": "76X6VH6Q+7J"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5236115,
-    "USER_RMSOccurrenceDate": 1665964800000,
-    "USER_RMSOccurrenceHour": "20",
-    "USER_Incident": "140662022",
-    "USER_NIBRSClass": "90Z",
-    "USER_NIBRSDescription": "All other offenses",
-    "USER_District": "13",
-    "USER_Beat": "13D40",
-    "USER_Premise": "Department, Discount Store",
-    "USER_OffenseAddressMiddle": "8549 SAM HOUSTON",
-    "USER_BlockRange": "8500-8599",
-    "USER_StreetName": "SAM HOUSTON",
-    "USER_StreetType": "PKWY",
-    "USER_Suffix": "S",
-    "USER_ZIPCode": "77075",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "H",
-    "SNBNAME": "NORTHSIDE/NORTHLINE",
-    "OLC": "76X6VH6Q+7J"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5236125,
-    "USER_RMSOccurrenceDate": 1666137600000,
-    "USER_RMSOccurrenceHour": "13",
-    "USER_Incident": "141505322",
-    "USER_NIBRSClass": "90J",
-    "USER_NIBRSDescription": "Trespass of real property",
-    "USER_District": "19",
-    "USER_Beat": "19G10",
-    "USER_Premise": "Grocery, Supermarket",
-    "USER_OffenseAddressMiddle": "8349 SAM HOUSTON",
-    "USER_BlockRange": "8300-8399",
-    "USER_StreetName": "SAM HOUSTON",
-    "USER_StreetType": "PKWY",
-    "USER_Suffix": "W",
-    "USER_ZIPCode": "77072",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "H",
-    "SNBNAME": "NORTHSIDE/NORTHLINE",
-    "OLC": "76X6VH6Q+7J"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5236137,
-    "USER_RMSOccurrenceDate": 1666224000000,
-    "USER_RMSOccurrenceHour": "23",
-    "USER_Incident": "142261922",
-    "USER_NIBRSClass": "90Z",
-    "USER_NIBRSDescription": "All other offenses",
-    "USER_District": "16",
-    "USER_Beat": "16E30",
-    "USER_Premise": "Highway, Road, Street, Alley",
-    "USER_OffenseAddressMiddle": "8449 SAM HOUSTON",
-    "USER_BlockRange": "8400-8499",
-    "USER_StreetName": "SAM HOUSTON",
-    "USER_StreetType": "PKWY",
-    "USER_Suffix": "S",
-    "USER_ZIPCode": "77085",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "H",
-    "SNBNAME": "NORTHSIDE/NORTHLINE",
-    "OLC": "76X6VH6Q+7J"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5236149,
-    "USER_RMSOccurrenceDate": 1666569600000,
-    "USER_RMSOccurrenceHour": "23",
-    "USER_Incident": "144190522",
-    "USER_NIBRSClass": "90Z",
-    "USER_NIBRSDescription": "All other offenses",
-    "USER_District": "20",
-    "USER_Beat": "20G30",
-    "USER_Premise": "Highway, Road, Street, Alley",
-    "USER_OffenseAddressMiddle": "2949 SAM HOUSTON",
-    "USER_BlockRange": "2900-2999",
-    "USER_StreetName": "SAM HOUSTON",
-    "USER_StreetType": "PKWY",
-    "USER_Suffix": "W",
-    "USER_ZIPCode": "77042",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "H",
-    "SNBNAME": "NORTHSIDE/NORTHLINE",
-    "OLC": "76X6VH6Q+7J"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5236153,
-    "USER_RMSOccurrenceDate": 1665878400000,
-    "USER_RMSOccurrenceHour": "09",
-    "USER_Incident": "139935022",
-    "USER_NIBRSClass": "90J",
-    "USER_NIBRSDescription": "Trespass of real property",
-    "USER_District": "04",
-    "USER_Beat": "04F20",
-    "USER_Premise": "Convenience Store",
-    "USER_OffenseAddressMiddle": "4349 SAM HOUSTON",
-    "USER_BlockRange": "4300-4399",
-    "USER_StreetName": "SAM HOUSTON",
-    "USER_StreetType": "PKWY",
-    "USER_Suffix": "W",
-    "USER_ZIPCode": "77043",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "H",
-    "SNBNAME": "NORTHSIDE/NORTHLINE",
-    "OLC": "76X6VH6Q+7J"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5236154,
-    "USER_RMSOccurrenceDate": 1666656000000,
-    "USER_RMSOccurrenceHour": "03",
-    "USER_Incident": "144249622",
-    "USER_NIBRSClass": "90Z",
-    "USER_NIBRSDescription": "All other offenses",
-    "USER_District": "22",
-    "USER_Beat": "22B40",
-    "USER_Premise": "Highway, Road, Street, Alley",
-    "USER_OffenseAddressMiddle": "2249 SAM HOUSTON",
-    "USER_BlockRange": "2200-2299",
-    "USER_StreetName": "SAM HOUSTON",
-    "USER_StreetType": "PKWY",
-    "USER_Suffix": "N",
-    "USER_ZIPCode": "77032",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "H",
-    "SNBNAME": "NORTHSIDE/NORTHLINE",
-    "OLC": "76X6VH6Q+7J"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5236162,
-    "USER_RMSOccurrenceDate": 1666137600000,
-    "USER_RMSOccurrenceHour": "10",
-    "USER_Incident": "141422522",
-    "USER_NIBRSClass": "90Z",
-    "USER_NIBRSDescription": "All other offenses",
-    "USER_District": "22",
-    "USER_Beat": "22B40",
-    "USER_Premise": "Government, Public Building",
-    "USER_OffenseAddressMiddle": "5449 SAM HOUSTON",
-    "USER_BlockRange": "5400-5499",
-    "USER_StreetName": "SAM HOUSTON",
-    "USER_StreetType": "PKWY",
-    "USER_Suffix": "N",
-    "USER_ZIPCode": "77032",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "H",
-    "SNBNAME": "NORTHSIDE/NORTHLINE",
-    "OLC": "76X6VH6Q+7J"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5236164,
-    "USER_RMSOccurrenceDate": 1666742400000,
-    "USER_RMSOccurrenceHour": "08",
-    "USER_Incident": "144819722",
-    "USER_NIBRSClass": "90Z",
-    "USER_NIBRSDescription": "All other offenses",
-    "USER_District": "22",
-    "USER_Beat": "22B40",
-    "USER_Premise": "Government, Public Building",
-    "USER_OffenseAddressMiddle": "5449 SAM HOUSTON",
-    "USER_BlockRange": "5400-5499",
-    "USER_StreetName": "SAM HOUSTON",
-    "USER_StreetType": "PKWY",
-    "USER_Suffix": "N",
-    "USER_ZIPCode": "77032",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "H",
-    "SNBNAME": "NORTHSIDE/NORTHLINE",
-    "OLC": "76X6VH6Q+7J"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5236166,
-    "USER_RMSOccurrenceDate": 1666396800000,
-    "USER_RMSOccurrenceHour": "07",
-    "USER_Incident": "142895722",
-    "USER_NIBRSClass": "90J",
-    "USER_NIBRSDescription": "Trespass of real property",
-    "USER_District": "19",
-    "USER_Beat": "19G10",
-    "USER_Premise": "Hotel, Motel, ETC",
-    "USER_OffenseAddressMiddle": "7749 SAM HOUSTON",
-    "USER_BlockRange": "7700-7799",
-    "USER_StreetName": "SAM HOUSTON",
-    "USER_StreetType": "PKWY",
-    "USER_Suffix": "W",
-    "USER_ZIPCode": "77036",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "H",
-    "SNBNAME": "NORTHSIDE/NORTHLINE",
-    "OLC": "76X6VH6Q+7J"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5236179,
+    "OBJECTID": 5253876,
     "USER_RMSOccurrenceDate": 1664236800000,
     "USER_RMSOccurrenceHour": "12",
     "USER_Incident": "130406622",
@@ -2232,7 +1979,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236192,
+    "OBJECTID": 5253889,
     "USER_RMSOccurrenceDate": 1664409600000,
     "USER_RMSOccurrenceHour": "20",
     "USER_Incident": "131692122",
@@ -2255,7 +2002,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236196,
+    "OBJECTID": 5253893,
     "USER_RMSOccurrenceDate": 1664496000000,
     "USER_RMSOccurrenceHour": "21",
     "USER_Incident": "132456322",
@@ -2278,7 +2025,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236203,
+    "OBJECTID": 5253901,
     "USER_RMSOccurrenceDate": 1664668800000,
     "USER_RMSOccurrenceHour": "01",
     "USER_Incident": "132804522",
@@ -2301,7 +2048,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236207,
+    "OBJECTID": 5253904,
     "USER_RMSOccurrenceDate": 1664668800000,
     "USER_RMSOccurrenceHour": "19",
     "USER_Incident": "133098622",
@@ -2324,7 +2071,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236211,
+    "OBJECTID": 5253908,
     "USER_RMSOccurrenceDate": 1664755200000,
     "USER_RMSOccurrenceHour": "04",
     "USER_Incident": "133254022",
@@ -2347,7 +2094,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236216,
+    "OBJECTID": 5253913,
     "USER_RMSOccurrenceDate": 1664841600000,
     "USER_RMSOccurrenceHour": "12",
     "USER_Incident": "133935822",
@@ -2370,30 +2117,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236225,
-    "USER_RMSOccurrenceDate": 1664150400000,
-    "USER_RMSOccurrenceHour": "06",
-    "USER_Incident": "129783022",
-    "USER_NIBRSClass": "90J",
-    "USER_NIBRSDescription": "Trespass of real property",
-    "USER_District": "20",
-    "USER_Beat": "20G30",
-    "USER_Premise": "Parking Lot, Garage",
-    "USER_OffenseAddressMiddle": "2949 SAM HOUSTON",
-    "USER_BlockRange": "2900-2999",
-    "USER_StreetName": "SAM HOUSTON",
-    "USER_StreetType": "PKWY",
-    "USER_Suffix": "W",
-    "USER_ZIPCode": "77042",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "H",
-    "SNBNAME": "NORTHSIDE/NORTHLINE",
-    "OLC": "76X6VH6Q+7J"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5236235,
+    "OBJECTID": 5253928,
     "USER_RMSOccurrenceDate": 1665100800000,
     "USER_RMSOccurrenceHour": "13",
     "USER_Incident": "135591822",
@@ -2416,7 +2140,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236239,
+    "OBJECTID": 5253932,
     "USER_RMSOccurrenceDate": 1665187200000,
     "USER_RMSOccurrenceHour": "17",
     "USER_Incident": "136200822",
@@ -2439,7 +2163,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236243,
+    "OBJECTID": 5253936,
     "USER_RMSOccurrenceDate": 1665273600000,
     "USER_RMSOccurrenceHour": "02",
     "USER_Incident": "136410122",
@@ -2462,7 +2186,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236251,
+    "OBJECTID": 5253944,
     "USER_RMSOccurrenceDate": 1665360000000,
     "USER_RMSOccurrenceHour": "10",
     "USER_Incident": "136954722",
@@ -2485,7 +2209,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236252,
+    "OBJECTID": 5253945,
     "USER_RMSOccurrenceDate": 1665360000000,
     "USER_RMSOccurrenceHour": "10",
     "USER_Incident": "136963022",
@@ -2508,7 +2232,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236257,
+    "OBJECTID": 5253950,
     "USER_RMSOccurrenceDate": 1665446400000,
     "USER_RMSOccurrenceHour": "10",
     "USER_Incident": "138088022",
@@ -2531,7 +2255,375 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236273,
+    "OBJECTID": 5253966,
+    "USER_RMSOccurrenceDate": 1665619200000,
+    "USER_RMSOccurrenceHour": "17",
+    "USER_Incident": "138674822",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "22",
+    "USER_Beat": "22B40",
+    "USER_Premise": "Government, Public Building",
+    "USER_OffenseAddressMiddle": "5449 SAM HOUSTON",
+    "USER_BlockRange": "5400-5499",
+    "USER_StreetName": "SAM HOUSTON",
+    "USER_StreetType": "PKWY",
+    "USER_Suffix": "N",
+    "USER_ZIPCode": "77032",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "H",
+    "SNBNAME": "NORTHSIDE/NORTHLINE",
+    "OLC": "76X6VH6Q+7J"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5253971,
+    "USER_RMSOccurrenceDate": 1665705600000,
+    "USER_RMSOccurrenceHour": "09",
+    "USER_Incident": "138961322",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "22",
+    "USER_Beat": "22B40",
+    "USER_Premise": "Commercial, Office Building",
+    "USER_OffenseAddressMiddle": "5449 SAM HOUSTON",
+    "USER_BlockRange": "5400-5499",
+    "USER_StreetName": "SAM HOUSTON",
+    "USER_StreetType": "PKWY",
+    "USER_Suffix": "N",
+    "USER_ZIPCode": "77032",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "H",
+    "SNBNAME": "NORTHSIDE/NORTHLINE",
+    "OLC": "76X6VH6Q+7J"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5253972,
+    "USER_RMSOccurrenceDate": 1665705600000,
+    "USER_RMSOccurrenceHour": "10",
+    "USER_Incident": "138987322",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "22",
+    "USER_Beat": "22B40",
+    "USER_Premise": "Government, Public Building",
+    "USER_OffenseAddressMiddle": "5449 SAM HOUSTON",
+    "USER_BlockRange": "5400-5499",
+    "USER_StreetName": "SAM HOUSTON",
+    "USER_StreetType": "PKWY",
+    "USER_Suffix": "N",
+    "USER_ZIPCode": "77032",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "H",
+    "SNBNAME": "NORTHSIDE/NORTHLINE",
+    "OLC": "76X6VH6Q+7J"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5253977,
+    "USER_RMSOccurrenceDate": 1665792000000,
+    "USER_RMSOccurrenceHour": "23",
+    "USER_Incident": "139785622",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "19",
+    "USER_Beat": "19G10",
+    "USER_Premise": "Other, Unknown",
+    "USER_OffenseAddressMiddle": "8849 SAM HOUSTON",
+    "USER_BlockRange": "8800-8899",
+    "USER_StreetName": "SAM HOUSTON",
+    "USER_StreetType": "PKWY",
+    "USER_Suffix": "W",
+    "USER_ZIPCode": "77099",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "H",
+    "SNBNAME": "NORTHSIDE/NORTHLINE",
+    "OLC": "76X6VH6Q+7J"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5253989,
+    "USER_RMSOccurrenceDate": 1665964800000,
+    "USER_RMSOccurrenceHour": "13",
+    "USER_Incident": "140463722",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "22",
+    "USER_Beat": "22B40",
+    "USER_Premise": "Government, Public Building",
+    "USER_OffenseAddressMiddle": "5449 SAM HOUSTON",
+    "USER_BlockRange": "5400-5499",
+    "USER_StreetName": "SAM HOUSTON",
+    "USER_StreetType": "PKWY",
+    "USER_Suffix": "N",
+    "USER_ZIPCode": "77032",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "H",
+    "SNBNAME": "NORTHSIDE/NORTHLINE",
+    "OLC": "76X6VH6Q+7J"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5253994,
+    "USER_RMSOccurrenceDate": 1665964800000,
+    "USER_RMSOccurrenceHour": "20",
+    "USER_Incident": "140662022",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "13",
+    "USER_Beat": "13D40",
+    "USER_Premise": "Department, Discount Store",
+    "USER_OffenseAddressMiddle": "8549 SAM HOUSTON",
+    "USER_BlockRange": "8500-8599",
+    "USER_StreetName": "SAM HOUSTON",
+    "USER_StreetType": "PKWY",
+    "USER_Suffix": "S",
+    "USER_ZIPCode": "77075",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "H",
+    "SNBNAME": "NORTHSIDE/NORTHLINE",
+    "OLC": "76X6VH6Q+7J"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5254004,
+    "USER_RMSOccurrenceDate": 1666137600000,
+    "USER_RMSOccurrenceHour": "13",
+    "USER_Incident": "141505322",
+    "USER_NIBRSClass": "90J",
+    "USER_NIBRSDescription": "Trespass of real property",
+    "USER_District": "19",
+    "USER_Beat": "19G10",
+    "USER_Premise": "Grocery, Supermarket",
+    "USER_OffenseAddressMiddle": "8349 SAM HOUSTON",
+    "USER_BlockRange": "8300-8399",
+    "USER_StreetName": "SAM HOUSTON",
+    "USER_StreetType": "PKWY",
+    "USER_Suffix": "W",
+    "USER_ZIPCode": "77072",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "H",
+    "SNBNAME": "NORTHSIDE/NORTHLINE",
+    "OLC": "76X6VH6Q+7J"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5254016,
+    "USER_RMSOccurrenceDate": 1666224000000,
+    "USER_RMSOccurrenceHour": "23",
+    "USER_Incident": "142261922",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "16",
+    "USER_Beat": "16E30",
+    "USER_Premise": "Highway, Road, Street, Alley",
+    "USER_OffenseAddressMiddle": "8449 SAM HOUSTON",
+    "USER_BlockRange": "8400-8499",
+    "USER_StreetName": "SAM HOUSTON",
+    "USER_StreetType": "PKWY",
+    "USER_Suffix": "S",
+    "USER_ZIPCode": "77085",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "H",
+    "SNBNAME": "NORTHSIDE/NORTHLINE",
+    "OLC": "76X6VH6Q+7J"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5254034,
+    "USER_RMSOccurrenceDate": 1666569600000,
+    "USER_RMSOccurrenceHour": "23",
+    "USER_Incident": "144190522",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "20",
+    "USER_Beat": "20G30",
+    "USER_Premise": "Highway, Road, Street, Alley",
+    "USER_OffenseAddressMiddle": "2949 SAM HOUSTON",
+    "USER_BlockRange": "2900-2999",
+    "USER_StreetName": "SAM HOUSTON",
+    "USER_StreetType": "PKWY",
+    "USER_Suffix": "W",
+    "USER_ZIPCode": "77042",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "H",
+    "SNBNAME": "NORTHSIDE/NORTHLINE",
+    "OLC": "76X6VH6Q+7J"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5254035,
+    "USER_RMSOccurrenceDate": 1666656000000,
+    "USER_RMSOccurrenceHour": "03",
+    "USER_Incident": "144249622",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "22",
+    "USER_Beat": "22B40",
+    "USER_Premise": "Highway, Road, Street, Alley",
+    "USER_OffenseAddressMiddle": "2249 SAM HOUSTON",
+    "USER_BlockRange": "2200-2299",
+    "USER_StreetName": "SAM HOUSTON",
+    "USER_StreetType": "PKWY",
+    "USER_Suffix": "N",
+    "USER_ZIPCode": "77032",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "H",
+    "SNBNAME": "NORTHSIDE/NORTHLINE",
+    "OLC": "76X6VH6Q+7J"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5254042,
+    "USER_RMSOccurrenceDate": 1665878400000,
+    "USER_RMSOccurrenceHour": "09",
+    "USER_Incident": "139935022",
+    "USER_NIBRSClass": "90J",
+    "USER_NIBRSDescription": "Trespass of real property",
+    "USER_District": "04",
+    "USER_Beat": "04F20",
+    "USER_Premise": "Convenience Store",
+    "USER_OffenseAddressMiddle": "4349 SAM HOUSTON",
+    "USER_BlockRange": "4300-4399",
+    "USER_StreetName": "SAM HOUSTON",
+    "USER_StreetType": "PKWY",
+    "USER_Suffix": "W",
+    "USER_ZIPCode": "77043",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "H",
+    "SNBNAME": "NORTHSIDE/NORTHLINE",
+    "OLC": "76X6VH6Q+7J"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5254046,
+    "USER_RMSOccurrenceDate": 1666828800000,
+    "USER_RMSOccurrenceHour": "10",
+    "USER_Incident": "145391922",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "12",
+    "USER_Beat": "12D20",
+    "USER_Premise": "Highway, Road, Street, Alley",
+    "USER_OffenseAddressMiddle": "11749 SAM HOUSTON",
+    "USER_BlockRange": "11700-11799",
+    "USER_StreetName": "SAM HOUSTON",
+    "USER_StreetType": "PKWY",
+    "USER_Suffix": "S",
+    "USER_ZIPCode": "77089",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "H",
+    "SNBNAME": "NORTHSIDE/NORTHLINE",
+    "OLC": "76X6VH6Q+7J"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5254053,
+    "USER_RMSOccurrenceDate": 1666828800000,
+    "USER_RMSOccurrenceHour": "08",
+    "USER_Incident": "145348422",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "22",
+    "USER_Beat": "22B40",
+    "USER_Premise": "Commercial, Office Building",
+    "USER_OffenseAddressMiddle": "5449 SAM HOUSTON",
+    "USER_BlockRange": "5400-5499",
+    "USER_StreetName": "SAM HOUSTON",
+    "USER_StreetType": "PKWY",
+    "USER_Suffix": "N",
+    "USER_ZIPCode": "77032",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "H",
+    "SNBNAME": "NORTHSIDE/NORTHLINE",
+    "OLC": "76X6VH6Q+7J"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5254055,
+    "USER_RMSOccurrenceDate": 1666137600000,
+    "USER_RMSOccurrenceHour": "10",
+    "USER_Incident": "141422522",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "22",
+    "USER_Beat": "22B40",
+    "USER_Premise": "Government, Public Building",
+    "USER_OffenseAddressMiddle": "5449 SAM HOUSTON",
+    "USER_BlockRange": "5400-5499",
+    "USER_StreetName": "SAM HOUSTON",
+    "USER_StreetType": "PKWY",
+    "USER_Suffix": "N",
+    "USER_ZIPCode": "77032",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "H",
+    "SNBNAME": "NORTHSIDE/NORTHLINE",
+    "OLC": "76X6VH6Q+7J"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5254056,
+    "USER_RMSOccurrenceDate": 1666396800000,
+    "USER_RMSOccurrenceHour": "07",
+    "USER_Incident": "142895722",
+    "USER_NIBRSClass": "90J",
+    "USER_NIBRSDescription": "Trespass of real property",
+    "USER_District": "19",
+    "USER_Beat": "19G10",
+    "USER_Premise": "Hotel, Motel, ETC",
+    "USER_OffenseAddressMiddle": "7749 SAM HOUSTON",
+    "USER_BlockRange": "7700-7799",
+    "USER_StreetName": "SAM HOUSTON",
+    "USER_StreetType": "PKWY",
+    "USER_Suffix": "W",
+    "USER_ZIPCode": "77036",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "H",
+    "SNBNAME": "NORTHSIDE/NORTHLINE",
+    "OLC": "76X6VH6Q+7J"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5254058,
+    "USER_RMSOccurrenceDate": 1666742400000,
+    "USER_RMSOccurrenceHour": "08",
+    "USER_Incident": "144819722",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "22",
+    "USER_Beat": "22B40",
+    "USER_Premise": "Government, Public Building",
+    "USER_OffenseAddressMiddle": "5449 SAM HOUSTON",
+    "USER_BlockRange": "5400-5499",
+    "USER_StreetName": "SAM HOUSTON",
+    "USER_StreetType": "PKWY",
+    "USER_Suffix": "N",
+    "USER_ZIPCode": "77032",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "H",
+    "SNBNAME": "NORTHSIDE/NORTHLINE",
+    "OLC": "76X6VH6Q+7J"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5254073,
     "USER_RMSOccurrenceDate": 1665446400000,
     "USER_RMSOccurrenceHour": "16",
     "USER_Incident": "137588722",
@@ -2554,7 +2646,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236276,
+    "OBJECTID": 5254075,
     "USER_RMSOccurrenceDate": 1664582400000,
     "USER_RMSOccurrenceHour": "13",
     "USER_Incident": "132512122",
@@ -2577,7 +2669,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236279,
+    "OBJECTID": 5254078,
     "USER_RMSOccurrenceDate": 1664755200000,
     "USER_RMSOccurrenceHour": "16",
     "USER_Incident": "133584422",
@@ -2600,7 +2692,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236282,
+    "OBJECTID": 5254082,
     "USER_RMSOccurrenceDate": 1665446400000,
     "USER_RMSOccurrenceHour": "00",
     "USER_Incident": "137307522",
@@ -2623,7 +2715,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236286,
+    "OBJECTID": 5254085,
     "USER_RMSOccurrenceDate": 1664496000000,
     "USER_RMSOccurrenceHour": "22",
     "USER_Incident": "132263822",
@@ -2646,7 +2738,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236295,
+    "OBJECTID": 5254094,
     "USER_RMSOccurrenceDate": 1665014400000,
     "USER_RMSOccurrenceHour": "07",
     "USER_Incident": "134858222",
@@ -2669,7 +2761,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236305,
+    "OBJECTID": 5254104,
     "USER_RMSOccurrenceDate": 1664496000000,
     "USER_RMSOccurrenceHour": "00",
     "USER_Incident": "134323122",
@@ -2692,7 +2784,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236314,
+    "OBJECTID": 5254113,
     "USER_RMSOccurrenceDate": 1664582400000,
     "USER_RMSOccurrenceHour": "09",
     "USER_Incident": "132443622",
@@ -2715,7 +2807,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236318,
+    "OBJECTID": 5254117,
     "USER_RMSOccurrenceDate": 1666224000000,
     "USER_RMSOccurrenceHour": "00",
     "USER_Incident": "144466322",
@@ -2738,7 +2830,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236320,
+    "OBJECTID": 5254120,
     "USER_RMSOccurrenceDate": 1665705600000,
     "USER_RMSOccurrenceHour": "12",
     "USER_Incident": "139052522",
@@ -2761,53 +2853,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236323,
-    "USER_RMSOccurrenceDate": 1664150400000,
-    "USER_RMSOccurrenceHour": "02",
-    "USER_Incident": "129742222",
-    "USER_NIBRSClass": "90E",
-    "USER_NIBRSDescription": "Drunkenness",
-    "USER_District": "06",
-    "USER_Beat": "06B20",
-    "USER_Premise": "Highway, Road, Street, Alley",
-    "USER_OffenseAddressMiddle": "949 GREEN MEADOW",
-    "USER_BlockRange": "900-999",
-    "USER_StreetName": "GREEN MEADOW",
-    "USER_StreetType": "LN",
-    "USER_Suffix": "",
-    "USER_ZIPCode": "77091",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "B",
-    "SNBNAME": "ACRES HOME",
-    "OLC": "76X6VH7G+F8"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5236326,
-    "USER_RMSOccurrenceDate": 1665532800000,
-    "USER_RMSOccurrenceHour": "15",
-    "USER_Incident": "138083322",
-    "USER_NIBRSClass": "90Z",
-    "USER_NIBRSDescription": "All other offenses",
-    "USER_District": "06",
-    "USER_Beat": "06B10",
-    "USER_Premise": "Convenience Store",
-    "USER_OffenseAddressMiddle": "6949 AIRLINE",
-    "USER_BlockRange": "6900-6999",
-    "USER_StreetName": "AIRLINE",
-    "USER_StreetType": "DR",
-    "USER_Suffix": "",
-    "USER_ZIPCode": "77076",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "H",
-    "SNBNAME": "NORTHSIDE/NORTHLINE",
-    "OLC": "76X6VJ78+33"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5236328,
+    "OBJECTID": 5254122,
     "USER_RMSOccurrenceDate": 1664841600000,
     "USER_RMSOccurrenceHour": "18",
     "USER_Incident": "134130322",
@@ -2830,7 +2876,30 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236331,
+    "OBJECTID": 5254125,
+    "USER_RMSOccurrenceDate": 1665532800000,
+    "USER_RMSOccurrenceHour": "15",
+    "USER_Incident": "138083322",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "06",
+    "USER_Beat": "06B10",
+    "USER_Premise": "Convenience Store",
+    "USER_OffenseAddressMiddle": "6949 AIRLINE",
+    "USER_BlockRange": "6900-6999",
+    "USER_StreetName": "AIRLINE",
+    "USER_StreetType": "DR",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77076",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "H",
+    "SNBNAME": "NORTHSIDE/NORTHLINE",
+    "OLC": "76X6VJ78+33"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5254128,
     "USER_RMSOccurrenceDate": 1666483200000,
     "USER_RMSOccurrenceHour": "06",
     "USER_Incident": "143359022",
@@ -2853,7 +2922,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236336,
+    "OBJECTID": 5254134,
     "USER_RMSOccurrenceDate": 1665705600000,
     "USER_RMSOccurrenceHour": "04",
     "USER_Incident": "138873222",
@@ -2876,30 +2945,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236341,
-    "USER_RMSOccurrenceDate": 1664150400000,
-    "USER_RMSOccurrenceHour": "07",
-    "USER_Incident": "129798522",
-    "USER_NIBRSClass": "90J",
-    "USER_NIBRSDescription": "Trespass of real property",
-    "USER_District": "08",
-    "USER_Beat": "08C60",
-    "USER_Premise": "Residence, Home (Includes Apartment)",
-    "USER_OffenseAddressMiddle": "7249 LAKEWOOD",
-    "USER_BlockRange": "7200-7299",
-    "USER_StreetName": "LAKEWOOD",
-    "USER_StreetType": "DR",
-    "USER_Suffix": "",
-    "USER_ZIPCode": "77016",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "B",
-    "SNBNAME": "EAST LITTLE YORK / HOMESTEAD",
-    "OLC": "76X6VP62+7P"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5236346,
+    "OBJECTID": 5254142,
     "USER_RMSOccurrenceDate": 1664409600000,
     "USER_RMSOccurrenceHour": "07",
     "USER_Incident": "131310722",
@@ -2922,7 +2968,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236354,
+    "OBJECTID": 5254148,
     "USER_RMSOccurrenceDate": 1664582400000,
     "USER_RMSOccurrenceHour": "02",
     "USER_Incident": "132346022",
@@ -2945,7 +2991,30 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236370,
+    "OBJECTID": 5254153,
+    "USER_RMSOccurrenceDate": 1666828800000,
+    "USER_RMSOccurrenceHour": "17",
+    "USER_Incident": "145638222",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "06",
+    "USER_Beat": "06B30",
+    "USER_Premise": "Restaurant",
+    "USER_OffenseAddressMiddle": "7249 ANTOINE",
+    "USER_BlockRange": "7200-7299",
+    "USER_StreetName": "ANTOINE",
+    "USER_StreetType": "DR",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77088",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "A",
+    "SNBNAME": "GREATER INWOOD",
+    "OLC": "76X6VG8G+FR"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5254164,
     "USER_RMSOccurrenceDate": 1664323200000,
     "USER_RMSOccurrenceHour": "10",
     "USER_Incident": "130857122",
@@ -2968,7 +3037,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236373,
+    "OBJECTID": 5254168,
     "USER_RMSOccurrenceDate": 1666569600000,
     "USER_RMSOccurrenceHour": "16",
     "USER_Incident": "144044922",
@@ -2991,7 +3060,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236385,
+    "OBJECTID": 5254181,
     "USER_RMSOccurrenceDate": 1666051200000,
     "USER_RMSOccurrenceHour": "09",
     "USER_Incident": "140859222",
@@ -3014,7 +3083,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236387,
+    "OBJECTID": 5254182,
     "USER_RMSOccurrenceDate": 1665446400000,
     "USER_RMSOccurrenceHour": "12",
     "USER_Incident": "137483222",
@@ -3037,7 +3106,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236388,
+    "OBJECTID": 5254184,
     "USER_RMSOccurrenceDate": 1666483200000,
     "USER_RMSOccurrenceHour": "23",
     "USER_Incident": "143689522",
@@ -3060,7 +3129,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236393,
+    "OBJECTID": 5254188,
     "USER_RMSOccurrenceDate": 1664582400000,
     "USER_RMSOccurrenceHour": "14",
     "USER_Incident": "132553322",
@@ -3083,7 +3152,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236394,
+    "OBJECTID": 5254189,
     "USER_RMSOccurrenceDate": 1665964800000,
     "USER_RMSOccurrenceHour": "15",
     "USER_Incident": "140664722",
@@ -3106,7 +3175,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236398,
+    "OBJECTID": 5254193,
     "USER_RMSOccurrenceDate": 1665014400000,
     "USER_RMSOccurrenceHour": "01",
     "USER_Incident": "134806622",
@@ -3129,7 +3198,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236426,
+    "OBJECTID": 5254222,
     "USER_RMSOccurrenceDate": 1664409600000,
     "USER_RMSOccurrenceHour": "10",
     "USER_Incident": "131397922",
@@ -3152,7 +3221,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236427,
+    "OBJECTID": 5254223,
     "USER_RMSOccurrenceDate": 1664409600000,
     "USER_RMSOccurrenceHour": "10",
     "USER_Incident": "131397922",
@@ -3175,53 +3244,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236437,
-    "USER_RMSOccurrenceDate": 1665619200000,
-    "USER_RMSOccurrenceHour": "17",
-    "USER_Incident": "138685522",
-    "USER_NIBRSClass": "90Z",
-    "USER_NIBRSDescription": "All other offenses",
-    "USER_District": "07",
-    "USER_Beat": "07C40",
-    "USER_Premise": "Speciality Store",
-    "USER_OffenseAddressMiddle": "10549 EASTEX",
-    "USER_BlockRange": "10500-10599",
-    "USER_StreetName": "EASTEX",
-    "USER_StreetType": "FWY",
-    "USER_Suffix": "",
-    "USER_ZIPCode": "77093",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "B",
-    "SNBNAME": "EASTEX - JENSEN AREA",
-    "OLC": "76X6VM88+5M"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5236439,
-    "USER_RMSOccurrenceDate": 1664150400000,
-    "USER_RMSOccurrenceHour": "14",
-    "USER_Incident": "129966922",
-    "USER_NIBRSClass": "90Z",
-    "USER_NIBRSDescription": "All other offenses",
-    "USER_District": "07",
-    "USER_Beat": "07C40",
-    "USER_Premise": "Other, Unknown",
-    "USER_OffenseAddressMiddle": "10549 EASTEX",
-    "USER_BlockRange": "10500-10599",
-    "USER_StreetName": "EASTEX",
-    "USER_StreetType": "FWY",
-    "USER_Suffix": "",
-    "USER_ZIPCode": "77093",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "B",
-    "SNBNAME": "EASTEX - JENSEN AREA",
-    "OLC": "76X6VM88+5M"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5236440,
+    "OBJECTID": 5254232,
     "USER_RMSOccurrenceDate": 1665100800000,
     "USER_RMSOccurrenceHour": "00",
     "USER_Incident": "135335422",
@@ -3244,7 +3267,30 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236462,
+    "OBJECTID": 5254236,
+    "USER_RMSOccurrenceDate": 1665619200000,
+    "USER_RMSOccurrenceHour": "17",
+    "USER_Incident": "138685522",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "07",
+    "USER_Beat": "07C40",
+    "USER_Premise": "Speciality Store",
+    "USER_OffenseAddressMiddle": "10549 EASTEX",
+    "USER_BlockRange": "10500-10599",
+    "USER_StreetName": "EASTEX",
+    "USER_StreetType": "FWY",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77093",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "B",
+    "SNBNAME": "EASTEX - JENSEN AREA",
+    "OLC": "76X6VM88+5M"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5254259,
     "USER_RMSOccurrenceDate": 1664323200000,
     "USER_RMSOccurrenceHour": "05",
     "USER_Incident": "130750522",
@@ -3267,7 +3313,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236465,
+    "OBJECTID": 5254263,
     "USER_RMSOccurrenceDate": 1665705600000,
     "USER_RMSOccurrenceHour": "02",
     "USER_Incident": "138855422",
@@ -3290,7 +3336,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236470,
+    "OBJECTID": 5254267,
     "USER_RMSOccurrenceDate": 1666310400000,
     "USER_RMSOccurrenceHour": "10",
     "USER_Incident": "142445322",
@@ -3313,7 +3359,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236478,
+    "OBJECTID": 5254273,
     "USER_RMSOccurrenceDate": 1665360000000,
     "USER_RMSOccurrenceHour": "01",
     "USER_Incident": "136814222",
@@ -3336,7 +3382,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236485,
+    "OBJECTID": 5254280,
     "USER_RMSOccurrenceDate": 1665792000000,
     "USER_RMSOccurrenceHour": "18",
     "USER_Incident": "139946022",
@@ -3359,7 +3405,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236494,
+    "OBJECTID": 5254294,
     "USER_RMSOccurrenceDate": 1665619200000,
     "USER_RMSOccurrenceHour": "02",
     "USER_Incident": "138812222",
@@ -3382,7 +3428,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236495,
+    "OBJECTID": 5254295,
     "USER_RMSOccurrenceDate": 1665705600000,
     "USER_RMSOccurrenceHour": "00",
     "USER_Incident": "138834122",
@@ -3405,7 +3451,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236505,
+    "OBJECTID": 5254301,
     "USER_RMSOccurrenceDate": 1665705600000,
     "USER_RMSOccurrenceHour": "00",
     "USER_Incident": "138837222",
@@ -3428,7 +3474,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236510,
+    "OBJECTID": 5254307,
     "USER_RMSOccurrenceDate": 1665273600000,
     "USER_RMSOccurrenceHour": "23",
     "USER_Incident": "136778222",
@@ -3451,7 +3497,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236512,
+    "OBJECTID": 5254311,
     "USER_RMSOccurrenceDate": 1666396800000,
     "USER_RMSOccurrenceHour": "00",
     "USER_Incident": "142818622",
@@ -3474,30 +3520,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236518,
-    "USER_RMSOccurrenceDate": 1666656000000,
-    "USER_RMSOccurrenceHour": "14",
-    "USER_Incident": "144483522",
-    "USER_NIBRSClass": "90Z",
-    "USER_NIBRSDescription": "All other offenses",
-    "USER_District": "06",
-    "USER_Beat": "06B10",
-    "USER_Premise": "Convenience Store",
-    "USER_OffenseAddressMiddle": "249 LITTLE YORK",
-    "USER_BlockRange": "200-299",
-    "USER_StreetName": "LITTLE YORK",
-    "USER_StreetType": "RD",
-    "USER_Suffix": "E",
-    "USER_ZIPCode": "77037",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "H",
-    "SNBNAME": "NORTHSIDE/NORTHLINE",
-    "OLC": "76X6VJC9+3C"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5236521,
+    "OBJECTID": 5254314,
     "USER_RMSOccurrenceDate": 1665273600000,
     "USER_RMSOccurrenceHour": "07",
     "USER_Incident": "136455922",
@@ -3520,30 +3543,30 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236535,
+    "OBJECTID": 5254320,
     "USER_RMSOccurrenceDate": 1666656000000,
-    "USER_RMSOccurrenceHour": "22",
-    "USER_Incident": "144945922",
-    "USER_NIBRSClass": "90J",
-    "USER_NIBRSDescription": "Trespass of real property",
+    "USER_RMSOccurrenceHour": "14",
+    "USER_Incident": "144483522",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
     "USER_District": "06",
     "USER_Beat": "06B10",
-    "USER_Premise": "Grocery, Supermarket",
-    "USER_OffenseAddressMiddle": "449 LITTLE YORK",
-    "USER_BlockRange": "400-499",
+    "USER_Premise": "Convenience Store",
+    "USER_OffenseAddressMiddle": "249 LITTLE YORK",
+    "USER_BlockRange": "200-299",
     "USER_StreetName": "LITTLE YORK",
     "USER_StreetType": "RD",
-    "USER_Suffix": "W",
+    "USER_Suffix": "E",
     "USER_ZIPCode": "77037",
     "USER_ORI": "TXHPD0000",
     "DISTRICT_1": "H",
     "SNBNAME": "NORTHSIDE/NORTHLINE",
-    "OLC": "76X6VJCF+3F"
+    "OLC": "76X6VJC9+3C"
    }
   },
   {
    "attributes": {
-    "OBJECTID": 5236538,
+    "OBJECTID": 5254330,
     "USER_RMSOccurrenceDate": 1664496000000,
     "USER_RMSOccurrenceHour": "17",
     "USER_Incident": "132138122",
@@ -3566,7 +3589,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236544,
+    "OBJECTID": 5254336,
     "USER_RMSOccurrenceDate": 1665187200000,
     "USER_RMSOccurrenceHour": "14",
     "USER_Incident": "136150422",
@@ -3589,7 +3612,30 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236560,
+    "OBJECTID": 5254340,
+    "USER_RMSOccurrenceDate": 1666656000000,
+    "USER_RMSOccurrenceHour": "22",
+    "USER_Incident": "144945922",
+    "USER_NIBRSClass": "90J",
+    "USER_NIBRSDescription": "Trespass of real property",
+    "USER_District": "06",
+    "USER_Beat": "06B10",
+    "USER_Premise": "Grocery, Supermarket",
+    "USER_OffenseAddressMiddle": "449 LITTLE YORK",
+    "USER_BlockRange": "400-499",
+    "USER_StreetName": "LITTLE YORK",
+    "USER_StreetType": "RD",
+    "USER_Suffix": "W",
+    "USER_ZIPCode": "77037",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "H",
+    "SNBNAME": "NORTHSIDE/NORTHLINE",
+    "OLC": "76X6VJCF+3F"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5254362,
     "USER_RMSOccurrenceDate": 1666224000000,
     "USER_RMSOccurrenceHour": "12",
     "USER_Incident": "141993622",
@@ -3612,7 +3658,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236573,
+    "OBJECTID": 5254366,
     "USER_RMSOccurrenceDate": 1665792000000,
     "USER_RMSOccurrenceHour": "00",
     "USER_Incident": "139354522",
@@ -3635,7 +3681,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236579,
+    "OBJECTID": 5254372,
     "USER_RMSOccurrenceDate": 1665705600000,
     "USER_RMSOccurrenceHour": "23",
     "USER_Incident": "139324322",
@@ -3658,7 +3704,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236584,
+    "OBJECTID": 5254377,
     "USER_RMSOccurrenceDate": 1666656000000,
     "USER_RMSOccurrenceHour": "09",
     "USER_Incident": "144863722",
@@ -3681,7 +3727,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236588,
+    "OBJECTID": 5254381,
     "USER_RMSOccurrenceDate": 1665792000000,
     "USER_RMSOccurrenceHour": "02",
     "USER_Incident": "140616222",
@@ -3704,7 +3750,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236609,
+    "OBJECTID": 5254403,
     "USER_RMSOccurrenceDate": 1665532800000,
     "USER_RMSOccurrenceHour": "12",
     "USER_Incident": "137956922",
@@ -3727,7 +3773,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236618,
+    "OBJECTID": 5254410,
     "USER_RMSOccurrenceDate": 1664928000000,
     "USER_RMSOccurrenceHour": "09",
     "USER_Incident": "134377322",
@@ -3750,7 +3796,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236622,
+    "OBJECTID": 5254413,
     "USER_RMSOccurrenceDate": 1664496000000,
     "USER_RMSOccurrenceHour": "22",
     "USER_Incident": "132263222",
@@ -3773,7 +3819,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236625,
+    "OBJECTID": 5254416,
     "USER_RMSOccurrenceDate": 1664496000000,
     "USER_RMSOccurrenceHour": "20",
     "USER_Incident": "132205322",
@@ -3796,7 +3842,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236640,
+    "OBJECTID": 5254420,
     "USER_RMSOccurrenceDate": 1665100800000,
     "USER_RMSOccurrenceHour": "23",
     "USER_Incident": "135857822",
@@ -3819,7 +3865,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236644,
+    "OBJECTID": 5254435,
     "USER_RMSOccurrenceDate": 1665273600000,
     "USER_RMSOccurrenceHour": "00",
     "USER_Incident": "136374422",
@@ -3842,30 +3888,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236646,
-    "USER_RMSOccurrenceDate": 1665878400000,
-    "USER_RMSOccurrenceHour": "15",
-    "USER_Incident": "140037522",
-    "USER_NIBRSClass": "90J",
-    "USER_NIBRSDescription": "Trespass of real property",
-    "USER_District": "06",
-    "USER_Beat": "06B30",
-    "USER_Premise": "Convenience Store",
-    "USER_OffenseAddressMiddle": "3349 LITTLE YORK",
-    "USER_BlockRange": "3300-3399",
-    "USER_StreetName": "LITTLE YORK",
-    "USER_StreetType": "RD",
-    "USER_Suffix": "W",
-    "USER_ZIPCode": "77088",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "",
-    "SNBNAME": "",
-    "OLC": "76X6VMC8+C7"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5236660,
+    "OBJECTID": 5254446,
     "USER_RMSOccurrenceDate": 1665446400000,
     "USER_RMSOccurrenceHour": "10",
     "USER_Incident": "140911822",
@@ -3888,7 +3911,30 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236667,
+    "OBJECTID": 5254448,
+    "USER_RMSOccurrenceDate": 1665878400000,
+    "USER_RMSOccurrenceHour": "15",
+    "USER_Incident": "140037522",
+    "USER_NIBRSClass": "90J",
+    "USER_NIBRSDescription": "Trespass of real property",
+    "USER_District": "06",
+    "USER_Beat": "06B30",
+    "USER_Premise": "Convenience Store",
+    "USER_OffenseAddressMiddle": "3349 LITTLE YORK",
+    "USER_BlockRange": "3300-3399",
+    "USER_StreetName": "LITTLE YORK",
+    "USER_StreetType": "RD",
+    "USER_Suffix": "W",
+    "USER_ZIPCode": "77088",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "",
+    "SNBNAME": "",
+    "OLC": "76X6VMC8+C7"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5254459,
     "USER_RMSOccurrenceDate": 1664668800000,
     "USER_RMSOccurrenceHour": "22",
     "USER_Incident": "133167922",
@@ -3911,7 +3957,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236681,
+    "OBJECTID": 5254467,
     "USER_RMSOccurrenceDate": 1665100800000,
     "USER_RMSOccurrenceHour": "14",
     "USER_Incident": "135609722",
@@ -3934,7 +3980,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236688,
+    "OBJECTID": 5254480,
     "USER_RMSOccurrenceDate": 1666137600000,
     "USER_RMSOccurrenceHour": "02",
     "USER_Incident": "141284922",
@@ -3957,7 +4003,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236693,
+    "OBJECTID": 5254487,
     "USER_RMSOccurrenceDate": 1666051200000,
     "USER_RMSOccurrenceHour": "16",
     "USER_Incident": "141083422",
@@ -3980,7 +4026,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236703,
+    "OBJECTID": 5254493,
     "USER_RMSOccurrenceDate": 1664496000000,
     "USER_RMSOccurrenceHour": "05",
     "USER_Incident": "131831122",
@@ -4003,7 +4049,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236706,
+    "OBJECTID": 5254496,
     "USER_RMSOccurrenceDate": 1666396800000,
     "USER_RMSOccurrenceHour": "15",
     "USER_Incident": "143063322",
@@ -4026,7 +4072,30 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236742,
+    "OBJECTID": 5254500,
+    "USER_RMSOccurrenceDate": 1666828800000,
+    "USER_RMSOccurrenceHour": "02",
+    "USER_Incident": "145274222",
+    "USER_NIBRSClass": "90D",
+    "USER_NIBRSDescription": "Driving under the influence",
+    "USER_District": "08",
+    "USER_Beat": "08C60",
+    "USER_Premise": "Highway, Road, Street, Alley",
+    "USER_OffenseAddressMiddle": "7749 LITTLE YORK",
+    "USER_BlockRange": "7700-7799",
+    "USER_StreetName": "LITTLE YORK",
+    "USER_StreetType": "RD",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77016",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "B",
+    "SNBNAME": "EAST LITTLE YORK / HOMESTEAD",
+    "OLC": "76X6VPC6+M4"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5254534,
     "USER_RMSOccurrenceDate": 1665878400000,
     "USER_RMSOccurrenceHour": "23",
     "USER_Incident": "140222722",
@@ -4049,7 +4118,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236743,
+    "OBJECTID": 5254536,
     "USER_RMSOccurrenceDate": 1666310400000,
     "USER_RMSOccurrenceHour": "03",
     "USER_Incident": "142319222",
@@ -4072,7 +4141,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236747,
+    "OBJECTID": 5254539,
     "USER_RMSOccurrenceDate": 1665014400000,
     "USER_RMSOccurrenceHour": "16",
     "USER_Incident": "135147622",
@@ -4095,7 +4164,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236757,
+    "OBJECTID": 5254550,
     "USER_RMSOccurrenceDate": 1665446400000,
     "USER_RMSOccurrenceHour": "23",
     "USER_Incident": "138596522",
@@ -4118,7 +4187,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236771,
+    "OBJECTID": 5254564,
     "USER_RMSOccurrenceDate": 1665792000000,
     "USER_RMSOccurrenceHour": "11",
     "USER_Incident": "139516922",
@@ -4141,7 +4210,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236789,
+    "OBJECTID": 5254583,
     "USER_RMSOccurrenceDate": 1666224000000,
     "USER_RMSOccurrenceHour": "09",
     "USER_Incident": "141907822",
@@ -4164,7 +4233,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236798,
+    "OBJECTID": 5254591,
     "USER_RMSOccurrenceDate": 1665187200000,
     "USER_RMSOccurrenceHour": "09",
     "USER_Incident": "136027922",
@@ -4187,30 +4256,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236802,
-    "USER_RMSOccurrenceDate": 1665619200000,
-    "USER_RMSOccurrenceHour": "08",
-    "USER_Incident": "138414622",
-    "USER_NIBRSClass": "90Z",
-    "USER_NIBRSDescription": "All other offenses",
-    "USER_District": "06",
-    "USER_Beat": "06B30",
-    "USER_Premise": "Residence, Home (Includes Apartment)",
-    "USER_OffenseAddressMiddle": "5349 GULF BANK",
-    "USER_BlockRange": "5300-5399",
-    "USER_StreetName": "GULF BANK",
-    "USER_StreetType": "RD",
-    "USER_Suffix": "W",
-    "USER_ZIPCode": "77088",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "A",
-    "SNBNAME": "GREATER INWOOD",
-    "OLC": "76X6VGMM+7H"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5236814,
+    "OBJECTID": 5254595,
     "USER_RMSOccurrenceDate": 1664409600000,
     "USER_RMSOccurrenceHour": "15",
     "USER_Incident": "131543822",
@@ -4233,7 +4279,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236819,
+    "OBJECTID": 5254600,
     "USER_RMSOccurrenceDate": 1664841600000,
     "USER_RMSOccurrenceHour": "10",
     "USER_Incident": "133874622",
@@ -4256,7 +4302,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236822,
+    "OBJECTID": 5254603,
     "USER_RMSOccurrenceDate": 1665360000000,
     "USER_RMSOccurrenceHour": "01",
     "USER_Incident": "136805222",
@@ -4279,17 +4325,17 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236825,
-    "USER_RMSOccurrenceDate": 1666396800000,
-    "USER_RMSOccurrenceHour": "14",
-    "USER_Incident": "143041322",
-    "USER_NIBRSClass": "90J",
-    "USER_NIBRSDescription": "Trespass of real property",
+    "OBJECTID": 5254605,
+    "USER_RMSOccurrenceDate": 1665619200000,
+    "USER_RMSOccurrenceHour": "08",
+    "USER_Incident": "138414622",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
     "USER_District": "06",
     "USER_Beat": "06B30",
     "USER_Premise": "Residence, Home (Includes Apartment)",
-    "USER_OffenseAddressMiddle": "5449 GULF BANK",
-    "USER_BlockRange": "5400-5499",
+    "USER_OffenseAddressMiddle": "5349 GULF BANK",
+    "USER_BlockRange": "5300-5399",
     "USER_StreetName": "GULF BANK",
     "USER_StreetType": "RD",
     "USER_Suffix": "W",
@@ -4297,12 +4343,12 @@
     "USER_ORI": "TXHPD0000",
     "DISTRICT_1": "A",
     "SNBNAME": "GREATER INWOOD",
-    "OLC": "76X6VGMJ+7P"
+    "OLC": "76X6VGMM+7H"
    }
   },
   {
    "attributes": {
-    "OBJECTID": 5236826,
+    "OBJECTID": 5254617,
     "USER_RMSOccurrenceDate": 1666396800000,
     "USER_RMSOccurrenceHour": "14",
     "USER_Incident": "143041322",
@@ -4325,7 +4371,53 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236833,
+    "OBJECTID": 5254618,
+    "USER_RMSOccurrenceDate": 1666396800000,
+    "USER_RMSOccurrenceHour": "14",
+    "USER_Incident": "143041322",
+    "USER_NIBRSClass": "90J",
+    "USER_NIBRSDescription": "Trespass of real property",
+    "USER_District": "06",
+    "USER_Beat": "06B30",
+    "USER_Premise": "Residence, Home (Includes Apartment)",
+    "USER_OffenseAddressMiddle": "5449 GULF BANK",
+    "USER_BlockRange": "5400-5499",
+    "USER_StreetName": "GULF BANK",
+    "USER_StreetType": "RD",
+    "USER_Suffix": "W",
+    "USER_ZIPCode": "77088",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "A",
+    "SNBNAME": "GREATER INWOOD",
+    "OLC": "76X6VGMJ+7P"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5254625,
+    "USER_RMSOccurrenceDate": 1666828800000,
+    "USER_RMSOccurrenceHour": "15",
+    "USER_Incident": "145567922",
+    "USER_NIBRSClass": "90J",
+    "USER_NIBRSDescription": "Trespass of real property",
+    "USER_District": "06",
+    "USER_Beat": "06B10",
+    "USER_Premise": "Residence, Home (Includes Apartment)",
+    "USER_OffenseAddressMiddle": "1149 SUNNY",
+    "USER_BlockRange": "1100-1199",
+    "USER_StreetName": "SUNNY",
+    "USER_StreetType": "DR",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77037",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "H",
+    "SNBNAME": "NORTHSIDE/NORTHLINE",
+    "OLC": "76X6VJJG+F5"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5254630,
     "USER_RMSOccurrenceDate": 1664236800000,
     "USER_RMSOccurrenceHour": "20",
     "USER_Incident": "130640022",
@@ -4348,7 +4440,30 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236836,
+    "OBJECTID": 5254633,
+    "USER_RMSOccurrenceDate": 1666828800000,
+    "USER_RMSOccurrenceHour": "00",
+    "USER_Incident": "145254022",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "06",
+    "USER_Beat": "06B30",
+    "USER_Premise": "Service, Gas Station",
+    "USER_OffenseAddressMiddle": "5749 GULF BANK",
+    "USER_BlockRange": "5700-5799",
+    "USER_StreetName": "GULF BANK",
+    "USER_StreetType": "RD",
+    "USER_Suffix": "W",
+    "USER_ZIPCode": "77088",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "A",
+    "SNBNAME": "GREATER INWOOD",
+    "OLC": "76X6VGMG+PM"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5254635,
     "USER_RMSOccurrenceDate": 1665273600000,
     "USER_RMSOccurrenceHour": "13",
     "USER_Incident": "136566722",
@@ -4371,7 +4486,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236845,
+    "OBJECTID": 5254645,
     "USER_RMSOccurrenceDate": 1666656000000,
     "USER_RMSOccurrenceHour": "14",
     "USER_Incident": "144499522",
@@ -4394,7 +4509,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236862,
+    "OBJECTID": 5254663,
     "USER_RMSOccurrenceDate": 1666569600000,
     "USER_RMSOccurrenceHour": "01",
     "USER_Incident": "143729222",
@@ -4417,7 +4532,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236879,
+    "OBJECTID": 5254679,
     "USER_RMSOccurrenceDate": 1665964800000,
     "USER_RMSOccurrenceHour": "23",
     "USER_Incident": "140728222",
@@ -4440,30 +4555,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236880,
-    "USER_RMSOccurrenceDate": 1666656000000,
-    "USER_RMSOccurrenceHour": "00",
-    "USER_Incident": "144195922",
-    "USER_NIBRSClass": "90J",
-    "USER_NIBRSDescription": "Trespass of real property",
-    "USER_District": "06",
-    "USER_Beat": "06B30",
-    "USER_Premise": "Residence, Home (Includes Apartment)",
-    "USER_OffenseAddressMiddle": "6649 LOG HOLLOW",
-    "USER_BlockRange": "6600-6699",
-    "USER_StreetName": "LOG HOLLOW",
-    "USER_StreetType": "DR",
-    "USER_Suffix": "",
-    "USER_ZIPCode": "77088",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "A",
-    "SNBNAME": "GREATER INWOOD",
-    "OLC": "76X6VGQ6+HH"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5236881,
+    "OBJECTID": 5254681,
     "USER_RMSOccurrenceDate": 1666656000000,
     "USER_RMSOccurrenceHour": "00",
     "USER_Incident": "144195922",
@@ -4486,7 +4578,30 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236883,
+    "OBJECTID": 5254682,
+    "USER_RMSOccurrenceDate": 1666656000000,
+    "USER_RMSOccurrenceHour": "00",
+    "USER_Incident": "144195922",
+    "USER_NIBRSClass": "90J",
+    "USER_NIBRSDescription": "Trespass of real property",
+    "USER_District": "06",
+    "USER_Beat": "06B30",
+    "USER_Premise": "Residence, Home (Includes Apartment)",
+    "USER_OffenseAddressMiddle": "6649 LOG HOLLOW",
+    "USER_BlockRange": "6600-6699",
+    "USER_StreetName": "LOG HOLLOW",
+    "USER_StreetType": "DR",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77088",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "A",
+    "SNBNAME": "GREATER INWOOD",
+    "OLC": "76X6VGQ6+HH"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5254685,
     "USER_RMSOccurrenceDate": 1665619200000,
     "USER_RMSOccurrenceHour": "07",
     "USER_Incident": "138403522",
@@ -4509,7 +4624,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236895,
+    "OBJECTID": 5254696,
     "USER_RMSOccurrenceDate": 1664582400000,
     "USER_RMSOccurrenceHour": "16",
     "USER_Incident": "132587122",
@@ -4532,7 +4647,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236914,
+    "OBJECTID": 5254714,
     "USER_RMSOccurrenceDate": 1664755200000,
     "USER_RMSOccurrenceHour": "08",
     "USER_Incident": "133400122",
@@ -4555,7 +4670,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236917,
+    "OBJECTID": 5254717,
     "USER_RMSOccurrenceDate": 1666483200000,
     "USER_RMSOccurrenceHour": "16",
     "USER_Incident": "143534122",
@@ -4578,76 +4693,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236921,
-    "USER_RMSOccurrenceDate": 1665878400000,
-    "USER_RMSOccurrenceHour": "10",
-    "USER_Incident": "139939222",
-    "USER_NIBRSClass": "90J",
-    "USER_NIBRSDescription": "Trespass of real property",
-    "USER_District": "06",
-    "USER_Beat": "06B40",
-    "USER_Premise": "Residence, Home (Includes Apartment)",
-    "USER_OffenseAddressMiddle": "1449 GULF BANK",
-    "USER_BlockRange": "1400-1499",
-    "USER_StreetName": "GULF BANK",
-    "USER_StreetType": "RD",
-    "USER_Suffix": "W",
-    "USER_ZIPCode": "77088",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "",
-    "SNBNAME": "",
-    "OLC": "76X6VJRJ+7V"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5236924,
-    "USER_RMSOccurrenceDate": 1666310400000,
-    "USER_RMSOccurrenceHour": "09",
-    "USER_Incident": "142402122",
-    "USER_NIBRSClass": "90J",
-    "USER_NIBRSDescription": "Trespass of real property",
-    "USER_District": "06",
-    "USER_Beat": "06B40",
-    "USER_Premise": "Residence, Home (Includes Apartment)",
-    "USER_OffenseAddressMiddle": "1449 GULF BANK",
-    "USER_BlockRange": "1400-1499",
-    "USER_StreetName": "GULF BANK",
-    "USER_StreetType": "RD",
-    "USER_Suffix": "W",
-    "USER_ZIPCode": "77088",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "",
-    "SNBNAME": "",
-    "OLC": "76X6VJRJ+7V"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5236925,
-    "USER_RMSOccurrenceDate": 1666310400000,
-    "USER_RMSOccurrenceHour": "19",
-    "USER_Incident": "142685022",
-    "USER_NIBRSClass": "90Z",
-    "USER_NIBRSDescription": "All other offenses",
-    "USER_District": "06",
-    "USER_Beat": "06B40",
-    "USER_Premise": "Convenience Store",
-    "USER_OffenseAddressMiddle": "1449 GULF BANK",
-    "USER_BlockRange": "1400-1499",
-    "USER_StreetName": "GULF BANK",
-    "USER_StreetType": "RD",
-    "USER_Suffix": "W",
-    "USER_ZIPCode": "77088",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "",
-    "SNBNAME": "",
-    "OLC": "76X6VJRJ+7V"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5236935,
+    "OBJECTID": 5254722,
     "USER_RMSOccurrenceDate": 1664496000000,
     "USER_RMSOccurrenceHour": "18",
     "USER_Incident": "132173722",
@@ -4670,7 +4716,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236936,
+    "OBJECTID": 5254723,
     "USER_RMSOccurrenceDate": 1664496000000,
     "USER_RMSOccurrenceHour": "21",
     "USER_Incident": "132247322",
@@ -4693,7 +4739,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236939,
+    "OBJECTID": 5254726,
     "USER_RMSOccurrenceDate": 1664755200000,
     "USER_RMSOccurrenceHour": "20",
     "USER_Incident": "133669422",
@@ -4716,7 +4762,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236941,
+    "OBJECTID": 5254728,
     "USER_RMSOccurrenceDate": 1664928000000,
     "USER_RMSOccurrenceHour": "20",
     "USER_Incident": "135165822",
@@ -4739,7 +4785,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236944,
+    "OBJECTID": 5254731,
     "USER_RMSOccurrenceDate": 1665273600000,
     "USER_RMSOccurrenceHour": "00",
     "USER_Incident": "137518122",
@@ -4762,7 +4808,76 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236952,
+    "OBJECTID": 5254734,
+    "USER_RMSOccurrenceDate": 1665878400000,
+    "USER_RMSOccurrenceHour": "10",
+    "USER_Incident": "139939222",
+    "USER_NIBRSClass": "90J",
+    "USER_NIBRSDescription": "Trespass of real property",
+    "USER_District": "06",
+    "USER_Beat": "06B40",
+    "USER_Premise": "Residence, Home (Includes Apartment)",
+    "USER_OffenseAddressMiddle": "1449 GULF BANK",
+    "USER_BlockRange": "1400-1499",
+    "USER_StreetName": "GULF BANK",
+    "USER_StreetType": "RD",
+    "USER_Suffix": "W",
+    "USER_ZIPCode": "77088",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "",
+    "SNBNAME": "",
+    "OLC": "76X6VJRJ+7V"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5254737,
+    "USER_RMSOccurrenceDate": 1666310400000,
+    "USER_RMSOccurrenceHour": "09",
+    "USER_Incident": "142402122",
+    "USER_NIBRSClass": "90J",
+    "USER_NIBRSDescription": "Trespass of real property",
+    "USER_District": "06",
+    "USER_Beat": "06B40",
+    "USER_Premise": "Residence, Home (Includes Apartment)",
+    "USER_OffenseAddressMiddle": "1449 GULF BANK",
+    "USER_BlockRange": "1400-1499",
+    "USER_StreetName": "GULF BANK",
+    "USER_StreetType": "RD",
+    "USER_Suffix": "W",
+    "USER_ZIPCode": "77088",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "",
+    "SNBNAME": "",
+    "OLC": "76X6VJRJ+7V"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5254738,
+    "USER_RMSOccurrenceDate": 1666310400000,
+    "USER_RMSOccurrenceHour": "19",
+    "USER_Incident": "142685022",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "06",
+    "USER_Beat": "06B40",
+    "USER_Premise": "Convenience Store",
+    "USER_OffenseAddressMiddle": "1449 GULF BANK",
+    "USER_BlockRange": "1400-1499",
+    "USER_StreetName": "GULF BANK",
+    "USER_StreetType": "RD",
+    "USER_Suffix": "W",
+    "USER_ZIPCode": "77088",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "",
+    "SNBNAME": "",
+    "OLC": "76X6VJRJ+7V"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5254752,
     "USER_RMSOccurrenceDate": 1665187200000,
     "USER_RMSOccurrenceHour": "15",
     "USER_Incident": "136153122",
@@ -4785,30 +4900,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236955,
-    "USER_RMSOccurrenceDate": 1665964800000,
-    "USER_RMSOccurrenceHour": "16",
-    "USER_Incident": "140568422",
-    "USER_NIBRSClass": "90Z",
-    "USER_NIBRSDescription": "All other offenses",
-    "USER_District": "17",
-    "USER_Beat": "17E20",
-    "USER_Premise": "Residence, Home (Includes Apartment)",
-    "USER_OffenseAddressMiddle": "8749 GESSNER",
-    "USER_BlockRange": "8700-8799",
-    "USER_StreetName": "GESSNER",
-    "USER_StreetType": "RD",
-    "USER_Suffix": "S",
-    "USER_ZIPCode": "77074",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "",
-    "SNBNAME": "",
-    "OLC": "76X6VFX4+GM"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5236957,
+    "OBJECTID": 5254755,
     "USER_RMSOccurrenceDate": 1664323200000,
     "USER_RMSOccurrenceHour": "10",
     "USER_Incident": "130870922",
@@ -4831,7 +4923,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236959,
+    "OBJECTID": 5254757,
     "USER_RMSOccurrenceDate": 1664323200000,
     "USER_RMSOccurrenceHour": "10",
     "USER_Incident": "130970522",
@@ -4854,7 +4946,30 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236966,
+    "OBJECTID": 5254759,
+    "USER_RMSOccurrenceDate": 1665964800000,
+    "USER_RMSOccurrenceHour": "16",
+    "USER_Incident": "140568422",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "17",
+    "USER_Beat": "17E20",
+    "USER_Premise": "Residence, Home (Includes Apartment)",
+    "USER_OffenseAddressMiddle": "8749 GESSNER",
+    "USER_BlockRange": "8700-8799",
+    "USER_StreetName": "GESSNER",
+    "USER_StreetType": "RD",
+    "USER_Suffix": "S",
+    "USER_ZIPCode": "77074",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "",
+    "SNBNAME": "",
+    "OLC": "76X6VFX4+GM"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5254765,
     "USER_RMSOccurrenceDate": 1666483200000,
     "USER_RMSOccurrenceHour": "23",
     "USER_Incident": "143693322",
@@ -4877,7 +4992,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236967,
+    "OBJECTID": 5254766,
     "USER_RMSOccurrenceDate": 1665014400000,
     "USER_RMSOccurrenceHour": "04",
     "USER_Incident": "134827422",
@@ -4900,7 +5015,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236968,
+    "OBJECTID": 5254767,
     "USER_RMSOccurrenceDate": 1664928000000,
     "USER_RMSOccurrenceHour": "23",
     "USER_Incident": "134765422",
@@ -4923,7 +5038,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5236989,
+    "OBJECTID": 5254786,
     "USER_RMSOccurrenceDate": 1664236800000,
     "USER_RMSOccurrenceHour": "20",
     "USER_Incident": "130672122",
@@ -4946,7 +5061,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237005,
+    "OBJECTID": 5254803,
     "USER_RMSOccurrenceDate": 1666483200000,
     "USER_RMSOccurrenceHour": "15",
     "USER_Incident": "143499722",
@@ -4969,7 +5084,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237007,
+    "OBJECTID": 5254805,
     "USER_RMSOccurrenceDate": 1666656000000,
     "USER_RMSOccurrenceHour": "16",
     "USER_Incident": "144539722",
@@ -4992,76 +5107,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237014,
-    "USER_RMSOccurrenceDate": 1665964800000,
-    "USER_RMSOccurrenceHour": "15",
-    "USER_Incident": "140533722",
-    "USER_NIBRSClass": "90Z",
-    "USER_NIBRSDescription": "All other offenses",
-    "USER_District": "13",
-    "USER_Beat": "13D20",
-    "USER_Premise": "Residence, Home (Includes Apartment)",
-    "USER_OffenseAddressMiddle": "8449 BROADWAY",
-    "USER_BlockRange": "8400-8499",
-    "USER_StreetName": "BROADWAY",
-    "USER_StreetType": "ST",
-    "USER_Suffix": "",
-    "USER_ZIPCode": "77061",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "",
-    "SNBNAME": "",
-    "OLC": "76X6WFCG+GG"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5237019,
-    "USER_RMSOccurrenceDate": 1665100800000,
-    "USER_RMSOccurrenceHour": "20",
-    "USER_Incident": "135797722",
-    "USER_NIBRSClass": "90J",
-    "USER_NIBRSDescription": "Trespass of real property",
-    "USER_District": "13",
-    "USER_Beat": "13D20",
-    "USER_Premise": "Residence, Home (Includes Apartment)",
-    "USER_OffenseAddressMiddle": "8449 BROADWAY",
-    "USER_BlockRange": "8400-8499",
-    "USER_StreetName": "BROADWAY",
-    "USER_StreetType": "ST",
-    "USER_Suffix": "",
-    "USER_ZIPCode": "77061",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "",
-    "SNBNAME": "",
-    "OLC": "76X6WFCG+GG"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5237020,
-    "USER_RMSOccurrenceDate": 1665100800000,
-    "USER_RMSOccurrenceHour": "20",
-    "USER_Incident": "135797722",
-    "USER_NIBRSClass": "90Z",
-    "USER_NIBRSDescription": "All other offenses",
-    "USER_District": "13",
-    "USER_Beat": "13D20",
-    "USER_Premise": "Residence, Home (Includes Apartment)",
-    "USER_OffenseAddressMiddle": "8449 BROADWAY",
-    "USER_BlockRange": "8400-8499",
-    "USER_StreetName": "BROADWAY",
-    "USER_StreetType": "ST",
-    "USER_Suffix": "",
-    "USER_ZIPCode": "77061",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "",
-    "SNBNAME": "",
-    "OLC": "76X6WFCG+GG"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5237021,
+    "OBJECTID": 5254810,
     "USER_RMSOccurrenceDate": 1664496000000,
     "USER_RMSOccurrenceHour": "08",
     "USER_Incident": "131884322",
@@ -5084,7 +5130,76 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237039,
+    "OBJECTID": 5254814,
+    "USER_RMSOccurrenceDate": 1665100800000,
+    "USER_RMSOccurrenceHour": "20",
+    "USER_Incident": "135797722",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "13",
+    "USER_Beat": "13D20",
+    "USER_Premise": "Residence, Home (Includes Apartment)",
+    "USER_OffenseAddressMiddle": "8449 BROADWAY",
+    "USER_BlockRange": "8400-8499",
+    "USER_StreetName": "BROADWAY",
+    "USER_StreetType": "ST",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77061",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "",
+    "SNBNAME": "",
+    "OLC": "76X6WFCG+GG"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5254815,
+    "USER_RMSOccurrenceDate": 1665100800000,
+    "USER_RMSOccurrenceHour": "20",
+    "USER_Incident": "135797722",
+    "USER_NIBRSClass": "90J",
+    "USER_NIBRSDescription": "Trespass of real property",
+    "USER_District": "13",
+    "USER_Beat": "13D20",
+    "USER_Premise": "Residence, Home (Includes Apartment)",
+    "USER_OffenseAddressMiddle": "8449 BROADWAY",
+    "USER_BlockRange": "8400-8499",
+    "USER_StreetName": "BROADWAY",
+    "USER_StreetType": "ST",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77061",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "",
+    "SNBNAME": "",
+    "OLC": "76X6WFCG+GG"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5254818,
+    "USER_RMSOccurrenceDate": 1665964800000,
+    "USER_RMSOccurrenceHour": "15",
+    "USER_Incident": "140533722",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "13",
+    "USER_Beat": "13D20",
+    "USER_Premise": "Residence, Home (Includes Apartment)",
+    "USER_OffenseAddressMiddle": "8449 BROADWAY",
+    "USER_BlockRange": "8400-8499",
+    "USER_StreetName": "BROADWAY",
+    "USER_StreetType": "ST",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77061",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "",
+    "SNBNAME": "",
+    "OLC": "76X6WFCG+GG"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5254834,
     "USER_RMSOccurrenceDate": 1664928000000,
     "USER_RMSOccurrenceHour": "17",
     "USER_Incident": "134636122",
@@ -5107,7 +5222,30 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237060,
+    "OBJECTID": 5254847,
+    "USER_RMSOccurrenceDate": 1666828800000,
+    "USER_RMSOccurrenceHour": "15",
+    "USER_Incident": "145582922",
+    "USER_NIBRSClass": "90C",
+    "USER_NIBRSDescription": "Disorderly conduct",
+    "USER_District": "22",
+    "USER_Beat": "22B30",
+    "USER_Premise": "Highway, Road, Street, Alley",
+    "USER_OffenseAddressMiddle": "149 DYNA",
+    "USER_BlockRange": "100-199",
+    "USER_StreetName": "DYNA",
+    "USER_StreetType": "DR",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77060",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "B",
+    "SNBNAME": "GREATER GREENSPOINT",
+    "OLC": "76X6WHCV+X8"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5254855,
     "USER_RMSOccurrenceDate": 1665446400000,
     "USER_RMSOccurrenceHour": "16",
     "USER_Incident": "137594022",
@@ -5130,7 +5268,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237074,
+    "OBJECTID": 5254869,
     "USER_RMSOccurrenceDate": 1664668800000,
     "USER_RMSOccurrenceHour": "18",
     "USER_Incident": "133078822",
@@ -5153,30 +5291,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237078,
-    "USER_RMSOccurrenceDate": 1666310400000,
-    "USER_RMSOccurrenceHour": "01",
-    "USER_Incident": "142294722",
-    "USER_NIBRSClass": "90J",
-    "USER_NIBRSDescription": "Trespass of real property",
-    "USER_District": "17",
-    "USER_Beat": "17E40",
-    "USER_Premise": "Service, Gas Station",
-    "USER_OffenseAddressMiddle": "10649 GESSNER",
-    "USER_BlockRange": "10600-10699",
-    "USER_StreetName": "GESSNER",
-    "USER_StreetType": "RD",
-    "USER_Suffix": "S",
-    "USER_ZIPCode": "77031",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "A",
-    "SNBNAME": "",
-    "OLC": "76X6WFJ4+74"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5237081,
+    "OBJECTID": 5254872,
     "USER_RMSOccurrenceDate": 1664582400000,
     "USER_RMSOccurrenceHour": "13",
     "USER_Incident": "133452222",
@@ -5199,7 +5314,53 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237089,
+    "OBJECTID": 5254873,
+    "USER_RMSOccurrenceDate": 1666310400000,
+    "USER_RMSOccurrenceHour": "01",
+    "USER_Incident": "142294722",
+    "USER_NIBRSClass": "90J",
+    "USER_NIBRSDescription": "Trespass of real property",
+    "USER_District": "17",
+    "USER_Beat": "17E40",
+    "USER_Premise": "Service, Gas Station",
+    "USER_OffenseAddressMiddle": "10649 GESSNER",
+    "USER_BlockRange": "10600-10699",
+    "USER_StreetName": "GESSNER",
+    "USER_StreetType": "RD",
+    "USER_Suffix": "S",
+    "USER_ZIPCode": "77031",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "A",
+    "SNBNAME": "",
+    "OLC": "76X6WFJ4+74"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5254880,
+    "USER_RMSOccurrenceDate": 1666828800000,
+    "USER_RMSOccurrenceHour": "16",
+    "USER_Incident": "145628222",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "22",
+    "USER_Beat": "22B30",
+    "USER_Premise": "Residence, Home (Includes Apartment)",
+    "USER_OffenseAddressMiddle": "15549 OLD CREEK",
+    "USER_BlockRange": "15500-15599",
+    "USER_StreetName": "OLD CREEK",
+    "USER_StreetType": "RD",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77060",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "B",
+    "SNBNAME": "GREATER GREENSPOINT",
+    "OLC": "76X6WJH2+2H"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5254887,
     "USER_RMSOccurrenceDate": 1665878400000,
     "USER_RMSOccurrenceHour": "19",
     "USER_Incident": "140333122",
@@ -5222,7 +5383,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237092,
+    "OBJECTID": 5254888,
     "USER_RMSOccurrenceDate": 1665705600000,
     "USER_RMSOccurrenceHour": "16",
     "USER_Incident": "139168322",
@@ -5245,7 +5406,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237098,
+    "OBJECTID": 5254894,
     "USER_RMSOccurrenceDate": 1666483200000,
     "USER_RMSOccurrenceHour": "01",
     "USER_Incident": "143289722",
@@ -5268,7 +5429,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237099,
+    "OBJECTID": 5254895,
     "USER_RMSOccurrenceDate": 1666483200000,
     "USER_RMSOccurrenceHour": "01",
     "USER_Incident": "143289722",
@@ -5291,7 +5452,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237115,
+    "OBJECTID": 5254906,
     "USER_RMSOccurrenceDate": 1665100800000,
     "USER_RMSOccurrenceHour": "14",
     "USER_Incident": "135634022",
@@ -5314,7 +5475,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237123,
+    "OBJECTID": 5254914,
     "USER_RMSOccurrenceDate": 1664323200000,
     "USER_RMSOccurrenceHour": "08",
     "USER_Incident": "130812722",
@@ -5337,7 +5498,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237125,
+    "OBJECTID": 5254916,
     "USER_RMSOccurrenceDate": 1664841600000,
     "USER_RMSOccurrenceHour": "05",
     "USER_Incident": "133782622",
@@ -5360,7 +5521,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237127,
+    "OBJECTID": 5254924,
     "USER_RMSOccurrenceDate": 1665705600000,
     "USER_RMSOccurrenceHour": "18",
     "USER_Incident": "139223922",
@@ -5383,7 +5544,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237130,
+    "OBJECTID": 5254927,
     "USER_RMSOccurrenceDate": 1665964800000,
     "USER_RMSOccurrenceHour": "00",
     "USER_Incident": "140231122",
@@ -5406,7 +5567,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237137,
+    "OBJECTID": 5254930,
     "USER_RMSOccurrenceDate": 1665360000000,
     "USER_RMSOccurrenceHour": "08",
     "USER_Incident": "136906922",
@@ -5429,7 +5590,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237141,
+    "OBJECTID": 5254940,
     "USER_RMSOccurrenceDate": 1666483200000,
     "USER_RMSOccurrenceHour": "06",
     "USER_Incident": "143360522",
@@ -5452,7 +5613,30 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237187,
+    "OBJECTID": 5254942,
+    "USER_RMSOccurrenceDate": 1666742400000,
+    "USER_RMSOccurrenceHour": "19",
+    "USER_Incident": "145150022",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "22",
+    "USER_Beat": "22B30",
+    "USER_Premise": "Highway, Road, Street, Alley",
+    "USER_OffenseAddressMiddle": "449 ALDINE BENDER",
+    "USER_BlockRange": "400-499",
+    "USER_StreetName": "ALDINE BENDER",
+    "USER_StreetType": "RD",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77060",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "B",
+    "SNBNAME": "GREATER GREENSPOINT",
+    "OLC": "76X6WJJ5+Q4"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5254983,
     "USER_RMSOccurrenceDate": 1666310400000,
     "USER_RMSOccurrenceHour": "15",
     "USER_Incident": "142581022",
@@ -5475,7 +5659,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237188,
+    "OBJECTID": 5254986,
     "USER_RMSOccurrenceDate": 1665532800000,
     "USER_RMSOccurrenceHour": "16",
     "USER_Incident": "138130422",
@@ -5498,7 +5682,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237195,
+    "OBJECTID": 5254991,
     "USER_RMSOccurrenceDate": 1665187200000,
     "USER_RMSOccurrenceHour": "22",
     "USER_Incident": "136314622",
@@ -5521,7 +5705,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237214,
+    "OBJECTID": 5255011,
     "USER_RMSOccurrenceDate": 1665187200000,
     "USER_RMSOccurrenceHour": "23",
     "USER_Incident": "136345922",
@@ -5544,7 +5728,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237218,
+    "OBJECTID": 5255014,
     "USER_RMSOccurrenceDate": 1666483200000,
     "USER_RMSOccurrenceHour": "02",
     "USER_Incident": "143317822",
@@ -5567,7 +5751,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237219,
+    "OBJECTID": 5255015,
     "USER_RMSOccurrenceDate": 1665360000000,
     "USER_RMSOccurrenceHour": "19",
     "USER_Incident": "137229322",
@@ -5590,30 +5774,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237220,
-    "USER_RMSOccurrenceDate": 1664150400000,
-    "USER_RMSOccurrenceHour": "17",
-    "USER_Incident": "130068322",
-    "USER_NIBRSClass": "90Z",
-    "USER_NIBRSDescription": "All other offenses",
-    "USER_District": "22",
-    "USER_Beat": "22B40",
-    "USER_Premise": "Highway, Road, Street, Alley",
-    "USER_OffenseAddressMiddle": "7549 OAK VILLAGE",
-    "USER_BlockRange": "7500-7599",
-    "USER_StreetName": "OAK VILLAGE",
-    "USER_StreetType": "DR",
-    "USER_Suffix": "",
-    "USER_ZIPCode": "77396",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "B",
-    "SNBNAME": "IAH / AIRPORT AREA",
-    "OLC": "76X6WPPG+86"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5237252,
+    "OBJECTID": 5255047,
     "USER_RMSOccurrenceDate": 1665792000000,
     "USER_RMSOccurrenceHour": "23",
     "USER_Incident": "139781122",
@@ -5636,7 +5797,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237256,
+    "OBJECTID": 5255048,
     "USER_RMSOccurrenceDate": 1664236800000,
     "USER_RMSOccurrenceHour": "11",
     "USER_Incident": "130401022",
@@ -5659,7 +5820,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237310,
+    "OBJECTID": 5255103,
     "USER_RMSOccurrenceDate": 1666396800000,
     "USER_RMSOccurrenceHour": "14",
     "USER_Incident": "143051522",
@@ -5682,7 +5843,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237322,
+    "OBJECTID": 5255108,
     "USER_RMSOccurrenceDate": 1664755200000,
     "USER_RMSOccurrenceHour": "00",
     "USER_Incident": "133213022",
@@ -5705,7 +5866,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237371,
+    "OBJECTID": 5255167,
     "USER_RMSOccurrenceDate": 1665273600000,
     "USER_RMSOccurrenceHour": "16",
     "USER_Incident": "136610522",
@@ -5728,7 +5889,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237380,
+    "OBJECTID": 5255177,
     "USER_RMSOccurrenceDate": 1664496000000,
     "USER_RMSOccurrenceHour": "11",
     "USER_Incident": "131963222",
@@ -5751,7 +5912,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237401,
+    "OBJECTID": 5255201,
     "USER_RMSOccurrenceDate": 1664236800000,
     "USER_RMSOccurrenceHour": "16",
     "USER_Incident": "130537722",
@@ -5774,7 +5935,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237402,
+    "OBJECTID": 5255202,
     "USER_RMSOccurrenceDate": 1664409600000,
     "USER_RMSOccurrenceHour": "11",
     "USER_Incident": "131443222",
@@ -5797,7 +5958,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237409,
+    "OBJECTID": 5255207,
     "USER_RMSOccurrenceDate": 1664409600000,
     "USER_RMSOccurrenceHour": "15",
     "USER_Incident": "133851922",
@@ -5820,7 +5981,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237419,
+    "OBJECTID": 5255216,
     "USER_RMSOccurrenceDate": 1664755200000,
     "USER_RMSOccurrenceHour": "17",
     "USER_Incident": "133607722",
@@ -5843,7 +6004,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237424,
+    "OBJECTID": 5255224,
     "USER_RMSOccurrenceDate": 1664841600000,
     "USER_RMSOccurrenceHour": "21",
     "USER_Incident": "134216922",
@@ -5866,7 +6027,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237426,
+    "OBJECTID": 5255226,
     "USER_RMSOccurrenceDate": 1665014400000,
     "USER_RMSOccurrenceHour": "20",
     "USER_Incident": "135261222",
@@ -5889,7 +6050,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237427,
+    "OBJECTID": 5255228,
     "USER_RMSOccurrenceDate": 1665100800000,
     "USER_RMSOccurrenceHour": "14",
     "USER_Incident": "138951122",
@@ -5912,7 +6073,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237431,
+    "OBJECTID": 5255230,
     "USER_RMSOccurrenceDate": 1664409600000,
     "USER_RMSOccurrenceHour": "11",
     "USER_Incident": "131438922",
@@ -5935,7 +6096,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237438,
+    "OBJECTID": 5255236,
     "USER_RMSOccurrenceDate": 1664409600000,
     "USER_RMSOccurrenceHour": "08",
     "USER_Incident": "131553522",
@@ -5958,30 +6119,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237447,
-    "USER_RMSOccurrenceDate": 1666224000000,
-    "USER_RMSOccurrenceHour": "16",
-    "USER_Incident": "142103222",
-    "USER_NIBRSClass": "90J",
-    "USER_NIBRSDescription": "Trespass of real property",
-    "USER_District": "22",
-    "USER_Beat": "22B20",
-    "USER_Premise": "Parking Lot, Garage",
-    "USER_OffenseAddressMiddle": "17549 IMPERIAL VALLEY",
-    "USER_BlockRange": "17500-17599",
-    "USER_StreetName": "IMPERIAL VALLEY",
-    "USER_StreetType": "DR",
-    "USER_Suffix": "",
-    "USER_ZIPCode": "77060",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "B",
-    "SNBNAME": "GREATER GREENSPOINT",
-    "OLC": "76X6XJ22+H4"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5237448,
+    "OBJECTID": 5255249,
     "USER_RMSOccurrenceDate": 1664668800000,
     "USER_RMSOccurrenceHour": "14",
     "USER_Incident": "132983022",
@@ -6004,7 +6142,30 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237452,
+    "OBJECTID": 5255253,
+    "USER_RMSOccurrenceDate": 1666224000000,
+    "USER_RMSOccurrenceHour": "16",
+    "USER_Incident": "142103222",
+    "USER_NIBRSClass": "90J",
+    "USER_NIBRSDescription": "Trespass of real property",
+    "USER_District": "22",
+    "USER_Beat": "22B20",
+    "USER_Premise": "Parking Lot, Garage",
+    "USER_OffenseAddressMiddle": "17549 IMPERIAL VALLEY",
+    "USER_BlockRange": "17500-17599",
+    "USER_StreetName": "IMPERIAL VALLEY",
+    "USER_StreetType": "DR",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77060",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "B",
+    "SNBNAME": "GREATER GREENSPOINT",
+    "OLC": "76X6XJ22+H4"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5255254,
     "USER_RMSOccurrenceDate": 1666310400000,
     "USER_RMSOccurrenceHour": "18",
     "USER_Incident": "142669022",
@@ -6027,30 +6188,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237466,
-    "USER_RMSOccurrenceDate": 1665619200000,
-    "USER_RMSOccurrenceHour": "18",
-    "USER_Incident": "138711922",
-    "USER_NIBRSClass": "90J",
-    "USER_NIBRSDescription": "Trespass of real property",
-    "USER_District": "22",
-    "USER_Beat": "22B20",
-    "USER_Premise": "Service, Gas Station",
-    "USER_OffenseAddressMiddle": "949 LANGWICK",
-    "USER_BlockRange": "900-999",
-    "USER_StreetName": "LANGWICK",
-    "USER_StreetType": "DR",
-    "USER_Suffix": "",
-    "USER_ZIPCode": "77060",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "B",
-    "SNBNAME": "GREATER GREENSPOINT",
-    "OLC": "76X6XJ35+56"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5237471,
+    "OBJECTID": 5255268,
     "USER_RMSOccurrenceDate": 1664496000000,
     "USER_RMSOccurrenceHour": "20",
     "USER_Incident": "132222622",
@@ -6073,12 +6211,35 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237478,
+    "OBJECTID": 5255269,
+    "USER_RMSOccurrenceDate": 1665619200000,
+    "USER_RMSOccurrenceHour": "18",
+    "USER_Incident": "138711922",
+    "USER_NIBRSClass": "90J",
+    "USER_NIBRSDescription": "Trespass of real property",
+    "USER_District": "22",
+    "USER_Beat": "22B20",
+    "USER_Premise": "Service, Gas Station",
+    "USER_OffenseAddressMiddle": "949 LANGWICK",
+    "USER_BlockRange": "900-999",
+    "USER_StreetName": "LANGWICK",
+    "USER_StreetType": "DR",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77060",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "B",
+    "SNBNAME": "GREATER GREENSPOINT",
+    "OLC": "76X6XJ35+56"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5255274,
     "USER_RMSOccurrenceDate": 1664582400000,
     "USER_RMSOccurrenceHour": "20",
     "USER_Incident": "132688822",
-    "USER_NIBRSClass": "90Z",
-    "USER_NIBRSDescription": "All other offenses",
+    "USER_NIBRSClass": "90C",
+    "USER_NIBRSDescription": "Disorderly conduct",
     "USER_District": "22",
     "USER_Beat": "22B20",
     "USER_Premise": "Highway, Road, Street, Alley",
@@ -6096,7 +6257,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237487,
+    "OBJECTID": 5255283,
     "USER_RMSOccurrenceDate": 1665360000000,
     "USER_RMSOccurrenceHour": "18",
     "USER_Incident": "137190522",
@@ -6119,7 +6280,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237497,
+    "OBJECTID": 5255296,
     "USER_RMSOccurrenceDate": 1664582400000,
     "USER_RMSOccurrenceHour": "16",
     "USER_Incident": "132583722",
@@ -6142,7 +6303,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237507,
+    "OBJECTID": 5255307,
     "USER_RMSOccurrenceDate": 1665187200000,
     "USER_RMSOccurrenceHour": "22",
     "USER_Incident": "137462122",
@@ -6165,7 +6326,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237520,
+    "OBJECTID": 5255315,
     "USER_RMSOccurrenceDate": 1664409600000,
     "USER_RMSOccurrenceHour": "14",
     "USER_Incident": "131533122",
@@ -6188,7 +6349,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237532,
+    "OBJECTID": 5255335,
     "USER_RMSOccurrenceDate": 1666051200000,
     "USER_RMSOccurrenceHour": "00",
     "USER_Incident": "140740422",
@@ -6211,7 +6372,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237536,
+    "OBJECTID": 5255340,
     "USER_RMSOccurrenceDate": 1666310400000,
     "USER_RMSOccurrenceHour": "22",
     "USER_Incident": "142763322",
@@ -6234,30 +6395,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237563,
-    "USER_RMSOccurrenceDate": 1666742400000,
-    "USER_RMSOccurrenceHour": "17",
-    "USER_Incident": "145090922",
-    "USER_NIBRSClass": "90J",
-    "USER_NIBRSDescription": "Trespass of real property",
-    "USER_District": "22",
-    "USER_Beat": "22B10",
-    "USER_Premise": "Other, Unknown",
-    "USER_OffenseAddressMiddle": "18349 TOMBALL",
-    "USER_BlockRange": "18300-18399",
-    "USER_StreetName": "TOMBALL",
-    "USER_StreetType": "PKWY",
-    "USER_Suffix": "",
-    "USER_ZIPCode": "77070",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "A",
-    "SNBNAME": "WILLOWBROOK",
-    "OLC": "76X6XC7W+WG"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5237564,
+    "OBJECTID": 5255364,
     "USER_RMSOccurrenceDate": 1664928000000,
     "USER_RMSOccurrenceHour": "20",
     "USER_Incident": "134708522",
@@ -6280,7 +6418,30 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237576,
+    "OBJECTID": 5255366,
+    "USER_RMSOccurrenceDate": 1666742400000,
+    "USER_RMSOccurrenceHour": "17",
+    "USER_Incident": "145090922",
+    "USER_NIBRSClass": "90J",
+    "USER_NIBRSDescription": "Trespass of real property",
+    "USER_District": "22",
+    "USER_Beat": "22B10",
+    "USER_Premise": "Other, Unknown",
+    "USER_OffenseAddressMiddle": "18349 TOMBALL",
+    "USER_BlockRange": "18300-18399",
+    "USER_StreetName": "TOMBALL",
+    "USER_StreetType": "PKWY",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77070",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "A",
+    "SNBNAME": "WILLOWBROOK",
+    "OLC": "76X6XC7W+WG"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5255378,
     "USER_RMSOccurrenceDate": 1665187200000,
     "USER_RMSOccurrenceHour": "16",
     "USER_Incident": "136192022",
@@ -6303,7 +6464,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237584,
+    "OBJECTID": 5255387,
     "USER_RMSOccurrenceDate": 1665619200000,
     "USER_RMSOccurrenceHour": "18",
     "USER_Incident": "138699122",
@@ -6326,7 +6487,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237590,
+    "OBJECTID": 5255395,
     "USER_RMSOccurrenceDate": 1666224000000,
     "USER_RMSOccurrenceHour": "08",
     "USER_Incident": "141865922",
@@ -6349,7 +6510,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237599,
+    "OBJECTID": 5255400,
     "USER_RMSOccurrenceDate": 1665100800000,
     "USER_RMSOccurrenceHour": "01",
     "USER_Incident": "135353722",
@@ -6372,7 +6533,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237622,
+    "OBJECTID": 5255424,
     "USER_RMSOccurrenceDate": 1665705600000,
     "USER_RMSOccurrenceHour": "01",
     "USER_Incident": "138841322",
@@ -6395,7 +6556,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237632,
+    "OBJECTID": 5255432,
     "USER_RMSOccurrenceDate": 1666569600000,
     "USER_RMSOccurrenceHour": "22",
     "USER_Incident": "144166522",
@@ -6418,7 +6579,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237643,
+    "OBJECTID": 5255444,
     "USER_RMSOccurrenceDate": 1665100800000,
     "USER_RMSOccurrenceHour": "12",
     "USER_Incident": "135623022",
@@ -6441,7 +6602,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237644,
+    "OBJECTID": 5255447,
     "USER_RMSOccurrenceDate": 1665964800000,
     "USER_RMSOccurrenceHour": "19",
     "USER_Incident": "140662122",
@@ -6464,7 +6625,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237651,
+    "OBJECTID": 5255452,
     "USER_RMSOccurrenceDate": 1664582400000,
     "USER_RMSOccurrenceHour": "12",
     "USER_Incident": "132598222",
@@ -6487,53 +6648,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237652,
-    "USER_RMSOccurrenceDate": 1665705600000,
-    "USER_RMSOccurrenceHour": "08",
-    "USER_Incident": "138948422",
-    "USER_NIBRSClass": "90Z",
-    "USER_NIBRSDescription": "All other offenses",
-    "USER_District": "22",
-    "USER_Beat": "22B40",
-    "USER_Premise": "Hotel, Motel, ETC",
-    "USER_OffenseAddressMiddle": "17649 EASTEX",
-    "USER_BlockRange": "17600-17699",
-    "USER_StreetName": "EASTEX",
-    "USER_StreetType": "FWY",
-    "USER_Suffix": "",
-    "USER_ZIPCode": "77396",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "B",
-    "SNBNAME": "IAH / AIRPORT AREA",
-    "OLC": "76X6XPG9+3M"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5237653,
-    "USER_RMSOccurrenceDate": 1666137600000,
-    "USER_RMSOccurrenceHour": "06",
-    "USER_Incident": "141325522",
-    "USER_NIBRSClass": "90J",
-    "USER_NIBRSDescription": "Trespass of real property",
-    "USER_District": "22",
-    "USER_Beat": "22B40",
-    "USER_Premise": "Hotel, Motel, ETC",
-    "USER_OffenseAddressMiddle": "17649 EASTEX",
-    "USER_BlockRange": "17600-17699",
-    "USER_StreetName": "EASTEX",
-    "USER_StreetType": "FWY",
-    "USER_Suffix": "",
-    "USER_ZIPCode": "77396",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "B",
-    "SNBNAME": "IAH / AIRPORT AREA",
-    "OLC": "76X6XPG9+3M"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5237660,
+    "OBJECTID": 5255459,
     "USER_RMSOccurrenceDate": 1665446400000,
     "USER_RMSOccurrenceHour": "18",
     "USER_Incident": "137647622",
@@ -6556,7 +6671,53 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237678,
+    "OBJECTID": 5255460,
+    "USER_RMSOccurrenceDate": 1665705600000,
+    "USER_RMSOccurrenceHour": "08",
+    "USER_Incident": "138948422",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "22",
+    "USER_Beat": "22B40",
+    "USER_Premise": "Hotel, Motel, ETC",
+    "USER_OffenseAddressMiddle": "17649 EASTEX",
+    "USER_BlockRange": "17600-17699",
+    "USER_StreetName": "EASTEX",
+    "USER_StreetType": "FWY",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77396",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "B",
+    "SNBNAME": "IAH / AIRPORT AREA",
+    "OLC": "76X6XPG9+3M"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5255461,
+    "USER_RMSOccurrenceDate": 1666137600000,
+    "USER_RMSOccurrenceHour": "06",
+    "USER_Incident": "141325522",
+    "USER_NIBRSClass": "90J",
+    "USER_NIBRSDescription": "Trespass of real property",
+    "USER_District": "22",
+    "USER_Beat": "22B40",
+    "USER_Premise": "Hotel, Motel, ETC",
+    "USER_OffenseAddressMiddle": "17649 EASTEX",
+    "USER_BlockRange": "17600-17699",
+    "USER_StreetName": "EASTEX",
+    "USER_StreetType": "FWY",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77396",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "B",
+    "SNBNAME": "IAH / AIRPORT AREA",
+    "OLC": "76X6XPG9+3M"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5255477,
     "USER_RMSOccurrenceDate": 1665446400000,
     "USER_RMSOccurrenceHour": "10",
     "USER_Incident": "141048822",
@@ -6579,7 +6740,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237680,
+    "OBJECTID": 5255480,
     "USER_RMSOccurrenceDate": 1665705600000,
     "USER_RMSOccurrenceHour": "19",
     "USER_Incident": "139256722",
@@ -6602,7 +6763,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237682,
+    "OBJECTID": 5255489,
     "USER_RMSOccurrenceDate": 1665964800000,
     "USER_RMSOccurrenceHour": "16",
     "USER_Incident": "140578622",
@@ -6625,53 +6786,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237692,
-    "USER_RMSOccurrenceDate": 1665532800000,
-    "USER_RMSOccurrenceHour": "19",
-    "USER_Incident": "138200722",
-    "USER_NIBRSClass": "90E",
-    "USER_NIBRSDescription": "Drunkenness",
-    "USER_District": "21",
-    "USER_Beat": "21I50",
-    "USER_Premise": "Airplane, Bus,Train Terminal",
-    "USER_OffenseAddressMiddle": "3549 TERMINAL",
-    "USER_BlockRange": "3500-3599",
-    "USER_StreetName": "TERMINAL",
-    "USER_StreetType": "RD",
-    "USER_Suffix": "N",
-    "USER_ZIPCode": "77032",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "B",
-    "SNBNAME": "IAH / AIRPORT AREA",
-    "OLC": "76X6XMP7+C4"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5237711,
-    "USER_RMSOccurrenceDate": 1666051200000,
-    "USER_RMSOccurrenceHour": "10",
-    "USER_Incident": "140896222",
-    "USER_NIBRSClass": "90Z",
-    "USER_NIBRSDescription": "All other offenses",
-    "USER_District": "21",
-    "USER_Beat": "21I50",
-    "USER_Premise": "Airplane, Bus,Train Terminal",
-    "USER_OffenseAddressMiddle": "3549 TERMINAL",
-    "USER_BlockRange": "3500-3599",
-    "USER_StreetName": "TERMINAL",
-    "USER_StreetType": "RD",
-    "USER_Suffix": "N",
-    "USER_ZIPCode": "77032",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "B",
-    "SNBNAME": "IAH / AIRPORT AREA",
-    "OLC": "76X6XMP7+C4"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5237716,
+    "OBJECTID": 5255492,
     "USER_RMSOccurrenceDate": 1664236800000,
     "USER_RMSOccurrenceHour": "16",
     "USER_Incident": "130537222",
@@ -6694,7 +6809,76 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237735,
+    "OBJECTID": 5255511,
+    "USER_RMSOccurrenceDate": 1665532800000,
+    "USER_RMSOccurrenceHour": "19",
+    "USER_Incident": "138200722",
+    "USER_NIBRSClass": "90E",
+    "USER_NIBRSDescription": "Drunkenness",
+    "USER_District": "21",
+    "USER_Beat": "21I50",
+    "USER_Premise": "Airplane, Bus,Train Terminal",
+    "USER_OffenseAddressMiddle": "3549 TERMINAL",
+    "USER_BlockRange": "3500-3599",
+    "USER_StreetName": "TERMINAL",
+    "USER_StreetType": "RD",
+    "USER_Suffix": "N",
+    "USER_ZIPCode": "77032",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "B",
+    "SNBNAME": "IAH / AIRPORT AREA",
+    "OLC": "76X6XMP7+C4"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5255529,
+    "USER_RMSOccurrenceDate": 1666569600000,
+    "USER_RMSOccurrenceHour": "22",
+    "USER_Incident": "144172922",
+    "USER_NIBRSClass": "90J",
+    "USER_NIBRSDescription": "Trespass of real property",
+    "USER_District": "21",
+    "USER_Beat": "21I50",
+    "USER_Premise": "Airplane, Bus,Train Terminal",
+    "USER_OffenseAddressMiddle": "3549 TERMINAL",
+    "USER_BlockRange": "3500-3599",
+    "USER_StreetName": "TERMINAL",
+    "USER_StreetType": "RD",
+    "USER_Suffix": "N",
+    "USER_ZIPCode": "77032",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "B",
+    "SNBNAME": "IAH / AIRPORT AREA",
+    "OLC": "76X6XMP7+C4"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5255533,
+    "USER_RMSOccurrenceDate": 1666051200000,
+    "USER_RMSOccurrenceHour": "10",
+    "USER_Incident": "140896222",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "21",
+    "USER_Beat": "21I50",
+    "USER_Premise": "Airplane, Bus,Train Terminal",
+    "USER_OffenseAddressMiddle": "3549 TERMINAL",
+    "USER_BlockRange": "3500-3599",
+    "USER_StreetName": "TERMINAL",
+    "USER_StreetType": "RD",
+    "USER_Suffix": "N",
+    "USER_ZIPCode": "77032",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "B",
+    "SNBNAME": "IAH / AIRPORT AREA",
+    "OLC": "76X6XMP7+C4"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5255535,
     "USER_RMSOccurrenceDate": 1664236800000,
     "USER_RMSOccurrenceHour": "12",
     "USER_Incident": "130411722",
@@ -6717,53 +6901,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237736,
-    "USER_RMSOccurrenceDate": 1665705600000,
-    "USER_RMSOccurrenceHour": "21",
-    "USER_Incident": "139288322",
-    "USER_NIBRSClass": "90Z",
-    "USER_NIBRSDescription": "All other offenses",
-    "USER_District": "21",
-    "USER_Beat": "21I40",
-    "USER_Premise": "Airplane, Bus,Train Terminal",
-    "USER_OffenseAddressMiddle": "3749 TERMINAL",
-    "USER_BlockRange": "3700-3799",
-    "USER_StreetName": "TERMINAL",
-    "USER_StreetType": "RD",
-    "USER_Suffix": "N",
-    "USER_ZIPCode": "77032",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "B",
-    "SNBNAME": "IAH / AIRPORT AREA",
-    "OLC": "76X6XMP8+C4"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5237737,
-    "USER_RMSOccurrenceDate": 1666656000000,
-    "USER_RMSOccurrenceHour": "18",
-    "USER_Incident": "144591222",
-    "USER_NIBRSClass": "90Z",
-    "USER_NIBRSDescription": "All other offenses",
-    "USER_District": "21",
-    "USER_Beat": "21I40",
-    "USER_Premise": "Airplane, Bus,Train Terminal",
-    "USER_OffenseAddressMiddle": "3749 TERMINAL",
-    "USER_BlockRange": "3700-3799",
-    "USER_StreetName": "TERMINAL",
-    "USER_StreetType": "RD",
-    "USER_Suffix": "N",
-    "USER_ZIPCode": "77032",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "B",
-    "SNBNAME": "IAH / AIRPORT AREA",
-    "OLC": "76X6XMP8+C4"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5237739,
+    "OBJECTID": 5255537,
     "USER_RMSOccurrenceDate": 1664841600000,
     "USER_RMSOccurrenceHour": "10",
     "USER_Incident": "133883722",
@@ -6786,7 +6924,53 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237741,
+    "OBJECTID": 5255538,
+    "USER_RMSOccurrenceDate": 1665705600000,
+    "USER_RMSOccurrenceHour": "21",
+    "USER_Incident": "139288322",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "21",
+    "USER_Beat": "21I40",
+    "USER_Premise": "Airplane, Bus,Train Terminal",
+    "USER_OffenseAddressMiddle": "3749 TERMINAL",
+    "USER_BlockRange": "3700-3799",
+    "USER_StreetName": "TERMINAL",
+    "USER_StreetType": "RD",
+    "USER_Suffix": "N",
+    "USER_ZIPCode": "77032",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "B",
+    "SNBNAME": "IAH / AIRPORT AREA",
+    "OLC": "76X6XMP8+C4"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5255539,
+    "USER_RMSOccurrenceDate": 1666656000000,
+    "USER_RMSOccurrenceHour": "18",
+    "USER_Incident": "144591222",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "21",
+    "USER_Beat": "21I40",
+    "USER_Premise": "Airplane, Bus,Train Terminal",
+    "USER_OffenseAddressMiddle": "3749 TERMINAL",
+    "USER_BlockRange": "3700-3799",
+    "USER_StreetName": "TERMINAL",
+    "USER_StreetType": "RD",
+    "USER_Suffix": "N",
+    "USER_ZIPCode": "77032",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "B",
+    "SNBNAME": "IAH / AIRPORT AREA",
+    "OLC": "76X6XMP8+C4"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5255541,
     "USER_RMSOccurrenceDate": 1664582400000,
     "USER_RMSOccurrenceHour": "10",
     "USER_Incident": "132455022",
@@ -6809,7 +6993,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237744,
+    "OBJECTID": 5255543,
     "USER_RMSOccurrenceDate": 1665273600000,
     "USER_RMSOccurrenceHour": "08",
     "USER_Incident": "136477522",
@@ -6832,7 +7016,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237747,
+    "OBJECTID": 5255548,
     "USER_RMSOccurrenceDate": 1666396800000,
     "USER_RMSOccurrenceHour": "12",
     "USER_Incident": "143001422",
@@ -6855,76 +7039,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237751,
-    "USER_RMSOccurrenceDate": 1665705600000,
-    "USER_RMSOccurrenceHour": "04",
-    "USER_Incident": "138875722",
-    "USER_NIBRSClass": "90Z",
-    "USER_NIBRSDescription": "All other offenses",
-    "USER_District": "21",
-    "USER_Beat": "21I10",
-    "USER_Premise": "Airplane, Bus,Train Terminal",
-    "USER_OffenseAddressMiddle": "2849 TERMINAL",
-    "USER_BlockRange": "2800-2899",
-    "USER_StreetName": "TERMINAL",
-    "USER_StreetType": "RD",
-    "USER_Suffix": "N",
-    "USER_ZIPCode": "77032",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "B",
-    "SNBNAME": "IAH / AIRPORT AREA",
-    "OLC": "76X6XMP2+Q7"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5237760,
-    "USER_RMSOccurrenceDate": 1665964800000,
-    "USER_RMSOccurrenceHour": "08",
-    "USER_Incident": "140425022",
-    "USER_NIBRSClass": "90C",
-    "USER_NIBRSDescription": "Disorderly conduct",
-    "USER_District": "21",
-    "USER_Beat": "21I10",
-    "USER_Premise": "Airplane, Bus,Train Terminal",
-    "USER_OffenseAddressMiddle": "2849 TERMINAL",
-    "USER_BlockRange": "2800-2899",
-    "USER_StreetName": "TERMINAL",
-    "USER_StreetType": "RD",
-    "USER_Suffix": "N",
-    "USER_ZIPCode": "77032",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "B",
-    "SNBNAME": "IAH / AIRPORT AREA",
-    "OLC": "76X6XMP2+Q7"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5237771,
-    "USER_RMSOccurrenceDate": 1666396800000,
-    "USER_RMSOccurrenceHour": "19",
-    "USER_Incident": "143154422",
-    "USER_NIBRSClass": "90Z",
-    "USER_NIBRSDescription": "All other offenses",
-    "USER_District": "21",
-    "USER_Beat": "21I10",
-    "USER_Premise": "Airplane, Bus,Train Terminal",
-    "USER_OffenseAddressMiddle": "2849 TERMINAL",
-    "USER_BlockRange": "2800-2899",
-    "USER_StreetName": "TERMINAL",
-    "USER_StreetType": "RD",
-    "USER_Suffix": "N",
-    "USER_ZIPCode": "77032",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "B",
-    "SNBNAME": "IAH / AIRPORT AREA",
-    "OLC": "76X6XMP2+Q7"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5237794,
+    "OBJECTID": 5255567,
     "USER_RMSOccurrenceDate": 1664668800000,
     "USER_RMSOccurrenceHour": "19",
     "USER_Incident": "133115622",
@@ -6947,7 +7062,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237795,
+    "OBJECTID": 5255568,
     "USER_RMSOccurrenceDate": 1664668800000,
     "USER_RMSOccurrenceHour": "19",
     "USER_Incident": "133115622",
@@ -6970,7 +7085,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237796,
+    "OBJECTID": 5255569,
     "USER_RMSOccurrenceDate": 1664668800000,
     "USER_RMSOccurrenceHour": "19",
     "USER_Incident": "133115622",
@@ -6993,7 +7108,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237809,
+    "OBJECTID": 5255582,
     "USER_RMSOccurrenceDate": 1665014400000,
     "USER_RMSOccurrenceHour": "00",
     "USER_Incident": "134786622",
@@ -7016,7 +7131,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237814,
+    "OBJECTID": 5255587,
     "USER_RMSOccurrenceDate": 1665187200000,
     "USER_RMSOccurrenceHour": "16",
     "USER_Incident": "136172822",
@@ -7039,7 +7154,76 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237829,
+    "OBJECTID": 5255596,
+    "USER_RMSOccurrenceDate": 1665705600000,
+    "USER_RMSOccurrenceHour": "04",
+    "USER_Incident": "138875722",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "21",
+    "USER_Beat": "21I10",
+    "USER_Premise": "Airplane, Bus,Train Terminal",
+    "USER_OffenseAddressMiddle": "2849 TERMINAL",
+    "USER_BlockRange": "2800-2899",
+    "USER_StreetName": "TERMINAL",
+    "USER_StreetType": "RD",
+    "USER_Suffix": "N",
+    "USER_ZIPCode": "77032",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "B",
+    "SNBNAME": "IAH / AIRPORT AREA",
+    "OLC": "76X6XMP2+Q7"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5255605,
+    "USER_RMSOccurrenceDate": 1665964800000,
+    "USER_RMSOccurrenceHour": "08",
+    "USER_Incident": "140425022",
+    "USER_NIBRSClass": "90C",
+    "USER_NIBRSDescription": "Disorderly conduct",
+    "USER_District": "21",
+    "USER_Beat": "21I10",
+    "USER_Premise": "Airplane, Bus,Train Terminal",
+    "USER_OffenseAddressMiddle": "2849 TERMINAL",
+    "USER_BlockRange": "2800-2899",
+    "USER_StreetName": "TERMINAL",
+    "USER_StreetType": "RD",
+    "USER_Suffix": "N",
+    "USER_ZIPCode": "77032",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "B",
+    "SNBNAME": "IAH / AIRPORT AREA",
+    "OLC": "76X6XMP2+Q7"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5255616,
+    "USER_RMSOccurrenceDate": 1666396800000,
+    "USER_RMSOccurrenceHour": "19",
+    "USER_Incident": "143154422",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "21",
+    "USER_Beat": "21I10",
+    "USER_Premise": "Airplane, Bus,Train Terminal",
+    "USER_OffenseAddressMiddle": "2849 TERMINAL",
+    "USER_BlockRange": "2800-2899",
+    "USER_StreetName": "TERMINAL",
+    "USER_StreetType": "RD",
+    "USER_Suffix": "N",
+    "USER_ZIPCode": "77032",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "B",
+    "SNBNAME": "IAH / AIRPORT AREA",
+    "OLC": "76X6XMP2+Q7"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5255629,
     "USER_RMSOccurrenceDate": 1665532800000,
     "USER_RMSOccurrenceHour": "07",
     "USER_Incident": "137830522",
@@ -7062,7 +7246,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237832,
+    "OBJECTID": 5255633,
     "USER_RMSOccurrenceDate": 1664841600000,
     "USER_RMSOccurrenceHour": "14",
     "USER_Incident": "133998522",
@@ -7085,7 +7269,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237834,
+    "OBJECTID": 5255639,
     "USER_RMSOccurrenceDate": 1666310400000,
     "USER_RMSOccurrenceHour": "09",
     "USER_Incident": "142401322",
@@ -7108,30 +7292,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237844,
-    "USER_RMSOccurrenceDate": 1664150400000,
-    "USER_RMSOccurrenceHour": "03",
-    "USER_Incident": "129755422",
-    "USER_NIBRSClass": "90J",
-    "USER_NIBRSDescription": "Trespass of real property",
-    "USER_District": "22",
-    "USER_Beat": "22B10",
-    "USER_Premise": "Highway, Road, Street, Alley",
-    "USER_OffenseAddressMiddle": "7749 FM 1960",
-    "USER_BlockRange": "7700-7799",
-    "USER_StreetName": "FM 1960",
-    "USER_StreetType": "RD",
-    "USER_Suffix": "W",
-    "USER_ZIPCode": "77070",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "E",
-    "SNBNAME": "",
-    "OLC": "76X6XRXR+X9"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5237857,
+    "OBJECTID": 5255650,
     "USER_RMSOccurrenceDate": 1664841600000,
     "USER_RMSOccurrenceHour": "16",
     "USER_Incident": "134079522",
@@ -7154,7 +7315,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237873,
+    "OBJECTID": 5255670,
     "USER_RMSOccurrenceDate": 1664409600000,
     "USER_RMSOccurrenceHour": "16",
     "USER_Incident": "131660522",
@@ -7177,7 +7338,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237885,
+    "OBJECTID": 5255684,
     "USER_RMSOccurrenceDate": 1664928000000,
     "USER_RMSOccurrenceHour": "12",
     "USER_Incident": "134520122",
@@ -7200,7 +7361,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237892,
+    "OBJECTID": 5255695,
     "USER_RMSOccurrenceDate": 1666742400000,
     "USER_RMSOccurrenceHour": "18",
     "USER_Incident": "145135122",
@@ -7223,7 +7384,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237898,
+    "OBJECTID": 5255699,
     "USER_RMSOccurrenceDate": 1664236800000,
     "USER_RMSOccurrenceHour": "21",
     "USER_Incident": "130648422",
@@ -7246,7 +7407,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237918,
+    "OBJECTID": 5255718,
     "USER_RMSOccurrenceDate": 1665273600000,
     "USER_RMSOccurrenceHour": "11",
     "USER_Incident": "136521922",
@@ -7269,7 +7430,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237928,
+    "OBJECTID": 5255728,
     "USER_RMSOccurrenceDate": 1666569600000,
     "USER_RMSOccurrenceHour": "09",
     "USER_Incident": "143833022",
@@ -7292,7 +7453,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237939,
+    "OBJECTID": 5255741,
     "USER_RMSOccurrenceDate": 1665100800000,
     "USER_RMSOccurrenceHour": "13",
     "USER_Incident": "135585722",
@@ -7315,7 +7476,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237943,
+    "OBJECTID": 5255745,
     "USER_RMSOccurrenceDate": 1665532800000,
     "USER_RMSOccurrenceHour": "01",
     "USER_Incident": "137778122",
@@ -7338,30 +7499,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237948,
-    "USER_RMSOccurrenceDate": 1666224000000,
-    "USER_RMSOccurrenceHour": "21",
-    "USER_Incident": "142218722",
-    "USER_NIBRSClass": "90B",
-    "USER_NIBRSDescription": "Curfew, loitering, vagrancy violations",
-    "USER_District": "10",
-    "USER_Beat": "10H40",
-    "USER_Premise": "Bar, Nightclub",
-    "USER_OffenseAddressMiddle": "2349 MAIN",
-    "USER_BlockRange": "2300-2399",
-    "USER_StreetName": "MAIN",
-    "USER_StreetType": "ST",
-    "USER_Suffix": "",
-    "USER_ZIPCode": "77002",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "",
-    "SNBNAME": "",
-    "OLC": "8626334F+PV"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5237951,
+    "OBJECTID": 5255750,
     "USER_RMSOccurrenceDate": 1664582400000,
     "USER_RMSOccurrenceHour": "19",
     "USER_Incident": "132664422",
@@ -7384,17 +7522,17 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237962,
-    "USER_RMSOccurrenceDate": 1666742400000,
-    "USER_RMSOccurrenceHour": "00",
-    "USER_Incident": "144718422",
-    "USER_NIBRSClass": "90Z",
-    "USER_NIBRSDescription": "All other offenses",
+    "OBJECTID": 5255757,
+    "USER_RMSOccurrenceDate": 1666224000000,
+    "USER_RMSOccurrenceHour": "21",
+    "USER_Incident": "142218722",
+    "USER_NIBRSClass": "90B",
+    "USER_NIBRSDescription": "Curfew, loitering, vagrancy violations",
     "USER_District": "10",
     "USER_Beat": "10H40",
-    "USER_Premise": "Airplane, Bus,Train Terminal",
-    "USER_OffenseAddressMiddle": "2149 MAIN",
-    "USER_BlockRange": "2100-2199",
+    "USER_Premise": "Bar, Nightclub",
+    "USER_OffenseAddressMiddle": "2349 MAIN",
+    "USER_BlockRange": "2300-2399",
     "USER_StreetName": "MAIN",
     "USER_StreetType": "ST",
     "USER_Suffix": "",
@@ -7402,12 +7540,12 @@
     "USER_ORI": "TXHPD0000",
     "DISTRICT_1": "",
     "SNBNAME": "",
-    "OLC": "8626334G+PH"
+    "OLC": "8626334F+PV"
    }
   },
   {
    "attributes": {
-    "OBJECTID": 5237970,
+    "OBJECTID": 5255769,
     "USER_RMSOccurrenceDate": 1664841600000,
     "USER_RMSOccurrenceHour": "12",
     "USER_Incident": "133944822",
@@ -7430,7 +7568,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237971,
+    "OBJECTID": 5255770,
     "USER_RMSOccurrenceDate": 1664841600000,
     "USER_RMSOccurrenceHour": "12",
     "USER_Incident": "133944822",
@@ -7453,7 +7591,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237973,
+    "OBJECTID": 5255773,
     "USER_RMSOccurrenceDate": 1665532800000,
     "USER_RMSOccurrenceHour": "05",
     "USER_Incident": "137805022",
@@ -7476,7 +7614,30 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237980,
+    "OBJECTID": 5255777,
+    "USER_RMSOccurrenceDate": 1666742400000,
+    "USER_RMSOccurrenceHour": "00",
+    "USER_Incident": "144718422",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "10",
+    "USER_Beat": "10H40",
+    "USER_Premise": "Airplane, Bus,Train Terminal",
+    "USER_OffenseAddressMiddle": "2149 MAIN",
+    "USER_BlockRange": "2100-2199",
+    "USER_StreetName": "MAIN",
+    "USER_StreetType": "ST",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77002",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "",
+    "SNBNAME": "",
+    "OLC": "8626334G+PH"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5255785,
     "USER_RMSOccurrenceDate": 1664409600000,
     "USER_RMSOccurrenceHour": "14",
     "USER_Incident": "131547722",
@@ -7499,7 +7660,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237983,
+    "OBJECTID": 5255788,
     "USER_RMSOccurrenceDate": 1664928000000,
     "USER_RMSOccurrenceHour": "21",
     "USER_Incident": "134738022",
@@ -7522,7 +7683,30 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237986,
+    "OBJECTID": 5255792,
+    "USER_RMSOccurrenceDate": 1666828800000,
+    "USER_RMSOccurrenceHour": "17",
+    "USER_Incident": "145621622",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "01",
+    "USER_Beat": "01A10",
+    "USER_Premise": "Airplane, Bus,Train Terminal",
+    "USER_OffenseAddressMiddle": "1849 MAIN",
+    "USER_BlockRange": "1800-1899",
+    "USER_StreetName": "MAIN",
+    "USER_StreetType": "ST",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77002",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "",
+    "SNBNAME": "",
+    "OLC": "8626334J+QC"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5255793,
     "USER_RMSOccurrenceDate": 1666742400000,
     "USER_RMSOccurrenceHour": "13",
     "USER_Incident": "145133822",
@@ -7545,7 +7729,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5237990,
+    "OBJECTID": 5255802,
     "USER_RMSOccurrenceDate": 1665878400000,
     "USER_RMSOccurrenceHour": "05",
     "USER_Incident": "139911622",
@@ -7568,7 +7752,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5238011,
+    "OBJECTID": 5255816,
     "USER_RMSOccurrenceDate": 1664841600000,
     "USER_RMSOccurrenceHour": "15",
     "USER_Incident": "134026022",
@@ -7591,7 +7775,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5238014,
+    "OBJECTID": 5255820,
     "USER_RMSOccurrenceDate": 1665532800000,
     "USER_RMSOccurrenceHour": "10",
     "USER_Incident": "140930622",
@@ -7614,7 +7798,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5238020,
+    "OBJECTID": 5255823,
     "USER_RMSOccurrenceDate": 1664668800000,
     "USER_RMSOccurrenceHour": "16",
     "USER_Incident": "133042922",
@@ -7637,7 +7821,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5238021,
+    "OBJECTID": 5255828,
     "USER_RMSOccurrenceDate": 1664236800000,
     "USER_RMSOccurrenceHour": "00",
     "USER_Incident": "130220222",
@@ -7660,7 +7844,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5238028,
+    "OBJECTID": 5255838,
     "USER_RMSOccurrenceDate": 1666051200000,
     "USER_RMSOccurrenceHour": "14",
     "USER_Incident": "144460222",
@@ -7683,7 +7867,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5238040,
+    "OBJECTID": 5255854,
     "USER_RMSOccurrenceDate": 1666137600000,
     "USER_RMSOccurrenceHour": "00",
     "USER_Incident": "141269722",
@@ -7706,7 +7890,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5238051,
+    "OBJECTID": 5255860,
     "USER_RMSOccurrenceDate": 1665014400000,
     "USER_RMSOccurrenceHour": "21",
     "USER_Incident": "135292622",
@@ -7729,7 +7913,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5238055,
+    "OBJECTID": 5255865,
     "USER_RMSOccurrenceDate": 1664323200000,
     "USER_RMSOccurrenceHour": "12",
     "USER_Incident": "130973522",
@@ -7752,30 +7936,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5238058,
-    "USER_RMSOccurrenceDate": 1666310400000,
-    "USER_RMSOccurrenceHour": "18",
-    "USER_Incident": "142706422",
-    "USER_NIBRSClass": "90Z",
-    "USER_NIBRSDescription": "All other offenses",
-    "USER_District": "24",
-    "USER_Beat": "24C30",
-    "USER_Premise": "Grocery, Supermarket",
-    "USER_OffenseAddressMiddle": "4549 KINGWOOD",
-    "USER_BlockRange": "4500-4599",
-    "USER_StreetName": "KINGWOOD",
-    "USER_StreetType": "DR",
-    "USER_Suffix": "",
-    "USER_ZIPCode": "77345",
-    "USER_ORI": "TXHPD0000",
-    "DISTRICT_1": "E",
-    "SNBNAME": "KINGWOOD AREA",
-    "OLC": "86263R29+9G"
-   }
-  },
-  {
-   "attributes": {
-    "OBJECTID": 5238063,
+    "OBJECTID": 5255869,
     "USER_RMSOccurrenceDate": 1664841600000,
     "USER_RMSOccurrenceHour": "17",
     "USER_Incident": "134124822",
@@ -7798,7 +7959,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5238064,
+    "OBJECTID": 5255870,
     "USER_RMSOccurrenceDate": 1664841600000,
     "USER_RMSOccurrenceHour": "17",
     "USER_Incident": "134709322",
@@ -7821,7 +7982,30 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5238077,
+    "OBJECTID": 5255873,
+    "USER_RMSOccurrenceDate": 1666310400000,
+    "USER_RMSOccurrenceHour": "18",
+    "USER_Incident": "142706422",
+    "USER_NIBRSClass": "90Z",
+    "USER_NIBRSDescription": "All other offenses",
+    "USER_District": "24",
+    "USER_Beat": "24C30",
+    "USER_Premise": "Grocery, Supermarket",
+    "USER_OffenseAddressMiddle": "4549 KINGWOOD",
+    "USER_BlockRange": "4500-4599",
+    "USER_StreetName": "KINGWOOD",
+    "USER_StreetType": "DR",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77345",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "E",
+    "SNBNAME": "KINGWOOD AREA",
+    "OLC": "86263R29+9G"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5255887,
     "USER_RMSOccurrenceDate": 1666310400000,
     "USER_RMSOccurrenceHour": "18",
     "USER_Incident": "142995822",
@@ -7844,7 +8028,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5238085,
+    "OBJECTID": 5255896,
     "USER_RMSOccurrenceDate": 1664496000000,
     "USER_RMSOccurrenceHour": "21",
     "USER_Incident": "132239122",
@@ -7867,7 +8051,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5238108,
+    "OBJECTID": 5255921,
     "USER_RMSOccurrenceDate": 1665964800000,
     "USER_RMSOccurrenceHour": "23",
     "USER_Incident": "140714922",
@@ -7890,7 +8074,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5238114,
+    "OBJECTID": 5255928,
     "USER_RMSOccurrenceDate": 1665446400000,
     "USER_RMSOccurrenceHour": "23",
     "USER_Incident": "137753222",
@@ -7913,7 +8097,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5238119,
+    "OBJECTID": 5255933,
     "USER_RMSOccurrenceDate": 1665532800000,
     "USER_RMSOccurrenceHour": "13",
     "USER_Incident": "137985622",
@@ -7936,7 +8120,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5238127,
+    "OBJECTID": 5255942,
     "USER_RMSOccurrenceDate": 1664236800000,
     "USER_RMSOccurrenceHour": "12",
     "USER_Incident": "130427522",
@@ -7959,7 +8143,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5238129,
+    "OBJECTID": 5255945,
     "USER_RMSOccurrenceDate": 1665878400000,
     "USER_RMSOccurrenceHour": "09",
     "USER_Incident": "139928822",
@@ -7982,7 +8166,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5238148,
+    "OBJECTID": 5255964,
     "USER_RMSOccurrenceDate": 1666224000000,
     "USER_RMSOccurrenceHour": "16",
     "USER_Incident": "142081522",
@@ -8005,7 +8189,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5238149,
+    "OBJECTID": 5255965,
     "USER_RMSOccurrenceDate": 1666310400000,
     "USER_RMSOccurrenceHour": "17",
     "USER_Incident": "142652722",
@@ -8028,7 +8212,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5238151,
+    "OBJECTID": 5255968,
     "USER_RMSOccurrenceDate": 1665619200000,
     "USER_RMSOccurrenceHour": "20",
     "USER_Incident": "138759722",
@@ -8051,7 +8235,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5238159,
+    "OBJECTID": 5255975,
     "USER_RMSOccurrenceDate": 1665100800000,
     "USER_RMSOccurrenceHour": "18",
     "USER_Incident": "135737522",
@@ -8074,7 +8258,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5238161,
+    "OBJECTID": 5255976,
     "USER_RMSOccurrenceDate": 1665014400000,
     "USER_RMSOccurrenceHour": "20",
     "USER_Incident": "135292922",
@@ -8097,7 +8281,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5238168,
+    "OBJECTID": 5255980,
     "USER_RMSOccurrenceDate": 1664409600000,
     "USER_RMSOccurrenceHour": "13",
     "USER_Incident": "131479122",
@@ -8120,7 +8304,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5238174,
+    "OBJECTID": 5255985,
     "USER_RMSOccurrenceDate": 1664236800000,
     "USER_RMSOccurrenceHour": "15",
     "USER_Incident": "130501322",
@@ -8143,7 +8327,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5238176,
+    "OBJECTID": 5255987,
     "USER_RMSOccurrenceDate": 1664755200000,
     "USER_RMSOccurrenceHour": "02",
     "USER_Incident": "133232522",
@@ -8166,7 +8350,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5238177,
+    "OBJECTID": 5255989,
     "USER_RMSOccurrenceDate": 1666396800000,
     "USER_RMSOccurrenceHour": "01",
     "USER_Incident": "142822722",
@@ -8189,7 +8373,30 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5238186,
+    "OBJECTID": 5255990,
+    "USER_RMSOccurrenceDate": 1666828800000,
+    "USER_RMSOccurrenceHour": "03",
+    "USER_Incident": "145289322",
+    "USER_NIBRSClass": "90D",
+    "USER_NIBRSDescription": "Driving under the influence",
+    "USER_District": "15",
+    "USER_Beat": "15E10",
+    "USER_Premise": "Highway, Road, Street, Alley",
+    "USER_OffenseAddressMiddle": "10249 POST OAK",
+    "USER_BlockRange": "10200-10299",
+    "USER_StreetName": "POST OAK",
+    "USER_StreetType": "RD",
+    "USER_Suffix": "S",
+    "USER_ZIPCode": "77096",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "",
+    "SNBNAME": "",
+    "OLC": "86265HGF+FF"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5255996,
     "USER_RMSOccurrenceDate": 1665446400000,
     "USER_RMSOccurrenceHour": "22",
     "USER_Incident": "137726522",
@@ -8212,17 +8419,17 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5238195,
-    "USER_RMSOccurrenceDate": 1666051200000,
-    "USER_RMSOccurrenceHour": "11",
-    "USER_Incident": "140943722",
-    "USER_NIBRSClass": "90J",
-    "USER_NIBRSDescription": "Trespass of real property",
+    "OBJECTID": 5256000,
+    "USER_RMSOccurrenceDate": 1666828800000,
+    "USER_RMSOccurrenceHour": "05",
+    "USER_Incident": "145301022",
+    "USER_NIBRSClass": "90D",
+    "USER_NIBRSDescription": "Driving under the influence",
     "USER_District": "15",
     "USER_Beat": "15E20",
-    "USER_Premise": "Drug Store, Doctors Office, Hospital",
-    "USER_OffenseAddressMiddle": "10849 POST OAK",
-    "USER_BlockRange": "10800-10899",
+    "USER_Premise": "Highway, Road, Street, Alley",
+    "USER_OffenseAddressMiddle": "10449 POST OAK",
+    "USER_BlockRange": "10400-10499",
     "USER_StreetName": "POST OAK",
     "USER_StreetType": "RD",
     "USER_Suffix": "S",
@@ -8230,12 +8437,12 @@
     "USER_ORI": "TXHPD0000",
     "DISTRICT_1": "",
     "SNBNAME": "",
-    "OLC": "86265HHJ+9X"
+    "OLC": "86265HHG+5C"
    }
   },
   {
    "attributes": {
-    "OBJECTID": 5238197,
+    "OBJECTID": 5256007,
     "USER_RMSOccurrenceDate": 1665273600000,
     "USER_RMSOccurrenceHour": "03",
     "USER_Incident": "136416122",
@@ -8258,7 +8465,30 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5238199,
+    "OBJECTID": 5256011,
+    "USER_RMSOccurrenceDate": 1666051200000,
+    "USER_RMSOccurrenceHour": "11",
+    "USER_Incident": "140943722",
+    "USER_NIBRSClass": "90J",
+    "USER_NIBRSDescription": "Trespass of real property",
+    "USER_District": "15",
+    "USER_Beat": "15E20",
+    "USER_Premise": "Drug Store, Doctors Office, Hospital",
+    "USER_OffenseAddressMiddle": "10849 POST OAK",
+    "USER_BlockRange": "10800-10899",
+    "USER_StreetName": "POST OAK",
+    "USER_StreetType": "RD",
+    "USER_Suffix": "S",
+    "USER_ZIPCode": "77035",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "",
+    "SNBNAME": "",
+    "OLC": "86265HHJ+9X"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5256012,
     "USER_RMSOccurrenceDate": 1665446400000,
     "USER_RMSOccurrenceHour": "23",
     "USER_Incident": "137742422",
@@ -8281,7 +8511,7 @@
   },
   {
    "attributes": {
-    "OBJECTID": 5238203,
+    "OBJECTID": 5256014,
     "USER_RMSOccurrenceDate": 1665014400000,
     "USER_RMSOccurrenceHour": "22",
     "USER_Incident": "135403322",

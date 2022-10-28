@@ -137,6 +137,97 @@
   }
  ],
  "features": [
-  
+  {
+   "attributes": {
+    "OBJECTID": 5255794,
+    "USER_RMSOccurrenceDate": 1664236800000,
+    "USER_RMSOccurrenceHour": "22",
+    "USER_Incident": "130663322",
+    "USER_NIBRSClass": "290",
+    "USER_NIBRSDescription": "Destruction, damage, vandalism",
+    "USER_District": "01",
+    "USER_Beat": "01A30",
+    "USER_Premise": "Residence, Home (Includes Apartment)",
+    "USER_OffenseAddressMiddle": "1749 MAIN",
+    "USER_BlockRange": "1700-1799",
+    "USER_StreetName": "MAIN",
+    "USER_StreetType": "ST",
+    "USER_Suffix": "W",
+    "USER_ZIPCode": "77098",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "",
+    "SNBNAME": "",
+    "OLC": "8626334J+RM"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5255934,
+    "USER_RMSOccurrenceDate": 1664236800000,
+    "USER_RMSOccurrenceHour": "01",
+    "USER_Incident": "130405222",
+    "USER_NIBRSClass": "250",
+    "USER_NIBRSDescription": "Counterfeiting, forgery",
+    "USER_District": "24",
+    "USER_Beat": "24C30",
+    "USER_Premise": "Residence, Home (Includes Apartment)",
+    "USER_OffenseAddressMiddle": "3149 MANOR GROVE",
+    "USER_BlockRange": "3100-3199",
+    "USER_StreetName": "MANOR GROVE",
+    "USER_StreetType": "DR",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77345",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "E",
+    "SNBNAME": "KINGWOOD AREA",
+    "OLC": "86263R7G+3F"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5255935,
+    "USER_RMSOccurrenceDate": 1664236800000,
+    "USER_RMSOccurrenceHour": "23",
+    "USER_Incident": "130970022",
+    "USER_NIBRSClass": "240",
+    "USER_NIBRSDescription": "Motor vehicle theft",
+    "USER_District": "24",
+    "USER_Beat": "24C50",
+    "USER_Premise": "Highway, Road, Street, Alley",
+    "USER_OffenseAddressMiddle": "249 NORTHPINES",
+    "USER_BlockRange": "200-299",
+    "USER_StreetName": "NORTHPINES",
+    "USER_StreetType": "DR",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77339",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "E",
+    "SNBNAME": "KINGWOOD AREA",
+    "OLC": "86263Q83+4X"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5255875,
+    "USER_RMSOccurrenceDate": 1664236800000,
+    "USER_RMSOccurrenceHour": "10",
+    "USER_Incident": "145549322",
+    "USER_NIBRSClass": "290",
+    "USER_NIBRSDescription": "Destruction, damage, vandalism",
+    "USER_District": "24",
+    "USER_Beat": "24C30",
+    "USER_Premise": "Parking Lot, Garage",
+    "USER_OffenseAddressMiddle": "4549 KINGWOOD",
+    "USER_BlockRange": "4500-4599",
+    "USER_StreetName": "KINGWOOD",
+    "USER_StreetType": "DR",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77345",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "E",
+    "SNBNAME": "KINGWOOD AREA",
+    "OLC": "86263R29+9G"
+   }
+  }
  ]
 }
