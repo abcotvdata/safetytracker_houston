@@ -35,7 +35,7 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 8C40,8,4.97945551,"Lake Houston, Greenriver, Knoll and Lake Forest",8000,"Murder, non-negligent",09A,0,0,3,1,1,3,1,NA,NA,-66.7,0,0,0,37.5,12.5,12.5
 8C50,8,3.31739498,"Park North, Forest Green, Kentshire Place, Glenwood Forest and Dorchester",8000,"Murder, non-negligent",09A,2,3,2,1,1,7,2.3,0,-50,-50,-57,25,37.5,25,12.5,28.8
 8C60,8,5.79693312,"Edgeworth, Northwood Manor and Scenic Woods",19000,"Murder, non-negligent",09A,1,0,3,2,2,4,1.3,200,100,-33.3,54,5.3,0,15.8,10.5,6.8
-9C10,9,5.21185619,"Port of Houston, Clinton Park, Pleasantville and Fidelity Manor",6000,"Murder, non-negligent",09A,1,4,6,1,1,11,3.7,500,0,-83.3,-73,16.7,66.7,100,16.7,61.7
+9C10,9,5.21185619,"Port of Houston, Clinton Park, Pleasantville and Fidelity Manor",6000,"Murder, non-negligent",09A,1,4,6,2,2,11,3.7,500,100,-66.7,-46,16.7,66.7,100,33.3,61.7
 9C20,9,7.5383173,Denver Harbor and Houston Harbor,16000,"Murder, non-negligent",09A,2,6,4,2,2,12,4,100,0,-50,-50,12.5,37.5,25,12.5,25
 9C30,9,8.13353768,"City Park East, Wynnewood Acres and Wallisville Gardens",9000,"Murder, non-negligent",09A,1,3,4,2,2,8,2.7,300,100,-50,-26,11.1,33.3,44.4,22.2,30
 9C40,9,10.42549456,"Greens Bayou Estates, Shady Brook, Northshore",23000,"Murder, non-negligent",09A,7,4,6,4,7,17,5.7,-14.3,0,16.7,23,30.4,17.4,26.1,30.4,24.8
@@ -48,11 +48,11 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 10H70,10,3.52217952,"Texas Medical Center, Hermann Park, Houston Zoo and Miller Outdoor Theatre",16000,"Murder, non-negligent",09A,0,3,0,2,2,3,1,NA,NA,NA,100,0,18.8,0,12.5,6.2
 10H80,10,2.73862779,"Southampton, Rice University area, Shadow Lawn and Broad Acres",19000,"Murder, non-negligent",09A,1,0,0,1,1,1,0.3,-100,0,NA,233,5.3,0,0,5.3,1.6
 11H10,11,5.31502815,"Mason Park, Forest Hill, Sunnyland and Central Park",28000,"Murder, non-negligent",09A,9,5,3,3,4,17,5.7,-66.7,-55.6,33.3,-30,32.1,17.9,10.7,14.3,20.4
-11H20,11,3.9311161,"Harrisburg, Manchester and Pecan Park",18000,"Murder, non-negligent",09A,1,2,4,3,5,7,2.3,300,400,25,117,5.6,11.1,22.2,27.8,12.8
+11H20,11,3.9311161,"Harrisburg, Manchester and Pecan Park",18000,"Murder, non-negligent",09A,1,2,4,3,4,7,2.3,300,300,0,74,5.6,11.1,22.2,22.2,12.8
 11H30,11,2.84278059,Meadow Brook and Park Place,15000,"Murder, non-negligent",09A,0,1,1,3,3,2,0.7,NA,NA,200,329,0,6.7,6.7,20,4.7
 11H40,11,6.14001938,Allendale and Oak Meadows,8000,"Murder, non-negligent",09A,0,1,0,0,0,1,0.3,NA,NA,NA,-100,0,12.5,0,0,3.7
 11H50,11,2.09534157,"Meadow Creek, Ferndale Addition and Glenbrook Industrial",8000,"Murder, non-negligent",09A,1,0,0,1,1,1,0.3,-100,0,NA,233,12.5,0,0,12.5,3.7
-12D10,12,8.55384717,"Almeda Mall, Southridge, Edgebrook and South Houston Gardens",44000,"Murder, non-negligent",09A,7,7,16,9,10,30,10,128.6,42.9,-37.5,0,15.9,15.9,36.4,22.7,22.7
+12D10,12,8.55384717,"Almeda Mall, Southridge, Edgebrook and South Houston Gardens",44000,"Murder, non-negligent",09A,7,7,16,10,11,30,10,128.6,57.1,-31.2,10,15.9,15.9,36.4,25,22.7
 12D20,12,3.83700574,Sage,22000,"Murder, non-negligent",09A,1,2,2,4,4,5,1.7,100,300,100,135,4.5,9.1,9.1,18.2,7.7
 12D30,12,3.99301158,Gulf Palms and Beamer,15000,"Murder, non-negligent",09A,1,1,4,0,1,6,2,300,0,-75,-50,6.7,6.7,26.7,6.7,13.3
 12D40,12,9.68663455,Scarsdale and Ellington Field,11000,"Murder, non-negligent",09A,0,2,0,2,2,2,0.7,NA,NA,NA,186,0,18.2,0,18.2,6.4
@@ -84,7 +84,7 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 18F20,18,3.51641691,"The Galleria, Tanglewood, Riverway and Post Oak",24000,"Murder, non-negligent",09A,1,3,2,4,5,6,2,100,400,150,150,4.2,12.5,8.3,20.8,8.3
 18F30,18,3.80008564,"The Richmond Strip, Briargrove, Post Oak Estates and Westhaven",36000,"Murder, non-negligent",09A,2,9,5,4,5,16,5.3,150,150,0,-6,5.6,25,13.9,13.9,14.7
 18F40,18,2.9060249,"Rosewood General Hospital, Woodlake and Briarmeadow",35000,"Murder, non-negligent",09A,2,8,2,6,6,12,4,0,200,200,50,5.7,22.9,5.7,17.1,11.4
-18F50,18,2.96939217,"Tanglewild, Sharpstown Mall and Regency Square",20000,"Murder, non-negligent",09A,2,3,7,8,12,12,4,250,500,71.4,200,10,15,35,60,20
+18F50,18,2.96939217,"Tanglewild, Sharpstown Mall and Regency Square",20000,"Murder, non-negligent",09A,2,3,7,8,11,12,4,250,450,57.1,175,10,15,35,55,20
 18F60,18,3.62528697,Sharpstown Country Club and Southway Center,28000,"Murder, non-negligent",09A,5,7,6,3,5,18,6,20,0,-16.7,-17,17.9,25,21.4,17.9,21.4
 19G10,19,2.74020376,Concourse South and Westwood Mall,31000,"Murder, non-negligent",09A,3,8,12,16,20,23,7.7,300,566.7,66.7,160,9.7,25.8,38.7,64.5,24.8
 19G20,19,3.29219023,"Catalina Square, Bellaire West, Imperial Point",25000,"Murder, non-negligent",09A,1,3,3,1,1,7,2.3,200,0,-66.7,-57,4,12,12,4,9.2
