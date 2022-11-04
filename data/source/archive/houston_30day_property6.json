@@ -137,6 +137,97 @@
   }
  ],
  "features": [
-  
+  {
+   "attributes": {
+    "OBJECTID": 5380676,
+    "USER_RMSOccurrenceDate": 1664841600000,
+    "USER_RMSOccurrenceHour": "19",
+    "USER_Incident": "134194622",
+    "USER_NIBRSClass": "23F",
+    "USER_NIBRSDescription": "Theft from motor vehicle",
+    "USER_District": "24",
+    "USER_Beat": "24C10",
+    "USER_Premise": "Parking Lot, Garage",
+    "USER_OffenseAddressMiddle": "1249 KINGWOOD",
+    "USER_BlockRange": "1200-1299",
+    "USER_StreetName": "KINGWOOD",
+    "USER_StreetType": "DR",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77339",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "E",
+    "SNBNAME": "KINGWOOD AREA",
+    "OLC": "86262QX6+QW"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5380693,
+    "USER_RMSOccurrenceDate": 1664841600000,
+    "USER_RMSOccurrenceHour": "20",
+    "USER_Incident": "134212922",
+    "USER_NIBRSClass": "23C",
+    "USER_NIBRSDescription": "Shoplifting",
+    "USER_District": "24",
+    "USER_Beat": "24C30",
+    "USER_Premise": "Grocery, Supermarket",
+    "USER_OffenseAddressMiddle": "4549 KINGWOOD",
+    "USER_BlockRange": "4500-4599",
+    "USER_StreetName": "KINGWOOD",
+    "USER_StreetType": "DR",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77345",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "E",
+    "SNBNAME": "KINGWOOD AREA",
+    "OLC": "86263R29+9G"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5380617,
+    "USER_RMSOccurrenceDate": 1664841600000,
+    "USER_RMSOccurrenceHour": "15",
+    "USER_Incident": "134034922",
+    "USER_NIBRSClass": "240",
+    "USER_NIBRSDescription": "Motor vehicle theft",
+    "USER_District": "24",
+    "USER_Beat": "24C50",
+    "USER_Premise": "Other, Unknown",
+    "USER_OffenseAddressMiddle": "22549 EASTEX",
+    "USER_BlockRange": "22500-22599",
+    "USER_StreetName": "EASTEX",
+    "USER_StreetType": "",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77339",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "E",
+    "SNBNAME": "KINGWOOD AREA",
+    "OLC": "86262PRV+CW"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 5380606,
+    "USER_RMSOccurrenceDate": 1664841600000,
+    "USER_RMSOccurrenceHour": "00",
+    "USER_Incident": "134087122",
+    "USER_NIBRSClass": "23D",
+    "USER_NIBRSDescription": "Theft from building",
+    "USER_District": "01",
+    "USER_Beat": "01A30",
+    "USER_Premise": "Residence, Home (Includes Apartment)",
+    "USER_OffenseAddressMiddle": "1749 MAIN",
+    "USER_BlockRange": "1700-1799",
+    "USER_StreetName": "MAIN",
+    "USER_StreetType": "ST",
+    "USER_Suffix": "W",
+    "USER_ZIPCode": "77098",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "",
+    "SNBNAME": "",
+    "OLC": "8626334J+RM"
+   }
+  }
  ]
 }

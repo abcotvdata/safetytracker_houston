@@ -21,7 +21,7 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 6B10,6,5.50084827,"York Plaza, Pembrook Place and Hawthorne Place",33000,"Murder, non-negligent",09A,7,8,9,5,6,24,8,28.6,-14.3,-33.3,-25,21.2,24.2,27.3,18.2,24.2
 6B20,6,6.12869477,"Highland Heights, Oakdale and Melrose Gardens",18000,"Murder, non-negligent",09A,2,3,9,2,2,14,4.7,350,0,-77.8,-57,11.1,16.7,50,11.1,26.1
 6B30,6,7.2300685,"Woodland Trails, Oaks of Inwood, Bayou Bend, Cole Creek Manor and Inwood Forest",38000,"Murder, non-negligent",09A,5,6,11,3,3,22,7.3,120,-40,-72.7,-59,13.2,15.8,28.9,7.9,19.2
-6B40,6,5.544689,"Highland Gardens, Highland Heights and North Plaza",20000,"Murder, non-negligent",09A,5,12,9,6,7,26,8.7,80,40,-22.2,-20,25,60,45,35,43.5
+6B40,6,5.544689,"Highland Gardens, Highland Heights and North Plaza",20000,"Murder, non-negligent",09A,5,12,9,5,6,26,8.7,80,20,-33.3,-31,25,60,45,30,43.5
 22B30,22,2.8264671,Aldine and Imperial Valley,19000,"Murder, non-negligent",09A,2,3,4,2,4,9,3,100,100,0,33,10.5,15.8,21.1,21.1,15.8
 22B20,22,4.61158268,Greenspoint,24000,"Murder, non-negligent",09A,7,16,9,6,6,32,10.7,28.6,-14.3,-33.3,-44,29.2,66.7,37.5,25,44.6
 7C10,7,3.47828324,"Fifth Ward, North Park and Pinecrest",13000,"Murder, non-negligent",09A,4,6,7,1,2,17,5.7,75,-50,-71.4,-65,30.8,46.2,53.8,15.4,43.8
@@ -38,7 +38,7 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 9C10,9,5.21185619,"Port of Houston, Clinton Park, Pleasantville and Fidelity Manor",6000,"Murder, non-negligent",09A,1,4,6,2,2,11,3.7,500,100,-66.7,-46,16.7,66.7,100,33.3,61.7
 9C20,9,7.5383173,Denver Harbor and Houston Harbor,16000,"Murder, non-negligent",09A,2,6,4,2,2,12,4,100,0,-50,-50,12.5,37.5,25,12.5,25
 9C30,9,8.13353768,"City Park East, Wynnewood Acres and Wallisville Gardens",9000,"Murder, non-negligent",09A,1,3,4,2,2,8,2.7,300,100,-50,-26,11.1,33.3,44.4,22.2,30
-9C40,9,10.42549456,"Greens Bayou Estates, Shady Brook, Northshore",23000,"Murder, non-negligent",09A,7,4,6,4,6,17,5.7,-14.3,-14.3,0,5,30.4,17.4,26.1,26.1,24.8
+9C40,9,10.42549456,"Greens Bayou Estates, Shady Brook, Northshore",23000,"Murder, non-negligent",09A,7,4,6,4,5,17,5.7,-14.3,-28.6,-16.7,-12,30.4,17.4,26.1,21.7,24.8
 10H10,10,2.81830654,Oak Lawn and Ranger,11000,"Murder, non-negligent",09A,1,2,2,0,0,5,1.7,100,-100,-100,-100,9.1,18.2,18.2,0,15.5
 10H20,10,1.75743169,Eastwood and Broadmoor,10000,"Murder, non-negligent",09A,0,0,1,1,1,1,0.3,NA,NA,0,233,0,0,10,10,3
 10H30,10,1.02691154,Near East End,4000,"Murder, non-negligent",09A,0,1,0,2,2,1,0.3,NA,NA,NA,567,0,25,0,50,7.5
@@ -63,7 +63,7 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 13D20,13,6.66870859,"Fairlawn, Garden Villas, Glenbrook Valley and Santa Rosa",36000,"Murder, non-negligent",09A,11,4,14,10,10,29,9.7,27.3,-9.1,-28.6,3,30.6,11.1,38.9,27.8,26.9
 13D30,13,3.07402543,"Allen Farms, Airport Gardens and the Hobby Airport area",2000,"Murder, non-negligent",09A,0,1,0,0,0,1,0.3,NA,NA,NA,-100,0,50,0,0,15
 13D40,13,5.0688163,"Val Verde East, Gulf Meadows and Houston Skyscraper Shadows",13000,"Murder, non-negligent",09A,0,2,1,4,4,3,1,NA,NA,300,300,0,15.4,7.7,30.8,7.7
-14D10,14,3.66057918,McGregor Terrace and Riverside Terrace,17000,"Murder, non-negligent",09A,11,13,13,5,7,37,12.3,18.2,-36.4,-46.2,-43,64.7,76.5,76.5,41.2,72.4
+14D10,14,3.66057918,McGregor Terrace and Riverside Terrace,17000,"Murder, non-negligent",09A,11,13,13,6,8,37,12.3,18.2,-27.3,-38.5,-35,64.7,76.5,76.5,47.1,72.4
 14D20,14,7.25646368,"Blueridge, Sunnyside, Brook Haven and Bayou Estates",28000,"Murder, non-negligent",09A,15,21,18,12,14,54,18,20,-6.7,-22.2,-22,53.6,75,64.3,50,64.3
 14D30,14,4.20537595,"Crestmont, Edgewood, Bellfort Park, Inwood Terrace and Southpark",21000,"Murder, non-negligent",09A,6,7,8,6,8,21,7,33.3,33.3,0,14,28.6,33.3,38.1,38.1,33.3
 14D40,14,6.61224595,"South Acres, Shamrock Manor, Hillwood and Cloverland",21000,"Murder, non-negligent",09A,4,8,2,7,7,14,4.7,-50,75,250,49,19,38.1,9.5,33.3,22.4
