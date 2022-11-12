@@ -1,7 +1,7 @@
 beat,district,area_sq_mi,placename,population,category_name,total19,total20,total21,total22,last12mos,total_prior3years,avg_prior3years,inc_19to21,inc_19tolast12,inc_21tolast12,inc_prior3yearavgtolast12,rate19,rate20,rate21,rate_last12,rate_prior3years
 23J40,23,3.03933481,Ellington Field,0,Robbery,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 23J50,23,2.12389492,Hobby Airport,0,Robbery,0,1,0,1,1,1,0.3,NA,NA,NA,233,NA,NA,NA,NA,NA
-1A10,1,1.74646692,Downtown Central Business District,17000,Robbery,92,90,69,79,86,251,83.7,-25,-6.5,24.6,3,541.2,529.4,405.9,505.9,492.4
+1A10,1,1.74646692,Downtown Central Business District,17000,Robbery,92,90,69,78,85,251,83.7,-25,-7.6,23.2,2,541.2,529.4,405.9,500,492.4
 1A20,1,2.44133075,"Fourth Ward, Avondale and Westmoreland",27000,Robbery,88,96,109,88,101,293,97.7,23.9,14.8,-7.3,3,325.9,355.6,403.7,374.1,361.9
 1A30,1,2.65916892,"Cherryhurst, Mandell Place and Montrose",27000,Robbery,71,56,41,44,46,168,56,-42.3,-35.2,12.2,-18,263,207.4,151.9,170.4,207.4
 1A40,1,2.45016686,"Tall Timbers, Royden Oaks, River Oaks, Avalon Place and Oak Estates",7000,Robbery,3,6,8,2,3,17,5.7,166.7,0,-62.5,-47,42.9,85.7,114.3,42.9,81.4
@@ -10,28 +10,28 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 2A20,2,1.8876461,"Sunset Heights, Brooksmith and Stude",11000,Robbery,63,54,29,35,42,146,48.7,-54,-33.3,44.8,-14,572.7,490.9,263.6,381.8,442.7
 2A30,2,4.65858171,"Houston Heights, Norhill and Studemont",31000,Robbery,55,48,50,26,31,153,51,-9.1,-43.6,-38,-39,177.4,154.8,161.3,100,164.5
 2A40,2,1.60546103,Old Sixth Ward and the First Ward,8000,Robbery,23,17,12,11,11,52,17.3,-47.8,-52.2,-8.3,-36,287.5,212.5,150,137.5,216.2
-2A50,2,5.4659844,"Memorial Park, West End, Ashbury and Cottage Grove",29000,Robbery,40,33,55,43,52,128,42.7,37.5,30,-5.5,22,137.9,113.8,189.7,179.3,147.2
+2A50,2,5.4659844,"Memorial Park, West End, Ashbury and Cottage Grove",29000,Robbery,40,33,55,44,53,128,42.7,37.5,32.5,-3.6,24,137.9,113.8,189.7,182.8,147.2
 2A60,2,4.67447346,"Westport, Holly Park, Lazy Brook, Citadel, Shady Acres and Timbergrove",21000,Robbery,25,25,19,24,26,69,23,-24,4,36.8,13,119,119,90.5,123.8,109.5
-3B10,3,6.82068773,"Northwest Mall, Brookhollow, White Oak Acres, Oak Forest and Langwood",34000,Robbery,180,193,157,162,190,530,176.7,-12.8,5.6,21,8,529.4,567.6,461.8,558.8,519.7
+3B10,3,6.82068773,"Northwest Mall, Brookhollow, White Oak Acres, Oak Forest and Langwood",34000,Robbery,180,193,157,159,186,530,176.7,-12.8,3.3,18.5,5,529.4,567.6,461.8,547.1,519.7
 3B30,3,5.310372,"White Oak Acres, Brook Hollow, Oak Forest, Garden Oaks and Shepherd Park Plaza",23000,Robbery,54,42,37,30,39,133,44.3,-31.5,-27.8,5.4,-12,234.8,182.6,160.9,169.6,192.6
 3B40,3,3.40013561,"Independence Heights, Melrose and Graceland",13000,Robbery,96,100,75,61,72,271,90.3,-21.9,-25,-4,-20,738.5,769.2,576.9,553.8,694.6
-3B50,3,3.85259517,"Northline Mall, Stratton Place, Oakwood, Colonial Gardens, Lindale and Junction City",20000,Robbery,167,141,133,91,106,441,147,-20.4,-36.5,-20.3,-28,835,705,665,530,735
-5F10,5,3.25978513,Afton Village and Pine Terrace,14000,Robbery,54,34,48,55,71,136,45.3,-11.1,31.5,47.9,57,385.7,242.9,342.9,507.1,323.6
+3B50,3,3.85259517,"Northline Mall, Stratton Place, Oakwood, Colonial Gardens, Lindale and Junction City",20000,Robbery,167,141,133,90,105,441,147,-20.4,-37.1,-21.1,-29,835,705,665,525,735
+5F10,5,3.25978513,Afton Village and Pine Terrace,14000,Robbery,54,34,48,53,69,136,45.3,-11.1,27.8,43.8,52,385.7,242.9,342.9,492.9,323.6
 5F30,5,8.70689439,"Fairbanks, Carverdale, Fawndale and Northwest Crossing",17000,Robbery,152,128,98,109,125,378,126,-35.5,-17.8,27.6,-1,894.1,752.9,576.5,735.3,741.2
-6B10,6,5.50084827,"York Plaza, Pembrook Place and Hawthorne Place",33000,Robbery,188,149,183,130,150,520,173.3,-2.7,-20.2,-18,-13,569.7,451.5,554.5,454.5,525.2
+6B10,6,5.50084827,"York Plaza, Pembrook Place and Hawthorne Place",33000,Robbery,188,149,183,131,150,520,173.3,-2.7,-20.2,-18,-13,569.7,451.5,554.5,454.5,525.2
 6B20,6,6.12869477,"Highland Heights, Oakdale and Melrose Gardens",18000,Robbery,93,69,49,50,59,211,70.3,-47.3,-36.6,20.4,-16,516.7,383.3,272.2,327.8,390.6
-6B30,6,7.2300685,"Woodland Trails, Oaks of Inwood, Bayou Bend, Cole Creek Manor and Inwood Forest",38000,Robbery,136,123,99,107,119,358,119.3,-27.2,-12.5,20.2,-0,357.9,323.7,260.5,313.2,313.9
+6B30,6,7.2300685,"Woodland Trails, Oaks of Inwood, Bayou Bend, Cole Creek Manor and Inwood Forest",38000,Robbery,136,123,99,108,119,358,119.3,-27.2,-12.5,20.2,-0,357.9,323.7,260.5,313.2,313.9
 6B40,6,5.544689,"Highland Gardens, Highland Heights and North Plaza",20000,Robbery,112,92,85,65,78,289,96.3,-24.1,-30.4,-8.2,-19,560,460,425,390,481.5
 22B30,22,2.8264671,Aldine and Imperial Valley,19000,Robbery,182,111,107,91,103,400,133.3,-41.2,-43.4,-3.7,-23,957.9,584.2,563.2,542.1,701.6
 22B20,22,4.61158268,Greenspoint,24000,Robbery,243,195,163,139,165,601,200.3,-32.9,-32.1,1.2,-18,1012.5,812.5,679.2,687.5,834.6
-7C10,7,3.47828324,"Fifth Ward, North Park and Pinecrest",13000,Robbery,65,82,59,64,76,206,68.7,-9.2,16.9,28.8,11,500,630.8,453.8,584.6,528.5
+7C10,7,3.47828324,"Fifth Ward, North Park and Pinecrest",13000,Robbery,65,82,59,65,75,206,68.7,-9.2,15.4,27.1,9,500,630.8,453.8,576.9,528.5
 7C20,7,7.08575157,"Huntington Place, Willshire Place, Kashmere Gardens and Liberty Gardens",21000,Robbery,167,154,142,108,124,463,154.3,-15,-25.7,-12.7,-20,795.2,733.3,676.2,590.5,734.8
 7C30,7,4.51719841,"Camden Woods, Archers Acres and Croyden Gardens",18000,Robbery,104,114,111,87,101,329,109.7,6.7,-2.9,-9,-8,577.8,633.3,616.7,561.1,609.4
 7C40,7,3.36786526,Keith-Weiss Park and Farrington Place,8000,Robbery,43,32,40,43,51,115,38.3,-7,18.6,27.5,33,537.5,400,500,637.5,478.7
 22B40,22,13.03325001,"Intercontinental Airport, Northwood, Lakeview Park and Glen Lee",11000,Robbery,49,63,58,27,30,170,56.7,18.4,-38.8,-48.3,-47,445.5,572.7,527.3,272.7,515.5
 8C10,8,3.69037316,"Tidwell Park, Shady Oak and Buckingham Place",12000,Robbery,88,88,98,68,81,274,91.3,11.4,-8,-17.3,-11,733.3,733.3,816.7,675,760.8
 8C20,8,3.36154214,"Houston Gardens, Rosewood and Homestead",7000,Robbery,20,28,26,14,15,74,24.7,30,-25,-42.3,-39,285.7,400,371.4,214.3,352.9
-8C30,8,4.6258259,"Parkhurst, East Houston and Clairmont Place",11000,Robbery,29,40,44,30,33,113,37.7,51.7,13.8,-25,-12,263.6,363.6,400,300,342.7
+8C30,8,4.6258259,"Parkhurst, East Houston and Clairmont Place",11000,Robbery,29,40,44,31,34,113,37.7,51.7,17.2,-22.7,-10,263.6,363.6,400,309.1,342.7
 8C40,8,4.97945551,"Lake Houston, Greenriver, Knoll and Lake Forest",8000,Robbery,16,21,26,11,13,63,21,62.5,-18.8,-50,-38,200,262.5,325,162.5,262.5
 8C50,8,3.31739498,"Park North, Forest Green, Kentshire Place, Glenwood Forest and Dorchester",8000,Robbery,44,45,40,17,21,129,43,-9.1,-52.3,-47.5,-51,550,562.5,500,262.5,537.5
 8C60,8,5.79693312,"Edgeworth, Northwood Manor and Scenic Woods",19000,Robbery,56,57,54,40,52,167,55.7,-3.6,-7.1,-3.7,-7,294.7,300,284.2,273.7,293.2
@@ -41,14 +41,14 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 9C40,9,10.42549456,"Greens Bayou Estates, Shady Brook, Northshore",23000,Robbery,132,147,111,88,106,390,130,-15.9,-19.7,-4.5,-18,573.9,639.1,482.6,460.9,565.2
 10H10,10,2.81830654,Oak Lawn and Ranger,11000,Robbery,30,49,34,36,41,113,37.7,13.3,36.7,20.6,9,272.7,445.5,309.1,372.7,342.7
 10H20,10,1.75743169,Eastwood and Broadmoor,10000,Robbery,18,26,14,16,19,58,19.3,-22.2,5.6,35.7,-2,180,260,140,190,193
-10H30,10,1.02691154,Near East End,4000,Robbery,34,26,19,26,29,79,26.3,-44.1,-14.7,52.6,10,850,650,475,725,657.5
+10H30,10,1.02691154,Near East End,4000,Robbery,34,26,19,26,28,79,26.3,-44.1,-17.6,47.4,6,850,650,475,700,657.5
 10H40,10,0.99627062,Midtown,8000,Robbery,176,152,130,97,113,458,152.7,-26.1,-35.8,-13.1,-26,2200,1900,1625,1412.5,1908.8
 10H50,10,2.30843079,the University of Houston area,13000,Robbery,101,90,88,58,71,279,93,-12.9,-29.7,-19.3,-24,776.9,692.3,676.9,546.2,715.4
-10H60,10,3.08931006,"University Oaks, Riverside Terrace and the Texas Southern University area",20000,Robbery,82,64,63,57,64,209,69.7,-23.2,-22,1.6,-8,410,320,315,320,348.5
+10H60,10,3.08931006,"University Oaks, Riverside Terrace and the Texas Southern University area",20000,Robbery,82,64,63,57,63,209,69.7,-23.2,-23.2,0,-10,410,320,315,315,348.5
 10H70,10,3.52217952,"Texas Medical Center, Hermann Park, Houston Zoo and Miller Outdoor Theatre",16000,Robbery,50,51,37,69,72,138,46,-26,44,94.6,57,312.5,318.8,231.2,450,287.5
 10H80,10,2.73862779,"Southampton, Rice University area, Shadow Lawn and Broad Acres",19000,Robbery,25,20,18,9,10,63,21,-28,-60,-44.4,-52,131.6,105.3,94.7,52.6,110.5
 11H10,11,5.31502815,"Mason Park, Forest Hill, Sunnyland and Central Park",28000,Robbery,117,122,114,81,97,353,117.7,-2.6,-17.1,-14.9,-18,417.9,435.7,407.1,346.4,420.4
-11H20,11,3.9311161,"Harrisburg, Manchester and Pecan Park",18000,Robbery,66,35,42,26,35,143,47.7,-36.4,-47,-16.7,-27,366.7,194.4,233.3,194.4,265
+11H20,11,3.9311161,"Harrisburg, Manchester and Pecan Park",18000,Robbery,66,35,42,27,36,143,47.7,-36.4,-45.5,-14.3,-25,366.7,194.4,233.3,200,265
 11H30,11,2.84278059,Meadow Brook and Park Place,15000,Robbery,56,81,43,42,49,180,60,-23.2,-12.5,14,-18,373.3,540,286.7,326.7,400
 11H40,11,6.14001938,Allendale and Oak Meadows,8000,Robbery,9,12,8,10,12,29,9.7,-11.1,33.3,50,24,112.5,150,100,150,121.2
 11H50,11,2.09534157,"Meadow Creek, Ferndale Addition and Glenbrook Industrial",8000,Robbery,16,21,19,20,24,56,18.7,18.8,50,26.3,28,200,262.5,237.5,300,233.7
@@ -56,40 +56,40 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 12D20,12,3.83700574,Sage,22000,Robbery,46,68,54,27,32,168,56,17.4,-30.4,-40.7,-43,209.1,309.1,245.5,145.5,254.5
 12D30,12,3.99301158,Gulf Palms and Beamer,15000,Robbery,19,24,23,10,12,66,22,21.1,-36.8,-47.8,-45,126.7,160,153.3,80,146.7
 12D40,12,9.68663455,Scarsdale and Ellington Field,11000,Robbery,23,25,15,17,20,63,21,-34.8,-13,33.3,-5,209.1,227.3,136.4,181.8,190.9
-12D50,12,8.93327581,"Bay Glen, Bay Oaks, Brook Forest and Bay Forest",26000,Robbery,11,4,5,8,8,20,6.7,-54.5,-27.3,60,19,42.3,15.4,19.2,30.8,25.8
+12D50,12,8.93327581,"Bay Glen, Bay Oaks, Brook Forest and Bay Forest",26000,Robbery,11,4,5,9,9,20,6.7,-54.5,-18.2,80,34,42.3,15.4,19.2,34.6,25.8
 12D60,12,6.35832041,"NASA's Johnson Space Center, Meadow Green, Oakbrook West and Camino South",22000,Robbery,21,19,14,7,7,54,18,-33.3,-66.7,-50,-61,95.5,86.4,63.6,31.8,81.8
 12D70,12,5.39156317,Baybrook Mall and Sterling Knoll,12000,Robbery,37,25,30,18,23,92,30.7,-18.9,-37.8,-23.3,-25,308.3,208.3,250,191.7,255.8
-13D10,13,5.2433708,"Gulfgate Mall, Bay Forest, Riverview, Hampshire, Golfcrest and Barnett Stadium",23000,Robbery,160,114,94,84,105,368,122.7,-41.2,-34.4,11.7,-14,695.7,495.7,408.7,456.5,533.5
-13D20,13,6.66870859,"Fairlawn, Garden Villas, Glenbrook Valley and Santa Rosa",36000,Robbery,223,210,184,142,177,617,205.7,-17.5,-20.6,-3.8,-14,619.4,583.3,511.1,491.7,571.4
+13D10,13,5.2433708,"Gulfgate Mall, Bay Forest, Riverview, Hampshire, Golfcrest and Barnett Stadium",23000,Robbery,160,114,94,85,106,368,122.7,-41.2,-33.8,12.8,-14,695.7,495.7,408.7,460.9,533.5
+13D20,13,6.66870859,"Fairlawn, Garden Villas, Glenbrook Valley and Santa Rosa",36000,Robbery,223,210,184,143,178,617,205.7,-17.5,-20.2,-3.3,-13,619.4,583.3,511.1,494.4,571.4
 13D30,13,3.07402543,"Allen Farms, Airport Gardens and the Hobby Airport area",2000,Robbery,7,2,2,2,2,11,3.7,-71.4,-71.4,0,-46,350,100,100,100,185
-13D40,13,5.0688163,"Val Verde East, Gulf Meadows and Houston Skyscraper Shadows",13000,Robbery,24,44,30,24,27,98,32.7,25,12.5,-10,-17,184.6,338.5,230.8,207.7,251.5
-14D10,14,3.66057918,McGregor Terrace and Riverside Terrace,17000,Robbery,148,135,108,82,100,391,130.3,-27,-32.4,-7.4,-23,870.6,794.1,635.3,588.2,766.5
-14D20,14,7.25646368,"Blueridge, Sunnyside, Brook Haven and Bayou Estates",28000,Robbery,232,167,146,147,169,545,181.7,-37.1,-27.2,15.8,-7,828.6,596.4,521.4,603.6,648.9
+13D40,13,5.0688163,"Val Verde East, Gulf Meadows and Houston Skyscraper Shadows",13000,Robbery,24,44,30,25,28,98,32.7,25,16.7,-6.7,-14,184.6,338.5,230.8,215.4,251.5
+14D10,14,3.66057918,McGregor Terrace and Riverside Terrace,17000,Robbery,148,135,108,83,101,391,130.3,-27,-31.8,-6.5,-22,870.6,794.1,635.3,594.1,766.5
+14D20,14,7.25646368,"Blueridge, Sunnyside, Brook Haven and Bayou Estates",28000,Robbery,232,167,146,148,169,545,181.7,-37.1,-27.2,15.8,-7,828.6,596.4,521.4,603.6,648.9
 14D30,14,4.20537595,"Crestmont, Edgewood, Bellfort Park, Inwood Terrace and Southpark",21000,Robbery,110,63,52,64,72,225,75,-52.7,-34.5,38.5,-4,523.8,300,247.6,342.9,357.1
 14D40,14,6.61224595,"South Acres, Shamrock Manor, Hillwood and Cloverland",21000,Robbery,77,90,82,67,85,249,83,6.5,10.4,3.7,2,366.7,428.6,390.5,404.8,395.2
 14D50,14,8.69627992,"Golden Glade Estates, Langston and Almeda Genoa",9000,Robbery,26,25,35,18,24,86,28.7,34.6,-7.7,-31.4,-16,288.9,277.8,388.9,266.7,318.9
 15E10,15,4.34996776,"Meyerland Plaza, Robindell, Meyerland, Braeburn Terrace and Maplewood South",24000,Robbery,58,75,64,50,61,197,65.7,10.3,5.2,-4.7,-7,241.7,312.5,266.7,254.2,273.8
 15E20,15,3.58384499,"Westbury, Park West and Willow Creek",18000,Robbery,52,57,55,40,43,164,54.7,5.8,-17.3,-21.8,-21,288.9,316.7,305.6,238.9,303.9
-15E30,15,6.29133294,"Meyer Park, Post Oak Manor, Westwood, Willow Bend and Linkwood",34000,Robbery,75,79,73,50,64,227,75.7,-2.7,-14.7,-12.3,-15,220.6,232.4,214.7,188.2,222.6
-15E40,15,10.0079174,"NRG Park, Astroworld, Lakes at 610 and Plaza del Oro",30000,Robbery,147,118,163,79,112,428,142.7,10.9,-23.8,-31.3,-22,490,393.3,543.3,373.3,475.7
+15E30,15,6.29133294,"Meyer Park, Post Oak Manor, Westwood, Willow Bend and Linkwood",34000,Robbery,75,79,73,51,65,227,75.7,-2.7,-13.3,-11,-14,220.6,232.4,214.7,191.2,222.6
+15E40,15,10.0079174,"NRG Park, Astroworld, Lakes at 610 and Plaza del Oro",30000,Robbery,147,118,163,79,111,428,142.7,10.9,-24.5,-31.9,-22,490,393.3,543.3,370,475.7
 16E10,16,5.38940818,Canterbury Village and Monarch Estates,15000,Robbery,27,26,19,11,14,72,24,-29.6,-48.1,-26.3,-42,180,173.3,126.7,93.3,160
-16E20,16,8.15202134,"Almeda Plaza, South Glen, Dumbarton Oaks and Briarwick",35000,Robbery,92,86,56,79,87,234,78,-39.1,-5.4,55.4,12,262.9,245.7,160,248.6,222.9
+16E20,16,8.15202134,"Almeda Plaza, South Glen, Dumbarton Oaks and Briarwick",35000,Robbery,92,86,56,80,88,234,78,-39.1,-4.3,57.1,13,262.9,245.7,160,251.4,222.9
 16E30,16,7.00932789,"Greenpark, Southwest Crossing and Windsor Village",22000,Robbery,88,79,59,55,66,226,75.3,-33,-25,11.9,-12,400,359.1,268.2,300,342.3
 16E40,16,7.49721482,"Chasewood, Willowpark, Briarwick, Ridgemont and Quail Run",35000,Robbery,59,56,56,47,54,171,57,-5.1,-8.5,-3.6,-5,168.6,160,160,154.3,162.9
-17E10,17,3.3104034,"Southwest Memorial Hospital, Burnett Bayland Park and Westmoreland",51000,Robbery,328,323,259,211,240,910,303.3,-21,-26.8,-7.3,-21,643.1,633.3,507.8,470.6,594.7
-17E20,17,3.92767309,the Houston Baptist University area and Maplewood West,27000,Robbery,112,110,84,69,77,306,102,-25,-31.2,-8.3,-25,414.8,407.4,311.1,285.2,377.8
-17E30,17,3.8060455,Braeburn Valley West and Glenshire,21000,Robbery,112,105,92,85,100,309,103,-17.9,-10.7,8.7,-3,533.3,500,438.1,476.2,490.5
+17E10,17,3.3104034,"Southwest Memorial Hospital, Burnett Bayland Park and Westmoreland",51000,Robbery,328,323,259,212,241,910,303.3,-21,-26.5,-6.9,-21,643.1,633.3,507.8,472.5,594.7
+17E20,17,3.92767309,the Houston Baptist University area and Maplewood West,27000,Robbery,112,110,84,69,76,306,102,-25,-32.1,-9.5,-25,414.8,407.4,311.1,281.5,377.8
+17E30,17,3.8060455,Braeburn Valley West and Glenshire,21000,Robbery,112,105,92,85,99,309,103,-17.9,-11.6,7.6,-4,533.3,500,438.1,471.4,490.5
 17E40,17,4.70920035,"Creekbend, Southwood and Fondren Southwest",46000,Robbery,207,177,173,144,165,557,185.7,-16.4,-20.3,-4.6,-11,450,384.8,376.1,358.7,403.7
 18F10,18,1.95881352,"Saddlebrook, Bayou Woods and Sherwood Forest",7000,Robbery,12,11,10,4,5,33,11,-16.7,-58.3,-50,-55,171.4,157.1,142.9,71.4,157.1
 18F20,18,3.51641691,"The Galleria, Tanglewood, Riverway and Post Oak",24000,Robbery,64,78,93,63,72,235,78.3,45.3,12.5,-22.6,-8,266.7,325,387.5,300,326.2
-18F30,18,3.80008564,"The Richmond Strip, Briargrove, Post Oak Estates and Westhaven",36000,Robbery,211,194,186,172,192,591,197,-11.8,-9,3.2,-3,586.1,538.9,516.7,533.3,547.2
-18F40,18,2.9060249,"Rosewood General Hospital, Woodlake and Briarmeadow",35000,Robbery,149,192,167,124,150,508,169.3,12.1,0.7,-10.2,-11,425.7,548.6,477.1,428.6,483.7
+18F30,18,3.80008564,"The Richmond Strip, Briargrove, Post Oak Estates and Westhaven",36000,Robbery,211,194,186,173,192,591,197,-11.8,-9,3.2,-3,586.1,538.9,516.7,533.3,547.2
+18F40,18,2.9060249,"Rosewood General Hospital, Woodlake and Briarmeadow",35000,Robbery,149,192,167,125,151,508,169.3,12.1,1.3,-9.6,-11,425.7,548.6,477.1,431.4,483.7
 18F50,18,2.96939217,"Tanglewild, Sharpstown Mall and Regency Square",20000,Robbery,135,143,155,138,157,433,144.3,14.8,16.3,1.3,9,675,715,775,785,721.5
-18F60,18,3.62528697,Sharpstown Country Club and Southway Center,28000,Robbery,142,118,107,72,88,367,122.3,-24.6,-38,-17.8,-28,507.1,421.4,382.1,314.3,436.8
+18F60,18,3.62528697,Sharpstown Country Club and Southway Center,28000,Robbery,142,118,107,73,89,367,122.3,-24.6,-37.3,-16.8,-27,507.1,421.4,382.1,317.9,436.8
 19G10,19,2.74020376,Concourse South and Westwood Mall,31000,Robbery,257,295,246,249,288,798,266,-4.3,12.1,17.1,8,829,951.6,793.5,929,858.1
 19G20,19,3.29219023,"Catalina Square, Bellaire West, Imperial Point",25000,Robbery,97,83,97,41,51,277,92.3,0,-47.4,-47.4,-45,388,332,388,204,369.2
 19G30,19,2.49064202,"Rodeo Square, Wildflower Green, Braewood Glen",18000,Robbery,64,41,49,33,38,154,51.3,-23.4,-40.6,-22.4,-26,355.6,227.8,272.2,211.1,285
-19G40,19,4.56425364,"Huntington Village, Wellington Park, Leawood, Keegans Glen",37000,Robbery,155,117,112,81,99,384,128,-27.7,-36.1,-11.6,-23,418.9,316.2,302.7,267.6,345.9
+19G40,19,4.56425364,"Huntington Village, Wellington Park, Leawood, Keegans Glen",37000,Robbery,155,117,112,82,99,384,128,-27.7,-36.1,-11.6,-23,418.9,316.2,302.7,267.6,345.9
 19G50,19,2.30578624,"Forum Park, Stancliff and Southwest Park",18000,Robbery,120,129,101,83,97,350,116.7,-15.8,-19.2,-4,-17,666.7,716.7,561.1,538.9,648.3
 20G10,20,3.06600809,"Westchase, Woodchase Village and Point West",29000,Robbery,200,236,204,146,177,640,213.3,2,-11.5,-13.2,-17,689.7,813.8,703.4,610.3,735.5
 20G20,20,3.27621655,"Lakeside Estates, City West Place, Rivercrest and Briargrove Park",18000,Robbery,48,36,26,32,33,110,36.7,-45.8,-31.2,26.9,-10,266.7,200,144.4,183.3,203.9
@@ -104,7 +104,7 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 21I50,21,14.61100076,Intercontinental Airport,0,Robbery,3,3,2,1,3,8,2.7,-33.3,0,50,11,NA,NA,NA,NA,NA
 21I70,21,0.01945113,Intercontinental Airport,0,Robbery,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 22B10,22,3.28874287,"Willowbrook, Willow Chase Park and Centerfield",8000,Robbery,74,74,55,33,42,203,67.7,-25.7,-43.2,-23.6,-38,925,925,687.5,525,846.2
-5F20,5,5.94082911,Spring Branch and Schwartz Park,42000,Robbery,152,184,139,110,124,475,158.3,-8.6,-18.4,-10.8,-22,361.9,438.1,331,295.2,376.9
+5F20,5,5.94082911,Spring Branch and Schwartz Park,42000,Robbery,152,184,139,109,123,475,158.3,-8.6,-19.1,-11.5,-22,361.9,438.1,331,292.9,376.9
 4F10,4,4.13606469,"Timber Oaks, Shadow Oaks and Long Point Acres",23000,Robbery,63,62,58,44,55,183,61,-7.9,-12.7,-5.2,-10,273.9,269.6,252.2,239.1,265.2
 20G50,20,5.88593521,"Nottingham, Yorkshire, Wilchester, Town and Country Village and Memorial City Shopping Center",30000,Robbery,37,34,32,20,25,103,34.3,-13.5,-32.4,-21.9,-27,123.3,113.3,106.7,83.3,114.3
 4F20,4,5.85840284,"Claymore Park, Westbranch, Spring Shadows and Kempwood Forest",28000,Robbery,45,56,45,33,39,146,48.7,0,-13.3,-13.3,-20,160.7,200,160.7,139.3,173.9
