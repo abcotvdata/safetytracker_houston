@@ -196,7 +196,6 @@ houston_population <- 2304580
 
 <br>
 <h2>ABC13 is tracking crime and safety across Houston and in your neighborhood. 
-
 You can choose which crime to explore: <select onchange="window.location=this.value">
 <option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker.html">Homicides</option>
 <option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_Assaults.html">Assaults</option>
