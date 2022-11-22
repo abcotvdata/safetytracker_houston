@@ -2,8 +2,8 @@ library(tidyverse)
 library(readxl)
 
 ### IMPORT AND FORMAT 2022 DATA TO DATE FROM HOUSTON PD EXCEL UPDATED MONTHLY HERE
-
 # OPEN WORK TO WRITE CODE THAT WOULD CHECK FOR NEW FILE AND THEN ONLY RUN IF NEW FILE EXISTS
+
 try(download.file("https://www.houstontx.gov/police/cs/xls/NIBRSPublicViewJan-Oct_2022.xlsx","data/source/monthly/houston_NIBRS2022.xlsx"))
 
 houston22 <- read_excel("data/source/monthly/houston_NIBRS2022.xlsx", 
