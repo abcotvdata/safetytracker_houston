@@ -18,13 +18,13 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 3B50,3,3.85259517,"Northline Mall, Stratton Place, Oakwood, Colonial Gardens, Lindale and Junction City",20000,Sexual Assault,27,18,18,20,21,63,21,-33.3,-22.2,16.7,0,135,90,90,105,105
 5F10,5,3.25978513,Afton Village and Pine Terrace,14000,Sexual Assault,10,5,11,8,8,26,8.7,10,-20,-27.3,-8,71.4,35.7,78.6,57.1,62.1
 5F30,5,8.70689439,"Fairbanks, Carverdale, Fawndale and Northwest Crossing",17000,Sexual Assault,20,16,20,16,17,56,18.7,0,-15,-15,-9,117.6,94.1,117.6,100,110
-6B10,6,5.50084827,"York Plaza, Pembrook Place and Hawthorne Place",33000,Sexual Assault,20,30,29,22,24,79,26.3,45,20,-17.2,-9,60.6,90.9,87.9,72.7,79.7
-6B20,6,6.12869477,"Highland Heights, Oakdale and Melrose Gardens",18000,Sexual Assault,27,19,19,17,19,65,21.7,-29.6,-29.6,0,-12,150,105.6,105.6,105.6,120.6
+6B10,6,5.50084827,"York Plaza, Pembrook Place and Hawthorne Place",33000,Sexual Assault,20,30,29,22,23,79,26.3,45,15,-20.7,-13,60.6,90.9,87.9,69.7,79.7
+6B20,6,6.12869477,"Highland Heights, Oakdale and Melrose Gardens",18000,Sexual Assault,27,19,19,16,18,65,21.7,-29.6,-33.3,-5.3,-17,150,105.6,105.6,100,120.6
 6B30,6,7.2300685,"Woodland Trails, Oaks of Inwood, Bayou Bend, Cole Creek Manor and Inwood Forest",38000,Sexual Assault,19,30,11,21,21,60,20,-42.1,10.5,90.9,5,50,78.9,28.9,55.3,52.6
-6B40,6,5.544689,"Highland Gardens, Highland Heights and North Plaza",20000,Sexual Assault,27,14,17,14,14,58,19.3,-37,-48.1,-17.6,-27,135,70,85,70,96.5
+6B40,6,5.544689,"Highland Gardens, Highland Heights and North Plaza",20000,Sexual Assault,27,14,17,13,13,58,19.3,-37,-51.9,-23.5,-33,135,70,85,65,96.5
 22B30,22,2.8264671,Aldine and Imperial Valley,19000,Sexual Assault,16,11,16,14,15,43,14.3,0,-6.2,-6.2,5,84.2,57.9,84.2,78.9,75.3
 22B20,22,4.61158268,Greenspoint,24000,Sexual Assault,39,34,39,29,29,112,37.3,0,-25.6,-25.6,-22,162.5,141.7,162.5,120.8,155.4
-7C10,7,3.47828324,"Fifth Ward, North Park and Pinecrest",13000,Sexual Assault,12,17,18,12,14,47,15.7,50,16.7,-22.2,-11,92.3,130.8,138.5,107.7,120.8
+7C10,7,3.47828324,"Fifth Ward, North Park and Pinecrest",13000,Sexual Assault,12,17,18,11,13,47,15.7,50,8.3,-27.8,-17,92.3,130.8,138.5,100,120.8
 7C20,7,7.08575157,"Huntington Place, Willshire Place, Kashmere Gardens and Liberty Gardens",21000,Sexual Assault,50,41,33,22,23,124,41.3,-34,-54,-30.3,-44,238.1,195.2,157.1,109.5,196.7
 7C30,7,4.51719841,"Camden Woods, Archers Acres and Croyden Gardens",18000,Sexual Assault,22,19,23,17,17,64,21.3,4.5,-22.7,-26.1,-20,122.2,105.6,127.8,94.4,118.3
 7C40,7,3.36786526,Keith-Weiss Park and Farrington Place,8000,Sexual Assault,6,7,2,10,10,15,5,-66.7,66.7,400,100,75,87.5,25,125,62.5
@@ -44,14 +44,14 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 10H30,10,1.02691154,Near East End,4000,Sexual Assault,8,5,6,6,6,19,6.3,-25,-25,0,-5,200,125,150,150,157.5
 10H40,10,0.99627062,Midtown,8000,Sexual Assault,16,16,23,24,26,55,18.3,43.8,62.5,13,42,200,200,287.5,325,228.8
 10H50,10,2.30843079,the University of Houston area,13000,Sexual Assault,14,11,12,12,12,37,12.3,-14.3,-14.3,0,-2,107.7,84.6,92.3,92.3,94.6
-10H60,10,3.08931006,"University Oaks, Riverside Terrace and the Texas Southern University area",20000,Sexual Assault,20,14,13,10,11,47,15.7,-35,-45,-15.4,-30,100,70,65,55,78.5
+10H60,10,3.08931006,"University Oaks, Riverside Terrace and the Texas Southern University area",20000,Sexual Assault,20,14,13,11,12,47,15.7,-35,-40,-7.7,-24,100,70,65,60,78.5
 10H70,10,3.52217952,"Texas Medical Center, Hermann Park, Houston Zoo and Miller Outdoor Theatre",16000,Sexual Assault,28,32,45,40,42,105,35,60.7,50,-6.7,20,175,200,281.2,262.5,218.8
 10H80,10,2.73862779,"Southampton, Rice University area, Shadow Lawn and Broad Acres",19000,Sexual Assault,21,6,13,7,7,40,13.3,-38.1,-66.7,-46.2,-47,110.5,31.6,68.4,36.8,70
-11H10,11,5.31502815,"Mason Park, Forest Hill, Sunnyland and Central Park",28000,Sexual Assault,24,23,28,21,22,75,25,16.7,-8.3,-21.4,-12,85.7,82.1,100,78.6,89.3
+11H10,11,5.31502815,"Mason Park, Forest Hill, Sunnyland and Central Park",28000,Sexual Assault,24,23,28,22,23,75,25,16.7,-4.2,-17.9,-8,85.7,82.1,100,82.1,89.3
 11H20,11,3.9311161,"Harrisburg, Manchester and Pecan Park",18000,Sexual Assault,8,9,20,10,10,37,12.3,150,25,-50,-19,44.4,50,111.1,55.6,68.3
 11H30,11,2.84278059,Meadow Brook and Park Place,15000,Sexual Assault,15,12,9,10,10,36,12,-40,-33.3,11.1,-17,100,80,60,66.7,80
 11H40,11,6.14001938,Allendale and Oak Meadows,8000,Sexual Assault,4,2,7,1,2,13,4.3,75,-50,-71.4,-53,50,25,87.5,25,53.8
-11H50,11,2.09534157,"Meadow Creek, Ferndale Addition and Glenbrook Industrial",8000,Sexual Assault,4,18,8,4,5,30,10,100,25,-37.5,-50,50,225,100,62.5,125
+11H50,11,2.09534157,"Meadow Creek, Ferndale Addition and Glenbrook Industrial",8000,Sexual Assault,4,18,8,4,4,30,10,100,0,-50,-60,50,225,100,50,125
 12D10,12,8.55384717,"Almeda Mall, Southridge, Edgebrook and South Houston Gardens",44000,Sexual Assault,31,29,33,30,32,93,31,6.5,3.2,-3,3,70.5,65.9,75,72.7,70.5
 12D20,12,3.83700574,Sage,22000,Sexual Assault,12,14,10,4,5,36,12,-16.7,-58.3,-50,-58,54.5,63.6,45.5,22.7,54.5
 12D30,12,3.99301158,Gulf Palms and Beamer,15000,Sexual Assault,3,3,9,3,3,15,5,200,0,-66.7,-40,20,20,60,20,33.3
@@ -76,17 +76,17 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 16E20,16,8.15202134,"Almeda Plaza, South Glen, Dumbarton Oaks and Briarwick",35000,Sexual Assault,13,16,23,12,13,52,17.3,76.9,0,-43.5,-25,37.1,45.7,65.7,37.1,49.4
 16E30,16,7.00932789,"Greenpark, Southwest Crossing and Windsor Village",22000,Sexual Assault,17,12,16,17,18,45,15,-5.9,5.9,12.5,20,77.3,54.5,72.7,81.8,68.2
 16E40,16,7.49721482,"Chasewood, Willowpark, Briarwick, Ridgemont and Quail Run",35000,Sexual Assault,15,21,11,10,12,47,15.7,-26.7,-20,9.1,-24,42.9,60,31.4,34.3,44.9
-17E10,17,3.3104034,"Southwest Memorial Hospital, Burnett Bayland Park and Westmoreland",51000,Sexual Assault,54,39,44,39,44,137,45.7,-18.5,-18.5,0,-4,105.9,76.5,86.3,86.3,89.6
+17E10,17,3.3104034,"Southwest Memorial Hospital, Burnett Bayland Park and Westmoreland",51000,Sexual Assault,54,39,44,40,43,137,45.7,-18.5,-20.4,-2.3,-6,105.9,76.5,86.3,84.3,89.6
 17E20,17,3.92767309,the Houston Baptist University area and Maplewood West,27000,Sexual Assault,37,19,38,23,27,94,31.3,2.7,-27,-28.9,-14,137,70.4,140.7,100,115.9
 17E30,17,3.8060455,Braeburn Valley West and Glenshire,21000,Sexual Assault,17,30,24,9,9,71,23.7,41.2,-47.1,-62.5,-62,81,142.9,114.3,42.9,112.9
 17E40,17,4.70920035,"Creekbend, Southwood and Fondren Southwest",46000,Sexual Assault,46,39,34,27,28,119,39.7,-26.1,-39.1,-17.6,-29,100,84.8,73.9,60.9,86.3
-18F10,18,1.95881352,"Saddlebrook, Bayou Woods and Sherwood Forest",7000,Sexual Assault,6,4,2,3,4,12,4,-66.7,-33.3,100,0,85.7,57.1,28.6,57.1,57.1
+18F10,18,1.95881352,"Saddlebrook, Bayou Woods and Sherwood Forest",7000,Sexual Assault,6,4,2,3,3,12,4,-66.7,-50,50,-25,85.7,57.1,28.6,42.9,57.1
 18F20,18,3.51641691,"The Galleria, Tanglewood, Riverway and Post Oak",24000,Sexual Assault,13,25,27,19,22,65,21.7,107.7,69.2,-18.5,1,54.2,104.2,112.5,91.7,90.4
-18F30,18,3.80008564,"The Richmond Strip, Briargrove, Post Oak Estates and Westhaven",36000,Sexual Assault,20,27,33,34,38,80,26.7,65,90,15.2,42,55.6,75,91.7,105.6,74.2
+18F30,18,3.80008564,"The Richmond Strip, Briargrove, Post Oak Estates and Westhaven",36000,Sexual Assault,20,27,33,35,39,80,26.7,65,95,18.2,46,55.6,75,91.7,108.3,74.2
 18F40,18,2.9060249,"Rosewood General Hospital, Woodlake and Briarmeadow",35000,Sexual Assault,28,22,21,26,26,71,23.7,-25,-7.1,23.8,10,80,62.9,60,74.3,67.7
-18F50,18,2.96939217,"Tanglewild, Sharpstown Mall and Regency Square",20000,Sexual Assault,33,17,20,31,31,70,23.3,-39.4,-6.1,55,33,165,85,100,155,116.5
+18F50,18,2.96939217,"Tanglewild, Sharpstown Mall and Regency Square",20000,Sexual Assault,33,17,20,33,33,70,23.3,-39.4,0,65,42,165,85,100,165,116.5
 18F60,18,3.62528697,Sharpstown Country Club and Southway Center,28000,Sexual Assault,27,13,17,9,10,57,19,-37,-63,-41.2,-47,96.4,46.4,60.7,35.7,67.9
-19G10,19,2.74020376,Concourse South and Westwood Mall,31000,Sexual Assault,41,39,32,22,25,112,37.3,-22,-39,-21.9,-33,132.3,125.8,103.2,80.6,120.3
+19G10,19,2.74020376,Concourse South and Westwood Mall,31000,Sexual Assault,41,39,32,22,24,112,37.3,-22,-41.5,-25,-36,132.3,125.8,103.2,77.4,120.3
 19G20,19,3.29219023,"Catalina Square, Bellaire West, Imperial Point",25000,Sexual Assault,14,22,10,13,13,46,15.3,-28.6,-7.1,30,-15,56,88,40,52,61.2
 19G30,19,2.49064202,"Rodeo Square, Wildflower Green, Braewood Glen",18000,Sexual Assault,10,12,5,5,5,27,9,-50,-50,0,-44,55.6,66.7,27.8,27.8,50
 19G40,19,4.56425364,"Huntington Village, Wellington Park, Leawood, Keegans Glen",37000,Sexual Assault,34,18,27,15,16,79,26.3,-20.6,-52.9,-40.7,-39,91.9,48.6,73,43.2,71.1
@@ -104,7 +104,7 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 21I50,21,14.61100076,Intercontinental Airport,0,Sexual Assault,2,0,3,1,1,5,1.7,50,-50,-66.7,-41,NA,NA,NA,NA,NA
 21I70,21,0.01945113,Intercontinental Airport,0,Sexual Assault,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 22B10,22,3.28874287,"Willowbrook, Willow Chase Park and Centerfield",8000,Sexual Assault,11,14,8,12,12,33,11,-27.3,9.1,50,9,137.5,175,100,150,137.5
-5F20,5,5.94082911,Spring Branch and Schwartz Park,42000,Sexual Assault,31,25,31,18,20,87,29,0,-35.5,-35.5,-31,73.8,59.5,73.8,47.6,69
+5F20,5,5.94082911,Spring Branch and Schwartz Park,42000,Sexual Assault,31,25,31,17,19,87,29,0,-38.7,-38.7,-34,73.8,59.5,73.8,45.2,69
 4F10,4,4.13606469,"Timber Oaks, Shadow Oaks and Long Point Acres",23000,Sexual Assault,21,11,18,20,20,50,16.7,-14.3,-4.8,11.1,20,91.3,47.8,78.3,87,72.6
 20G50,20,5.88593521,"Nottingham, Yorkshire, Wilchester, Town and Country Village and Memorial City Shopping Center",30000,Sexual Assault,12,10,13,16,18,35,11.7,8.3,50,38.5,54,40,33.3,43.3,60,39
 4F20,4,5.85840284,"Claymore Park, Westbranch, Spring Shadows and Kempwood Forest",28000,Sexual Assault,22,23,11,15,16,56,18.7,-50,-27.3,45.5,-14,78.6,82.1,39.3,57.1,66.8
