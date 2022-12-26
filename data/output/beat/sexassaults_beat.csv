@@ -21,13 +21,13 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 6B10,6,5.50084827,"York Plaza, Pembrook Place and Hawthorne Place",33000,Sexual Assault,20,30,29,23,23,79,26.3,45,15,-20.7,-13,60.6,90.9,87.9,69.7,79.7
 6B20,6,6.12869477,"Highland Heights, Oakdale and Melrose Gardens",18000,Sexual Assault,27,19,19,16,17,65,21.7,-29.6,-37,-10.5,-22,150,105.6,105.6,94.4,120.6
 6B30,6,7.2300685,"Woodland Trails, Oaks of Inwood, Bayou Bend, Cole Creek Manor and Inwood Forest",38000,Sexual Assault,19,30,11,20,20,60,20,-42.1,5.3,81.8,0,50,78.9,28.9,52.6,52.6
-6B40,6,5.544689,"Highland Gardens, Highland Heights and North Plaza",20000,Sexual Assault,27,14,17,14,14,58,19.3,-37,-48.1,-17.6,-27,135,70,85,70,96.5
+6B40,6,5.544689,"Highland Gardens, Highland Heights and North Plaza",20000,Sexual Assault,27,14,17,15,15,58,19.3,-37,-44.4,-11.8,-22,135,70,85,75,96.5
 22B30,22,2.8264671,Aldine and Imperial Valley,19000,Sexual Assault,16,11,16,14,14,43,14.3,0,-12.5,-12.5,-2,84.2,57.9,84.2,73.7,75.3
 22B20,22,4.61158268,Greenspoint,24000,Sexual Assault,39,34,39,31,31,112,37.3,0,-20.5,-20.5,-17,162.5,141.7,162.5,129.2,155.4
 7C10,7,3.47828324,"Fifth Ward, North Park and Pinecrest",13000,Sexual Assault,12,17,18,13,13,47,15.7,50,8.3,-27.8,-17,92.3,130.8,138.5,100,120.8
 7C20,7,7.08575157,"Huntington Place, Willshire Place, Kashmere Gardens and Liberty Gardens",21000,Sexual Assault,50,41,33,26,27,124,41.3,-34,-46,-18.2,-35,238.1,195.2,157.1,128.6,196.7
 7C30,7,4.51719841,"Camden Woods, Archers Acres and Croyden Gardens",18000,Sexual Assault,22,19,23,19,19,64,21.3,4.5,-13.6,-17.4,-11,122.2,105.6,127.8,105.6,118.3
-7C40,7,3.36786526,Keith-Weiss Park and Farrington Place,8000,Sexual Assault,6,7,2,10,10,15,5,-66.7,66.7,400,100,75,87.5,25,125,62.5
+7C40,7,3.36786526,Keith-Weiss Park and Farrington Place,8000,Sexual Assault,6,7,2,11,11,15,5,-66.7,83.3,450,120,75,87.5,25,137.5,62.5
 22B40,22,13.03325001,"Intercontinental Airport, Northwood, Lakeview Park and Glen Lee",11000,Sexual Assault,11,14,15,9,9,40,13.3,36.4,-18.2,-40,-32,100,127.3,136.4,81.8,120.9
 8C10,8,3.69037316,"Tidwell Park, Shady Oak and Buckingham Place",12000,Sexual Assault,12,14,19,17,17,45,15,58.3,41.7,-10.5,13,100,116.7,158.3,141.7,125
 8C20,8,3.36154214,"Houston Gardens, Rosewood and Homestead",7000,Sexual Assault,5,3,6,3,3,14,4.7,20,-40,-50,-36,71.4,42.9,85.7,42.9,67.1
@@ -105,8 +105,8 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 21I70,21,0.01945113,Intercontinental Airport,0,Sexual Assault,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 22B10,22,3.28874287,"Willowbrook, Willow Chase Park and Centerfield",8000,Sexual Assault,11,14,8,12,12,33,11,-27.3,9.1,50,9,137.5,175,100,150,137.5
 5F20,5,5.94082911,Spring Branch and Schwartz Park,42000,Sexual Assault,31,25,31,16,16,87,29,0,-48.4,-48.4,-45,73.8,59.5,73.8,38.1,69
-4F10,4,4.13606469,"Timber Oaks, Shadow Oaks and Long Point Acres",23000,Sexual Assault,21,11,18,21,21,50,16.7,-14.3,0,16.7,26,91.3,47.8,78.3,91.3,72.6
-20G50,20,5.88593521,"Nottingham, Yorkshire, Wilchester, Town and Country Village and Memorial City Shopping Center",30000,Sexual Assault,12,10,13,16,17,35,11.7,8.3,41.7,30.8,45,40,33.3,43.3,56.7,39
+4F10,4,4.13606469,"Timber Oaks, Shadow Oaks and Long Point Acres",23000,Sexual Assault,21,11,18,22,22,50,16.7,-14.3,4.8,22.2,32,91.3,47.8,78.3,95.7,72.6
+20G50,20,5.88593521,"Nottingham, Yorkshire, Wilchester, Town and Country Village and Memorial City Shopping Center",30000,Sexual Assault,12,10,13,16,16,35,11.7,8.3,33.3,23.1,37,40,33.3,43.3,53.3,39
 4F20,4,5.85840284,"Claymore Park, Westbranch, Spring Shadows and Kempwood Forest",28000,Sexual Assault,22,23,11,15,15,56,18.7,-50,-31.8,36.4,-20,78.6,82.1,39.3,53.6,66.8
 20G60,20,4.54207617,"Barkers Landing, Fleetwood, Thornwood and Darrel Tully Stadium",22000,Sexual Assault,10,16,7,9,9,33,11,-30,-10,28.6,-18,45.5,72.7,31.8,40.9,50
 4F30,4,26.30690179,"Addicks Reservoir Area, Claymore Park, Brittmore Village, Park Ten Place and Mayde Creek Farms",18000,Sexual Assault,19,17,11,12,12,47,15.7,-42.1,-36.8,9.1,-24,105.6,94.4,61.1,66.7,87.2
@@ -122,7 +122,7 @@ HCC1,NA,NA,NA,NA,Sexual Assault,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 HCC4,NA,NA,NA,NA,Sexual Assault,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 HCC5,NA,NA,NA,NA,Sexual Assault,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 HCC7,NA,NA,NA,NA,Sexual Assault,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
-HCSO,NA,NA,NA,NA,Sexual Assault,9,5,1,4,4,15,5,-88.9,-55.6,300,-20,NA,NA,NA,NA,NA
+HCSO,NA,NA,NA,NA,Sexual Assault,9,5,1,5,5,15,5,-88.9,-44.4,400,0,NA,NA,NA,NA,NA
 OOJ,NA,NA,NA,NA,Sexual Assault,29,12,3,9,10,44,14.7,-89.7,-65.5,233.3,-32,NA,NA,NA,NA,NA
 UH-2PD,NA,NA,NA,NA,Sexual Assault,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 UH-3PD,NA,NA,NA,NA,Sexual Assault,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
