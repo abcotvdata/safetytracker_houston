@@ -137,6 +137,51 @@
   }
  ],
  "features": [
-  
+  {
+   "attributes": {
+    "OBJECTID": 6476497,
+    "USER_RMSOccurrenceDate": 1670457600000,
+    "USER_RMSOccurrenceHour": "20",
+    "USER_Incident": "165469822",
+    "USER_NIBRSClass": "13C",
+    "USER_NIBRSDescription": "Intimidation",
+    "USER_District": "24",
+    "USER_Beat": "24C20",
+    "USER_Premise": "Residence, Home (Includes Apartment)",
+    "USER_OffenseAddressMiddle": "3249 DEEP RIVER",
+    "USER_BlockRange": "3200-3299",
+    "USER_StreetName": "DEEP RIVER",
+    "USER_StreetType": "CT",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77339",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "E",
+    "SNBNAME": "KINGWOOD AREA",
+    "OLC": "86262QRX+J3"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 6476663,
+    "USER_RMSOccurrenceDate": 1670457600000,
+    "USER_RMSOccurrenceHour": "20",
+    "USER_Incident": "165489722",
+    "USER_NIBRSClass": "13C",
+    "USER_NIBRSDescription": "Intimidation",
+    "USER_District": "15",
+    "USER_Beat": "15E20",
+    "USER_Premise": "Residence, Home (Includes Apartment)",
+    "USER_OffenseAddressMiddle": "10649 POST OAK",
+    "USER_BlockRange": "10600-10699",
+    "USER_StreetName": "POST OAK",
+    "USER_StreetType": "RD",
+    "USER_Suffix": "S",
+    "USER_ZIPCode": "77035",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "",
+    "SNBNAME": "",
+    "OLC": "86265HHH+6P"
+   }
+  }
  ]
 }
