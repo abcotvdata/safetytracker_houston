@@ -137,6 +137,51 @@
   }
  ],
  "features": [
-  
+  {
+   "attributes": {
+    "OBJECTID": 6943817,
+    "USER_RMSOccurrenceDate": 1671148800000,
+    "USER_RMSOccurrenceHour": "10",
+    "USER_Incident": "169296122",
+    "USER_NIBRSClass": "13C",
+    "USER_NIBRSDescription": "Intimidation",
+    "USER_District": "22",
+    "USER_Beat": "22B10",
+    "USER_Premise": "Department, Discount Store",
+    "USER_OffenseAddressMiddle": "8449 FM 1960",
+    "USER_BlockRange": "8400-8499",
+    "USER_StreetName": "FM 1960",
+    "USER_StreetType": "RD",
+    "USER_Suffix": "W",
+    "USER_ZIPCode": "77070",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "E",
+    "SNBNAME": "",
+    "OLC": "86262V42+88"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 6943828,
+    "USER_RMSOccurrenceDate": 1671148800000,
+    "USER_RMSOccurrenceHour": "19",
+    "USER_Incident": "169549822",
+    "USER_NIBRSClass": "13C",
+    "USER_NIBRSDescription": "Intimidation",
+    "USER_District": "24",
+    "USER_Beat": "24C40",
+    "USER_Premise": "Residence, Home (Includes Apartment)",
+    "USER_OffenseAddressMiddle": "249 SPRUCE LAKE",
+    "USER_BlockRange": "200-299",
+    "USER_StreetName": "SPRUCE LAKE",
+    "USER_StreetType": "",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77336",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "E",
+    "SNBNAME": "LAKE HOUSTON",
+    "OLC": "86262V4Q+X9"
+   }
+  }
  ]
 }
