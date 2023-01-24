@@ -7,12 +7,12 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 1A40,1,2.45016686,"Tall Timbers, Royden Oaks, River Oaks, Avalon Place and Oak Estates",7000,Robbery,3,6,8,4,0,4,17,5.7,166.7,33.3,-50,-30,42.9,85.7,114.3,57.1,81.4
 1A50,1,3.04553452,"Post Oak Park, Afton Oaks, Highland Village, Weslayan, Greenway Plaza and The Compaq Center",26000,Robbery,50,53,83,38,6,42,186,62,66,-16,-49.4,-32,192.3,203.8,319.2,161.5,238.5
 2A10,2,3.30928608,Irvington and Ryon,18000,Robbery,112,100,71,76,4,74,283,94.3,-36.6,-33.9,4.2,-22,622.2,555.6,394.4,411.1,523.9
-2A20,2,1.8876461,"Sunset Heights, Brooksmith and Stude",11000,Robbery,63,54,29,34,9,41,146,48.7,-54,-34.9,41.4,-16,572.7,490.9,263.6,372.7,442.7
+2A20,2,1.8876461,"Sunset Heights, Brooksmith and Stude",11000,Robbery,63,54,29,34,10,42,146,48.7,-54,-33.3,44.8,-14,572.7,490.9,263.6,381.8,442.7
 2A30,2,4.65858171,"Houston Heights, Norhill and Studemont",31000,Robbery,55,48,50,30,8,37,153,51,-9.1,-32.7,-26,-27,177.4,154.8,161.3,119.4,164.5
-2A40,2,1.60546103,Old Sixth Ward and the First Ward,8000,Robbery,23,17,12,12,3,14,52,17.3,-47.8,-39.1,16.7,-19,287.5,212.5,150,175,216.2
+2A40,2,1.60546103,Old Sixth Ward and the First Ward,8000,Robbery,23,17,12,12,4,15,52,17.3,-47.8,-34.8,25,-13,287.5,212.5,150,187.5,216.2
 2A50,2,5.4659844,"Memorial Park, West End, Ashbury and Cottage Grove",29000,Robbery,40,33,55,48,8,53,128,42.7,37.5,32.5,-3.6,24,137.9,113.8,189.7,182.8,147.2
 2A60,2,4.67447346,"Westport, Holly Park, Lazy Brook, Citadel, Shady Acres and Timbergrove",21000,Robbery,25,25,19,28,2,28,69,23,-24,12,47.4,22,119,119,90.5,133.3,109.5
-3B10,3,6.82068773,"Northwest Mall, Brookhollow, White Oak Acres, Oak Forest and Langwood",34000,Robbery,180,193,157,161,1,152,530,176.7,-12.8,-15.6,-3.2,-14,529.4,567.6,461.8,447.1,519.7
+3B10,3,6.82068773,"Northwest Mall, Brookhollow, White Oak Acres, Oak Forest and Langwood",34000,Robbery,180,193,157,161,2,153,530,176.7,-12.8,-15,-2.5,-13,529.4,567.6,461.8,450,519.7
 3B30,3,5.310372,"White Oak Acres, Brook Hollow, Oak Forest, Garden Oaks and Shepherd Park Plaza",23000,Robbery,54,42,37,34,4,37,133,44.3,-31.5,-31.5,0,-16,234.8,182.6,160.9,160.9,192.6
 3B40,3,3.40013561,"Independence Heights, Melrose and Graceland",13000,Robbery,96,100,75,70,0,65,271,90.3,-21.9,-32.3,-13.3,-28,738.5,769.2,576.9,500,694.6
 3B50,3,3.85259517,"Northline Mall, Stratton Place, Oakwood, Colonial Gardens, Lindale and Junction City",20000,Robbery,167,141,133,107,10,113,441,147,-20.4,-32.3,-15,-23,835,705,665,565,735
@@ -37,8 +37,8 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 8C60,8,5.79693312,"Edgeworth, Northwood Manor and Scenic Woods",19000,Robbery,56,57,54,46,12,57,167,55.7,-3.6,1.8,5.6,2,294.7,300,284.2,300,293.2
 9C10,9,5.21185619,"Port of Houston, Clinton Park, Pleasantville and Fidelity Manor",6000,Robbery,18,21,16,6,2,8,55,18.3,-11.1,-55.6,-50,-56,300,350,266.7,133.3,305
 9C20,9,7.5383173,Denver Harbor and Houston Harbor,16000,Robbery,50,52,39,52,6,53,141,47,-22,6,35.9,13,312.5,325,243.8,331.2,293.8
-9C30,9,8.13353768,"City Park East, Wynnewood Acres and Wallisville Gardens",9000,Robbery,34,47,37,25,1,23,118,39.3,8.8,-32.4,-37.8,-41,377.8,522.2,411.1,255.6,436.7
-9C40,9,10.42549456,"Greens Bayou Estates, Shady Brook, Northshore",23000,Robbery,132,147,111,101,8,103,390,130,-15.9,-22,-7.2,-21,573.9,639.1,482.6,447.8,565.2
+9C30,9,8.13353768,"City Park East, Wynnewood Acres and Wallisville Gardens",9000,Robbery,34,47,37,25,2,24,118,39.3,8.8,-29.4,-35.1,-39,377.8,522.2,411.1,266.7,436.7
+9C40,9,10.42549456,"Greens Bayou Estates, Shady Brook, Northshore",23000,Robbery,132,147,111,101,10,105,390,130,-15.9,-20.5,-5.4,-19,573.9,639.1,482.6,456.5,565.2
 10H10,10,2.81830654,Oak Lawn and Ranger,11000,Robbery,30,49,34,39,0,36,113,37.7,13.3,20,5.9,-5,272.7,445.5,309.1,327.3,342.7
 10H20,10,1.75743169,Eastwood and Broadmoor,10000,Robbery,18,26,14,18,1,18,58,19.3,-22.2,0,28.6,-7,180,260,140,180,193
 10H30,10,1.02691154,Near East End,4000,Robbery,34,26,19,32,0,32,79,26.3,-44.1,-5.9,68.4,22,850,650,475,800,657.5
@@ -104,8 +104,8 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 21I50,21,14.61100076,Intercontinental Airport,0,Robbery,3,3,2,1,0,1,8,2.7,-33.3,-66.7,-50,-63,NA,NA,NA,NA,NA
 21I70,21,0.01945113,Intercontinental Airport,0,Robbery,0,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
 22B10,22,3.28874287,"Willowbrook, Willow Chase Park and Centerfield",8000,Robbery,74,74,55,45,3,46,203,67.7,-25.7,-37.8,-16.4,-32,925,925,687.5,575,846.2
-5F20,5,5.94082911,Spring Branch and Schwartz Park,42000,Robbery,152,184,139,108,5,109,475,158.3,-8.6,-28.3,-21.6,-31,361.9,438.1,331,259.5,376.9
-4F10,4,4.13606469,"Timber Oaks, Shadow Oaks and Long Point Acres",23000,Robbery,63,62,58,51,6,51,183,61,-7.9,-19,-12.1,-16,273.9,269.6,252.2,221.7,265.2
+5F20,5,5.94082911,Spring Branch and Schwartz Park,42000,Robbery,152,184,139,108,6,110,475,158.3,-8.6,-27.6,-20.9,-31,361.9,438.1,331,261.9,376.9
+4F10,4,4.13606469,"Timber Oaks, Shadow Oaks and Long Point Acres",23000,Robbery,63,62,58,51,8,53,183,61,-7.9,-15.9,-8.6,-13,273.9,269.6,252.2,230.4,265.2
 20G50,20,5.88593521,"Nottingham, Yorkshire, Wilchester, Town and Country Village and Memorial City Shopping Center",30000,Robbery,37,34,32,27,1,26,103,34.3,-13.5,-29.7,-18.8,-24,123.3,113.3,106.7,86.7,114.3
 4F20,4,5.85840284,"Claymore Park, Westbranch, Spring Shadows and Kempwood Forest",28000,Robbery,45,56,45,38,6,41,146,48.7,0,-8.9,-8.9,-16,160.7,200,160.7,146.4,173.9
 20G60,20,4.54207617,"Barkers Landing, Fleetwood, Thornwood and Darrel Tully Stadium",22000,Robbery,33,35,32,24,1,23,100,33.3,-3,-30.3,-28.1,-31,150,159.1,145.5,104.5,151.4
