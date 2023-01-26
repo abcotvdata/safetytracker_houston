@@ -35,6 +35,3 @@ saveRDS(houston_annual,"scripts/rds/houston_annual.rds")
 
 # Clean up
 rm(houston_annual,houston19,houston20,houston21)
-
-
-

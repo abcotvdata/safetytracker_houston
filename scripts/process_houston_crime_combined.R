@@ -203,9 +203,6 @@ citywide_category_monthly %>% filter(category_name=="Robbery") %>% write_csv("da
 citywide_category_monthly %>% filter(category_name=="Assault") %>% write_csv("data/output/monthly/assaults_monthly.csv")
 citywide_category_monthly %>% filter(category_name=="Drug Offenses") %>% write_csv("data/output/monthly/drugs_monthly.csv")
 
-
-
-
 # Calculate of each type of crime CITYWIDE
 citywide_type <- houston_crime %>%
   group_by(type,year) %>%
