@@ -8,7 +8,7 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 1A50,1,3.04553452,"Post Oak Park, Afton Oaks, Highland Village, Weslayan, Greenway Plaza and The Compaq Center",26000,"Murder, non-negligent",09A,0,0,5,3,0,2,5,1.7,NA,NA,-60,18,0,0,19.2,7.7,6.5
 2A10,2,3.30928608,Irvington and Ryon,18000,"Murder, non-negligent",09A,6,4,3,5,2,7,13,4.3,-50,16.7,133.3,63,33.3,22.2,16.7,38.9,23.9
 2A20,2,1.8876461,"Sunset Heights, Brooksmith and Stude",11000,"Murder, non-negligent",09A,0,2,1,3,0,3,3,1,NA,NA,200,200,0,18.2,9.1,27.3,9.1
-2A30,2,4.65858171,"Houston Heights, Norhill and Studemont",31000,"Murder, non-negligent",09A,0,0,2,5,0,5,2,0.7,NA,NA,150,614,0,0,6.5,16.1,2.3
+2A30,2,4.65858171,"Houston Heights, Norhill and Studemont",31000,"Murder, non-negligent",09A,0,0,2,5,0,4,2,0.7,NA,NA,100,471,0,0,6.5,12.9,2.3
 2A40,2,1.60546103,Old Sixth Ward and the First Ward,8000,"Murder, non-negligent",09A,1,1,0,1,0,0,2,0.7,-100,-100,NA,-100,12.5,12.5,0,0,8.8
 2A50,2,5.4659844,"Memorial Park, West End, Ashbury and Cottage Grove",29000,"Murder, non-negligent",09A,1,0,5,1,0,1,6,2,400,0,-80,-50,3.4,0,17.2,3.4,6.9
 2A60,2,4.67447346,"Westport, Holly Park, Lazy Brook, Citadel, Shady Acres and Timbergrove",21000,"Murder, non-negligent",09A,2,1,0,0,0,0,3,1,-100,-100,NA,-100,9.5,4.8,0,0,4.8
@@ -18,7 +18,7 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 3B50,3,3.85259517,"Northline Mall, Stratton Place, Oakwood, Colonial Gardens, Lindale and Junction City",20000,"Murder, non-negligent",09A,1,3,8,6,0,6,12,4,700,500,-25,50,5,15,40,30,20
 5F10,5,3.25978513,Afton Village and Pine Terrace,14000,"Murder, non-negligent",09A,0,0,4,5,0,5,4,1.3,NA,NA,25,285,0,0,28.6,35.7,9.3
 5F30,5,8.70689439,"Fairbanks, Carverdale, Fawndale and Northwest Crossing",17000,"Murder, non-negligent",09A,7,4,2,3,0,2,13,4.3,-71.4,-71.4,0,-53,41.2,23.5,11.8,11.8,25.3
-6B10,6,5.50084827,"York Plaza, Pembrook Place and Hawthorne Place",33000,"Murder, non-negligent",09A,7,8,9,9,0,6,24,8,28.6,-14.3,-33.3,-25,21.2,24.2,27.3,18.2,24.2
+6B10,6,5.50084827,"York Plaza, Pembrook Place and Hawthorne Place",33000,"Murder, non-negligent",09A,7,8,9,9,1,7,24,8,28.6,0,-22.2,-12,21.2,24.2,27.3,21.2,24.2
 6B20,6,6.12869477,"Highland Heights, Oakdale and Melrose Gardens",18000,"Murder, non-negligent",09A,2,3,9,2,2,3,14,4.7,350,50,-66.7,-36,11.1,16.7,50,16.7,26.1
 6B30,6,7.2300685,"Woodland Trails, Oaks of Inwood, Bayou Bend, Cole Creek Manor and Inwood Forest",38000,"Murder, non-negligent",09A,5,6,11,3,0,3,22,7.3,120,-40,-72.7,-59,13.2,15.8,28.9,7.9,19.2
 6B40,6,5.544689,"Highland Gardens, Highland Heights and North Plaza",20000,"Murder, non-negligent",09A,5,12,9,6,0,5,26,8.7,80,0,-44.4,-43,25,60,45,25,43.5
@@ -43,7 +43,7 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 10H20,10,1.75743169,Eastwood and Broadmoor,10000,"Murder, non-negligent",09A,0,0,1,2,0,2,1,0.3,NA,NA,100,567,0,0,10,20,3
 10H30,10,1.02691154,Near East End,4000,"Murder, non-negligent",09A,0,1,0,2,0,2,1,0.3,NA,NA,NA,567,0,25,0,50,7.5
 10H40,10,0.99627062,Midtown,8000,"Murder, non-negligent",09A,0,7,11,2,0,2,18,6,NA,NA,-81.8,-67,0,87.5,137.5,25,75
-10H50,10,2.30843079,the University of Houston area,13000,"Murder, non-negligent",09A,5,9,6,10,1,10,20,6.7,20,100,66.7,49,38.5,69.2,46.2,76.9,51.5
+10H50,10,2.30843079,the University of Houston area,13000,"Murder, non-negligent",09A,5,9,6,10,1,9,20,6.7,20,80,50,34,38.5,69.2,46.2,69.2,51.5
 10H60,10,3.08931006,"University Oaks, Riverside Terrace and the Texas Southern University area",20000,"Murder, non-negligent",09A,5,4,5,5,0,5,14,4.7,0,0,0,6,25,20,25,25,23.5
 10H70,10,3.52217952,"Texas Medical Center, Hermann Park, Houston Zoo and Miller Outdoor Theatre",16000,"Murder, non-negligent",09A,0,3,0,1,1,2,3,1,NA,NA,NA,100,0,18.8,0,12.5,6.2
 10H80,10,2.73862779,"Southampton, Rice University area, Shadow Lawn and Broad Acres",19000,"Murder, non-negligent",09A,1,0,0,1,0,1,1,0.3,-100,0,NA,233,5.3,0,0,5.3,1.6
