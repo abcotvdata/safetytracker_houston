@@ -137,6 +137,74 @@
   }
  ],
  "features": [
-  
+  {
+   "attributes": {
+    "OBJECTID": 7223130,
+    "USER_RMSOccurrenceDate": 1672185600000,
+    "USER_RMSOccurrenceHour": "18",
+    "USER_Incident": "174906522",
+    "USER_NIBRSClass": "13C",
+    "USER_NIBRSDescription": "Intimidation",
+    "USER_District": "06",
+    "USER_Beat": "06B40",
+    "USER_Premise": "Residence, Home (Includes Apartment)",
+    "USER_OffenseAddressMiddle": "1449 GULF BANK",
+    "USER_BlockRange": "1400-1499",
+    "USER_StreetName": "GULF BANK",
+    "USER_StreetType": "RD",
+    "USER_Suffix": "W",
+    "USER_ZIPCode": "77088",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "",
+    "SNBNAME": "",
+    "OLC": "76X6VJRJ+7V"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 7223001,
+    "USER_RMSOccurrenceDate": 1672185600000,
+    "USER_RMSOccurrenceHour": "13",
+    "USER_Incident": "174752522",
+    "USER_NIBRSClass": "13B",
+    "USER_NIBRSDescription": "Simple assault",
+    "USER_District": "06",
+    "USER_Beat": "06B30",
+    "USER_Premise": "Residence, Home (Includes Apartment)",
+    "USER_OffenseAddressMiddle": "5749 GULF BANK",
+    "USER_BlockRange": "5700-5799",
+    "USER_StreetName": "GULF BANK",
+    "USER_StreetType": "RD",
+    "USER_Suffix": "W",
+    "USER_ZIPCode": "77088",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "A",
+    "SNBNAME": "GREATER INWOOD",
+    "OLC": "76X6VGMG+PM"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 7224280,
+    "USER_RMSOccurrenceDate": 1672185600000,
+    "USER_RMSOccurrenceHour": "12",
+    "USER_Incident": "174860422",
+    "USER_NIBRSClass": "13C",
+    "USER_NIBRSDescription": "Intimidation",
+    "USER_District": "24",
+    "USER_Beat": "24C30",
+    "USER_Premise": "Residence, Home (Includes Apartment)",
+    "USER_OffenseAddressMiddle": "4549 DUNNAM",
+    "USER_BlockRange": "4500-4599",
+    "USER_StreetName": "DUNNAM",
+    "USER_StreetType": "RD",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77345",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "E",
+    "SNBNAME": "KINGWOOD AREA",
+    "OLC": "86263RFJ+FM"
+   }
+  }
  ]
 }
