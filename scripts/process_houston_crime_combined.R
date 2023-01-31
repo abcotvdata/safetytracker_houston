@@ -108,7 +108,8 @@ citywide_detailed <- citywide_detailed %>%
   rename("total19" = "2019",
          "total20" = "2020",
          "total21" = "2021",
-         "total22" = "2022")
+         "total22" = "2022",
+         "total23" = "2023")
 # add last 12 months
 citywide_detailed_last12 <- houston_crime_last12 %>%
   group_by(offense_type,nibrs_class) %>%
@@ -123,7 +124,7 @@ citywide_detailed$avg_prior3years <- round(citywide_detailed$total_prior3years/3
 citywide_detailed$inc_19to21 <- round(citywide_detailed$total21/citywide_detailed$total19*100-100,1)
 citywide_detailed$inc_19tolast12 <- round(citywide_detailed$last12mos/citywide_detailed$total19*100-100,1)
 citywide_detailed$inc_21tolast12 <- round(citywide_detailed$last12mos/citywide_detailed$total21*100-100,1)
-citywide_detailed$inc_prior3yearavgtolast12 <- round((citywide_detailed$last12mos/citywide_detailed$avg_prior3years)*100-100,0)
+citywide_detailed$inc_prior3yearavgtolast12 <- round((citywide_detailed$last12mos/citywide_detailed$avg_prior3years)*100-100,1)
 # calculate the citywide rates
 citywide_detailed$rate19 <- round(citywide_detailed$total19/houston_population*100000,1)
 citywide_detailed$rate20 <- round(citywide_detailed$total20/houston_population*100000,1)
@@ -132,10 +133,14 @@ citywide_detailed$rate_last12 <- round(citywide_detailed$last12mos/houston_popul
 # calculate a multiyear rate
 citywide_detailed$rate_prior3years <- round(citywide_detailed$avg_prior3years/houston_population*100000,1)
 # for map/table making purposes, changing Inf and NaN in calc fields to NA
+#citywide_detailed <- citywide_detailed %>%
+#  mutate(across(where(is.numeric), ~na_if(., Inf)))
+#citywide_detailed <- citywide_detailed %>%
+#  mutate(across(where(is.numeric), ~na_if(., "NaN")))
 citywide_detailed <- citywide_detailed %>%
-  mutate(across(where(is.numeric), ~na_if(., Inf)))
+  mutate_if(is.numeric, ~ifelse(. == Inf, NA, .))
 citywide_detailed <- citywide_detailed %>%
-  mutate(across(where(is.numeric), ~na_if(., "NaN")))
+  mutate_if(is.numeric, ~ifelse(. == "NaN", NA, .))
 
 # Calculate of each detailed offense type CITYWIDE
 citywide_detailed_monthly <- houston_crime %>%
@@ -160,7 +165,8 @@ citywide_category <- citywide_category %>%
   rename("total19" = "2019",
          "total20" = "2020",
          "total21" = "2021",
-         "total22" = "2022")
+         "total22" = "2022",
+         "total23" = "2023")
 # add last 12 months
 citywide_category_last12 <- houston_crime_last12 %>%
   group_by(category_name) %>%
@@ -175,7 +181,7 @@ citywide_category$avg_prior3years <- round(citywide_category$total_prior3years/3
 citywide_category$inc_19to21 <- round(citywide_category$total21/citywide_category$total19*100-100,1)
 citywide_category$inc_19tolast12 <- round(citywide_category$last12mos/citywide_category$total19*100-100,1)
 citywide_category$inc_21tolast12 <- round(citywide_category$last12mos/citywide_category$total21*100-100,1)
-citywide_category$inc_prior3yearavgtolast12 <- round((citywide_category$last12mos/citywide_category$avg_prior3years)*100-100,0)
+citywide_category$inc_prior3yearavgtolast12 <- round((citywide_category$last12mos/citywide_category$avg_prior3years)*100-100,1)
 # calculate the citywide rates
 citywide_category$rate19 <- round(citywide_category$total19/houston_population*100000,1)
 citywide_category$rate20 <- round(citywide_category$total20/houston_population*100000,1)
@@ -213,7 +219,8 @@ citywide_type <- citywide_type %>%
   rename("total19" = "2019",
          "total20" = "2020",
          "total21" = "2021",
-         "total22" = "2022")
+         "total22" = "2022",
+         "total23" = "2023")
 # add last 12 months
 citywide_type_last12 <- houston_crime_last12 %>%
   group_by(type) %>%
@@ -228,7 +235,7 @@ citywide_type[is.na(citywide_type)] <- 0
 citywide_type$inc_19to21 <- round(citywide_type$total21/citywide_type$total19*100-100,1)
 citywide_type$inc_19tolast12 <- round(citywide_type$last12mos/citywide_type$total19*100-100,1)
 citywide_type$inc_21tolast12 <- round(citywide_type$last12mos/citywide_type$total21*100-100,1)
-citywide_type$inc_prior3yearavgtolast12 <- round((citywide_type$last12mos/citywide_type$avg_prior3years)*100-100,0)
+citywide_type$inc_prior3yearavgtolast12 <- round((citywide_type$last12mos/citywide_type$avg_prior3years)*100-100,1)
 # calculate the citywide rates
 citywide_type$rate19 <- round(citywide_type$total19/houston_population*100000,1)
 citywide_type$rate20 <- round(citywide_type$total20/houston_population*100000,1)
@@ -266,7 +273,8 @@ beat_detailed <- beat_detailed %>%
   rename("total19" = "2019",
          "total20" = "2020",
          "total21" = "2021",
-         "total22" = "2022")
+         "total22" = "2022",
+         "total23" = "2023")
 # add last 12 months
 beat_detailed_last12 <- houston_crime_last12 %>%
   group_by(beat,nibrs_class) %>%
@@ -282,7 +290,7 @@ beat_detailed$avg_prior3years <- round(beat_detailed$total_prior3years/3,1)
 beat_detailed$inc_19to21 <- round(beat_detailed$total21/beat_detailed$total19*100-100,1)
 beat_detailed$inc_19tolast12 <- round(beat_detailed$last12mos/beat_detailed$total19*100-100,1)
 beat_detailed$inc_21tolast12 <- round(beat_detailed$last12mos/beat_detailed$total21*100-100,1)
-beat_detailed$inc_prior3yearavgtolast12 <- round((beat_detailed$last12mos/beat_detailed$avg_prior3years)*100-100,0)
+beat_detailed$inc_prior3yearavgtolast12 <- round((beat_detailed$last12mos/beat_detailed$avg_prior3years)*100-100,1)
 # add population for beats
 beat_detailed <- full_join(beats,beat_detailed,by="beat") 
 # calculate the beat by beat rates PER 1K people
@@ -294,9 +302,9 @@ beat_detailed$rate_last12 <- round(beat_detailed$last12mos/beat_detailed$populat
 beat_detailed$rate_prior3years <- round(beat_detailed$avg_prior3years/beat_detailed$population*100000,1)
 # for map/table making purposes, changing Inf and NaN in calc fields to NA
 beat_detailed <- beat_detailed %>%
-  mutate(across(where(is.numeric), ~na_if(., Inf)))
+  mutate_if(is.numeric, ~ifelse(. == Inf, NA, .))
 beat_detailed <- beat_detailed %>%
-  mutate(across(where(is.numeric), ~na_if(., "NaN")))
+  mutate_if(is.numeric, ~ifelse(. == "NaN", NA, .))
 
 # Calculate total of each category of offense BY POLICE BEAT
 beat_category <- houston_crime %>%
@@ -310,7 +318,8 @@ beat_category <- beat_category %>%
   rename("total19" = "2019",
          "total20" = "2020",
          "total21" = "2021",
-         "total22" = "2022")
+         "total22" = "2022",
+         "total23" = "2023")
 # add last 12 months
 beat_category_last12 <- houston_crime_last12 %>%
   group_by(beat,category_name) %>%
@@ -326,7 +335,7 @@ beat_category$avg_prior3years <- round(beat_category$total_prior3years/3,1)
 beat_category$inc_19to21 <- round(beat_category$total21/beat_category$total19*100-100,1)
 beat_category$inc_19tolast12 <- round(beat_category$last12mos/beat_category$total19*100-100,1)
 beat_category$inc_21tolast12 <- round(beat_category$last12mos/beat_category$total21*100-100,1)
-beat_category$inc_prior3yearavgtolast12 <- round((beat_category$last12mos/beat_category$avg_prior3years)*100-100,0)
+beat_category$inc_prior3yearavgtolast12 <- round((beat_category$last12mos/beat_category$avg_prior3years)*100-100,1)
 # add population for beats
 beat_category <- full_join(beats,beat_category,by="beat") 
 # calculate the beat by beat rates PER 1K people
@@ -338,9 +347,9 @@ beat_category$rate_last12 <- round(beat_category$last12mos/beat_category$populat
 beat_category$rate_prior3years <- round(beat_category$avg_prior3years/beat_category$population*100000,1)
 # for map/table making purposes, changing Inf and NaN in calc fields to NA
 beat_category <- beat_category %>%
-  mutate(across(where(is.numeric), ~na_if(., Inf)))
+  mutate_if(is.numeric, ~ifelse(. == Inf, NA, .))
 beat_category <- beat_category %>%
-  mutate(across(where(is.numeric), ~na_if(., "NaN")))
+  mutate_if(is.numeric, ~ifelse(. == "NaN", NA, .))
 
 # Calculate total of each type of crime BY POLICE BEAT
 beat_type <- houston_crime %>%
@@ -354,7 +363,8 @@ beat_type <- beat_type %>%
   rename("total19" = "2019",
          "total20" = "2020",
          "total21" = "2021",
-         "total22" = "2022")
+         "total22" = "2022",
+         "total23" = "2023")
 # add last 12 months
 beat_type_last12 <- houston_crime_last12 %>%
   group_by(beat,type) %>%
@@ -370,7 +380,7 @@ beat_type$avg_prior3years <- round(beat_type$total_prior3years/3,1)
 beat_type$inc_19to21 <- round(beat_type$total21/beat_type$total19*100-100,1)
 beat_type$inc_19tolast12 <- round(beat_type$last12mos/beat_type$total19*100-100,1)
 beat_type$inc_21tolast12 <- round(beat_type$last12mos/beat_type$total21*100-100,1)
-beat_type$inc_prior3yearavgtolast12 <- round((beat_type$last12mos/beat_type$avg_prior3years)*100-100,0)
+beat_type$inc_prior3yearavgtolast12 <- round((beat_type$last12mos/beat_type$avg_prior3years)*100-100,1)
 # add population for beats
 beat_type <- full_join(beats,beat_type,by="beat") 
 # calculate the beat by beat rates PER 1K people
@@ -382,9 +392,9 @@ beat_type$rate_last12 <- round(beat_type$last12mos/beat_type$population*100000,1
 beat_type$rate_prior3years <- round(beat_type$avg_prior3years/beat_type$population*100000,1)
 # for map/table making purposes, changing Inf and NaN in calc fields to NA
 beat_type <- beat_type %>%
-  mutate(across(where(is.numeric), ~na_if(., Inf)))
+  mutate_if(is.numeric, ~ifelse(. == Inf, NA, .))
 beat_type <- beat_type %>%
-  mutate(across(where(is.numeric), ~na_if(., "NaN")))
+  mutate_if(is.numeric, ~ifelse(. == "NaN", NA, .))
 
 # output various csvs for basic tables to be made with crime totals
 # we are dropping geometry for beats here because this is just for tables
@@ -444,7 +454,8 @@ where_violentcrimes_happen <- houston_crime %>%
   rename("total19" = "2019",
          "total20" = "2020",
          "total21" = "2021",
-         "total22" = "2022") 
+         "total22" = "2022",
+         "total23" = "2023")
 
 # Using premise to identify the kinds of places where all violent crimes happen
 where_propertycrimes_happen <- houston_crime %>%
@@ -455,7 +466,8 @@ where_propertycrimes_happen <- houston_crime %>%
   rename("total19" = "2019",
          "total20" = "2020",
          "total21" = "2021",
-         "total22" = "2022") 
+         "total22" = "2022",
+         "total23" = "2023")
 
 # Using hour to identify the hours of day when murders happen
 when_murders_happen <- houston_crime %>%
