@@ -318,6 +318,15 @@ round(burglaries_beat$rate21,0),
 "</td>
 			</tr>
 						<tr>
+				<td>2022</td>
+				<td>",
+burglaries_beat$total22,
+"</td>
+				<td>",
+round(burglaries_beat$rate22,0),
+"</td>
+			</tr>
+						<tr>
 				<td>Last 12 months</td>
 				<td>",
 burglaries_beat$last12mos,

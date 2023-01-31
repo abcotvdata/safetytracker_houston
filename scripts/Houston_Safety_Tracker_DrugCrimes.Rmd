@@ -317,6 +317,15 @@ round(drugs_beat$rate21,0),
 "</td>
 			</tr>
 						<tr>
+				<td>2022</td>
+				<td>",
+drugs_beat$total22,
+"</td>
+				<td>",
+round(drugs_beat$rate22,0),
+"</td>
+			</tr>
+						<tr>
 				<td>Last 12 months</td>
 				<td>",
 drugs_beat$last12mos,

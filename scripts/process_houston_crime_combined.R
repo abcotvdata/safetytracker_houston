@@ -129,6 +129,7 @@ citywide_detailed$inc_prior3yearavgtolast12 <- round((citywide_detailed$last12mo
 citywide_detailed$rate19 <- round(citywide_detailed$total19/houston_population*100000,1)
 citywide_detailed$rate20 <- round(citywide_detailed$total20/houston_population*100000,1)
 citywide_detailed$rate21 <- round(citywide_detailed$total21/houston_population*100000,1)
+citywide_detailed$rate22 <- round(citywide_detailed$total22/houston_population*100000,1)
 citywide_detailed$rate_last12 <- round(citywide_detailed$last12mos/houston_population*100000,1)
 # calculate a multiyear rate
 citywide_detailed$rate_prior3years <- round(citywide_detailed$avg_prior3years/houston_population*100000,1)
@@ -186,6 +187,7 @@ citywide_category$inc_prior3yearavgtolast12 <- round((citywide_category$last12mo
 citywide_category$rate19 <- round(citywide_category$total19/houston_population*100000,1)
 citywide_category$rate20 <- round(citywide_category$total20/houston_population*100000,1)
 citywide_category$rate21 <- round(citywide_category$total21/houston_population*100000,1)
+citywide_category$rate22 <- round(citywide_category$total22/houston_population*100000,1)
 citywide_category$rate_last12 <- round(citywide_category$last12mos/houston_population*100000,1)
 # calculate a multiyear rate
 citywide_category$rate_prior3years <- round(citywide_category$avg_prior3years/houston_population*100000,1)
@@ -240,6 +242,7 @@ citywide_type$inc_prior3yearavgtolast12 <- round((citywide_type$last12mos/citywi
 citywide_type$rate19 <- round(citywide_type$total19/houston_population*100000,1)
 citywide_type$rate20 <- round(citywide_type$total20/houston_population*100000,1)
 citywide_type$rate21 <- round(citywide_type$total21/houston_population*100000,1)
+citywide_type$rate22 <- round(citywide_type$total22/houston_population*100000,1)
 citywide_type$rate_last12 <- round(citywide_type$last12mos/houston_population*100000,1)
 # calculate a multiyear rate
 citywide_type$rate_prior3years <- round(citywide_type$avg_prior3years/houston_population*100000,1)
@@ -297,6 +300,7 @@ beat_detailed <- full_join(beats,beat_detailed,by="beat")
 beat_detailed$rate19 <- round(beat_detailed$total19/beat_detailed$population*100000,1)
 beat_detailed$rate20 <- round(beat_detailed$total20/beat_detailed$population*100000,1)
 beat_detailed$rate21 <- round(beat_detailed$total21/beat_detailed$population*100000,1)
+beat_detailed$rate22 <- round(beat_detailed$total22/beat_detailed$population*100000,1)
 beat_detailed$rate_last12 <- round(beat_detailed$last12mos/beat_detailed$population*100000,1)
 # calculate a multiyear rate
 beat_detailed$rate_prior3years <- round(beat_detailed$avg_prior3years/beat_detailed$population*100000,1)
@@ -342,6 +346,7 @@ beat_category <- full_join(beats,beat_category,by="beat")
 beat_category$rate19 <- round(beat_category$total19/beat_category$population*100000,1)
 beat_category$rate20 <- round(beat_category$total20/beat_category$population*100000,1)
 beat_category$rate21 <- round(beat_category$total21/beat_category$population*100000,1)
+beat_category$rate22 <- round(beat_category$total22/beat_category$population*100000,1)
 beat_category$rate_last12 <- round(beat_category$last12mos/beat_category$population*100000,1)
 # calculate a multiyear rate
 beat_category$rate_prior3years <- round(beat_category$avg_prior3years/beat_category$population*100000,1)
@@ -387,6 +392,7 @@ beat_type <- full_join(beats,beat_type,by="beat")
 beat_type$rate19 <- round(beat_type$total19/beat_type$population*100000,1)
 beat_type$rate20 <- round(beat_type$total20/beat_type$population*100000,1)
 beat_type$rate21 <- round(beat_type$total21/beat_type$population*100000,1)
+beat_type$rate22 <- round(beat_type$total22/beat_type$population*100000,1)
 beat_type$rate_last12 <- round(beat_type$last12mos/beat_type$population*100000,1)
 # calculate a multiyear rate
 beat_type$rate_prior3years <- round(beat_type$avg_prior3years/beat_type$population*100000,1)
