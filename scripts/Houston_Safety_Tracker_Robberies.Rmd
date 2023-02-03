@@ -201,7 +201,6 @@ houston_population <- 2304580
 <option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_Assaults.html">Assaults</option>
 <option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_AutoThefts.html">Auto Thefts</option>
 <option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_Burglaries.html">Burglaries</option>
-<option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_DrugCrimes.html">Drug Crimes</option>
 <option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker.html">Homicides</option>
 <option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_Robberies.html">Robberies</option>
 <option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_SexualAssaults.html">Sexual Assaults</option>
@@ -216,8 +215,8 @@ houston_population <- 2304580
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Robberies<br>
-<bignumber>`r prettyNum(round(robberies_city$avg_prior3years,0), big.mark=",")`<br></bignumber><p>
-Yearly average<br>2019 to 2021</p>
+<bignumber>`r prettyNum(round(robberies_city$avg_prior4years,0), big.mark=",")`<br></bignumber><p>
+Yearly average<br>2019 to 2022</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>Robbery Rate<br>
@@ -226,12 +225,12 @@ Per 100,000 people<br>Last 12 months</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Robbery Rate<br>
-<bignumber>`r round(robberies_city$rate_prior3years,0)`<br></bignumber><p>
-Per 100,000 people<br>2019 to 2021</p>
+<bignumber>`r round(robberies_city$rate_prior4years,0)`<br></bignumber><p>
+Per 100,000 people<br>2019 to 2022</p>
 </div>
 </div>
 <br>
-Robberies over the last 12 months are <h8>`r ifelse(robberies_city$inc_prior3yearavgtolast12>=0," up"," down")` `r ifelse(robberies_city$inc_prior3yearavgtolast12>=0,robberies_city$inc_prior3yearavgtolast12,substring(robberies_city$inc_prior3yearavgtolast12,2))`%</h8> compared to the annual average over the last three years, according to the latest data available from the Houston Police Department.
+Robberies over the last 12 months are <h8>`r ifelse(robberies_city$inc_prior4yearavgtolast12>=0," up"," down")` `r ifelse(robberies_city$inc_prior4yearavgtolast12>=0,robberies_city$inc_prior4yearavgtolast12,substring(robberies_city$inc_prior4yearavgtolast12,2))`%</h8> compared to the annual average over the last four years, according to the latest data available from the Houston Police Department.
 
 The city averaged <h8>`r round(robberies_city$last12mos/52,0)`</h8> robberies a week over the last 12 months. In 2019, that number was <h8>`r round(robberies_city$total19/52,0)`</h8> a week.
 
@@ -336,12 +335,12 @@ round(robberies_beat$rate_last12,0),
 "</td>
 			</tr>
 						<tr>
-				<td>3-year Average</td>
+				<td>4-year Average</td>
 				<td>",
-round(robberies_beat$avg_prior3years,0),
+round(robberies_beat$avg_prior4years,0),
 "</td>
 				<td>",
-round(robberies_beat$rate_prior3years,0),
+round(robberies_beat$rate_prior4years,0),
 "</td>
 			</tr>
 </table>")
@@ -419,8 +418,7 @@ houston_robbery_map
 </script>
   <br>
 <br>
-<!-- <subhead>Risk of robbery and other violent crimes in Houston </subhead> -->
-
-<iframe title="Risk of violent crimes compared to other kinds of deaths, injuries" aria-label="Dot Plot" id="datawrapper-chart-rh4Xu" src="https://datawrapper.dwcdn.net/rh4Xu/7/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="214" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+<iframe title="2021 violent crime rate comparison in select major cities" aria-label="Bar Chart" id="datawrapper-chart-91a8i" src="https://datawrapper.dwcdn.net/91a8i/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="580" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
 </script>
+  <br>
 <br>

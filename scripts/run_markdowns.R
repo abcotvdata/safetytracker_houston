@@ -74,13 +74,4 @@ rmarkdown::render('scripts/Houston_Safety_Tracker_SexualAssaults.Rmd',
                   output_dir = "docs",
                   output_file = 'Houston_Safety_Tracker_SexualAssaults.html')
 
-# DRUG CRIMES
-# Load RDS
-drugs_beat <- readRDS("scripts/rds/drugs_beat.rds")
-drugs_city <- readRDS("scripts/rds/drugs_city.rds")
-asofdate <- readRDS("scripts/rds/asofdate.rds")
-# Render page
-rmarkdown::render('scripts/Houston_Safety_Tracker_DrugCrimes.Rmd',
-                  output_dir = "docs",
-                  output_file = 'Houston_Safety_Tracker_DrugCrimes.html')
 

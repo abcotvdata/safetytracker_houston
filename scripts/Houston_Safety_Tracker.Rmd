@@ -201,7 +201,6 @@ You can choose which crime to explore: <select onchange="window.location=this.va
 <option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_Assaults.html">Assaults</option>
 <option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_AutoThefts.html">Auto Thefts</option>
 <option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_Burglaries.html">Burglaries</option>
-<option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_DrugCrimes.html">Drug Crimes</option>
 <option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker.html">Homicides</option>
 <option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_Robberies.html">Robberies</option>
 <option value="https://abcotvdata.github.io/safetytracker_houston/Houston_Safety_Tracker_SexualAssaults.html">Sexual Assaults</option>
@@ -216,8 +215,8 @@ You can choose which crime to explore: <select onchange="window.location=this.va
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Homicides<br>
-<bignumber>`r prettyNum(round(murders_city$avg_prior3years,0), big.mark=",")`<br></bignumber><p>
-Yearly average<br>2019 to 2021</p>
+<bignumber>`r prettyNum(round(murders_city$avg_prior4years,0), big.mark=",")`<br></bignumber><p>
+Yearly average<br>2019 to 2022</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>Homicide Rate<br>
@@ -226,14 +225,14 @@ Per 100,000 people<br>Last 12 months</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Homicide Rate<br>
-<bignumber>`r murders_city$rate_prior3years`<br></bignumber><p>
-Per 100,000 people<br>2019 to 2021</p>
+<bignumber>`r murders_city$rate_prior4years`<br></bignumber><p>
+Per 100,000 people<br>2019 to 2022</p>
 </div>
 </div>
 <br>
 Homicides over the last 12 months are trending <h8>`r ifelse(murders_city$inc_21tolast12>=0," up"," down")` `r ifelse(murders_city$inc_21tolast12>=0,murders_city$inc_21tolast12,substring(murders_city$inc_21tolast12,2))`%</h8> compared to 2021, according to the latest data available from the Houston Police Department.
 
-However, the murder rate over the last 12 months is<h8>`r ifelse(murders_city$inc_prior3yearavgtolast12>=0," up"," down")` `r ifelse(murders_city$inc_prior3yearavgtolast12>=0,murders_city$inc_prior3yearavgtolast12,substring(murders_city$inc_prior3yearavgtolast12,2))`%</h8> compared to the annual average over the last three years, and the frequency of killings remains higher than it was before the pandemic.
+However, the murder rate over the last 12 months is<h8>`r ifelse(murders_city$inc_prior4yearavgtolast12>=0," up"," down")` `r ifelse(murders_city$inc_prior4yearavgtolast12>=0,murders_city$inc_prior4yearavgtolast12,substring(murders_city$inc_prior4yearavgtolast12,2))`%</h8> compared to the annual average over the last four years, and the frequency of killings remains higher than it was before the pandemic.
 
 The city averaged <h8>`r round(murders_city$last12mos/52,0)`</h8> homicides a week over the last 12 months. In 2019, that number was <h8>`r round(murders_city$total19/52,0)`</h8> a week.
 
@@ -351,12 +350,12 @@ murders_beat$rate_last12,
 "</td>
 			</tr>
 						<tr>
-				<td>3-year Average</td>
+				<td>4-year Average</td>
 				<td>",
-murders_beat$avg_prior3years,
+murders_beat$avg_prior4years,
 "</td>
 				<td>",
-murders_beat$rate_prior3years,
+murders_beat$rate_prior4years,
 "</td>
 			</tr>
 </table>")

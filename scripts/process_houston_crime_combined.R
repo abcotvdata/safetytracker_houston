@@ -118,13 +118,13 @@ citywide_detailed <- left_join(citywide_detailed,citywide_detailed_last12,by=c("
 # add zeros where there were no crimes tallied that year
 citywide_detailed[is.na(citywide_detailed)] <- 0
 # Calculate a total across the 3 prior years
-citywide_detailed$total_prior3years <- citywide_detailed$total19+citywide_detailed$total20+citywide_detailed$total21
-citywide_detailed$avg_prior3years <- round(citywide_detailed$total_prior3years/3,1)
+citywide_detailed$total_prior4years <- citywide_detailed$total19+citywide_detailed$total20+citywide_detailed$total21+citywide_detailed$total22
+citywide_detailed$avg_prior4years <- round(citywide_detailed$total_prior4years/4,1)
 # calculate increases
 citywide_detailed$inc_19to21 <- round(citywide_detailed$total21/citywide_detailed$total19*100-100,1)
 citywide_detailed$inc_19tolast12 <- round(citywide_detailed$last12mos/citywide_detailed$total19*100-100,1)
 citywide_detailed$inc_21tolast12 <- round(citywide_detailed$last12mos/citywide_detailed$total21*100-100,1)
-citywide_detailed$inc_prior3yearavgtolast12 <- round((citywide_detailed$last12mos/citywide_detailed$avg_prior3years)*100-100,1)
+citywide_detailed$inc_prior4yearavgtolast12 <- round((citywide_detailed$last12mos/citywide_detailed$avg_prior4years)*100-100,1)
 # calculate the citywide rates
 citywide_detailed$rate19 <- round(citywide_detailed$total19/houston_population*100000,1)
 citywide_detailed$rate20 <- round(citywide_detailed$total20/houston_population*100000,1)
@@ -132,7 +132,7 @@ citywide_detailed$rate21 <- round(citywide_detailed$total21/houston_population*1
 citywide_detailed$rate22 <- round(citywide_detailed$total22/houston_population*100000,1)
 citywide_detailed$rate_last12 <- round(citywide_detailed$last12mos/houston_population*100000,1)
 # calculate a multiyear rate
-citywide_detailed$rate_prior3years <- round(citywide_detailed$avg_prior3years/houston_population*100000,1)
+citywide_detailed$rate_prior4years <- round(citywide_detailed$avg_prior4years/houston_population*100000,1)
 # for map/table making purposes, changing Inf and NaN in calc fields to NA
 #citywide_detailed <- citywide_detailed %>%
 #  mutate(across(where(is.numeric), ~na_if(., Inf)))
@@ -176,13 +176,13 @@ citywide_category <- left_join(citywide_category,citywide_category_last12,by=c("
 # add zeros where there were no crimes tallied that year
 citywide_category[is.na(citywide_category)] <- 0
 # Calculate a total across the 3 prior years
-citywide_category$total_prior3years <- citywide_category$total19+citywide_category$total20+citywide_category$total21
-citywide_category$avg_prior3years <- round(citywide_category$total_prior3years/3,1)
+citywide_category$total_prior4years <- citywide_category$total19+citywide_category$total20+citywide_category$total21+citywide_category$total22
+citywide_category$avg_prior4years <- round(citywide_category$total_prior4years/4,1)
 # calculate increases
 citywide_category$inc_19to21 <- round(citywide_category$total21/citywide_category$total19*100-100,1)
 citywide_category$inc_19tolast12 <- round(citywide_category$last12mos/citywide_category$total19*100-100,1)
 citywide_category$inc_21tolast12 <- round(citywide_category$last12mos/citywide_category$total21*100-100,1)
-citywide_category$inc_prior3yearavgtolast12 <- round((citywide_category$last12mos/citywide_category$avg_prior3years)*100-100,1)
+citywide_category$inc_prior4yearavgtolast12 <- round((citywide_category$last12mos/citywide_category$avg_prior4years)*100-100,1)
 # calculate the citywide rates
 citywide_category$rate19 <- round(citywide_category$total19/houston_population*100000,1)
 citywide_category$rate20 <- round(citywide_category$total20/houston_population*100000,1)
@@ -190,7 +190,7 @@ citywide_category$rate21 <- round(citywide_category$total21/houston_population*1
 citywide_category$rate22 <- round(citywide_category$total22/houston_population*100000,1)
 citywide_category$rate_last12 <- round(citywide_category$last12mos/houston_population*100000,1)
 # calculate a multiyear rate
-citywide_category$rate_prior3years <- round(citywide_category$avg_prior3years/houston_population*100000,1)
+citywide_category$rate_prior4years <- round(citywide_category$avg_prior4years/houston_population*100000,1)
 
 # Calculate monthly totals for categories of crimes CITYWIDE
 citywide_category_monthly <- houston_crime %>%
@@ -229,15 +229,15 @@ citywide_type_last12 <- houston_crime_last12 %>%
   summarise(last12mos = sum(offense_count))
 citywide_type <- left_join(citywide_type,citywide_type_last12,by=c("type"))
 # Calculate a total across the 3 prior years
-citywide_type$total_prior3years <- citywide_type$total19+citywide_type$total20+citywide_type$total21
-citywide_type$avg_prior3years <- round(citywide_type$total_prior3years/3,1)
+citywide_type$total_prior4years <- citywide_type$total19+citywide_type$total20+citywide_type$total21+citywide_type$total22
+citywide_type$avg_prior4years <- round(citywide_type$total_prior4years/4,1)
 # add zeros where there were no crimes tallied that year
 citywide_type[is.na(citywide_type)] <- 0
 # calculate increases
 citywide_type$inc_19to21 <- round(citywide_type$total21/citywide_type$total19*100-100,1)
 citywide_type$inc_19tolast12 <- round(citywide_type$last12mos/citywide_type$total19*100-100,1)
 citywide_type$inc_21tolast12 <- round(citywide_type$last12mos/citywide_type$total21*100-100,1)
-citywide_type$inc_prior3yearavgtolast12 <- round((citywide_type$last12mos/citywide_type$avg_prior3years)*100-100,1)
+citywide_type$inc_prior4yearavgtolast12 <- round((citywide_type$last12mos/citywide_type$avg_prior4years)*100-100,1)
 # calculate the citywide rates
 citywide_type$rate19 <- round(citywide_type$total19/houston_population*100000,1)
 citywide_type$rate20 <- round(citywide_type$total20/houston_population*100000,1)
@@ -245,7 +245,7 @@ citywide_type$rate21 <- round(citywide_type$total21/houston_population*100000,1)
 citywide_type$rate22 <- round(citywide_type$total22/houston_population*100000,1)
 citywide_type$rate_last12 <- round(citywide_type$last12mos/houston_population*100000,1)
 # calculate a multiyear rate
-citywide_type$rate_prior3years <- round(citywide_type$avg_prior3years/houston_population*100000,1)
+citywide_type$rate_prior4years <- round(citywide_type$avg_prior4years/houston_population*100000,1)
 
 ### HOUSTON POLICE BEAT CRIME TOTALS AND OUTPUT
 
@@ -287,13 +287,13 @@ rm(beat_detailed_last12)
 # add zeros where there were no crimes tallied that year
 beat_detailed[is.na(beat_detailed)] <- 0
 # Calculate a total across the 3 prior years
-beat_detailed$total_prior3years <- beat_detailed$total19+beat_detailed$total20+beat_detailed$total21
-beat_detailed$avg_prior3years <- round(beat_detailed$total_prior3years/3,1)
+beat_detailed$total_prior4years <- beat_detailed$total19+beat_detailed$total20+beat_detailed$total21+beat_detailed$total22
+beat_detailed$avg_prior4years <- round(beat_detailed$total_prior4years/4,1)
 # calculate increases
 beat_detailed$inc_19to21 <- round(beat_detailed$total21/beat_detailed$total19*100-100,1)
 beat_detailed$inc_19tolast12 <- round(beat_detailed$last12mos/beat_detailed$total19*100-100,1)
 beat_detailed$inc_21tolast12 <- round(beat_detailed$last12mos/beat_detailed$total21*100-100,1)
-beat_detailed$inc_prior3yearavgtolast12 <- round((beat_detailed$last12mos/beat_detailed$avg_prior3years)*100-100,1)
+beat_detailed$inc_prior4yearavgtolast12 <- round((beat_detailed$last12mos/beat_detailed$avg_prior4years)*100-100,1)
 # add population for beats
 beat_detailed <- full_join(beats,beat_detailed,by="beat") 
 # calculate the beat by beat rates PER 1K people
@@ -303,7 +303,7 @@ beat_detailed$rate21 <- round(beat_detailed$total21/beat_detailed$population*100
 beat_detailed$rate22 <- round(beat_detailed$total22/beat_detailed$population*100000,1)
 beat_detailed$rate_last12 <- round(beat_detailed$last12mos/beat_detailed$population*100000,1)
 # calculate a multiyear rate
-beat_detailed$rate_prior3years <- round(beat_detailed$avg_prior3years/beat_detailed$population*100000,1)
+beat_detailed$rate_prior4years <- round(beat_detailed$avg_prior4years/beat_detailed$population*100000,1)
 # for map/table making purposes, changing Inf and NaN in calc fields to NA
 beat_detailed <- beat_detailed %>%
   mutate_if(is.numeric, ~ifelse(. == Inf, NA, .))
@@ -333,13 +333,13 @@ rm(beat_category_last12)
 # add zeros where there were no crimes tallied that year
 beat_category[is.na(beat_category)] <- 0
 # Calculate a total across the 3 prior years
-beat_category$total_prior3years <- beat_category$total19+beat_category$total20+beat_category$total21
-beat_category$avg_prior3years <- round(beat_category$total_prior3years/3,1)
+beat_category$total_prior4years <- beat_category$total19+beat_category$total20+beat_category$total21+beat_category$total22
+beat_category$avg_prior4years <- round(beat_category$total_prior4years/4,1)
 # calculate increases
 beat_category$inc_19to21 <- round(beat_category$total21/beat_category$total19*100-100,1)
 beat_category$inc_19tolast12 <- round(beat_category$last12mos/beat_category$total19*100-100,1)
 beat_category$inc_21tolast12 <- round(beat_category$last12mos/beat_category$total21*100-100,1)
-beat_category$inc_prior3yearavgtolast12 <- round((beat_category$last12mos/beat_category$avg_prior3years)*100-100,1)
+beat_category$inc_prior4yearavgtolast12 <- round((beat_category$last12mos/beat_category$avg_prior4years)*100-100,1)
 # add population for beats
 beat_category <- full_join(beats,beat_category,by="beat") 
 # calculate the beat by beat rates PER 1K people
@@ -349,7 +349,7 @@ beat_category$rate21 <- round(beat_category$total21/beat_category$population*100
 beat_category$rate22 <- round(beat_category$total22/beat_category$population*100000,1)
 beat_category$rate_last12 <- round(beat_category$last12mos/beat_category$population*100000,1)
 # calculate a multiyear rate
-beat_category$rate_prior3years <- round(beat_category$avg_prior3years/beat_category$population*100000,1)
+beat_category$rate_prior4years <- round(beat_category$avg_prior4years/beat_category$population*100000,1)
 # for map/table making purposes, changing Inf and NaN in calc fields to NA
 beat_category <- beat_category %>%
   mutate_if(is.numeric, ~ifelse(. == Inf, NA, .))
@@ -379,7 +379,7 @@ rm(beat_type_last12)
 # add zeros where there were no crimes tallied that year
 beat_type[is.na(beat_type)] <- 0
 # Calculate a total across the 3 prior years
-beat_type$total_prior3years <- beat_type$total19+beat_type$total20+beat_type$total21
+beat_type$total_prior4years <- beat_type$total19+beat_type$total20+beat_type$total21+beat_type$total22
 beat_type$avg_prior3years <- round(beat_type$total_prior3years/3,1)
 # calculate increases
 beat_type$inc_19to21 <- round(beat_type$total21/beat_type$total19*100-100,1)
