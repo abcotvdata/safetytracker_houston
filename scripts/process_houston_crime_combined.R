@@ -134,10 +134,6 @@ citywide_detailed$rate_last12 <- round(citywide_detailed$last12mos/houston_popul
 # calculate a multiyear rate
 citywide_detailed$rate_prior4years <- round(citywide_detailed$avg_prior4years/houston_population*100000,1)
 # for map/table making purposes, changing Inf and NaN in calc fields to NA
-#citywide_detailed <- citywide_detailed %>%
-#  mutate(across(where(is.numeric), ~na_if(., Inf)))
-#citywide_detailed <- citywide_detailed %>%
-#  mutate(across(where(is.numeric), ~na_if(., "NaN")))
 citywide_detailed <- citywide_detailed %>%
   mutate_if(is.numeric, ~ifelse(. == Inf, NA, .))
 citywide_detailed <- citywide_detailed %>%
@@ -380,12 +376,12 @@ rm(beat_type_last12)
 beat_type[is.na(beat_type)] <- 0
 # Calculate a total across the 3 prior years
 beat_type$total_prior4years <- beat_type$total19+beat_type$total20+beat_type$total21+beat_type$total22
-beat_type$avg_prior3years <- round(beat_type$total_prior3years/3,1)
+beat_type$avg_prior4years <- round(beat_type$total_prior4years/4,1)
 # calculate increases
 beat_type$inc_19to21 <- round(beat_type$total21/beat_type$total19*100-100,1)
 beat_type$inc_19tolast12 <- round(beat_type$last12mos/beat_type$total19*100-100,1)
 beat_type$inc_21tolast12 <- round(beat_type$last12mos/beat_type$total21*100-100,1)
-beat_type$inc_prior3yearavgtolast12 <- round((beat_type$last12mos/beat_type$avg_prior3years)*100-100,1)
+beat_type$inc_prior4yearavgtolast12 <- round((beat_type$last12mos/beat_type$avg_prior4years)*100-100,1)
 # add population for beats
 beat_type <- full_join(beats,beat_type,by="beat") 
 # calculate the beat by beat rates PER 1K people
@@ -395,7 +391,7 @@ beat_type$rate21 <- round(beat_type$total21/beat_type$population*100000,1)
 beat_type$rate22 <- round(beat_type$total22/beat_type$population*100000,1)
 beat_type$rate_last12 <- round(beat_type$last12mos/beat_type$population*100000,1)
 # calculate a multiyear rate
-beat_type$rate_prior3years <- round(beat_type$avg_prior3years/beat_type$population*100000,1)
+beat_type$rate_prior4years <- round(beat_type$avg_prior4years/beat_type$population*100000,1)
 # for map/table making purposes, changing Inf and NaN in calc fields to NA
 beat_type <- beat_type %>%
   mutate_if(is.numeric, ~ifelse(. == Inf, NA, .))
