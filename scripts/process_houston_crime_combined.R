@@ -77,10 +77,15 @@ houston_crime$premise <- case_when(houston_crime$premise == 'Amusement Park' ~ '
 asofdate <- max(houston_crime$date)
 saveRDS(asofdate,"scripts/rds/asofdate.rds")
 
-# write csv of houston crime as a backup
-# worthwhile to think through if the full csv is even necessary to save; maybe for redundancy
-write_csv(houston_crime,"data/output/houston_crime.csv")
+# save the process full houston_crime file as rds
+# then, for redundancy and use by station csvs for each year
+# also helps with gh file size issues and download issues
 saveRDS(houston_crime,"scripts/rds/houston_crime.rds")
+houston_crime %>% filter(houston_crime$year == 2023) %>% write_csv("data/output/houston_crime_all2023.csv")
+# houston_crime %>% filter(houston_crime$year == 2022) %>% write_csv("data/output/houston_crime_all2022.csv")
+# houston_crime %>% filter(houston_crime$year == 2021) %>% write_csv("data/output/houston_crime_all2021.csv")
+# houston_crime %>% filter(houston_crime$year == 2020) %>% write_csv("data/output/houston_crime_all2020.csv")
+# houston_crime %>% filter(houston_crime$year == 2019) %>% write_csv("data/output/houston_crime_all2019.csv")
 
 # days total incidents and output for validation
 days <- houston_crime %>% group_by(date) %>% summarise(count=n()) %>% arrange(desc(date))
@@ -535,3 +540,5 @@ write_csv(deaths,"data/source/health/death_rates.csv")
 # 2021 fbi citywide crime rates for murder, violent, property charts
 # manually updated excel in reference folder
 # local number for murder from local; rest for all cities from FBI CDE
+
+
