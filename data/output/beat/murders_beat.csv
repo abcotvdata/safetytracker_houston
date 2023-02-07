@@ -13,7 +13,7 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 2A50,2,5.4659844,"Memorial Park, West End, Ashbury and Cottage Grove",29000,"Murder, non-negligent",09A,1,0,5,2,0,2,8,2,400,100,-60,0,3.4,0,17.2,6.9,6.9,6.9
 2A60,2,4.67447346,"Westport, Holly Park, Lazy Brook, Citadel, Shady Acres and Timbergrove",21000,"Murder, non-negligent",09A,2,1,0,0,2,2,3,0.8,-100,0,NA,150,9.5,4.8,0,0,9.5,3.8
 3B10,3,6.82068773,"Northwest Mall, Brookhollow, White Oak Acres, Oak Forest and Langwood",34000,"Murder, non-negligent",09A,4,2,10,5,2,6,21,5.2,150,50,-40,15.4,11.8,5.9,29.4,14.7,17.6,15.3
-3B30,3,5.310372,"White Oak Acres, Brook Hollow, Oak Forest, Garden Oaks and Shepherd Park Plaza",23000,"Murder, non-negligent",09A,0,3,2,3,0,3,8,2,NA,NA,50,50,0,13,8.7,13,13,8.7
+3B30,3,5.310372,"White Oak Acres, Brook Hollow, Oak Forest, Garden Oaks and Shepherd Park Plaza",23000,"Murder, non-negligent",09A,0,3,2,3,0,0,8,2,NA,NA,-100,-100,0,13,8.7,13,0,8.7
 3B40,3,3.40013561,"Independence Heights, Melrose and Graceland",13000,"Murder, non-negligent",09A,5,6,8,6,0,6,25,6.2,60,20,-25,-3.2,38.5,46.2,61.5,46.2,46.2,47.7
 3B50,3,3.85259517,"Northline Mall, Stratton Place, Oakwood, Colonial Gardens, Lindale and Junction City",20000,"Murder, non-negligent",09A,1,3,8,6,0,6,18,4.5,700,500,-25,33.3,5,15,40,30,30,22.5
 5F10,5,3.25978513,Afton Village and Pine Terrace,14000,"Murder, non-negligent",09A,0,0,4,4,0,4,8,2,NA,NA,0,100,0,0,28.6,28.6,28.6,14.3
@@ -64,7 +64,7 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 13D30,13,3.07402543,"Allen Farms, Airport Gardens and the Hobby Airport area",2000,"Murder, non-negligent",09A,0,1,0,0,0,0,1,0.2,NA,NA,NA,-100,0,50,0,0,0,10
 13D40,13,5.0688163,"Val Verde East, Gulf Meadows and Houston Skyscraper Shadows",13000,"Murder, non-negligent",09A,0,2,1,5,0,5,8,2,NA,NA,400,150,0,15.4,7.7,38.5,38.5,15.4
 14D10,14,3.66057918,McGregor Terrace and Riverside Terrace,17000,"Murder, non-negligent",09A,11,13,13,8,1,8,45,11.2,18.2,-27.3,-38.5,-28.6,64.7,76.5,76.5,47.1,47.1,65.9
-14D20,14,7.25646368,"Blueridge, Sunnyside, Brook Haven and Bayou Estates",28000,"Murder, non-negligent",09A,15,21,18,15,0,14,69,17.2,20,-6.7,-22.2,-18.6,53.6,75,64.3,53.6,50,61.4
+14D20,14,7.25646368,"Blueridge, Sunnyside, Brook Haven and Bayou Estates",28000,"Murder, non-negligent",09A,15,21,18,15,0,13,69,17.2,20,-13.3,-27.8,-24.4,53.6,75,64.3,53.6,46.4,61.4
 14D30,14,4.20537595,"Crestmont, Edgewood, Bellfort Park, Inwood Terrace and Southpark",21000,"Murder, non-negligent",09A,6,7,8,7,0,6,28,7,33.3,0,-25,-14.3,28.6,33.3,38.1,33.3,28.6,33.3
 14D40,14,6.61224595,"South Acres, Shamrock Manor, Hillwood and Cloverland",21000,"Murder, non-negligent",09A,4,8,2,8,0,6,22,5.5,-50,50,200,9.1,19,38.1,9.5,38.1,28.6,26.2
 14D50,14,8.69627992,"Golden Glade Estates, Langston and Almeda Genoa",9000,"Murder, non-negligent",09A,2,1,3,5,0,3,11,2.8,50,50,0,7.1,22.2,11.1,33.3,55.6,33.3,31.1
