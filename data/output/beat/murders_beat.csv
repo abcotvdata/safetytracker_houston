@@ -19,7 +19,7 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 5F10,5,3.25978513,Afton Village and Pine Terrace,14000,"Murder, non-negligent",09A,0,0,4,4,0,4,8,2,NA,NA,0,100,0,0,28.6,28.6,28.6,14.3
 5F30,5,8.70689439,"Fairbanks, Carverdale, Fawndale and Northwest Crossing",17000,"Murder, non-negligent",09A,7,4,2,4,0,3,17,4.2,-71.4,-57.1,50,-28.6,41.2,23.5,11.8,23.5,17.6,24.7
 6B10,6,5.50084827,"York Plaza, Pembrook Place and Hawthorne Place",33000,"Murder, non-negligent",09A,7,8,9,10,2,9,34,8.5,28.6,28.6,0,5.9,21.2,24.2,27.3,30.3,27.3,25.8
-6B20,6,6.12869477,"Highland Heights, Oakdale and Melrose Gardens",18000,"Murder, non-negligent",09A,2,3,9,2,2,3,16,4,350,50,-66.7,-25,11.1,16.7,50,11.1,16.7,22.2
+6B20,6,6.12869477,"Highland Heights, Oakdale and Melrose Gardens",18000,"Murder, non-negligent",09A,2,3,9,2,1,2,16,4,350,0,-77.8,-50,11.1,16.7,50,11.1,11.1,22.2
 6B30,6,7.2300685,"Woodland Trails, Oaks of Inwood, Bayou Bend, Cole Creek Manor and Inwood Forest",38000,"Murder, non-negligent",09A,5,6,11,3,0,3,25,6.2,120,-40,-72.7,-51.6,13.2,15.8,28.9,7.9,7.9,16.3
 6B40,6,5.544689,"Highland Gardens, Highland Heights and North Plaza",20000,"Murder, non-negligent",09A,5,12,9,6,0,5,32,8,80,0,-44.4,-37.5,25,60,45,30,25,40
 22B30,22,2.8264671,Aldine and Imperial Valley,19000,"Murder, non-negligent",09A,2,3,4,2,0,1,11,2.8,100,-50,-75,-64.3,10.5,15.8,21.1,10.5,5.3,14.7
@@ -45,7 +45,7 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 10H40,10,0.99627062,Midtown,8000,"Murder, non-negligent",09A,0,7,11,2,0,2,20,5,NA,NA,-81.8,-60,0,87.5,137.5,25,25,62.5
 10H50,10,2.30843079,the University of Houston area,13000,"Murder, non-negligent",09A,5,9,6,10,1,9,30,7.5,20,80,50,20,38.5,69.2,46.2,76.9,69.2,57.7
 10H60,10,3.08931006,"University Oaks, Riverside Terrace and the Texas Southern University area",20000,"Murder, non-negligent",09A,5,4,5,5,0,5,19,4.8,0,0,0,4.2,25,20,25,25,25,24
-10H70,10,3.52217952,"Texas Medical Center, Hermann Park, Houston Zoo and Miller Outdoor Theatre",16000,"Murder, non-negligent",09A,0,3,0,1,1,2,4,1,NA,NA,NA,100,0,18.8,0,6.2,12.5,6.2
+10H70,10,3.52217952,"Texas Medical Center, Hermann Park, Houston Zoo and Miller Outdoor Theatre",16000,"Murder, non-negligent",09A,0,3,0,1,2,3,4,1,NA,NA,NA,200,0,18.8,0,6.2,18.8,6.2
 10H80,10,2.73862779,"Southampton, Rice University area, Shadow Lawn and Broad Acres",19000,"Murder, non-negligent",09A,1,0,0,1,0,1,2,0.5,-100,0,NA,100,5.3,0,0,5.3,5.3,2.6
 11H10,11,5.31502815,"Mason Park, Forest Hill, Sunnyland and Central Park",28000,"Murder, non-negligent",09A,9,5,3,3,0,2,20,5,-66.7,-77.8,-33.3,-60,32.1,17.9,10.7,10.7,7.1,17.9
 11H20,11,3.9311161,"Harrisburg, Manchester and Pecan Park",18000,"Murder, non-negligent",09A,1,2,4,3,0,3,10,2.5,300,200,-25,20,5.6,11.1,22.2,16.7,16.7,13.9
@@ -59,7 +59,7 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 12D50,12,8.93327581,"Bay Glen, Bay Oaks, Brook Forest and Bay Forest",26000,"Murder, non-negligent",09A,0,1,0,0,0,0,1,0.2,NA,NA,NA,-100,0,3.8,0,0,0,0.8
 12D60,12,6.35832041,"NASA's Johnson Space Center, Meadow Green, Oakbrook West and Camino South",22000,"Murder, non-negligent",09A,1,0,0,2,0,2,3,0.8,-100,100,NA,150,4.5,0,0,9.1,9.1,3.6
 12D70,12,5.39156317,Baybrook Mall and Sterling Knoll,12000,"Murder, non-negligent",09A,0,2,1,1,0,1,4,1,NA,NA,0,0,0,16.7,8.3,8.3,8.3,8.3
-13D10,13,5.2433708,"Gulfgate Mall, Bay Forest, Riverview, Hampshire, Golfcrest and Barnett Stadium",23000,"Murder, non-negligent",09A,2,4,6,8,0,6,20,5,200,200,0,20,8.7,17.4,26.1,34.8,26.1,21.7
+13D10,13,5.2433708,"Gulfgate Mall, Bay Forest, Riverview, Hampshire, Golfcrest and Barnett Stadium",23000,"Murder, non-negligent",09A,2,4,6,8,0,5,20,5,200,150,-16.7,0,8.7,17.4,26.1,34.8,21.7,21.7
 13D20,13,6.66870859,"Fairlawn, Garden Villas, Glenbrook Valley and Santa Rosa",36000,"Murder, non-negligent",09A,11,4,14,10,0,9,39,9.8,27.3,-18.2,-35.7,-8.2,30.6,11.1,38.9,27.8,25,27.2
 13D30,13,3.07402543,"Allen Farms, Airport Gardens and the Hobby Airport area",2000,"Murder, non-negligent",09A,0,1,0,0,0,0,1,0.2,NA,NA,NA,-100,0,50,0,0,0,10
 13D40,13,5.0688163,"Val Verde East, Gulf Meadows and Houston Skyscraper Shadows",13000,"Murder, non-negligent",09A,0,2,1,5,0,5,8,2,NA,NA,400,150,0,15.4,7.7,38.5,38.5,15.4
@@ -96,7 +96,7 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 20G30,20,3.97953501,"West Houston Medical Center, Andrau Airport, Westchase and Westchase Mall",26000,"Murder, non-negligent",09A,3,9,12,5,0,4,29,7.2,300,33.3,-66.7,-44.4,11.5,34.6,46.2,19.2,15.4,27.7
 20G40,20,4.16594899,"Lakeview Forest, Lakeside Place, Ashford Village and Southlake",28000,"Murder, non-negligent",09A,2,7,4,8,0,7,21,5.2,100,250,75,34.6,7.1,25,14.3,28.6,25,18.6
 20G70,20,2.38283582,Westpark Village and Ashford Point,21000,"Murder, non-negligent",09A,2,2,4,2,1,3,10,2.5,100,50,-25,20,9.5,9.5,19,9.5,14.3,11.9
-20G80,20,25.33626534,City Limits,37000,"Murder, non-negligent",09A,1,2,2,5,1,6,10,2.5,100,500,200,140,2.7,5.4,5.4,13.5,16.2,6.8
+20G80,20,25.33626534,City Limits,37000,"Murder, non-negligent",09A,1,2,2,5,1,5,10,2.5,100,400,150,100,2.7,5.4,5.4,13.5,13.5,6.8
 21I10,21,0.00549966,Intercontinental Airport,0,"Murder, non-negligent",09A,0,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 21I20,21,0.01205019,Intercontinental Airport,0,"Murder, non-negligent",09A,0,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 21I30,21,0.01180375,Intercontinental Airport,0,"Murder, non-negligent",09A,0,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
@@ -106,7 +106,7 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 22B10,22,3.28874287,"Willowbrook, Willow Chase Park and Centerfield",8000,"Murder, non-negligent",09A,1,0,4,2,0,2,7,1.8,300,100,-50,11.1,12.5,0,50,25,25,22.5
 5F20,5,5.94082911,Spring Branch and Schwartz Park,42000,"Murder, non-negligent",09A,2,0,9,5,0,5,16,4,350,150,-44.4,25,4.8,0,21.4,11.9,11.9,9.5
 4F10,4,4.13606469,"Timber Oaks, Shadow Oaks and Long Point Acres",23000,"Murder, non-negligent",09A,0,0,2,2,0,2,4,1,NA,NA,0,100,0,0,8.7,8.7,8.7,4.3
-20G50,20,5.88593521,"Nottingham, Yorkshire, Wilchester, Town and Country Village and Memorial City Shopping Center",30000,"Murder, non-negligent",09A,0,1,0,2,0,2,3,0.8,NA,NA,NA,150,0,3.3,0,6.7,6.7,2.7
+20G50,20,5.88593521,"Nottingham, Yorkshire, Wilchester, Town and Country Village and Memorial City Shopping Center",30000,"Murder, non-negligent",09A,0,1,0,2,1,3,3,0.8,NA,NA,NA,275,0,3.3,0,6.7,10,2.7
 4F20,4,5.85840284,"Claymore Park, Westbranch, Spring Shadows and Kempwood Forest",28000,"Murder, non-negligent",09A,0,2,0,1,0,1,3,0.8,NA,NA,NA,25,0,7.1,0,3.6,3.6,2.9
 20G60,20,4.54207617,"Barkers Landing, Fleetwood, Thornwood and Darrel Tully Stadium",22000,"Murder, non-negligent",09A,2,3,1,3,0,2,9,2.2,-50,0,100,-9.1,9.1,13.6,4.5,13.6,9.1,10
 4F30,4,26.30690179,"Addicks Reservoir Area, Claymore Park, Brittmore Village, Park Ten Place and Mayde Creek Farms",18000,"Murder, non-negligent",09A,3,3,3,2,0,1,11,2.8,0,-66.7,-66.7,-64.3,16.7,16.7,16.7,11.1,5.6,15.6
