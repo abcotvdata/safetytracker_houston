@@ -30,7 +30,7 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 7C40,7,3.36786526,Keith-Weiss Park and Farrington Place,8000,"Murder, non-negligent",09A,2,1,0,3,0,3,6,1.5,-100,50,NA,100,25,12.5,0,37.5,37.5,18.8
 22B40,22,13.03325001,"Intercontinental Airport, Northwood, Lakeview Park and Glen Lee",11000,"Murder, non-negligent",09A,3,2,2,5,0,4,12,3,-33.3,33.3,100,33.3,27.3,18.2,18.2,45.5,36.4,27.3
 8C10,8,3.69037316,"Tidwell Park, Shady Oak and Buckingham Place",12000,"Murder, non-negligent",09A,6,3,9,6,2,8,24,6,50,33.3,-11.1,33.3,50,25,75,50,66.7,50
-8C20,8,3.36154214,"Houston Gardens, Rosewood and Homestead",7000,"Murder, non-negligent",09A,3,2,2,1,2,3,8,2,-33.3,0,50,50,42.9,28.6,28.6,14.3,42.9,28.6
+8C20,8,3.36154214,"Houston Gardens, Rosewood and Homestead",7000,"Murder, non-negligent",09A,3,2,2,1,3,4,8,2,-33.3,33.3,100,100,42.9,28.6,28.6,14.3,57.1,28.6
 8C30,8,4.6258259,"Parkhurst, East Houston and Clairmont Place",11000,"Murder, non-negligent",09A,2,3,3,6,2,8,14,3.5,50,300,166.7,128.6,18.2,27.3,27.3,54.5,72.7,31.8
 8C40,8,4.97945551,"Lake Houston, Greenriver, Knoll and Lake Forest",8000,"Murder, non-negligent",09A,0,0,3,2,0,2,5,1.2,NA,NA,-33.3,66.7,0,0,37.5,25,25,15
 8C50,8,3.31739498,"Park North, Forest Green, Kentshire Place, Glenwood Forest and Dorchester",8000,"Murder, non-negligent",09A,2,3,2,1,0,0,8,2,0,-100,-100,-100,25,37.5,25,12.5,0,25
@@ -68,9 +68,9 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 14D30,14,4.20537595,"Crestmont, Edgewood, Bellfort Park, Inwood Terrace and Southpark",21000,"Murder, non-negligent",09A,6,7,8,7,0,5,28,7,33.3,-16.7,-37.5,-28.6,28.6,33.3,38.1,33.3,23.8,33.3
 14D40,14,6.61224595,"South Acres, Shamrock Manor, Hillwood and Cloverland",21000,"Murder, non-negligent",09A,4,8,2,8,0,6,22,5.5,-50,50,200,9.1,19,38.1,9.5,38.1,28.6,26.2
 14D50,14,8.69627992,"Golden Glade Estates, Langston and Almeda Genoa",9000,"Murder, non-negligent",09A,2,1,3,5,0,3,11,2.8,50,50,0,7.1,22.2,11.1,33.3,55.6,33.3,31.1
-15E10,15,4.34996776,"Meyerland Plaza, Robindell, Meyerland, Braeburn Terrace and Maplewood South",24000,"Murder, non-negligent",09A,2,0,5,2,0,2,9,2.2,150,0,-60,-9.1,8.3,0,20.8,8.3,8.3,9.2
+15E10,15,4.34996776,"Meyerland Plaza, Robindell, Meyerland, Braeburn Terrace and Maplewood South",24000,"Murder, non-negligent",09A,2,0,5,2,1,3,9,2.2,150,50,-40,36.4,8.3,0,20.8,8.3,12.5,9.2
 15E20,15,3.58384499,"Westbury, Park West and Willow Creek",18000,"Murder, non-negligent",09A,0,1,1,3,1,3,5,1.2,NA,NA,200,150,0,5.6,5.6,16.7,16.7,6.7
-15E30,15,6.29133294,"Meyer Park, Post Oak Manor, Westwood, Willow Bend and Linkwood",34000,"Murder, non-negligent",09A,1,1,7,3,1,3,12,3,600,200,-57.1,0,2.9,2.9,20.6,8.8,8.8,8.8
+15E30,15,6.29133294,"Meyer Park, Post Oak Manor, Westwood, Willow Bend and Linkwood",34000,"Murder, non-negligent",09A,1,1,7,3,2,4,12,3,600,300,-42.9,33.3,2.9,2.9,20.6,8.8,11.8,8.8
 15E40,15,10.0079174,"NRG Park, Astroworld, Lakes at 610 and Plaza del Oro",30000,"Murder, non-negligent",09A,4,3,13,11,0,10,31,7.8,225,150,-23.1,28.2,13.3,10,43.3,36.7,33.3,26
 16E10,16,5.38940818,Canterbury Village and Monarch Estates,15000,"Murder, non-negligent",09A,4,3,2,0,1,1,9,2.2,-50,-75,-50,-54.5,26.7,20,13.3,0,6.7,14.7
 16E20,16,8.15202134,"Almeda Plaza, South Glen, Dumbarton Oaks and Briarwick",35000,"Murder, non-negligent",09A,5,7,4,4,1,4,20,5,-20,-20,0,-20,14.3,20,11.4,11.4,11.4,14.3
