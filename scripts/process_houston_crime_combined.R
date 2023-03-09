@@ -126,9 +126,9 @@ citywide_detailed[is.na(citywide_detailed)] <- 0
 citywide_detailed$total_prior4years <- citywide_detailed$total19+citywide_detailed$total20+citywide_detailed$total21+citywide_detailed$total22
 citywide_detailed$avg_prior4years <- round(citywide_detailed$total_prior4years/4,1)
 # calculate increases
-citywide_detailed$inc_19to21 <- round(citywide_detailed$total21/citywide_detailed$total19*100-100,1)
+citywide_detailed$inc_19to22 <- round(citywide_detailed$total22/citywide_detailed$total19*100-100,1)
 citywide_detailed$inc_19tolast12 <- round(citywide_detailed$last12mos/citywide_detailed$total19*100-100,1)
-citywide_detailed$inc_21tolast12 <- round(citywide_detailed$last12mos/citywide_detailed$total21*100-100,1)
+citywide_detailed$inc_22tolast12 <- round(citywide_detailed$last12mos/citywide_detailed$total22*100-100,1)
 citywide_detailed$inc_prior4yearavgtolast12 <- round((citywide_detailed$last12mos/citywide_detailed$avg_prior4years)*100-100,1)
 # calculate the citywide rates
 citywide_detailed$rate19 <- round(citywide_detailed$total19/houston_population*100000,1)
@@ -180,9 +180,9 @@ citywide_category[is.na(citywide_category)] <- 0
 citywide_category$total_prior4years <- citywide_category$total19+citywide_category$total20+citywide_category$total21+citywide_category$total22
 citywide_category$avg_prior4years <- round(citywide_category$total_prior4years/4,1)
 # calculate increases
-citywide_category$inc_19to21 <- round(citywide_category$total21/citywide_category$total19*100-100,1)
+citywide_category$inc_19to22 <- round(citywide_category$total22/citywide_category$total19*100-100,1)
 citywide_category$inc_19tolast12 <- round(citywide_category$last12mos/citywide_category$total19*100-100,1)
-citywide_category$inc_21tolast12 <- round(citywide_category$last12mos/citywide_category$total21*100-100,1)
+citywide_category$inc_22tolast12 <- round(citywide_category$last12mos/citywide_category$total22*100-100,1)
 citywide_category$inc_prior4yearavgtolast12 <- round((citywide_category$last12mos/citywide_category$avg_prior4years)*100-100,1)
 # calculate the citywide rates
 citywide_category$rate19 <- round(citywide_category$total19/houston_population*100000,1)
@@ -235,9 +235,9 @@ citywide_type$avg_prior4years <- round(citywide_type$total_prior4years/4,1)
 # add zeros where there were no crimes tallied that year
 citywide_type[is.na(citywide_type)] <- 0
 # calculate increases
-citywide_type$inc_19to21 <- round(citywide_type$total21/citywide_type$total19*100-100,1)
+citywide_type$inc_19to22 <- round(citywide_type$total22/citywide_type$total19*100-100,1)
 citywide_type$inc_19tolast12 <- round(citywide_type$last12mos/citywide_type$total19*100-100,1)
-citywide_type$inc_21tolast12 <- round(citywide_type$last12mos/citywide_type$total21*100-100,1)
+citywide_type$inc_22tolast12 <- round(citywide_type$last12mos/citywide_type$total22*100-100,1)
 citywide_type$inc_prior4yearavgtolast12 <- round((citywide_type$last12mos/citywide_type$avg_prior4years)*100-100,1)
 # calculate the citywide rates
 citywide_type$rate19 <- round(citywide_type$total19/houston_population*100000,1)
@@ -291,9 +291,9 @@ beat_detailed[is.na(beat_detailed)] <- 0
 beat_detailed$total_prior4years <- beat_detailed$total19+beat_detailed$total20+beat_detailed$total21+beat_detailed$total22
 beat_detailed$avg_prior4years <- round(beat_detailed$total_prior4years/4,1)
 # calculate increases
-beat_detailed$inc_19to21 <- round(beat_detailed$total21/beat_detailed$total19*100-100,1)
+beat_detailed$inc_19to22 <- round(beat_detailed$total22/beat_detailed$total19*100-100,1)
 beat_detailed$inc_19tolast12 <- round(beat_detailed$last12mos/beat_detailed$total19*100-100,1)
-beat_detailed$inc_21tolast12 <- round(beat_detailed$last12mos/beat_detailed$total21*100-100,1)
+beat_detailed$inc_22tolast12 <- round(beat_detailed$last12mos/beat_detailed$total22*100-100,1)
 beat_detailed$inc_prior4yearavgtolast12 <- round((beat_detailed$last12mos/beat_detailed$avg_prior4years)*100-100,1)
 # add population for beats
 beat_detailed <- full_join(beats,beat_detailed,by="beat") 
@@ -337,9 +337,9 @@ beat_category[is.na(beat_category)] <- 0
 beat_category$total_prior4years <- beat_category$total19+beat_category$total20+beat_category$total21+beat_category$total22
 beat_category$avg_prior4years <- round(beat_category$total_prior4years/4,1)
 # calculate increases
-beat_category$inc_19to21 <- round(beat_category$total21/beat_category$total19*100-100,1)
+beat_category$inc_19to22 <- round(beat_category$total22/beat_category$total19*100-100,1)
 beat_category$inc_19tolast12 <- round(beat_category$last12mos/beat_category$total19*100-100,1)
-beat_category$inc_21tolast12 <- round(beat_category$last12mos/beat_category$total21*100-100,1)
+beat_category$inc_22tolast12 <- round(beat_category$last12mos/beat_category$total22*100-100,1)
 beat_category$inc_prior4yearavgtolast12 <- round((beat_category$last12mos/beat_category$avg_prior4years)*100-100,1)
 # add population for beats
 beat_category <- full_join(beats,beat_category,by="beat") 
@@ -383,9 +383,9 @@ beat_type[is.na(beat_type)] <- 0
 beat_type$total_prior4years <- beat_type$total19+beat_type$total20+beat_type$total21+beat_type$total22
 beat_type$avg_prior4years <- round(beat_type$total_prior4years/4,1)
 # calculate increases
-beat_type$inc_19to21 <- round(beat_type$total21/beat_type$total19*100-100,1)
+beat_type$inc_19to22 <- round(beat_type$total22/beat_type$total19*100-100,1)
 beat_type$inc_19tolast12 <- round(beat_type$last12mos/beat_type$total19*100-100,1)
-beat_type$inc_21tolast12 <- round(beat_type$last12mos/beat_type$total21*100-100,1)
+beat_type$inc_22tolast12 <- round(beat_type$last12mos/beat_type$total22*100-100,1)
 beat_type$inc_prior4yearavgtolast12 <- round((beat_type$last12mos/beat_type$avg_prior4years)*100-100,1)
 # add population for beats
 beat_type <- full_join(beats,beat_type,by="beat") 
