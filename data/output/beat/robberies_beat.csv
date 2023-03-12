@@ -6,7 +6,7 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 1A30,1,2.65916892,"Cherryhurst, Mandell Place and Montrose",27000,Robbery,71,56,41,48,7,47,216,54,-32.4,-33.8,-2.1,-13,263,207.4,151.9,177.8,174.1,200
 1A40,1,2.45016686,"Tall Timbers, Royden Oaks, River Oaks, Avalon Place and Oak Estates",7000,Robbery,3,6,8,4,3,7,21,5.2,33.3,133.3,75,34.6,42.9,85.7,114.3,57.1,100,74.3
 1A50,1,3.04553452,"Post Oak Park, Afton Oaks, Highland Village, Weslayan, Greenway Plaza and The Compaq Center",26000,Robbery,50,53,83,37,11,43,223,55.8,-26,-14,16.2,-22.9,192.3,203.8,319.2,142.3,165.4,214.6
-2A10,2,3.30928608,Irvington and Ryon,18000,Robbery,112,100,71,74,19,74,357,89.2,-33.9,-33.9,0,-17,622.2,555.6,394.4,411.1,411.1,495.6
+2A10,2,3.30928608,Irvington and Ryon,18000,Robbery,112,100,71,74,20,75,357,89.2,-33.9,-33,1.4,-15.9,622.2,555.6,394.4,411.1,416.7,495.6
 2A20,2,1.8876461,"Sunset Heights, Brooksmith and Stude",11000,Robbery,63,54,29,34,9,35,180,45,-46,-44.4,2.9,-22.2,572.7,490.9,263.6,309.1,318.2,409.1
 2A30,2,4.65858171,"Houston Heights, Norhill and Studemont",31000,Robbery,55,48,50,29,16,37,182,45.5,-47.3,-32.7,27.6,-18.7,177.4,154.8,161.3,93.5,119.4,146.8
 2A40,2,1.60546103,Old Sixth Ward and the First Ward,8000,Robbery,23,17,12,12,2,12,64,16,-47.8,-47.8,0,-25,287.5,212.5,150,150,150,200
@@ -14,7 +14,7 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 2A60,2,4.67447346,"Westport, Holly Park, Lazy Brook, Citadel, Shady Acres and Timbergrove",21000,Robbery,25,25,19,27,10,34,96,24,8,36,25.9,41.7,119,119,90.5,128.6,161.9,114.3
 3B10,3,6.82068773,"Northwest Mall, Brookhollow, White Oak Acres, Oak Forest and Langwood",34000,Robbery,180,193,157,161,36,173,691,172.8,-10.6,-3.9,7.5,0.1,529.4,567.6,461.8,473.5,508.8,508.2
 3B30,3,5.310372,"White Oak Acres, Brook Hollow, Oak Forest, Garden Oaks and Shepherd Park Plaza",23000,Robbery,54,42,37,34,9,41,167,41.8,-37,-24.1,20.6,-1.9,234.8,182.6,160.9,147.8,178.3,181.7
-3B40,3,3.40013561,"Independence Heights, Melrose and Graceland",13000,Robbery,96,100,75,68,12,69,339,84.8,-29.2,-28.1,1.5,-18.6,738.5,769.2,576.9,523.1,530.8,652.3
+3B40,3,3.40013561,"Independence Heights, Melrose and Graceland",13000,Robbery,96,100,75,68,13,70,339,84.8,-29.2,-27.1,2.9,-17.5,738.5,769.2,576.9,523.1,538.5,652.3
 3B50,3,3.85259517,"Northline Mall, Stratton Place, Oakwood, Colonial Gardens, Lindale and Junction City",20000,Robbery,167,141,133,109,20,111,550,137.5,-34.7,-33.5,1.8,-19.3,835,705,665,545,555,687.5
 5F10,5,3.25978513,Afton Village and Pine Terrace,14000,Robbery,54,34,48,54,9,49,190,47.5,0,-9.3,-9.3,3.2,385.7,242.9,342.9,385.7,350,339.3
 5F30,5,8.70689439,"Fairbanks, Carverdale, Fawndale and Northwest Crossing",17000,Robbery,152,128,98,118,11,104,496,124,-22.4,-31.6,-11.9,-16.1,894.1,752.9,576.5,694.1,611.8,729.4
@@ -34,7 +34,7 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 8C30,8,4.6258259,"Parkhurst, East Houston and Clairmont Place",11000,Robbery,29,40,44,32,13,38,145,36.2,10.3,31,18.8,5,263.6,363.6,400,290.9,345.5,329.1
 8C40,8,4.97945551,"Lake Houston, Greenriver, Knoll and Lake Forest",8000,Robbery,16,21,26,12,3,14,75,18.8,-25,-12.5,16.7,-25.5,200,262.5,325,150,175,235
 8C50,8,3.31739498,"Park North, Forest Green, Kentshire Place, Glenwood Forest and Dorchester",8000,Robbery,44,45,40,20,6,23,149,37.2,-54.5,-47.7,15,-38.2,550,562.5,500,250,287.5,465
-8C60,8,5.79693312,"Edgeworth, Northwood Manor and Scenic Woods",19000,Robbery,56,57,54,43,13,49,210,52.5,-23.2,-12.5,14,-6.7,294.7,300,284.2,226.3,257.9,276.3
+8C60,8,5.79693312,"Edgeworth, Northwood Manor and Scenic Woods",19000,Robbery,56,57,54,43,14,50,210,52.5,-23.2,-10.7,16.3,-4.8,294.7,300,284.2,226.3,263.2,276.3
 9C10,9,5.21185619,"Port of Houston, Clinton Park, Pleasantville and Fidelity Manor",6000,Robbery,18,21,16,6,3,8,61,15.2,-66.7,-55.6,33.3,-47.4,300,350,266.7,100,133.3,253.3
 9C20,9,7.5383173,Denver Harbor and Houston Harbor,16000,Robbery,50,52,39,51,12,54,192,48,2,8,5.9,12.5,312.5,325,243.8,318.8,337.5,300
 9C30,9,8.13353768,"City Park East, Wynnewood Acres and Wallisville Gardens",9000,Robbery,34,47,37,24,1,20,142,35.5,-29.4,-41.2,-16.7,-43.7,377.8,522.2,411.1,266.7,222.2,394.4
