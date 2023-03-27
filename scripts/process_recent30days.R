@@ -162,13 +162,13 @@ names(houston_recent_new) <- c("incident", "date", "hour",
                                "city", "zip","longitude","latitude")
 houston_recent_new$hour <- as.numeric(houston_recent_new$hour)
 
-# OPEN WORK HERE: Package to convert OLC to latitude and longitude
+### OPEN WORK HERE: Package to convert OLC to latitude and longitude
 
 # Copy yesterday's to recent_prior in two places: archive and rds store
 file.copy("scripts/rds/houston_recent_new.rds", # dupe yesterday file
           "scripts/rds/houston_recent_prior.rds", overwrite = TRUE)
 file.copy("scripts/rds/houston_recent_new.rds", # dupe yesterday file
-          "data/recent/houston_recent_prior.rds", overwrite = TRUE)
+          "data/source/recent/houston_recent_prior.rds", overwrite = TRUE)
 
 # Load prior day df
 houston_recent_prior <- readRDS("scripts/rds/houston_recent_prior.rds")
@@ -177,10 +177,12 @@ houston_recent_new <- bind_rows(houston_recent_prior,
                                 houston_recent_new)
 houston_recent_new <- unique(houston_recent_new)
 houston_recent_new$beat <- sub(pattern='^0+([1-9])', replacement='\\1', houston_recent_new$beat)
+# trim to maintain only the last 60 days
+houston_recent_new <- houston_recent_new %>% filter(houston_recent_new$date > max(houston_recent_new$date)-60)
 
 # Save copies of newly-processed houston_recent_new in 3 places for redundancy
-# 1. Archive with name by day of month; maintains month's worth of files
-saveRDS(houston_recent_new,paste0("data/source/archive/houston_recent_archive",format((Sys.Date()), "%d"),".rds"))
+# 1. Archive with name by day of month; maintains an extra day of files
+saveRDS(houston_recent_new,paste0("data/source/archive/houston_recent_archive.rds"))
 # 2. Latest day archived in source data as backup; overwritten daily
 saveRDS(houston_recent_new,"data/source/recent/houston_recent_new.rds")
 # 3. Latest day stored in scripts file for pickup by trackers

@@ -7,7 +7,7 @@ houston_annual <- readRDS("scripts/rds/houston_annual.rds")
 houston_monthly <- readRDS("scripts/rds/houston_monthly.rds")
 houston_recent_new <- readRDS("scripts/rds/houston_recent_new.rds")
 
-### COMBINE 2019, 2020, 2021 and 2022 TO DATE INTO SINGLE FILE
+### COMBINE 2019 to 2000, plus 2023 TO DATE INTO SINGLE FILE
 houston_crime <- bind_rows(houston_annual,houston_monthly)
 
 # REDUCE THE RECENT 30-DAY FILE JUST TO THE DATES THAT NOT ALREADY IN HPD RELEASED 22 TO DATE FILE
