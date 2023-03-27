@@ -5,7 +5,7 @@ name: Get monthly crimes feed
 # Controls when the workflow will run
 on:
   schedule:
-    - cron: '0 19 19,20,21,22,23,24 * *'
+    - cron: '0 4 * * 1,5'
       # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -18,10 +18,10 @@ jobs:
       - uses: r-lib/actions/setup-r@v2
       - name: Install dependencies and packages
         run: Rscript -e 'install.packages(c("tidyverse","readxl"))'
-      - name: Get and compile monthly crimes file if it exists
+      - name: Check for and compile latest monthly file
         run: Rscript scripts/process_monthly.R
       - name: Commit results
         run: |
           git add -A
-          git commit -m 'New crime data collected' || echo "No changes"
+          git commit -m 'New monthly file updated' || echo "No changes"
           git push origin || echo "No changes to commit"
