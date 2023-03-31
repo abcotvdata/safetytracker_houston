@@ -22,18 +22,12 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 23J50,23,2.12389492,Hobby Airport,0,Sexual Assault,0,1,0,0,0,0,1,0.2,NA,NA,NA,-100,NA,NA,NA,NA,NA,NA
 23J50,23,2.12389492,Hobby Airport,0,Theft,112,57,84,112,17,103,365,91.2,0,-8,-8,12.9,NA,NA,NA,NA,NA,NA
 1A10,1,1.74646692,Downtown Central Business District,17000,Arson,2,6,17,4,1,3,29,7.2,100,50,-25,-58.3,11.8,35.3,100,23.5,17.6,42.4
-<<<<<<< HEAD
 1A10,1,1.74646692,Downtown Central Business District,17000,Assault,934,705,829,956,275,1051,3424,856,2.4,12.5,9.9,22.8,5494.1,4147.1,4876.5,5623.5,6182.4,5035.3
 1A10,1,1.74646692,Downtown Central Business District,17000,Auto Theft,155,146,237,293,63,304,831,207.8,89,96.1,3.8,46.3,911.8,858.8,1394.1,1723.5,1788.2,1222.4
-=======
-1A10,1,1.74646692,Downtown Central Business District,17000,Assault,934,705,829,956,276,1052,3424,856,2.4,12.6,10,22.9,5494.1,4147.1,4876.5,5623.5,6188.2,5035.3
-1A10,1,1.74646692,Downtown Central Business District,17000,Auto Theft,155,146,237,293,65,306,831,207.8,89,97.4,4.4,47.3,911.8,858.8,1394.1,1723.5,1800,1222.4
->>>>>>> 03a387d7909f1c425ecb7e437a06af343f5ff788
 1A10,1,1.74646692,Downtown Central Business District,17000,Burglary,76,77,65,86,50,119,304,76,13.2,56.6,38.4,56.6,447.1,452.9,382.4,505.9,700,447.1
 1A10,1,1.74646692,Downtown Central Business District,17000,Drug Offenses,116,133,217,148,56,153,614,153.5,27.6,31.9,3.4,-0.3,682.4,782.4,1276.5,870.6,900,902.9
 1A10,1,1.74646692,Downtown Central Business District,17000,Kidnapping,1,2,4,6,0,5,13,3.2,500,400,-16.7,56.2,5.9,11.8,23.5,35.3,29.4,18.8
 1A10,1,1.74646692,Downtown Central Business District,17000,Murder,2,2,3,5,0,5,12,3,150,150,0,66.7,11.8,11.8,17.6,29.4,29.4,17.6
-<<<<<<< HEAD
 1A10,1,1.74646692,Downtown Central Business District,17000,Other,697,1320,1544,1468,518,1632,5029,1257.2,110.6,134.1,11.2,29.8,4100,7764.7,9082.4,8635.3,9600,7395.3
 1A10,1,1.74646692,Downtown Central Business District,17000,Robbery,92,90,69,94,21,100,345,86.2,2.2,8.7,6.4,16,541.2,529.4,405.9,552.9,588.2,507.1
 1A10,1,1.74646692,Downtown Central Business District,17000,Sexual Assault,27,25,33,22,10,28,107,26.8,-18.5,3.7,27.3,4.5,158.8,147.1,194.1,129.4,164.7,157.6
@@ -60,34 +54,6 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 1A30,1,2.65916892,"Cherryhurst, Mandell Place and Montrose",27000,Robbery,71,56,41,48,7,43,216,54,-32.4,-39.4,-10.4,-20.4,263,207.4,151.9,177.8,159.3,200
 1A30,1,2.65916892,"Cherryhurst, Mandell Place and Montrose",27000,Sexual Assault,16,21,14,10,9,16,61,15.2,-37.5,0,60,5.3,59.3,77.8,51.9,37,59.3,56.3
 1A30,1,2.65916892,"Cherryhurst, Mandell Place and Montrose",27000,Theft,1920,1295,1122,1302,414,1367,5639,1409.8,-32.2,-28.8,5,-3,7111.1,4796.3,4155.6,4822.2,5063,5221.5
-=======
-1A10,1,1.74646692,Downtown Central Business District,17000,Other,697,1320,1544,1468,524,1638,5029,1257.2,110.6,135,11.6,30.3,4100,7764.7,9082.4,8635.3,9635.3,7395.3
-1A10,1,1.74646692,Downtown Central Business District,17000,Robbery,92,90,69,94,21,100,345,86.2,2.2,8.7,6.4,16,541.2,529.4,405.9,552.9,588.2,507.1
-1A10,1,1.74646692,Downtown Central Business District,17000,Sexual Assault,27,25,33,22,10,28,107,26.8,-18.5,3.7,27.3,4.5,158.8,147.1,194.1,129.4,164.7,157.6
-1A10,1,1.74646692,Downtown Central Business District,17000,Theft,1507,883,936,1317,328,1392,4643,1160.8,-12.6,-7.6,5.7,19.9,8864.7,5194.1,5505.9,7747.1,8188.2,6828.2
-1A20,1,2.44133075,"Fourth Ward, Avondale and Westmoreland",27000,Arson,4,5,2,2,0,1,13,3.2,-50,-75,-50,-68.8,14.8,18.5,7.4,7.4,3.7,11.9
-1A20,1,2.44133075,"Fourth Ward, Avondale and Westmoreland",27000,Assault,668,660,783,735,201,739,2846,711.5,10,10.6,0.5,3.9,2474.1,2444.4,2900,2722.2,2737,2635.2
-1A20,1,2.44133075,"Fourth Ward, Avondale and Westmoreland",27000,Auto Theft,179,199,264,378,125,429,1020,255,111.2,139.7,13.5,68.2,663,737,977.8,1400,1588.9,944.4
-1A20,1,2.44133075,"Fourth Ward, Avondale and Westmoreland",27000,Burglary,309,304,217,211,62,222,1041,260.2,-31.7,-28.2,5.2,-14.7,1144.4,1125.9,803.7,781.5,822.2,963.7
-1A20,1,2.44133075,"Fourth Ward, Avondale and Westmoreland",27000,Drug Offenses,106,88,72,72,25,69,338,84.5,-32.1,-34.9,-4.2,-18.3,392.6,325.9,266.7,266.7,255.6,313
-1A20,1,2.44133075,"Fourth Ward, Avondale and Westmoreland",27000,Kidnapping,5,2,1,2,1,3,10,2.5,-60,-40,50,20,18.5,7.4,3.7,7.4,11.1,9.3
-1A20,1,2.44133075,"Fourth Ward, Avondale and Westmoreland",27000,Murder,2,3,4,3,2,4,12,3,50,100,33.3,33.3,7.4,11.1,14.8,11.1,14.8,11.1
-1A20,1,2.44133075,"Fourth Ward, Avondale and Westmoreland",27000,Other,564,1050,1223,1184,372,1260,4021,1005.2,109.9,123.4,6.4,25.3,2088.9,3888.9,4529.6,4385.2,4666.7,3723
-1A20,1,2.44133075,"Fourth Ward, Avondale and Westmoreland",27000,Robbery,88,96,109,92,24,96,385,96.2,4.5,9.1,4.3,-0.2,325.9,355.6,403.7,340.7,355.6,356.3
-1A20,1,2.44133075,"Fourth Ward, Avondale and Westmoreland",27000,Sexual Assault,31,24,27,26,4,22,108,27,-16.1,-29,-15.4,-18.5,114.8,88.9,100,96.3,81.5,100
-1A20,1,2.44133075,"Fourth Ward, Avondale and Westmoreland",27000,Theft,2401,2056,2229,2012,588,2125,8698,2174.5,-16.2,-11.5,5.6,-2.3,8892.6,7614.8,8255.6,7451.9,7870.4,8053.7
-1A30,1,2.65916892,"Cherryhurst, Mandell Place and Montrose",27000,Arson,2,3,4,6,1,7,15,3.8,200,250,16.7,84.2,7.4,11.1,14.8,22.2,25.9,14.1
-1A30,1,2.65916892,"Cherryhurst, Mandell Place and Montrose",27000,Assault,405,448,418,444,149,493,1715,428.8,9.6,21.7,11,15,1500,1659.3,1548.1,1644.4,1825.9,1588.1
-1A30,1,2.65916892,"Cherryhurst, Mandell Place and Montrose",27000,Auto Theft,66,97,121,195,59,228,479,119.8,195.5,245.5,16.9,90.3,244.4,359.3,448.1,722.2,844.4,443.7
-1A30,1,2.65916892,"Cherryhurst, Mandell Place and Montrose",27000,Burglary,236,205,182,140,59,166,763,190.8,-40.7,-29.7,18.6,-13,874.1,759.3,674.1,518.5,614.8,706.7
-1A30,1,2.65916892,"Cherryhurst, Mandell Place and Montrose",27000,Drug Offenses,68,74,50,49,13,47,241,60.2,-27.9,-30.9,-4.1,-21.9,251.9,274.1,185.2,181.5,174.1,223
-1A30,1,2.65916892,"Cherryhurst, Mandell Place and Montrose",27000,Kidnapping,3,1,4,3,0,2,11,2.8,0,-33.3,-33.3,-28.6,11.1,3.7,14.8,11.1,7.4,10.4
-1A30,1,2.65916892,"Cherryhurst, Mandell Place and Montrose",27000,Murder,0,3,1,2,0,1,6,1.5,NA,NA,-50,-33.3,0,11.1,3.7,7.4,3.7,5.6
-1A30,1,2.65916892,"Cherryhurst, Mandell Place and Montrose",27000,Other,447,833,745,859,254,901,2884,721,92.2,101.6,4.9,25,1655.6,3085.2,2759.3,3181.5,3337,2670.4
-1A30,1,2.65916892,"Cherryhurst, Mandell Place and Montrose",27000,Robbery,71,56,41,48,7,43,216,54,-32.4,-39.4,-10.4,-20.4,263,207.4,151.9,177.8,159.3,200
-1A30,1,2.65916892,"Cherryhurst, Mandell Place and Montrose",27000,Sexual Assault,16,21,14,10,9,16,61,15.2,-37.5,0,60,5.3,59.3,77.8,51.9,37,59.3,56.3
-1A30,1,2.65916892,"Cherryhurst, Mandell Place and Montrose",27000,Theft,1920,1295,1122,1302,421,1374,5639,1409.8,-32.2,-28.4,5.5,-2.5,7111.1,4796.3,4155.6,4822.2,5088.9,5221.5
->>>>>>> 03a387d7909f1c425ecb7e437a06af343f5ff788
 1A40,1,2.45016686,"Tall Timbers, Royden Oaks, River Oaks, Avalon Place and Oak Estates",7000,Arson,0,0,0,0,0,0,0,0,NA,NA,NA,NA,0,0,0,0,0,0
 1A40,1,2.45016686,"Tall Timbers, Royden Oaks, River Oaks, Avalon Place and Oak Estates",7000,Assault,37,31,42,37,26,55,147,36.8,0,48.6,48.6,49.5,528.6,442.9,600,528.6,785.7,525.7
 1A40,1,2.45016686,"Tall Timbers, Royden Oaks, River Oaks, Avalon Place and Oak Estates",7000,Auto Theft,10,13,14,19,3,17,56,14,90,70,-10.5,21.4,142.9,185.7,200,271.4,242.9,200
@@ -100,7 +66,6 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 1A40,1,2.45016686,"Tall Timbers, Royden Oaks, River Oaks, Avalon Place and Oak Estates",7000,Sexual Assault,2,1,0,1,1,2,4,1,-50,0,100,100,28.6,14.3,0,14.3,28.6,14.3
 1A40,1,2.45016686,"Tall Timbers, Royden Oaks, River Oaks, Avalon Place and Oak Estates",7000,Theft,152,144,141,141,35,137,578,144.5,-7.2,-9.9,-2.8,-5.2,2171.4,2057.1,2014.3,2014.3,1957.1,2064.3
 1A50,1,3.04553452,"Post Oak Park, Afton Oaks, Highland Village, Weslayan, Greenway Plaza and The Compaq Center",26000,Arson,1,0,1,0,2,2,2,0.5,-100,100,NA,300,3.8,0,3.8,0,7.7,1.9
-<<<<<<< HEAD
 1A50,1,3.04553452,"Post Oak Park, Afton Oaks, Highland Village, Weslayan, Greenway Plaza and The Compaq Center",26000,Assault,322,435,458,502,134,531,1717,429.2,55.9,64.9,5.8,23.7,1238.5,1673.1,1761.5,1930.8,2042.3,1650.8
 1A50,1,3.04553452,"Post Oak Park, Afton Oaks, Highland Village, Weslayan, Greenway Plaza and The Compaq Center",26000,Auto Theft,140,205,236,332,107,375,913,228.2,137.1,167.9,13,64.3,538.5,788.5,907.7,1276.9,1442.3,877.7
 1A50,1,3.04553452,"Post Oak Park, Afton Oaks, Highland Village, Weslayan, Greenway Plaza and The Compaq Center",26000,Burglary,240,212,142,166,63,181,760,190,-30.8,-24.6,9,-4.7,923.1,815.4,546.2,638.5,696.2,730.8
@@ -125,47 +90,14 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 2A20,2,1.8876461,"Sunset Heights, Brooksmith and Stude",11000,Arson,3,2,1,4,1,5,10,2.5,33.3,66.7,25,100,27.3,18.2,9.1,36.4,45.5,22.7
 2A20,2,1.8876461,"Sunset Heights, Brooksmith and Stude",11000,Assault,296,349,294,247,50,252,1186,296.5,-16.6,-14.9,2,-15,2690.9,3172.7,2672.7,2245.5,2290.9,2695.5
 2A20,2,1.8876461,"Sunset Heights, Brooksmith and Stude",11000,Auto Theft,58,64,81,84,25,83,287,71.8,44.8,43.1,-1.2,15.6,527.3,581.8,736.4,763.6,754.5,652.7
-=======
-1A50,1,3.04553452,"Post Oak Park, Afton Oaks, Highland Village, Weslayan, Greenway Plaza and The Compaq Center",26000,Assault,322,435,458,502,136,533,1717,429.2,55.9,65.5,6.2,24.2,1238.5,1673.1,1761.5,1930.8,2050,1650.8
-1A50,1,3.04553452,"Post Oak Park, Afton Oaks, Highland Village, Weslayan, Greenway Plaza and The Compaq Center",26000,Auto Theft,140,205,236,332,108,376,913,228.2,137.1,168.6,13.3,64.8,538.5,788.5,907.7,1276.9,1446.2,877.7
-1A50,1,3.04553452,"Post Oak Park, Afton Oaks, Highland Village, Weslayan, Greenway Plaza and The Compaq Center",26000,Burglary,240,212,142,166,64,182,760,190,-30.8,-24.2,9.6,-4.2,923.1,815.4,546.2,638.5,700,730.8
-1A50,1,3.04553452,"Post Oak Park, Afton Oaks, Highland Village, Weslayan, Greenway Plaza and The Compaq Center",26000,Drug Offenses,38,41,45,53,14,58,177,44.2,39.5,52.6,9.4,31.2,146.2,157.7,173.1,203.8,223.1,170
-1A50,1,3.04553452,"Post Oak Park, Afton Oaks, Highland Village, Weslayan, Greenway Plaza and The Compaq Center",26000,Kidnapping,1,2,2,2,0,1,7,1.8,100,0,-50,-44.4,3.8,7.7,7.7,7.7,3.8,6.9
-1A50,1,3.04553452,"Post Oak Park, Afton Oaks, Highland Village, Weslayan, Greenway Plaza and The Compaq Center",26000,Murder,0,0,5,3,1,2,8,2,NA,NA,-33.3,0,0,0,19.2,11.5,7.7,7.7
-1A50,1,3.04553452,"Post Oak Park, Afton Oaks, Highland Village, Weslayan, Greenway Plaza and The Compaq Center",26000,Other,485,710,722,709,240,766,2626,656.5,46.2,57.9,8,16.7,1865.4,2730.8,2776.9,2726.9,2946.2,2525
-1A50,1,3.04553452,"Post Oak Park, Afton Oaks, Highland Village, Weslayan, Greenway Plaza and The Compaq Center",26000,Robbery,50,53,83,37,12,42,223,55.8,-26,-16,13.5,-24.7,192.3,203.8,319.2,142.3,161.5,214.6
-1A50,1,3.04553452,"Post Oak Park, Afton Oaks, Highland Village, Weslayan, Greenway Plaza and The Compaq Center",26000,Sexual Assault,10,13,13,16,0,11,52,13,60,10,-31.2,-15.4,38.5,50,50,61.5,42.3,50
-1A50,1,3.04553452,"Post Oak Park, Afton Oaks, Highland Village, Weslayan, Greenway Plaza and The Compaq Center",26000,Theft,1517,1418,1368,1594,459,1614,5897,1474.2,5.1,6.4,1.3,9.5,5834.6,5453.8,5261.5,6130.8,6207.7,5670
-2A10,2,3.30928608,Irvington and Ryon,18000,Arson,10,12,6,6,3,7,34,8.5,-40,-30,16.7,-17.6,55.6,66.7,33.3,33.3,38.9,47.2
-2A10,2,3.30928608,Irvington and Ryon,18000,Assault,802,792,714,671,192,714,2979,744.8,-16.3,-11,6.4,-4.1,4455.6,4400,3966.7,3727.8,3966.7,4137.8
-2A10,2,3.30928608,Irvington and Ryon,18000,Auto Theft,70,104,151,111,58,142,436,109,58.6,102.9,27.9,30.3,388.9,577.8,838.9,616.7,788.9,605.6
-2A10,2,3.30928608,Irvington and Ryon,18000,Burglary,131,116,118,170,50,177,535,133.8,29.8,35.1,4.1,32.3,727.8,644.4,655.6,944.4,983.3,743.3
-2A10,2,3.30928608,Irvington and Ryon,18000,Drug Offenses,220,157,124,112,23,114,613,153.2,-49.1,-48.2,1.8,-25.6,1222.2,872.2,688.9,622.2,633.3,851.1
-2A10,2,3.30928608,Irvington and Ryon,18000,Kidnapping,2,2,2,0,2,2,6,1.5,-100,0,NA,33.3,11.1,11.1,11.1,0,11.1,8.3
-2A10,2,3.30928608,Irvington and Ryon,18000,Murder,6,4,3,5,2,6,18,4.5,-16.7,0,20,33.3,33.3,22.2,16.7,27.8,33.3,25
-2A10,2,3.30928608,Irvington and Ryon,18000,Other,334,753,725,817,214,852,2629,657.2,144.6,155.1,4.3,29.6,1855.6,4183.3,4027.8,4538.9,4733.3,3651.1
-2A10,2,3.30928608,Irvington and Ryon,18000,Robbery,112,100,71,74,29,77,357,89.2,-33.9,-31.2,4.1,-13.7,622.2,555.6,394.4,411.1,427.8,495.6
-2A10,2,3.30928608,Irvington and Ryon,18000,Sexual Assault,13,18,21,11,11,20,63,15.8,-15.4,53.8,81.8,26.6,72.2,100,116.7,61.1,111.1,87.8
-2A10,2,3.30928608,Irvington and Ryon,18000,Theft,498,516,435,575,146,587,2024,506,15.5,17.9,2.1,16,2766.7,2866.7,2416.7,3194.4,3261.1,2811.1
-2A20,2,1.8876461,"Sunset Heights, Brooksmith and Stude",11000,Arson,3,2,1,4,1,5,10,2.5,33.3,66.7,25,100,27.3,18.2,9.1,36.4,45.5,22.7
-2A20,2,1.8876461,"Sunset Heights, Brooksmith and Stude",11000,Assault,296,349,294,247,50,252,1186,296.5,-16.6,-14.9,2,-15,2690.9,3172.7,2672.7,2245.5,2290.9,2695.5
-2A20,2,1.8876461,"Sunset Heights, Brooksmith and Stude",11000,Auto Theft,58,64,81,84,26,84,287,71.8,44.8,44.8,0,17,527.3,581.8,736.4,763.6,763.6,652.7
->>>>>>> 03a387d7909f1c425ecb7e437a06af343f5ff788
 2A20,2,1.8876461,"Sunset Heights, Brooksmith and Stude",11000,Burglary,94,77,80,75,32,91,326,81.5,-20.2,-3.2,21.3,11.7,854.5,700,727.3,681.8,827.3,740.9
 2A20,2,1.8876461,"Sunset Heights, Brooksmith and Stude",11000,Drug Offenses,116,71,71,44,12,40,302,75.5,-62.1,-65.5,-9.1,-47,1054.5,645.5,645.5,400,363.6,686.4
 2A20,2,1.8876461,"Sunset Heights, Brooksmith and Stude",11000,Kidnapping,0,0,0,3,0,3,3,0.8,NA,NA,0,275,0,0,0,27.3,27.3,7.3
 2A20,2,1.8876461,"Sunset Heights, Brooksmith and Stude",11000,Murder,0,2,1,3,0,2,6,1.5,NA,NA,-33.3,33.3,0,18.2,9.1,27.3,18.2,13.6
-<<<<<<< HEAD
 2A20,2,1.8876461,"Sunset Heights, Brooksmith and Stude",11000,Other,191,319,370,351,93,337,1231,307.8,83.8,76.4,-4,9.5,1736.4,2900,3363.6,3190.9,3063.6,2798.2
 2A20,2,1.8876461,"Sunset Heights, Brooksmith and Stude",11000,Robbery,63,54,29,34,13,39,180,45,-46,-38.1,14.7,-13.3,572.7,490.9,263.6,309.1,354.5,409.1
 2A20,2,1.8876461,"Sunset Heights, Brooksmith and Stude",11000,Sexual Assault,5,5,5,9,1,8,24,6,80,60,-11.1,33.3,45.5,45.5,45.5,81.8,72.7,54.5
 2A20,2,1.8876461,"Sunset Heights, Brooksmith and Stude",11000,Theft,277,286,291,290,77,295,1144,286,4.7,6.5,1.7,3.1,2518.2,2600,2645.5,2636.4,2681.8,2600
-=======
-2A20,2,1.8876461,"Sunset Heights, Brooksmith and Stude",11000,Other,191,319,370,351,94,338,1231,307.8,83.8,77,-3.7,9.8,1736.4,2900,3363.6,3190.9,3072.7,2798.2
-2A20,2,1.8876461,"Sunset Heights, Brooksmith and Stude",11000,Robbery,63,54,29,34,13,39,180,45,-46,-38.1,14.7,-13.3,572.7,490.9,263.6,309.1,354.5,409.1
-2A20,2,1.8876461,"Sunset Heights, Brooksmith and Stude",11000,Sexual Assault,5,5,5,9,1,8,24,6,80,60,-11.1,33.3,45.5,45.5,45.5,81.8,72.7,54.5
-2A20,2,1.8876461,"Sunset Heights, Brooksmith and Stude",11000,Theft,277,286,291,290,78,296,1144,286,4.7,6.9,2.1,3.5,2518.2,2600,2645.5,2636.4,2690.9,2600
->>>>>>> 03a387d7909f1c425ecb7e437a06af343f5ff788
 2A30,2,4.65858171,"Houston Heights, Norhill and Studemont",31000,Arson,7,14,3,1,1,2,25,6.2,-85.7,-71.4,100,-67.7,22.6,45.2,9.7,3.2,6.5,20
 2A30,2,4.65858171,"Houston Heights, Norhill and Studemont",31000,Assault,341,311,320,284,73,288,1256,314,-16.7,-15.5,1.4,-8.3,1100,1003.2,1032.3,916.1,929,1012.9
 2A30,2,4.65858171,"Houston Heights, Norhill and Studemont",31000,Auto Theft,128,142,178,241,73,260,689,172.2,88.3,103.1,7.9,51,412.9,458.1,574.2,777.4,838.7,555.5
@@ -173,17 +105,10 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 2A30,2,4.65858171,"Houston Heights, Norhill and Studemont",31000,Drug Offenses,52,51,38,38,5,33,179,44.8,-26.9,-36.5,-13.2,-26.3,167.7,164.5,122.6,122.6,106.5,144.5
 2A30,2,4.65858171,"Houston Heights, Norhill and Studemont",31000,Kidnapping,1,0,1,0,0,0,2,0.5,-100,-100,NA,-100,3.2,0,3.2,0,0,1.6
 2A30,2,4.65858171,"Houston Heights, Norhill and Studemont",31000,Murder,0,0,2,5,0,4,7,1.8,NA,NA,-20,122.2,0,0,6.5,16.1,12.9,5.8
-<<<<<<< HEAD
 2A30,2,4.65858171,"Houston Heights, Norhill and Studemont",31000,Other,331,588,578,606,200,639,2103,525.8,83.1,93.1,5.4,21.5,1067.7,1896.8,1864.5,1954.8,2061.3,1696.1
 2A30,2,4.65858171,"Houston Heights, Norhill and Studemont",31000,Robbery,55,48,50,29,16,37,182,45.5,-47.3,-32.7,27.6,-18.7,177.4,154.8,161.3,93.5,119.4,146.8
 2A30,2,4.65858171,"Houston Heights, Norhill and Studemont",31000,Sexual Assault,8,6,7,9,2,7,30,7.5,12.5,-12.5,-22.2,-6.7,25.8,19.4,22.6,29,22.6,24.2
 2A30,2,4.65858171,"Houston Heights, Norhill and Studemont",31000,Theft,1200,833,955,1072,319,1151,4060,1015,-10.7,-4.1,7.4,13.4,3871,2687.1,3080.6,3458.1,3712.9,3274.2
-=======
-2A30,2,4.65858171,"Houston Heights, Norhill and Studemont",31000,Other,331,588,578,606,202,641,2103,525.8,83.1,93.7,5.8,21.9,1067.7,1896.8,1864.5,1954.8,2067.7,1696.1
-2A30,2,4.65858171,"Houston Heights, Norhill and Studemont",31000,Robbery,55,48,50,29,17,38,182,45.5,-47.3,-30.9,31,-16.5,177.4,154.8,161.3,93.5,122.6,146.8
-2A30,2,4.65858171,"Houston Heights, Norhill and Studemont",31000,Sexual Assault,8,6,7,9,3,8,30,7.5,12.5,0,-11.1,6.7,25.8,19.4,22.6,29,25.8,24.2
-2A30,2,4.65858171,"Houston Heights, Norhill and Studemont",31000,Theft,1200,833,955,1072,326,1158,4060,1015,-10.7,-3.5,8,14.1,3871,2687.1,3080.6,3458.1,3735.5,3274.2
->>>>>>> 03a387d7909f1c425ecb7e437a06af343f5ff788
 2A40,2,1.60546103,Old Sixth Ward and the First Ward,8000,Arson,1,3,1,2,0,1,7,1.8,100,0,-50,-44.4,12.5,37.5,12.5,25,12.5,22.5
 2A40,2,1.60546103,Old Sixth Ward and the First Ward,8000,Assault,121,169,170,185,52,194,645,161.2,52.9,60.3,4.9,20.3,1512.5,2112.5,2125,2312.5,2425,2015
 2A40,2,1.60546103,Old Sixth Ward and the First Ward,8000,Auto Theft,48,56,72,96,57,133,272,68,100,177.1,38.5,95.6,600,700,900,1200,1662.5,850
@@ -194,31 +119,18 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 2A40,2,1.60546103,Old Sixth Ward and the First Ward,8000,Other,172,319,367,365,116,391,1223,305.8,112.2,127.3,7.1,27.9,2150,3987.5,4587.5,4562.5,4887.5,3822.5
 2A40,2,1.60546103,Old Sixth Ward and the First Ward,8000,Robbery,23,17,12,12,2,12,64,16,-47.8,-47.8,0,-25,287.5,212.5,150,150,150,200
 2A40,2,1.60546103,Old Sixth Ward and the First Ward,8000,Sexual Assault,9,5,2,5,5,6,21,5.2,-44.4,-33.3,20,15.4,112.5,62.5,25,62.5,75,65
-<<<<<<< HEAD
 2A40,2,1.60546103,Old Sixth Ward and the First Ward,8000,Theft,548,535,526,509,158,557,2118,529.5,-7.1,1.6,9.4,5.2,6850,6687.5,6575,6362.5,6962.5,6618.8
 2A50,2,5.4659844,"Memorial Park, West End, Ashbury and Cottage Grove",29000,Arson,1,3,2,1,0,1,7,1.8,0,0,0,-44.4,3.4,10.3,6.9,3.4,3.4,6.2
 2A50,2,5.4659844,"Memorial Park, West End, Ashbury and Cottage Grove",29000,Assault,396,374,481,441,133,470,1692,423,11.4,18.7,6.6,11.1,1365.5,1289.7,1658.6,1520.7,1620.7,1458.6
-=======
-2A40,2,1.60546103,Old Sixth Ward and the First Ward,8000,Theft,548,535,526,509,161,560,2118,529.5,-7.1,2.2,10,5.8,6850,6687.5,6575,6362.5,7000,6618.8
-2A50,2,5.4659844,"Memorial Park, West End, Ashbury and Cottage Grove",29000,Arson,1,3,2,1,0,1,7,1.8,0,0,0,-44.4,3.4,10.3,6.9,3.4,3.4,6.2
-2A50,2,5.4659844,"Memorial Park, West End, Ashbury and Cottage Grove",29000,Assault,396,374,481,441,134,471,1692,423,11.4,18.9,6.8,11.3,1365.5,1289.7,1658.6,1520.7,1624.1,1458.6
->>>>>>> 03a387d7909f1c425ecb7e437a06af343f5ff788
 2A50,2,5.4659844,"Memorial Park, West End, Ashbury and Cottage Grove",29000,Auto Theft,126,158,212,279,94,307,775,193.8,121.4,143.7,10,58.4,434.5,544.8,731,962.1,1058.6,668.3
 2A50,2,5.4659844,"Memorial Park, West End, Ashbury and Cottage Grove",29000,Burglary,214,130,150,135,33,140,629,157.2,-36.9,-34.6,3.7,-10.9,737.9,448.3,517.2,465.5,482.8,542.1
 2A50,2,5.4659844,"Memorial Park, West End, Ashbury and Cottage Grove",29000,Drug Offenses,63,40,52,60,15,63,215,53.8,-4.8,0,5,17.1,217.2,137.9,179.3,206.9,217.2,185.5
 2A50,2,5.4659844,"Memorial Park, West End, Ashbury and Cottage Grove",29000,Kidnapping,3,1,3,2,1,2,9,2.2,-33.3,-33.3,0,-9.1,10.3,3.4,10.3,6.9,6.9,7.6
 2A50,2,5.4659844,"Memorial Park, West End, Ashbury and Cottage Grove",29000,Murder,1,0,5,2,0,2,8,2,100,100,0,0,3.4,0,17.2,6.9,6.9,6.9
-<<<<<<< HEAD
 2A50,2,5.4659844,"Memorial Park, West End, Ashbury and Cottage Grove",29000,Other,417,722,925,995,242,1008,3059,764.8,138.6,141.7,1.3,31.8,1437.9,2489.7,3189.7,3431,3475.9,2637.2
 2A50,2,5.4659844,"Memorial Park, West End, Ashbury and Cottage Grove",29000,Robbery,40,33,55,49,7,50,177,44.2,22.5,25,2,13.1,137.9,113.8,189.7,169,172.4,152.4
 2A50,2,5.4659844,"Memorial Park, West End, Ashbury and Cottage Grove",29000,Sexual Assault,15,14,15,15,0,12,59,14.8,0,-20,-20,-18.9,51.7,48.3,51.7,51.7,41.4,51
 2A50,2,5.4659844,"Memorial Park, West End, Ashbury and Cottage Grove",29000,Theft,1711,1391,1326,1427,384,1447,5855,1463.8,-16.6,-15.4,1.4,-1.1,5900,4796.6,4572.4,4920.7,4989.7,5047.6
-=======
-2A50,2,5.4659844,"Memorial Park, West End, Ashbury and Cottage Grove",29000,Other,417,722,925,995,243,1009,3059,764.8,138.6,142,1.4,31.9,1437.9,2489.7,3189.7,3431,3479.3,2637.2
-2A50,2,5.4659844,"Memorial Park, West End, Ashbury and Cottage Grove",29000,Robbery,40,33,55,49,7,50,177,44.2,22.5,25,2,13.1,137.9,113.8,189.7,169,172.4,152.4
-2A50,2,5.4659844,"Memorial Park, West End, Ashbury and Cottage Grove",29000,Sexual Assault,15,14,15,15,0,12,59,14.8,0,-20,-20,-18.9,51.7,48.3,51.7,51.7,41.4,51
-2A50,2,5.4659844,"Memorial Park, West End, Ashbury and Cottage Grove",29000,Theft,1711,1391,1326,1427,390,1453,5855,1463.8,-16.6,-15.1,1.8,-0.7,5900,4796.6,4572.4,4920.7,5010.3,5047.6
->>>>>>> 03a387d7909f1c425ecb7e437a06af343f5ff788
 2A60,2,4.67447346,"Westport, Holly Park, Lazy Brook, Citadel, Shady Acres and Timbergrove",21000,Arson,3,10,2,2,2,3,17,4.2,-33.3,0,50,-28.6,14.3,47.6,9.5,9.5,14.3,20
 2A60,2,4.67447346,"Westport, Holly Park, Lazy Brook, Citadel, Shady Acres and Timbergrove",21000,Assault,245,250,328,347,85,351,1170,292.5,41.6,43.3,1.2,20,1166.7,1190.5,1561.9,1652.4,1671.4,1392.9
 2A60,2,4.67447346,"Westport, Holly Park, Lazy Brook, Citadel, Shady Acres and Timbergrove",21000,Auto Theft,157,223,195,193,61,215,768,192,22.9,36.9,11.4,12,747.6,1061.9,928.6,919,1023.8,914.3
@@ -226,7 +138,6 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 2A60,2,4.67447346,"Westport, Holly Park, Lazy Brook, Citadel, Shady Acres and Timbergrove",21000,Drug Offenses,32,28,34,33,5,26,127,31.8,3.1,-18.8,-21.2,-18.2,152.4,133.3,161.9,157.1,123.8,151.4
 2A60,2,4.67447346,"Westport, Holly Park, Lazy Brook, Citadel, Shady Acres and Timbergrove",21000,Kidnapping,0,4,1,1,0,0,6,1.5,NA,NA,-100,-100,0,19,4.8,4.8,0,7.1
 2A60,2,4.67447346,"Westport, Holly Park, Lazy Brook, Citadel, Shady Acres and Timbergrove",21000,Murder,2,1,0,0,2,2,3,0.8,-100,0,NA,150,9.5,4.8,0,0,9.5,3.8
-<<<<<<< HEAD
 2A60,2,4.67447346,"Westport, Holly Park, Lazy Brook, Citadel, Shady Acres and Timbergrove",21000,Other,276,388,495,493,145,507,1652,413,78.6,83.7,2.8,22.8,1314.3,1847.6,2357.1,2347.6,2414.3,1966.7
 2A60,2,4.67447346,"Westport, Holly Park, Lazy Brook, Citadel, Shady Acres and Timbergrove",21000,Robbery,25,25,19,27,14,38,96,24,8,52,40.7,58.3,119,119,90.5,128.6,181,114.3
 2A60,2,4.67447346,"Westport, Holly Park, Lazy Brook, Citadel, Shady Acres and Timbergrove",21000,Sexual Assault,3,5,9,6,1,6,23,5.8,100,100,0,3.4,14.3,23.8,42.9,28.6,28.6,27.6
@@ -244,51 +155,22 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 3B10,3,6.82068773,"Northwest Mall, Brookhollow, White Oak Acres, Oak Forest and Langwood",34000,Theft,1288,1270,1359,1776,581,1908,5693,1423.2,37.9,48.1,7.4,34.1,3788.2,3735.3,3997.1,5223.5,5611.8,4185.9
 3B30,3,5.310372,"White Oak Acres, Brook Hollow, Oak Forest, Garden Oaks and Shepherd Park Plaza",23000,Arson,0,4,2,2,0,2,8,2,NA,NA,0,0,0,17.4,8.7,8.7,8.7,8.7
 3B30,3,5.310372,"White Oak Acres, Brook Hollow, Oak Forest, Garden Oaks and Shepherd Park Plaza",23000,Assault,233,274,285,283,75,296,1075,268.8,21.5,27,4.6,10.1,1013,1191.3,1239.1,1230.4,1287,1168.7
-=======
-2A60,2,4.67447346,"Westport, Holly Park, Lazy Brook, Citadel, Shady Acres and Timbergrove",21000,Other,276,388,495,493,147,509,1652,413,78.6,84.4,3.2,23.2,1314.3,1847.6,2357.1,2347.6,2423.8,1966.7
-2A60,2,4.67447346,"Westport, Holly Park, Lazy Brook, Citadel, Shady Acres and Timbergrove",21000,Robbery,25,25,19,27,14,38,96,24,8,52,40.7,58.3,119,119,90.5,128.6,181,114.3
-2A60,2,4.67447346,"Westport, Holly Park, Lazy Brook, Citadel, Shady Acres and Timbergrove",21000,Sexual Assault,3,5,9,6,1,6,23,5.8,100,100,0,3.4,14.3,23.8,42.9,28.6,28.6,27.6
-2A60,2,4.67447346,"Westport, Holly Park, Lazy Brook, Citadel, Shady Acres and Timbergrove",21000,Theft,763,751,821,918,320,984,3253,813.2,20.3,29,7.2,21,3633.3,3576.2,3909.5,4371.4,4685.7,3872.4
-3B10,3,6.82068773,"Northwest Mall, Brookhollow, White Oak Acres, Oak Forest and Langwood",34000,Arson,13,6,3,11,4,12,33,8.2,-15.4,-7.7,9.1,46.3,38.2,17.6,8.8,32.4,35.3,24.1
-3B10,3,6.82068773,"Northwest Mall, Brookhollow, White Oak Acres, Oak Forest and Langwood",34000,Assault,976,1109,1147,1100,312,1143,4332,1083,12.7,17.1,3.9,5.5,2870.6,3261.8,3373.5,3235.3,3361.8,3185.3
-3B10,3,6.82068773,"Northwest Mall, Brookhollow, White Oak Acres, Oak Forest and Langwood",34000,Auto Theft,360,327,326,389,130,434,1402,350.5,8.1,20.6,11.6,23.8,1058.8,961.8,958.8,1144.1,1276.5,1030.9
-3B10,3,6.82068773,"Northwest Mall, Brookhollow, White Oak Acres, Oak Forest and Langwood",34000,Burglary,309,336,336,354,110,379,1335,333.8,14.6,22.7,7.1,13.5,908.8,988.2,988.2,1041.2,1114.7,981.8
-3B10,3,6.82068773,"Northwest Mall, Brookhollow, White Oak Acres, Oak Forest and Langwood",34000,Drug Offenses,176,196,193,182,70,203,747,186.8,3.4,15.3,11.5,8.7,517.6,576.5,567.6,535.3,597.1,549.4
-3B10,3,6.82068773,"Northwest Mall, Brookhollow, White Oak Acres, Oak Forest and Langwood",34000,Kidnapping,1,4,5,14,1,15,24,6,1300,1400,7.1,150,2.9,11.8,14.7,41.2,44.1,17.6
-3B10,3,6.82068773,"Northwest Mall, Brookhollow, White Oak Acres, Oak Forest and Langwood",34000,Murder,4,4,10,5,1,5,23,5.8,25,25,0,-13.8,11.8,11.8,29.4,14.7,14.7,17.1
-3B10,3,6.82068773,"Northwest Mall, Brookhollow, White Oak Acres, Oak Forest and Langwood",34000,Other,718,1274,1360,1401,429,1511,4753,1188.2,95.1,110.4,7.9,27.2,2111.8,3747.1,4000,4120.6,4444.1,3494.7
-3B10,3,6.82068773,"Northwest Mall, Brookhollow, White Oak Acres, Oak Forest and Langwood",34000,Robbery,180,193,157,161,48,175,691,172.8,-10.6,-2.8,8.7,1.3,529.4,567.6,461.8,473.5,514.7,508.2
-3B10,3,6.82068773,"Northwest Mall, Brookhollow, White Oak Acres, Oak Forest and Langwood",34000,Sexual Assault,24,43,33,30,10,31,130,32.5,25,29.2,3.3,-4.6,70.6,126.5,97.1,88.2,91.2,95.6
-3B10,3,6.82068773,"Northwest Mall, Brookhollow, White Oak Acres, Oak Forest and Langwood",34000,Theft,1288,1270,1359,1776,585,1912,5693,1423.2,37.9,48.4,7.7,34.3,3788.2,3735.3,3997.1,5223.5,5623.5,4185.9
-3B30,3,5.310372,"White Oak Acres, Brook Hollow, Oak Forest, Garden Oaks and Shepherd Park Plaza",23000,Arson,0,4,2,2,0,2,8,2,NA,NA,0,0,0,17.4,8.7,8.7,8.7,8.7
-3B30,3,5.310372,"White Oak Acres, Brook Hollow, Oak Forest, Garden Oaks and Shepherd Park Plaza",23000,Assault,233,274,285,283,76,297,1075,268.8,21.5,27.5,4.9,10.5,1013,1191.3,1239.1,1230.4,1291.3,1168.7
->>>>>>> 03a387d7909f1c425ecb7e437a06af343f5ff788
 3B30,3,5.310372,"White Oak Acres, Brook Hollow, Oak Forest, Garden Oaks and Shepherd Park Plaza",23000,Auto Theft,55,68,55,89,22,90,267,66.8,61.8,63.6,1.1,34.7,239.1,295.7,239.1,387,391.3,290.4
 3B30,3,5.310372,"White Oak Acres, Brook Hollow, Oak Forest, Garden Oaks and Shepherd Park Plaza",23000,Burglary,131,133,140,113,28,111,517,129.2,-13.7,-15.3,-1.8,-14.1,569.6,578.3,608.7,491.3,482.6,561.7
 3B30,3,5.310372,"White Oak Acres, Brook Hollow, Oak Forest, Garden Oaks and Shepherd Park Plaza",23000,Drug Offenses,35,37,35,38,9,33,145,36.2,8.6,-5.7,-13.2,-8.8,152.2,160.9,152.2,165.2,143.5,157.4
 3B30,3,5.310372,"White Oak Acres, Brook Hollow, Oak Forest, Garden Oaks and Shepherd Park Plaza",23000,Kidnapping,1,0,0,2,0,2,3,0.8,100,100,0,150,4.3,0,0,8.7,8.7,3.5
 3B30,3,5.310372,"White Oak Acres, Brook Hollow, Oak Forest, Garden Oaks and Shepherd Park Plaza",23000,Murder,0,3,2,3,0,0,8,2,NA,NA,-100,-100,0,13,8.7,13,0,8.7
-<<<<<<< HEAD
 3B30,3,5.310372,"White Oak Acres, Brook Hollow, Oak Forest, Garden Oaks and Shepherd Park Plaza",23000,Other,234,369,414,427,104,415,1444,361,82.5,77.4,-2.8,15,1017.4,1604.3,1800,1856.5,1804.3,1569.6
 3B30,3,5.310372,"White Oak Acres, Brook Hollow, Oak Forest, Garden Oaks and Shepherd Park Plaza",23000,Robbery,54,42,37,34,13,39,167,41.8,-37,-27.8,14.7,-6.7,234.8,182.6,160.9,147.8,169.6,181.7
 3B30,3,5.310372,"White Oak Acres, Brook Hollow, Oak Forest, Garden Oaks and Shepherd Park Plaza",23000,Sexual Assault,8,2,7,6,3,9,23,5.8,-25,12.5,50,55.2,34.8,8.7,30.4,26.1,39.1,25.2
 3B30,3,5.310372,"White Oak Acres, Brook Hollow, Oak Forest, Garden Oaks and Shepherd Park Plaza",23000,Theft,659,514,487,532,166,586,2192,548,-19.3,-11.1,10.2,6.9,2865.2,2234.8,2117.4,2313,2547.8,2382.6
 3B40,3,3.40013561,"Independence Heights, Melrose and Graceland",13000,Arson,6,7,11,6,3,7,30,7.5,0,16.7,16.7,-6.7,46.2,53.8,84.6,46.2,53.8,57.7
 3B40,3,3.40013561,"Independence Heights, Melrose and Graceland",13000,Assault,696,732,749,644,197,727,2821,705.2,-7.5,4.5,12.9,3.1,5353.8,5630.8,5761.5,4953.8,5592.3,5424.6
-=======
-3B30,3,5.310372,"White Oak Acres, Brook Hollow, Oak Forest, Garden Oaks and Shepherd Park Plaza",23000,Other,234,369,414,427,105,416,1444,361,82.5,77.8,-2.6,15.2,1017.4,1604.3,1800,1856.5,1808.7,1569.6
-3B30,3,5.310372,"White Oak Acres, Brook Hollow, Oak Forest, Garden Oaks and Shepherd Park Plaza",23000,Robbery,54,42,37,34,14,40,167,41.8,-37,-25.9,17.6,-4.3,234.8,182.6,160.9,147.8,173.9,181.7
-3B30,3,5.310372,"White Oak Acres, Brook Hollow, Oak Forest, Garden Oaks and Shepherd Park Plaza",23000,Sexual Assault,8,2,7,6,3,9,23,5.8,-25,12.5,50,55.2,34.8,8.7,30.4,26.1,39.1,25.2
-3B30,3,5.310372,"White Oak Acres, Brook Hollow, Oak Forest, Garden Oaks and Shepherd Park Plaza",23000,Theft,659,514,487,532,166,586,2192,548,-19.3,-11.1,10.2,6.9,2865.2,2234.8,2117.4,2313,2547.8,2382.6
-3B40,3,3.40013561,"Independence Heights, Melrose and Graceland",13000,Arson,6,7,11,6,3,7,30,7.5,0,16.7,16.7,-6.7,46.2,53.8,84.6,46.2,53.8,57.7
-3B40,3,3.40013561,"Independence Heights, Melrose and Graceland",13000,Assault,696,732,749,644,198,728,2821,705.2,-7.5,4.6,13,3.2,5353.8,5630.8,5761.5,4953.8,5600,5424.6
->>>>>>> 03a387d7909f1c425ecb7e437a06af343f5ff788
 3B40,3,3.40013561,"Independence Heights, Melrose and Graceland",13000,Auto Theft,118,130,149,149,35,155,546,136.5,26.3,31.4,4,13.6,907.7,1000,1146.2,1146.2,1192.3,1050
 3B40,3,3.40013561,"Independence Heights, Melrose and Graceland",13000,Burglary,183,191,183,127,21,132,684,171,-30.6,-27.9,3.9,-22.8,1407.7,1469.2,1407.7,976.9,1015.4,1315.4
 3B40,3,3.40013561,"Independence Heights, Melrose and Graceland",13000,Drug Offenses,168,171,167,123,36,130,629,157.2,-26.8,-22.6,5.7,-17.3,1292.3,1315.4,1284.6,946.2,1000,1209.2
 3B40,3,3.40013561,"Independence Heights, Melrose and Graceland",13000,Kidnapping,3,4,1,9,0,7,17,4.2,200,133.3,-22.2,66.7,23.1,30.8,7.7,69.2,53.8,32.3
 3B40,3,3.40013561,"Independence Heights, Melrose and Graceland",13000,Murder,5,6,10,6,0,6,27,6.8,20,20,0,-11.8,38.5,46.2,76.9,46.2,46.2,52.3
-<<<<<<< HEAD
 3B40,3,3.40013561,"Independence Heights, Melrose and Graceland",13000,Other,341,684,734,698,219,766,2457,614.2,104.7,124.6,9.7,24.7,2623.1,5261.5,5646.2,5369.2,5892.3,4724.6
 3B40,3,3.40013561,"Independence Heights, Melrose and Graceland",13000,Robbery,96,100,75,68,21,76,339,84.8,-29.2,-20.8,11.8,-10.4,738.5,769.2,576.9,523.1,584.6,652.3
 3B40,3,3.40013561,"Independence Heights, Melrose and Graceland",13000,Sexual Assault,20,20,17,14,4,15,71,17.8,-30,-25,7.1,-15.7,153.8,153.8,130.8,107.7,115.4,136.9
@@ -306,25 +188,6 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 3B50,3,3.85259517,"Northline Mall, Stratton Place, Oakwood, Colonial Gardens, Lindale and Junction City",20000,Theft,1322,1282,862,940,320,1054,4406,1101.5,-28.9,-20.3,12.1,-4.3,6610,6410,4310,4700,5270,5507.5
 5F10,5,3.25978513,Afton Village and Pine Terrace,14000,Arson,0,0,0,0,1,1,0,0,NA,NA,NA,NA,0,0,0,0,7.1,0
 5F10,5,3.25978513,Afton Village and Pine Terrace,14000,Assault,300,313,328,350,115,387,1291,322.8,16.7,29,10.6,19.9,2142.9,2235.7,2342.9,2500,2764.3,2305.7
-=======
-3B40,3,3.40013561,"Independence Heights, Melrose and Graceland",13000,Other,341,684,734,698,220,767,2457,614.2,104.7,124.9,9.9,24.9,2623.1,5261.5,5646.2,5369.2,5900,4724.6
-3B40,3,3.40013561,"Independence Heights, Melrose and Graceland",13000,Robbery,96,100,75,68,21,76,339,84.8,-29.2,-20.8,11.8,-10.4,738.5,769.2,576.9,523.1,584.6,652.3
-3B40,3,3.40013561,"Independence Heights, Melrose and Graceland",13000,Sexual Assault,20,20,17,14,4,15,71,17.8,-30,-25,7.1,-15.7,153.8,153.8,130.8,107.7,115.4,136.9
-3B40,3,3.40013561,"Independence Heights, Melrose and Graceland",13000,Theft,493,484,471,539,153,559,1987,496.8,9.3,13.4,3.7,12.5,3792.3,3723.1,3623.1,4146.2,4300,3821.5
-3B50,3,3.85259517,"Northline Mall, Stratton Place, Oakwood, Colonial Gardens, Lindale and Junction City",20000,Arson,4,12,6,7,3,6,29,7.2,75,50,-14.3,-16.7,20,60,30,35,30,36
-3B50,3,3.85259517,"Northline Mall, Stratton Place, Oakwood, Colonial Gardens, Lindale and Junction City",20000,Assault,784,878,756,796,206,823,3214,803.5,1.5,5,3.4,2.4,3920,4390,3780,3980,4115,4017.5
-3B50,3,3.85259517,"Northline Mall, Stratton Place, Oakwood, Colonial Gardens, Lindale and Junction City",20000,Auto Theft,209,196,247,281,111,333,933,233.2,34.4,59.3,18.5,42.8,1045,980,1235,1405,1665,1166
-3B50,3,3.85259517,"Northline Mall, Stratton Place, Oakwood, Colonial Gardens, Lindale and Junction City",20000,Burglary,154,143,137,142,54,160,576,144,-7.8,3.9,12.7,11.1,770,715,685,710,800,720
-3B50,3,3.85259517,"Northline Mall, Stratton Place, Oakwood, Colonial Gardens, Lindale and Junction City",20000,Drug Offenses,133,146,149,146,34,135,574,143.5,9.8,1.5,-7.5,-5.9,665,730,745,730,675,717.5
-3B50,3,3.85259517,"Northline Mall, Stratton Place, Oakwood, Colonial Gardens, Lindale and Junction City",20000,Kidnapping,2,4,1,4,1,4,11,2.8,100,100,0,42.9,10,20,5,20,20,14
-3B50,3,3.85259517,"Northline Mall, Stratton Place, Oakwood, Colonial Gardens, Lindale and Junction City",20000,Murder,1,3,8,7,1,7,19,4.8,600,600,0,45.8,5,15,40,35,35,24
-3B50,3,3.85259517,"Northline Mall, Stratton Place, Oakwood, Colonial Gardens, Lindale and Junction City",20000,Other,404,911,935,937,353,1056,3187,796.8,131.9,161.4,12.7,32.5,2020,4555,4675,4685,5280,3984
-3B50,3,3.85259517,"Northline Mall, Stratton Place, Oakwood, Colonial Gardens, Lindale and Junction City",20000,Robbery,167,141,133,109,41,128,550,137.5,-34.7,-23.4,17.4,-6.9,835,705,665,545,640,687.5
-3B50,3,3.85259517,"Northline Mall, Stratton Place, Oakwood, Colonial Gardens, Lindale and Junction City",20000,Sexual Assault,27,18,18,23,4,24,86,21.5,-14.8,-11.1,4.3,11.6,135,90,90,115,120,107.5
-3B50,3,3.85259517,"Northline Mall, Stratton Place, Oakwood, Colonial Gardens, Lindale and Junction City",20000,Theft,1322,1282,862,940,320,1054,4406,1101.5,-28.9,-20.3,12.1,-4.3,6610,6410,4310,4700,5270,5507.5
-5F10,5,3.25978513,Afton Village and Pine Terrace,14000,Arson,0,0,0,0,1,1,0,0,NA,NA,NA,NA,0,0,0,0,7.1,0
-5F10,5,3.25978513,Afton Village and Pine Terrace,14000,Assault,300,313,328,350,116,388,1291,322.8,16.7,29.3,10.9,20.2,2142.9,2235.7,2342.9,2500,2771.4,2305.7
->>>>>>> 03a387d7909f1c425ecb7e437a06af343f5ff788
 5F10,5,3.25978513,Afton Village and Pine Terrace,14000,Auto Theft,100,112,94,95,47,119,401,100.2,-5,19,25.3,18.8,714.3,800,671.4,678.6,850,715.7
 5F10,5,3.25978513,Afton Village and Pine Terrace,14000,Burglary,124,98,119,125,29,120,466,116.5,0.8,-3.2,-4,3,885.7,700,850,892.9,857.1,832.1
 5F10,5,3.25978513,Afton Village and Pine Terrace,14000,Drug Offenses,78,63,43,46,17,53,230,57.5,-41,-32.1,15.2,-7.8,557.1,450,307.1,328.6,378.6,410.7
@@ -335,7 +198,6 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 5F10,5,3.25978513,Afton Village and Pine Terrace,14000,Sexual Assault,10,5,11,8,1,8,34,8.5,-20,-20,0,-5.9,71.4,35.7,78.6,57.1,57.1,60.7
 5F10,5,3.25978513,Afton Village and Pine Terrace,14000,Theft,541,644,555,554,112,481,2294,573.5,2.4,-11.1,-13.2,-16.1,3864.3,4600,3964.3,3957.1,3435.7,4096.4
 5F30,5,8.70689439,"Fairbanks, Carverdale, Fawndale and Northwest Crossing",17000,Arson,3,5,6,9,3,5,23,5.8,200,66.7,-44.4,-13.8,17.6,29.4,35.3,52.9,29.4,34.1
-<<<<<<< HEAD
 5F30,5,8.70689439,"Fairbanks, Carverdale, Fawndale and Northwest Crossing",17000,Assault,700,796,868,800,199,828,3164,791,14.3,18.3,3.5,4.7,4117.6,4682.4,5105.9,4705.9,4870.6,4652.9
 5F30,5,8.70689439,"Fairbanks, Carverdale, Fawndale and Northwest Crossing",17000,Auto Theft,293,317,289,295,86,308,1194,298.5,0.7,5.1,4.4,3.2,1723.5,1864.7,1700,1735.3,1811.8,1755.9
 5F30,5,8.70689439,"Fairbanks, Carverdale, Fawndale and Northwest Crossing",17000,Burglary,235,227,218,193,106,266,873,218.2,-17.9,13.2,37.8,21.9,1382.4,1335.3,1282.4,1135.3,1564.7,1283.5
@@ -360,67 +222,25 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 6B20,6,6.12869477,"Highland Heights, Oakdale and Melrose Gardens",18000,Arson,10,15,10,7,1,7,42,10.5,-30,-30,0,-33.3,55.6,83.3,55.6,38.9,38.9,58.3
 6B20,6,6.12869477,"Highland Heights, Oakdale and Melrose Gardens",18000,Assault,824,980,848,765,212,781,3417,854.2,-7.2,-5.2,2.1,-8.6,4577.8,5444.4,4711.1,4250,4338.9,4745.6
 6B20,6,6.12869477,"Highland Heights, Oakdale and Melrose Gardens",18000,Auto Theft,127,110,104,152,50,171,493,123.2,19.7,34.6,12.5,38.8,705.6,611.1,577.8,844.4,950,684.4
-=======
-5F30,5,8.70689439,"Fairbanks, Carverdale, Fawndale and Northwest Crossing",17000,Assault,700,796,868,800,204,833,3164,791,14.3,19,4.1,5.3,4117.6,4682.4,5105.9,4705.9,4900,4652.9
-5F30,5,8.70689439,"Fairbanks, Carverdale, Fawndale and Northwest Crossing",17000,Auto Theft,293,317,289,295,86,308,1194,298.5,0.7,5.1,4.4,3.2,1723.5,1864.7,1700,1735.3,1811.8,1755.9
-5F30,5,8.70689439,"Fairbanks, Carverdale, Fawndale and Northwest Crossing",17000,Burglary,235,227,218,193,107,267,873,218.2,-17.9,13.6,38.3,22.4,1382.4,1335.3,1282.4,1135.3,1570.6,1283.5
-5F30,5,8.70689439,"Fairbanks, Carverdale, Fawndale and Northwest Crossing",17000,Drug Offenses,132,143,137,120,50,149,532,133,-9.1,12.9,24.2,12,776.5,841.2,805.9,705.9,876.5,782.4
-5F30,5,8.70689439,"Fairbanks, Carverdale, Fawndale and Northwest Crossing",17000,Kidnapping,6,3,1,3,0,2,13,3.2,-50,-66.7,-33.3,-37.5,35.3,17.6,5.9,17.6,11.8,18.8
-5F30,5,8.70689439,"Fairbanks, Carverdale, Fawndale and Northwest Crossing",17000,Murder,8,4,2,4,0,2,18,4.5,-50,-75,-50,-55.6,47.1,23.5,11.8,23.5,11.8,26.5
-5F30,5,8.70689439,"Fairbanks, Carverdale, Fawndale and Northwest Crossing",17000,Other,630,926,902,927,260,963,3385,846.2,47.1,52.9,3.9,13.8,3705.9,5447.1,5305.9,5452.9,5664.7,4977.6
-5F30,5,8.70689439,"Fairbanks, Carverdale, Fawndale and Northwest Crossing",17000,Robbery,152,128,98,118,16,104,496,124,-22.4,-31.6,-11.9,-16.1,894.1,752.9,576.5,694.1,611.8,729.4
-5F30,5,8.70689439,"Fairbanks, Carverdale, Fawndale and Northwest Crossing",17000,Sexual Assault,20,16,20,18,2,17,74,18.5,-10,-15,-5.6,-8.1,117.6,94.1,117.6,105.9,100,108.8
-5F30,5,8.70689439,"Fairbanks, Carverdale, Fawndale and Northwest Crossing",17000,Theft,1705,1464,1506,1610,400,1638,6285,1571.2,-5.6,-3.9,1.7,4.3,10029.4,8611.8,8858.8,9470.6,9635.3,9242.4
-6B10,6,5.50084827,"York Plaza, Pembrook Place and Hawthorne Place",33000,Arson,7,6,6,10,2,9,29,7.2,42.9,28.6,-10,25,21.2,18.2,18.2,30.3,27.3,21.8
-6B10,6,5.50084827,"York Plaza, Pembrook Place and Hawthorne Place",33000,Assault,946,1098,1100,947,284,1016,4091,1022.8,0.1,7.4,7.3,-0.7,2866.7,3327.3,3333.3,2869.7,3078.8,3099.4
-6B10,6,5.50084827,"York Plaza, Pembrook Place and Hawthorne Place",33000,Auto Theft,306,354,304,274,102,328,1238,309.5,-10.5,7.2,19.7,6,927.3,1072.7,921.2,830.3,993.9,937.9
-6B10,6,5.50084827,"York Plaza, Pembrook Place and Hawthorne Place",33000,Burglary,175,156,178,188,95,235,697,174.2,7.4,34.3,25,34.9,530.3,472.7,539.4,569.7,712.1,527.9
-6B10,6,5.50084827,"York Plaza, Pembrook Place and Hawthorne Place",33000,Drug Offenses,138,148,183,169,42,153,638,159.5,22.5,10.9,-9.5,-4.1,418.2,448.5,554.5,512.1,463.6,483.3
-6B10,6,5.50084827,"York Plaza, Pembrook Place and Hawthorne Place",33000,Kidnapping,1,4,6,8,6,13,19,4.8,700,1200,62.5,170.8,3,12.1,18.2,24.2,39.4,14.5
-6B10,6,5.50084827,"York Plaza, Pembrook Place and Hawthorne Place",33000,Murder,7,9,9,10,2,8,35,8.8,42.9,14.3,-20,-9.1,21.2,27.3,27.3,30.3,24.2,26.7
-6B10,6,5.50084827,"York Plaza, Pembrook Place and Hawthorne Place",33000,Other,433,944,978,1022,307,1057,3377,844.2,136,144.1,3.4,25.2,1312.1,2860.6,2963.6,3097,3203,2558.2
-6B10,6,5.50084827,"York Plaza, Pembrook Place and Hawthorne Place",33000,Robbery,188,149,183,141,40,138,661,165.2,-25,-26.6,-2.1,-16.5,569.7,451.5,554.5,427.3,418.2,500.6
-6B10,6,5.50084827,"York Plaza, Pembrook Place and Hawthorne Place",33000,Sexual Assault,20,30,29,27,11,33,106,26.5,35,65,22.2,24.5,60.6,90.9,87.9,81.8,100,80.3
-6B10,6,5.50084827,"York Plaza, Pembrook Place and Hawthorne Place",33000,Theft,725,795,633,712,229,769,2865,716.2,-1.8,6.1,8,7.4,2197,2409.1,1918.2,2157.6,2330.3,2170.3
-6B20,6,6.12869477,"Highland Heights, Oakdale and Melrose Gardens",18000,Arson,10,15,10,7,1,7,42,10.5,-30,-30,0,-33.3,55.6,83.3,55.6,38.9,38.9,58.3
-6B20,6,6.12869477,"Highland Heights, Oakdale and Melrose Gardens",18000,Assault,824,980,848,765,214,783,3417,854.2,-7.2,-5,2.4,-8.3,4577.8,5444.4,4711.1,4250,4350,4745.6
-6B20,6,6.12869477,"Highland Heights, Oakdale and Melrose Gardens",18000,Auto Theft,127,110,104,152,51,172,493,123.2,19.7,35.4,13.2,39.6,705.6,611.1,577.8,844.4,955.6,684.4
->>>>>>> 03a387d7909f1c425ecb7e437a06af343f5ff788
 6B20,6,6.12869477,"Highland Heights, Oakdale and Melrose Gardens",18000,Burglary,169,192,132,164,42,162,657,164.2,-3,-4.1,-1.2,-1.3,938.9,1066.7,733.3,911.1,900,912.2
 6B20,6,6.12869477,"Highland Heights, Oakdale and Melrose Gardens",18000,Drug Offenses,141,119,141,91,29,97,492,123,-35.5,-31.2,6.6,-21.1,783.3,661.1,783.3,505.6,538.9,683.3
 6B20,6,6.12869477,"Highland Heights, Oakdale and Melrose Gardens",18000,Kidnapping,4,5,3,3,4,6,15,3.8,-25,50,100,57.9,22.2,27.8,16.7,16.7,33.3,21.1
 6B20,6,6.12869477,"Highland Heights, Oakdale and Melrose Gardens",18000,Murder,2,3,9,2,1,2,16,4,0,0,0,-50,11.1,16.7,50,11.1,11.1,22.2
-<<<<<<< HEAD
 6B20,6,6.12869477,"Highland Heights, Oakdale and Melrose Gardens",18000,Other,411,735,760,674,232,744,2580,645,64,81,10.4,15.3,2283.3,4083.3,4222.2,3744.4,4133.3,3583.3
 6B20,6,6.12869477,"Highland Heights, Oakdale and Melrose Gardens",18000,Robbery,93,69,49,55,15,53,266,66.5,-40.9,-43,-3.6,-20.3,516.7,383.3,272.2,305.6,294.4,369.4
 6B20,6,6.12869477,"Highland Heights, Oakdale and Melrose Gardens",18000,Sexual Assault,27,19,19,17,5,19,82,20.5,-37,-29.6,11.8,-7.3,150,105.6,105.6,94.4,105.6,113.9
 6B20,6,6.12869477,"Highland Heights, Oakdale and Melrose Gardens",18000,Theft,479,442,418,461,108,452,1800,450,-3.8,-5.6,-2,0.4,2661.1,2455.6,2322.2,2561.1,2511.1,2500
 6B30,6,7.2300685,"Woodland Trails, Oaks of Inwood, Bayou Bend, Cole Creek Manor and Inwood Forest",38000,Arson,14,5,7,14,0,12,40,10,0,-14.3,-14.3,20,36.8,13.2,18.4,36.8,31.6,26.3
 6B30,6,7.2300685,"Woodland Trails, Oaks of Inwood, Bayou Bend, Cole Creek Manor and Inwood Forest",38000,Assault,1122,1244,1116,1019,251,1032,4501,1125.2,-9.2,-8,1.3,-8.3,2952.6,3273.7,2936.8,2681.6,2715.8,2961.1
-=======
-6B20,6,6.12869477,"Highland Heights, Oakdale and Melrose Gardens",18000,Other,411,735,760,674,236,748,2580,645,64,82,11,16,2283.3,4083.3,4222.2,3744.4,4155.6,3583.3
-6B20,6,6.12869477,"Highland Heights, Oakdale and Melrose Gardens",18000,Robbery,93,69,49,55,16,54,266,66.5,-40.9,-41.9,-1.8,-18.8,516.7,383.3,272.2,305.6,300,369.4
-6B20,6,6.12869477,"Highland Heights, Oakdale and Melrose Gardens",18000,Sexual Assault,27,19,19,17,5,19,82,20.5,-37,-29.6,11.8,-7.3,150,105.6,105.6,94.4,105.6,113.9
-6B20,6,6.12869477,"Highland Heights, Oakdale and Melrose Gardens",18000,Theft,479,442,418,461,110,454,1800,450,-3.8,-5.2,-1.5,0.9,2661.1,2455.6,2322.2,2561.1,2522.2,2500
-6B30,6,7.2300685,"Woodland Trails, Oaks of Inwood, Bayou Bend, Cole Creek Manor and Inwood Forest",38000,Arson,14,5,7,14,0,12,40,10,0,-14.3,-14.3,20,36.8,13.2,18.4,36.8,31.6,26.3
-6B30,6,7.2300685,"Woodland Trails, Oaks of Inwood, Bayou Bend, Cole Creek Manor and Inwood Forest",38000,Assault,1122,1244,1116,1019,253,1034,4501,1125.2,-9.2,-7.8,1.5,-8.1,2952.6,3273.7,2936.8,2681.6,2721.1,2961.1
->>>>>>> 03a387d7909f1c425ecb7e437a06af343f5ff788
 6B30,6,7.2300685,"Woodland Trails, Oaks of Inwood, Bayou Bend, Cole Creek Manor and Inwood Forest",38000,Auto Theft,184,171,165,160,61,179,680,170,-13,-2.7,11.9,5.3,484.2,450,434.2,421.1,471.1,447.4
 6B30,6,7.2300685,"Woodland Trails, Oaks of Inwood, Bayou Bend, Cole Creek Manor and Inwood Forest",38000,Burglary,219,212,123,202,54,206,756,189,-7.8,-5.9,2,9,576.3,557.9,323.7,531.6,542.1,497.4
 6B30,6,7.2300685,"Woodland Trails, Oaks of Inwood, Bayou Bend, Cole Creek Manor and Inwood Forest",38000,Drug Offenses,111,104,94,64,15,58,373,93.2,-42.3,-47.7,-9.4,-37.8,292.1,273.7,247.4,168.4,152.6,245.3
 6B30,6,7.2300685,"Woodland Trails, Oaks of Inwood, Bayou Bend, Cole Creek Manor and Inwood Forest",38000,Kidnapping,3,5,4,6,0,5,18,4.5,100,66.7,-16.7,11.1,7.9,13.2,10.5,15.8,13.2,11.8
 6B30,6,7.2300685,"Woodland Trails, Oaks of Inwood, Bayou Bend, Cole Creek Manor and Inwood Forest",38000,Murder,6,6,12,3,0,2,27,6.8,-50,-66.7,-33.3,-70.6,15.8,15.8,31.6,7.9,5.3,17.9
-<<<<<<< HEAD
 6B30,6,7.2300685,"Woodland Trails, Oaks of Inwood, Bayou Bend, Cole Creek Manor and Inwood Forest",38000,Other,518,865,858,815,257,833,3056,764,57.3,60.8,2.2,9,1363.2,2276.3,2257.9,2144.7,2192.1,2010.5
 6B30,6,7.2300685,"Woodland Trails, Oaks of Inwood, Bayou Bend, Cole Creek Manor and Inwood Forest",38000,Robbery,136,123,99,104,21,94,462,115.5,-23.5,-30.9,-9.6,-18.6,357.9,323.7,260.5,273.7,247.4,303.9
 6B30,6,7.2300685,"Woodland Trails, Oaks of Inwood, Bayou Bend, Cole Creek Manor and Inwood Forest",38000,Sexual Assault,19,30,11,21,10,27,81,20.2,10.5,42.1,28.6,33.7,50,78.9,28.9,55.3,71.1,53.2
 6B30,6,7.2300685,"Woodland Trails, Oaks of Inwood, Bayou Bend, Cole Creek Manor and Inwood Forest",38000,Theft,661,678,628,616,160,634,2583,645.8,-6.8,-4.1,2.9,-1.8,1739.5,1784.2,1652.6,1621.1,1668.4,1699.5
-=======
-6B30,6,7.2300685,"Woodland Trails, Oaks of Inwood, Bayou Bend, Cole Creek Manor and Inwood Forest",38000,Other,518,865,858,815,262,838,3056,764,57.3,61.8,2.8,9.7,1363.2,2276.3,2257.9,2144.7,2205.3,2010.5
-6B30,6,7.2300685,"Woodland Trails, Oaks of Inwood, Bayou Bend, Cole Creek Manor and Inwood Forest",38000,Robbery,136,123,99,104,21,94,462,115.5,-23.5,-30.9,-9.6,-18.6,357.9,323.7,260.5,273.7,247.4,303.9
-6B30,6,7.2300685,"Woodland Trails, Oaks of Inwood, Bayou Bend, Cole Creek Manor and Inwood Forest",38000,Sexual Assault,19,30,11,21,10,27,81,20.2,10.5,42.1,28.6,33.7,50,78.9,28.9,55.3,71.1,53.2
-6B30,6,7.2300685,"Woodland Trails, Oaks of Inwood, Bayou Bend, Cole Creek Manor and Inwood Forest",38000,Theft,661,678,628,616,162,636,2583,645.8,-6.8,-3.8,3.2,-1.5,1739.5,1784.2,1652.6,1621.1,1673.7,1699.5
->>>>>>> 03a387d7909f1c425ecb7e437a06af343f5ff788
 6B40,6,5.544689,"Highland Gardens, Highland Heights and North Plaza",20000,Arson,5,7,6,11,1,9,29,7.2,120,80,-18.2,25,25,35,30,55,45,36
 6B40,6,5.544689,"Highland Gardens, Highland Heights and North Plaza",20000,Assault,1022,1184,1014,922,251,955,4142,1035.5,-9.8,-6.6,3.6,-7.8,5110,5920,5070,4610,4775,5177.5
 6B40,6,5.544689,"Highland Gardens, Highland Heights and North Plaza",20000,Auto Theft,194,148,169,143,44,145,654,163.5,-26.3,-25.3,1.4,-11.3,970,740,845,715,725,817.5
@@ -428,17 +248,10 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 6B40,6,5.544689,"Highland Gardens, Highland Heights and North Plaza",20000,Drug Offenses,164,179,193,160,41,163,696,174,-2.4,-0.6,1.9,-6.3,820,895,965,800,815,870
 6B40,6,5.544689,"Highland Gardens, Highland Heights and North Plaza",20000,Kidnapping,2,2,3,4,0,3,11,2.8,100,50,-25,7.1,10,10,15,20,15,14
 6B40,6,5.544689,"Highland Gardens, Highland Heights and North Plaza",20000,Murder,5,12,9,6,0,4,32,8,20,-20,-33.3,-50,25,60,45,30,20,40
-<<<<<<< HEAD
 6B40,6,5.544689,"Highland Gardens, Highland Heights and North Plaza",20000,Other,450,922,908,778,209,781,3058,764.5,72.9,73.6,0.4,2.2,2250,4610,4540,3890,3905,3822.5
 6B40,6,5.544689,"Highland Gardens, Highland Heights and North Plaza",20000,Robbery,112,92,85,78,18,80,367,91.8,-30.4,-28.6,2.6,-12.9,560,460,425,390,400,459
 6B40,6,5.544689,"Highland Gardens, Highland Heights and North Plaza",20000,Sexual Assault,27,14,17,13,1,9,71,17.8,-51.9,-66.7,-30.8,-49.4,135,70,85,65,45,89
 6B40,6,5.544689,"Highland Gardens, Highland Heights and North Plaza",20000,Theft,567,534,533,520,141,511,2154,538.5,-8.3,-9.9,-1.7,-5.1,2835,2670,2665,2600,2555,2692.5
-=======
-6B40,6,5.544689,"Highland Gardens, Highland Heights and North Plaza",20000,Other,450,922,908,778,210,782,3058,764.5,72.9,73.8,0.5,2.3,2250,4610,4540,3890,3910,3822.5
-6B40,6,5.544689,"Highland Gardens, Highland Heights and North Plaza",20000,Robbery,112,92,85,78,18,80,367,91.8,-30.4,-28.6,2.6,-12.9,560,460,425,390,400,459
-6B40,6,5.544689,"Highland Gardens, Highland Heights and North Plaza",20000,Sexual Assault,27,14,17,13,1,9,71,17.8,-51.9,-66.7,-30.8,-49.4,135,70,85,65,45,89
-6B40,6,5.544689,"Highland Gardens, Highland Heights and North Plaza",20000,Theft,567,534,533,520,143,513,2154,538.5,-8.3,-9.5,-1.3,-4.7,2835,2670,2665,2600,2565,2692.5
->>>>>>> 03a387d7909f1c425ecb7e437a06af343f5ff788
 22B30,22,2.8264671,Aldine and Imperial Valley,19000,Arson,5,2,5,2,2,3,14,3.5,-60,-40,50,-14.3,26.3,10.5,26.3,10.5,15.8,18.4
 22B30,22,2.8264671,Aldine and Imperial Valley,19000,Assault,671,677,728,691,179,706,2767,691.8,3,5.2,2.2,2.1,3531.6,3563.2,3831.6,3636.8,3715.8,3641.1
 22B30,22,2.8264671,Aldine and Imperial Valley,19000,Auto Theft,246,263,279,278,73,275,1066,266.5,13,11.8,-1.1,3.2,1294.7,1384.2,1468.4,1463.2,1447.4,1402.6
@@ -462,7 +275,6 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 22B20,22,4.61158268,Greenspoint,24000,Sexual Assault,39,34,39,34,8,35,146,36.5,-12.8,-10.3,2.9,-4.1,162.5,141.7,162.5,141.7,145.8,152.1
 22B20,22,4.61158268,Greenspoint,24000,Theft,1048,1168,1344,1315,212,1165,4875,1218.8,25.5,11.2,-11.4,-4.4,4366.7,4866.7,5600,5479.2,4854.2,5078.3
 7C10,7,3.47828324,"Fifth Ward, North Park and Pinecrest",13000,Arson,9,13,13,6,4,10,41,10.2,-33.3,11.1,66.7,-2,69.2,100,100,46.2,76.9,78.5
-<<<<<<< HEAD
 7C10,7,3.47828324,"Fifth Ward, North Park and Pinecrest",13000,Assault,742,776,734,750,186,761,3002,750.5,1.1,2.6,1.5,1.4,5707.7,5969.2,5646.2,5769.2,5853.8,5773.1
 7C10,7,3.47828324,"Fifth Ward, North Park and Pinecrest",13000,Auto Theft,92,101,70,122,21,116,385,96.2,32.6,26.1,-4.9,20.6,707.7,776.9,538.5,938.5,892.3,740
 7C10,7,3.47828324,"Fifth Ward, North Park and Pinecrest",13000,Burglary,145,126,121,148,29,135,540,135,2.1,-6.9,-8.8,0,1115.4,969.2,930.8,1138.5,1038.5,1038.5
@@ -476,56 +288,25 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 7C20,7,7.08575157,"Huntington Place, Willshire Place, Kashmere Gardens and Liberty Gardens",21000,Arson,17,18,19,19,11,23,73,18.2,11.8,35.3,21.1,26.4,81,85.7,90.5,90.5,109.5,86.7
 7C20,7,7.08575157,"Huntington Place, Willshire Place, Kashmere Gardens and Liberty Gardens",21000,Assault,1555,1585,1476,1363,343,1394,5979,1494.8,-12.3,-10.4,2.3,-6.7,7404.8,7547.6,7028.6,6490.5,6638.1,7118.1
 7C20,7,7.08575157,"Huntington Place, Willshire Place, Kashmere Gardens and Liberty Gardens",21000,Auto Theft,171,159,184,187,47,196,701,175.2,9.4,14.6,4.8,11.9,814.3,757.1,876.2,890.5,933.3,834.3
-=======
-7C10,7,3.47828324,"Fifth Ward, North Park and Pinecrest",13000,Assault,742,776,734,750,189,764,3002,750.5,1.1,3,1.9,1.8,5707.7,5969.2,5646.2,5769.2,5876.9,5773.1
-7C10,7,3.47828324,"Fifth Ward, North Park and Pinecrest",13000,Auto Theft,92,101,70,122,21,116,385,96.2,32.6,26.1,-4.9,20.6,707.7,776.9,538.5,938.5,892.3,740
-7C10,7,3.47828324,"Fifth Ward, North Park and Pinecrest",13000,Burglary,145,126,121,148,30,136,540,135,2.1,-6.2,-8.1,0.7,1115.4,969.2,930.8,1138.5,1046.2,1038.5
-7C10,7,3.47828324,"Fifth Ward, North Park and Pinecrest",13000,Drug Offenses,125,79,122,134,30,125,460,115,7.2,0,-6.7,8.7,961.5,607.7,938.5,1030.8,961.5,884.6
-7C10,7,3.47828324,"Fifth Ward, North Park and Pinecrest",13000,Kidnapping,3,3,4,6,0,5,16,4,100,66.7,-16.7,25,23.1,23.1,30.8,46.2,38.5,30.8
-7C10,7,3.47828324,"Fifth Ward, North Park and Pinecrest",13000,Murder,4,6,7,2,0,2,19,4.8,-50,-50,0,-58.3,30.8,46.2,53.8,15.4,15.4,36.9
-7C10,7,3.47828324,"Fifth Ward, North Park and Pinecrest",13000,Other,365,650,634,657,188,676,2306,576.5,80,85.2,2.9,17.3,2807.7,5000,4876.9,5053.8,5200,4434.6
-7C10,7,3.47828324,"Fifth Ward, North Park and Pinecrest",13000,Robbery,65,82,59,69,21,75,275,68.8,6.2,15.4,8.7,9,500,630.8,453.8,530.8,576.9,529.2
-7C10,7,3.47828324,"Fifth Ward, North Park and Pinecrest",13000,Sexual Assault,12,17,18,12,10,20,59,14.8,0,66.7,66.7,35.1,92.3,130.8,138.5,92.3,153.8,113.8
-7C10,7,3.47828324,"Fifth Ward, North Park and Pinecrest",13000,Theft,400,375,369,399,85,379,1543,385.8,-0.2,-5.2,-5,-1.8,3076.9,2884.6,2838.5,3069.2,2915.4,2967.7
-7C20,7,7.08575157,"Huntington Place, Willshire Place, Kashmere Gardens and Liberty Gardens",21000,Arson,17,18,19,19,11,23,73,18.2,11.8,35.3,21.1,26.4,81,85.7,90.5,90.5,109.5,86.7
-7C20,7,7.08575157,"Huntington Place, Willshire Place, Kashmere Gardens and Liberty Gardens",21000,Assault,1555,1585,1476,1363,345,1396,5979,1494.8,-12.3,-10.2,2.4,-6.6,7404.8,7547.6,7028.6,6490.5,6647.6,7118.1
-7C20,7,7.08575157,"Huntington Place, Willshire Place, Kashmere Gardens and Liberty Gardens",21000,Auto Theft,171,159,184,187,48,197,701,175.2,9.4,15.2,5.3,12.4,814.3,757.1,876.2,890.5,938.1,834.3
->>>>>>> 03a387d7909f1c425ecb7e437a06af343f5ff788
 7C20,7,7.08575157,"Huntington Place, Willshire Place, Kashmere Gardens and Liberty Gardens",21000,Burglary,256,243,289,227,52,231,1015,253.8,-11.3,-9.8,1.8,-9,1219,1157.1,1376.2,1081,1100,1208.6
 7C20,7,7.08575157,"Huntington Place, Willshire Place, Kashmere Gardens and Liberty Gardens",21000,Drug Offenses,356,279,262,243,66,248,1140,285,-31.7,-30.3,2.1,-13,1695.2,1328.6,1247.6,1157.1,1181,1357.1
 7C20,7,7.08575157,"Huntington Place, Willshire Place, Kashmere Gardens and Liberty Gardens",21000,Kidnapping,4,6,5,11,2,12,26,6.5,175,200,9.1,84.6,19,28.6,23.8,52.4,57.1,31
 7C20,7,7.08575157,"Huntington Place, Willshire Place, Kashmere Gardens and Liberty Gardens",21000,Murder,8,9,9,7,2,6,33,8.2,-12.5,-25,-14.3,-26.8,38.1,42.9,42.9,33.3,28.6,39
-<<<<<<< HEAD
 7C20,7,7.08575157,"Huntington Place, Willshire Place, Kashmere Gardens and Liberty Gardens",21000,Other,586,1218,1238,1105,247,1059,4147,1036.8,88.6,80.7,-4.2,2.1,2790.5,5800,5895.2,5261.9,5042.9,4937.1
 7C20,7,7.08575157,"Huntington Place, Willshire Place, Kashmere Gardens and Liberty Gardens",21000,Robbery,167,154,142,119,35,127,582,145.5,-28.7,-24,6.7,-12.7,795.2,733.3,676.2,566.7,604.8,692.9
 7C20,7,7.08575157,"Huntington Place, Willshire Place, Kashmere Gardens and Liberty Gardens",21000,Sexual Assault,50,41,33,25,4,25,149,37.2,-50,-50,0,-32.8,238.1,195.2,157.1,119,119,177.1
 7C20,7,7.08575157,"Huntington Place, Willshire Place, Kashmere Gardens and Liberty Gardens",21000,Theft,599,606,560,612,139,615,2377,594.2,2.2,2.7,0.5,3.5,2852.4,2885.7,2666.7,2914.3,2928.6,2829.5
 7C30,7,4.51719841,"Camden Woods, Archers Acres and Croyden Gardens",18000,Arson,13,5,4,7,1,7,29,7.2,-46.2,-46.2,0,-2.8,72.2,27.8,22.2,38.9,38.9,40
 7C30,7,4.51719841,"Camden Woods, Archers Acres and Croyden Gardens",18000,Assault,759,893,941,694,178,745,3287,821.8,-8.6,-1.8,7.3,-9.3,4216.7,4961.1,5227.8,3855.6,4138.9,4565.6
-=======
-7C20,7,7.08575157,"Huntington Place, Willshire Place, Kashmere Gardens and Liberty Gardens",21000,Other,586,1218,1238,1105,251,1063,4147,1036.8,88.6,81.4,-3.8,2.5,2790.5,5800,5895.2,5261.9,5061.9,4937.1
-7C20,7,7.08575157,"Huntington Place, Willshire Place, Kashmere Gardens and Liberty Gardens",21000,Robbery,167,154,142,119,35,127,582,145.5,-28.7,-24,6.7,-12.7,795.2,733.3,676.2,566.7,604.8,692.9
-7C20,7,7.08575157,"Huntington Place, Willshire Place, Kashmere Gardens and Liberty Gardens",21000,Sexual Assault,50,41,33,25,4,25,149,37.2,-50,-50,0,-32.8,238.1,195.2,157.1,119,119,177.1
-7C20,7,7.08575157,"Huntington Place, Willshire Place, Kashmere Gardens and Liberty Gardens",21000,Theft,599,606,560,612,143,619,2377,594.2,2.2,3.3,1.1,4.2,2852.4,2885.7,2666.7,2914.3,2947.6,2829.5
-7C30,7,4.51719841,"Camden Woods, Archers Acres and Croyden Gardens",18000,Arson,13,5,4,7,1,7,29,7.2,-46.2,-46.2,0,-2.8,72.2,27.8,22.2,38.9,38.9,40
-7C30,7,4.51719841,"Camden Woods, Archers Acres and Croyden Gardens",18000,Assault,759,893,941,694,180,747,3287,821.8,-8.6,-1.6,7.6,-9.1,4216.7,4961.1,5227.8,3855.6,4150,4565.6
->>>>>>> 03a387d7909f1c425ecb7e437a06af343f5ff788
 7C30,7,4.51719841,"Camden Woods, Archers Acres and Croyden Gardens",18000,Auto Theft,146,154,145,174,59,193,619,154.8,19.2,32.2,10.9,24.7,811.1,855.6,805.6,966.7,1072.2,860
 7C30,7,4.51719841,"Camden Woods, Archers Acres and Croyden Gardens",18000,Burglary,155,159,117,136,26,128,567,141.8,-12.3,-17.4,-5.9,-9.7,861.1,883.3,650,755.6,711.1,787.8
 7C30,7,4.51719841,"Camden Woods, Archers Acres and Croyden Gardens",18000,Drug Offenses,160,141,149,232,82,274,682,170.5,45,71.2,18.1,60.7,888.9,783.3,827.8,1288.9,1522.2,947.2
 7C30,7,4.51719841,"Camden Woods, Archers Acres and Croyden Gardens",18000,Kidnapping,2,6,0,7,1,7,15,3.8,250,250,0,84.2,11.1,33.3,0,38.9,38.9,21.1
 7C30,7,4.51719841,"Camden Woods, Archers Acres and Croyden Gardens",18000,Murder,1,5,4,5,2,7,15,3.8,400,600,40,84.2,5.6,27.8,22.2,27.8,38.9,21.1
-<<<<<<< HEAD
 7C30,7,4.51719841,"Camden Woods, Archers Acres and Croyden Gardens",18000,Other,359,810,874,784,238,826,2827,706.8,118.4,130.1,5.4,16.9,1994.4,4500,4855.6,4355.6,4588.9,3926.7
 7C30,7,4.51719841,"Camden Woods, Archers Acres and Croyden Gardens",18000,Robbery,104,114,111,88,15,78,417,104.2,-15.4,-25,-11.4,-25.1,577.8,633.3,616.7,488.9,433.3,578.9
 7C30,7,4.51719841,"Camden Woods, Archers Acres and Croyden Gardens",18000,Sexual Assault,22,19,23,16,9,22,80,20,-27.3,0,37.5,10,122.2,105.6,127.8,88.9,122.2,111.1
 7C30,7,4.51719841,"Camden Woods, Archers Acres and Croyden Gardens",18000,Theft,394,447,475,414,130,437,1730,432.5,5.1,10.9,5.6,1,2188.9,2483.3,2638.9,2300,2427.8,2402.8
-=======
-7C30,7,4.51719841,"Camden Woods, Archers Acres and Croyden Gardens",18000,Other,359,810,874,784,242,830,2827,706.8,118.4,131.2,5.9,17.4,1994.4,4500,4855.6,4355.6,4611.1,3926.7
-7C30,7,4.51719841,"Camden Woods, Archers Acres and Croyden Gardens",18000,Robbery,104,114,111,88,15,78,417,104.2,-15.4,-25,-11.4,-25.1,577.8,633.3,616.7,488.9,433.3,578.9
-7C30,7,4.51719841,"Camden Woods, Archers Acres and Croyden Gardens",18000,Sexual Assault,22,19,23,16,9,22,80,20,-27.3,0,37.5,10,122.2,105.6,127.8,88.9,122.2,111.1
-7C30,7,4.51719841,"Camden Woods, Archers Acres and Croyden Gardens",18000,Theft,394,447,475,414,132,439,1730,432.5,5.1,11.4,6,1.5,2188.9,2483.3,2638.9,2300,2438.9,2402.8
->>>>>>> 03a387d7909f1c425ecb7e437a06af343f5ff788
 7C40,7,3.36786526,Keith-Weiss Park and Farrington Place,8000,Arson,6,1,6,2,0,2,15,3.8,-66.7,-66.7,0,-47.4,75,12.5,75,25,25,47.5
 7C40,7,3.36786526,Keith-Weiss Park and Farrington Place,8000,Assault,254,256,275,243,43,226,1028,257,-4.3,-11,-7,-12.1,3175,3200,3437.5,3037.5,2825,3212.5
 7C40,7,3.36786526,Keith-Weiss Park and Farrington Place,8000,Auto Theft,106,114,109,162,56,178,491,122.8,52.8,67.9,9.9,45,1325,1425,1362.5,2025,2225,1535
@@ -547,21 +328,14 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 22B40,22,13.03325001,"Intercontinental Airport, Northwood, Lakeview Park and Glen Lee",11000,Other,352,558,737,699,167,702,2346,586.5,98.6,99.4,0.4,19.7,3200,5072.7,6700,6354.5,6381.8,5331.8
 22B40,22,13.03325001,"Intercontinental Airport, Northwood, Lakeview Park and Glen Lee",11000,Robbery,49,63,58,37,12,40,207,51.8,-24.5,-18.4,8.1,-22.8,445.5,572.7,527.3,336.4,363.6,470.9
 22B40,22,13.03325001,"Intercontinental Airport, Northwood, Lakeview Park and Glen Lee",11000,Sexual Assault,11,14,15,10,0,6,50,12.5,-9.1,-45.5,-40,-52,100,127.3,136.4,90.9,54.5,113.6
-<<<<<<< HEAD
 22B40,22,13.03325001,"Intercontinental Airport, Northwood, Lakeview Park and Glen Lee",11000,Theft,749,719,1069,1312,278,1289,3849,962.2,75.2,72.1,-1.8,34,6809.1,6536.4,9718.2,11927.3,11718.2,8747.3
 8C10,8,3.69037316,"Tidwell Park, Shady Oak and Buckingham Place",12000,Arson,6,7,7,11,1,11,31,7.8,83.3,83.3,0,41,50,58.3,58.3,91.7,91.7,65
 8C10,8,3.69037316,"Tidwell Park, Shady Oak and Buckingham Place",12000,Assault,885,1001,870,853,198,840,3609,902.2,-3.6,-5.1,-1.5,-6.9,7375,8341.7,7250,7108.3,7000,7518.3
-=======
-22B40,22,13.03325001,"Intercontinental Airport, Northwood, Lakeview Park and Glen Lee",11000,Theft,749,719,1069,1312,279,1290,3849,962.2,75.2,72.2,-1.7,34.1,6809.1,6536.4,9718.2,11927.3,11727.3,8747.3
-8C10,8,3.69037316,"Tidwell Park, Shady Oak and Buckingham Place",12000,Arson,6,7,7,11,1,11,31,7.8,83.3,83.3,0,41,50,58.3,58.3,91.7,91.7,65
-8C10,8,3.69037316,"Tidwell Park, Shady Oak and Buckingham Place",12000,Assault,885,1001,870,853,200,842,3609,902.2,-3.6,-4.9,-1.3,-6.7,7375,8341.7,7250,7108.3,7016.7,7518.3
->>>>>>> 03a387d7909f1c425ecb7e437a06af343f5ff788
 8C10,8,3.69037316,"Tidwell Park, Shady Oak and Buckingham Place",12000,Auto Theft,83,93,100,106,38,115,382,95.5,27.7,38.6,8.5,20.4,691.7,775,833.3,883.3,958.3,795.8
 8C10,8,3.69037316,"Tidwell Park, Shady Oak and Buckingham Place",12000,Burglary,182,95,142,117,22,113,536,134,-35.7,-37.9,-3.4,-15.7,1516.7,791.7,1183.3,975,941.7,1116.7
 8C10,8,3.69037316,"Tidwell Park, Shady Oak and Buckingham Place",12000,Drug Offenses,218,97,210,257,75,267,782,195.5,17.9,22.5,3.9,36.6,1816.7,808.3,1750,2141.7,2225,1629.2
 8C10,8,3.69037316,"Tidwell Park, Shady Oak and Buckingham Place",12000,Kidnapping,5,4,2,6,0,5,17,4.2,20,0,-16.7,19,41.7,33.3,16.7,50,41.7,35
 8C10,8,3.69037316,"Tidwell Park, Shady Oak and Buckingham Place",12000,Murder,6,3,9,6,1,7,24,6,0,16.7,16.7,16.7,50,25,75,50,58.3,50
-<<<<<<< HEAD
 8C10,8,3.69037316,"Tidwell Park, Shady Oak and Buckingham Place",12000,Other,393,687,818,768,272,846,2666,666.5,95.4,115.3,10.2,26.9,3275,5725,6816.7,6400,7050,5554.2
 8C10,8,3.69037316,"Tidwell Park, Shady Oak and Buckingham Place",12000,Robbery,88,88,98,72,16,69,346,86.5,-18.2,-21.6,-4.2,-20.2,733.3,733.3,816.7,600,575,720.8
 8C10,8,3.69037316,"Tidwell Park, Shady Oak and Buckingham Place",12000,Sexual Assault,12,14,19,17,13,24,62,15.5,41.7,100,41.2,54.8,100,116.7,158.3,141.7,200,129.2
@@ -569,33 +343,16 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 8C20,8,3.36154214,"Houston Gardens, Rosewood and Homestead",7000,Arson,6,9,8,6,2,6,29,7.2,0,0,0,-16.7,85.7,128.6,114.3,85.7,85.7,102.9
 8C20,8,3.36154214,"Houston Gardens, Rosewood and Homestead",7000,Assault,363,409,403,340,109,364,1515,378.8,-6.3,0.3,7.1,-3.9,5185.7,5842.9,5757.1,4857.1,5200,5411.4
 8C20,8,3.36154214,"Houston Gardens, Rosewood and Homestead",7000,Auto Theft,46,62,54,78,17,75,240,60,69.6,63,-3.8,25,657.1,885.7,771.4,1114.3,1071.4,857.1
-=======
-8C10,8,3.69037316,"Tidwell Park, Shady Oak and Buckingham Place",12000,Other,393,687,818,768,276,850,2666,666.5,95.4,116.3,10.7,27.5,3275,5725,6816.7,6400,7083.3,5554.2
-8C10,8,3.69037316,"Tidwell Park, Shady Oak and Buckingham Place",12000,Robbery,88,88,98,72,16,69,346,86.5,-18.2,-21.6,-4.2,-20.2,733.3,733.3,816.7,600,575,720.8
-8C10,8,3.69037316,"Tidwell Park, Shady Oak and Buckingham Place",12000,Sexual Assault,12,14,19,17,13,24,62,15.5,41.7,100,41.2,54.8,100,116.7,158.3,141.7,200,129.2
-8C10,8,3.69037316,"Tidwell Park, Shady Oak and Buckingham Place",12000,Theft,507,473,348,306,85,302,1634,408.5,-39.6,-40.4,-1.3,-26.1,4225,3941.7,2900,2550,2516.7,3404.2
-8C20,8,3.36154214,"Houston Gardens, Rosewood and Homestead",7000,Arson,6,9,8,6,2,6,29,7.2,0,0,0,-16.7,85.7,128.6,114.3,85.7,85.7,102.9
-8C20,8,3.36154214,"Houston Gardens, Rosewood and Homestead",7000,Assault,363,409,403,340,109,364,1515,378.8,-6.3,0.3,7.1,-3.9,5185.7,5842.9,5757.1,4857.1,5200,5411.4
-8C20,8,3.36154214,"Houston Gardens, Rosewood and Homestead",7000,Auto Theft,46,62,54,78,18,76,240,60,69.6,65.2,-2.6,26.7,657.1,885.7,771.4,1114.3,1085.7,857.1
->>>>>>> 03a387d7909f1c425ecb7e437a06af343f5ff788
 8C20,8,3.36154214,"Houston Gardens, Rosewood and Homestead",7000,Burglary,69,47,61,59,18,68,236,59,-14.5,-1.4,15.3,15.3,985.7,671.4,871.4,842.9,971.4,842.9
 8C20,8,3.36154214,"Houston Gardens, Rosewood and Homestead",7000,Drug Offenses,57,35,58,40,11,40,190,47.5,-29.8,-29.8,0,-15.8,814.3,500,828.6,571.4,571.4,678.6
 8C20,8,3.36154214,"Houston Gardens, Rosewood and Homestead",7000,Kidnapping,2,0,3,3,2,4,8,2,50,100,33.3,100,28.6,0,42.9,42.9,57.1,28.6
 8C20,8,3.36154214,"Houston Gardens, Rosewood and Homestead",7000,Murder,3,2,2,1,2,2,8,2,-66.7,-33.3,100,0,42.9,28.6,28.6,14.3,28.6,28.6
-<<<<<<< HEAD
 8C20,8,3.36154214,"Houston Gardens, Rosewood and Homestead",7000,Other,145,311,403,306,79,296,1165,291.2,111,104.1,-3.3,1.6,2071.4,4442.9,5757.1,4371.4,4228.6,4160
-=======
-8C20,8,3.36154214,"Houston Gardens, Rosewood and Homestead",7000,Other,145,311,403,306,80,297,1165,291.2,111,104.8,-2.9,2,2071.4,4442.9,5757.1,4371.4,4242.9,4160
->>>>>>> 03a387d7909f1c425ecb7e437a06af343f5ff788
 8C20,8,3.36154214,"Houston Gardens, Rosewood and Homestead",7000,Robbery,20,28,26,18,3,20,92,23,-10,0,11.1,-13,285.7,400,371.4,257.1,285.7,328.6
 8C20,8,3.36154214,"Houston Gardens, Rosewood and Homestead",7000,Sexual Assault,5,3,6,2,4,6,16,4,-60,20,200,50,71.4,42.9,85.7,28.6,85.7,57.1
 8C20,8,3.36154214,"Houston Gardens, Rosewood and Homestead",7000,Theft,144,173,156,172,29,168,645,161.2,19.4,16.7,-2.3,4.2,2057.1,2471.4,2228.6,2457.1,2400,2302.9
 8C30,8,4.6258259,"Parkhurst, East Houston and Clairmont Place",11000,Arson,8,9,11,5,1,5,33,8.2,-37.5,-37.5,0,-39,72.7,81.8,100,45.5,45.5,74.5
-<<<<<<< HEAD
 8C30,8,4.6258259,"Parkhurst, East Houston and Clairmont Place",11000,Assault,501,626,554,531,146,563,2212,553,6,12.4,6,1.8,4554.5,5690.9,5036.4,4827.3,5118.2,5027.3
-=======
-8C30,8,4.6258259,"Parkhurst, East Houston and Clairmont Place",11000,Assault,501,626,554,531,147,564,2212,553,6,12.6,6.2,2,4554.5,5690.9,5036.4,4827.3,5127.3,5027.3
->>>>>>> 03a387d7909f1c425ecb7e437a06af343f5ff788
 8C30,8,4.6258259,"Parkhurst, East Houston and Clairmont Place",11000,Auto Theft,77,78,92,130,33,138,377,94.2,68.8,79.2,6.2,46.5,700,709.1,836.4,1181.8,1254.5,856.4
 8C30,8,4.6258259,"Parkhurst, East Houston and Clairmont Place",11000,Burglary,112,83,84,103,33,108,382,95.5,-8,-3.6,4.9,13.1,1018.2,754.5,763.6,936.4,981.8,868.2
 8C30,8,4.6258259,"Parkhurst, East Houston and Clairmont Place",11000,Drug Offenses,68,40,72,53,14,50,233,58.2,-22.1,-26.5,-5.7,-14.1,618.2,363.6,654.5,481.8,454.5,529.1
@@ -604,11 +361,7 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 8C30,8,4.6258259,"Parkhurst, East Houston and Clairmont Place",11000,Other,202,456,555,438,154,476,1651,412.8,116.8,135.6,8.7,15.3,1836.4,4145.5,5045.5,3981.8,4327.3,3752.7
 8C30,8,4.6258259,"Parkhurst, East Houston and Clairmont Place",11000,Robbery,29,40,44,32,15,38,145,36.2,10.3,31,18.8,5,263.6,363.6,400,290.9,345.5,329.1
 8C30,8,4.6258259,"Parkhurst, East Houston and Clairmont Place",11000,Sexual Assault,4,10,10,7,0,4,31,7.8,75,0,-42.9,-48.7,36.4,90.9,90.9,63.6,36.4,70.9
-<<<<<<< HEAD
 8C30,8,4.6258259,"Parkhurst, East Houston and Clairmont Place",11000,Theft,240,284,251,263,81,274,1038,259.5,9.6,14.2,4.2,5.6,2181.8,2581.8,2281.8,2390.9,2490.9,2359.1
-=======
-8C30,8,4.6258259,"Parkhurst, East Houston and Clairmont Place",11000,Theft,240,284,251,263,83,276,1038,259.5,9.6,15,4.9,6.4,2181.8,2581.8,2281.8,2390.9,2509.1,2359.1
->>>>>>> 03a387d7909f1c425ecb7e437a06af343f5ff788
 8C40,8,4.97945551,"Lake Houston, Greenriver, Knoll and Lake Forest",8000,Arson,3,1,7,4,1,3,15,3.8,33.3,0,-25,-21.1,37.5,12.5,87.5,50,37.5,47.5
 8C40,8,4.97945551,"Lake Houston, Greenriver, Knoll and Lake Forest",8000,Assault,229,234,235,171,51,183,869,217.2,-25.3,-20.1,7,-15.7,2862.5,2925,2937.5,2137.5,2287.5,2715
 8C40,8,4.97945551,"Lake Houston, Greenriver, Knoll and Lake Forest",8000,Auto Theft,42,32,42,53,16,58,169,42.2,26.2,38.1,9.4,37.4,525,400,525,662.5,725,527.5
@@ -621,11 +374,7 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 8C40,8,4.97945551,"Lake Houston, Greenriver, Knoll and Lake Forest",8000,Sexual Assault,5,6,1,1,0,1,13,3.2,-80,-80,0,-68.8,62.5,75,12.5,12.5,12.5,40
 8C40,8,4.97945551,"Lake Houston, Greenriver, Knoll and Lake Forest",8000,Theft,108,103,117,134,29,132,462,115.5,24.1,22.2,-1.5,14.3,1350,1287.5,1462.5,1675,1650,1443.8
 8C50,8,3.31739498,"Park North, Forest Green, Kentshire Place, Glenwood Forest and Dorchester",8000,Arson,3,6,5,3,3,5,17,4.2,0,66.7,66.7,19,37.5,75,62.5,37.5,62.5,52.5
-<<<<<<< HEAD
 8C50,8,3.31739498,"Park North, Forest Green, Kentshire Place, Glenwood Forest and Dorchester",8000,Assault,564,612,571,457,125,484,2204,551,-19,-14.2,5.9,-12.2,7050,7650,7137.5,5712.5,6050,6887.5
-=======
-8C50,8,3.31739498,"Park North, Forest Green, Kentshire Place, Glenwood Forest and Dorchester",8000,Assault,564,612,571,457,128,487,2204,551,-19,-13.7,6.6,-11.6,7050,7650,7137.5,5712.5,6087.5,6887.5
->>>>>>> 03a387d7909f1c425ecb7e437a06af343f5ff788
 8C50,8,3.31739498,"Park North, Forest Green, Kentshire Place, Glenwood Forest and Dorchester",8000,Auto Theft,43,57,61,69,23,73,230,57.5,60.5,69.8,5.8,27,537.5,712.5,762.5,862.5,912.5,718.8
 8C50,8,3.31739498,"Park North, Forest Green, Kentshire Place, Glenwood Forest and Dorchester",8000,Burglary,93,58,59,84,21,90,294,73.5,-9.7,-3.2,7.1,22.4,1162.5,725,737.5,1050,1125,918.8
 8C50,8,3.31739498,"Park North, Forest Green, Kentshire Place, Glenwood Forest and Dorchester",8000,Drug Offenses,54,37,51,35,8,32,177,44.2,-35.2,-40.7,-8.6,-27.6,675,462.5,637.5,437.5,400,552.5
@@ -634,7 +383,6 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 8C50,8,3.31739498,"Park North, Forest Green, Kentshire Place, Glenwood Forest and Dorchester",8000,Other,203,410,406,305,107,329,1324,331,50.2,62.1,7.9,-0.6,2537.5,5125,5075,3812.5,4112.5,4137.5
 8C50,8,3.31739498,"Park North, Forest Green, Kentshire Place, Glenwood Forest and Dorchester",8000,Robbery,44,45,40,20,6,22,149,37.2,-54.5,-50,10,-40.9,550,562.5,500,250,275,465
 8C50,8,3.31739498,"Park North, Forest Green, Kentshire Place, Glenwood Forest and Dorchester",8000,Sexual Assault,7,9,11,8,5,9,35,8.8,14.3,28.6,12.5,2.3,87.5,112.5,137.5,100,112.5,110
-<<<<<<< HEAD
 8C50,8,3.31739498,"Park North, Forest Green, Kentshire Place, Glenwood Forest and Dorchester",8000,Theft,250,209,215,147,41,151,821,205.2,-41.2,-39.6,2.7,-26.4,3125,2612.5,2687.5,1837.5,1887.5,2565
 8C60,8,5.79693312,"Edgeworth, Northwood Manor and Scenic Woods",19000,Arson,3,10,10,7,1,4,30,7.5,133.3,33.3,-42.9,-46.7,15.8,52.6,52.6,36.8,21.1,39.5
 8C60,8,5.79693312,"Edgeworth, Northwood Manor and Scenic Woods",19000,Assault,792,926,720,668,178,689,3106,776.5,-15.7,-13,3.1,-11.3,4168.4,4873.7,3789.5,3515.8,3626.3,4086.8
@@ -650,23 +398,6 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 9C10,9,5.21185619,"Port of Houston, Clinton Park, Pleasantville and Fidelity Manor",6000,Arson,4,2,4,2,1,3,12,3,-50,-25,50,0,66.7,33.3,66.7,33.3,50,50
 9C10,9,5.21185619,"Port of Houston, Clinton Park, Pleasantville and Fidelity Manor",6000,Assault,215,272,220,177,48,195,884,221,-17.7,-9.3,10.2,-11.8,3583.3,4533.3,3666.7,2950,3250,3683.3
 9C10,9,5.21185619,"Port of Houston, Clinton Park, Pleasantville and Fidelity Manor",6000,Auto Theft,37,45,35,44,9,44,161,40.2,18.9,18.9,0,9.5,616.7,750,583.3,733.3,733.3,670
-=======
-8C50,8,3.31739498,"Park North, Forest Green, Kentshire Place, Glenwood Forest and Dorchester",8000,Theft,250,209,215,147,42,152,821,205.2,-41.2,-39.2,3.4,-25.9,3125,2612.5,2687.5,1837.5,1900,2565
-8C60,8,5.79693312,"Edgeworth, Northwood Manor and Scenic Woods",19000,Arson,3,10,10,7,1,4,30,7.5,133.3,33.3,-42.9,-46.7,15.8,52.6,52.6,36.8,21.1,39.5
-8C60,8,5.79693312,"Edgeworth, Northwood Manor and Scenic Woods",19000,Assault,792,926,720,668,182,693,3106,776.5,-15.7,-12.5,3.7,-10.8,4168.4,4873.7,3789.5,3515.8,3647.4,4086.8
-8C60,8,5.79693312,"Edgeworth, Northwood Manor and Scenic Woods",19000,Auto Theft,80,131,101,85,34,95,397,99.2,6.2,18.8,11.8,-4.2,421.1,689.5,531.6,447.4,500,522.1
-8C60,8,5.79693312,"Edgeworth, Northwood Manor and Scenic Woods",19000,Burglary,140,102,109,116,16,111,467,116.8,-17.1,-20.7,-4.3,-5,736.8,536.8,573.7,610.5,584.2,614.7
-8C60,8,5.79693312,"Edgeworth, Northwood Manor and Scenic Woods",19000,Drug Offenses,142,78,119,78,34,84,417,104.2,-45.1,-40.8,7.7,-19.4,747.4,410.5,626.3,410.5,442.1,548.4
-8C60,8,5.79693312,"Edgeworth, Northwood Manor and Scenic Woods",19000,Kidnapping,1,4,5,1,2,2,11,2.8,0,100,100,-28.6,5.3,21.1,26.3,5.3,10.5,14.7
-8C60,8,5.79693312,"Edgeworth, Northwood Manor and Scenic Woods",19000,Murder,1,0,3,4,1,3,8,2,300,200,-25,50,5.3,0,15.8,21.1,15.8,10.5
-8C60,8,5.79693312,"Edgeworth, Northwood Manor and Scenic Woods",19000,Other,318,676,722,561,198,639,2277,569.2,76.4,100.9,13.9,12.3,1673.7,3557.9,3800,2952.6,3363.2,2995.8
-8C60,8,5.79693312,"Edgeworth, Northwood Manor and Scenic Woods",19000,Robbery,56,57,54,43,20,51,210,52.5,-23.2,-8.9,18.6,-2.9,294.7,300,284.2,226.3,268.4,276.3
-8C60,8,5.79693312,"Edgeworth, Northwood Manor and Scenic Woods",19000,Sexual Assault,18,14,17,9,4,9,58,14.5,-50,-50,0,-37.9,94.7,73.7,89.5,47.4,47.4,76.3
-8C60,8,5.79693312,"Edgeworth, Northwood Manor and Scenic Woods",19000,Theft,340,374,281,296,95,339,1291,322.8,-12.9,-0.3,14.5,5,1789.5,1968.4,1478.9,1557.9,1784.2,1698.9
-9C10,9,5.21185619,"Port of Houston, Clinton Park, Pleasantville and Fidelity Manor",6000,Arson,4,2,4,2,1,3,12,3,-50,-25,50,0,66.7,33.3,66.7,33.3,50,50
-9C10,9,5.21185619,"Port of Houston, Clinton Park, Pleasantville and Fidelity Manor",6000,Assault,215,272,220,177,48,195,884,221,-17.7,-9.3,10.2,-11.8,3583.3,4533.3,3666.7,2950,3250,3683.3
-9C10,9,5.21185619,"Port of Houston, Clinton Park, Pleasantville and Fidelity Manor",6000,Auto Theft,37,45,35,44,10,45,161,40.2,18.9,21.6,2.3,11.9,616.7,750,583.3,733.3,750,670
->>>>>>> 03a387d7909f1c425ecb7e437a06af343f5ff788
 9C10,9,5.21185619,"Port of Houston, Clinton Park, Pleasantville and Fidelity Manor",6000,Burglary,36,33,40,48,14,52,157,39.2,33.3,44.4,8.3,32.7,600,550,666.7,800,866.7,653.3
 9C10,9,5.21185619,"Port of Houston, Clinton Park, Pleasantville and Fidelity Manor",6000,Drug Offenses,28,20,34,18,6,16,100,25,-35.7,-42.9,-11.1,-36,466.7,333.3,566.7,300,266.7,416.7
 9C10,9,5.21185619,"Port of Houston, Clinton Park, Pleasantville and Fidelity Manor",6000,Kidnapping,0,1,0,0,1,1,1,0.2,NA,NA,NA,400,0,16.7,0,0,16.7,3.3
@@ -676,11 +407,7 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 9C10,9,5.21185619,"Port of Houston, Clinton Park, Pleasantville and Fidelity Manor",6000,Sexual Assault,4,4,10,3,0,3,21,5.2,-25,-25,0,-42.3,66.7,66.7,166.7,50,50,86.7
 9C10,9,5.21185619,"Port of Houston, Clinton Park, Pleasantville and Fidelity Manor",6000,Theft,90,76,86,112,19,106,364,91,24.4,17.8,-5.4,16.5,1500,1266.7,1433.3,1866.7,1766.7,1516.7
 9C20,9,7.5383173,Denver Harbor and Houston Harbor,16000,Arson,6,6,9,4,0,3,25,6.2,-33.3,-50,-25,-51.6,37.5,37.5,56.2,25,18.8,38.8
-<<<<<<< HEAD
 9C20,9,7.5383173,Denver Harbor and Houston Harbor,16000,Assault,470,519,499,424,103,421,1912,478,-9.8,-10.4,-0.7,-11.9,2937.5,3243.8,3118.8,2650,2631.2,2987.5
-=======
-9C20,9,7.5383173,Denver Harbor and Houston Harbor,16000,Assault,470,519,499,424,104,422,1912,478,-9.8,-10.2,-0.5,-11.7,2937.5,3243.8,3118.8,2650,2637.5,2987.5
->>>>>>> 03a387d7909f1c425ecb7e437a06af343f5ff788
 9C20,9,7.5383173,Denver Harbor and Houston Harbor,16000,Auto Theft,107,103,85,93,34,112,388,97,-13.1,4.7,20.4,15.5,668.8,643.8,531.2,581.2,700,606.2
 9C20,9,7.5383173,Denver Harbor and Houston Harbor,16000,Burglary,109,91,70,117,20,119,387,96.8,7.3,9.2,1.7,22.9,681.2,568.8,437.5,731.2,743.8,605
 9C20,9,7.5383173,Denver Harbor and Houston Harbor,16000,Drug Offenses,67,38,69,52,20,57,226,56.5,-22.4,-14.9,9.6,0.9,418.8,237.5,431.3,325,356.2,353.1
@@ -691,18 +418,12 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 9C20,9,7.5383173,Denver Harbor and Houston Harbor,16000,Sexual Assault,11,11,9,17,0,7,48,12,54.5,-36.4,-58.8,-41.7,68.8,68.8,56.2,106.3,43.8,75
 9C20,9,7.5383173,Denver Harbor and Houston Harbor,16000,Theft,304,359,267,379,73,369,1309,327.2,24.7,21.4,-2.6,12.8,1900,2243.8,1668.8,2368.8,2306.2,2045
 9C30,9,8.13353768,"City Park East, Wynnewood Acres and Wallisville Gardens",9000,Arson,5,0,0,2,0,2,7,1.8,-60,-60,0,11.1,55.6,0,0,22.2,22.2,20
-<<<<<<< HEAD
 9C30,9,8.13353768,"City Park East, Wynnewood Acres and Wallisville Gardens",9000,Assault,265,320,326,322,71,310,1233,308.2,21.5,17,-3.7,0.6,2944.4,3555.6,3622.2,3577.8,3444.4,3424.4
 9C30,9,8.13353768,"City Park East, Wynnewood Acres and Wallisville Gardens",9000,Auto Theft,102,153,108,104,46,123,467,116.8,2,20.6,18.3,5.3,1133.3,1700,1200,1155.6,1366.7,1297.8
-=======
-9C30,9,8.13353768,"City Park East, Wynnewood Acres and Wallisville Gardens",9000,Assault,265,320,326,322,72,311,1233,308.2,21.5,17.4,-3.4,0.9,2944.4,3555.6,3622.2,3577.8,3455.6,3424.4
-9C30,9,8.13353768,"City Park East, Wynnewood Acres and Wallisville Gardens",9000,Auto Theft,102,153,108,104,47,124,467,116.8,2,21.6,19.2,6.2,1133.3,1700,1200,1155.6,1377.8,1297.8
->>>>>>> 03a387d7909f1c425ecb7e437a06af343f5ff788
 9C30,9,8.13353768,"City Park East, Wynnewood Acres and Wallisville Gardens",9000,Burglary,54,72,50,39,11,42,215,53.8,-27.8,-22.2,7.7,-21.9,600,800,555.6,433.3,466.7,597.8
 9C30,9,8.13353768,"City Park East, Wynnewood Acres and Wallisville Gardens",9000,Drug Offenses,38,33,46,36,10,37,153,38.2,-5.3,-2.6,2.8,-3.1,422.2,366.7,511.1,400,411.1,424.4
 9C30,9,8.13353768,"City Park East, Wynnewood Acres and Wallisville Gardens",9000,Kidnapping,0,0,0,2,0,1,2,0.5,NA,NA,-50,100,0,0,0,22.2,11.1,5.6
 9C30,9,8.13353768,"City Park East, Wynnewood Acres and Wallisville Gardens",9000,Murder,1,3,4,2,0,2,10,2.5,100,100,0,-20,11.1,33.3,44.4,22.2,22.2,27.8
-<<<<<<< HEAD
 9C30,9,8.13353768,"City Park East, Wynnewood Acres and Wallisville Gardens",9000,Other,191,400,420,469,123,486,1480,370,145.5,154.5,3.6,31.4,2122.2,4444.4,4666.7,5211.1,5400,4111.1
 9C30,9,8.13353768,"City Park East, Wynnewood Acres and Wallisville Gardens",9000,Robbery,34,47,37,24,3,19,142,35.5,-29.4,-44.1,-20.8,-46.5,377.8,522.2,411.1,266.7,211.1,394.4
 9C30,9,8.13353768,"City Park East, Wynnewood Acres and Wallisville Gardens",9000,Sexual Assault,9,11,17,4,1,4,41,10.2,-55.6,-55.6,0,-60.8,100,122.2,188.9,44.4,44.4,113.3
@@ -718,23 +439,6 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 9C40,9,10.42549456,"Greens Bayou Estates, Shady Brook, Northshore",23000,Robbery,132,147,111,103,32,112,493,123.2,-22,-15.2,8.7,-9.1,573.9,639.1,482.6,447.8,487,535.7
 9C40,9,10.42549456,"Greens Bayou Estates, Shady Brook, Northshore",23000,Sexual Assault,20,15,15,28,3,26,78,19.5,40,30,-7.1,33.3,87,65.2,65.2,121.7,113,84.8
 9C40,9,10.42549456,"Greens Bayou Estates, Shady Brook, Northshore",23000,Theft,745,826,773,899,184,893,3243,810.8,20.7,19.9,-0.7,10.1,3239.1,3591.3,3360.9,3908.7,3882.6,3525.2
-=======
-9C30,9,8.13353768,"City Park East, Wynnewood Acres and Wallisville Gardens",9000,Other,191,400,420,469,126,489,1480,370,145.5,156,4.3,32.2,2122.2,4444.4,4666.7,5211.1,5433.3,4111.1
-9C30,9,8.13353768,"City Park East, Wynnewood Acres and Wallisville Gardens",9000,Robbery,34,47,37,24,3,19,142,35.5,-29.4,-44.1,-20.8,-46.5,377.8,522.2,411.1,266.7,211.1,394.4
-9C30,9,8.13353768,"City Park East, Wynnewood Acres and Wallisville Gardens",9000,Sexual Assault,9,11,17,4,1,4,41,10.2,-55.6,-55.6,0,-60.8,100,122.2,188.9,44.4,44.4,113.3
-9C30,9,8.13353768,"City Park East, Wynnewood Acres and Wallisville Gardens",9000,Theft,521,434,392,476,131,496,1823,455.8,-8.6,-4.8,4.2,8.8,5788.9,4822.2,4355.6,5288.9,5511.1,5064.4
-9C40,9,10.42549456,"Greens Bayou Estates, Shady Brook, Northshore",23000,Arson,9,2,6,9,2,11,26,6.5,0,22.2,22.2,69.2,39.1,8.7,26.1,39.1,47.8,28.3
-9C40,9,10.42549456,"Greens Bayou Estates, Shady Brook, Northshore",23000,Assault,821,890,824,721,205,760,3256,814,-12.2,-7.4,5.4,-6.6,3569.6,3869.6,3582.6,3134.8,3304.3,3539.1
-9C40,9,10.42549456,"Greens Bayou Estates, Shady Brook, Northshore",23000,Auto Theft,230,323,247,331,74,322,1131,282.8,43.9,40,-2.7,13.9,1000,1404.3,1073.9,1439.1,1400,1229.6
-9C40,9,10.42549456,"Greens Bayou Estates, Shady Brook, Northshore",23000,Burglary,188,181,163,226,52,244,758,189.5,20.2,29.8,8,28.8,817.4,787,708.7,982.6,1060.9,823.9
-9C40,9,10.42549456,"Greens Bayou Estates, Shady Brook, Northshore",23000,Drug Offenses,83,84,97,124,25,130,388,97,49.4,56.6,4.8,34,360.9,365.2,421.7,539.1,565.2,421.7
-9C40,9,10.42549456,"Greens Bayou Estates, Shady Brook, Northshore",23000,Kidnapping,5,5,7,6,0,4,23,5.8,20,-20,-33.3,-31,21.7,21.7,30.4,26.1,17.4,25.2
-9C40,9,10.42549456,"Greens Bayou Estates, Shady Brook, Northshore",23000,Murder,7,4,6,6,0,4,23,5.8,-14.3,-42.9,-33.3,-31,30.4,17.4,26.1,26.1,17.4,25.2
-9C40,9,10.42549456,"Greens Bayou Estates, Shady Brook, Northshore",23000,Other,492,783,808,814,196,815,2897,724.2,65.4,65.7,0.1,12.5,2139.1,3404.3,3513,3539.1,3543.5,3148.7
-9C40,9,10.42549456,"Greens Bayou Estates, Shady Brook, Northshore",23000,Robbery,132,147,111,103,32,112,493,123.2,-22,-15.2,8.7,-9.1,573.9,639.1,482.6,447.8,487,535.7
-9C40,9,10.42549456,"Greens Bayou Estates, Shady Brook, Northshore",23000,Sexual Assault,20,15,15,28,3,26,78,19.5,40,30,-7.1,33.3,87,65.2,65.2,121.7,113,84.8
-9C40,9,10.42549456,"Greens Bayou Estates, Shady Brook, Northshore",23000,Theft,745,826,773,899,185,894,3243,810.8,20.7,20,-0.6,10.3,3239.1,3591.3,3360.9,3908.7,3887,3525.2
->>>>>>> 03a387d7909f1c425ecb7e437a06af343f5ff788
 10H10,10,2.81830654,Oak Lawn and Ranger,11000,Arson,2,5,4,1,6,6,12,3,-50,200,500,100,18.2,45.5,36.4,9.1,54.5,27.3
 10H10,10,2.81830654,Oak Lawn and Ranger,11000,Assault,363,307,319,333,60,318,1322,330.5,-8.3,-12.4,-4.5,-3.8,3300,2790.9,2900,3027.3,2890.9,3004.5
 10H10,10,2.81830654,Oak Lawn and Ranger,11000,Auto Theft,49,55,59,100,12,87,263,65.8,104.1,77.6,-13,32.2,445.5,500,536.4,909.1,790.9,598.2
@@ -1141,11 +845,7 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 16E40,16,7.49721482,"Chasewood, Willowpark, Briarwick, Ridgemont and Quail Run",35000,Other,422,602,609,545,126,534,2178,544.5,29.1,26.5,-2,-1.9,1205.7,1720,1740,1557.1,1525.7,1555.7
 16E40,16,7.49721482,"Chasewood, Willowpark, Briarwick, Ridgemont and Quail Run",35000,Robbery,59,56,56,50,12,41,221,55.2,-15.3,-30.5,-18,-25.7,168.6,160,160,142.9,117.1,157.7
 16E40,16,7.49721482,"Chasewood, Willowpark, Briarwick, Ridgemont and Quail Run",35000,Sexual Assault,15,21,11,11,5,16,58,14.5,-26.7,6.7,45.5,10.3,42.9,60,31.4,31.4,45.7,41.4
-<<<<<<< HEAD
 16E40,16,7.49721482,"Chasewood, Willowpark, Briarwick, Ridgemont and Quail Run",35000,Theft,440,383,427,387,79,368,1637,409.2,-12,-16.4,-4.9,-10.1,1257.1,1094.3,1220,1105.7,1051.4,1169.1
-=======
-16E40,16,7.49721482,"Chasewood, Willowpark, Briarwick, Ridgemont and Quail Run",35000,Theft,440,383,427,387,80,369,1637,409.2,-12,-16.1,-4.7,-9.8,1257.1,1094.3,1220,1105.7,1054.3,1169.1
->>>>>>> 03a387d7909f1c425ecb7e437a06af343f5ff788
 17E10,17,3.3104034,"Southwest Memorial Hospital, Burnett Bayland Park and Westmoreland",51000,Arson,13,8,6,20,1,15,47,11.8,53.8,15.4,-25,27.1,25.5,15.7,11.8,39.2,29.4,23.1
 17E10,17,3.3104034,"Southwest Memorial Hospital, Burnett Bayland Park and Westmoreland",51000,Assault,1287,1512,1542,1459,318,1447,5800,1450,13.4,12.4,-0.8,-0.2,2523.5,2964.7,3023.5,2860.8,2837.3,2843.1
 17E10,17,3.3104034,"Southwest Memorial Hospital, Burnett Bayland Park and Westmoreland",51000,Auto Theft,353,363,382,394,78,387,1492,373,11.6,9.6,-1.8,3.8,692.2,711.8,749,772.5,758.8,731.4
@@ -1455,31 +1155,18 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 22B10,22,3.28874287,"Willowbrook, Willow Chase Park and Centerfield",8000,Sexual Assault,11,14,8,12,0,10,45,11.2,9.1,-9.1,-16.7,-10.7,137.5,175,100,150,125,140
 22B10,22,3.28874287,"Willowbrook, Willow Chase Park and Centerfield",8000,Theft,1384,1117,1407,1622,347,1588,5530,1382.5,17.2,14.7,-2.1,14.9,17300,13962.5,17587.5,20275,19850,17281.2
 5F20,5,5.94082911,Spring Branch and Schwartz Park,42000,Arson,3,7,7,4,2,4,21,5.2,33.3,33.3,0,-23.1,7.1,16.7,16.7,9.5,9.5,12.4
-<<<<<<< HEAD
 5F20,5,5.94082911,Spring Branch and Schwartz Park,42000,Assault,760,896,936,855,272,937,3447,861.8,12.5,23.3,9.6,8.7,1809.5,2133.3,2228.6,2035.7,2231,2051.9
-=======
-5F20,5,5.94082911,Spring Branch and Schwartz Park,42000,Assault,760,896,936,855,275,940,3447,861.8,12.5,23.7,9.9,9.1,1809.5,2133.3,2228.6,2035.7,2238.1,2051.9
->>>>>>> 03a387d7909f1c425ecb7e437a06af343f5ff788
 5F20,5,5.94082911,Spring Branch and Schwartz Park,42000,Auto Theft,196,215,201,173,66,194,785,196.2,-11.7,-1,12.1,-1.1,466.7,511.9,478.6,411.9,461.9,467.1
 5F20,5,5.94082911,Spring Branch and Schwartz Park,42000,Burglary,219,185,157,159,42,157,720,180,-27.4,-28.3,-1.3,-12.8,521.4,440.5,373.8,378.6,373.8,428.6
 5F20,5,5.94082911,Spring Branch and Schwartz Park,42000,Drug Offenses,101,93,79,85,38,102,358,89.5,-15.8,1,20,14,240.5,221.4,188.1,202.4,242.9,213.1
 5F20,5,5.94082911,Spring Branch and Schwartz Park,42000,Kidnapping,2,1,6,12,3,12,21,5.2,500,500,0,130.8,4.8,2.4,14.3,28.6,28.6,12.4
 5F20,5,5.94082911,Spring Branch and Schwartz Park,42000,Murder,2,0,9,5,3,7,16,4,150,250,40,75,4.8,0,21.4,11.9,16.7,9.5
-<<<<<<< HEAD
 5F20,5,5.94082911,Spring Branch and Schwartz Park,42000,Other,496,768,752,750,256,818,2766,691.5,51.2,64.9,9.1,18.3,1181,1828.6,1790.5,1785.7,1947.6,1646.4
 5F20,5,5.94082911,Spring Branch and Schwartz Park,42000,Robbery,152,184,139,103,18,97,578,144.5,-32.2,-36.2,-5.8,-32.9,361.9,438.1,331,245.2,231,344
 5F20,5,5.94082911,Spring Branch and Schwartz Park,42000,Sexual Assault,31,25,31,19,7,19,106,26.5,-38.7,-38.7,0,-28.3,73.8,59.5,73.8,45.2,45.2,63.1
 5F20,5,5.94082911,Spring Branch and Schwartz Park,42000,Theft,668,722,697,661,171,649,2748,687,-1,-2.8,-1.8,-5.5,1590.5,1719,1659.5,1573.8,1545.2,1635.7
 4F10,4,4.13606469,"Timber Oaks, Shadow Oaks and Long Point Acres",23000,Arson,3,2,4,2,1,3,11,2.8,-33.3,0,50,7.1,13,8.7,17.4,8.7,13,12.2
 4F10,4,4.13606469,"Timber Oaks, Shadow Oaks and Long Point Acres",23000,Assault,439,468,471,529,146,560,1907,476.8,20.5,27.6,5.9,17.4,1908.7,2034.8,2047.8,2300,2434.8,2073
-=======
-5F20,5,5.94082911,Spring Branch and Schwartz Park,42000,Other,496,768,752,750,259,821,2766,691.5,51.2,65.5,9.5,18.7,1181,1828.6,1790.5,1785.7,1954.8,1646.4
-5F20,5,5.94082911,Spring Branch and Schwartz Park,42000,Robbery,152,184,139,103,18,97,578,144.5,-32.2,-36.2,-5.8,-32.9,361.9,438.1,331,245.2,231,344
-5F20,5,5.94082911,Spring Branch and Schwartz Park,42000,Sexual Assault,31,25,31,19,7,19,106,26.5,-38.7,-38.7,0,-28.3,73.8,59.5,73.8,45.2,45.2,63.1
-5F20,5,5.94082911,Spring Branch and Schwartz Park,42000,Theft,668,722,697,661,173,651,2748,687,-1,-2.5,-1.5,-5.2,1590.5,1719,1659.5,1573.8,1550,1635.7
-4F10,4,4.13606469,"Timber Oaks, Shadow Oaks and Long Point Acres",23000,Arson,3,2,4,2,1,3,11,2.8,-33.3,0,50,7.1,13,8.7,17.4,8.7,13,12.2
-4F10,4,4.13606469,"Timber Oaks, Shadow Oaks and Long Point Acres",23000,Assault,439,468,471,529,149,563,1907,476.8,20.5,28.2,6.4,18.1,1908.7,2034.8,2047.8,2300,2447.8,2073
->>>>>>> 03a387d7909f1c425ecb7e437a06af343f5ff788
 4F10,4,4.13606469,"Timber Oaks, Shadow Oaks and Long Point Acres",23000,Auto Theft,141,162,177,162,46,162,642,160.5,14.9,14.9,0,0.9,613,704.3,769.6,704.3,704.3,697.8
 4F10,4,4.13606469,"Timber Oaks, Shadow Oaks and Long Point Acres",23000,Burglary,139,162,137,103,31,101,541,135.2,-25.9,-27.3,-1.9,-25.3,604.3,704.3,595.7,447.8,439.1,587.8
 4F10,4,4.13606469,"Timber Oaks, Shadow Oaks and Long Point Acres",23000,Drug Offenses,57,38,58,57,13,52,210,52.5,0,-8.8,-8.8,-1,247.8,165.2,252.2,247.8,226.1,228.3
@@ -1488,11 +1175,7 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 4F10,4,4.13606469,"Timber Oaks, Shadow Oaks and Long Point Acres",23000,Other,316,523,523,561,160,564,1923,480.8,77.5,78.5,0.5,17.3,1373.9,2273.9,2273.9,2439.1,2452.2,2090.4
 4F10,4,4.13606469,"Timber Oaks, Shadow Oaks and Long Point Acres",23000,Robbery,63,62,58,52,24,68,235,58.8,-17.5,7.9,30.8,15.6,273.9,269.6,252.2,226.1,295.7,255.7
 4F10,4,4.13606469,"Timber Oaks, Shadow Oaks and Long Point Acres",23000,Sexual Assault,21,11,18,22,7,25,72,18,4.8,19,13.6,38.9,91.3,47.8,78.3,95.7,108.7,78.3
-<<<<<<< HEAD
 4F10,4,4.13606469,"Timber Oaks, Shadow Oaks and Long Point Acres",23000,Theft,731,795,726,821,218,823,3073,768.2,12.3,12.6,0.2,7.1,3178.3,3456.5,3156.5,3569.6,3578.3,3340
-=======
-4F10,4,4.13606469,"Timber Oaks, Shadow Oaks and Long Point Acres",23000,Theft,731,795,726,821,220,825,3073,768.2,12.3,12.9,0.5,7.4,3178.3,3456.5,3156.5,3569.6,3587,3340
->>>>>>> 03a387d7909f1c425ecb7e437a06af343f5ff788
 20G50,20,5.88593521,"Nottingham, Yorkshire, Wilchester, Town and Country Village and Memorial City Shopping Center",30000,Arson,2,0,1,2,0,1,5,1.2,0,-50,-50,-16.7,6.7,0,3.3,6.7,3.3,4
 20G50,20,5.88593521,"Nottingham, Yorkshire, Wilchester, Town and Country Village and Memorial City Shopping Center",30000,Assault,212,262,262,263,56,263,999,249.8,24.1,24.1,0,5.3,706.7,873.3,873.3,876.7,876.7,832.7
 20G50,20,5.88593521,"Nottingham, Yorkshire, Wilchester, Town and Country Village and Memorial City Shopping Center",30000,Auto Theft,102,135,137,194,51,199,568,142,90.2,95.1,2.6,40.1,340,450,456.7,646.7,663.3,473.3
@@ -1505,21 +1188,13 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 20G50,20,5.88593521,"Nottingham, Yorkshire, Wilchester, Town and Country Village and Memorial City Shopping Center",30000,Sexual Assault,12,10,13,15,2,15,50,12.5,25,25,0,20,40,33.3,43.3,50,50,41.7
 20G50,20,5.88593521,"Nottingham, Yorkshire, Wilchester, Town and Country Village and Memorial City Shopping Center",30000,Theft,1422,1133,1103,1294,235,1182,4952,1238,-9,-16.9,-8.7,-4.5,4740,3776.7,3676.7,4313.3,3940,4126.7
 4F20,4,5.85840284,"Claymore Park, Westbranch, Spring Shadows and Kempwood Forest",28000,Arson,3,3,4,1,2,2,11,2.8,-66.7,-33.3,100,-28.6,10.7,10.7,14.3,3.6,7.1,10
-<<<<<<< HEAD
 4F20,4,5.85840284,"Claymore Park, Westbranch, Spring Shadows and Kempwood Forest",28000,Assault,454,429,465,511,143,530,1859,464.8,12.6,16.7,3.7,14,1621.4,1532.1,1660.7,1825,1892.9,1660
-=======
-4F20,4,5.85840284,"Claymore Park, Westbranch, Spring Shadows and Kempwood Forest",28000,Assault,454,429,465,511,145,532,1859,464.8,12.6,17.2,4.1,14.5,1621.4,1532.1,1660.7,1825,1900,1660
->>>>>>> 03a387d7909f1c425ecb7e437a06af343f5ff788
 4F20,4,5.85840284,"Claymore Park, Westbranch, Spring Shadows and Kempwood Forest",28000,Auto Theft,77,108,115,148,45,151,448,112,92.2,96.1,2,34.8,275,385.7,410.7,528.6,539.3,400
 4F20,4,5.85840284,"Claymore Park, Westbranch, Spring Shadows and Kempwood Forest",28000,Burglary,147,118,112,94,28,98,471,117.8,-36.1,-33.3,4.3,-16.8,525,421.4,400,335.7,350,420.7
 4F20,4,5.85840284,"Claymore Park, Westbranch, Spring Shadows and Kempwood Forest",28000,Drug Offenses,56,35,43,44,31,69,178,44.5,-21.4,23.2,56.8,55.1,200,125,153.6,157.1,246.4,158.9
 4F20,4,5.85840284,"Claymore Park, Westbranch, Spring Shadows and Kempwood Forest",28000,Kidnapping,2,0,2,4,1,5,8,2,100,150,25,150,7.1,0,7.1,14.3,17.9,7.1
 4F20,4,5.85840284,"Claymore Park, Westbranch, Spring Shadows and Kempwood Forest",28000,Murder,0,2,0,1,3,4,3,0.8,NA,NA,300,400,0,7.1,0,3.6,14.3,2.9
-<<<<<<< HEAD
 4F20,4,5.85840284,"Claymore Park, Westbranch, Spring Shadows and Kempwood Forest",28000,Other,310,441,435,498,204,576,1684,421,60.6,85.8,15.7,36.8,1107.1,1575,1553.6,1778.6,2057.1,1503.6
-=======
-4F20,4,5.85840284,"Claymore Park, Westbranch, Spring Shadows and Kempwood Forest",28000,Other,310,441,435,498,206,578,1684,421,60.6,86.5,16.1,37.3,1107.1,1575,1553.6,1778.6,2064.3,1503.6
->>>>>>> 03a387d7909f1c425ecb7e437a06af343f5ff788
 4F20,4,5.85840284,"Claymore Park, Westbranch, Spring Shadows and Kempwood Forest",28000,Robbery,45,56,45,38,13,35,184,46,-15.6,-22.2,-7.9,-23.9,160.7,200,160.7,135.7,125,164.3
 4F20,4,5.85840284,"Claymore Park, Westbranch, Spring Shadows and Kempwood Forest",28000,Sexual Assault,22,23,11,14,4,12,70,17.5,-36.4,-45.5,-14.3,-31.4,78.6,82.1,39.3,50,42.9,62.5
 4F20,4,5.85840284,"Claymore Park, Westbranch, Spring Shadows and Kempwood Forest",28000,Theft,580,510,559,627,169,639,2276,569,8.1,10.2,1.9,12.3,2071.4,1821.4,1996.4,2239.3,2282.1,2032.1
@@ -1541,17 +1216,10 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 4F30,4,26.30690179,"Addicks Reservoir Area, Claymore Park, Brittmore Village, Park Ten Place and Mayde Creek Farms",18000,Drug Offenses,59,55,49,33,15,34,196,49,-44.1,-42.4,3,-30.6,327.8,305.6,272.2,183.3,188.9,272.2
 4F30,4,26.30690179,"Addicks Reservoir Area, Claymore Park, Brittmore Village, Park Ten Place and Mayde Creek Farms",18000,Kidnapping,1,2,0,3,2,4,6,1.5,200,300,33.3,166.7,5.6,11.1,0,16.7,22.2,8.3
 4F30,4,26.30690179,"Addicks Reservoir Area, Claymore Park, Brittmore Village, Park Ten Place and Mayde Creek Farms",18000,Murder,3,4,3,2,0,1,12,3,-33.3,-66.7,-50,-66.7,16.7,22.2,16.7,11.1,5.6,16.7
-<<<<<<< HEAD
 4F30,4,26.30690179,"Addicks Reservoir Area, Claymore Park, Brittmore Village, Park Ten Place and Mayde Creek Farms",18000,Other,323,533,522,498,127,493,1876,469,54.2,52.6,-1,5.1,1794.4,2961.1,2900,2766.7,2738.9,2605.6
 4F30,4,26.30690179,"Addicks Reservoir Area, Claymore Park, Brittmore Village, Park Ten Place and Mayde Creek Farms",18000,Robbery,26,34,28,18,5,21,106,26.5,-30.8,-19.2,16.7,-20.8,144.4,188.9,155.6,100,116.7,147.2
 4F30,4,26.30690179,"Addicks Reservoir Area, Claymore Park, Brittmore Village, Park Ten Place and Mayde Creek Farms",18000,Sexual Assault,19,17,11,14,3,14,61,15.2,-26.3,-26.3,0,-7.9,105.6,94.4,61.1,77.8,77.8,84.4
 4F30,4,26.30690179,"Addicks Reservoir Area, Claymore Park, Brittmore Village, Park Ten Place and Mayde Creek Farms",18000,Theft,683,703,782,747,194,751,2915,728.8,9.4,10,0.5,3,3794.4,3905.6,4344.4,4150,4172.2,4048.9
-=======
-4F30,4,26.30690179,"Addicks Reservoir Area, Claymore Park, Brittmore Village, Park Ten Place and Mayde Creek Farms",18000,Other,323,533,522,498,128,494,1876,469,54.2,52.9,-0.8,5.3,1794.4,2961.1,2900,2766.7,2744.4,2605.6
-4F30,4,26.30690179,"Addicks Reservoir Area, Claymore Park, Brittmore Village, Park Ten Place and Mayde Creek Farms",18000,Robbery,26,34,28,18,5,21,106,26.5,-30.8,-19.2,16.7,-20.8,144.4,188.9,155.6,100,116.7,147.2
-4F30,4,26.30690179,"Addicks Reservoir Area, Claymore Park, Brittmore Village, Park Ten Place and Mayde Creek Farms",18000,Sexual Assault,19,17,11,14,3,14,61,15.2,-26.3,-26.3,0,-7.9,105.6,94.4,61.1,77.8,77.8,84.4
-4F30,4,26.30690179,"Addicks Reservoir Area, Claymore Park, Brittmore Village, Park Ten Place and Mayde Creek Farms",18000,Theft,683,703,782,747,195,752,2915,728.8,9.4,10.1,0.7,3.2,3794.4,3905.6,4344.4,4150,4177.8,4048.9
->>>>>>> 03a387d7909f1c425ecb7e437a06af343f5ff788
 24C10,24,5.44044978,Kingwood,13000,Arson,4,2,1,1,0,1,8,2,-75,-75,0,-50,30.8,15.4,7.7,7.7,7.7,15.4
 24C10,24,5.44044978,Kingwood,13000,Assault,130,166,160,140,26,123,596,149,7.7,-5.4,-12.1,-17.4,1000,1276.9,1230.8,1076.9,946.2,1146.2
 24C10,24,5.44044978,Kingwood,13000,Auto Theft,21,22,27,33,5,29,103,25.8,57.1,38.1,-12.1,12.4,161.5,169.2,207.7,253.8,223.1,198.5
