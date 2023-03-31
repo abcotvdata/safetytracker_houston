@@ -191,3 +191,8 @@ st_write(beats,"data/source/geo/beats.geojson")
 saveRDS(beats,"scripts/rds/beats.rds")
 # add line  below when uploading data for pages
 # beats <- st_read("data/source/geo/beats.geojson")
+
+# Make shapefile for big board product
+# Comment out when not in use
+# Write the shapefile to the output directory
+st_write(beats, "data/source/geo/shp/houston_beats.shp")
