@@ -537,8 +537,3 @@ deaths <- deaths %>% filter(state=="TX")
 deaths$Homicide <- murders_city$rate_last12
 write_csv(deaths,"data/source/health/death_rates.csv")
 
-# 2021 fbi citywide crime rates for murder, violent, property charts
-# manually updated excel in reference folder
-# local number for murder from local; rest for all cities from FBI CDE
-
-
