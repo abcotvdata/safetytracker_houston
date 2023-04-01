@@ -420,7 +420,7 @@ thefts_beat <- beat_category %>% filter(category_name=="Theft") %>% filter(!is.n
 burglaries_beat <- beat_category %>% filter(category_name=="Burglary") %>% filter(!is.na(district)& !is.na(placename)) 
 robberies_beat <- beat_category %>% filter(category_name=="Robbery") %>% filter(!is.na(district)& !is.na(placename)) 
 assaults_beat <- beat_category %>% filter(category_name=="Assault") %>% filter(!is.na(district)& !is.na(placename)) 
-# drugs_beat <- beat_category %>% filter(category_name=="Drug Offenses") %>% filter(!is.na(district)& !is.na(placename)) 
+drugs_beat <- beat_category %>% filter(category_name=="Drug Offenses") %>% filter(!is.na(district)& !is.na(placename)) 
 violence_beat <- beat_type %>% filter(type=="Violent") %>% filter(!is.na(district)& !is.na(placename)) 
 property_beat <- beat_type %>% filter(type=="Property") %>% filter(!is.na(district)& !is.na(placename)) 
 # Create same set of tables for citywide figures

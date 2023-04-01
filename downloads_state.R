@@ -46,6 +46,7 @@ tx_crime <- tx_crime %>% tidyr::fill(county, .direction = "up")
 tx_crime_counties <- tx_crime %>% filter(county_total == "County Total")
 tx_crime_agency <- tx_crime %>% filter(is.na(county_total))
 
+# save reference files for temporary use and commit
 write_csv(tx_crime_counties,"data/output/state/tx_crime_counties.csv")
 write_csv(tx_crime_agency,"data/output/state/tx_crime_agency.csv")
 
