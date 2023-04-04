@@ -1,9 +1,14 @@
 library(tidyverse)
 library(janitor)
 library(readxl)
+library(tidycensus)
+
+
 
 # priority: Harris, Montgomery, Liberty, Waller, Fort Bend, Brazoria, Galveston and Chambers
 # whole dma includes: Austin, Brazoria, Calhoun, Chambers, Colorado, Fort Bend, Galveston, Grimes, Harris, Jackson, Liberty, Matagorda, Montgomery, Polk, San Jacinto, Trinity, Walker, Waller, Washington, Wharton
+
+core_counties <- c("Harris", "Montgomery", "Liberty", "Waller", "Fort Bend", "Brazoria", "Galveston", "Chambers")
 
 # Collect statewide data for previous years
 download.file("https://txucr.nibrs.com/Report/DownloadSummaryIndexCrimesReportExcel?year=2018&reportType=2&startdate=2018/1/01&enddate=2018/12/31",
@@ -49,5 +54,8 @@ tx_crime_agency <- tx_crime %>% filter(is.na(county_total))
 # save reference files for temporary use and commit
 write_csv(tx_crime_counties,"data/output/state/tx_crime_counties.csv")
 write_csv(tx_crime_agency,"data/output/state/tx_crime_agency.csv")
+
+abc13_crime_counties <- tx_crime_counties %>% filter(county %in% core_counties)
+abc13_crime_agencies <- tx_crime_agency %>% filter(county %in% core_counties)
 
 
