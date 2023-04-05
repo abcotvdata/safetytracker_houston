@@ -96,6 +96,7 @@ rural_brazoria$place <- "Brazoria Co. Sheriff's Department"
 rural_galveston$place <- "Galveston Co. Sheriff's Department"
 rural_chambers$place <- "Chambers Co. Sheriff's Department"
 
+# OPEN WORK UPDATE THESE POPULATIONS IF WE GO THIS ROUTE
 # Make the rural "remnant" area polygons for each county
 ourtx_county_pops <- ourtx_places %>% group_by(county) %>% summarise(pop=sum(population))
 rural_harris$population <- harris_county$population - 2027000
