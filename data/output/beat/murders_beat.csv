@@ -16,12 +16,12 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 3B30,3,5.310372,"White Oak Acres, Brook Hollow, Oak Forest, Garden Oaks and Shepherd Park Plaza",23000,"Murder, non-negligent",09A,0,3,2,3,0,0,8,2,NA,NA,-100,-100,0,13,8.7,13,0,8.7
 3B40,3,3.40013561,"Independence Heights, Melrose and Graceland",13000,"Murder, non-negligent",09A,5,6,8,6,0,6,25,6.2,20,20,0,-3.2,38.5,46.2,61.5,46.2,46.2,47.7
 3B50,3,3.85259517,"Northline Mall, Stratton Place, Oakwood, Colonial Gardens, Lindale and Junction City",20000,"Murder, non-negligent",09A,1,3,8,6,1,6,18,4.5,500,500,0,33.3,5,15,40,30,30,22.5
-5F10,5,3.25978513,Afton Village and Pine Terrace,14000,"Murder, non-negligent",09A,0,0,4,4,3,7,8,2,NA,NA,75,250,0,0,28.6,28.6,50,14.3
+5F10,5,3.25978513,Afton Village and Pine Terrace,14000,"Murder, non-negligent",09A,0,0,4,4,4,8,8,2,NA,NA,100,300,0,0,28.6,28.6,57.1,14.3
 5F30,5,8.70689439,"Fairbanks, Carverdale, Fawndale and Northwest Crossing",17000,"Murder, non-negligent",09A,7,4,2,4,0,2,17,4.2,-42.9,-71.4,-50,-52.4,41.2,23.5,11.8,23.5,11.8,24.7
 6B10,6,5.50084827,"York Plaza, Pembrook Place and Hawthorne Place",33000,"Murder, non-negligent",09A,7,8,9,10,2,8,34,8.5,42.9,14.3,-20,-5.9,21.2,24.2,27.3,30.3,24.2,25.8
 6B20,6,6.12869477,"Highland Heights, Oakdale and Melrose Gardens",18000,"Murder, non-negligent",09A,2,3,9,2,3,4,16,4,0,100,100,0,11.1,16.7,50,11.1,22.2,22.2
 6B30,6,7.2300685,"Woodland Trails, Oaks of Inwood, Bayou Bend, Cole Creek Manor and Inwood Forest",38000,"Murder, non-negligent",09A,5,6,11,3,0,2,25,6.2,-40,-60,-33.3,-67.7,13.2,15.8,28.9,7.9,5.3,16.3
-6B40,6,5.544689,"Highland Gardens, Highland Heights and North Plaza",20000,"Murder, non-negligent",09A,5,12,9,6,0,4,32,8,20,-20,-33.3,-50,25,60,45,30,20,40
+6B40,6,5.544689,"Highland Gardens, Highland Heights and North Plaza",20000,"Murder, non-negligent",09A,5,12,9,6,1,5,32,8,20,0,-16.7,-37.5,25,60,45,30,25,40
 22B30,22,2.8264671,Aldine and Imperial Valley,19000,"Murder, non-negligent",09A,2,3,4,2,1,2,11,2.8,0,0,0,-28.6,10.5,15.8,21.1,10.5,10.5,14.7
 22B20,22,4.61158268,Greenspoint,24000,"Murder, non-negligent",09A,7,16,9,6,1,7,38,9.5,-14.3,0,16.7,-26.3,29.2,66.7,37.5,25,29.2,39.6
 7C10,7,3.47828324,"Fifth Ward, North Park and Pinecrest",13000,"Murder, non-negligent",09A,4,6,7,2,0,2,19,4.8,-50,-50,0,-58.3,30.8,46.2,53.8,15.4,15.4,36.9
@@ -41,7 +41,7 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 9C40,9,10.42549456,"Greens Bayou Estates, Shady Brook, Northshore",23000,"Murder, non-negligent",09A,7,4,6,6,0,3,23,5.8,-14.3,-57.1,-50,-48.3,30.4,17.4,26.1,26.1,13,25.2
 10H10,10,2.81830654,Oak Lawn and Ranger,11000,"Murder, non-negligent",09A,1,2,2,1,0,1,6,1.5,0,0,0,-33.3,9.1,18.2,18.2,9.1,9.1,13.6
 10H20,10,1.75743169,Eastwood and Broadmoor,10000,"Murder, non-negligent",09A,0,0,1,2,1,3,3,0.8,NA,NA,50,275,0,0,10,20,30,8
-10H30,10,1.02691154,Near East End,4000,"Murder, non-negligent",09A,0,1,0,2,0,1,3,0.8,NA,NA,-50,25,0,25,0,50,25,20
+10H30,10,1.02691154,Near East End,4000,"Murder, non-negligent",09A,0,1,0,2,1,2,3,0.8,NA,NA,0,150,0,25,0,50,50,20
 10H40,10,0.99627062,Midtown,8000,"Murder, non-negligent",09A,0,7,11,2,0,1,20,5,NA,NA,-50,-80,0,87.5,137.5,25,12.5,62.5
 10H50,10,2.30843079,the University of Houston area,13000,"Murder, non-negligent",09A,5,9,6,10,1,9,30,7.5,100,80,-10,20,38.5,69.2,46.2,76.9,69.2,57.7
 10H60,10,3.08931006,"University Oaks, Riverside Terrace and the Texas Southern University area",20000,"Murder, non-negligent",09A,5,4,5,5,0,5,19,4.8,0,0,0,4.2,25,20,25,25,25,24
@@ -78,7 +78,7 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 16E40,16,7.49721482,"Chasewood, Willowpark, Briarwick, Ridgemont and Quail Run",35000,"Murder, non-negligent",09A,6,7,5,4,3,6,22,5.5,-33.3,0,50,9.1,17.1,20,14.3,11.4,17.1,15.7
 17E10,17,3.3104034,"Southwest Memorial Hospital, Burnett Bayland Park and Westmoreland",51000,"Murder, non-negligent",09A,8,9,10,8,3,9,35,8.8,0,12.5,12.5,2.3,15.7,17.6,19.6,15.7,17.6,17.3
 17E20,17,3.92767309,the Houston Baptist University area and Maplewood West,27000,"Murder, non-negligent",09A,3,7,6,6,0,6,22,5.5,100,100,0,9.1,11.1,25.9,22.2,22.2,22.2,20.4
-17E30,17,3.8060455,Braeburn Valley West and Glenshire,21000,"Murder, non-negligent",09A,4,11,4,8,0,8,27,6.8,100,100,0,17.6,19,52.4,19,38.1,38.1,32.4
+17E30,17,3.8060455,Braeburn Valley West and Glenshire,21000,"Murder, non-negligent",09A,4,11,4,8,0,7,27,6.8,100,75,-12.5,2.9,19,52.4,19,38.1,33.3,32.4
 17E40,17,4.70920035,"Creekbend, Southwood and Fondren Southwest",46000,"Murder, non-negligent",09A,7,11,8,13,2,12,39,9.8,85.7,71.4,-7.7,22.4,15.2,23.9,17.4,28.3,26.1,21.3
 18F10,18,1.95881352,"Saddlebrook, Bayou Woods and Sherwood Forest",7000,"Murder, non-negligent",09A,0,0,0,0,0,0,0,0,NA,NA,NA,NA,0,0,0,0,0,0
 18F20,18,3.51641691,"The Galleria, Tanglewood, Riverway and Post Oak",24000,"Murder, non-negligent",09A,1,3,2,3,0,1,9,2.2,200,0,-66.7,-54.5,4.2,12.5,8.3,12.5,4.2,9.2
