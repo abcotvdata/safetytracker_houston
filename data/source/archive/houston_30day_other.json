@@ -139,7 +139,7 @@
  "features": [
   {
    "attributes": {
-    "OBJECTID": 8692360,
+    "OBJECTID": 8710568,
     "USER_RMSOccurrenceDate": 1681689600000,
     "USER_RMSOccurrenceHour": "17",
     "USER_Incident": "054256123",
@@ -158,6 +158,29 @@
     "DISTRICT_1": "D",
     "SNBNAME": "MIDTOWN",
     "OLC": "76X6PJXH+CJ"
+   }
+  },
+  {
+   "attributes": {
+    "OBJECTID": 8717495,
+    "USER_RMSOccurrenceDate": 1680652800000,
+    "USER_RMSOccurrenceHour": "17",
+    "USER_Incident": "048422323",
+    "USER_NIBRSClass": "09C",
+    "USER_NIBRSDescription": "Justifiable homicide",
+    "USER_District": "00",
+    "USER_Beat": "HCSO",
+    "USER_Premise": "Highway, Road, Street, Alley",
+    "USER_OffenseAddressMiddle": "2949 BROAD HAVEN",
+    "USER_BlockRange": "2900-2999",
+    "USER_StreetName": "BROAD HAVEN",
+    "USER_StreetType": "DR",
+    "USER_Suffix": "",
+    "USER_ZIPCode": "77067",
+    "USER_ORI": "TXHPD0000",
+    "DISTRICT_1": "B",
+    "SNBNAME": "",
+    "OLC": "76X6WGVP+F9"
    }
   }
  ]
