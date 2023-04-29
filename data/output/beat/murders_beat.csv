@@ -25,7 +25,7 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 22B30,22,2.8264671,Aldine and Imperial Valley,19000,"Murder, non-negligent",09A,2,3,4,2,1,2,11,2.8,0,0,0,-28.6,10.5,15.8,21.1,10.5,10.5,14.7
 22B20,22,4.61158268,Greenspoint,24000,"Murder, non-negligent",09A,7,16,9,6,2,8,38,9.5,-14.3,14.3,33.3,-15.8,29.2,66.7,37.5,25,33.3,39.6
 7C10,7,3.47828324,"Fifth Ward, North Park and Pinecrest",13000,"Murder, non-negligent",09A,4,6,7,2,0,2,19,4.8,-50,-50,0,-58.3,30.8,46.2,53.8,15.4,15.4,36.9
-7C20,7,7.08575157,"Huntington Place, Willshire Place, Kashmere Gardens and Liberty Gardens",21000,"Murder, non-negligent",09A,8,9,9,7,3,6,33,8.2,-12.5,-25,-14.3,-26.8,38.1,42.9,42.9,33.3,28.6,39
+7C20,7,7.08575157,"Huntington Place, Willshire Place, Kashmere Gardens and Liberty Gardens",21000,"Murder, non-negligent",09A,8,9,9,7,4,7,33,8.2,-12.5,-12.5,0,-14.6,38.1,42.9,42.9,33.3,33.3,39
 7C30,7,4.51719841,"Camden Woods, Archers Acres and Croyden Gardens",18000,"Murder, non-negligent",09A,1,5,4,5,3,7,15,3.8,400,600,40,84.2,5.6,27.8,22.2,27.8,38.9,21.1
 7C40,7,3.36786526,Keith-Weiss Park and Farrington Place,8000,"Murder, non-negligent",09A,2,1,0,3,0,2,6,1.5,50,0,-33.3,33.3,25,12.5,0,37.5,25,18.8
 22B40,22,13.03325001,"Intercontinental Airport, Northwood, Lakeview Park and Glen Lee",11000,"Murder, non-negligent",09A,3,2,2,5,1,4,12,3,66.7,33.3,-20,33.3,27.3,18.2,18.2,45.5,36.4,27.3
@@ -43,7 +43,7 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 10H20,10,1.75743169,Eastwood and Broadmoor,10000,"Murder, non-negligent",09A,0,0,1,2,1,3,3,0.8,NA,NA,50,275,0,0,10,20,30,8
 10H30,10,1.02691154,Near East End,4000,"Murder, non-negligent",09A,0,1,0,2,2,3,3,0.8,NA,NA,50,275,0,25,0,50,75,20
 10H40,10,0.99627062,Midtown,8000,"Murder, non-negligent",09A,0,7,11,2,1,2,20,5,NA,NA,0,-60,0,87.5,137.5,25,25,62.5
-10H50,10,2.30843079,the University of Houston area,13000,"Murder, non-negligent",09A,5,9,6,10,1,8,30,7.5,100,60,-20,6.7,38.5,69.2,46.2,76.9,61.5,57.7
+10H50,10,2.30843079,the University of Houston area,13000,"Murder, non-negligent",09A,5,9,6,10,1,7,30,7.5,100,40,-30,-6.7,38.5,69.2,46.2,76.9,53.8,57.7
 10H60,10,3.08931006,"University Oaks, Riverside Terrace and the Texas Southern University area",20000,"Murder, non-negligent",09A,5,4,5,5,1,6,19,4.8,0,20,20,25,25,20,25,25,30,24
 10H70,10,3.52217952,"Texas Medical Center, Hermann Park, Houston Zoo and Miller Outdoor Theatre",16000,"Murder, non-negligent",09A,0,3,0,1,2,2,4,1,NA,NA,100,100,0,18.8,0,6.2,12.5,6.2
 10H80,10,2.73862779,"Southampton, Rice University area, Shadow Lawn and Broad Acres",19000,"Murder, non-negligent",09A,1,0,0,1,0,0,2,0.5,0,-100,-100,-100,5.3,0,0,5.3,0,2.6
@@ -91,7 +91,7 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 19G30,19,2.49064202,"Rodeo Square, Wildflower Green, Braewood Glen",18000,"Murder, non-negligent",09A,0,3,1,3,1,4,7,1.8,NA,NA,33.3,122.2,0,16.7,5.6,16.7,22.2,10
 19G40,19,4.56425364,"Huntington Village, Wellington Park, Leawood, Keegans Glen",37000,"Murder, non-negligent",09A,7,2,7,5,2,7,21,5.2,-28.6,0,40,34.6,18.9,5.4,18.9,13.5,18.9,14.1
 19G50,19,2.30578624,"Forum Park, Stancliff and Southwest Park",18000,"Murder, non-negligent",09A,4,7,4,5,5,7,20,5,25,75,40,40,22.2,38.9,22.2,27.8,38.9,27.8
-20G10,20,3.06600809,"Westchase, Woodchase Village and Point West",29000,"Murder, non-negligent",09A,3,2,8,5,2,6,18,4.5,66.7,100,20,33.3,10.3,6.9,27.6,17.2,20.7,15.5
+20G10,20,3.06600809,"Westchase, Woodchase Village and Point West",29000,"Murder, non-negligent",09A,3,2,8,5,2,5,18,4.5,66.7,66.7,0,11.1,10.3,6.9,27.6,17.2,17.2,15.5
 20G20,20,3.27621655,"Lakeside Estates, City West Place, Rivercrest and Briargrove Park",18000,"Murder, non-negligent",09A,0,1,2,1,0,1,4,1,NA,NA,0,0,0,5.6,11.1,5.6,5.6,5.6
 20G30,20,3.97953501,"West Houston Medical Center, Andrau Airport, Westchase and Westchase Mall",26000,"Murder, non-negligent",09A,3,9,12,5,1,4,29,7.2,66.7,33.3,-20,-44.4,11.5,34.6,46.2,19.2,15.4,27.7
 20G40,20,4.16594899,"Lakeview Forest, Lakeside Place, Ashford Village and Southlake",28000,"Murder, non-negligent",09A,2,7,4,8,0,6,21,5.2,300,200,-25,15.4,7.1,25,14.3,28.6,21.4,18.6
