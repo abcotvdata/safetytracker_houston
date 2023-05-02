@@ -89,7 +89,8 @@ houston_crime %>% filter(houston_crime$year == 2023) %>% write_csv("data/output/
 # houston_crime %>% filter(houston_crime$year == 2019) %>% write_csv("data/output/houston_crime_all2019.csv")
 
 # days total incidents and output for validation
-days <- houston_crime %>% group_by(date) %>% summarise(count=n()) %>% arrange(desc(date))
+days <- houston_crime %>% group_by(date) %>% summarise(count=n()) %>% arrange(desc(date)) %>% mutate(day=wday(date,label=TRUE, abbr=FALSE))
+days_type <- houston_crime %>% group_by(date,offense_type) %>% summarise(count=sum(offense_count)) %>% arrange(desc(date)) %>% mutate(day=wday(date,label=TRUE, abbr=FALSE))
 write_csv(days,"data/output/reference/days_incident_check.csv")
 
 # Clean up
