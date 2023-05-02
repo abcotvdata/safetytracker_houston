@@ -2,6 +2,7 @@ library(tidyverse)
 library(sf)
 library(readxl)
 library(zoo)
+library(lubridate)
 
 houston_annual <- readRDS("scripts/rds/houston_annual.rds")
 houston_monthly <- readRDS("scripts/rds/houston_monthly.rds")

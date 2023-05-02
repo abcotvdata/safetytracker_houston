@@ -144,7 +144,7 @@ ms_to_date = function(ms, t0="1970-01-01", timezone) {
 }
 
 # Convert occurrence date fields from esri ms since utc origin to dates in Central tz
-houston_recent_new$date <- ms_to_date(as.numeric(houston_recent_new$USER_RMSOccurrenceDate), timezone="America/Chicago")
+houston_recent_new$date <- ms_to_date(as.numeric(houston_recent_new$USER_RMSOccurrenceDate), timezone="GMT")
 houston_recent_new$date <- as.Date(substr(houston_recent_new$date,1,10))
 
 # Adapt the houston_30day file to match the style of 2019-22 dataframes
@@ -172,6 +172,12 @@ file.copy("scripts/rds/houston_recent_new.rds", # dupe yesterday file
 
 # Load prior day df
 houston_recent_prior <- readRDS("scripts/rds/houston_recent_prior.rds")
+
+# Temp fix dupes; occassional as needed during manual maintenance
+# houston_recent_prior <- houston_recent_prior %>% arrange(desc(date))
+# houston_recent_prior <- houston_recent_prior[!duplicated(houston_recent_prior[, c("incident", "offense_type", "beat","zip")]), ]
+# saveRDS(houston_recent_prior,"scripts/rds/houston_recent_prior.rds")
+
 # Merge prior day and today and then de-dupe
 houston_recent_new <- bind_rows(houston_recent_prior,
                                 houston_recent_new)
