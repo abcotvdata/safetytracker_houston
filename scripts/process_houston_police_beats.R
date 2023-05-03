@@ -83,7 +83,7 @@ beats$placename <- case_when(beats$beat == "1A10" ~ "Downtown Central Business D
                              beats$beat == "13D30" ~ "Allen Farms, Airport Gardens and the Hobby Airport area",
                              beats$beat == "13D40" ~ "Val Verde East, Gulf Meadows and Houston Skyscraper Shadows",
                              beats$beat == "14D10" ~ "McGregor Terrace and Riverside Terrace",
-                             beats$beat == "14D20" ~ "Blueridge, Sunnyside, Brook Haven and Bayou Estates",
+                             beats$beat == "14D20" ~ "Sunnyside, Brook Haven and Bayou Estates",
                              beats$beat == "14D30" ~ "Crestmont, Edgewood, Bellfort Park, Inwood Terrace and Southpark",
                              beats$beat == "14D40" ~ "South Acres, Shamrock Manor, Hillwood and Cloverland",
                              beats$beat == "14D50" ~ "Golden Glade Estates, Langston and Almeda Genoa",

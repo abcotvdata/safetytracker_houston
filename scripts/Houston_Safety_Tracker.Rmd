@@ -250,7 +250,7 @@ Per 100,000 people<br>2019 to 2022</p>
 <br>
 Homicides over the last 12 months are trending <h8>`r ifelse(murders_city$inc_22tolast12>=0," up"," down")` `r ifelse(murders_city$inc_22tolast12>=0,murders_city$inc_22tolast12,substring(murders_city$inc_22tolast12,2))`%</h8> compared to 2022, according to the latest data available from the Houston Police Department.
 
-However, the murder rate over the last 12 months is<h8>`r ifelse(murders_city$inc_prior4yearavgtolast12>=0," up"," down")` `r ifelse(murders_city$inc_prior4yearavgtolast12>=0,murders_city$inc_prior4yearavgtolast12,substring(murders_city$inc_prior4yearavgtolast12,2))`%</h8> compared to the annual average over the last four years, and the frequency of killings remains higher than it was before the pandemic.
+However, the murder rate over the last 12 months is<h8>`r ifelse(murders_city$inc_prior4yearavgtolast12>=0," up"," down")` `r ifelse(murders_city$inc_prior4yearavgtolast12>=0,murders_city$inc_prior4yearavgtolast12,substring(murders_city$inc_prior4yearavgtolast12,2))`%</h8> compared to the annual average over the last four years.
 
 The city averaged <h8>`r round(murders_city$last12mos/52,0)`</h8> homicides a week over the last 12 months. In 2019, that number was <h8>`r round(murders_city$total19/52,0)`</h8> a week.
 
