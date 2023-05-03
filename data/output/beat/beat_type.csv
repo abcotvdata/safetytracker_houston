@@ -194,9 +194,9 @@ beat,district,area_sq_mi,placename,population,type,total19,total20,total21,total
 14D10,14,3.66057918,McGregor Terrace and Riverside Terrace,17000,Other,1053,1359,1503,1321,498,1344,5236,1309,25.5,27.6,1.7,2.7,6194.1,7994.1,8841.2,7770.6,7905.9,7700
 14D10,14,3.66057918,McGregor Terrace and Riverside Terrace,17000,Property,1081,854,742,808,299,864,3485,871.2,-25.3,-20.1,6.9,-0.8,6358.8,5023.5,4364.7,4752.9,5082.4,5124.7
 14D10,14,3.66057918,McGregor Terrace and Riverside Terrace,17000,Violent,1038,1096,892,809,264,797,3835,958.8,-22.1,-23.2,-1.5,-16.9,6105.9,6447.1,5247.1,4758.8,4688.2,5640
-14D20,14,7.25646368,"Blueridge, Sunnyside, Brook Haven and Bayou Estates",28000,Other,1699,2350,2607,2339,790,2286,8995,2248.8,37.7,34.5,-2.3,1.7,6067.9,8392.9,9310.7,8353.6,8164.3,8031.4
-14D20,14,7.25646368,"Blueridge, Sunnyside, Brook Haven and Bayou Estates",28000,Property,1388,1194,974,1197,362,1167,4753,1188.2,-13.8,-15.9,-2.5,-1.8,4957.1,4264.3,3478.6,4275,4167.9,4243.6
-14D20,14,7.25646368,"Blueridge, Sunnyside, Brook Haven and Bayou Estates",28000,Violent,1691,1763,1512,1476,471,1446,6442,1610.5,-12.7,-14.5,-2,-10.2,6039.3,6296.4,5400,5271.4,5164.3,5751.8
+14D20,14,7.25646368,"Sunnyside, Brook Haven and Bayou Estates",28000,Other,1699,2350,2607,2339,790,2286,8995,2248.8,37.7,34.5,-2.3,1.7,6067.9,8392.9,9310.7,8353.6,8164.3,8031.4
+14D20,14,7.25646368,"Sunnyside, Brook Haven and Bayou Estates",28000,Property,1388,1194,974,1197,362,1167,4753,1188.2,-13.8,-15.9,-2.5,-1.8,4957.1,4264.3,3478.6,4275,4167.9,4243.6
+14D20,14,7.25646368,"Sunnyside, Brook Haven and Bayou Estates",28000,Violent,1691,1763,1512,1476,471,1446,6442,1610.5,-12.7,-14.5,-2,-10.2,6039.3,6296.4,5400,5271.4,5164.3,5751.8
 14D30,14,4.20537595,"Crestmont, Edgewood, Bellfort Park, Inwood Terrace and Southpark",21000,Other,777,1192,1201,1180,354,1108,4350,1087.5,51.9,42.6,-6.1,1.9,3700,5676.2,5719,5619,5276.2,5178.6
 14D30,14,4.20537595,"Crestmont, Edgewood, Bellfort Park, Inwood Terrace and Southpark",21000,Property,601,584,487,547,182,568,2219,554.8,-9,-5.5,3.8,2.4,2861.9,2781,2319,2604.8,2704.8,2641.9
 14D30,14,4.20537595,"Crestmont, Edgewood, Bellfort Park, Inwood Terrace and Southpark",21000,Violent,821,750,660,693,226,683,2924,731,-15.6,-16.8,-1.4,-6.6,3909.5,3571.4,3142.9,3300,3252.4,3481
@@ -326,9 +326,9 @@ beat,district,area_sq_mi,placename,population,type,total19,total20,total21,total
 4F20,4,5.85840284,"Claymore Park, Westbranch, Spring Shadows and Kempwood Forest",28000,Other,499,621,629,737,362,856,2486,621.5,47.7,71.5,16.1,37.7,1782.1,2217.9,2246.4,2632.1,3057.1,2219.6
 4F20,4,5.85840284,"Claymore Park, Westbranch, Spring Shadows and Kempwood Forest",28000,Property,807,739,790,870,290,843,3206,801.5,7.8,4.5,-3.1,5.2,2882.1,2639.3,2821.4,3107.1,3010.7,2862.5
 4F20,4,5.85840284,"Claymore Park, Westbranch, Spring Shadows and Kempwood Forest",28000,Violent,390,365,372,373,148,383,1500,375,-4.4,-1.8,2.7,2.1,1392.9,1303.6,1328.6,1332.1,1367.9,1339.3
-20G60,20,4.54207617,"Barkers Landing, Fleetwood, Thornwood and Darrel Tully Stadium",22000,Other,503,679,744,598,188,559,2524,631,18.9,11.1,-6.5,-11.4,2286.4,3086.4,3381.8,2718.2,2540.9,2868.2
-20G60,20,4.54207617,"Barkers Landing, Fleetwood, Thornwood and Darrel Tully Stadium",22000,Property,926,937,940,884,254,826,3687,921.8,-4.5,-10.8,-6.6,-10.4,4209.1,4259.1,4272.7,4018.2,3754.5,4190
-20G60,20,4.54207617,"Barkers Landing, Fleetwood, Thornwood and Darrel Tully Stadium",22000,Violent,254,325,314,266,85,256,1159,289.8,4.7,0.8,-3.8,-11.7,1154.5,1477.3,1427.3,1209.1,1163.6,1317.3
+20G60,20,4.54207617,"Barkers Landing, Fleetwood, Thornwood and Darrel Tully Stadium",23000,Other,503,679,744,598,188,559,2524,631,18.9,11.1,-6.5,-11.4,2187,2952.2,3234.8,2600,2430.4,2743.5
+20G60,20,4.54207617,"Barkers Landing, Fleetwood, Thornwood and Darrel Tully Stadium",23000,Property,926,937,940,884,254,826,3687,921.8,-4.5,-10.8,-6.6,-10.4,4026.1,4073.9,4087,3843.5,3591.3,4007.8
+20G60,20,4.54207617,"Barkers Landing, Fleetwood, Thornwood and Darrel Tully Stadium",23000,Violent,254,325,314,266,85,256,1159,289.8,4.7,0.8,-3.8,-11.7,1104.3,1413,1365.2,1156.5,1113,1260
 4F30,4,26.30690179,"Addicks Reservoir Area, Claymore Park, Brittmore Village, Park Ten Place and Mayde Creek Farms",18000,Other,469,716,710,650,228,652,2545,636.2,38.6,39,0.3,2.5,2605.6,3977.8,3944.4,3611.1,3622.2,3534.4
 4F30,4,26.30690179,"Addicks Reservoir Area, Claymore Park, Brittmore Village, Park Ten Place and Mayde Creek Farms",18000,Property,935,975,1049,998,410,1042,3957,989.2,6.7,11.4,4.4,5.3,5194.4,5416.7,5827.8,5544.4,5788.9,5495.6
 4F30,4,26.30690179,"Addicks Reservoir Area, Claymore Park, Brittmore Village, Park Ten Place and Mayde Creek Farms",18000,Violent,274,307,316,276,102,296,1173,293.2,0.7,8,7.2,1,1522.2,1705.6,1755.6,1533.3,1644.4,1628.9
