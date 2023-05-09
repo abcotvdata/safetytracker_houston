@@ -41,6 +41,7 @@ tx_crime_2023 <- read_excel("data/source/state/tx_crime_2023.xlsx",
 
 # combine into a single file
 tx_crime <- bind_rows(tx_crime_2018,tx_crime_2019,tx_crime_2020,tx_crime_2021,tx_crime_2022)
+
 tx_crime$county <- ifelse(tx_crime$county_total=="County Total",tx_crime$agency_name,NA) 
 tx_crime$county <- sub(" County","",tx_crime$county)
 
