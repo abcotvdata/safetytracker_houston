@@ -15,11 +15,11 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 3B10,3,6.82068773,"Northwest Mall, Brookhollow, White Oak Acres, Oak Forest and Langwood",34000,"Murder, non-negligent",09A,4,2,10,5,2,6,21,5.2,25,50,20,15.4,11.8,5.9,29.4,14.7,17.6,15.3
 3B30,3,5.310372,"White Oak Acres, Brook Hollow, Oak Forest, Garden Oaks and Shepherd Park Plaza",23000,"Murder, non-negligent",09A,0,3,2,3,0,0,8,2,NA,NA,-100,-100,0,13,8.7,13,0,8.7
 3B40,3,3.40013561,"Independence Heights, Melrose and Graceland",13000,"Murder, non-negligent",09A,5,6,8,6,0,6,25,6.2,20,20,0,-3.2,38.5,46.2,61.5,46.2,46.2,47.7
-3B50,3,3.85259517,"Northline Mall, Stratton Place, Oakwood, Colonial Gardens, Lindale and Junction City",20000,"Murder, non-negligent",09A,1,3,8,6,3,8,18,4.5,500,700,33.3,77.8,5,15,40,30,40,22.5
+3B50,3,3.85259517,"Northline Mall, Stratton Place, Oakwood, Colonial Gardens, Lindale and Junction City",20000,"Murder, non-negligent",09A,1,3,8,6,3,7,18,4.5,500,600,16.7,55.6,5,15,40,30,35,22.5
 5F10,5,3.25978513,Afton Village and Pine Terrace,14000,"Murder, non-negligent",09A,0,0,4,4,5,9,8,2,NA,NA,125,350,0,0,28.6,28.6,64.3,14.3
 5F30,5,8.70689439,"Fairbanks, Carverdale, Fawndale and Northwest Crossing",17000,"Murder, non-negligent",09A,7,4,2,4,0,2,17,4.2,-42.9,-71.4,-50,-52.4,41.2,23.5,11.8,23.5,11.8,24.7
 6B10,6,5.50084827,"York Plaza, Pembrook Place and Hawthorne Place",33000,"Murder, non-negligent",09A,7,8,9,10,2,8,34,8.5,42.9,14.3,-20,-5.9,21.2,24.2,27.3,30.3,24.2,25.8
-6B20,6,6.12869477,"Highland Heights, Oakdale and Melrose Gardens",18000,"Murder, non-negligent",09A,2,3,9,2,3,4,16,4,0,100,100,0,11.1,16.7,50,11.1,22.2,22.2
+6B20,6,6.12869477,"Highland Heights, Oakdale and Melrose Gardens",18000,"Murder, non-negligent",09A,2,3,9,2,2,3,16,4,0,50,50,-25,11.1,16.7,50,11.1,16.7,22.2
 6B30,6,7.2300685,"Woodland Trails, Oaks of Inwood, Bayou Bend, Cole Creek Manor and Inwood Forest",38000,"Murder, non-negligent",09A,5,6,11,3,0,1,25,6.2,-40,-80,-66.7,-83.9,13.2,15.8,28.9,7.9,2.6,16.3
 6B40,6,5.544689,"Highland Gardens, Highland Heights and North Plaza",20000,"Murder, non-negligent",09A,5,12,9,6,3,7,32,8,20,40,16.7,-12.5,25,60,45,30,35,40
 22B30,22,2.8264671,Aldine and Imperial Valley,19000,"Murder, non-negligent",09A,2,3,4,2,1,2,11,2.8,0,0,0,-28.6,10.5,15.8,21.1,10.5,10.5,14.7
@@ -44,7 +44,7 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 10H30,10,1.02691154,Near East End,4000,"Murder, non-negligent",09A,0,1,0,2,1,2,3,0.8,NA,NA,0,150,0,25,0,50,50,20
 10H40,10,0.99627062,Midtown,8000,"Murder, non-negligent",09A,0,7,11,2,2,3,20,5,NA,NA,50,-40,0,87.5,137.5,25,37.5,62.5
 10H50,10,2.30843079,the University of Houston area,13000,"Murder, non-negligent",09A,5,9,6,10,1,7,30,7.5,100,40,-30,-6.7,38.5,69.2,46.2,76.9,53.8,57.7
-10H60,10,3.08931006,"University Oaks, Riverside Terrace and the Texas Southern University area",20000,"Murder, non-negligent",09A,5,4,5,5,1,6,19,4.8,0,20,20,25,25,20,25,25,30,24
+10H60,10,3.08931006,"University Oaks, Riverside Terrace and the Texas Southern University area",20000,"Murder, non-negligent",09A,5,4,5,5,1,5,19,4.8,0,0,0,4.2,25,20,25,25,25,24
 10H70,10,3.52217952,"Texas Medical Center, Hermann Park, Houston Zoo and Miller Outdoor Theatre",16000,"Murder, non-negligent",09A,0,3,0,1,2,2,4,1,NA,NA,100,100,0,18.8,0,6.2,12.5,6.2
 10H80,10,2.73862779,"Southampton, Rice University area, Shadow Lawn and Broad Acres",19000,"Murder, non-negligent",09A,1,0,0,1,0,0,2,0.5,0,-100,-100,-100,5.3,0,0,5.3,0,2.6
 11H10,11,5.31502815,"Mason Park, Forest Hill, Sunnyland and Central Park",28000,"Murder, non-negligent",09A,9,5,3,3,1,3,20,5,-66.7,-66.7,0,-40,32.1,17.9,10.7,10.7,10.7,17.9
@@ -60,11 +60,11 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 12D60,12,6.35832041,"NASA's Johnson Space Center, Meadow Green, Oakbrook West and Camino South",22000,"Murder, non-negligent",09A,1,0,0,2,1,3,3,0.8,100,200,50,275,4.5,0,0,9.1,13.6,3.6
 12D70,12,5.39156317,Baybrook Mall and Sterling Knoll,12000,"Murder, non-negligent",09A,0,2,1,1,0,0,4,1,NA,NA,-100,-100,0,16.7,8.3,8.3,0,8.3
 13D10,13,5.2433708,"Gulfgate Mall, Bay Forest, Riverview, Hampshire, Golfcrest and Barnett Stadium",23000,"Murder, non-negligent",09A,2,4,6,8,1,5,20,5,300,150,-37.5,0,8.7,17.4,26.1,34.8,21.7,21.7
-13D20,13,6.66870859,"Fairlawn, Garden Villas, Glenbrook Valley and Santa Rosa",36000,"Murder, non-negligent",09A,11,4,14,10,4,10,39,9.8,-9.1,-9.1,0,2,30.6,11.1,38.9,27.8,27.8,27.2
+13D20,13,6.66870859,"Fairlawn, Garden Villas, Glenbrook Valley and Santa Rosa",36000,"Murder, non-negligent",09A,11,4,14,10,4,9,39,9.8,-9.1,-18.2,-10,-8.2,30.6,11.1,38.9,27.8,25,27.2
 13D30,13,3.07402543,"Allen Farms, Airport Gardens and the Hobby Airport area",2000,"Murder, non-negligent",09A,0,1,0,0,0,0,1,0.2,NA,NA,NA,-100,0,50,0,0,0,10
 13D40,13,5.0688163,"Val Verde East, Gulf Meadows and Houston Skyscraper Shadows",13000,"Murder, non-negligent",09A,0,2,1,5,0,5,8,2,NA,NA,0,150,0,15.4,7.7,38.5,38.5,15.4
 14D10,14,3.66057918,McGregor Terrace and Riverside Terrace,17000,"Murder, non-negligent",09A,11,13,13,8,4,9,45,11.2,-27.3,-18.2,12.5,-19.6,64.7,76.5,76.5,47.1,52.9,65.9
-14D20,14,7.25646368,"Sunnyside, Brook Haven and Bayou Estates",28000,"Murder, non-negligent",09A,15,21,18,15,3,14,69,17.2,0,-6.7,-6.7,-18.6,53.6,75,64.3,53.6,50,61.4
+14D20,14,7.25646368,"Sunnyside, Brook Haven and Bayou Estates",28000,"Murder, non-negligent",09A,15,21,18,15,3,13,69,17.2,0,-13.3,-13.3,-24.4,53.6,75,64.3,53.6,46.4,61.4
 14D30,14,4.20537595,"Crestmont, Edgewood, Bellfort Park, Inwood Terrace and Southpark",21000,"Murder, non-negligent",09A,6,7,8,7,1,5,28,7,16.7,-16.7,-28.6,-28.6,28.6,33.3,38.1,33.3,23.8,33.3
 14D40,14,6.61224595,"South Acres, Shamrock Manor, Hillwood and Cloverland",21000,"Murder, non-negligent",09A,4,8,2,8,0,5,22,5.5,100,25,-37.5,-9.1,19,38.1,9.5,38.1,23.8,26.2
 14D50,14,8.69627992,"Golden Glade Estates, Langston and Almeda Genoa",9000,"Murder, non-negligent",09A,2,1,3,5,2,4,11,2.8,150,100,-20,42.9,22.2,11.1,33.3,55.6,44.4,31.1
@@ -103,7 +103,7 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 21I40,21,0.00923163,Intercontinental Airport,0,"Murder, non-negligent",09A,0,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 21I50,21,14.61100076,Intercontinental Airport,0,"Murder, non-negligent",09A,0,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 21I70,21,0.01945113,Intercontinental Airport,0,"Murder, non-negligent",09A,0,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-22B10,22,3.28874287,"Willowbrook, Willow Chase Park and Centerfield",8000,"Murder, non-negligent",09A,1,0,4,2,0,1,7,1.8,100,0,-50,-44.4,12.5,0,50,25,12.5,22.5
+22B10,22,3.28874287,"Willowbrook, Willow Chase Park and Centerfield",8000,"Murder, non-negligent",09A,1,0,4,2,0,0,7,1.8,100,-100,-100,-100,12.5,0,50,25,0,22.5
 5F20,5,5.94082911,Spring Branch and Schwartz Park,42000,"Murder, non-negligent",09A,2,0,9,5,1,4,16,4,150,100,-20,0,4.8,0,21.4,11.9,9.5,9.5
 4F10,4,4.13606469,"Timber Oaks, Shadow Oaks and Long Point Acres",23000,"Murder, non-negligent",09A,0,0,2,2,0,1,4,1,NA,NA,-50,0,0,0,8.7,8.7,4.3,4.3
 20G50,20,5.88593521,"Nottingham, Yorkshire, Wilchester, Town and Country Village and Memorial City Shopping Center",30000,"Murder, non-negligent",09A,0,1,0,2,1,2,3,0.8,NA,NA,0,150,0,3.3,0,6.7,6.7,2.7
