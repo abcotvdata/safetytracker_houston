@@ -152,9 +152,9 @@ poplabel <- paste(sep = "<br>", ourtx_places2$place,ourtx_places2$county,prettyN
 # Create map
 ourtx_police_map2 <- leaflet(ourtx_places2) %>%
   setView(-95.45, 29.75, zoom = 9) %>% 
-  addProviderTiles(provider = "Esri.WorldImagery") %>%
-  addProviderTiles(provider = "CartoDB.PositronOnlyLabels") %>%
-  addPolygons(color = "white", popup = poplabel, weight = 2, smoothFactor = 0.5,
+#  addProviderTiles(provider = "Esri.WorldImagery") %>%
+#  addProviderTiles(provider = "CartoDB.PositronOnlyLabels") %>%
+  addProviderTiles(provider = "CartoDB.Positron") %>%  addPolygons(color = "white", popup = poplabel, weight = 2, smoothFactor = 0.5,
               opacity = 0.5, fillOpacity = 0.5,
               fillColor = ~poppal(`population`)) 
 ourtx_police_map2 
