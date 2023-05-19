@@ -72,7 +72,7 @@ beats$placename <- case_when(beats$beat == "1A10" ~ "Downtown Central Business D
                              beats$beat == "10H70" ~ "Texas Medical Center, Hermann Park, Houston Zoo and Miller Outdoor Theatre",
                              beats$beat == "10H80" ~ "Southampton, Rice University area, Shadow Lawn and Broad Acres",
                              beats$beat == "12D10" ~ "Almeda Mall, Southridge, Edgebrook and South Houston Gardens",
-                             beats$beat == "12D20" ~ "Sage",
+                             beats$beat == "12D20" ~ "Sagemont",
                              beats$beat == "12D30" ~ "Gulf Palms and Beamer",
                              beats$beat == "12D40" ~ "Scarsdale and Ellington Field",
                              beats$beat == "12D50" ~ "Bay Glen, Bay Oaks, Brook Forest and Bay Forest",
@@ -195,4 +195,4 @@ saveRDS(beats,"scripts/rds/beats.rds")
 # Make shapefile for big board product
 # Comment out when not in use
 # Write the shapefile to the output directory
-st_write(beats, "data/source/geo/shp/houston_beats.shp")
+st_write(beats, "data/source/geo/shp/houston_beats.shp", append=FALSE)

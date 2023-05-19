@@ -12,18 +12,18 @@ core_counties <- c("Harris", "Montgomery", "Liberty", "Waller", "Fort Bend", "Br
 
 # Collect statewide data for previous years
 download.file("https://txucr.nibrs.com/Report/DownloadSummaryIndexCrimesReportExcel?year=2018&reportType=2&startdate=2018/1/01&enddate=2018/12/31",
-              "data/source/state/tx_crime_2018.xlsx")
+              "data/source/state/tx_crime_2018a.xlsx")
 download.file("https://txucr.nibrs.com/Report/DownloadSummaryIndexCrimesReportExcel?year=2019&reportType=2&startdate=2019/1/01&enddate=2019/12/31",
-              "data/source/state/tx_crime_2019.xlsx")
+              "data/source/state/tx_crime_2019a.xlsx")
 download.file("https://txucr.nibrs.com/Report/DownloadSummaryIndexCrimesReportExcel?year=2020&reportType=2&startdate=2020/1/01&enddate=2020/12/31",
-              "data/source/state/tx_crime_2020.xlsx")
+              "data/source/state/tx_crime_2020a.xlsx")
 download.file("https://txucr.nibrs.com/Report/DownloadSummaryIndexCrimesReportExcel?year=2021&reportType=2&startdate=2021/1/01&enddate=2021/12/31",
-              "data/source/state/tx_crime_2021.xlsx")
+              "data/source/state/tx_crime_2021a.xlsx")
 download.file("https://txucr.nibrs.com/Report/DownloadSummaryIndexCrimesReportExcel?year=2022&reportType=2&startdate=2022/1/01&enddate=2022/12/31",
-              "data/source/state/tx_crime_2022.xlsx")
+              "data/source/state/tx_crime_2022a.xlsx")
 # Collect statewide data for this year SO FAR
 download.file("https://txucr.nibrs.com/Report/DownloadSummaryIndexCrimesReportExcel?year=2022&reportType=2&startdate=2023/1/01&enddate=2023/12/31",
-              "data/source/state/tx_crime_2023.xlsx")
+              "data/source/state/tx_crime_2023a.xlsx")
 
 # import and merge into single file
 tx_crime_2018 <- read_excel("data/source/state/tx_crime_2018.xlsx", 
