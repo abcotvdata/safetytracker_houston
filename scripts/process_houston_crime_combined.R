@@ -411,7 +411,7 @@ beat_detailed %>% st_drop_geometry() %>% write_csv("data/output/beat/beat_detail
 beat_category %>% st_drop_geometry() %>% write_csv("data/output/beat/beat_category.csv")
 beat_type %>% st_drop_geometry() %>% write_csv("data/output/beat/beat_type.csv")
 citywide_detailed %>% write_csv("data/output/city/citywide_detailed.csv")
-citywide_category %>% mutate(as_of_date = substr(asofdate,1,10)) %>% write_csv("data/output/city/citywide_category.csv")
+citywide_category %>% mutate(previous_year=total22) %>% mutate(as_of_date = substr(asofdate,1,10)) %>% write_csv("data/output/city/citywide_category.csv")
 citywide_type %>% write_csv("data/output/city/citywide_type.csv")
 
 # Create individual spatial tables of crimes by major categories and types
