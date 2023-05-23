@@ -411,7 +411,7 @@ beat_detailed %>% st_drop_geometry() %>% write_csv("data/output/beat/beat_detail
 beat_category %>% st_drop_geometry() %>% write_csv("data/output/beat/beat_category.csv")
 beat_type %>% st_drop_geometry() %>% write_csv("data/output/beat/beat_type.csv")
 citywide_detailed %>% write_csv("data/output/city/citywide_detailed.csv")
-citywide_category %>% write_csv("data/output/city/citywide_category.csv")
+citywide_category %>% mutate(as_of_date = substr(asofdate,1,10)) %>% write_csv("data/output/city/citywide_category.csv")
 citywide_type %>% write_csv("data/output/city/citywide_type.csv")
 
 # Create individual spatial tables of crimes by major categories and types
@@ -498,16 +498,16 @@ when_murders_happen <- when_murders_happen %>%
   summarise(total=sum(count))
 
 # Create individual spatial tables of crimes by major categories and types
-murders_beat %>% st_drop_geometry() %>% write_csv("data/output/beat/murders_beat.csv")
-sexassaults_beat %>% st_drop_geometry() %>% write_csv("data/output/beat/sexassaults_beat.csv")
-autothefts_beat %>% st_drop_geometry() %>% write_csv("data/output/beat/autothefts_beat.csv")
-thefts_beat %>% st_drop_geometry() %>% write_csv("data/output/beat/thefts_beat.csv")
-burglaries_beat %>% st_drop_geometry() %>% write_csv("data/output/beat/burglaries_beat.csv")
-robberies_beat %>% st_drop_geometry() %>% write_csv("data/output/beat/robberies_beat.csv")
-assaults_beat %>% st_drop_geometry() %>% write_csv("data/output/beat/assaults_beat.csv")
-drugs_beat %>% st_drop_geometry() %>% write_csv("data/output/beat/drugs_beat.csv")
-violence_beat %>% st_drop_geometry() %>% write_csv("data/output/beat/violence_beat.csv")
-property_beat %>% st_drop_geometry() %>% write_csv("data/output/beat/property_beat.csv")
+murders_beat %>% st_drop_geometry() %>% mutate(previous_year=total22) %>% write_csv("data/output/beat/murders_beat.csv")
+sexassaults_beat %>% st_drop_geometry() %>% mutate(previous_year=total22) %>% write_csv("data/output/beat/sexassaults_beat.csv")
+autothefts_beat %>% st_drop_geometry() %>% mutate(previous_year=total22) %>% write_csv("data/output/beat/autothefts_beat.csv")
+thefts_beat %>% st_drop_geometry() %>% mutate(previous_year=total22) %>% write_csv("data/output/beat/thefts_beat.csv")
+burglaries_beat %>% st_drop_geometry() %>% mutate(previous_year=total22) %>% write_csv("data/output/beat/burglaries_beat.csv")
+robberies_beat %>% st_drop_geometry() %>% mutate(previous_year=total22) %>% write_csv("data/output/beat/robberies_beat.csv")
+assaults_beat %>% st_drop_geometry() %>% mutate(previous_year=total22) %>% write_csv("data/output/beat/assaults_beat.csv")
+drugs_beat %>% st_drop_geometry() %>% mutate(previous_year=total22) %>% write_csv("data/output/beat/drugs_beat.csv")
+violence_beat %>% st_drop_geometry() %>% mutate(previous_year=total22) %>% write_csv("data/output/beat/violence_beat.csv")
+property_beat %>% st_drop_geometry() %>% mutate(previous_year=total22) %>% write_csv("data/output/beat/property_beat.csv")
 
 # TEST TEST TEST OF WHETHER RDS WILL WORK FOR TRACKERS IN AUTOMATION
 saveRDS(murders_city,"scripts/rds/murders_city.rds")
