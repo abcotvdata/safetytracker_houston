@@ -7,7 +7,7 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 1A40,1,2.45016686,"Tall Timbers, Royden Oaks, River Oaks, Avalon Place and Oak Estates",7000,"Murder, non-negligent",09A,0,0,1,0,0,0,1,0.2,NA,NA,NA,-100,0,0,14.3,0,0,2.9,0
 1A50,1,3.04553452,"Post Oak Park, Afton Oaks, Highland Village, Weslayan, Greenway Plaza and The Compaq Center",26000,"Murder, non-negligent",09A,0,0,5,3,1,1,8,2,NA,NA,-66.7,-50,0,0,19.2,11.5,3.8,7.7,3
 2A10,2,3.30928608,Irvington and Ryon,18000,"Murder, non-negligent",09A,6,4,3,5,2,6,18,4.5,-16.7,0,20,33.3,33.3,22.2,16.7,27.8,33.3,25,5
-2A20,2,1.8876461,"Sunset Heights, Brooksmith and Stude",11000,"Murder, non-negligent",09A,0,2,1,3,0,1,6,1.5,NA,NA,-66.7,-33.3,0,18.2,9.1,27.3,9.1,13.6,3
+2A20,2,1.8876461,"Sunset Heights, Brooksmith and Stude",11000,"Murder, non-negligent",09A,0,2,1,3,1,2,6,1.5,NA,NA,-33.3,33.3,0,18.2,9.1,27.3,18.2,13.6,3
 2A30,2,4.65858171,"Houston Heights, Norhill and Studemont",31000,"Murder, non-negligent",09A,0,0,2,5,0,4,7,1.8,NA,NA,-20,122.2,0,0,6.5,16.1,12.9,5.8,5
 2A40,2,1.60546103,Old Sixth Ward and the First Ward,8000,"Murder, non-negligent",09A,1,1,0,1,0,0,3,0.8,0,-100,-100,-100,12.5,12.5,0,12.5,0,10,1
 2A50,2,5.4659844,"Memorial Park, West End, Ashbury and Cottage Grove",29000,"Murder, non-negligent",09A,1,0,5,2,0,2,8,2,100,100,0,0,3.4,0,17.2,6.9,6.9,6.9,2
@@ -15,7 +15,7 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 3B10,3,6.82068773,"Northwest Mall, Brookhollow, White Oak Acres, Oak Forest and Langwood",34000,"Murder, non-negligent",09A,4,2,10,5,4,8,21,5.2,25,100,60,53.8,11.8,5.9,29.4,14.7,23.5,15.3,5
 3B30,3,5.310372,"White Oak Acres, Brook Hollow, Oak Forest, Garden Oaks and Shepherd Park Plaza",23000,"Murder, non-negligent",09A,0,3,2,3,0,0,8,2,NA,NA,-100,-100,0,13,8.7,13,0,8.7,3
 3B40,3,3.40013561,"Independence Heights, Melrose and Graceland",13000,"Murder, non-negligent",09A,5,6,8,6,0,5,25,6.2,20,0,-16.7,-19.4,38.5,46.2,61.5,46.2,38.5,47.7,6
-3B50,3,3.85259517,"Northline Mall, Stratton Place, Oakwood, Colonial Gardens, Lindale and Junction City",20000,"Murder, non-negligent",09A,1,3,8,6,3,7,18,4.5,500,600,16.7,55.6,5,15,40,30,35,22.5,6
+3B50,3,3.85259517,"Northline Mall, Stratton Place, Oakwood, Colonial Gardens, Lindale and Junction City",20000,"Murder, non-negligent",09A,1,3,8,6,3,6,18,4.5,500,500,0,33.3,5,15,40,30,30,22.5,6
 5F10,5,3.25978513,Afton Village and Pine Terrace,14000,"Murder, non-negligent",09A,0,0,4,4,4,8,8,2,NA,NA,100,300,0,0,28.6,28.6,57.1,14.3,4
 5F30,5,8.70689439,"Fairbanks, Carverdale, Fawndale and Northwest Crossing",17000,"Murder, non-negligent",09A,7,4,2,4,0,2,17,4.2,-42.9,-71.4,-50,-52.4,41.2,23.5,11.8,23.5,11.8,24.7,4
 6B10,6,5.50084827,"York Plaza, Pembrook Place and Hawthorne Place",33000,"Murder, non-negligent",09A,7,8,9,10,2,8,34,8.5,42.9,14.3,-20,-5.9,21.2,24.2,27.3,30.3,24.2,25.8,10
@@ -64,7 +64,7 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 13D30,13,3.07402543,"Allen Farms, Airport Gardens and the Hobby Airport area",2000,"Murder, non-negligent",09A,0,1,0,0,0,0,1,0.2,NA,NA,NA,-100,0,50,0,0,0,10,0
 13D40,13,5.0688163,"Val Verde East, Gulf Meadows and Houston Skyscraper Shadows",13000,"Murder, non-negligent",09A,0,2,1,5,0,5,8,2,NA,NA,0,150,0,15.4,7.7,38.5,38.5,15.4,5
 14D10,14,3.66057918,McGregor Terrace and Riverside Terrace,17000,"Murder, non-negligent",09A,11,13,13,8,4,9,45,11.2,-27.3,-18.2,12.5,-19.6,64.7,76.5,76.5,47.1,52.9,65.9,8
-14D20,14,7.25646368,"Sunnyside, Brook Haven and Bayou Estates",28000,"Murder, non-negligent",09A,15,21,18,15,3,13,69,17.2,0,-13.3,-13.3,-24.4,53.6,75,64.3,53.6,46.4,61.4,15
+14D20,14,7.25646368,"Sunnyside, Brook Haven and Bayou Estates",28000,"Murder, non-negligent",09A,15,21,18,15,3,12,69,17.2,0,-20,-20,-30.2,53.6,75,64.3,53.6,42.9,61.4,15
 14D30,14,4.20537595,"Crestmont, Edgewood, Bellfort Park, Inwood Terrace and Southpark",21000,"Murder, non-negligent",09A,6,7,8,7,1,5,28,7,16.7,-16.7,-28.6,-28.6,28.6,33.3,38.1,33.3,23.8,33.3,7
 14D40,14,6.61224595,"South Acres, Shamrock Manor, Hillwood and Cloverland",21000,"Murder, non-negligent",09A,4,8,2,8,0,5,22,5.5,100,25,-37.5,-9.1,19,38.1,9.5,38.1,23.8,26.2,8
 14D50,14,8.69627992,"Golden Glade Estates, Langston and Almeda Genoa",9000,"Murder, non-negligent",09A,2,1,3,5,4,6,11,2.8,150,200,20,114.3,22.2,11.1,33.3,55.6,66.7,31.1,5
