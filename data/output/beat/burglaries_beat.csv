@@ -1,7 +1,7 @@
 beat,district,area_sq_mi,placename,population,category_name,total19,total20,total21,total22,total23,last12mos,total_prior4years,avg_prior4years,inc_19to22,inc_19tolast12,inc_22tolast12,inc_prior4yearavgtolast12,rate19,rate20,rate21,rate22,rate_last12,rate_prior4years,previous_year
 23J40,23,3.03933481,Ellington Field,0,Burglary,1,0,0,0,0,0,1,0.2,-100,-100,NA,-100,NA,NA,NA,NA,NA,NA,0
 23J50,23,2.12389492,Hobby Airport,0,Burglary,4,0,0,1,1,2,5,1.2,-75,-50,100,66.7,NA,NA,NA,NA,NA,NA,1
-1A10,1,1.74646692,Downtown Central Business District,17000,Burglary,76,77,65,86,76,120,304,76,13.2,57.9,39.5,57.9,447.1,452.9,382.4,505.9,705.9,447.1,86
+1A10,1,1.74646692,Downtown Central Business District,17000,Burglary,76,77,65,86,77,121,304,76,13.2,59.2,40.7,59.2,447.1,452.9,382.4,505.9,711.8,447.1,86
 1A20,1,2.44133075,"Fourth Ward, Avondale and Westmoreland",27000,Burglary,309,304,217,211,115,215,1041,260.2,-31.7,-30.4,1.9,-17.4,1144.4,1125.9,803.7,781.5,796.3,963.7,211
 1A30,1,2.65916892,"Cherryhurst, Mandell Place and Montrose",27000,Burglary,236,205,182,140,93,166,763,190.8,-40.7,-29.7,18.6,-13,874.1,759.3,674.1,518.5,614.8,706.7,140
 1A40,1,2.45016686,"Tall Timbers, Royden Oaks, River Oaks, Avalon Place and Oak Estates",7000,Burglary,31,29,20,14,12,21,94,23.5,-54.8,-32.3,50,-10.6,442.9,414.3,285.7,200,300,335.7,14
@@ -12,7 +12,7 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 2A40,2,1.60546103,Old Sixth Ward and the First Ward,8000,Burglary,79,65,61,50,24,45,255,63.8,-36.7,-43,-10,-29.5,987.5,812.5,762.5,625,562.5,797.5,50
 2A50,2,5.4659844,"Memorial Park, West End, Ashbury and Cottage Grove",29000,Burglary,214,130,150,135,58,111,629,157.2,-36.9,-48.1,-17.8,-29.4,737.9,448.3,517.2,465.5,382.8,542.1,135
 2A60,2,4.67447346,"Westport, Holly Park, Lazy Brook, Citadel, Shady Acres and Timbergrove",21000,Burglary,139,133,134,147,66,119,553,138.2,5.8,-14.4,-19,-13.9,661.9,633.3,638.1,700,566.7,658.1,147
-3B10,3,6.82068773,"Northwest Mall, Brookhollow, White Oak Acres, Oak Forest and Langwood",34000,Burglary,309,336,336,354,220,400,1335,333.8,14.6,29.4,13,19.8,908.8,988.2,988.2,1041.2,1176.5,981.8,354
+3B10,3,6.82068773,"Northwest Mall, Brookhollow, White Oak Acres, Oak Forest and Langwood",34000,Burglary,309,336,336,354,223,403,1335,333.8,14.6,30.4,13.8,20.7,908.8,988.2,988.2,1041.2,1185.3,981.8,354
 3B30,3,5.310372,"White Oak Acres, Brook Hollow, Oak Forest, Garden Oaks and Shepherd Park Plaza",23000,Burglary,131,133,140,113,70,125,517,129.2,-13.7,-4.6,10.6,-3.3,569.6,578.3,608.7,491.3,543.5,561.7,113
 3B40,3,3.40013561,"Independence Heights, Melrose and Graceland",13000,Burglary,183,191,183,127,81,161,684,171,-30.6,-12,26.8,-5.8,1407.7,1469.2,1407.7,976.9,1238.5,1315.4,127
 3B50,3,3.85259517,"Northline Mall, Stratton Place, Oakwood, Colonial Gardens, Lindale and Junction City",20000,Burglary,154,143,137,142,102,166,576,144,-7.8,7.8,16.9,15.3,770,715,685,710,830,720,142
@@ -24,17 +24,17 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 6B40,6,5.544689,"Highland Gardens, Highland Heights and North Plaza",20000,Burglary,149,190,124,135,69,126,598,149.5,-9.4,-15.4,-6.7,-15.7,745,950,620,675,630,747.5,135
 22B30,22,2.8264671,Aldine and Imperial Valley,19000,Burglary,137,171,122,125,66,131,555,138.8,-8.8,-4.4,4.8,-5.6,721.1,900,642.1,657.9,689.5,730.5,125
 22B20,22,4.61158268,Greenspoint,24000,Burglary,278,276,269,260,134,247,1083,270.8,-6.5,-11.2,-5,-8.8,1158.3,1150,1120.8,1083.3,1029.2,1128.3,260
-7C10,7,3.47828324,"Fifth Ward, North Park and Pinecrest",13000,Burglary,145,126,121,148,48,117,540,135,2.1,-19.3,-20.9,-13.3,1115.4,969.2,930.8,1138.5,900,1038.5,148
-7C20,7,7.08575157,"Huntington Place, Willshire Place, Kashmere Gardens and Liberty Gardens",21000,Burglary,256,243,289,227,134,254,1015,253.8,-11.3,-0.8,11.9,0.1,1219,1157.1,1376.2,1081,1209.5,1208.6,227
+7C10,7,3.47828324,"Fifth Ward, North Park and Pinecrest",13000,Burglary,145,126,121,148,49,118,540,135,2.1,-18.6,-20.3,-12.6,1115.4,969.2,930.8,1138.5,907.7,1038.5,148
+7C20,7,7.08575157,"Huntington Place, Willshire Place, Kashmere Gardens and Liberty Gardens",21000,Burglary,256,243,289,227,135,255,1015,253.8,-11.3,-0.4,12.3,0.5,1219,1157.1,1376.2,1081,1214.3,1208.6,227
 7C30,7,4.51719841,"Camden Woods, Archers Acres and Croyden Gardens",18000,Burglary,155,159,117,136,63,112,567,141.8,-12.3,-27.7,-17.6,-21,861.1,883.3,650,755.6,622.2,787.8,136
-7C40,7,3.36786526,Keith-Weiss Park and Farrington Place,8000,Burglary,45,56,47,40,20,34,188,47,-11.1,-24.4,-15,-27.7,562.5,700,587.5,500,425,587.5,40
+7C40,7,3.36786526,Keith-Weiss Park and Farrington Place,8000,Burglary,45,56,47,40,21,35,188,47,-11.1,-22.2,-12.5,-25.5,562.5,700,587.5,500,437.5,587.5,40
 22B40,22,13.03325001,"Intercontinental Airport, Northwood, Lakeview Park and Glen Lee",11000,Burglary,119,112,126,133,46,106,490,122.5,11.8,-10.9,-20.3,-13.5,1081.8,1018.2,1145.5,1209.1,963.6,1113.6,133
 8C10,8,3.69037316,"Tidwell Park, Shady Oak and Buckingham Place",12000,Burglary,182,95,142,117,84,129,536,134,-35.7,-29.1,10.3,-3.7,1516.7,791.7,1183.3,975,1075,1116.7,117
 8C20,8,3.36154214,"Houston Gardens, Rosewood and Homestead",7000,Burglary,69,47,61,59,50,78,236,59,-14.5,13,32.2,32.2,985.7,671.4,871.4,842.9,1114.3,842.9,59
 8C30,8,4.6258259,"Parkhurst, East Houston and Clairmont Place",11000,Burglary,112,83,84,103,84,133,382,95.5,-8,18.8,29.1,39.3,1018.2,754.5,763.6,936.4,1209.1,868.2,103
 8C40,8,4.97945551,"Lake Houston, Greenriver, Knoll and Lake Forest",8000,Burglary,54,32,27,25,31,41,138,34.5,-53.7,-24.1,64,18.8,675,400,337.5,312.5,512.5,431.3,25
 8C50,8,3.31739498,"Park North, Forest Green, Kentshire Place, Glenwood Forest and Dorchester",8000,Burglary,93,58,59,84,42,92,294,73.5,-9.7,-1.1,9.5,25.2,1162.5,725,737.5,1050,1150,918.8,84
-8C60,8,5.79693312,"Edgeworth, Northwood Manor and Scenic Woods",19000,Burglary,140,102,109,116,35,90,467,116.8,-17.1,-35.7,-22.4,-22.9,736.8,536.8,573.7,610.5,473.7,614.7,116
+8C60,8,5.79693312,"Edgeworth, Northwood Manor and Scenic Woods",19000,Burglary,140,102,109,116,36,91,467,116.8,-17.1,-35,-21.6,-22.1,736.8,536.8,573.7,610.5,478.9,614.7,116
 9C10,9,5.21185619,"Port of Houston, Clinton Park, Pleasantville and Fidelity Manor",6000,Burglary,36,33,40,48,22,42,157,39.2,33.3,16.7,-12.5,7.1,600,550,666.7,800,700,653.3,48
 9C20,9,7.5383173,Denver Harbor and Houston Harbor,16000,Burglary,109,91,70,117,43,114,387,96.8,7.3,4.6,-2.6,17.8,681.2,568.8,437.5,731.2,712.5,605,117
 9C30,9,8.13353768,"City Park East, Wynnewood Acres and Wallisville Gardens",9000,Burglary,54,72,50,39,29,47,215,53.8,-27.8,-13,20.5,-12.6,600,800,555.6,433.3,522.2,597.8,39
