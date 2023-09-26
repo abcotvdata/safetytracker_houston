@@ -109,28 +109,23 @@ file.copy("scripts/rds/houston_recent_new.rds", # dupe yesterday file
 # Load prior day df
 houston_recent_prior <- readRDS("scripts/rds/houston_recent_prior.rds")
 
-# Temp fix dupes; occassional as needed during manual maintenance
-# houston_recent_prior <- houston_recent_prior %>% arrange(desc(date))
-# houston_recent_prior <- houston_recent_prior[!duplicated(houston_recent_prior[, c("incident", "offense_type", "beat","zip")]), ]
-# saveRDS(houston_recent_prior,"scripts/rds/houston_recent_prior.rds")
-
 # Merge prior day and today and then de-dupe
 houston_recent_new <- bind_rows(houston_recent_prior,
                                 houston_recent_new)
 houston_recent_new <- unique(houston_recent_new)
 houston_recent_new$beat <- sub(pattern='^0+([1-9])', replacement='\\1', houston_recent_new$beat)
-# trim to maintain only the last 60 days
+
+# Filter the file to maintain only the last 60 days, which is long enough to reach back
+# to the time period covered by the fully-vetted Houston PD monthly files
 houston_recent_new <- houston_recent_new %>% filter(houston_recent_new$date > max(houston_recent_new$date)-60)
 
-# Save copies of newly-processed houston_recent_new in 3 places for redundancy
-# 1. Archive with name by day of month; maintains an extra day of files
-saveRDS(houston_recent_new,paste0("data/source/archive/houston_recent_archive.rds"))
-# 2. Latest day archived in source data as backup; overwritten daily
+# Save copies of newly-processed houston_recent_new for redundancy
+# Latest day archived in source data as backup; overwritten daily
 saveRDS(houston_recent_new,"data/source/recent/houston_recent_new.rds")
-# 3. Latest day stored in scripts file for pickup by trackers
-# If for some reason the script fails, file from day before is there
+# Latest day stored in scripts file for pickup by script that builds tracker
+# If for some reason the script fails, file from day before is there and in recent
 saveRDS(houston_recent_new,"scripts/rds/houston_recent_new.rds")
 
-# Clean up
+# Clean up temporary dfs in workspace
 rm(houston_recent_new,houston_recent_prior)
 
