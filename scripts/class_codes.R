@@ -4,7 +4,7 @@ classcodes <- houston_crime %>%
   summarise(count=n())
 
 classcodes$category_code <- substr(classcodes$nibrs_class,1,2)
-classcodes$category_name <- case_when(classcodes$category_code == "09" ~ "Murder",
+classcodes$category_name <- case_when(classcodes$nibrs_class == "09A" ~ "Murder",
                                       classcodes$category_code == "10" ~ "Kidnapping",
                                       classcodes$category_code == "11" ~ "Sexual Assault",
                                       classcodes$category_code == "12" ~ "Robbery",
