@@ -101,9 +101,9 @@ houston_crime_last12 <- houston_crime %>% filter(date>(max(houston_crime$date)-3
 
 ### CITYWIDE CRIME TOTALS AND OUTPUT
 
-# Set variable of Houston population
+# Set variable of Houston population (2022 Census ACS)
 # likely needs added to the tracker itself
-houston_population <- 2313238
+houston_population <- 2302878
 
 # Calculate of each detailed offense type CITYWIDE
 citywide_detailed <- houston_crime %>%
