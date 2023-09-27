@@ -11,7 +11,7 @@ houston_recent_new <- readRDS("scripts/rds/houston_recent_new.rds")
 ### COMBINE 2019 to 2000, plus 2023 TO DATE INTO SINGLE FILE
 houston_crime <- bind_rows(houston_annual,houston_monthly)
 
-# REDUCE THE RECENT 30-DAY FILE JUST TO THE DATES THAT NOT ALREADY IN HPD RELEASED 22 TO DATE FILE
+# REDUCE THE RECENT 30-DAY FILE JUST TO THE DATES THAT NOT ALREADY IN HPD RELEASED 2023 TO DATE FILE
 houston_recent_new <- houston_recent_new %>% filter(as.Date(date)>max(as.Date(houston_crime$date)))
 
 # COMBINE ANNUAL + MONTHLY WITH TODAY'S RECENT/30DAY FILE
@@ -438,6 +438,7 @@ violence_city <- citywide_type %>% filter(type=="Violent")
 property_city <- citywide_type %>% filter(type=="Property")
 
 # Using premise to identify the kinds of places where murders happen
+# This is capturing the time period across all years in the data file, 2019-Present
 where_murders_happen <- houston_crime %>%
   filter(nibrs_class=="09A") %>%
   group_by(year,premise) %>%
@@ -454,31 +455,8 @@ where_murders_happen <- full_join(where_murders_happen,where_murders_happen_last
 where_murders_happen[is.na(where_murders_happen)] <- 0
 rm(where_murders_happen_last12)
 
-# Using premise to identify the kinds of places where all violent crimes happen
-where_violentcrimes_happen <- houston_crime %>%
-  filter(type=="Violent") %>%
-  group_by(premise,year) %>%
-  summarise(count=n()) %>%
-  pivot_wider(names_from=year, values_from=count) %>% 
-  rename("total19" = "2019",
-         "total20" = "2020",
-         "total21" = "2021",
-         "total22" = "2022",
-         "total23" = "2023")
-
-# Using premise to identify the kinds of places where all violent crimes happen
-where_propertycrimes_happen <- houston_crime %>%
-  filter(type=="Property") %>%
-  group_by(premise,year) %>%
-  summarise(count=n()) %>%
-  pivot_wider(names_from=year, values_from=count) %>% 
-  rename("total19" = "2019",
-         "total20" = "2020",
-         "total21" = "2021",
-         "total22" = "2022",
-         "total23" = "2023")
-
 # Using hour to identify the hours of day when murders happen
+# This is capturing the time period across all years in the data file, 2019-Present
 when_murders_happen <- houston_crime %>%
   filter(nibrs_class=="09A") %>%
   group_by(hour) %>%
@@ -509,7 +487,8 @@ drugs_beat %>% st_drop_geometry() %>% mutate(previous_year=total22) %>% write_cs
 violence_beat %>% st_drop_geometry() %>% mutate(previous_year=total22) %>% write_csv("data/output/beat/violence_beat.csv")
 property_beat %>% st_drop_geometry() %>% mutate(previous_year=total22) %>% write_csv("data/output/beat/property_beat.csv")
 
-# TEST TEST TEST OF WHETHER RDS WILL WORK FOR TRACKERS IN AUTOMATION
+# Saving dataframes as rds files for easy loading and use in the tracker-building code
+# citywide files needed separately for each major crime type
 saveRDS(murders_city,"scripts/rds/murders_city.rds")
 saveRDS(assaults_city,"scripts/rds/assaults_city.rds")
 saveRDS(sexassaults_city,"scripts/rds/sexassaults_city.rds")
@@ -517,8 +496,7 @@ saveRDS(autothefts_city,"scripts/rds/autothefts_city.rds")
 saveRDS(thefts_city,"scripts/rds/thefts_city.rds")
 saveRDS(burglaries_city,"scripts/rds/burglaries_city.rds")
 saveRDS(robberies_city,"scripts/rds/robberies_city.rds")
-saveRDS(drugs_city,"scripts/rds/drugs_city.rds")
-
+# beat by beat files
 saveRDS(murders_beat,"scripts/rds/murders_beat.rds")
 saveRDS(assaults_beat,"scripts/rds/assaults_beat.rds")
 saveRDS(sexassaults_beat,"scripts/rds/sexassaults_beat.rds")
@@ -526,14 +504,15 @@ saveRDS(autothefts_beat,"scripts/rds/autothefts_beat.rds")
 saveRDS(thefts_beat,"scripts/rds/thefts_beat.rds")
 saveRDS(burglaries_beat,"scripts/rds/burglaries_beat.rds")
 saveRDS(robberies_beat,"scripts/rds/robberies_beat.rds")
-saveRDS(drugs_beat,"scripts/rds/drugs_beat.rds")
 
-
-# additional table exports for specific charts
+# additional raw csv exports for specific datawrapper charts within the murder tracker page
 where_murders_happen %>% write_csv("data/output/city/where_murders_happen.csv")
 when_murders_happen %>% write_csv("data/output/city/when_murders_happen.csv")
 
-# deaths cause data update for TX specific table
+# comparable deaths cause data update for TX specific table
+# non-homicide deaths data from CDC needs to be updated manually each year
+# along with the chatter text on the datawrapper chart itself
+# all datawrapper charts are in the Neighborhood Safety Tracker folder in our team folders on datawrapper
 deaths <- read_excel("data/source/health/deaths.xlsx") 
 deaths <- deaths %>% filter(state=="TX")
 deaths$Homicide <- murders_city$rate_last12
