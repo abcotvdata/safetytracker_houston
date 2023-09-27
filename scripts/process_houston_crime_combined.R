@@ -22,12 +22,13 @@ houston_crime$offense_type <- sub("Abduction","abduction",houston_crime$offense_
 
 # FORMATTING FULL DATA FILE FOR USE IN TRACKERS
 
-# Create a year column
+# Create a year column by pulling the first four characters from the date field
 houston_crime$year <- substr(houston_crime$date,1,4)
-# adds a month reference point for grouping for monthly trend figures
+# Adds a month reference point for grouping for monthly trend figures
 houston_crime$month <- lubridate::floor_date(as.Date(houston_crime$date),"month")
 
-# Read in class-code table to classify offense types and categories
+# Read in pre-built class-code table to classify offense types and categories
+# That table is built in class_codes.R, which can modified as needed based on changes to HPD data and codes
 classcodes <- readRDS("scripts/rds/classcodes.rds")
 
 # Add categories,types from classcodes to the individual crime records
@@ -35,16 +36,15 @@ houston_crime <- left_join(houston_crime,classcodes %>% select(2,4:7),by=c("nibr
 
 # If beat is blank, add word Unknown
 houston_crime$beat[is.na(houston_crime$beat)] <- "Unknown"
-# Fix non-existent beat 15E11, which should be 15E10
+# Fix non-existent beat 15E11, which should be 15E10 based on analysis of addresses
 houston_crime$beat <- ifelse(houston_crime$beat == "15E11","15E10",houston_crime$beat)
-# Fix beats in District 5, 6 and 7 that became District 22
+# Fix beats in District 5, 6 and 7 that became District 22 based on HPD notes and analysis of addresses
 houston_crime$beat <- ifelse(houston_crime$beat == "5F40","22B10",houston_crime$beat)
 houston_crime$beat <- ifelse(houston_crime$beat == "6B50","22B30",houston_crime$beat)
 houston_crime$beat <- ifelse(houston_crime$beat == "6B60","22B20",houston_crime$beat)
 houston_crime$beat <- ifelse(houston_crime$beat == "7C50","22B40",houston_crime$beat)
 
-# clean up premise names throughout file
-# the case when is stored once as a value by separate script
+# Clean up premise names throughout file to standardize and streamline
 houston_crime$premise <- case_when(houston_crime$premise == 'Amusement Park' ~ 'Amusement park',
                                    houston_crime$premise == 'Bank, Savings & Loan' ~ 'Bank',
                                    houston_crime$premise == 'Bar, Nightclub' ~ 'Bar or nightclub',
@@ -73,14 +73,15 @@ houston_crime$premise <- case_when(houston_crime$premise == 'Amusement Park' ~ '
                                    houston_crime$premise == 'Other, Unknown' ~ 'Unknown or other',
                                    TRUE ~ 'Unknown or other')
 
-# Get latest date in our file and save for
-# automating the updated date text in building tracker
+# Get latest date in our combined crime file and save for
+# automating the updated "as of" date text in building tracker
 asofdate <- max(houston_crime$date)
 saveRDS(asofdate,"scripts/rds/asofdate.rds")
 
-# save the process full houston_crime file as rds
-# then, for redundancy and use by station csvs for each year
-# also helps with gh file size issues and download issues
+# save the combined full houston_crime file as rds
+# also back up csvs for each year for redundancy and use by station journalists
+# also helps with gh file size limits and download issues
+# needs updating at year-end turn
 saveRDS(houston_crime,"scripts/rds/houston_crime.rds")
 houston_crime %>% filter(houston_crime$year == 2023) %>% write_csv("data/output/houston_crime_all2023.csv")
 # houston_crime %>% filter(houston_crime$year == 2022) %>% write_csv("data/output/houston_crime_all2022.csv")
@@ -88,21 +89,22 @@ houston_crime %>% filter(houston_crime$year == 2023) %>% write_csv("data/output/
 # houston_crime %>% filter(houston_crime$year == 2020) %>% write_csv("data/output/houston_crime_all2020.csv")
 # houston_crime %>% filter(houston_crime$year == 2019) %>% write_csv("data/output/houston_crime_all2019.csv")
 
-# days total incidents and output for validation
+# days total incidents and output
+# this is only for quick-look validation tests
 days <- houston_crime %>% group_by(date) %>% summarise(count=n()) %>% arrange(desc(date)) %>% mutate(day=wday(date,label=TRUE, abbr=FALSE))
 days_type <- houston_crime %>% group_by(date,offense_type) %>% summarise(count=sum(offense_count)) %>% arrange(desc(date)) %>% mutate(day=wday(date,label=TRUE, abbr=FALSE))
 write_csv(days,"data/output/reference/days_incident_check.csv")
 
-# Clean up
+# Clean up workspace by eliminating dfs we don't need
 rm(houston_annual,houston_monthly,houston_recent_new)
 
-# Extract the last 12 months into a separate file
+# Extract the last 12 months of crimes into a separate file
 houston_crime_last12 <- houston_crime %>% filter(date>(max(houston_crime$date)-31536000))
 
-### CITYWIDE CRIME TOTALS AND OUTPUT
+### CREATE CITYWIDE CRIME TOTALS AND OUTPUT
 
 # Set variable of Houston population (2022 Census ACS)
-# likely needs added to the tracker itself
+# For calculating citywide rates
 houston_population <- 2302878
 
 # Calculate of each detailed offense type CITYWIDE
@@ -117,17 +119,19 @@ citywide_detailed <- citywide_detailed %>%
          "total21" = "2021",
          "total22" = "2022",
          "total23" = "2023")
-# add last 12 months
+# now we need to repeat that grouping for
+# the last 12 months and combine to add that last12 column
 citywide_detailed_last12 <- houston_crime_last12 %>%
   group_by(offense_type,nibrs_class) %>%
   summarise(last12mos = sum(offense_count))
 citywide_detailed <- left_join(citywide_detailed,citywide_detailed_last12,by=c("offense_type","nibrs_class"))
 # add zeros where there were no crimes tallied that year
 citywide_detailed[is.na(citywide_detailed)] <- 0
-# Calculate a total across the 3 prior years
+# Calculate a total across the four prior years; this time period can be adjusted by changing the code throughout
+# Requires careful searching for every instance of these calculations and column names throughout this entire script and in tracker-rendering scripts
 citywide_detailed$total_prior4years <- citywide_detailed$total19+citywide_detailed$total20+citywide_detailed$total21+citywide_detailed$total22
 citywide_detailed$avg_prior4years <- round(citywide_detailed$total_prior4years/4,1)
-# calculate increases
+# calculate raw number increases
 citywide_detailed$inc_19to22 <- round(citywide_detailed$total22/citywide_detailed$total19*100-100,1)
 citywide_detailed$inc_19tolast12 <- round(citywide_detailed$last12mos/citywide_detailed$total19*100-100,1)
 citywide_detailed$inc_22tolast12 <- round(citywide_detailed$last12mos/citywide_detailed$total22*100-100,1)
@@ -138,7 +142,7 @@ citywide_detailed$rate20 <- round(citywide_detailed$total20/houston_population*1
 citywide_detailed$rate21 <- round(citywide_detailed$total21/houston_population*100000,1)
 citywide_detailed$rate22 <- round(citywide_detailed$total22/houston_population*100000,1)
 citywide_detailed$rate_last12 <- round(citywide_detailed$last12mos/houston_population*100000,1)
-# calculate a multiyear rate
+# calculate a multi-year rate for the last 4 years
 citywide_detailed$rate_prior4years <- round(citywide_detailed$avg_prior4years/houston_population*100000,1)
 # for map/table making purposes, changing Inf and NaN in calc fields to NA
 citywide_detailed <- citywide_detailed %>%
@@ -151,6 +155,7 @@ citywide_detailed_monthly <- houston_crime %>%
   group_by(offense_type,nibrs_class,month) %>%
   summarise(count = sum(offense_count))
 # add rolling average of 3 months for chart trend line & round to clean
+# not used in the trackers themselves but useful for analyzing trends for stories and detecting oddities
 citywide_detailed_monthly <- citywide_detailed_monthly %>%
   dplyr::mutate(rollavg_3month = rollsum(count, k = 3, fill = NA, align = "right")/3)
 citywide_detailed_monthly$rollavg_3month <- round(citywide_detailed_monthly$rollavg_3month,0)
@@ -159,7 +164,7 @@ write_csv(citywide_detailed_monthly,"data/output/monthly/citywide_detailed_month
 # and for murders monthly 
 citywide_detailed_monthly %>% filter(nibrs_class=="09A") %>% write_csv("data/output/monthly/murders_monthly.csv")
 
-# Calculate of each category of offense CITYWIDE
+# Repeat this entire process to calculate of each category of offense CITYWIDE
 citywide_category <- houston_crime %>%
   group_by(category_name,year) %>%
   summarise(count = sum(offense_count)) %>%
@@ -196,6 +201,7 @@ citywide_category$rate_last12 <- round(citywide_category$last12mos/houston_popul
 citywide_category$rate_prior4years <- round(citywide_category$avg_prior4years/houston_population*100000,1)
 
 # Calculate monthly totals for categories of crimes CITYWIDE
+# This is to create the month by month datawrapper tables that appear in each tracker page
 citywide_category_monthly <- houston_crime %>%
   group_by(category_name,month) %>%
   summarise(count = sum(offense_count))
@@ -212,9 +218,8 @@ citywide_category_monthly %>% filter(category_name=="Theft") %>% write_csv("data
 citywide_category_monthly %>% filter(category_name=="Burglary") %>% write_csv("data/output/monthly/burglaries_monthly.csv")
 citywide_category_monthly %>% filter(category_name=="Robbery") %>% write_csv("data/output/monthly/robberies_monthly.csv")
 citywide_category_monthly %>% filter(category_name=="Assault") %>% write_csv("data/output/monthly/assaults_monthly.csv")
-citywide_category_monthly %>% filter(category_name=="Drug Offenses") %>% write_csv("data/output/monthly/drugs_monthly.csv")
 
-# Calculate of each type of crime CITYWIDE
+# Repeat the entire process above to calculate of each type of crime CITYWIDE
 citywide_type <- houston_crime %>%
   group_by(type,year) %>%
   summarise(count = sum(offense_count)) %>%
@@ -250,18 +255,20 @@ citywide_type$rate_last12 <- round(citywide_type$last12mos/houston_population*10
 # calculate a multiyear rate
 citywide_type$rate_prior4years <- round(citywide_type$avg_prior4years/houston_population*100000,1)
 
-### HOUSTON POLICE BEAT CRIME TOTALS AND OUTPUT
+### HOUSTON POLICE BEAT BY BEAT CRIME TOTALS AND OUTPUT
 
 # MERGE WITH BEATS GEOGRAPHY AND POPULATION
 # Geography and populations processed separately in 
 # source(process_houston_police_beats.R)
 beats <- readRDS("scripts/rds/beats.rds")
-# Test that all beats show in data and identify beat #s that do not
+
+# Save if you change the beats processing to ensure 
+# and test that all beats show in data and identify beat #s that do not
 # beatsindata <- houston_crime %>% group_by(beat,year) %>% summarise(count=n()) %>% pivot_wider(names_from=year, values_from=count)
 # anti_join(beatsindata,beats,by="beat")
 
-# we need these unique lists for making the beat tables below
-# this ensures that we get crime details for beats even with zero
+# Constructing these unique lists for making the beat tables because we need every combination available
+# even when zeroes -- because this ensures that we get crime details for beats even with zero
 # incidents of certain types over the entirety of the time period
 list_beat_detailed <- crossing(beat = unique(houston_crime$beat), nibrs_class = unique(houston_crime$nibrs_class)) %>% left_join(classcodes %>% select(2,1), by="nibrs_class") %>% select(1,3,2)
 list_beat_category <- crossing(beat = unique(houston_crime$beat), category_name = unique(houston_crime$category_name))
