@@ -1,6 +1,6 @@
 beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,total20,total21,total22,total23,last12mos,total_prior4years,avg_prior4years,inc_19to22,inc_19tolast12,inc_22tolast12,inc_prior4yearavgtolast12,rate19,rate20,rate21,rate22,rate_last12,rate_prior4years,previous_year
 23J40,23,3.03933481,Ellington Field,0,"Murder, non-negligent",09A,0,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
-23J50,23,2.12389492,Hobby Airport,0,"Murder, non-negligent",09A,0,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+23J50,23,2.12389492,Hobby Airport,0,"Murder, non-negligent",09A,0,0,0,0,1,1,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
 1A10,1,1.74646692,Downtown Central Business District,17000,"Murder, non-negligent",09A,2,2,3,5,3,5,12,3,150,150,0,66.7,11.8,11.8,17.6,29.4,29.4,17.6,5
 1A20,1,2.44133075,"Fourth Ward, Avondale and Westmoreland",27000,"Murder, non-negligent",09A,2,3,4,3,2,3,12,3,50,50,0,0,7.4,11.1,14.8,11.1,11.1,11.1,3
 1A30,1,2.65916892,"Cherryhurst, Mandell Place and Montrose",27000,"Murder, non-negligent",09A,0,3,1,2,1,1,6,1.5,NA,NA,-50,-33.3,0,11.1,3.7,7.4,3.7,5.6,2
@@ -38,7 +38,7 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 9C10,9,5.21185619,"Port of Houston, Clinton Park, Pleasantville and Fidelity Manor",6000,"Murder, non-negligent",09A,1,4,6,1,2,3,12,3,0,200,200,0,16.7,66.7,100,16.7,50,50,1
 9C20,9,7.5383173,Denver Harbor and Houston Harbor,16000,"Murder, non-negligent",09A,2,6,4,2,0,0,14,3.5,0,-100,-100,-100,12.5,37.5,25,12.5,0,21.9,2
 9C30,9,8.13353768,"City Park East, Wynnewood Acres and Wallisville Gardens",9000,"Murder, non-negligent",09A,1,3,4,2,1,1,10,2.5,100,0,-50,-60,11.1,33.3,44.4,22.2,11.1,27.8,2
-9C40,9,10.42549456,"Greens Bayou Estates, Shady Brook, Northshore",23000,"Murder, non-negligent",09A,7,4,6,6,5,7,23,5.8,-14.3,0,16.7,20.7,30.4,17.4,26.1,26.1,30.4,25.2,6
+9C40,9,10.42549456,"Greens Bayou Estates, Shady Brook, Northshore",23000,"Murder, non-negligent",09A,7,4,6,6,6,8,23,5.8,-14.3,14.3,33.3,37.9,30.4,17.4,26.1,26.1,34.8,25.2,6
 10H10,10,2.81830654,Oak Lawn and Ranger,11000,"Murder, non-negligent",09A,1,2,2,1,0,0,6,1.5,0,-100,-100,-100,9.1,18.2,18.2,9.1,0,13.6,1
 10H20,10,1.75743169,Eastwood and Broadmoor,10000,"Murder, non-negligent",09A,0,0,1,2,2,2,3,0.8,NA,NA,0,150,0,0,10,20,20,8,2
 10H30,10,1.02691154,Near East End,4000,"Murder, non-negligent",09A,0,1,0,2,1,1,3,0.8,NA,NA,-50,25,0,25,0,50,25,20,2
