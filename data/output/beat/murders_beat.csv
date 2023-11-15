@@ -6,7 +6,7 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 1A30,1,2.65916892,"Cherryhurst, Mandell Place and Montrose",27000,"Murder, non-negligent",09A,0,3,1,2,1,1,6,1.5,NA,NA,-50,-33.3,0,11.1,3.7,7.4,3.7,5.6,2
 1A40,1,2.45016686,"Tall Timbers, Royden Oaks, River Oaks, Avalon Place and Oak Estates",7000,"Murder, non-negligent",09A,0,0,1,0,0,0,1,0.2,NA,NA,NA,-100,0,0,14.3,0,0,2.9,0
 1A50,1,3.04553452,"Post Oak Park, Afton Oaks, Highland Village, Weslayan, Greenway Plaza and The Compaq Center",26000,"Murder, non-negligent",09A,0,0,5,3,1,1,8,2,NA,NA,-66.7,-50,0,0,19.2,11.5,3.8,7.7,3
-2A10,2,3.30928608,Irvington and Ryon,18000,"Murder, non-negligent",09A,6,4,3,5,5,5,18,4.5,-16.7,-16.7,0,11.1,33.3,22.2,16.7,27.8,27.8,25,5
+2A10,2,3.30928608,Irvington and Ryon,18000,"Murder, non-negligent",09A,6,4,3,5,4,4,18,4.5,-16.7,-33.3,-20,-11.1,33.3,22.2,16.7,27.8,22.2,25,5
 2A20,2,1.8876461,"Sunset Heights, Brooksmith and Stude",11000,"Murder, non-negligent",09A,0,2,1,3,1,1,6,1.5,NA,NA,-66.7,-33.3,0,18.2,9.1,27.3,9.1,13.6,3
 2A30,2,4.65858171,"Houston Heights, Norhill and Studemont",31000,"Murder, non-negligent",09A,0,0,2,5,2,3,7,1.8,NA,NA,-40,66.7,0,0,6.5,16.1,9.7,5.8,5
 2A40,2,1.60546103,Old Sixth Ward and the First Ward,8000,"Murder, non-negligent",09A,1,1,0,1,0,0,3,0.8,0,-100,-100,-100,12.5,12.5,0,12.5,0,10,1
@@ -18,7 +18,7 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 3B50,3,3.85259517,"Northline Mall, Stratton Place, Oakwood, Colonial Gardens, Lindale and Junction City",20000,"Murder, non-negligent",09A,1,3,8,6,3,4,18,4.5,500,300,-33.3,-11.1,5,15,40,30,20,22.5,6
 5F10,5,3.25978513,Afton Village and Pine Terrace,14000,"Murder, non-negligent",09A,0,0,4,4,4,7,8,2,NA,NA,75,250,0,0,28.6,28.6,50,14.3,4
 5F30,5,8.70689439,"Fairbanks, Carverdale, Fawndale and Northwest Crossing",17000,"Murder, non-negligent",09A,7,4,2,4,4,5,17,4.2,-42.9,-28.6,25,19,41.2,23.5,11.8,23.5,29.4,24.7,4
-6B10,6,5.50084827,"York Plaza, Pembrook Place and Hawthorne Place",33000,"Murder, non-negligent",09A,7,8,9,10,3,7,34,8.5,42.9,0,-30,-17.6,21.2,24.2,27.3,30.3,21.2,25.8,10
+6B10,6,5.50084827,"York Plaza, Pembrook Place and Hawthorne Place",33000,"Murder, non-negligent",09A,7,8,9,10,3,6,34,8.5,42.9,-14.3,-40,-29.4,21.2,24.2,27.3,30.3,18.2,25.8,10
 6B20,6,6.12869477,"Highland Heights, Oakdale and Melrose Gardens",18000,"Murder, non-negligent",09A,2,3,9,2,2,2,16,4,0,0,0,-50,11.1,16.7,50,11.1,11.1,22.2,2
 6B30,6,7.2300685,"Woodland Trails, Oaks of Inwood, Bayou Bend, Cole Creek Manor and Inwood Forest",38000,"Murder, non-negligent",09A,5,6,11,3,0,0,25,6.2,-40,-100,-100,-100,13.2,15.8,28.9,7.9,0,16.3,3
 6B40,6,5.544689,"Highland Gardens, Highland Heights and North Plaza",20000,"Murder, non-negligent",09A,5,12,9,6,6,7,32,8,20,40,16.7,-12.5,25,60,45,30,35,40,6
@@ -79,7 +79,7 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 17E10,17,3.3104034,"Southwest Memorial Hospital, Burnett Bayland Park and Westmoreland",51000,"Murder, non-negligent",09A,8,9,10,8,5,6,35,8.8,0,-25,-25,-31.8,15.7,17.6,19.6,15.7,11.8,17.3,8
 17E20,17,3.92767309,the Houston Baptist University area and Maplewood West,27000,"Murder, non-negligent",09A,3,7,6,6,3,3,22,5.5,100,0,-50,-45.5,11.1,25.9,22.2,22.2,11.1,20.4,6
 17E30,17,3.8060455,Braeburn Valley West and Glenshire,21000,"Murder, non-negligent",09A,4,11,4,8,5,6,27,6.8,100,50,-25,-11.8,19,52.4,19,38.1,28.6,32.4,8
-17E40,17,4.70920035,"Creekbend, Southwood and Fondren Southwest",46000,"Murder, non-negligent",09A,7,11,8,13,4,6,39,9.8,85.7,-14.3,-53.8,-38.8,15.2,23.9,17.4,28.3,13,21.3,13
+17E40,17,4.70920035,"Creekbend, Southwood and Fondren Southwest",46000,"Murder, non-negligent",09A,7,11,8,13,5,7,39,9.8,85.7,0,-46.2,-28.6,15.2,23.9,17.4,28.3,15.2,21.3,13
 18F10,18,1.95881352,"Saddlebrook, Bayou Woods and Sherwood Forest",7000,"Murder, non-negligent",09A,0,0,0,0,1,1,0,0,NA,NA,NA,NA,0,0,0,0,14.3,0,0
 18F20,18,3.51641691,"The Galleria, Tanglewood, Riverway and Post Oak",24000,"Murder, non-negligent",09A,1,3,2,3,0,0,9,2.2,200,-100,-100,-100,4.2,12.5,8.3,12.5,0,9.2,3
 18F30,18,3.80008564,"The Richmond Strip, Briargrove, Post Oak Estates and Westhaven",36000,"Murder, non-negligent",09A,2,9,5,5,5,6,21,5.2,150,200,20,15.4,5.6,25,13.9,13.9,16.7,14.4,5
