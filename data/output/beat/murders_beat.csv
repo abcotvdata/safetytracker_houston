@@ -2,7 +2,7 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 23J40,23,3.03933481,Ellington Field,0,"Murder, non-negligent",09A,0,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
 23J50,23,2.12389492,Hobby Airport,0,"Murder, non-negligent",09A,0,0,0,0,1,1,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
 1A10,1,1.74646692,Downtown Central Business District,17000,"Murder, non-negligent",09A,2,2,3,5,4,4,12,3,150,100,-20,33.3,11.8,11.8,17.6,29.4,23.5,17.6,5
-1A20,1,2.44133075,"Fourth Ward, Avondale and Westmoreland",27000,"Murder, non-negligent",09A,2,3,4,3,2,3,12,3,50,50,0,0,7.4,11.1,14.8,11.1,11.1,11.1,3
+1A20,1,2.44133075,"Fourth Ward, Avondale and Westmoreland",27000,"Murder, non-negligent",09A,2,3,4,3,2,2,12,3,50,0,-33.3,-33.3,7.4,11.1,14.8,11.1,7.4,11.1,3
 1A30,1,2.65916892,"Cherryhurst, Mandell Place and Montrose",27000,"Murder, non-negligent",09A,0,3,1,2,1,1,6,1.5,NA,NA,-50,-33.3,0,11.1,3.7,7.4,3.7,5.6,2
 1A40,1,2.45016686,"Tall Timbers, Royden Oaks, River Oaks, Avalon Place and Oak Estates",7000,"Murder, non-negligent",09A,0,0,1,0,0,0,1,0.2,NA,NA,NA,-100,0,0,14.3,0,0,2.9,0
 1A50,1,3.04553452,"Post Oak Park, Afton Oaks, Highland Village, Weslayan, Greenway Plaza and The Compaq Center",26000,"Murder, non-negligent",09A,0,0,5,3,1,1,8,2,NA,NA,-66.7,-50,0,0,19.2,11.5,3.8,7.7,3
@@ -44,7 +44,7 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 10H30,10,1.02691154,Near East End,4000,"Murder, non-negligent",09A,0,1,0,2,1,1,3,0.8,NA,NA,-50,25,0,25,0,50,25,20,2
 10H40,10,0.99627062,Midtown,8000,"Murder, non-negligent",09A,0,7,11,2,4,4,20,5,NA,NA,100,-20,0,87.5,137.5,25,50,62.5,2
 10H50,10,2.30843079,the University of Houston area,13000,"Murder, non-negligent",09A,5,9,6,10,8,8,30,7.5,100,60,-20,6.7,38.5,69.2,46.2,76.9,61.5,57.7,10
-10H60,10,3.08931006,"University Oaks, Riverside Terrace and the Texas Southern University area",20000,"Murder, non-negligent",09A,5,4,5,5,2,2,19,4.8,0,-60,-60,-58.3,25,20,25,25,10,24,5
+10H60,10,3.08931006,"University Oaks, Riverside Terrace and the Texas Southern University area",20000,"Murder, non-negligent",09A,5,4,5,5,3,3,19,4.8,0,-40,-40,-37.5,25,20,25,25,15,24,5
 10H70,10,3.52217952,"Texas Medical Center, Hermann Park, Houston Zoo and Miller Outdoor Theatre",16000,"Murder, non-negligent",09A,0,3,0,1,4,4,4,1,NA,NA,300,300,0,18.8,0,6.2,25,6.2,1
 10H80,10,2.73862779,"Southampton, Rice University area, Shadow Lawn and Broad Acres",19000,"Murder, non-negligent",09A,1,0,0,1,0,0,2,0.5,0,-100,-100,-100,5.3,0,0,5.3,0,2.6,1
 11H10,11,5.31502815,"Mason Park, Forest Hill, Sunnyland and Central Park",28000,"Murder, non-negligent",09A,9,5,3,3,2,2,20,5,-66.7,-77.8,-33.3,-60,32.1,17.9,10.7,10.7,7.1,17.9,3
