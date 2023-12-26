@@ -20,7 +20,7 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 5F30,5,8.70689439,"Fairbanks, Carverdale, Fawndale and Northwest Crossing",17000,Drug Offenses,132,143,137,120,126,127,532,133,-9.1,-3.8,5.8,-4.5,776.5,841.2,805.9,705.9,747.1,782.4,120
 6B10,6,5.50084827,"York Plaza, Pembrook Place and Hawthorne Place",33000,Drug Offenses,138,148,183,169,95,96,638,159.5,22.5,-30.4,-43.2,-39.8,418.2,448.5,554.5,512.1,290.9,483.3,169
 6B20,6,6.12869477,"Highland Heights, Oakdale and Melrose Gardens",18000,Drug Offenses,141,119,141,91,64,64,492,123,-35.5,-54.6,-29.7,-48,783.3,661.1,783.3,505.6,355.6,683.3,91
-6B30,6,7.2300685,"Woodland Trails, Oaks of Inwood, Bayou Bend, Cole Creek Manor and Inwood Forest",38000,Drug Offenses,111,104,94,64,46,48,373,93.2,-42.3,-56.8,-25,-48.5,292.1,273.7,247.4,168.4,126.3,245.3,64
+6B30,6,7.2300685,"Woodland Trails, Oaks of Inwood, Bayou Bend, Cole Creek Manor and Inwood Forest",38000,Drug Offenses,111,104,94,64,46,47,373,93.2,-42.3,-57.7,-26.6,-49.6,292.1,273.7,247.4,168.4,123.7,245.3,64
 6B40,6,5.544689,"Highland Gardens, Highland Heights and North Plaza",20000,Drug Offenses,164,179,193,160,142,143,696,174,-2.4,-12.8,-10.6,-17.8,820,895,965,800,715,870,160
 22B30,22,2.8264671,Aldine and Imperial Valley,19000,Drug Offenses,125,78,62,62,83,84,327,81.8,-50.4,-32.8,35.5,2.7,657.9,410.5,326.3,326.3,442.1,430.5,62
 22B20,22,4.61158268,Greenspoint,24000,Drug Offenses,336,248,189,276,201,203,1049,262.2,-17.9,-39.6,-26.4,-22.6,1400,1033.3,787.5,1150,845.8,1092.5,276
@@ -29,7 +29,7 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 7C30,7,4.51719841,"Camden Woods, Archers Acres and Croyden Gardens",18000,Drug Offenses,160,141,149,232,238,241,682,170.5,45,50.6,3.9,41.3,888.9,783.3,827.8,1288.9,1338.9,947.2,232
 7C40,7,3.36786526,Keith-Weiss Park and Farrington Place,8000,Drug Offenses,61,45,38,50,33,33,194,48.5,-18,-45.9,-34,-32,762.5,562.5,475,625,412.5,606.2,50
 22B40,22,13.03325001,"Intercontinental Airport, Northwood, Lakeview Park and Glen Lee",11000,Drug Offenses,80,59,105,111,113,113,355,88.8,38.8,41.2,1.8,27.3,727.3,536.4,954.5,1009.1,1027.3,807.3,111
-8C10,8,3.69037316,"Tidwell Park, Shady Oak and Buckingham Place",12000,Drug Offenses,218,97,210,257,190,198,782,195.5,17.9,-9.2,-23,1.3,1816.7,808.3,1750,2141.7,1650,1629.2,257
+8C10,8,3.69037316,"Tidwell Park, Shady Oak and Buckingham Place",12000,Drug Offenses,218,97,210,257,190,196,782,195.5,17.9,-10.1,-23.7,0.3,1816.7,808.3,1750,2141.7,1633.3,1629.2,257
 8C20,8,3.36154214,"Houston Gardens, Rosewood and Homestead",7000,Drug Offenses,57,35,58,40,28,28,190,47.5,-29.8,-50.9,-30,-41.1,814.3,500,828.6,571.4,400,678.6,40
 8C30,8,4.6258259,"Parkhurst, East Houston and Clairmont Place",11000,Drug Offenses,68,40,72,53,39,39,233,58.2,-22.1,-42.6,-26.4,-33,618.2,363.6,654.5,481.8,354.5,529.1,53
 8C40,8,4.97945551,"Lake Houston, Greenriver, Knoll and Lake Forest",8000,Drug Offenses,26,10,27,10,11,12,73,18.2,-61.5,-53.8,20,-34.1,325,125,337.5,125,150,227.5,10
@@ -42,12 +42,12 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 10H10,10,2.81830654,Oak Lawn and Ranger,11000,Drug Offenses,15,19,37,45,46,48,116,29,200,220,6.7,65.5,136.4,172.7,336.4,409.1,436.4,263.6,45
 10H20,10,1.75743169,Eastwood and Broadmoor,10000,Drug Offenses,23,20,12,28,21,22,83,20.8,21.7,-4.3,-21.4,5.8,230,200,120,280,220,208,28
 10H30,10,1.02691154,Near East End,4000,Drug Offenses,35,17,16,24,20,20,92,23,-31.4,-42.9,-16.7,-13,875,425,400,600,500,575,24
-10H40,10,0.99627062,Midtown,8000,Drug Offenses,303,196,147,153,109,110,799,199.8,-49.5,-63.7,-28.1,-44.9,3787.5,2450,1837.5,1912.5,1375,2497.5,153
-10H50,10,2.30843079,the University of Houston area,13000,Drug Offenses,434,189,168,274,169,173,1065,266.2,-36.9,-60.1,-36.9,-35,3338.5,1453.8,1292.3,2107.7,1330.8,2047.7,274
+10H40,10,0.99627062,Midtown,8000,Drug Offenses,303,196,147,153,109,109,799,199.8,-49.5,-64,-28.8,-45.4,3787.5,2450,1837.5,1912.5,1362.5,2497.5,153
+10H50,10,2.30843079,the University of Houston area,13000,Drug Offenses,434,189,168,274,169,172,1065,266.2,-36.9,-60.4,-37.2,-35.4,3338.5,1453.8,1292.3,2107.7,1323.1,2047.7,274
 10H60,10,3.08931006,"University Oaks, Riverside Terrace and the Texas Southern University area",20000,Drug Offenses,131,93,56,83,64,69,363,90.8,-36.6,-47.3,-16.9,-24,655,465,280,415,345,454,83
 10H70,10,3.52217952,"Texas Medical Center, Hermann Park, Houston Zoo and Miller Outdoor Theatre",16000,Drug Offenses,48,37,51,51,46,46,187,46.8,6.2,-4.2,-9.8,-1.7,300,231.2,318.8,318.8,287.5,292.5,51
 10H80,10,2.73862779,"Southampton, Rice University area, Shadow Lawn and Broad Acres",19000,Drug Offenses,12,15,10,11,9,9,48,12,-8.3,-25,-18.2,-25,63.2,78.9,52.6,57.9,47.4,63.2,11
-11H10,11,5.31502815,"Mason Park, Forest Hill, Sunnyland and Central Park",28000,Drug Offenses,99,75,148,223,146,147,545,136.2,125.3,48.5,-34.1,7.9,353.6,267.9,528.6,796.4,525,486.4,223
+11H10,11,5.31502815,"Mason Park, Forest Hill, Sunnyland and Central Park",28000,Drug Offenses,99,75,148,223,146,146,545,136.2,125.3,47.5,-34.5,7.2,353.6,267.9,528.6,796.4,521.4,486.4,223
 11H20,11,3.9311161,"Harrisburg, Manchester and Pecan Park",18000,Drug Offenses,56,37,66,65,76,78,224,56,16.1,39.3,20,39.3,311.1,205.6,366.7,361.1,433.3,311.1,65
 11H30,11,2.84278059,Meadow Brook and Park Place,15000,Drug Offenses,78,72,70,85,69,69,305,76.2,9,-11.5,-18.8,-9.4,520,480,466.7,566.7,460,508,85
 11H40,11,6.14001938,Allendale and Oak Meadows,8000,Drug Offenses,6,15,16,16,12,13,53,13.2,166.7,116.7,-18.8,-1.5,75,187.5,200,200,162.5,165,16
@@ -64,11 +64,11 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 13D30,13,3.07402543,"Allen Farms, Airport Gardens and the Hobby Airport area",2000,Drug Offenses,13,21,16,9,7,7,59,14.8,-30.8,-46.2,-22.2,-52.7,650,1050,800,450,350,740,9
 13D40,13,5.0688163,"Val Verde East, Gulf Meadows and Houston Skyscraper Shadows",13000,Drug Offenses,24,22,18,17,5,5,81,20.2,-29.2,-79.2,-70.6,-75.2,184.6,169.2,138.5,130.8,38.5,155.4,17
 14D10,14,3.66057918,McGregor Terrace and Riverside Terrace,17000,Drug Offenses,251,210,139,115,114,116,715,178.8,-54.2,-53.8,0.9,-35.1,1476.5,1235.3,817.6,676.5,682.4,1051.8,115
-14D20,14,7.25646368,"Sunnyside, Brook Haven and Bayou Estates",28000,Drug Offenses,350,342,277,255,201,203,1224,306,-27.1,-42,-20.4,-33.7,1250,1221.4,989.3,910.7,725,1092.9,255
+14D20,14,7.25646368,"Sunnyside, Brook Haven and Bayou Estates",28000,Drug Offenses,350,342,277,255,201,202,1224,306,-27.1,-42.3,-20.8,-34,1250,1221.4,989.3,910.7,721.4,1092.9,255
 14D30,14,4.20537595,"Crestmont, Edgewood, Bellfort Park, Inwood Terrace and Southpark",21000,Drug Offenses,161,139,110,127,105,106,537,134.2,-21.1,-34.2,-16.5,-21,766.7,661.9,523.8,604.8,504.8,639,127
 14D40,14,6.61224595,"South Acres, Shamrock Manor, Hillwood and Cloverland",21000,Drug Offenses,63,68,60,75,43,43,266,66.5,19,-31.7,-42.7,-35.3,300,323.8,285.7,357.1,204.8,316.7,75
 14D50,14,8.69627992,"Golden Glade Estates, Langston and Almeda Genoa",9000,Drug Offenses,25,14,24,19,6,6,82,20.5,-24,-76,-68.4,-70.7,277.8,155.6,266.7,211.1,66.7,227.8,19
-15E10,15,4.34996776,"Meyerland Plaza, Robindell, Meyerland, Braeburn Terrace and Maplewood South",24000,Drug Offenses,41,31,44,41,42,43,157,39.2,0,4.9,4.9,9.7,170.8,129.2,183.3,170.8,179.2,163.3,41
+15E10,15,4.34996776,"Meyerland Plaza, Robindell, Meyerland, Braeburn Terrace and Maplewood South",24000,Drug Offenses,41,31,44,41,42,42,157,39.2,0,2.4,2.4,7.1,170.8,129.2,183.3,170.8,175,163.3,41
 15E20,15,3.58384499,"Westbury, Park West and Willow Creek",18000,Drug Offenses,67,48,46,55,27,27,216,54,-17.9,-59.7,-50.9,-50,372.2,266.7,255.6,305.6,150,300,55
 15E30,15,6.29133294,"Meyer Park, Post Oak Manor, Westwood, Willow Bend and Linkwood",34000,Drug Offenses,52,71,61,53,32,32,237,59.2,1.9,-38.5,-39.6,-45.9,152.9,208.8,179.4,155.9,94.1,174.1,53
 15E40,15,10.0079174,"NRG Park, Astroworld, Lakes at 610 and Plaza del Oro",30000,Drug Offenses,97,142,146,152,78,79,537,134.2,56.7,-18.6,-48,-41.1,323.3,473.3,486.7,506.7,263.3,447.3,152
@@ -104,12 +104,12 @@ beat,district,area_sq_mi,placename,population,category_name,total19,total20,tota
 21I50,21,14.61100076,Intercontinental Airport,0,Drug Offenses,45,45,83,95,69,69,268,67,111.1,53.3,-27.4,3,NA,NA,NA,NA,NA,NA,95
 21I70,21,0.01945113,Intercontinental Airport,0,Drug Offenses,0,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
 22B10,22,3.28874287,"Willowbrook, Willow Chase Park and Centerfield",8000,Drug Offenses,41,33,38,45,30,31,157,39.2,9.8,-24.4,-31.1,-20.9,512.5,412.5,475,562.5,387.5,490,45
-5F20,5,5.94082911,Spring Branch and Schwartz Park,42000,Drug Offenses,101,93,79,85,97,100,358,89.5,-15.8,-1,17.6,11.7,240.5,221.4,188.1,202.4,238.1,213.1,85
+5F20,5,5.94082911,Spring Branch and Schwartz Park,42000,Drug Offenses,101,93,79,85,97,99,358,89.5,-15.8,-2,16.5,10.6,240.5,221.4,188.1,202.4,235.7,213.1,85
 4F10,4,4.13606469,"Timber Oaks, Shadow Oaks and Long Point Acres",23000,Drug Offenses,57,38,58,57,66,67,210,52.5,0,17.5,17.5,27.6,247.8,165.2,252.2,247.8,291.3,228.3,57
 20G50,20,5.88593521,"Nottingham, Yorkshire, Wilchester, Town and Country Village and Memorial City Shopping Center",30000,Drug Offenses,35,30,48,52,37,38,165,41.2,48.6,8.6,-26.9,-7.8,116.7,100,160,173.3,126.7,137.3,52
 4F20,4,5.85840284,"Claymore Park, Westbranch, Spring Shadows and Kempwood Forest",28000,Drug Offenses,56,35,43,44,58,58,178,44.5,-21.4,3.6,31.8,30.3,200,125,153.6,157.1,207.1,158.9,44
 20G60,20,4.54207617,"Barkers Landing, Fleetwood, Thornwood and Darrel Tully Stadium",23000,Drug Offenses,46,62,55,29,24,24,192,48,-37,-47.8,-17.2,-50,200,269.6,239.1,126.1,104.3,208.7,29
-4F30,4,26.30690179,"Addicks Reservoir Area, Claymore Park, Brittmore Village, Park Ten Place and Mayde Creek Farms",18000,Drug Offenses,59,55,49,33,40,41,196,49,-44.1,-30.5,24.2,-16.3,327.8,305.6,272.2,183.3,227.8,272.2,33
+4F30,4,26.30690179,"Addicks Reservoir Area, Claymore Park, Brittmore Village, Park Ten Place and Mayde Creek Farms",18000,Drug Offenses,59,55,49,33,40,40,196,49,-44.1,-32.2,21.2,-18.4,327.8,305.6,272.2,183.3,222.2,272.2,33
 24C10,24,5.44044978,Kingwood,13000,Drug Offenses,11,7,9,5,5,5,32,8,-54.5,-54.5,0,-37.5,84.6,53.8,69.2,38.5,38.5,61.5,5
 24C20,24,6.8291794,Kingwood,18000,Drug Offenses,13,0,7,3,0,0,23,5.8,-76.9,-100,-100,-100,72.2,0,38.9,16.7,0,32.2,3
 24C30,24,9.78735527,Kingwood,29000,Drug Offenses,15,6,6,2,8,8,29,7.2,-86.7,-46.7,300,11.1,51.7,20.7,20.7,6.9,27.6,24.8,2
