@@ -20,7 +20,7 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 5F30,5,8.70689439,"Fairbanks, Carverdale, Fawndale and Northwest Crossing",17000,"Murder, non-negligent",09A,7,4,2,4,3,0,3,17,4.2,-42.9,-57.1,-25,-28.6,41.2,23.5,11.8,23.5,17.6,24.7,4
 6B10,6,5.50084827,"York Plaza, Pembrook Place and Hawthorne Place",33000,"Murder, non-negligent",09A,7,8,9,10,5,2,7,34,8.5,42.9,0,-30,-17.6,21.2,24.2,27.3,30.3,21.2,25.8,10
 6B20,6,6.12869477,"Highland Heights, Oakdale and Melrose Gardens",18000,"Murder, non-negligent",09A,2,3,9,2,2,0,1,16,4,0,-50,-50,-75,11.1,16.7,50,11.1,5.6,22.2,2
-6B30,6,7.2300685,"Woodland Trails, Oaks of Inwood, Bayou Bend, Cole Creek Manor and Inwood Forest",38000,"Murder, non-negligent",09A,5,6,11,3,1,2,3,25,6.2,-40,-40,0,-51.6,13.2,15.8,28.9,7.9,7.9,16.3,3
+6B30,6,7.2300685,"Woodland Trails, Oaks of Inwood, Bayou Bend, Cole Creek Manor and Inwood Forest",38000,"Murder, non-negligent",09A,5,6,11,3,1,3,4,25,6.2,-40,-20,33.3,-35.5,13.2,15.8,28.9,7.9,10.5,16.3,3
 6B40,6,5.544689,"Highland Gardens, Highland Heights and North Plaza",20000,"Murder, non-negligent",09A,5,12,9,6,6,0,6,32,8,20,20,0,-25,25,60,45,30,30,40,6
 22B30,22,2.8264671,Aldine and Imperial Valley,19000,"Murder, non-negligent",09A,2,3,4,2,4,0,4,11,2.8,0,100,100,42.9,10.5,15.8,21.1,10.5,21.1,14.7,2
 22B20,22,4.61158268,Greenspoint,24000,"Murder, non-negligent",09A,7,16,9,6,12,0,11,38,9.5,-14.3,57.1,83.3,15.8,29.2,66.7,37.5,25,45.8,39.6,6
@@ -30,17 +30,17 @@ beat,district,area_sq_mi,placename,population,offense_type,nibrs_class,total19,t
 7C40,7,3.36786526,Keith-Weiss Park and Farrington Place,8000,"Murder, non-negligent",09A,2,1,0,3,1,0,1,6,1.5,50,-50,-66.7,-33.3,25,12.5,0,37.5,12.5,18.8,3
 22B40,22,13.03325001,"Intercontinental Airport, Northwood, Lakeview Park and Glen Lee",11000,"Murder, non-negligent",09A,3,2,2,5,2,0,1,12,3,66.7,-66.7,-80,-66.7,27.3,18.2,18.2,45.5,9.1,27.3,5
 8C10,8,3.69037316,"Tidwell Park, Shady Oak and Buckingham Place",12000,"Murder, non-negligent",09A,6,3,9,6,8,0,8,24,6,0,33.3,33.3,33.3,50,25,75,50,66.7,50,6
-8C20,8,3.36154214,"Houston Gardens, Rosewood and Homestead",7000,"Murder, non-negligent",09A,3,2,2,1,3,0,3,8,2,-66.7,0,200,50,42.9,28.6,28.6,14.3,42.9,28.6,1
+8C20,8,3.36154214,"Houston Gardens, Rosewood and Homestead",7000,"Murder, non-negligent",09A,3,2,2,1,3,0,2,8,2,-66.7,-33.3,100,0,42.9,28.6,28.6,14.3,28.6,28.6,1
 8C30,8,4.6258259,"Parkhurst, East Houston and Clairmont Place",11000,"Murder, non-negligent",09A,2,3,3,6,5,0,5,14,3.5,200,150,-16.7,42.9,18.2,27.3,27.3,54.5,45.5,31.8,6
 8C40,8,4.97945551,"Lake Houston, Greenriver, Knoll and Lake Forest",8000,"Murder, non-negligent",09A,0,0,3,2,1,0,1,5,1.2,NA,NA,-50,-16.7,0,0,37.5,25,12.5,15,2
 8C50,8,3.31739498,"Park North, Forest Green, Kentshire Place, Glenwood Forest and Dorchester",8000,"Murder, non-negligent",09A,2,3,2,1,0,0,0,8,2,-50,-100,-100,-100,25,37.5,25,12.5,0,25,1
-8C60,8,5.79693312,"Edgeworth, Northwood Manor and Scenic Woods",19000,"Murder, non-negligent",09A,1,0,3,3,2,0,2,7,1.8,200,100,-33.3,11.1,5.3,0,15.8,15.8,10.5,9.5,3
+8C60,8,5.79693312,"Edgeworth, Northwood Manor and Scenic Woods",19000,"Murder, non-negligent",09A,1,0,3,3,2,0,1,7,1.8,200,0,-66.7,-44.4,5.3,0,15.8,15.8,5.3,9.5,3
 9C10,9,5.21185619,"Port of Houston, Clinton Park, Pleasantville and Fidelity Manor",6000,"Murder, non-negligent",09A,1,4,6,1,2,2,4,12,3,0,300,300,33.3,16.7,66.7,100,16.7,66.7,50,1
 9C20,9,7.5383173,Denver Harbor and Houston Harbor,16000,"Murder, non-negligent",09A,2,6,4,2,0,0,0,14,3.5,0,-100,-100,-100,12.5,37.5,25,12.5,0,21.9,2
 9C30,9,8.13353768,"City Park East, Wynnewood Acres and Wallisville Gardens",9000,"Murder, non-negligent",09A,1,3,4,2,1,0,1,10,2.5,100,0,-50,-60,11.1,33.3,44.4,22.2,11.1,27.8,2
 9C40,9,10.42549456,"Greens Bayou Estates, Shady Brook, Northshore",23000,"Murder, non-negligent",09A,7,4,6,6,5,1,6,23,5.8,-14.3,-14.3,0,3.4,30.4,17.4,26.1,26.1,26.1,25.2,6
 10H10,10,2.81830654,Oak Lawn and Ranger,11000,"Murder, non-negligent",09A,1,2,2,1,0,0,0,6,1.5,0,-100,-100,-100,9.1,18.2,18.2,9.1,0,13.6,1
-10H20,10,1.75743169,Eastwood and Broadmoor,10000,"Murder, non-negligent",09A,0,0,1,2,2,0,2,3,0.8,NA,NA,0,150,0,0,10,20,20,8,2
+10H20,10,1.75743169,Eastwood and Broadmoor,10000,"Murder, non-negligent",09A,0,0,1,2,2,0,1,3,0.8,NA,NA,-50,25,0,0,10,20,10,8,2
 10H30,10,1.02691154,Near East End,4000,"Murder, non-negligent",09A,0,1,0,2,1,0,1,3,0.8,NA,NA,-50,25,0,25,0,50,25,20,2
 10H40,10,0.99627062,Midtown,8000,"Murder, non-negligent",09A,0,7,11,2,4,1,5,20,5,NA,NA,150,0,0,87.5,137.5,25,62.5,62.5,2
 10H50,10,2.30843079,the University of Houston area,13000,"Murder, non-negligent",09A,5,9,6,10,8,0,7,30,7.5,100,40,-30,-6.7,38.5,69.2,46.2,76.9,53.8,57.7,10
