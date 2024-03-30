@@ -235,7 +235,7 @@ houston_population <- 2304580
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Thefts<br>
 <bignumber>`r prettyNum(round(thefts_city$avg_prior4years,0), big.mark=",")`<br></bignumber><p>
-Yearly average<br>2019 to 2022</p>
+Yearly average<br>2020 to 2023</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>Theft Rate<br>
@@ -245,17 +245,17 @@ Per 100,000 people<br>Last 12 months</p>
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Theft Rate<br>
 <bignumber>`r prettyNum(round(thefts_city$rate_prior4years,0),big.mark=",")`<br></bignumber><p>
-Per 100,000 people<br>2019 to 2022</p>
+Per 100,000 people<br>2020 to 2023</p>
 </div>
 </div>
 <br>
 Thefts over the last 12 months are <h8>`r ifelse(thefts_city$inc_prior4yearavgtolast12>=0," up"," down")` `r ifelse(thefts_city$inc_prior4yearavgtolast12>=0,thefts_city$inc_prior4yearavgtolast12,substring(thefts_city$inc_prior4yearavgtolast12,2))`%</h8> compared to the annual average over the last four years, according to the latest data available from the Houston Police Department.
 
-The city averaged <h8>`r prettyNum(round(thefts_city$last12mos/52,0), big.mark=",")`</h8> thefts a week over the last 12 months. In 2019, that number was <h8>`r prettyNum(round(thefts_city$total19/52,0), big.mark=",")`</h8> a week.
+The city averaged <h8>`r prettyNum(round(thefts_city$last12mos/52,0), big.mark=",")`</h8> thefts a week over the last 12 months. In 2020, that number was <h8>`r prettyNum(round(thefts_city$total20/52,0), big.mark=",")`</h8> a week.
 
 <subhead>Houston thefts neighborhood by neighborhood</subhead>
 
-The risk is not the same neighborhood to neighborhood. ABC13's data team looked at the Houston Police Department's data by neighborhood from 2019 through `r format(asofdate, "%B %d")`.
+The risk is not the same neighborhood to neighborhood. ABC13's data team looked at the Houston Police Department's data by neighborhood from 2020 through `r format(asofdate, "%B %d")`.
 
 The map color-codes each neighborhood by the theft rate over the last 12 months. The three darker blues represent neighborhoods with theft rates that are higher than the citywide rate. You can also click the box in the bottom right corner to see neighborhoods by the number of thefts.
 
@@ -308,15 +308,6 @@ theftlabel <- paste(sep="",
 				<th>Rate</th>
 			</tr>
 			<tr>
-				<td>2019</td>
-				<td>",
-thefts_beat$total19,
-"</td>
-				<td>",
-prettyNum(round(thefts_beat$rate19,0), big.mark=","),
-"</td>
-			</tr>
-			<tr>
 				<td>2020</td>
 				<td>",
 thefts_beat$total20,
@@ -325,7 +316,7 @@ thefts_beat$total20,
 prettyNum(round(thefts_beat$rate20,0), big.mark=","),
 "</td>
 			</tr>
-						<tr>
+			<tr>
 				<td>2021</td>
 				<td>",
 thefts_beat$total21,
@@ -341,6 +332,15 @@ thefts_beat$total22,
 "</td>
 				<td>",
 prettyNum(round(thefts_beat$rate22,0), big.mark=","),
+"</td>
+			</tr>
+						<tr>
+				<td>2023</td>
+				<td>",
+thefts_beat$total23,
+"</td>
+				<td>",
+prettyNum(round(thefts_beat$rate23,0), big.mark=","),
 "</td>
 			</tr>
 						<tr>
@@ -435,9 +435,9 @@ houston_theft_map
 ```
 <br>
 <br>
-<!-- <subhead>Thefts month by month, 2019 to present</subhead> -->
+<!-- <subhead>Thefts month by month, 2020 to present</subhead> -->
 
-<iframe title="Thefts month by month, 2019 through last month" aria-label="Column Chart" id="datawrapper-chart-J86iw" src="https://datawrapper.dwcdn.net/J86iw/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+<iframe title="Thefts month by month, 2020 through last month" aria-label="Column Chart" id="datawrapper-chart-J86iw" src="https://datawrapper.dwcdn.net/J86iw/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
 </script>
   <br>
 <br>
