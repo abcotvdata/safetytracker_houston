@@ -234,7 +234,7 @@ You can choose which crime to explore: <select onchange="window.location=this.va
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Homicides<br>
 <bignumber>`r prettyNum(round(murders_city$avg_prior4years,0), big.mark=",")`<br></bignumber><p>
-Yearly average<br>2019 to 2022</p>
+Yearly average<br>2020 to 2023</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>Homicide Rate<br>
@@ -244,17 +244,17 @@ Per 100,000 people<br>Last 12 months</p>
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Homicide Rate<br>
 <bignumber>`r murders_city$rate_prior4years`<br></bignumber><p>
-Per 100,000 people<br>2019 to 2022</p>
+Per 100,000 people<br>2020 to 2023</p>
 </div>
 </div>
 <br>
-Homicides over the last 12 months are trending <h8>`r ifelse(murders_city$inc_22tolast12>=0," up"," down")` `r ifelse(murders_city$inc_22tolast12>=0,murders_city$inc_22tolast12,substring(murders_city$inc_22tolast12,2))`%</h8> compared to 2022, according to the latest data available from the Houston Police Department.
+Homicides over the last 12 months are trending <h8>`r ifelse(murders_city$inc_22tolast12>=0," up"," down")` `r ifelse(murders_city$inc_23tolast12>=0,murders_city$inc_23tolast12,substring(murders_city$inc_23tolast12,2))`%</h8> compared to 2022, according to the latest data available from the Houston Police Department.
 
 However, the murder rate over the last 12 months is<h8>`r ifelse(murders_city$inc_prior4yearavgtolast12>=0," up"," down")` `r ifelse(murders_city$inc_prior4yearavgtolast12>=0,murders_city$inc_prior4yearavgtolast12,substring(murders_city$inc_prior4yearavgtolast12,2))`%</h8> compared to the annual average over the last four years.
 
-The city averaged <h8>`r round(murders_city$last12mos/52,0)`</h8> homicides a week over the last 12 months. In 2019, that number was <h8>`r round(murders_city$total19/52,0)`</h8> a week.
+The city averaged <h8>`r round(murders_city$last12mos/52,0)`</h8> homicides a week over the last 12 months. In 2020, that number was <h8>`r round(murders_city$total20/52,0)`</h8> a week.
 
-One way to think about the danger: three years ago, the murder rate was <h8>`r murders_city$rate19`</h8> per 100,000 residents. That's slightly less than the risk of dying in a vehicle crash in Texas.
+One way to think about the danger: four years ago, the murder rate was <h8>`r murders_city$rate20`</h8> per 100,000 residents. That's slightly less than the risk of dying in a vehicle crash in Texas.
 
 During the pandemic, a person's chance of being murdered in Houston rose above the likelihood of dying in a vehicle crash. 
 <br>
@@ -267,7 +267,7 @@ During the pandemic, a person's chance of being murdered in Houston rose above t
 
 The risk is not the same neighborhood to neighborhood.
 
-ABC13's data team looked at the Houston Police Department's data by neighborhood from 2019 through `r format(asofdate, "%B %d")`.
+ABC13's data team looked at the Houston Police Department's data by neighborhood from 2020 through `r format(asofdate, "%B %d")`.
 
 <subhead>A closer look at Houston homicides by neighborhood</subhead>
 
@@ -323,7 +323,7 @@ murderlabel <- paste(sep="",
 				<th>Rate</th>
 			</tr>
 			<tr>
-				<td>2019</td>
+				<td>2020</td>
 				<td>",
 murders_beat$total19,
 "</td>
@@ -332,7 +332,7 @@ murders_beat$rate19,
 "</td>
 			</tr>
 			<tr>
-				<td>2020</td>
+				<td>2021</td>
 				<td>",
 murders_beat$total20,
 "</td>
@@ -341,7 +341,7 @@ murders_beat$rate20,
 "</td>
 			</tr>
 						<tr>
-				<td>2021</td>
+				<td>2022</td>
 				<td>",
 murders_beat$total21,
 "</td>
@@ -350,7 +350,7 @@ murders_beat$rate21,
 "</td>
 			</tr>
 						<tr>
-				<td>2022</td>
+				<td>2023</td>
 				<td>",
 murders_beat$total22,
 "</td>
@@ -446,9 +446,9 @@ houston_murder_map
 ```
 <br>
 <br>
-<!-- <subhead>Homicides month by month, 2019 through last month</subhead> -->
+<!-- <subhead>Homicides month by month, 2020 through last month</subhead> -->
 
-<iframe title="Homicides month by month, 2019 through last month" aria-label="Column Chart" id="datawrapper-chart-3NHzG" src="https://datawrapper.dwcdn.net/3NHzG/9/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+<iframe title="Homicides month by month, 2020 through last month" aria-label="Column Chart" id="datawrapper-chart-3NHzG" src="https://datawrapper.dwcdn.net/3NHzG/9/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
 </script>
   <br>
 <br>
