@@ -8,10 +8,10 @@ houston_annual <- readRDS("scripts/rds/houston_annual.rds")
 houston_monthly <- readRDS("scripts/rds/houston_monthly.rds")
 houston_recent_new <- readRDS("scripts/rds/houston_recent_new.rds")
 
-### COMBINE 2019 to 2000, plus 2023 TO DATE INTO SINGLE FILE
+### COMBINE 2019 to 2000, plus 2023 and 2024 TO DATE INTO SINGLE FILE
 houston_crime <- bind_rows(houston_annual,houston_monthly)
 
-# REDUCE THE RECENT 30-DAY FILE JUST TO THE DATES THAT NOT ALREADY IN HPD RELEASED 2023 TO DATE FILE
+# REDUCE THE RECENT 30-DAY FILE JUST TO THE DATES THAT NOT ALREADY IN HPD RELEASED 2024 TO DATE FILE
 houston_recent_new <- houston_recent_new %>% filter(as.Date(date)>max(as.Date(houston_crime$date)))
 
 # COMBINE ANNUAL + MONTHLY WITH TODAY'S RECENT/30DAY FILE
@@ -83,6 +83,7 @@ saveRDS(asofdate,"scripts/rds/asofdate.rds")
 # also helps with gh file size limits and download issues
 # needs updating at year-end turn
 saveRDS(houston_crime,"scripts/rds/houston_crime.rds")
+houston_crime %>% filter(houston_crime$year == 2024) %>% write_csv("data/output/houston_crime_all2024.csv")
 houston_crime %>% filter(houston_crime$year == 2023) %>% write_csv("data/output/houston_crime_all2023.csv")
 # houston_crime %>% filter(houston_crime$year == 2022) %>% write_csv("data/output/houston_crime_all2022.csv")
 # houston_crime %>% filter(houston_crime$year == 2021) %>% write_csv("data/output/houston_crime_all2021.csv")
@@ -118,7 +119,8 @@ citywide_detailed <- citywide_detailed %>%
          "total20" = "2020",
          "total21" = "2021",
          "total22" = "2022",
-         "total23" = "2023")
+         "total23" = "2023"
+         "total24" = "2024")
 # now we need to repeat that grouping for
 # the last 12 months and combine to add that last12 column
 citywide_detailed_last12 <- houston_crime_last12 %>%
@@ -129,18 +131,19 @@ citywide_detailed <- left_join(citywide_detailed,citywide_detailed_last12,by=c("
 citywide_detailed[is.na(citywide_detailed)] <- 0
 # Calculate a total across the four prior years; this time period can be adjusted by changing the code throughout
 # Requires careful searching for every instance of these calculations and column names throughout this entire script and in tracker-rendering scripts
-citywide_detailed$total_prior4years <- citywide_detailed$total19+citywide_detailed$total20+citywide_detailed$total21+citywide_detailed$total22
+citywide_detailed$total_prior4years <- citywide_detailed$total20+citywide_detailed$total21+citywide_detailed$total22+citywide_detailed$total23
 citywide_detailed$avg_prior4years <- round(citywide_detailed$total_prior4years/4,1)
 # calculate raw number increases
-citywide_detailed$inc_19to22 <- round(citywide_detailed$total22/citywide_detailed$total19*100-100,1)
-citywide_detailed$inc_19tolast12 <- round(citywide_detailed$last12mos/citywide_detailed$total19*100-100,1)
-citywide_detailed$inc_22tolast12 <- round(citywide_detailed$last12mos/citywide_detailed$total22*100-100,1)
+citywide_detailed$inc_20to23 <- round(citywide_detailed$total23/citywide_detailed$total20*100-100,1)
+citywide_detailed$inc_20tolast12 <- round(citywide_detailed$last12mos/citywide_detailed$total20*100-100,1)
+citywide_detailed$inc_23tolast12 <- round(citywide_detailed$last12mos/citywide_detailed$total23*100-100,1)
 citywide_detailed$inc_prior4yearavgtolast12 <- round((citywide_detailed$last12mos/citywide_detailed$avg_prior4years)*100-100,1)
 # calculate the citywide rates
 citywide_detailed$rate19 <- round(citywide_detailed$total19/houston_population*100000,1)
 citywide_detailed$rate20 <- round(citywide_detailed$total20/houston_population*100000,1)
 citywide_detailed$rate21 <- round(citywide_detailed$total21/houston_population*100000,1)
 citywide_detailed$rate22 <- round(citywide_detailed$total22/houston_population*100000,1)
+citywide_detailed$rate23 <- round(citywide_detailed$total23/houston_population*100000,1)
 citywide_detailed$rate_last12 <- round(citywide_detailed$last12mos/houston_population*100000,1)
 # calculate a multi-year rate for the last 4 years
 citywide_detailed$rate_prior4years <- round(citywide_detailed$avg_prior4years/houston_population*100000,1)
@@ -175,7 +178,8 @@ citywide_category <- citywide_category %>%
          "total20" = "2020",
          "total21" = "2021",
          "total22" = "2022",
-         "total23" = "2023")
+         "total23" = "2023"
+         "total24" = "2024")
 # add last 12 months
 citywide_category_last12 <- houston_crime_last12 %>%
   group_by(category_name) %>%
@@ -183,19 +187,20 @@ citywide_category_last12 <- houston_crime_last12 %>%
 citywide_category <- left_join(citywide_category,citywide_category_last12,by=c("category_name"))
 # add zeros where there were no crimes tallied that year
 citywide_category[is.na(citywide_category)] <- 0
-# Calculate a total across the 3 prior years
-citywide_category$total_prior4years <- citywide_category$total19+citywide_category$total20+citywide_category$total21+citywide_category$total22
+# Calculate a total across the 4 prior years
+citywide_category$total_prior4years <- citywide_category$total20+citywide_category$total21+citywide_category$total22+citywide_category$total23
 citywide_category$avg_prior4years <- round(citywide_category$total_prior4years/4,1)
 # calculate increases
-citywide_category$inc_19to22 <- round(citywide_category$total22/citywide_category$total19*100-100,1)
-citywide_category$inc_19tolast12 <- round(citywide_category$last12mos/citywide_category$total19*100-100,1)
-citywide_category$inc_22tolast12 <- round(citywide_category$last12mos/citywide_category$total22*100-100,1)
+citywide_category$inc_20to23 <- round(citywide_category$total23/citywide_category$total20*100-100,1)
+citywide_category$inc_20tolast12 <- round(citywide_category$last12mos/citywide_category$total20*100-100,1)
+citywide_category$inc_23tolast12 <- round(citywide_category$last12mos/citywide_category$total23*100-100,1)
 citywide_category$inc_prior4yearavgtolast12 <- round((citywide_category$last12mos/citywide_category$avg_prior4years)*100-100,1)
 # calculate the citywide rates
 citywide_category$rate19 <- round(citywide_category$total19/houston_population*100000,1)
 citywide_category$rate20 <- round(citywide_category$total20/houston_population*100000,1)
 citywide_category$rate21 <- round(citywide_category$total21/houston_population*100000,1)
 citywide_category$rate22 <- round(citywide_category$total22/houston_population*100000,1)
+citywide_category$rate23 <- round(citywide_category$total23/houston_population*100000,1)
 citywide_category$rate_last12 <- round(citywide_category$last12mos/houston_population*100000,1)
 # calculate a multiyear rate
 citywide_category$rate_prior4years <- round(citywide_category$avg_prior4years/houston_population*100000,1)
@@ -230,27 +235,29 @@ citywide_type <- citywide_type %>%
          "total20" = "2020",
          "total21" = "2021",
          "total22" = "2022",
-         "total23" = "2023")
+         "total23" = "2023"
+         "total24" = "2024")
 # add last 12 months
 citywide_type_last12 <- houston_crime_last12 %>%
   group_by(type) %>%
   summarise(last12mos = sum(offense_count))
 citywide_type <- left_join(citywide_type,citywide_type_last12,by=c("type"))
-# Calculate a total across the 3 prior years
-citywide_type$total_prior4years <- citywide_type$total19+citywide_type$total20+citywide_type$total21+citywide_type$total22
+# Calculate a total across the 4 prior years
+citywide_type$total_prior4years <- citywide_type$total20+citywide_type$total21+citywide_type$total22+citywide_type$total23
 citywide_type$avg_prior4years <- round(citywide_type$total_prior4years/4,1)
 # add zeros where there were no crimes tallied that year
 citywide_type[is.na(citywide_type)] <- 0
 # calculate increases
-citywide_type$inc_19to22 <- round(citywide_type$total22/citywide_type$total19*100-100,1)
-citywide_type$inc_19tolast12 <- round(citywide_type$last12mos/citywide_type$total19*100-100,1)
-citywide_type$inc_22tolast12 <- round(citywide_type$last12mos/citywide_type$total22*100-100,1)
+citywide_type$inc_20to23 <- round(citywide_type$total23/citywide_type$total20*100-100,1)
+citywide_type$inc_20tolast12 <- round(citywide_type$last12mos/citywide_type$total20*100-100,1)
+citywide_type$inc_23tolast12 <- round(citywide_type$last12mos/citywide_type$total23*100-100,1)
 citywide_type$inc_prior4yearavgtolast12 <- round((citywide_type$last12mos/citywide_type$avg_prior4years)*100-100,1)
 # calculate the citywide rates
 citywide_type$rate19 <- round(citywide_type$total19/houston_population*100000,1)
 citywide_type$rate20 <- round(citywide_type$total20/houston_population*100000,1)
 citywide_type$rate21 <- round(citywide_type$total21/houston_population*100000,1)
 citywide_type$rate22 <- round(citywide_type$total22/houston_population*100000,1)
+citywide_type$rate23 <- round(citywide_type$total23/houston_population*100000,1)
 citywide_type$rate_last12 <- round(citywide_type$last12mos/houston_population*100000,1)
 # calculate a multiyear rate
 citywide_type$rate_prior4years <- round(citywide_type$avg_prior4years/houston_population*100000,1)
@@ -287,7 +294,8 @@ beat_detailed <- beat_detailed %>%
          "total20" = "2020",
          "total21" = "2021",
          "total22" = "2022",
-         "total23" = "2023")
+         "total23" = "2023"
+         "total24" = "2024")
 # add last 12 months
 beat_detailed_last12 <- houston_crime_last12 %>%
   group_by(beat,nibrs_class) %>%
@@ -296,13 +304,13 @@ beat_detailed <- left_join(beat_detailed,beat_detailed_last12,by=c("beat","nibrs
 rm(beat_detailed_last12)
 # add zeros where there were no crimes tallied that year
 beat_detailed[is.na(beat_detailed)] <- 0
-# Calculate a total across the 3 prior years
-beat_detailed$total_prior4years <- beat_detailed$total19+beat_detailed$total20+beat_detailed$total21+beat_detailed$total22
+# Calculate a total across the 4 prior years
+beat_detailed$total_prior4years <- beat_detailed$total20+beat_detailed$total21+beat_detailed$total22+beat_detailed$total23
 beat_detailed$avg_prior4years <- round(beat_detailed$total_prior4years/4,1)
 # calculate increases
-beat_detailed$inc_19to22 <- round(beat_detailed$total22/beat_detailed$total19*100-100,1)
-beat_detailed$inc_19tolast12 <- round(beat_detailed$last12mos/beat_detailed$total19*100-100,1)
-beat_detailed$inc_22tolast12 <- round(beat_detailed$last12mos/beat_detailed$total22*100-100,1)
+beat_detailed$inc_20to23 <- round(beat_detailed$total23/beat_detailed$total20*100-100,1)
+beat_detailed$inc_20tolast12 <- round(beat_detailed$last12mos/beat_detailed$total20*100-100,1)
+beat_detailed$inc_23tolast12 <- round(beat_detailed$last12mos/beat_detailed$total23*100-100,1)
 beat_detailed$inc_prior4yearavgtolast12 <- round((beat_detailed$last12mos/beat_detailed$avg_prior4years)*100-100,1)
 # add population for beats
 beat_detailed <- full_join(beats,beat_detailed,by="beat") 
@@ -311,6 +319,7 @@ beat_detailed$rate19 <- round(beat_detailed$total19/beat_detailed$population*100
 beat_detailed$rate20 <- round(beat_detailed$total20/beat_detailed$population*100000,1)
 beat_detailed$rate21 <- round(beat_detailed$total21/beat_detailed$population*100000,1)
 beat_detailed$rate22 <- round(beat_detailed$total22/beat_detailed$population*100000,1)
+beat_detailed$rate23 <- round(beat_detailed$total23/beat_detailed$population*100000,1)
 beat_detailed$rate_last12 <- round(beat_detailed$last12mos/beat_detailed$population*100000,1)
 # calculate a multiyear rate
 beat_detailed$rate_prior4years <- round(beat_detailed$avg_prior4years/beat_detailed$population*100000,1)
@@ -333,7 +342,8 @@ beat_category <- beat_category %>%
          "total20" = "2020",
          "total21" = "2021",
          "total22" = "2022",
-         "total23" = "2023")
+         "total23" = "2023"
+         "total24" = "2024")
 # add last 12 months
 beat_category_last12 <- houston_crime_last12 %>%
   group_by(beat,category_name) %>%
@@ -342,13 +352,13 @@ beat_category <- left_join(beat_category,beat_category_last12,by=c("beat","categ
 rm(beat_category_last12)
 # add zeros where there were no crimes tallied that year
 beat_category[is.na(beat_category)] <- 0
-# Calculate a total across the 3 prior years
-beat_category$total_prior4years <- beat_category$total19+beat_category$total20+beat_category$total21+beat_category$total22
+# Calculate a total across the 4 prior years
+beat_category$total_prior4years <- beat_category$total20+beat_category$total21+beat_category$total22+beat_category$total23
 beat_category$avg_prior4years <- round(beat_category$total_prior4years/4,1)
 # calculate increases
-beat_category$inc_19to22 <- round(beat_category$total22/beat_category$total19*100-100,1)
-beat_category$inc_19tolast12 <- round(beat_category$last12mos/beat_category$total19*100-100,1)
-beat_category$inc_22tolast12 <- round(beat_category$last12mos/beat_category$total22*100-100,1)
+beat_category$inc_20to23 <- round(beat_category$total23/beat_category$total20*100-100,1)
+beat_category$inc_20tolast12 <- round(beat_category$last12mos/beat_category$total20*100-100,1)
+beat_category$inc_23tolast12 <- round(beat_category$last12mos/beat_category$total23*100-100,1)
 beat_category$inc_prior4yearavgtolast12 <- round((beat_category$last12mos/beat_category$avg_prior4years)*100-100,1)
 # add population for beats
 beat_category <- full_join(beats,beat_category,by="beat") 
@@ -357,6 +367,7 @@ beat_category$rate19 <- round(beat_category$total19/beat_category$population*100
 beat_category$rate20 <- round(beat_category$total20/beat_category$population*100000,1)
 beat_category$rate21 <- round(beat_category$total21/beat_category$population*100000,1)
 beat_category$rate22 <- round(beat_category$total22/beat_category$population*100000,1)
+beat_category$rate23 <- round(beat_category$total23/beat_category$population*100000,1)
 beat_category$rate_last12 <- round(beat_category$last12mos/beat_category$population*100000,1)
 # calculate a multiyear rate
 beat_category$rate_prior4years <- round(beat_category$avg_prior4years/beat_category$population*100000,1)
@@ -379,7 +390,8 @@ beat_type <- beat_type %>%
          "total20" = "2020",
          "total21" = "2021",
          "total22" = "2022",
-         "total23" = "2023")
+         "total23" = "2023"
+         "total24" = "2024")
 # add last 12 months
 beat_type_last12 <- houston_crime_last12 %>%
   group_by(beat,type) %>%
@@ -388,13 +400,13 @@ beat_type <- left_join(beat_type,beat_type_last12,by=c("beat","type"))
 rm(beat_type_last12)
 # add zeros where there were no crimes tallied that year
 beat_type[is.na(beat_type)] <- 0
-# Calculate a total across the 3 prior years
+# Calculate a total across the 4 prior years
 beat_type$total_prior4years <- beat_type$total19+beat_type$total20+beat_type$total21+beat_type$total22
 beat_type$avg_prior4years <- round(beat_type$total_prior4years/4,1)
 # calculate increases
-beat_type$inc_19to22 <- round(beat_type$total22/beat_type$total19*100-100,1)
-beat_type$inc_19tolast12 <- round(beat_type$last12mos/beat_type$total19*100-100,1)
-beat_type$inc_22tolast12 <- round(beat_type$last12mos/beat_type$total22*100-100,1)
+beat_type$inc_20to23 <- round(beat_type$total23/beat_type$total20*100-100,1)
+beat_type$inc_20tolast12 <- round(beat_type$last12mos/beat_type$total20*100-100,1)
+beat_type$inc_23tolast12 <- round(beat_type$last12mos/beat_type$total23*100-100,1)
 beat_type$inc_prior4yearavgtolast12 <- round((beat_type$last12mos/beat_type$avg_prior4years)*100-100,1)
 # add population for beats
 beat_type <- full_join(beats,beat_type,by="beat") 
@@ -403,6 +415,7 @@ beat_type$rate19 <- round(beat_type$total19/beat_type$population*100000,1)
 beat_type$rate20 <- round(beat_type$total20/beat_type$population*100000,1)
 beat_type$rate21 <- round(beat_type$total21/beat_type$population*100000,1)
 beat_type$rate22 <- round(beat_type$total22/beat_type$population*100000,1)
+beat_type$rate23 <- round(beat_type$total23/beat_type$population*100000,1)
 beat_type$rate_last12 <- round(beat_type$last12mos/beat_type$population*100000,1)
 # calculate a multiyear rate
 beat_type$rate_prior4years <- round(beat_type$avg_prior4years/beat_type$population*100000,1)
@@ -418,7 +431,7 @@ beat_detailed %>% st_drop_geometry() %>% write_csv("data/output/beat/beat_detail
 beat_category %>% st_drop_geometry() %>% write_csv("data/output/beat/beat_category.csv")
 beat_type %>% st_drop_geometry() %>% write_csv("data/output/beat/beat_type.csv")
 citywide_detailed %>% write_csv("data/output/city/citywide_detailed.csv")
-citywide_category %>% mutate(previous_year=total22) %>% mutate(as_of_date = substr(asofdate,1,10)) %>% write_csv("data/output/city/citywide_category.csv")
+citywide_category %>% mutate(previous_year=total23) %>% mutate(as_of_date = substr(asofdate,1,10)) %>% write_csv("data/output/city/citywide_category.csv")
 citywide_type %>% write_csv("data/output/city/citywide_type.csv")
 
 # Create individual spatial tables of crimes by major categories and types
@@ -483,16 +496,16 @@ when_murders_happen <- when_murders_happen %>%
   summarise(total=sum(count))
 
 # Create individual spatial tables of crimes by major categories and types
-murders_beat %>% st_drop_geometry() %>% mutate(previous_year=total22) %>% write_csv("data/output/beat/murders_beat.csv")
-sexassaults_beat %>% st_drop_geometry() %>% mutate(previous_year=total22) %>% write_csv("data/output/beat/sexassaults_beat.csv")
-autothefts_beat %>% st_drop_geometry() %>% mutate(previous_year=total22) %>% write_csv("data/output/beat/autothefts_beat.csv")
-thefts_beat %>% st_drop_geometry() %>% mutate(previous_year=total22) %>% write_csv("data/output/beat/thefts_beat.csv")
-burglaries_beat %>% st_drop_geometry() %>% mutate(previous_year=total22) %>% write_csv("data/output/beat/burglaries_beat.csv")
-robberies_beat %>% st_drop_geometry() %>% mutate(previous_year=total22) %>% write_csv("data/output/beat/robberies_beat.csv")
-assaults_beat %>% st_drop_geometry() %>% mutate(previous_year=total22) %>% write_csv("data/output/beat/assaults_beat.csv")
-drugs_beat %>% st_drop_geometry() %>% mutate(previous_year=total22) %>% write_csv("data/output/beat/drugs_beat.csv")
-violence_beat %>% st_drop_geometry() %>% mutate(previous_year=total22) %>% write_csv("data/output/beat/violence_beat.csv")
-property_beat %>% st_drop_geometry() %>% mutate(previous_year=total22) %>% write_csv("data/output/beat/property_beat.csv")
+murders_beat %>% st_drop_geometry() %>% mutate(previous_year=total23) %>% write_csv("data/output/beat/murders_beat.csv")
+sexassaults_beat %>% st_drop_geometry() %>% mutate(previous_year=total23) %>% write_csv("data/output/beat/sexassaults_beat.csv")
+autothefts_beat %>% st_drop_geometry() %>% mutate(previous_year=total23) %>% write_csv("data/output/beat/autothefts_beat.csv")
+thefts_beat %>% st_drop_geometry() %>% mutate(previous_year=total23) %>% write_csv("data/output/beat/thefts_beat.csv")
+burglaries_beat %>% st_drop_geometry() %>% mutate(previous_year=total23) %>% write_csv("data/output/beat/burglaries_beat.csv")
+robberies_beat %>% st_drop_geometry() %>% mutate(previous_year=total23) %>% write_csv("data/output/beat/robberies_beat.csv")
+assaults_beat %>% st_drop_geometry() %>% mutate(previous_year=total23) %>% write_csv("data/output/beat/assaults_beat.csv")
+drugs_beat %>% st_drop_geometry() %>% mutate(previous_year=total23) %>% write_csv("data/output/beat/drugs_beat.csv")
+violence_beat %>% st_drop_geometry() %>% mutate(previous_year=total23) %>% write_csv("data/output/beat/violence_beat.csv")
+property_beat %>% st_drop_geometry() %>% mutate(previous_year=total23) %>% write_csv("data/output/beat/property_beat.csv")
 
 # Saving dataframes as rds files for easy loading and use in the tracker-building code
 # citywide files needed separately for each major crime type
