@@ -119,7 +119,7 @@ citywide_detailed <- citywide_detailed %>%
          "total20" = "2020",
          "total21" = "2021",
          "total22" = "2022",
-         "total23" = "2023"
+         "total23" = "2023",
          "total24" = "2024")
 # now we need to repeat that grouping for
 # the last 12 months and combine to add that last12 column
@@ -178,7 +178,7 @@ citywide_category <- citywide_category %>%
          "total20" = "2020",
          "total21" = "2021",
          "total22" = "2022",
-         "total23" = "2023"
+         "total23" = "2023",
          "total24" = "2024")
 # add last 12 months
 citywide_category_last12 <- houston_crime_last12 %>%
@@ -235,7 +235,7 @@ citywide_type <- citywide_type %>%
          "total20" = "2020",
          "total21" = "2021",
          "total22" = "2022",
-         "total23" = "2023"
+         "total23" = "2023",
          "total24" = "2024")
 # add last 12 months
 citywide_type_last12 <- houston_crime_last12 %>%
@@ -294,7 +294,7 @@ beat_detailed <- beat_detailed %>%
          "total20" = "2020",
          "total21" = "2021",
          "total22" = "2022",
-         "total23" = "2023"
+         "total23" = "2023",
          "total24" = "2024")
 # add last 12 months
 beat_detailed_last12 <- houston_crime_last12 %>%
@@ -342,7 +342,7 @@ beat_category <- beat_category %>%
          "total20" = "2020",
          "total21" = "2021",
          "total22" = "2022",
-         "total23" = "2023"
+         "total23" = "2023",
          "total24" = "2024")
 # add last 12 months
 beat_category_last12 <- houston_crime_last12 %>%
@@ -390,7 +390,7 @@ beat_type <- beat_type %>%
          "total20" = "2020",
          "total21" = "2021",
          "total22" = "2022",
-         "total23" = "2023"
+         "total23" = "2023",
          "total24" = "2024")
 # add last 12 months
 beat_type_last12 <- houston_crime_last12 %>%
