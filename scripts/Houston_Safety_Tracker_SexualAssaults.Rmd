@@ -235,7 +235,7 @@ houston_population <- 2304580
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Sexual Assaults<br>
 <bignumber>`r prettyNum(round(sexassaults_city$avg_prior4years,0), big.mark=",")`<br></bignumber><p>
-Yearly average<br>2019 to 2022</p>
+Yearly average<br>2020 to 2023</p>
 </div>
 <div class="card" style="background-color:#99a0a5;">
 <p>Sexual Assault Rate<br>
@@ -245,17 +245,17 @@ Per 100,000 people<br>Last 12 months</p>
 <div class="card" style="background-color:#99a0a5;">
 <p>Average Sexual Assault Rate<br>
 <bignumber>`r sexassaults_city$rate_prior4years`<br></bignumber><p>
-Per 100,000 people<br>2019 to 2022</p>
+Per 100,000 people<br>2020 to 2023</p>
 </div>
 </div>
 <br>
 Sexual assaults over the last 12 months are <h8>`r ifelse(sexassaults_city$inc_prior4yearavgtolast12>=0," up"," down")` `r ifelse(sexassaults_city$inc_prior4yearavgtolast12>=0,sexassaults_city$inc_prior4yearavgtolast12,substring(sexassaults_city$inc_prior4yearavgtolast12,2))`%</h8> compared to the annual average over the last four years, according to the latest data available from the Houston Police Department.
 
-The city averaged <h8>`r round(sexassaults_city$last12mos/52,0)`</h8> sexual assaults a week over the last 12 months. In 2019, that number was <h8>`r round(sexassaults_city$total19/52,0)`</h8> a week.
+The city averaged <h8>`r round(sexassaults_city$last12mos/52,0)`</h8> sexual assaults a week over the last 12 months. In 2020, that number was <h8>`r round(sexassaults_city$total20/52,0)`</h8> a week.
 
 <subhead>A closer look at Houston sexual assaults neighborhood by neighborhood</subhead>
 
-The danger is not the same neighborhood to neighborhood. ABC13's data team looked at the Houston Police Department's public data about sexual assault reports by neighborhood from 2019 through `r format(asofdate, "%B %d")`.
+The danger is not the same neighborhood to neighborhood. ABC13's data team looked at the Houston Police Department's public data about sexual assault reports by neighborhood from 2020 through `r format(asofdate, "%B %d")`.
 
 The map color-codes each neighborhood by the sexual assault rate over the last 12 months. The three darker blue areas are neighborhoods with sexual assault rates higher than the citywide rate. You can also choose to see neighborhoods by the number of reported sexual assaults.
 
@@ -309,15 +309,6 @@ sexassaultlabel <- paste(sep="",
 				<th>Rate</th>
 			</tr>
 			<tr>
-				<td>2019</td>
-				<td>",
-sexassaults_beat$total19,
-"</td>
-				<td>",
-sexassaults_beat$rate19,
-"</td>
-			</tr>
-			<tr>
 				<td>2020</td>
 				<td>",
 sexassaults_beat$total20,
@@ -326,7 +317,7 @@ sexassaults_beat$total20,
 sexassaults_beat$rate20,
 "</td>
 			</tr>
-						<tr>
+			<tr>
 				<td>2021</td>
 				<td>",
 sexassaults_beat$total21,
@@ -342,6 +333,15 @@ sexassaults_beat$total22,
 "</td>
 				<td>",
 sexassaults_beat$rate22,
+"</td>
+			</tr>
+						<tr>
+				<td>2023</td>
+				<td>",
+sexassaults_beat$total23,
+"</td>
+				<td>",
+sexassaults_beat$rate23,
 "</td>
 			</tr>
 						<tr>
@@ -431,9 +431,9 @@ houston_sexassault_map
 ```
 <br>
 <br>
-<!-- <subhead>Sexual assaults month by month, 2019 through last month</subhead> -->
+<!-- <subhead>Sexual assaults month by month, 2020 through last month</subhead> -->
 
-<iframe title="Sexual assaults month by month, 2019 through last month" aria-label="Column Chart" id="datawrapper-chart-Ao9qp" src="https://datawrapper.dwcdn.net/Ao9qp/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+<iframe title="Sexual assaults month by month, 2020 through last month" aria-label="Column Chart" id="datawrapper-chart-Ao9qp" src="https://datawrapper.dwcdn.net/Ao9qp/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
 </script>
   <br>
 <br>
